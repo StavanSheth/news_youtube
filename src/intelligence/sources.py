@@ -6,9 +6,9 @@ from datetime import UTC, datetime
 
 import feedparser
 import requests
-from youtube_transcript_api import YouTubeTranscriptApi
 
 from .models import SourceItem
+from .ingestion import transcript
 
 
 def _youtube_get(path: str, params: dict, api_key: str) -> dict:
@@ -66,23 +66,17 @@ def discover_youtube(
 
 
 def _video_item(video_id: str, snippet: dict, priority: float) -> SourceItem:
-    transcript = ""
-    try:
-        transcript = " ".join(
-            part["text"] for part in YouTubeTranscriptApi().fetch(video_id).to_raw_data()
-        )
-    except Exception:
-        pass  # Metadata still provides a useful, safely degraded source.
+    transcript_text, transcript_metadata = transcript(video_id, ["en"])
     return SourceItem(
         id=video_id,
         kind="youtube",
         title=snippet.get("title", "Untitled video"),
         url=f"https://www.youtube.com/watch?v={video_id}",
-        text=f"{snippet.get('title', '')}\n{snippet.get('description', '')}\n{transcript}",
+        text=f"{snippet.get('title', '')}\n{snippet.get('description', '')}\n{transcript_text}",
         published_at=snippet.get("publishedAt", ""),
         source=snippet.get("channelTitle", "YouTube"),
         priority=float(priority),
-        metadata={"transcript_available": bool(transcript)},
+        metadata=transcript_metadata,
     )
 
 

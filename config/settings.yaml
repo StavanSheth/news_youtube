@@ -3,19 +3,31 @@ pipeline:
   max_items_per_run: 20
   max_keyword_results_per_topic: 3
   min_relevance_score: 0.35
-  chunk_size: 10000
-  max_chunks_per_item: 8
-  retain_history: 200
+  lookback_days: 7
+gemini:
+  model: gemini-3.6-flash
+  temperature: 0.2
+  max_output_tokens: 4096
+  chunk_size: 9000
+  chunk_overlap: 500
+  max_chunks_per_item: 6
+state:
+  max_processed_items: 5000
+  max_failed_items: 500
+  max_recent_runs: 100
+  change_detection_days: 14
 scoring:
-  topic_match_weight: 0.45
-  keyword_match_weight: 0.20
-  source_priority_weight: 0.20
-  recency_weight: 0.15
+  topic_relevance: 0.40
+  source_priority: 0.20
+  recency: 0.20
+  content_completeness: 0.20
 news:
-  feeds:
+  sources:
     - name: Reuters World
+      type: rss
       url: https://feeds.reuters.com/Reuters/worldNews
+      enabled: true
       priority: 1.0
 email:
   enabled: true
-  subject_prefix: "Intelligence Digest"
+  subject_prefix: "Daily Intelligence"

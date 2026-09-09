@@ -12,7 +12,7 @@ def test_load_config_has_topic_requirements():
     root = Path(__file__).parents[1]
     config = load_config(root)
     assert config.topics[0]["extraction_requirements"]
-    assert config.settings["pipeline"]["chunk_size"] > 0
+    assert config.settings["gemini"]["chunk_size"] > 0
 
 
 def test_topic_classification_and_scoring():

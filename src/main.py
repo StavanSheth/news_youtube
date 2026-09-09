@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from intelligence.pipeline import run
+from intelligence.production import run
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
