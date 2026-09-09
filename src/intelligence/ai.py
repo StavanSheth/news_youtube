@@ -19,7 +19,7 @@ class GeminiAnalyzer:
 
     def _json(self, prompt: str) -> dict[str, Any]:
         response = self.client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-3.6-flash",
             contents=prompt,
             config={"response_mime_type": "application/json"},
         )
