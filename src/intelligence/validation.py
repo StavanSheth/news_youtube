@@ -8,12 +8,21 @@ def validate_taxonomy(taxonomy: dict[str, Any]) -> None:
     missing = required - taxonomy.keys()
     if missing:
         raise ValueError(f"Taxonomy missing required fields: {sorted(missing)}")
-    for field in required:
-        values = taxonomy[field]
+    for field in ("priorities", "event_types", "entity_types", "report_types", "regions", "countries"):
+        values = taxonomy.get(field, [])
         if not isinstance(values, list) or not values or not all(isinstance(value, str) and value for value in values):
             raise ValueError(f"Taxonomy field {field!r} must be a non-empty list of strings")
         if len(values) != len(set(values)):
             raise ValueError(f"Taxonomy field {field!r} contains duplicates")
+    domains = taxonomy["domains"]
+    if not isinstance(domains, dict) or not domains:
+        raise ValueError("Taxonomy domains must be a non-empty mapping")
+    for domain, definition in domains.items():
+        if not isinstance(definition, dict) or not definition.get("topics"):
+            raise ValueError(f"Domain {domain!r} must define topics")
+        topics = definition["topics"]
+        if len(topics) != len(set(topics)):
+            raise ValueError(f"Domain {domain!r} contains duplicate topics")
 
 
 def validate_topics(topics: list[dict[str, Any]], taxonomy: dict[str, Any]) -> None:

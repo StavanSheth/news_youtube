@@ -1,25 +1,50 @@
+version: 1
 domains:
-  - artificial-intelligence
-  - software-engineering
-  - github-open-source
-  - quantum-computing
-  - space
-  - defence
-  - cybersecurity
-  - semiconductors
-  - startups-vc
-  - government-policy
-  - regional-government
-  - geopolitics
-  - energy
-  - shipping-logistics
-  - manufacturing
-  - leaders-people
-  - technology-companies
-  - conferences
-  - research
-  - opportunities
-  - finance
+  artificial-intelligence:
+    topics: [foundation-models, llms, multimodal-ai, reasoning-models, ai-agents, agentic-workflows, coding-models, rag, embeddings, training, inference, fine-tuning, ai-infrastructure, ai-tooling, open-source-ai, enterprise-ai, ai-applications, ai-research, ai-safety-alignment, ai-regulation, ai-startups]
+  software-engineering:
+    topics: [programming-languages, frameworks, developer-tools, ides, apis-sdks, backend, frontend, databases, architecture, devops, ci-cd, testing, cloud-platforms, infrastructure, open-source-releases]
+  github-open-source:
+    topics: [ai-repositories, agent-frameworks, mcp-ecosystem, developer-tools, inference-serving, model-tooling, high-impact-repositories, ecosystem-adoption]
+  quantum-computing:
+    topics: [hardware, processors, algorithms, error-correction, quantum-networking, cryptography, research, government-programs, commercial-applications]
+  space:
+    topics: [launches, rockets, satellites, missions, earth-observation, lunar-programs, mars, exploration, commercial-space, space-infrastructure, space-policy]
+  defence:
+    topics: [procurement, military-technology, drones, missiles, air-defence, naval-systems, cyber-warfare, electronic-warfare, military-ai, defence-policy, strategic-capabilities]
+  cybersecurity:
+    topics: [cves, vulnerabilities, breaches, ransomware, malware, threat-actors, cyber-campaigns, identity-security, cloud-security, application-security, ai-security, national-cyber-policy, security-tooling]
+  semiconductors:
+    topics: [chip-design, fabs, foundries, gpus, cpus, ai-accelerators, memory, hbm, semiconductor-equipment, export-controls, supply-chains, capacity, packaging]
+  startups-vc:
+    topics: [funding, seed-series-rounds, vc, acquisitions, ipos, launches, accelerators, valuations, exits, startup-failures]
+  government-policy:
+    topics: [national-policy, regulation, legislation, ministries, digital-policy, ai-policy, semiconductor-policy, industrial-policy, subsidies, grants, tenders]
+  regional-government:
+    topics: [state-provincial-policy, industrial-parks, incentives, local-regulation, infrastructure, regional-investment, technology-policy]
+  geopolitics:
+    topics: [bilateral-relations, alliances, sanctions, trade, wars-conflicts, diplomacy, technology-restrictions, supply-chains, strategic-competition, regional-blocs]
+  energy:
+    topics: [oil, gas, electricity, renewables, nuclear, batteries, grids, energy-companies, production, energy-markets, energy-security, transition]
+  shipping-logistics:
+    topics: [ports, shipping-lines, freight, logistics-infrastructure, supply-chains, chokepoints, maritime-trade, container-rates, disruptions]
+  manufacturing:
+    topics: [factories, industrial-corridors, incentives, reshoring, manufacturing-capacity, exports, industrial-strategy, localization]
+  leaders-people:
+    topics: [executives, founders, researchers, government-leaders, appointments, departures, major-statements, strategic-decisions]
+  technology-companies:
+    topics: [product-launches, strategy, acquisitions, partnerships, earnings, infrastructure, platform-changes, corporate-ai-strategy]
+  conferences:
+    topics: [google-io, gtc, wwdc, neurips, icml, cvpr, industry-conferences, keynote-announcements]
+  research:
+    topics: [ai-research, computer-science, medicine, economics, physics, climate, engineering, breakthroughs, preprints, peer-reviewed-research]
+  opportunities:
+    topics: [grants, tenders, scholarships, fellowships, accelerators, hackathons, funding-opportunities, government-schemes]
+  finance:
+    topics: [central-banks, interest-rates, inflation, markets, banking, equities, bonds, currencies, commodities, credit, asset-managers, macroeconomics]
 priorities: [Critical, High, Medium, Low, Ignore]
-event_types: [announcement, launch, policy, funding, research, conflict, market, security, milestone, opportunity]
-report_types: [executive_brief, top_event, technical_deep_dive, case_study, opportunity, short_summary, flash]
+event_types: [product-launch, research-breakthrough, funding, acquisition, regulation, government-scheme, security-incident, partnership, infrastructure-development, market-development, trade-development, leadership-change, conference-announcement, policy-announcement, conflict, research-publication, opportunity]
+entity_types: [person, company, organization, government, country, city-region, technology, product, model, research-paper, institution, conference, financial-instrument, infrastructure-asset]
+report_types: [executive_summary, top_event, case_study, technical_deep_dive, executive_brief, short_summary, flash_update, opportunity]
+regions: [india-south-asia, north-america, europe-eu, uk, middle-east, china, japan, south-korea, taiwan, southeast-asia, russia-eurasia, ukraine, australia-oceania, africa, latin-america, global]
+countries: [IN, US, CA, GB, DE, FR, EU, AE, SA, IL, QA, CN, JP, KR, TW, SG, AU, RU, UA, BR, GLOBAL]

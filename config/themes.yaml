@@ -38,3 +38,16 @@ themes:
     personal: {actions: false, routines: false, beliefs_to_reconsider: true, things_to_monitor: true}
     triggers: {case_study: false, opportunity: false, deep_dive: true, trend: true}
     output: {report_type: executive_brief, sections: [summary, evidence, implications, scenarios, sources]}
+  - id: domain-fallback
+    domain: all
+    topic: any
+    micro_topic: any
+    priority: 1
+    detect: {keywords: []}
+    extract: [what_changed, evidence, affected_entities, uncertainty]
+    questions: [what_happened, why_it_matters, what_to_watch]
+    evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference, speculation]}
+    practical: {use_cases: false, workflows: false, experiments: false}
+    personal: {actions: true, routines: false, beliefs_to_reconsider: false, things_to_monitor: true}
+    triggers: {case_study: false, opportunity: false, deep_dive: false, trend: true}
+    output: {report_type: short_summary, sections: [summary, evidence, implications, actions, sources]}
