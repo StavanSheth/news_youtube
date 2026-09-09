@@ -19,6 +19,8 @@ class NewsletterModel:
 
     @classmethod
     def from_stories(cls, stories: list[dict[str, Any]], edition: str) -> "NewsletterModel":
+        from .enrichment import trend_signals
+
         executive = sorted(
             stories,
             key=lambda story: story.get("importance_score", story.get("importance", 0)),
@@ -33,4 +35,13 @@ class NewsletterModel:
             {"title": story.get("title", ""), "url": story.get("url", "")}
             for story in stories if story.get("url")
         ]
-        return cls(edition=edition, executive_summary=executive, stories=stories, actions=actions, sources=sources)
+        opportunities = [opportunity for story in stories for opportunity in story.get("opportunities", [])]
+        return cls(
+            edition=edition,
+            executive_summary=executive,
+            stories=stories,
+            opportunities=opportunities,
+            trends=trend_signals(stories),
+            actions=actions,
+            sources=sources,
+        )

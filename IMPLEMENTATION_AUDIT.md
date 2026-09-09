@@ -20,14 +20,14 @@ Audit basis: `01_MASTER_REQUIREMENTS.md` through `08_IMPLEMENTATION_RULES.md`, p
 | Stable IDs/content normalization | `models.py`, ingestion/source adapters, production hashing | system tests | PARTIAL: canonical URL and full normalized schema need consolidation |
 | Exact/near/syndication deduplication | `production.py`, `events.py` | limited production tests | PARTIAL |
 | Event-centric grouping/corroboration | `events.py`, production metadata | dry run and production tests | PARTIAL: source count exists; independent/syndicated/conflicting classification needs completion |
-| Entity extraction and persistence | optional metadata only | no meaningful test | LEFT TO DO |
+| Entity extraction and persistence | `src/intelligence/enrichment.py`, story metadata | `tests/test_enrichment.py` | PARTIAL: deterministic extraction exists; long-term entity state/alias registry remains |
 | Theme engine configuration | `config/themes.yaml`, production theme selection | dry run | PARTIAL: three detailed themes plus deterministic fallback; all topic-specific theme contracts need expansion |
 | AI, finance, geopolitics theme criteria | `config/themes.yaml`, prompts, production | dry run and schema tests | PARTIAL |
 | Video-specific intelligence/content types | YouTube source metadata and generic analysis | no video-specific test | LEFT TO DO |
 | Structured evidence/confidence | `schema.py`, Gemini normalization | schema tests | PARTIAL: confidence exists; full evidence contract and independent confidence scoring remain |
 | Importance score 0-100 | `events.py`, production | production scoring test | IMPLEMENTED |
-| Opportunity detection | newsletter fields only | no test | LEFT TO DO |
-| Trend signals | `events.py` lightweight repeated-topic helper | no dedicated test | PARTIAL: persistence and entity/activity signals remain |
+| Opportunity detection | `enrichment.py`, `NewsletterModel` | `tests/test_enrichment.py` | IMPLEMENTED for deterministic keyword detection; source verification remains required |
+| Trend signals | `events.py`, `enrichment.py`, `NewsletterModel` | `tests/test_enrichment.py` | PARTIAL: repeated topics/entities work; persistent activity history remains |
 | Structured newsletter | `newsletter.py`, production renderer | dry run | PARTIAL: canonical model exists; all populated sections need renderer coverage |
 | Markdown and HTML output | `production.py` | rendering/system tests, dry run | IMPLEMENTED for current story sections; expanded section coverage remains |
 | SMTP delivery | `emailer.py`, workflow secrets | code review | IMPLEMENTED; environment setup required |
@@ -52,9 +52,9 @@ The canonical taxonomy now defines all 21 specification domains and their topic/
 
 ## Remaining Work
 
-1. Add entity extraction/alias normalization and bounded JSON persistence.
-2. Add opportunity and trend models plus state persistence.
-3. Separate importance from independently calculated confidence and validate evidence types at render time.
+1. Add entity alias normalization and bounded JSON persistence.
+2. Persist event/trend history across runs.
+3. Validate structured evidence types at render time and expose confidence in every newsletter section.
 4. Make syndication/conflict handling explicit in event corroboration.
 5. Add deterministic mocked end-to-end, idempotency, malformed-AI, source-failure, SMTP-failure, and HTML-security tests.
 6. Expand source registry with verified feeds only; candidate sources in the specification remain disabled until access and reliability are confirmed.

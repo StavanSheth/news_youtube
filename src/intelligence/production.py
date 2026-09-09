@@ -17,6 +17,7 @@ from .events import importance as event_importance
 from .ingestion import enriched_rss
 from .schema import merge_unique, normalized_analysis
 from .sources import discover_youtube
+from .enrichment import confidence_score, detect_opportunities, extract_entities, trend_signals
 
 LOGGER = logging.getLogger(__name__)
 
@@ -244,8 +245,10 @@ def render(root: Path, stories: list[dict[str, Any]], run_time: datetime) -> tup
     output = root / "output" / run_time.strftime("%Y/%m/%d/%H%M")
     output.mkdir(parents=True, exist_ok=True)
     from .newsletter import NewsletterModel
+    from .enrichment import trend_signals
 
-    executive = NewsletterModel.from_stories(stories, run_time.isoformat()).executive_summary
+    newsletter = NewsletterModel.from_stories(stories, run_time.isoformat())
+    executive = newsletter.executive_summary
     markdown = [
         "# Daily Intelligence",
         f"**Edition:** {run_time:%Y-%m-%d %H:%M UTC}",
@@ -359,10 +362,14 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
                     "routine": None,
                     "uncertainties": [],
                     "confidence": 0.0,
+                    "evidence": [],
                 }
                 if dry_run
                 else provider.analyze(item, {**topics[0], "theme": next((theme for theme in config.themes if theme.get("topic") == topics[0]["name"]), {})})
             )
+            entities = extract_entities(f"{item.get('title', '')}\n{item.get('text', '')}")
+            opportunities = detect_opportunities(item, analysis)
+            corroboration = item.get("metadata", {}).get("corroboration", {}).get("source_count", 1)
             change = state.change_status(item)
             story = {
                 **item,
@@ -372,6 +379,9 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
                     importance,
                     item.get("metadata", {}).get("corroboration", {}).get("source_count", 1),
                 ),
+                "confidence_score": confidence_score(item, analysis, corroboration),
+                "entities": entities,
+                "opportunities": opportunities,
                 "change": change,
                 "analysis": analysis,
             }
