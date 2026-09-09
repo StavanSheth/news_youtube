@@ -1,0 +1,5 @@
+channels:
+  - id: ""
+    name: "Example channel - set a YouTube channel ID"
+    priority: 1.0
+    enabled: false

@@ -1,0 +1,10 @@
+chunk_extraction: |
+  Extract only claims supported by this source chunk. Return JSON with facts (array of strings),
+  actionable_items (array), and uncertainties (array). Do not infer facts.
+topic_analysis: |
+  Analyze this source for the topic using the topic requirements. Return JSON with facts,
+  interpretation, actionable_insights, routine (null or an object with Morning, Day, Evening arrays),
+  and uncertainties. Clearly separate source facts from your interpretation. Never invent a routine.
+synthesis: |
+  Synthesize related source analyses. Return JSON with executive_brief, common_facts,
+  differences, developments, actionable_insights, and uncertainties. Preserve source links.

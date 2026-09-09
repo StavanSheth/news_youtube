@@ -1,0 +1,21 @@
+pipeline:
+  timezone: Asia/Kolkata
+  max_items_per_run: 20
+  max_keyword_results_per_topic: 3
+  min_relevance_score: 0.35
+  chunk_size: 10000
+  max_chunks_per_item: 8
+  retain_history: 200
+scoring:
+  topic_match_weight: 0.45
+  keyword_match_weight: 0.20
+  source_priority_weight: 0.20
+  recency_weight: 0.15
+news:
+  feeds:
+    - name: Reuters World
+      url: https://feeds.reuters.com/Reuters/worldNews
+      priority: 1.0
+email:
+  enabled: true
+  subject_prefix: "Intelligence Digest"

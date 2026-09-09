@@ -1,0 +1,22 @@
+topics:
+  - id: artificial-intelligence
+    name: Artificial Intelligence
+    keywords: ["artificial intelligence", "AI", "LLM", "model", "agent"]
+    relevance_rules: "Prioritize material changes, tools, research, benchmarks, launches, and funding."
+    extraction_requirements: ["what changed", "technical details", "evidence"]
+    analysis_requirements: ["why it matters", "practical tools or workflows worth trying"]
+    output_requirements: ["facts", "inference", "actionable insights"]
+  - id: finance
+    name: Finance
+    keywords: ["markets", "earnings", "inflation", "interest rates", "economy"]
+    relevance_rules: "Prioritize material market, macroeconomic, company, and policy developments."
+    extraction_requirements: ["important numbers", "causes", "implications"]
+    analysis_requirements: ["risks", "opportunities", "things to watch"]
+    output_requirements: ["facts", "inference", "actionable insights"]
+  - id: geopolitics
+    name: Geopolitics
+    keywords: ["sanctions", "war", "diplomacy", "security", "trade"]
+    relevance_rules: "Prioritize consequential international events and policy changes."
+    extraction_requirements: ["actors", "event", "background", "objectives"]
+    analysis_requirements: ["economic and security implications", "uncertainties"]
+    output_requirements: ["facts", "inference", "actionable insights"]
