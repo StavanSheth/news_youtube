@@ -102,4 +102,4 @@ Verified results:
 - Fixture rerun: 0 eligible and 0 processed, confirming idempotency.
 - Live dry-run: Reuters World returned `SOURCE_UNAVAILABLE / INVALID_FEED`; coverage was `INSUFFICIENT_EVIDENCE`, quality was **60/100 REVIEW REQUIRED**, and SMTP was skipped.
 
-External acceptance remains: a reachable enabled source, valid GitHub Actions YouTube/Gemini/SMTP secrets, and a final commit/push from an environment with write access to `.git/index`.
+External acceptance remains: a reachable enabled source and valid GitHub Actions YouTube/Gemini/SMTP secrets. The implementation is committed and pushed to `origin/main` at `20ab7cf`.

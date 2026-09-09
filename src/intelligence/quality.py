@@ -57,10 +57,13 @@ def evaluate_output(
         ),
         "claims_cited": all(
             not story.get("analysis", {}).get("facts")
-            or bool(story.get("analysis", {}).get("evidence")) and all(
-                _valid_url(entry.get("source_url", ""))
-                for entry in story.get("analysis", {}).get("evidence", [])
-                if entry.get("type") in {"fact", "official_statement", "reported_claim"}
+            or (
+                bool([entry for entry in story.get("analysis", {}).get("evidence", []) if entry.get("type") in {"fact", "official_statement", "reported_claim"}])
+                and all(
+                    _valid_url(entry.get("source_url", ""))
+                    for entry in story.get("analysis", {}).get("evidence", [])
+                    if entry.get("type") in {"fact", "official_statement", "reported_claim"}
+                )
             )
             for story in stories
         ),
