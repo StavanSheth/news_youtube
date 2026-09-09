@@ -58,7 +58,11 @@ def confidence_score(item: dict[str, Any], analysis: dict[str, Any], corroborati
 
 
 def trend_signals(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    topics = Counter(topic for item in items for topic in item.get("topics", []))
+    topics = Counter(
+        topic.get("key", topic.get("name", "")) if isinstance(topic, dict) else topic
+        for item in items
+        for topic in item.get("topics", [])
+    )
     entities = Counter(entity.get("name") for item in items for entity in item.get("entities", []))
     return [
         {"type": "repeated_topic", "key": key, "evidence_count": count, "confidence": min(count / 5, 1.0)}
