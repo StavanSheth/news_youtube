@@ -243,7 +243,9 @@ class GeminiProvider:
 def render(root: Path, stories: list[dict[str, Any]], run_time: datetime) -> tuple[Path, Path]:
     output = root / "output" / run_time.strftime("%Y/%m/%d/%H%M")
     output.mkdir(parents=True, exist_ok=True)
-    executive = stories[:7]
+    from .newsletter import NewsletterModel
+
+    executive = NewsletterModel.from_stories(stories, run_time.isoformat()).executive_summary
     markdown = [
         "# Daily Intelligence",
         f"**Edition:** {run_time:%Y-%m-%d %H:%M UTC}",
