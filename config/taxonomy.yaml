@@ -1,0 +1,25 @@
+domains:
+  - artificial-intelligence
+  - software-engineering
+  - github-open-source
+  - quantum-computing
+  - space
+  - defence
+  - cybersecurity
+  - semiconductors
+  - startups-vc
+  - government-policy
+  - regional-government
+  - geopolitics
+  - energy
+  - shipping-logistics
+  - manufacturing
+  - leaders-people
+  - technology-companies
+  - conferences
+  - research
+  - opportunities
+  - finance
+priorities: [Critical, High, Medium, Low, Ignore]
+event_types: [announcement, launch, policy, funding, research, conflict, market, security, milestone, opportunity]
+report_types: [executive_brief, top_event, technical_deep_dive, case_study, opportunity, short_summary, flash]

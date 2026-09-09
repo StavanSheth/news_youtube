@@ -1,20 +1,35 @@
 topics:
   - id: artificial-intelligence
+    key: artificial-intelligence
     name: Artificial Intelligence
+    enabled: true
+    priority: 10
+    classification_threshold: 0.25
+    aliases: [AI, LLM, agents]
     keywords: ["artificial intelligence", "AI", "LLM", "model", "agent"]
     relevance_rules: "Prioritize material changes, tools, research, benchmarks, launches, and funding."
     extraction_requirements: ["what changed", "technical details", "evidence"]
     analysis_requirements: ["why it matters", "practical tools or workflows worth trying"]
     output_requirements: ["facts", "inference", "actionable insights"]
   - id: finance
+    key: finance
     name: Finance
+    enabled: true
+    priority: 9
+    classification_threshold: 0.25
+    aliases: [markets, macro, equities]
     keywords: ["markets", "earnings", "inflation", "interest rates", "economy"]
     relevance_rules: "Prioritize material market, macroeconomic, company, and policy developments."
     extraction_requirements: ["important numbers", "causes", "implications"]
     analysis_requirements: ["risks", "opportunities", "things to watch"]
     output_requirements: ["facts", "inference", "actionable insights"]
   - id: geopolitics
+    key: geopolitics
     name: Geopolitics
+    enabled: true
+    priority: 9
+    classification_threshold: 0.25
+    aliases: [security, diplomacy, international relations]
     keywords: ["sanctions", "war", "diplomacy", "security", "trade"]
     relevance_rules: "Prioritize consequential international events and policy changes."
     extraction_requirements: ["actors", "event", "background", "objectives"]

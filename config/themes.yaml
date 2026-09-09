@@ -1,0 +1,40 @@
+themes:
+  - id: ai-models-tools
+    domain: artificial-intelligence
+    topic: Artificial Intelligence
+    micro_topic: models-tools
+    priority: 10
+    detect: {keywords: [AI, LLM, model, agent, benchmark, inference, API]}
+    extract: [model_or_tool, capability, evidence, limitations, benchmark, practical_application]
+    questions: [what_changed, why_it_matters, what_can_be_tested_or_built]
+    evidence: {required: [fact, claim], distinguish: [fact, official_statement, opinion, inference, speculation]}
+    practical: {use_cases: true, workflows: true, experiments: true}
+    personal: {actions: true, routines: true, beliefs_to_reconsider: true, things_to_monitor: true}
+    triggers: {case_study: true, opportunity: true, deep_dive: true, trend: true}
+    output: {report_type: technical_deep_dive, sections: [summary, evidence, implications, actions, sources]}
+  - id: finance-markets
+    domain: finance
+    topic: Finance
+    micro_topic: markets-macro
+    priority: 9
+    detect: {keywords: [markets, earnings, inflation, rates, GDP, tariff, stock, bond]}
+    extract: [event, indicator, affected_sectors, confirmed_data, expert_views, risk, watch_indicators]
+    questions: [what_happened, what_is_confirmed, what_is_forecast, what_to_watch]
+    evidence: {required: [fact, claim], distinguish: [fact, official_statement, opinion, inference, speculation]}
+    practical: {use_cases: false, workflows: true, experiments: false}
+    personal: {actions: true, routines: false, beliefs_to_reconsider: false, things_to_monitor: true}
+    triggers: {case_study: false, opportunity: false, deep_dive: true, trend: true}
+    output: {report_type: top_event, sections: [summary, numbers, risks, watchlist, sources]}
+  - id: geopolitics-security
+    domain: geopolitics
+    topic: Geopolitics
+    micro_topic: security-trade
+    priority: 9
+    detect: {keywords: [war, sanctions, diplomacy, security, trade, treaty, government, country]}
+    extract: [actors, confirmed_event, competing_claims, strategic_interests, sanctions, security_implications, scenarios]
+    questions: [what_is_confirmed, who_is_affected, what_should_be_watched]
+    evidence: {required: [fact, claim], distinguish: [fact, official_statement, reported_claim, opinion, inference, speculation]}
+    practical: {use_cases: false, workflows: false, experiments: false}
+    personal: {actions: false, routines: false, beliefs_to_reconsider: true, things_to_monitor: true}
+    triggers: {case_study: false, opportunity: false, deep_dive: true, trend: true}
+    output: {report_type: executive_brief, sections: [summary, evidence, implications, scenarios, sources]}

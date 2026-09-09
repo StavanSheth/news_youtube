@@ -13,6 +13,8 @@ class AppConfig:
     topics: list[dict[str, Any]]
     prompts: dict[str, str]
     settings: dict[str, Any]
+    taxonomy: dict[str, Any]
+    themes: list[dict[str, Any]]
 
 
 def _read_yaml(path: Path) -> dict[str, Any]:
@@ -27,4 +29,7 @@ def load_config(root: Path) -> AppConfig:
         topics=_read_yaml(config_dir / "topics.yaml").get("topics", []),
         prompts=_read_yaml(config_dir / "prompts.yaml"),
         settings=_read_yaml(config_dir / "settings.yaml"),
+        taxonomy=_read_yaml(config_dir / "taxonomy.yaml"),
+        themes=_read_yaml(config_dir / "themes.yaml").get("themes", []),
     )
+    # test

@@ -12,6 +12,8 @@ from typing import Any
 
 from .config import load_config
 from .emailer import send_digest
+from .events import group_events
+from .events import importance as event_importance
 from .ingestion import enriched_rss
 from .schema import merge_unique, normalized_analysis
 from .sources import discover_youtube
@@ -218,6 +220,7 @@ class GeminiProvider:
                 "topic": topic["config"],
                 "facts": facts,
                 "source": {key: item.get(key) for key in ("title", "url", "source")},
+                "related_sources": item.get("metadata", {}).get("related_sources", []),
             }
         )
         result = self._request(f"{self.prompts['topic_analysis']}\n\nINPUT:\n{details}")
@@ -305,6 +308,16 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
             )
         ]
     cutoff = utc_now() - timedelta(days=int(pipe.get("lookback_days", 7)))
+    event_groups = group_events(discovered)
+    discovered = [
+        {**group["items"][0], "metadata": {
+            **group["items"][0].get("metadata", {}),
+            "event_id": group["event_id"],
+            "corroboration": group["corroboration"],
+            "related_sources": group["related_sources"],
+        }}
+        for group in event_groups
+    ]
     eligible = [
         item
         for item in discovered
@@ -346,13 +359,17 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
                     "confidence": 0.0,
                 }
                 if dry_run
-                else provider.analyze(item, topics[0])
+                else provider.analyze(item, {**topics[0], "theme": next((theme for theme in config.themes if theme.get("topic") == topics[0]["name"]), {})})
             )
             change = state.change_status(item)
             story = {
                 **item,
                 "topics": topics,
                 "importance": importance,
+                "importance_score": event_importance(
+                    importance,
+                    item.get("metadata", {}).get("corroboration", {}).get("source_count", 1),
+                ),
                 "change": change,
                 "analysis": analysis,
             }
