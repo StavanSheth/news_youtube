@@ -303,15 +303,18 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
         )
     ]
     if os.getenv("YOUTUBE_API_KEY"):
-        discovered += [
-            item.to_dict()
-            for item in discover_youtube(
-                config.channels,
-                config.topics,
-                os.environ["YOUTUBE_API_KEY"],
-                int(pipe.get("max_keyword_results_per_topic", 0)),
-            )
-        ]
+        try:
+            discovered += [
+                item.to_dict()
+                for item in discover_youtube(
+                    config.channels,
+                    config.topics,
+                    os.environ["YOUTUBE_API_KEY"],
+                    int(pipe.get("max_keyword_results_per_topic", 0)),
+                )
+            ]
+        except Exception as error:  # A source/API failure must not discard RSS intelligence.
+            LOGGER.warning("YouTube discovery failed: %s", type(error).__name__)
     cutoff = utc_now() - timedelta(days=int(pipe.get("lookback_days", 7)))
     event_groups = group_events(discovered)
     discovered = [
@@ -413,9 +416,12 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
         compact,
     )
     if config.settings.get("email", {}).get("enabled") and not dry_run:
-        send_digest(
-            html,
-            markdown,
-            f"{config.settings['email'].get('subject_prefix', 'Daily Intelligence')} - {started:%d %b %Y %H:%M}",
-        )
+        try:
+            send_digest(
+                html,
+                markdown,
+                f"{config.settings['email'].get('subject_prefix', 'Daily Intelligence')} - {started:%d %b %Y %H:%M}",
+            )
+        except Exception as error:  # Delivery failure is recorded by logs after report/state persistence.
+            LOGGER.warning("SMTP delivery failed: %s", type(error).__name__)
     return markdown, html
