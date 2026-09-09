@@ -18,7 +18,26 @@
       "processed": 0,
       "failed": 1,
       "report": "output/2026/09/09/1640/digest.md"
+    },
+    {
+      "started": "2026-09-09T16:51:43.176752+00:00",
+      "completed": "2026-09-09T16:52:03.742204+00:00",
+      "discovered": 1,
+      "eligible": 1,
+      "processed": 1,
+      "failed": 0,
+      "report": "output/2026/09/09/1651/digest.md"
     }
   ],
-  "recent_items": []
+  "recent_items": [
+    {
+      "id": "LwjIji2iv7o",
+      "title": "Wise use Artificial intelligence #AI#ML",
+      "processed_at": "2026-09-09T16:52:03.740572+00:00",
+      "topics": [
+        "artificial-intelligence"
+      ],
+      "content_hash": "c59d9ed5da4362da4189d81a"
+    }
+  ]
 }
