@@ -2,7 +2,7 @@ themes:
   - id: ai-models-tools
     domain: artificial-intelligence
     topic: Artificial Intelligence
-    micro_topic: models-tools
+    micro_topic: foundation-models
     priority: 10
     detect: {keywords: [AI, LLM, model, agent, benchmark, inference, API]}
     extract: [model_or_tool, capability, evidence, limitations, benchmark, practical_application]
@@ -15,7 +15,7 @@ themes:
   - id: finance-markets
     domain: finance
     topic: Finance
-    micro_topic: markets-macro
+    micro_topic: macroeconomics
     priority: 9
     detect: {keywords: [markets, earnings, inflation, rates, GDP, tariff, stock, bond]}
     extract: [event, indicator, affected_sectors, confirmed_data, expert_views, risk, watch_indicators]
@@ -28,7 +28,7 @@ themes:
   - id: geopolitics-security
     domain: geopolitics
     topic: Geopolitics
-    micro_topic: security-trade
+    micro_topic: strategic-competition
     priority: 9
     detect: {keywords: [war, sanctions, diplomacy, security, trade, treaty, government, country]}
     extract: [actors, confirmed_event, competing_claims, strategic_interests, sanctions, security_implications, scenarios]

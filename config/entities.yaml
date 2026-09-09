@@ -1,0 +1,18 @@
+entities:
+  - {name: OpenAI, type: company, aliases: [OpenAI]}
+  - {name: Google, type: company, aliases: [Google, Alphabet]}
+  - {name: NVIDIA, type: company, aliases: [NVIDIA, Nvidia]}
+  - {name: Sam Altman, type: person, aliases: [Sam Altman]}
+  - {name: United States, type: country, aliases: [United States, US, USA]}
+  - {name: India, type: country, aliases: [India]}
+  - {name: European Commission, type: government, aliases: [European Commission]}
+  - {name: NASA, type: organization, aliases: [NASA]}
+  - {name: Python, type: technology, aliases: [Python]}
+  - {name: GPT, type: model, aliases: [GPT, GPT-4, GPT-5]}
+  - {name: Kubernetes, type: product, aliases: [Kubernetes]}
+  - {name: Nature, type: research-paper, aliases: [Nature]}
+  - {name: CERN, type: institution, aliases: [CERN]}
+  - {name: NeurIPS, type: conference, aliases: [NeurIPS]}
+  - {name: S&P 500, type: financial-instrument, aliases: [S&P 500, S&P500]}
+  - {name: Taiwan Strait, type: infrastructure-asset, aliases: [Taiwan Strait]}
+  - {name: Mumbai, type: city-region, aliases: [Mumbai]}

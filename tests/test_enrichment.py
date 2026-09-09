@@ -16,3 +16,12 @@ def test_entities_opportunities_and_trends_are_deterministic():
     assert opportunities[0]["deadline"] == "unknown"
     assert confidence_score(item, analysis, 2) > 0.4
     assert trend_signals([{"topics": ["ai"], "entities": entities}, {"topics": ["ai"], "entities": entities}])
+
+
+def test_funding_mention_without_opportunity_signal_is_not_promoted():
+    item = {
+        "title": "Market report discusses startup funding",
+        "text": "The report reviews last year's funding totals and investor sentiment.",
+        "url": "https://example.test/report",
+    }
+    assert detect_opportunities(item, {"interpretation": [], "opportunities": []}) == []

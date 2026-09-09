@@ -12,11 +12,16 @@ ENTITY_PATTERNS = {
 }
 
 
-def extract_entities(text: str) -> list[dict[str, str]]:
+def extract_entities(text: str, registry: list[dict[str, Any]] | None = None) -> list[dict[str, str]]:
     entities: list[dict[str, str]] = []
+    for entry in registry or []:
+        name = str(entry.get("name", "")).strip()
+        aliases = entry.get("aliases", [name])
+        if name and any(re.search(rf"(?<!\w){re.escape(str(alias))}(?!\w)", text, re.IGNORECASE) for alias in aliases):
+            entities.append({"name": name, "type": str(entry.get("type", "organization"))})
     for entity_type, pattern in ENTITY_PATTERNS.items():
         entities.extend({"name": match, "type": entity_type} for match in sorted(set(re.findall(pattern, text, re.IGNORECASE))))
-    return entities
+    return list({(entity["name"].lower(), entity["type"]): entity for entity in entities}.values())
 
 
 def detect_opportunities(item: dict[str, Any], analysis: dict[str, Any]) -> list[dict[str, Any]]:
@@ -30,20 +35,49 @@ def detect_opportunities(item: dict[str, Any], analysis: dict[str, Any]) -> list
         "funding": ("funding", "investment", "series a", "series b"),
         "tender": ("tender", "procurement"),
     }
+    opportunity_markers = (
+        "apply", "application", "eligible", "eligibility", "deadline", "open call",
+        "submissions", "accepting", "program", "programme", "selected participants",
+    )
+    url_matches = re.findall(r"https?://[^\s)]+", f"{item.get('text', '')} {item.get('url', '')}")
+    deadline = next(
+        (match for match in re.findall(
+            r"(?:deadline|applications? close|apply by)\s*[:\-]?\s*([A-Za-z0-9 ,/-]{4,40})",
+            f"{item.get('title', '')} {item.get('text', '')}", re.IGNORECASE,
+        )),
+        "unknown",
+    ).strip(" .,;")
+    eligibility = next(
+        (match.strip() for match in re.findall(
+            r"(?:eligible|eligibility)\s*[:\-]?\s*([^.;]{8,160})",
+            f"{item.get('title', '')} {item.get('text', '')}", re.IGNORECASE,
+        )),
+        "unknown",
+    )
+    value = next(
+        (match for match in re.findall(r"(?:[$€£₹]\s?\d[\d,.]*\s?(?:m|k|million|thousand)?)", f"{item.get('title', '')} {item.get('text', '')}", re.IGNORECASE)),
+        "unknown",
+    )
     opportunities = []
     for category, keywords in categories.items():
-        if any(keyword in text for keyword in keywords):
+        if any(keyword in text for keyword in keywords) and (
+            any(marker in text for marker in opportunity_markers)
+            or bool(analysis.get("opportunities"))
+        ):
+            issuer = next(
+                (entity["name"] for entity in extract_entities(item.get("text", "")) if entity["type"] in {"company", "organization", "government"}),
+                "unknown",
+            )
+            field_count = sum(value != "unknown" for value in (issuer, deadline, eligibility, value))
             opportunities.append({
                 "type": category,
                 "title": item.get("title", ""),
                 "description": analysis.get("interpretation", [""])[0] if analysis.get("interpretation") else "",
-                "issuer": next((entity["name"] for entity in extract_entities(item.get("text", "")) if entity["type"] == "company"), "unknown"),
-                "deadline": "unknown",
-                "eligibility": "unknown",
-                "value": "unknown",
-                "source": item.get("url", ""),
-                "confidence_score": 0.5,
-                "recommended_action": "Verify eligibility, deadline, and official application details at the source.",
+                "issuer": issuer, "deadline": deadline, "eligibility": eligibility, "value": value,
+                "application_url": url_matches[-1] if len(url_matches) > 1 else "unknown",
+                "source": item.get("url", ""), "confidence_score": round(min(1.0, 0.35 + field_count * 0.12), 2),
+                "why_relevant": "The source contains an explicit opportunity marker and a qualifying category.",
+                "recommended_action": "Verify eligibility, deadline, value, and the official application details at the source.",
             })
     return opportunities
 

@@ -1,0 +1,10 @@
+[
+  {"id": "ai-model", "kind": "news", "title": "New foundation model benchmark", "text": "A model release reports benchmark results and inference limits.", "url": "https://fixture.test/ai-model", "source": "Official Lab"},
+  {"id": "ai-agent", "kind": "youtube", "title": "Agent workflow tutorial", "text": "The podcast explains tool use, memory, workflows, and evaluation experiments.", "url": "https://fixture.test/ai-agent", "source": "Configured Channel"},
+  {"id": "rag-update", "kind": "news", "title": "RAG reranking evaluation", "text": "A retrieval benchmark compares chunking, embeddings, reranking, and context relevance.", "url": "https://fixture.test/rag", "source": "Research Lab"},
+  {"id": "hbm-update", "kind": "news", "title": "HBM capacity expansion", "text": "A memory supplier expands HBM capacity for AI accelerators and advanced packaging.", "url": "https://fixture.test/hbm", "source": "Trade Press"},
+  {"id": "cve-update", "kind": "news", "title": "Critical CVE patch released", "text": "A vulnerability affects cloud systems and vendors publish mitigation guidance.", "url": "https://fixture.test/cve", "source": "Security Vendor"},
+  {"id": "rate-decision", "kind": "news", "title": "Central bank interest rate decision", "text": "The central bank holds rates and signals inflation indicators to monitor.", "url": "https://fixture.test/rates", "source": "Central Bank"},
+  {"id": "grant", "kind": "news", "title": "Government grant applications open", "text": "Eligible startups may apply before the deadline for a public grant program.", "url": "https://fixture.test/grant", "source": "Government"},
+  {"id": "funding-mention", "kind": "news", "title": "Report reviews startup funding", "text": "The article analyzes last year's funding totals without an application or offer.", "url": "https://fixture.test/funding", "source": "Press"}
+]

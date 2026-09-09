@@ -22,7 +22,8 @@ def _youtube_get(path: str, params: dict, api_key: str) -> dict:
 
 
 def discover_youtube(
-    channels: list[dict], topics: list[dict], api_key: str, keyword_limit: int
+    channels: list[dict], topics: list[dict], api_key: str, keyword_limit: int,
+    allow_global_discovery: bool = False,
 ) -> Iterable[SourceItem]:
     seen: set[str] = set()
     for channel in channels:
@@ -41,8 +42,10 @@ def discover_youtube(
                 if video_id and video_id not in seen:
                     seen.add(video_id)
                     snippet = entry["snippet"]
-                    yield _video_item(video_id, snippet, channel.get("priority", 1))
-    # Topic searches are intentionally capped; channel uploads are the primary discovery path.
+                    yield _video_item(video_id, snippet, channel.get("priority", 1), channel)
+    # Global YouTube search is opt-in for controlled research only. Production is channel-only.
+    if not allow_global_discovery or keyword_limit <= 0:
+        return
     for topic in topics:
         query = " ".join(topic.get("keywords", [])[:2])
         if not query:
@@ -65,18 +68,27 @@ def discover_youtube(
                 yield _video_item(video_id, entry["snippet"], 1.0)
 
 
-def _video_item(video_id: str, snippet: dict, priority: float) -> SourceItem:
+def _video_item(video_id: str, snippet: dict, priority: float, channel: dict | None = None) -> SourceItem:
     transcript_text, transcript_metadata = transcript(video_id, ["en"])
+    title = snippet.get("title", "Untitled video")
+    content_type = "podcast" if any(token in title.lower() for token in ("podcast", "interview", "conversation")) else "video"
     return SourceItem(
         id=video_id,
         kind="youtube",
-        title=snippet.get("title", "Untitled video"),
+        title=title,
         url=f"https://www.youtube.com/watch?v={video_id}",
         text=f"{snippet.get('title', '')}\n{snippet.get('description', '')}\n{transcript_text}",
         published_at=snippet.get("publishedAt", ""),
         source=snippet.get("channelTitle", "YouTube"),
         priority=float(priority),
-        metadata=transcript_metadata,
+        metadata={
+            **transcript_metadata,
+            "content_stream": "video",
+            "content_type": content_type,
+            "region": (channel or {}).get("region", "global"),
+            "country": (channel or {}).get("country", "GLOBAL"),
+            "source_id": (channel or {}).get("id", video_id),
+        },
     )
 
 

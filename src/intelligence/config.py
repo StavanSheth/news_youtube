@@ -6,7 +6,7 @@ from typing import Any
 
 import yaml
 
-from .validation import validate_taxonomy, validate_topics
+from .validation import validate_sources, validate_taxonomy, validate_topics, validate_themes
 
 
 @dataclass(frozen=True)
@@ -17,6 +17,7 @@ class AppConfig:
     settings: dict[str, Any]
     taxonomy: dict[str, Any]
     themes: list[dict[str, Any]]
+    entities: list[dict[str, Any]]
 
 
 def _read_yaml(path: Path) -> dict[str, Any]:
@@ -30,11 +31,22 @@ def load_config(root: Path) -> AppConfig:
     topics = _read_yaml(config_dir / "topics.yaml").get("topics", [])
     validate_taxonomy(taxonomy)
     validate_topics(topics, taxonomy)
+    themes = _read_yaml(config_dir / "themes.yaml").get("themes", [])
+    validate_themes(themes, taxonomy)
+    settings = _read_yaml(config_dir / "settings.yaml")
+    registry_path = config_dir / "source_registry.yaml"
+    if registry_path.exists():
+        registry = _read_yaml(registry_path).get("sources", [])
+        configured = settings.setdefault("news", {}).setdefault("sources", [])
+        existing = {source.get("id") for source in configured}
+        configured.extend(source for source in registry if source.get("id") not in existing)
+    validate_sources(settings.get("news", {}).get("sources", []))
     return AppConfig(
         channels=_read_yaml(config_dir / "channels.yaml").get("channels", []),
         topics=topics,
         prompts=_read_yaml(config_dir / "prompts.yaml"),
-        settings=_read_yaml(config_dir / "settings.yaml"),
+        settings=settings,
         taxonomy=_read_yaml(config_dir / "taxonomy.yaml"),
-        themes=_read_yaml(config_dir / "themes.yaml").get("themes", []),
+        themes=themes,
+        entities=_read_yaml(config_dir / "entities.yaml").get("entities", []),
     )

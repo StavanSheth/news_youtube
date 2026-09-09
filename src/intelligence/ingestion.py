@@ -81,12 +81,34 @@ def transcript(
         return "", {"transcript_status": status, "transcript_reason": type(error).__name__}
 
 
-def enriched_rss(sources: list[dict], fetch_articles: bool = True) -> list[SourceItem]:
+def enriched_rss(
+    sources: list[dict], fetch_articles: bool = True, source_health: dict[str, dict] | None = None
+) -> list[SourceItem]:
     items: list[SourceItem] = []
     for source in sources:
         if not source.get("enabled", True) or source.get("type", "rss") != "rss":
             continue
-        parsed = feedparser.parse(source["url"])
+        health = source_health if source_health is not None else {}
+        source_id = source.get("id", source.get("name", "rss").lower().replace(" ", "-"))
+        try:
+            feed_url = source.get("feed_url") or source.get("url", "")
+            if not feed_url:
+                raise ValueError("MISSING_FEED_URL")
+            parsed = feedparser.parse(feed_url)
+            if getattr(parsed, "bozo", False) and not parsed.entries:
+                raise ValueError(type(getattr(parsed, "bozo_exception", None)).__name__)
+            health[source_id] = {
+                "status": "HEALTHY" if parsed.entries else "EMPTY",
+                "entries": len(parsed.entries),
+                "source": source.get("name", source_id),
+                "trust_tier": source.get("trust_tier", 4),
+            }
+        except Exception as error:
+            health[source_id] = {
+                "status": "FAILED", "entries": 0, "source": source.get("name", source_id),
+                "trust_tier": source.get("trust_tier", 4), "error": type(error).__name__,
+            }
+            continue
         for entry in parsed.entries:
             url = entry.get("link", "")
             if not url:
@@ -113,6 +135,11 @@ def enriched_rss(sources: list[dict], fetch_articles: bool = True) -> list[Sourc
                     priority=float(source.get("priority", 1)),
                     metadata={
                         **metadata,
+                        "source_id": source_id,
+                        "source_type": source.get("type", "rss"),
+                        "trust_tier": source.get("trust_tier", 4),
+                        "region": source.get("region", "global"),
+                        "country": source.get("country", "GLOBAL"),
                         "summary": summary,
                         "author": entry.get("author", ""),
                         "tags": [tag.get("term", "") for tag in entry.get("tags", [])],

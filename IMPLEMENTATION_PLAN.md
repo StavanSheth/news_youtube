@@ -38,6 +38,18 @@ Read old processed records by ID, ignore unknown legacy fields, and write compac
 - After newsletter changes: structured-model, Markdown, HTML, no-empty-section, links, and routine labeling tests.
 - Final: pytest, Ruff, dry run, output inspection, idempotent rerun, failure isolation, workflow YAML review, and secret-log review.
 
+## Current execution order
+
+The production path now executes the missing intelligence stages in this order:
+
+`source health -> normalization -> event grouping -> canonical taxonomy catalog -> multi-micro-topic classification -> micro-topic retrieval -> stream-aware theme profile -> bounded AI analysis -> structured evidence/confidence -> enrichment -> explicit coverage -> shared Markdown/HTML report`.
+
+`production.py` is the sole authoritative implementation. `pipeline.py` remains only as a compatibility wrapper. Source registry validation, JSON quality output, and the deterministic fixture provider are part of the runtime acceptance path, not documentation-only checks.
+
+The completion gate is intentionally external-state aware: an unavailable source or SMTP provider keeps the quality gate open and is recorded as a source/delivery failure. The code and deterministic fixture path are validated independently of live credentials and feeds.
+
+Retrieval is intentionally local and deterministic: semantic chunks retain event/source metadata and a lexical TF-IDF approximation selects top-k evidence per micro-topic. No vector database is required. Global YouTube search is disabled by default; only enabled channel IDs are collected unless the explicit opt-in setting is changed.
+
 ## Risks
 
 - Free Gemini quotas can limit a large run; filter and cap before AI.
@@ -48,4 +60,3 @@ Read old processed records by ID, ignore unknown legacy fields, and write compac
 ## Deferred Set A Features
 
 Source-health dashboards, AI cost accounting, reviewer agents, search indexes, queues, advanced event versioning, trend graphs, semantic search, and analytics remain deferred. The data model will retain extension points without implementing those systems.
-

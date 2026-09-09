@@ -13,6 +13,9 @@ class StateStore:
         self.processed_news = self._read("processed_news.json", {})
         self.processing = self._read("processing_state.json", {"runs": [], "recent_items": []})
         self.failures = self._read("failed_items.json", {})
+        self.entities = self._read("entities.json", {})
+        self.events = self._read("events.json", {})
+        self.trends = self._read("trends.json", {})
 
     def _read(self, name: str, default: Any) -> Any:
         path = self.data_dir / name
@@ -47,6 +50,9 @@ class StateStore:
             ("processed_news.json", self.processed_news),
             ("processing_state.json", self.processing),
             ("failed_items.json", self.failures),
+            ("entities.json", self.entities),
+            ("events.json", self.events),
+            ("trends.json", self.trends),
         ):
             (self.data_dir / name).write_text(
                 json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"

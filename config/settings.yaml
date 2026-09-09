@@ -2,6 +2,7 @@ pipeline:
   timezone: Asia/Kolkata
   max_items_per_run: 20
   max_keyword_results_per_topic: 3
+  allow_global_youtube_discovery: false
   min_relevance_score: 0.35
   lookback_days: 7
 gemini:
@@ -11,6 +12,11 @@ gemini:
   chunk_size: 9000
   chunk_overlap: 500
   max_chunks_per_item: 6
+  retrieval_chunk_size: 1400
+  retrieval_chunk_overlap: 180
+  retrieval_top_k: 4
+  max_retrieved_context_chars: 12000
+  max_ai_attempts: 2
 state:
   max_processed_items: 5000
   max_failed_items: 500
@@ -21,12 +27,71 @@ scoring:
   source_priority: 0.20
   recency: 0.20
   content_completeness: 0.20
+  importance_weights: {relevance: 0.60, corroboration: 0.15, novelty: 0.10, strategic_impact: 0.15}
 news:
+  fetch_articles: true
   sources:
-    - name: Reuters World
+    - id: reuters-world
+      name: Reuters World
       type: rss
+      region: global
+      country: GLOBAL
+      domains: [geopolitics, finance, technology-companies]
+      topics: [wars-conflicts, markets, product-launches]
+      micro_topics: [strategic-competition, macroeconomics, product-launches]
+      trust_tier: 2
+      collection_method: rss
       url: https://feeds.reuters.com/Reuters/worldNews
+      feed_url: https://feeds.reuters.com/Reuters/worldNews
+      fields: [title, summary, published_at, url]
+      refresh: hourly
       enabled: true
+      priority: 1.0
+    - id: bbc-world
+      name: BBC World
+      type: rss
+      region: global
+      country: GLOBAL
+      domains: [geopolitics, finance, technology-companies]
+      topics: [wars-conflicts, markets, product-launches]
+      micro_topics: [strategic-competition, macroeconomics, product-launches]
+      trust_tier: 2
+      collection_method: rss
+      url: https://www.bbc.com/news/world
+      feed_url: https://feeds.bbci.co.uk/news/world/rss.xml
+      fields: [title, summary, published_at, url]
+      refresh: hourly
+      enabled: false
+      priority: 0.9
+    - id: nasa-news
+      name: NASA News
+      type: rss
+      region: north-america
+      country: US
+      domains: [space, research]
+      topics: [launches, missions, space-policy, engineering]
+      micro_topics: [launches, missions, space-policy, engineering]
+      trust_tier: 1
+      collection_method: rss
+      url: https://www.nasa.gov/news/
+      fields: [title, summary, published_at, url]
+      refresh: daily
+      enabled: false
+      priority: 0.9
+    - id: rbi-rss
+      name: Reserve Bank of India RSS
+      type: rss
+      region: india-south-asia
+      country: IN
+      domains: [finance, government-policy]
+      topics: [central-banks, interest-rates, regulation]
+      micro_topics: [central-banks, interest-rates, regulation]
+      trust_tier: 1
+      collection_method: rss
+      url: https://www.rbi.org.in/Scripts/rss.aspx
+      fields: [title, summary, published_at, url]
+      refresh: daily
+      enabled: false
       priority: 1.0
 email:
   enabled: true

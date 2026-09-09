@@ -8,6 +8,8 @@ ANALYSIS_FIELDS = (
     "risks", "opportunities", "actionable_insights", "uncertainties",
 )
 
+EVIDENCE_TYPES = {"fact", "official_statement", "reported_claim", "opinion", "inference", "speculation"}
+
 
 def normalized_analysis(payload: Any) -> dict[str, Any]:
     """Validate and normalize a Gemini JSON object before it enters state or output."""
@@ -32,6 +34,23 @@ def normalized_analysis(payload: Any) -> dict[str, Any]:
     if not isinstance(confidence, (int, float)):
         raise ValueError("Gemini confidence must be numeric")
     result["confidence"] = max(0.0, min(float(confidence), 1.0))
+    evidence = payload.get("evidence", [])
+    if not isinstance(evidence, list):
+        raise ValueError("Gemini evidence must be a list")
+    normalized_evidence = []
+    for entry in evidence:
+        if isinstance(entry, str):
+            entry = {"type": "fact", "text": entry}
+        if not isinstance(entry, dict) or not isinstance(entry.get("text", ""), str):
+            raise ValueError("Gemini evidence entries must be objects with text")
+        evidence_type = {"claim": "reported_claim"}.get(entry.get("type", "fact"), entry.get("type", "fact"))
+        if evidence_type not in EVIDENCE_TYPES:
+            raise ValueError(f"Unsupported evidence type: {evidence_type}")
+        normalized_evidence.append({
+            "type": evidence_type, "text": entry["text"].strip(),
+            "source_url": str(entry.get("source_url", "")).strip(),
+        })
+    result["evidence"] = [entry for entry in normalized_evidence if entry["text"]]
     return result
 
 

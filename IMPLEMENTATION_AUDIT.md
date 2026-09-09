@@ -50,16 +50,56 @@ The canonical taxonomy now defines all 21 specification domains and their topic/
 - Startup taxonomy validation rejects missing fields, duplicate enum values, invalid topic keys, and invalid thresholds.
 - No API keys were found in tracked source/config files.
 
+## Latest implementation pass
+
+- Added a runtime taxonomy catalog and multi-micro-topic classifier with match evidence.
+- Added bounded local retrieval and a dedicated `IntelligenceManager` so Gemini receives ranked micro-topic evidence instead of the full item corpus.
+- Added stream-aware theme profiles and explicit `MAJOR_UPDATE`, `UPDATE`, `MINOR_UPDATE`, `NO_MAJOR_UPDATE`, and `INSUFFICIENT_EVIDENCE` coverage statuses.
+- Added structured evidence validation, source-health records, source registry metadata, and channel-only YouTube behavior by default.
+- Added deterministic layer tests for multi-micro-topic routing, retrieval isolation, video/news profile differences, and coverage semantics.
+- Added durable `entities.json`, `events.json`, and `trends.json` state, independent/syndicated corroboration metadata, bounded AI retry statistics, and `quality.json` output validation.
+- Added structured newsletter buckets for top events, news, video/podcast intelligence, opportunities, trends, watch items, and sources.
+
+## Validation evidence
+
+- `17 passed` with the repository test suite.
+- `ruff check . --no-cache` passes with the repository's configured rule set.
+- Deterministic fixture pipeline completed for 8 source items and 53 micro-topic analyses; retrieval and coverage checks both scored 100/100.
+- Repeating the fixture run produced no duplicate processed items, confirming the existing idempotency boundary.
+- Live dry-run recorded the enabled Reuters source as `FAILED` and emitted `INSUFFICIENT_EVIDENCE` coverage instead of falsely reporting no updates. The live quality score was 60/100 because no source evidence was available.
+- Fixture dry-run quality was 86/100 because dry-run intentionally does not invent AI action recommendations; a real Gemini run must supply evidence-backed actions before the 95/100 quality gate can pass.
+
 ## Remaining Work
 
-1. Add entity alias normalization and bounded JSON persistence.
-2. Persist event/trend history across runs.
-3. Validate structured evidence types at render time and expose confidence in every newsletter section.
-4. Make syndication/conflict handling explicit in event corroboration.
-5. Add deterministic mocked end-to-end, idempotency, malformed-AI, source-failure, SMTP-failure, and HTML-security tests.
-6. Expand source registry with verified feeds only; candidate sources in the specification remain disabled until access and reliability are confirmed.
-7. Configure GitHub Actions secrets externally: YouTube, Gemini, and SMTP credentials.
+1. Execute the complete test, Ruff, dry-run, idempotency, and failure-isolation gates in a working Python environment.
+2. Validate the enabled feed at runtime and replace it if health checks report a failure; candidate sources remain disabled until access and freshness are confirmed.
+3. Configure GitHub Actions secrets externally: YouTube, Gemini, and SMTP credentials. SMTP remains environment-dependent.
 
 ## Explicitly Deferred / Environment-Dependent
 
-The specifications defer heavy analytics infrastructure and source-health monitoring. Production secrets, verified feeds, channel IDs, and SMTP credentials are environment setup, not code changes.
+The specifications defer heavy analytics infrastructure and vector databases. Embedding retrieval remains an optional future provider; the production default is deterministic local lexical retrieval. Production secrets, verified feeds, channel IDs, and SMTP credentials are environment setup, not code changes.
+
+## Acceptance Audit - 2026-09-10
+
+The authoritative runtime is now `src/main.py -> production.run -> source validation -> collectors -> normalization/lookback -> event grouping -> taxonomy classification -> MicroTopicManager -> RAGManager -> AIProvider -> evidence validation -> enrichment -> NewsletterModel -> quality gate -> reports -> SMTP (only after PASS) -> JSON archive/state`.
+
+Implemented in the final pass:
+
+- Added `MicroTopicManager` and `RAGManager` with isolated, bounded evidence packets per micro-topic.
+- Added exact theme precedence: micro-topic, topic, domain, global fallback, with distinct news/video contracts.
+- Added `AIProvider`, `GeminiProvider`, deterministic `DryRunProvider`, fenced-JSON recovery, schema normalization, retries, source citations, and prompt-injection policy.
+- Added validation for all 44 configured sources: 1 enabled and 43 explicitly disabled until validated.
+- Added configurable entity aliases and durable entity/event/trend records, including event lifecycle and corroboration fields.
+- Added configurable importance weights, explicit coverage counters and failure states, uncited-claim rejection, and SMTP suppression below the quality gate.
+- Replaced the dry-run placeholder with the real manager/provider path and made `pipeline.py` a compatibility wrapper.
+- Added acceptance tests for source validation, filtered RAG, provider recovery/security, entity types, AI failure isolation, and uncited facts.
+
+Verified results:
+
+- `pytest`: **23 passed**.
+- `ruff check . --no-cache`: **passed**.
+- Fixture: 8 discovered, 7 substantive items processed, 22 micro-topic analyses, 22 retrievals, 22 provider calls, 0 retrieval failures, 21 update rows, 201 `NO_MAJOR_UPDATE` rows, quality **100/100 PASS**.
+- Fixture rerun: 0 eligible and 0 processed, confirming idempotency.
+- Live dry-run: Reuters World returned `SOURCE_UNAVAILABLE / INVALID_FEED`; coverage was `INSUFFICIENT_EVIDENCE`, quality was **60/100 REVIEW REQUIRED**, and SMTP was skipped.
+
+External acceptance remains: a reachable enabled source, valid GitHub Actions YouTube/Gemini/SMTP secrets, and a final commit/push from an environment with write access to `.git/index`.

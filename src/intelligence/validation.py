@@ -36,3 +36,41 @@ def validate_topics(topics: list[dict[str, Any]], taxonomy: dict[str, Any]) -> N
         report_type = topic.get("report_type")
         if report_type and report_type not in taxonomy["report_types"]:
             raise ValueError(f"Invalid report type: {report_type}")
+
+
+def validate_themes(themes: list[dict[str, Any]], taxonomy: dict[str, Any]) -> None:
+    ids = [theme.get("id") for theme in themes]
+    if any(not theme_id for theme_id in ids) or len(ids) != len(set(ids)):
+        raise ValueError("Themes must have unique non-empty ids")
+    valid_domains = set(taxonomy["domains"]) | {"all"}
+    valid_reports = set(taxonomy["report_types"])
+    valid_micro_topics = {
+        micro_topic
+        for definition in taxonomy["domains"].values()
+        for micro_topic in definition.get("topics", [])
+    }
+    for theme in themes:
+        if theme.get("domain", "all") not in valid_domains:
+            raise ValueError(f"Invalid theme domain: {theme.get('domain')}")
+        report_type = theme.get("output", {}).get("report_type")
+        if report_type and report_type not in valid_reports:
+            raise ValueError(f"Invalid theme report type: {report_type}")
+        micro_topic = theme.get("micro_topic", "any")
+        if micro_topic not in {"any", "*"} and micro_topic not in valid_micro_topics:
+            raise ValueError(f"Invalid theme micro-topic: {micro_topic}")
+
+
+def validate_sources(sources: list[dict[str, Any]]) -> None:
+    required = {"id", "name", "type", "region", "country", "domains", "topics", "micro_topics", "trust_tier", "enabled", "collection_method", "fields", "refresh"}
+    ids = []
+    for source in sources:
+        missing = required - source.keys()
+        if missing:
+            raise ValueError(f"Source {source.get('name', '<unknown>')} missing: {sorted(missing)}")
+        ids.append(source["id"])
+        if source["type"] == "rss" and not (source.get("url") or source.get("feed_url")):
+            raise ValueError(f"RSS source {source['id']} needs url or feed_url")
+        if not 1 <= int(source["trust_tier"]) <= 4:
+            raise ValueError(f"Invalid trust tier for source {source['id']}")
+    if len(ids) != len(set(ids)):
+        raise ValueError("Source ids must be unique")

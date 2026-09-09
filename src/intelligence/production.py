@@ -15,9 +15,13 @@ from .emailer import send_digest
 from .events import group_events
 from .events import importance as event_importance
 from .ingestion import enriched_rss
-from .schema import merge_unique, normalized_analysis
+from .provider import DryRunProvider, GeminiProvider
 from .sources import discover_youtube
 from .enrichment import confidence_score, detect_opportunities, extract_entities, trend_signals
+from .manager import IntelligenceManager
+from .microtopics import catalog, classify_micro_topics, coverage
+from .quality import evaluate_output
+from .source_validation import validate_source_registry
 
 LOGGER = logging.getLogger(__name__)
 
@@ -48,6 +52,9 @@ class RepositoryState:
         self.news = self._read("processed_news.json", {})
         self.runs = self._read("processing_state.json", {"runs": [], "recent_items": []})
         self.failures = self._read("failed_items.json", {})
+        self.entities = self._read("entities.json", {})
+        self.events = self._read("events.json", {})
+        self.trends = self._read("trends.json", {})
 
     def _read(self, name: str, fallback: Any) -> Any:
         try:
@@ -127,6 +134,9 @@ class RepositoryState:
             ("processed_news.json", self.news),
             ("processing_state.json", self.runs),
             ("failed_items.json", self.failures),
+            ("entities.json", self.entities),
+            ("events.json", self.events),
+            ("trends.json", self.trends),
         ):
             (self.data_dir / name).write_text(
                 json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
@@ -197,57 +207,17 @@ def relevance(
     )
 
 
-class GeminiProvider:
-    def __init__(self, key: str, config: dict[str, Any], prompts: dict[str, str]) -> None:
-        from google import genai
-
-        self.client, self.config, self.prompts = genai.Client(api_key=key), config, prompts
-
-    def analyze(self, item: dict[str, Any], topic: dict[str, Any]) -> dict[str, Any]:
-        size = int(self.config.get("chunk_size", 9000))
-        overlap = int(self.config.get("chunk_overlap", 500))
-        text = item.get("text", "")
-        chunks = [
-            text[index : index + size]
-            for index in range(0, max(len(text), 1), max(1, size - overlap))
-        ][: int(self.config.get("max_chunks_per_item", 6))]
-        extracted = [
-            self._request(f"{self.prompts['chunk_extraction']}\n\nSOURCE:\n{chunk}")
-            for chunk in chunks
-        ]
-        facts = merge_unique(entry["facts"] for entry in extracted)
-        details = json.dumps(
-            {
-                "topic": topic["config"],
-                "facts": facts,
-                "source": {key: item.get(key) for key in ("title", "url", "source")},
-                "related_sources": item.get("metadata", {}).get("related_sources", []),
-            }
-        )
-        result = self._request(f"{self.prompts['topic_analysis']}\n\nINPUT:\n{details}")
-        result["facts"] = merge_unique((facts, result["facts"]))
-        return result
-
-    def _request(self, prompt: str) -> dict[str, Any]:
-        response = self.client.models.generate_content(
-            model=self.config["model"],
-            contents=prompt,
-            config={
-                "response_mime_type": "application/json",
-                "temperature": self.config.get("temperature", 0.2),
-                "max_output_tokens": self.config.get("max_output_tokens", 4096),
-            },
-        )
-        return normalized_analysis(json.loads(response.text))
-
-
-def render(root: Path, stories: list[dict[str, Any]], run_time: datetime) -> tuple[Path, Path]:
+def render(
+    root: Path, stories: list[dict[str, Any]], run_time: datetime,
+    micro_topic_coverage: list[dict[str, Any]] | None = None, source_health: dict[str, Any] | None = None,
+) -> tuple[Path, Path]:
     output = root / "output" / run_time.strftime("%Y/%m/%d/%H%M")
     output.mkdir(parents=True, exist_ok=True)
     from .newsletter import NewsletterModel
-    from .enrichment import trend_signals
 
-    newsletter = NewsletterModel.from_stories(stories, run_time.isoformat())
+    newsletter = NewsletterModel.from_stories(
+        stories, run_time.isoformat(), micro_topic_coverage, source_health
+    )
     executive = newsletter.executive_summary
     markdown = [
         "# Daily Intelligence",
@@ -256,15 +226,53 @@ def render(root: Path, stories: list[dict[str, Any]], run_time: datetime) -> tup
         "## Executive Brief",
     ]
     markdown += [
-        f"- **{story['title']}** ({story['change']}, {story['importance']:.0%})"
+        f"- **{story['title']}** ({story['change']}, {story['importance_score']:.0f}/100)"
         for story in executive
     ] or ["- No new high-value developments."]
+    markdown += ["", "## Top Events"]
+    markdown += [
+        f"- **{story['title']}**: {story.get('change', 'NEW')} | confidence {story.get('confidence_score', 0):.0f}/100"
+        for story in newsletter.top_events
+    ] or ["- No events met the high-importance threshold."]
+    sections = (
+        ("News Intelligence", newsletter.news_intelligence),
+        ("Case Studies", newsletter.case_studies),
+        ("Technical Deep Dives", newsletter.technical_deep_dives),
+        ("Executive Briefs", newsletter.executive_briefs),
+        ("Short Summaries", newsletter.short_summaries),
+        ("Flash Updates", newsletter.flash_updates),
+    )
+    for title, entries in sections:
+        if entries:
+            markdown += ["", f"## {title}"] + [f"- **{entry['title']}**: {entry.get('theme', entry.get('report_type', ''))}" for entry in entries]
+    if newsletter.video_intelligence:
+        markdown += ["", "## Video/Podcast Intelligence"] + [
+            f"- **{story['title']}**: {story.get('theme', 'video analysis')}"
+            for story in newsletter.video_intelligence
+        ]
+    if newsletter.opportunities:
+        markdown += ["", "## Opportunities"] + [
+            f"- **{opportunity.get('title', 'Opportunity')}**: {opportunity.get('recommended_action', 'Verify source details.') }"
+            for opportunity in newsletter.opportunities
+        ]
+    if newsletter.trends:
+        markdown += ["", "## Trend Signals"] + [
+            f"- {trend.get('type')}: {trend.get('key')} ({trend.get('evidence_count')} evidence items)"
+            for trend in newsletter.trends
+        ]
+    if newsletter.actions:
+        markdown += ["", "## What To Watch"] + [f"- {action}" for action in newsletter.actions]
+    if newsletter.sources:
+        markdown += ["", "## Sources"] + [
+            f"- [{source['title']}]({source['url']})" for source in newsletter.sources
+        ]
     for story in stories:
         analysis = story["analysis"]
         markdown += [
             "",
             f"## {story['title']}",
             f"{story['change']} | {', '.join(topic['name'] for topic in story['topics'])} | Importance {story['importance']:.0%}",
+            f"Micro-topic: {', '.join(topic['micro_topic'] for topic in story.get('micro_topics', []))} | Theme: {story.get('theme', 'unknown')} | Confidence: {story.get('confidence_score', 0):.0f}/100",
             f"Source: [{story['source']}]({story['url']})",
             "",
             "### Source Facts",
@@ -276,19 +284,40 @@ def render(root: Path, stories: list[dict[str, Any]], run_time: datetime) -> tup
         markdown += ["", "### Recommended Actions"] + [
             f"- {entry}" for entry in analysis["actionable_insights"]
         ]
+    if micro_topic_coverage:
+        markdown += ["", "## Micro-topic Coverage"]
+        for row in micro_topic_coverage:
+            markdown.append(
+                f"- {row['topic']} / {row['micro_topic']}: {row['status'].replace('_', ' ')} "
+                f"({row['evidence_count']} evidence items)"
+            )
+    if source_health:
+        markdown += ["", "## Source Health"]
+        markdown += [
+            f"- {value['source']}: {value['status']} ({value.get('entries', 0)} entries)"
+            for value in source_health.values()
+        ]
     body = "\n".join(markdown) + "\n"
     cards = "".join(
-        f"<tr><td style='padding:22px;border-top:1px solid #dce2e8'><span style='color:#0d6a57;font-weight:bold'>{escape(story['change'])}</span><h2 style='margin:8px 0;font-size:20px'>{escape(story['title'])}</h2><p style='color:#54616e'>{escape(', '.join(topic['name'] for topic in story['topics']))} | Importance {story['importance']:.0%}</p><p><a href='{escape(story['url'], quote=True)}'>Open source</a></p><h3>Source facts</h3><ul>{''.join(f'<li>{escape(x)}</li>' for x in story['analysis']['facts'])}</ul><h3>AI interpretation</h3><ul>{''.join(f'<li>{escape(x)}</li>' for x in story['analysis']['interpretation'])}</ul><h3>Recommended actions</h3><ul>{''.join(f'<li>{escape(x)}</li>' for x in story['analysis']['actionable_insights'])}</ul></td></tr>"
+        f"<tr><td style='padding:22px;border-top:1px solid #dce2e8'><span style='color:#0d6a57;font-weight:bold'>{escape(story['change'])}</span><h2 style='margin:8px 0;font-size:20px'>{escape(story['title'])}</h2><p style='color:#54616e'>{escape(', '.join(topic['name'] for topic in story['topics']))} | Micro-topic {escape(', '.join(topic['micro_topic'] for topic in story.get('micro_topics', [])))} | Importance {story['importance']:.0%} | Confidence {story.get('confidence_score', 0):.0f}/100</p><p><a href='{escape(story['url'], quote=True)}'>Open source</a></p><h3>Source facts</h3><ul>{''.join(f'<li>{escape(x)}</li>' for x in story['analysis']['facts'])}</ul><h3>AI interpretation</h3><ul>{''.join(f'<li>{escape(x)}</li>' for x in story['analysis']['interpretation'])}</ul><h3>Recommended actions</h3><ul>{''.join(f'<li>{escape(x)}</li>' for x in story['analysis']['actionable_insights'])}</ul></td></tr>"
         for story in stories
     )
-    html = f"<!doctype html><html><body style='margin:0;background:#eef2f5;font-family:Arial,sans-serif;color:#17212b'><table role='presentation' width='100%'><tr><td align='center' style='padding:24px'><table role='presentation' width='640' style='max-width:640px;background:#fff;border-collapse:collapse'><tr><td style='padding:28px;background:#102f43;color:#fff'><h1 style='margin:0'>Daily Intelligence</h1><p style='margin:8px 0 0'>{run_time:%d %b %Y} | {run_time:%H:%M UTC}</p></td></tr><tr><td style='padding:22px'><h2>Executive Brief</h2><ul>{''.join('<li>{}</li>'.format(escape(s['title'])) for s in executive) or '<li>No new high-value developments.</li>'}</ul></td></tr>{cards}<tr><td style='padding:18px;background:#edf1f4;color:#5d6973;font-size:12px'>Source facts and AI interpretation are intentionally separated.</td></tr></table></td></tr></table></body></html>"
+    coverage_html = "".join(
+        f"<li>{escape(row['topic'])} / {escape(row['micro_topic'])}: {escape(row['status'].replace('_', ' '))} ({row['evidence_count']})</li>"
+        for row in (micro_topic_coverage or [])
+    )
+    health_html = "".join(
+        f"<li>{escape(value['source'])}: {escape(value['status'])} ({value.get('entries', 0)} entries)</li>"
+        for value in (source_health or {}).values()
+    )
+    html = f"<!doctype html><html><body style='margin:0;background:#eef2f5;font-family:Arial,sans-serif;color:#17212b'><table role='presentation' width='100%'><tr><td align='center' style='padding:24px'><table role='presentation' width='640' style='max-width:640px;background:#fff;border-collapse:collapse'><tr><td style='padding:28px;background:#102f43;color:#fff'><h1 style='margin:0'>Daily Intelligence</h1><p style='margin:8px 0 0'>{run_time:%d %b %Y} | {run_time:%H:%M UTC}</p></td></tr><tr><td style='padding:22px'><h2>Executive Brief</h2><ul>{''.join('<li>{}</li>'.format(escape(s['title'])) for s in executive) or '<li>No new high-value developments.</li>'}</ul></td></tr>{cards}<tr><td style='padding:22px'><h2>Micro-topic Coverage</h2><ul>{coverage_html or '<li>Insufficient evidence collected.</li>'}</ul><h2>Source Health</h2><ul>{health_html or '<li>No enabled sources were checked.</li>'}</ul></td></tr><tr><td style='padding:18px;background:#edf1f4;color:#5d6973;font-size:12px'>Source facts and AI interpretation are intentionally separated.</td></tr></table></td></tr></table></body></html>"
     markdown_path, html_path = output / "digest.md", output / "digest.html"
     markdown_path.write_text(body, encoding="utf-8")
     html_path.write_text(html, encoding="utf-8")
     return markdown_path, html_path
 
 
-def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
+def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> tuple[Path, Path]:
     config = load_config(root)
     started = utc_now()
     state = RepositoryState(root / "data", config.settings.get("state", {}))
@@ -296,13 +325,39 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
     feeds = config.settings.get("news", {}).get(
         "sources", config.settings.get("news", {}).get("feeds", [])
     )
-    discovered = [
-        item.to_dict()
-        for item in enriched_rss(
-            feeds, fetch_articles=bool(config.settings.get("news", {}).get("fetch_articles", True))
-        )
-    ]
-    if os.getenv("YOUTUBE_API_KEY"):
+    source_health: dict[str, dict[str, Any]] = {}
+    source_validation = validate_source_registry(feeds) if not fixture_path else {
+        "fixture": {
+            "source": "Fixture corpus", "source_id": "fixture", "enabled": True,
+            "status": "HEALTHY", "item_count": 0, "usable_content_count": 0,
+            "relevant_content_count": 0, "trust_tier": 1,
+        }
+    }
+    if fixture_path:
+        fixture_items = json.loads(fixture_path.read_text(encoding="utf-8"))
+        discovered = []
+        for index, item in enumerate(fixture_items):
+            discovered.append({
+                "id": item.get("id", f"fixture-{index}"), "kind": item.get("kind", "news"),
+                "title": item.get("title", "Fixture item"), "url": item.get("url", "https://fixture.test/item"),
+                "text": item.get("text", ""), "published_at": item.get("published_at", ""),
+                "source": item.get("source", "Fixture"), "priority": item.get("priority", 8),
+                "metadata": {"source_id": "fixture", "source_type": "fixture", "trust_tier": 1, **item.get("metadata", {})},
+            })
+        source_health["fixture"] = {"status": "HEALTHY", "entries": len(discovered), "source": "Fixture corpus", "trust_tier": 1}
+        source_validation["fixture"].update({
+            "item_count": len(discovered), "usable_content_count": sum(bool(item.get("title") and item.get("url")) for item in discovered),
+            "relevant_content_count": len(discovered),
+        })
+    else:
+        discovered = [
+            item.to_dict()
+            for item in enriched_rss(
+                feeds, fetch_articles=bool(config.settings.get("news", {}).get("fetch_articles", True)),
+                source_health=source_health,
+            )
+        ]
+    if not fixture_path and os.getenv("YOUTUBE_API_KEY"):
         try:
             discovered += [
                 item.to_dict()
@@ -311,6 +366,7 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
                     config.topics,
                     os.environ["YOUTUBE_API_KEY"],
                     int(pipe.get("max_keyword_results_per_topic", 0)),
+                    bool(pipe.get("allow_global_youtube_discovery", False)),
                 )
             ]
         except Exception as error:  # A source/API failure must not discard RSS intelligence.
@@ -337,58 +393,71 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
         and state.retry_due(item["id"])
     ]
     provider = (
-        None
+        DryRunProvider()
         if dry_run
         else GeminiProvider(os.environ["GEMINI_API_KEY"], config.settings["gemini"], config.prompts)
     )
-    stories, compact = [], []
+    manager = IntelligenceManager(provider, config.themes, config.settings.get("gemini", {}))
+    micro_topic_catalog = catalog(config.taxonomy, config.topics)
+    stories, compact, coverage_assignments = [], [], []
     for item in sorted(eligible, key=lambda entry: entry.get("published_at", ""), reverse=True)[
         : int(pipe["max_items_per_run"])
     ]:
         topics = topic_matches(item, config.topics)
+        micro_topics = classify_micro_topics(item, micro_topic_catalog)
+        for micro_topic in micro_topics:
+            if not any(topic["key"] == micro_topic["topic_key"] for topic in topics):
+                topics.append({
+                    "key": micro_topic["topic_key"], "name": micro_topic["topic"],
+                    "score": micro_topic["confidence"], "config": {"priority": micro_topic["priority"]},
+                    "matches": micro_topic["signals"],
+                })
         importance = relevance(item, topics, config.settings["scoring"])
-        if not topics or importance < float(pipe.get("min_relevance_score", 0.35)):
+        if not topics or not micro_topics or importance < float(pipe.get("min_relevance_score", 0.35)):
             state.success(item, topics, importance, "LOW_VALUE")
             continue
         try:
-            analysis = (
-                {
-                    "facts": ["Dry-run fixture analysis."],
-                    "important_numbers": [],
-                    "claims": [],
-                    "interpretation": [],
-                    "changes": [],
-                    "implications": [],
-                    "risks": [],
-                    "opportunities": [],
-                    "actionable_insights": [],
-                    "routine": None,
-                    "uncertainties": [],
-                    "confidence": 0.0,
-                    "evidence": [],
-                }
-                if dry_run
-                else provider.analyze(item, {**topics[0], "theme": next((theme for theme in config.themes if theme.get("topic") == topics[0]["name"]), {})})
-            )
-            entities = extract_entities(f"{item.get('title', '')}\n{item.get('text', '')}")
-            opportunities = detect_opportunities(item, analysis)
+            results = manager.analyze(item, micro_topics)
+            for micro_topic in micro_topics:
+                matched_result = next(
+                    (result for result in results if result["classification"]["micro_topic"] == micro_topic["micro_topic"]),
+                    None,
+                )
+                coverage_assignments.append({
+                    **micro_topic,
+                    "importance_score": event_importance(importance, item.get("metadata", {}).get("corroboration", {}).get("source_count", 1), weights=config.settings["scoring"].get("importance_weights")),
+                    "evidence_available": bool(matched_result and matched_result.get("evidence")),
+                    "candidate_count": 1,
+                    "relevant_count": 1,
+                    "event_count": 1,
+                    "publishable_count": int(bool(matched_result and matched_result.get("evidence") and matched_result.get("analysis_status") == "OK")),
+                    "retrieval_status": (matched_result or {}).get("retrieval", {}).get("status", "EMPTY_RETRIEVAL"),
+                    "analysis_status": (matched_result or {}).get("analysis_status", "ANALYSIS_FAILURE"),
+                })
+            if not results:
+                state.success(item, topics, importance, "LOW_EVIDENCE")
+                continue
+            entities = extract_entities(f"{item.get('title', '')}\n{item.get('text', '')}", config.entities)
             corroboration = item.get("metadata", {}).get("corroboration", {}).get("source_count", 1)
             change = state.change_status(item)
-            story = {
-                **item,
-                "topics": topics,
-                "importance": importance,
-                "importance_score": event_importance(
-                    importance,
-                    item.get("metadata", {}).get("corroboration", {}).get("source_count", 1),
-                ),
-                "confidence_score": confidence_score(item, analysis, corroboration),
-                "entities": entities,
-                "opportunities": opportunities,
-                "change": change,
-                "analysis": analysis,
-            }
-            stories.append(story)
+            for result in results:
+                analysis = result["analysis"]
+                if not analysis or not result.get("evidence"):
+                    continue
+                story = {
+                    **item, "topics": topics, "micro_topics": [result["classification"]],
+                    "theme": result["theme"].get("id", "domain-fallback"),
+                    "report_type": result["theme"].get("output", {}).get("report_type", "short_summary"),
+                    "retrieved_evidence": result["evidence"], "importance": importance,
+                    "importance_score": event_importance(importance, corroboration, weights=config.settings["scoring"].get("importance_weights")),
+                    "confidence_score": round(confidence_score(item, analysis, corroboration) * 100),
+                    "entities": entities, "opportunities": detect_opportunities(item, analysis),
+                    "region": item.get("metadata", {}).get("region", "global"),
+                    "country": item.get("metadata", {}).get("country", "GLOBAL"),
+                    "content_type": item.get("metadata", {}).get("content_type", "news"),
+                    "change": change, "analysis": analysis,
+                }
+                stories.append(story)
             compact.append(
                 {
                     "id": item["id"],
@@ -402,26 +471,105 @@ def run(root: Path, dry_run: bool = False) -> tuple[Path, Path]:
         except Exception as error:  # Per-item fault isolation is the pipeline's retry boundary.
             state.failure(item, error)
             LOGGER.warning("failed item %s: %s", item["id"], type(error).__name__)
-    markdown, html = render(root, stories, started)
+    source_summary = {
+        "healthy_sources": sum(1 for value in source_health.values() if value["status"] == "HEALTHY"),
+        "checked_sources": len(source_health),
+    }
+    micro_topic_coverage = coverage(micro_topic_catalog, coverage_assignments, source_summary)
+    markdown, html = render(root, stories, started, micro_topic_coverage, source_health)
+    quality = evaluate_output(
+        stories,
+        markdown.read_text(encoding="utf-8"),
+        html.read_text(encoding="utf-8"),
+        micro_topic_coverage,
+        source_health,
+    )
+    (markdown.parent / "quality.json").write_text(
+        json.dumps(quality, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    (markdown.parent / "source_validation.json").write_text(
+        json.dumps(source_validation, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    markdown.write_text(
+        markdown.read_text(encoding="utf-8")
+        + "\n## Quality Gate\n"
+        + f"- Overall deterministic quality score: {quality['scores']['overall']}/100\n"
+        + f"- Gate status: {'PASS' if quality['passed'] else 'REVIEW REQUIRED'}\n",
+        encoding="utf-8",
+    )
+    html.write_text(
+        html.read_text(encoding="utf-8").replace(
+            "</body>",
+            f"<section><h2>Quality Gate</h2><p>Overall deterministic quality score: {quality['scores']['overall']}/100. Status: {'PASS' if quality['passed'] else 'REVIEW REQUIRED'}.</p></section></body>",
+        ),
+        encoding="utf-8",
+    )
+    for group in event_groups:
+        first = group["items"][0]
+        event_id = group["event_id"]
+        previous = state.events.get(event_id, {})
+        event_stories = [story for story in stories if story.get("metadata", {}).get("event_id") == event_id]
+        state.events[event_id] = {
+            "event_id": event_id,
+            "first_seen": previous.get("first_seen", started.isoformat()),
+            "last_seen": utc_now().isoformat(),
+            "status": "UPDATED" if previous else "NEW",
+            "title": first.get("title", ""),
+            "entities": group.get("entities", []),
+            "domains": sorted({topic.get("domain", "") for story in event_stories for topic in story.get("micro_topics", [])}),
+            "topics": sorted({topic.get("key", topic.get("name", "")) for story in event_stories for topic in story.get("topics", [])}),
+            "micro_topics": sorted({topic.get("micro_topic", "") for story in event_stories for topic in story.get("micro_topics", [])}),
+            "sources": group.get("related_sources", []),
+            "corroboration": group.get("corroboration", {}),
+            "importance": max((story.get("importance_score", 0) for story in event_stories), default=0),
+            "confidence": max((story.get("confidence_score", 0) for story in event_stories), default=0),
+            "evidence": [entry for story in event_stories for entry in story.get("analysis", {}).get("evidence", [])],
+            "related_events": previous.get("related_events", []),
+        }
+    for story in stories:
+        for entity in story.get("entities", []):
+            state.entities.setdefault(entity["name"].lower(), {"name": entity["name"], "type": entity["type"], "events": [], "first_seen": started.isoformat()})
+            state.entities[entity["name"].lower()]["last_seen"] = utc_now().isoformat()
+            event_id = story.get("metadata", {}).get("event_id", story["id"])
+            if event_id not in state.entities[entity["name"].lower()]["events"]:
+                state.entities[entity["name"].lower()]["events"].append(event_id)
+    for trend in trend_signals(stories):
+        state.trends[trend["type"] + ":" + trend["key"]] = {**trend, "updated_at": utc_now().isoformat()}
     state.finish(
         {
             "started": started.isoformat(),
             "completed": utc_now().isoformat(),
             "discovered": len(discovered),
             "eligible": len(eligible),
-            "processed": len(stories),
+            "processed": len(compact),
+            "micro_topic_analyses": len(stories),
             "failed": sum(1 for item in eligible if item["id"] in state.failures),
+            "source_health": source_health,
+            "micro_topic_coverage": micro_topic_coverage,
+            "quality": quality,
+            "manager_stats": manager.stats,
             "report": str(markdown.relative_to(root)),
         },
         compact,
     )
-    if config.settings.get("email", {}).get("enabled") and not dry_run:
+    delivery = {"status": "SKIPPED_DRY_RUN" if dry_run else "DISABLED", "updated_at": utc_now().isoformat()}
+    (root / "data" / "source_validation.json").write_text(
+        json.dumps(source_validation, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    if config.settings.get("email", {}).get("enabled") and not dry_run and quality["passed"]:
         try:
             send_digest(
                 html,
                 markdown,
                 f"{config.settings['email'].get('subject_prefix', 'Daily Intelligence')} - {started:%d %b %Y %H:%M}",
             )
+            delivery = {"status": "SENT", "updated_at": utc_now().isoformat()}
         except Exception as error:  # Delivery failure is recorded by logs after report/state persistence.
             LOGGER.warning("SMTP delivery failed: %s", type(error).__name__)
+            delivery = {"status": "FAILED", "error_type": type(error).__name__, "updated_at": utc_now().isoformat()}
+    elif not dry_run and not quality["passed"]:
+        delivery = {"status": "QUALITY_REVIEW_REQUIRED", "updated_at": utc_now().isoformat()}
+    (root / "data" / "delivery_state.json").write_text(
+        json.dumps(delivery, indent=2) + "\n", encoding="utf-8"
+    )
     return markdown, html
