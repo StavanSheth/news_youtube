@@ -28,9 +28,7 @@ def relevance_score(item, matches: list[dict], scoring: dict) -> float:
     recency = 1.0
     if item.published_at:
         try:
-            age = (
-                datetime.now(UTC) - datetime.fromisoformat(item.published_at.replace("Z", "+00:00"))
-            ).days
+            age = (datetime.now(UTC) - datetime.fromisoformat(item.published_at)).days
             recency = max(0.0, 1 - age / 14)
         except ValueError:
             pass
