@@ -23,6 +23,7 @@ This audit covers the Phase 1 foundation and contract-alignment scope from the S
 - `ruff check . --no-cache`: passed.
 - Deterministic fixture run in a fresh writable copy: passed with quality score 100, 8 eligible items, 7 processed fixture items, and all 8 publication timestamps classified as valid.
 - Source validation applies its configured timeout to the default HTTP fetch; injected parsers remain available for deterministic tests.
+- GitHub Actions run `34443452936` independently verified commit `dc04901` on `main`: success, all jobs green, 22 seconds. The run exposed only a non-failing Node.js action-runtime deprecation warning; the workflow now uses `actions/checkout@v5` and `actions/setup-python@v6`.
 - A repository-local `compileall` attempt was blocked by existing read-only `__pycache__` files; syntax is covered by pytest imports and an in-memory compile validation.
 - No type-checker is configured in the repository, so no type-check command was available to run.
 
