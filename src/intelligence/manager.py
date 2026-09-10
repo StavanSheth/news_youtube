@@ -9,9 +9,9 @@ from .themes import analysis_profile, select_theme
 class MicroTopicManager:
     """AI-last orchestrator: one bounded request per relevant micro-topic."""
 
-    def __init__(self, provider: Any, themes: list[dict[str, Any]], settings: dict[str, Any]) -> None:
+    def __init__(self, provider: Any, themes: list[dict[str, Any]], settings: dict[str, Any], retriever: Any | None = None) -> None:
         self.provider, self.themes, self.settings = provider, themes, settings
-        self.rag = RAGManager(settings)
+        self.rag = retriever or RAGManager(settings)
         self.stats = {"micro_topic_analyses": 0, "retrieval_calls": 0, "ai_calls": 0, "retries": 0, "retrieval": self.rag.metrics}
 
     def analyze(self, item: dict[str, Any], classifications: list[dict[str, Any]]) -> list[dict[str, Any]]:

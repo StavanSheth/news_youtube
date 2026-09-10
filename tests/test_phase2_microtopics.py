@@ -95,3 +95,38 @@ def test_coverage_never_claims_no_major_update_for_unchecked_microtopic():
     entry = {"domain": "finance", "topic": "Finance", "micro_topic": "interest-rates"}
     assert coverage([entry], [], {"healthy_sources": 1})[0]["status"] == "INSUFFICIENT_EVIDENCE"
     assert coverage([entry], [], {"healthy_sources": 1, "evaluated_micro_topics": ["finance:interest-rates"]})[0]["status"] == "NO_RELEVANT_CONTENT"
+
+
+def test_coverage_uses_canonical_update_statuses_and_real_counts():
+    entry = {"domain": "finance", "topic": "Finance", "micro_topic": "interest-rates"}
+    row = coverage([entry], [{"domain": "finance", "micro_topic": "interest-rates", "importance_score": 50, "candidate_count": 3, "relevant_count": 2, "event_count": 1, "publishable_count": 1}], {"healthy_sources": 1, "evaluated": True})[0]
+    assert row["status"] == "MINOR_UPDATE"
+    assert row["candidate_count"] == 3
+    assert row["relevant_count"] == 2
+    assert row["event_count"] == 1
+
+
+def test_manager_keeps_queries_and_contexts_isolated_per_microtopic():
+    class Retriever:
+        def __init__(self):
+            self.metrics = {}
+            self.calls = []
+
+        def retrieve(self, item, classification, theme, event_context=None):
+            self.calls.append(classification["micro_topic"])
+            return {"micro_topic": classification["micro_topic"], "query": classification["micro_topic"], "chunks": [{"text": classification["micro_topic"], "metadata": {}}], "status": "OK"}
+
+    class Provider:
+        def __init__(self):
+            self.contexts = []
+
+        def analyze_micro_topic(self, item, profile, evidence):
+            self.contexts.append((profile["micro_topic"], [chunk["text"] for chunk in evidence]))
+            return {"facts": [profile["micro_topic"]], "evidence": [{"type": "fact", "text": profile["micro_topic"]}]}
+
+    retriever, provider = Retriever(), Provider()
+    manager = __import__("intelligence.manager", fromlist=["MicroTopicManager"]).MicroTopicManager(provider, [{"id": "domain-fallback", "domain": "all", "micro_topic": "any", "questions": ["what_changed"]}], {"max_retrieved_context_chars": 100}, retriever)
+    results = manager.analyze({"id": "x", "kind": "news", "title": "isolated", "text": "source"}, [{"domain": "a", "topic": "A", "micro_topic": "m1"}, {"domain": "b", "topic": "B", "micro_topic": "m2"}])
+    assert retriever.calls == ["m1", "m2"]
+    assert provider.contexts == [("m1", ["m1"]), ("m2", ["m2"])]
+    assert [result["retrieval"]["query"] for result in results] == ["m1", "m2"]

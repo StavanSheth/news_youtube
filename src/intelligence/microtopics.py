@@ -132,14 +132,14 @@ def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], s
             status = IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
         elif evidence:
             maximum = max(item.get("importance_score", 0) for item in evidence)
-            status = IntelligenceStatus.MAJOR_UPDATE.value if maximum >= 75 else IntelligenceStatus.UPDATE.value if maximum >= 45 else IntelligenceStatus.MINOR_UPDATE.value
+            status = IntelligenceStatus.MAJOR_UPDATE.value if maximum >= 75 else IntelligenceStatus.MINOR_UPDATE.value
         elif checked and healthy:
             status = IntelligenceStatus.NO_RELEVANT_CONTENT.value
         else:
             status = IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
-        candidate_count = sum(int(item.get("candidate_count", 1)) for item in evidence)
-        relevant_count = sum(int(item.get("relevant_count", 1)) for item in evidence)
-        event_count = sum(int(item.get("event_count", 1)) for item in evidence)
+        candidate_count = sum(int(item.get("candidate_count", 0)) for item in evidence)
+        relevant_count = sum(int(item.get("relevant_count", 0)) for item in evidence)
+        event_count = sum(int(item.get("event_count", 0)) for item in evidence)
         publishable_count = sum(int(item.get("publishable_count", 0)) for item in evidence)
         rows.append({
             "domain": entry["domain"], "topic": entry["topic"], "micro_topic": entry["micro_topic"],
