@@ -4,7 +4,8 @@ import json
 from typing import Any, Protocol
 
 from .schema import normalized_analysis
-from .identity import make_content_id, make_evidence_id, make_source_id
+from .contracts import EvidenceType, provenance_from_mapping
+from .identity import make_content_id, make_source_id
 
 
 SOURCE_DATA_POLICY = (
@@ -81,9 +82,12 @@ class GeminiProvider:
         )
         for entry in result["evidence"]:
             entry["source_url"] = entry.get("source_url") or default_url
-            entry["evidence_id"] = make_evidence_id(content_id, entry["type"], entry["text"], entry["source_url"])
-            entry["content_id"] = content_id
-            entry["source_id"] = source_id
+            provenance = provenance_from_mapping(
+                {**item, "url": entry["source_url"], "metadata": {**item.get("metadata", {}), "content_id": content_id, "source_id": source_id}},
+                EvidenceType.OTHER,
+                entry["text"],
+            )
+            entry.update({"provenance": provenance.to_dict(), "evidence_id": provenance.evidence_id, "content_id": content_id, "source_id": source_id})
         return result
 
 
@@ -125,7 +129,10 @@ class DryRunProvider:
             source_id, item.get("url", ""), item.get("title", ""), item.get("published_at", ""), item.get("text", "")
         )
         for entry in result["evidence"]:
-            entry["evidence_id"] = make_evidence_id(content_id, entry["type"], entry["text"], entry["source_url"])
-            entry["content_id"] = content_id
-            entry["source_id"] = source_id
+            provenance = provenance_from_mapping(
+                {**item, "metadata": {**item.get("metadata", {}), "content_id": content_id, "source_id": source_id}},
+                EvidenceType.OTHER,
+                entry["text"],
+            )
+            entry.update({"provenance": provenance.to_dict(), "evidence_id": provenance.evidence_id, "content_id": content_id, "source_id": source_id})
         return result

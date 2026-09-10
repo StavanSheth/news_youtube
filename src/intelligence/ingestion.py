@@ -11,6 +11,7 @@ import requests
 from youtube_transcript_api import YouTubeTranscriptApi
 
 from .models import SourceItem
+from .statuses import SourceStatus
 
 
 def clean_html(value: str) -> str:
@@ -98,14 +99,14 @@ def enriched_rss(
             if getattr(parsed, "bozo", False) and not parsed.entries:
                 raise ValueError(type(getattr(parsed, "bozo_exception", None)).__name__)
             health[source_id] = {
-                "status": "HEALTHY" if parsed.entries else "EMPTY",
+                "status": (SourceStatus.HEALTHY if parsed.entries else SourceStatus.EMPTY).value,
                 "entries": len(parsed.entries),
                 "source": source.get("name", source_id),
                 "trust_tier": source.get("trust_tier", 4),
             }
         except Exception as error:
             health[source_id] = {
-                "status": "FAILED", "entries": 0, "source": source.get("name", source_id),
+                "status": SourceStatus.FAILED.value, "entries": 0, "source": source.get("name", source_id),
                 "trust_tier": source.get("trust_tier", 4), "error": type(error).__name__,
             }
             continue

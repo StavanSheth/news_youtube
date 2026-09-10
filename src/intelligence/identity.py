@@ -49,7 +49,13 @@ def _digest(prefix: str, payload: object) -> str:
 
 
 def make_source_id(source_key: str) -> str:
-    return f"source-{_slug(source_key)}"
+    normalized = normalize_text(source_key)
+    if re.fullmatch(r"source-[a-z0-9-]+-[0-9a-f]{12}", normalized):
+        return normalized
+    # Keep the readable slug, but retain a digest of the normalized key so
+    # punctuation variants cannot collapse into the same source identity.
+    suffix = hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:12]
+    return f"source-{_slug(source_key)}-{suffix}"
 
 
 def make_content_id(source_id: str, url: str = "", title: str = "", published_at: str = "", text: str = "") -> str:

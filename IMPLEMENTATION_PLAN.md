@@ -48,9 +48,9 @@ The production path now executes the missing intelligence stages in this order:
 
 The completion gate is intentionally external-state aware: an unavailable source or SMTP provider keeps the quality gate open and is recorded as a source/delivery failure. The code and deterministic fixture path are validated independently of live credentials and feeds.
 
-## Set E Phase 1 foundation status
+## Set E Phase 1.1 closure status
 
-The Set E Phase 1 foundation is implemented in `src/intelligence/identity.py`, `contracts.py`, `statuses.py`, and `persistence.py`. `production.py` now creates the edition/run context, applies the edition cutoff, persists version contracts, and writes run-scoped output. `pipeline.py` and `ai.py` remain compatibility adapters around the authoritative production/provider modules. See `PHASE1_AUDIT.md` for the requirement-by-requirement audit and validation results. Later Set E phases remain intentionally separate.
+The Set E Phase 1 foundation and closure fixes are implemented in `src/intelligence/identity.py`, `contracts.py`, `statuses.py`, and `persistence.py`. `SourceItem`, normalized mappings, retrieval evidence, and provider output now carry the timestamp/provenance contracts; `production.py` creates the edition/run context, rejects timestamp-unsafe items, persists version contracts, and writes run-scoped output. `pipeline.py` and `ai.py` remain compatibility adapters around the authoritative production/provider modules. See `PHASE1_AUDIT.md` for the requirement-by-requirement audit and validation results. Later Set E phases remain intentionally separate.
 
 Retrieval is intentionally local and deterministic: semantic chunks retain event/source metadata and a lexical TF-IDF approximation selects top-k evidence per micro-topic. No vector database is required. Global YouTube search is disabled by default; only enabled channel IDs are collected unless the explicit opt-in setting is changed.
 

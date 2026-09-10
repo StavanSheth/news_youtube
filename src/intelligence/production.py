@@ -23,10 +23,10 @@ from .manager import IntelligenceManager
 from .microtopics import catalog, classify_micro_topics, coverage
 from .quality import evaluate_output
 from .source_validation import validate_source_registry
-from .contracts import EditionType, RunContext, build_edition_context
+from .contracts import EditionType, RunContext, TimestampStatus, build_edition_context, source_timestamps_from_mapping
 from .identity import make_content_id, make_source_id
 from .persistence import PersistencePaths
-from .statuses import DeliveryStatus
+from .statuses import DeliveryStatus, SourceStatus
 from zoneinfo import ZoneInfo
 
 LOGGER = logging.getLogger(__name__)
@@ -42,6 +42,15 @@ def parse_time(value: str) -> datetime | None:
         return parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
     except (TypeError, ValueError):
         return None
+
+
+def eligible_for_edition(item: dict[str, Any], lookback_floor: datetime, publication_cutoff: datetime) -> bool:
+    timestamps = source_timestamps_from_mapping(item)
+    return bool(
+        timestamps.publication_status == TimestampStatus.VALID
+        and timestamps.published_at
+        and lookback_floor <= timestamps.published_at <= publication_cutoff
+    )
 
 
 def edition_context_for(settings: dict[str, Any], started_at: datetime, versions: Any) -> tuple[Any, RunContext]:
@@ -69,8 +78,19 @@ def content_hash(item: dict[str, Any]) -> str:
 class RepositoryState:
     """Compact, versioned repository-file state with retry and retention controls."""
 
-    def __init__(self, data_dir: Path, settings: dict[str, Any]) -> None:
-        self.data_dir, self.settings = data_dir, settings
+    def __init__(self, paths: PersistencePaths | Path, settings: dict[str, Any]) -> None:
+        self.paths = paths if isinstance(paths, PersistencePaths) else None
+        self.data_dir, self.settings = (paths.data if self.paths else paths), settings
+        self.videos = self._read("processed_videos.json", {})
+        self.news = self._read("processed_news.json", {})
+        self.runs = self._read("processing_state.json", {"runs": [], "recent_items": []})
+        self.failures = self._read("failed_items.json", {})
+        self.entities = self._read("entities.json", {})
+        self.events = self._read("events.json", {})
+        self.trends = self._read("trends.json", {})
+
+    def _file(self, name: str) -> Path:
+        return self.paths.data_file(name) if self.paths else self.data_dir / name
         self.videos = self._read("processed_videos.json", {})
         self.news = self._read("processed_news.json", {})
         self.runs = self._read("processing_state.json", {"runs": [], "recent_items": []})
@@ -81,7 +101,7 @@ class RepositoryState:
 
     def _read(self, name: str, fallback: Any) -> Any:
         try:
-            return json.loads((self.data_dir / name).read_text(encoding="utf-8"))
+            return json.loads(self._file(name).read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             return fallback
 
@@ -161,7 +181,7 @@ class RepositoryState:
             ("events.json", self.events),
             ("trends.json", self.trends),
         ):
-            (self.data_dir / name).write_text(
+            self._file(name).write_text(
                 json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
             )
 
@@ -349,8 +369,9 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
     config = load_config(root)
     started = utc_now()
     paths = PersistencePaths.for_root(root)
+    paths.ensure()
     edition_context, run_context = edition_context_for(config.settings, started, config.versions)
-    state = RepositoryState(paths.data, config.settings.get("state", {}))
+    state = RepositoryState(paths, config.settings.get("state", {}))
     pipe = config.settings["pipeline"]
     feeds = config.settings.get("news", {}).get(
         "sources", config.settings.get("news", {}).get("feeds", [])
@@ -374,7 +395,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
                 "source": item.get("source", "Fixture"), "priority": item.get("priority", 8),
                 "metadata": {"source_id": "fixture", "source_type": "fixture", "trust_tier": 1, "retrieved_at": started.isoformat(), **item.get("metadata", {})},
             })
-        source_health["fixture"] = {"status": "HEALTHY", "entries": len(discovered), "source": "Fixture corpus", "trust_tier": 1}
+        source_health["fixture"] = {"status": SourceStatus.HEALTHY.value, "entries": len(discovered), "source": "Fixture corpus", "trust_tier": 1}
         source_validation["fixture"].update({
             "item_count": len(discovered), "usable_content_count": sum(bool(item.get("title") and item.get("url")) for item in discovered),
             "relevant_content_count": len(discovered),
@@ -411,9 +432,12 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         }}
         for group in event_groups
     ]
+    timestamp_status_counts: dict[str, int] = {}
     for item in discovered:
         metadata = item.setdefault("metadata", {})
-        metadata.setdefault("source_id", make_source_id(item.get("source", "unknown")))
+        source_key = metadata.get("source_key") or metadata.get("source_id") or item.get("source", "unknown")
+        metadata["source_key"] = source_key
+        metadata["source_id"] = make_source_id(source_key)
         metadata.setdefault(
             "content_id",
             make_content_id(
@@ -425,15 +449,21 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
             ),
         )
         metadata.setdefault("retrieved_at", started.isoformat())
+        timestamps = source_timestamps_from_mapping(item, started)
+        metadata["timestamp_status"] = timestamps.publication_status.value
+        timestamp_status_counts[timestamps.publication_status.value] = timestamp_status_counts.get(timestamps.publication_status.value, 0) + 1
+        if timestamps.published_at:
+            item["published_at"] = timestamps.published_at.isoformat()
+        if timestamps.updated_at:
+            metadata["updated_at"] = timestamps.updated_at.isoformat()
+        if timestamps.retrieved_at:
+            metadata["retrieved_at"] = timestamps.retrieved_at.isoformat()
     lookback_floor = edition_context.publication_cutoff_utc - timedelta(days=int(pipe.get("lookback_days", 7)))
     publication_cutoff = edition_context.publication_cutoff_utc
     eligible = [
         item
         for item in discovered
-        if (
-            not parse_time(item.get("published_at", ""))
-            or lookback_floor <= parse_time(item["published_at"]) <= publication_cutoff
-        )
+        if eligible_for_edition(item, lookback_floor, publication_cutoff)
         and not state.seen(item)
         and state.retry_due(item["id"])
     ]
@@ -595,6 +625,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
             "publication_cutoff_local": edition_context.publication_cutoff_local.isoformat(),
             "publication_cutoff_utc": edition_context.publication_cutoff_utc.isoformat(),
             "versions": config.versions.to_dict(),
+            "timestamp_status_counts": timestamp_status_counts,
             "discovered": len(discovered),
             "eligible": len(eligible),
             "processed": len(compact),
@@ -608,7 +639,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         },
         compact,
     )
-    delivery = {"status": "SKIPPED_DRY_RUN" if dry_run else "DISABLED", "updated_at": utc_now().isoformat()}
+    delivery = {"status": (DeliveryStatus.SKIPPED_DRY_RUN if dry_run else DeliveryStatus.DISABLED).value, "updated_at": utc_now().isoformat()}
     paths.data_file("source_validation.json").write_text(
         json.dumps(source_validation, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
@@ -624,7 +655,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
             LOGGER.warning("SMTP delivery failed: %s", type(error).__name__)
             delivery = {"status": DeliveryStatus.DELIVERY_FAILED.value, "error_type": type(error).__name__, "updated_at": utc_now().isoformat()}
     elif not dry_run and not quality["passed"]:
-        delivery = {"status": "QUALITY_REVIEW_REQUIRED", "updated_at": utc_now().isoformat()}
+        delivery = {"status": DeliveryStatus.QUALITY_REVIEW_REQUIRED.value, "updated_at": utc_now().isoformat()}
     paths.data_file("delivery_state.json").write_text(
         json.dumps(delivery, indent=2) + "\n", encoding="utf-8"
     )

@@ -11,9 +11,12 @@ from intelligence.contracts import (
     EvidenceType,
     Provenance,
     SourceTimestamps,
+    TimestampStatus,
     VersionContract,
     RunContext,
     build_edition_context,
+    provenance_from_mapping,
+    source_timestamps_from_mapping,
 )
 from intelligence.identity import (
     make_content_id,
@@ -26,6 +29,8 @@ from intelligence.identity import (
 )
 from intelligence.persistence import PersistencePaths
 from intelligence import pipeline
+from intelligence.production import eligible_for_edition
+from intelligence.models import SourceItem
 from intelligence.statuses import IntelligenceStatus, PipelineStage
 
 
@@ -105,6 +110,57 @@ def test_versions_and_persistence_paths_are_canonical():
 def test_shared_status_contract_contains_set_e_vocabulary():
     assert IntelligenceStatus.NO_MAJOR_UPDATE.value == "NO_MAJOR_UPDATE"
     assert IntelligenceStatus.INSUFFICIENT_EVIDENCE.value == "INSUFFICIENT_EVIDENCE"
+
+
+def test_source_identity_and_run_identity_have_distinct_contracts():
+    assert make_source_id("Source/A") != make_source_id("Source A")
+    canonical_source = make_source_id("Source A")
+    assert make_source_id(canonical_source) == canonical_source
+    edition = build_edition_context(date(2026, 9, 10), EditionType.NIGHT, "Asia/Kolkata", time(23, 59, 59), _versions())
+    first = RunContext.create(edition, datetime(2026, 9, 10, 12, tzinfo=UTC))
+    second = RunContext.create(edition, datetime(2026, 9, 10, 12, 1, tzinfo=UTC))
+    assert first.edition_key == second.edition_key == edition.edition_key
+    assert first.run_id != second.run_id
+
+
+def test_timestamp_states_and_edition_eligibility_are_explicit():
+    floor = datetime(2026, 9, 1, tzinfo=UTC)
+    cutoff = datetime(2026, 9, 10, 18, 29, 59, tzinfo=UTC)
+    valid = {"published_at": "2026-09-10T10:00:00+00:00", "metadata": {}}
+    missing = {"published_at": "", "metadata": {}}
+    malformed = {"published_at": "not-a-timestamp", "metadata": {}}
+    future = {"published_at": "2026-09-11T10:00:00+00:00", "metadata": {}}
+    assert source_timestamps_from_mapping(valid).publication_status == TimestampStatus.VALID
+    assert source_timestamps_from_mapping(missing).publication_status == TimestampStatus.MISSING
+    assert source_timestamps_from_mapping(malformed).publication_status == TimestampStatus.INVALID
+    assert eligible_for_edition(valid, floor, cutoff)
+    assert not eligible_for_edition(missing, floor, cutoff)
+    assert not eligible_for_edition(malformed, floor, cutoff)
+    assert not eligible_for_edition(future, floor, cutoff)
+
+
+def test_source_item_and_evidence_carry_validated_provenance():
+    item = SourceItem(
+        "item-1", "news", "A story", "https://example.test/story", "A source fact",
+        published_at="2026-09-10T10:00:00+00:00",
+        metadata={"retrieved_at": "2026-09-10T10:01:00+00:00", "trust_tier": 1},
+    )
+    payload = item.to_dict()
+    assert item.timestamps.publication_status == TimestampStatus.VALID
+    assert payload["provenance"]["content_id"] == item.metadata["content_id"]
+    provenance = provenance_from_mapping(payload, "article", "A source fact")
+    assert provenance.content_id == item.metadata["content_id"]
+    assert provenance.source_id == item.metadata["source_id"]
+    assert provenance.evidence_id
+
+
+def test_edition_validation_and_logical_persistence_areas():
+    with pytest.raises(Exception):
+        build_edition_context(date(2026, 9, 10), "NIGHT", "Not/A_Timezone", time(23), _versions())
+    paths = PersistencePaths.for_root(ROOT)
+    assert {paths.logical_dir(name).name for name in ("raw", "normalized", "rag", "events", "entities", "state", "runs")} == {
+        "raw", "normalized", "rag", "events", "entities", "state", "runs"
+    }
 
 
 def test_legacy_pipeline_entry_point_delegates_to_authoritative_runner(monkeypatch, tmp_path):

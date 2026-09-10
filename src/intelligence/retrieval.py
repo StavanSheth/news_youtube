@@ -7,7 +7,8 @@ from collections import Counter
 from datetime import UTC, datetime
 from typing import Any
 
-from .identity import make_content_id, make_evidence_id, make_source_id
+from .contracts import EvidenceType, provenance_from_mapping
+from .identity import make_content_id, make_source_id
 
 
 def _terms(value: str) -> list[str]:
@@ -25,8 +26,17 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
     )
     evidence_type = "transcript" if item.get("kind") == "youtube" else "article"
     retrieved_at = item.get("metadata", {}).get("retrieved_at") or datetime.now(UTC).isoformat()
-    return [
-        {
+    provenance_type = EvidenceType.TRANSCRIPT if item.get("kind") == "youtube" else EvidenceType.ARTICLE
+    result = []
+    for index, chunk in enumerate(chunks):
+        provenance = None
+        if item.get("url", "").startswith(("http://", "https://")):
+            provenance = provenance_from_mapping(
+                {**item, "metadata": {**item.get("metadata", {}), "content_id": content_id, "source_id": source_id, "retrieved_at": retrieved_at}},
+                provenance_type,
+                chunk,
+            ).to_dict()
+        result.append({
             "id": f"{content_id}:{index}",
             "text": chunk,
             "metadata": {
@@ -36,7 +46,8 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
             | {
                 "source_id": source_id,
                 "content_id": content_id,
-                "evidence_id": make_evidence_id(content_id, evidence_type, chunk, item.get("url", "")),
+                "provenance": provenance,
+                "provenance_status": "VALID" if provenance else "MISSING_SOURCE_URL",
                 "evidence_type": evidence_type,
                 "event_id": item.get("metadata", {}).get("event_id", ""),
                 "topics": item.get("topics", []),
@@ -45,9 +56,8 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
                 "retrieved_at": retrieved_at,
                 "trust_tier": item.get("metadata", {}).get("trust_tier", 4),
             },
-        }
-        for index, chunk in enumerate(chunks)
-    ]
+        })
+    return result
 
 
 def retrieve(

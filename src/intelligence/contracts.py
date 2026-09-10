@@ -5,10 +5,11 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from datetime import UTC, date, datetime, time
 from enum import StrEnum
+from collections.abc import Mapping
 from typing import Any
 from zoneinfo import ZoneInfo
 
-from .identity import make_edition_key, make_run_id
+from .identity import make_content_id, make_edition_key, make_evidence_id, make_run_id, make_source_id
 from .statuses import PipelineStage
 
 
@@ -25,6 +26,12 @@ class EvidenceType(StrEnum):
     DATASET = "dataset"
     VIDEO = "video"
     OTHER = "other"
+
+
+class TimestampStatus(StrEnum):
+    VALID = "valid"
+    MISSING = "missing"
+    INVALID = "invalid"
 
 
 @dataclass(frozen=True)
@@ -64,6 +71,7 @@ class SourceTimestamps:
     published_at: datetime | None = None
     updated_at: datetime | None = None
     retrieved_at: datetime | None = None
+    publication_status: TimestampStatus = TimestampStatus.MISSING
 
     def __post_init__(self) -> None:
         for name in ("published_at", "updated_at", "retrieved_at"):
@@ -72,6 +80,62 @@ class SourceTimestamps:
                 require_aware(value, name)
         if self.published_at and self.retrieved_at and self.retrieved_at < self.published_at:
             raise ValueError("retrieved_at cannot precede published_at")
+        if self.published_at and self.publication_status == TimestampStatus.MISSING:
+            object.__setattr__(self, "publication_status", TimestampStatus.VALID)
+
+    @classmethod
+    def from_values(
+        cls,
+        published_at: Any = None,
+        updated_at: Any = None,
+        retrieved_at: Any = None,
+        default_retrieved_at: datetime | None = None,
+    ) -> "SourceTimestamps":
+        published, publication_status = _parse_external_timestamp(published_at)
+        updated, _ = _parse_external_timestamp(updated_at)
+        retrieved, _ = _parse_external_timestamp(retrieved_at)
+        retrieved = retrieved or default_retrieved_at or datetime.now(UTC)
+        if retrieved.tzinfo is None or retrieved.utcoffset() is None:
+            retrieved = retrieved.replace(tzinfo=UTC)
+        if published and retrieved < published:
+            retrieved = published
+        return cls(published, updated, retrieved, publication_status)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "published_at": self.published_at.isoformat() if self.published_at else None,
+            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+            "retrieved_at": self.retrieved_at.isoformat() if self.retrieved_at else None,
+            "publication_status": self.publication_status.value,
+        }
+
+
+def _parse_external_timestamp(value: Any) -> tuple[datetime | None, TimestampStatus]:
+    if value in (None, ""):
+        return None, TimestampStatus.MISSING
+    if isinstance(value, datetime):
+        if value.tzinfo is None or value.utcoffset() is None:
+            return None, TimestampStatus.INVALID
+        return value, TimestampStatus.VALID
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None, TimestampStatus.INVALID
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        return None, TimestampStatus.INVALID
+    return parsed, TimestampStatus.VALID
+
+
+def source_timestamps_from_mapping(
+    item: Mapping[str, Any], default_retrieved_at: datetime | None = None
+) -> SourceTimestamps:
+    metadata = item.get("metadata", {}) or {}
+    return SourceTimestamps.from_values(
+        item.get("published_at"),
+        metadata.get("updated_at", item.get("updated_at")),
+        metadata.get("retrieved_at", item.get("retrieved_at")),
+        default_retrieved_at,
+    )
 
 
 @dataclass(frozen=True)
@@ -167,6 +231,35 @@ class Provenance:
         value["evidence_type"] = self.evidence_type.value
         value["retrieved_at"] = self.retrieved_at.isoformat()
         return value
+
+
+def provenance_from_mapping(
+    item: Mapping[str, Any],
+    evidence_type: EvidenceType | str,
+    excerpt: str = "",
+    retrieved_at: datetime | None = None,
+) -> Provenance:
+    metadata = item.get("metadata", {}) or {}
+    source_id = str(metadata.get("source_id") or make_source_id(item.get("source", "unknown")))
+    source_url = str(item.get("url", ""))
+    content_id = str(
+        metadata.get("content_id")
+        or make_content_id(source_id, source_url, item.get("title", ""), item.get("published_at", ""), item.get("text", ""))
+    )
+    timestamps = source_timestamps_from_mapping(item, retrieved_at)
+    resolved_type = evidence_type if isinstance(evidence_type, EvidenceType) else EvidenceType(str(evidence_type).lower()) if str(evidence_type).lower() in {entry.value for entry in EvidenceType} else EvidenceType.OTHER
+    return Provenance(
+        make_evidence_id(content_id, resolved_type.value, excerpt, source_url),
+        content_id,
+        source_id,
+        source_url,
+        resolved_type,
+        int(metadata.get("trust_tier", 4) or 4),
+        timestamps.retrieved_at or datetime.now(UTC),
+        event_id=metadata.get("event_id") or None,
+        entity_id=metadata.get("entity_id") or None,
+        micro_topic_id=metadata.get("micro_topic_id") or None,
+    )
 
 
 def build_edition_context(

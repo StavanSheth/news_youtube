@@ -36,6 +36,56 @@ class PersistencePaths:
     def data_file(self, name: str) -> Path:
         return self.data / name
 
+    @property
+    def raw(self) -> Path:
+        return self.data / "raw"
+
+    @property
+    def normalized(self) -> Path:
+        return self.data / "normalized"
+
+    @property
+    def rag(self) -> Path:
+        return self.data / "rag"
+
+    @property
+    def events(self) -> Path:
+        return self.data / "events"
+
+    @property
+    def entities(self) -> Path:
+        return self.data / "entities"
+
+    @property
+    def state(self) -> Path:
+        return self.data / "state"
+
+    @property
+    def runs(self) -> Path:
+        return self.data / "runs"
+
+    def logical_dir(self, name: str) -> Path:
+        directories = {
+            "raw": self.raw,
+            "normalized": self.normalized,
+            "rag": self.rag,
+            "events": self.events,
+            "entities": self.entities,
+            "state": self.state,
+            "runs": self.runs,
+        }
+        try:
+            return directories[name]
+        except KeyError as error:
+            raise ValueError(f"Unknown logical persistence area: {name}") from error
+
+    def ensure(self) -> None:
+        self.data.mkdir(parents=True, exist_ok=True)
+        self.output.mkdir(parents=True, exist_ok=True)
+        self.archive.mkdir(parents=True, exist_ok=True)
+        for name in ("raw", "normalized", "rag", "events", "entities", "state", "runs"):
+            self.logical_dir(name).mkdir(parents=True, exist_ok=True)
+
     def edition_dir(self, edition: EditionContext | str) -> Path:
         key = edition if isinstance(edition, str) else edition.edition_key
         return self.output / _safe_segment(key)

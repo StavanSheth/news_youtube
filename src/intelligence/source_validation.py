@@ -6,6 +6,8 @@ from urllib.parse import urlparse
 
 import feedparser
 
+from .statuses import SourceStatus
+
 
 def _valid_http_url(value: str) -> bool:
     parsed = urlparse(value or "")
@@ -39,13 +41,13 @@ def validate_source_registry(
             "checked_at": datetime.now(UTC).isoformat(),
         }
         if not record["enabled"]:
-            record.update({"status": "DISABLED", "failure_reason": "DISABLED_BY_CONFIGURATION"})
+            record.update({"status": SourceStatus.DISABLED.value, "failure_reason": "DISABLED_BY_CONFIGURATION"})
             report[source_id] = record
             continue
         url = source.get("feed_url") or source.get("url", "")
         record["url"] = url
         if not _valid_http_url(url):
-            record.update({"status": "SOURCE_UNAVAILABLE", "failure_reason": "INVALID_URL"})
+            record.update({"status": SourceStatus.SOURCE_UNAVAILABLE.value, "failure_reason": "INVALID_URL"})
             report[source_id] = record
             continue
         try:
@@ -56,10 +58,10 @@ def validate_source_registry(
             record["usable_content_count"] = sum(bool(entry.get("title") and entry.get("link")) for entry in entries)
             record["relevant_content_count"] = record["usable_content_count"]
             record["fresh"] = bool(entries)
-            record["status"] = "HEALTHY" if entries else "EMPTY"
+            record["status"] = (SourceStatus.HEALTHY if entries else SourceStatus.EMPTY).value
             if getattr(parsed, "bozo", False) and not entries:
-                record.update({"status": "SOURCE_UNAVAILABLE", "failure_reason": "INVALID_FEED"})
+                record.update({"status": SourceStatus.SOURCE_UNAVAILABLE.value, "failure_reason": "INVALID_FEED"})
         except Exception as error:
-            record.update({"status": "SOURCE_UNAVAILABLE", "failure_reason": type(error).__name__})
+            record.update({"status": SourceStatus.SOURCE_UNAVAILABLE.value, "failure_reason": type(error).__name__})
         report[source_id] = record
     return report
