@@ -88,6 +88,8 @@ def _video_item(video_id: str, snippet: dict, priority: float, channel: dict | N
             "region": (channel or {}).get("region", "global"),
             "country": (channel or {}).get("country", "GLOBAL"),
             "source_id": (channel or {}).get("id", video_id),
+            "retrieved_at": datetime.now(UTC).isoformat(),
+            "updated_at": snippet.get("publishedAt", ""),
         },
     )
 

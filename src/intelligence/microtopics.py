@@ -4,6 +4,9 @@ import re
 from collections import defaultdict
 from typing import Any
 
+from .identity import make_micro_topic_id
+from .statuses import IntelligenceStatus
+
 
 GENERIC_TERMS = {
     "ai", "model", "models", "technology", "research", "policy", "security", "systems",
@@ -60,7 +63,12 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
             continue
         confidence = min(1.0, (len(strong_direct) * 0.7 + len(strong_signals) * 0.15) / max(1, len(target - GENERIC_TERMS)))
         if confidence >= 0.25:
-            matches.append({**entry, "signals": signals, "confidence": round(confidence, 3)})
+            matches.append({
+                **entry,
+                "micro_topic_id": make_micro_topic_id(entry["domain"], entry["topic"], entry["micro_topic"]),
+                "signals": signals,
+                "confidence": round(confidence, 3),
+            })
     return sorted(matches, key=lambda match: (match["confidence"], match["priority"]), reverse=True)
 
 
@@ -75,18 +83,18 @@ def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], s
         evidence = assigned[(entry["domain"], entry["micro_topic"])]
         searched = bool(source_health.get("healthy_sources", 0) or source_health.get("checked_sources", 0))
         if evidence and any(item.get("source_status") == "SOURCE_FAILURE" for item in evidence):
-            status = "SOURCE_FAILURE"
+            status = IntelligenceStatus.SOURCE_FAILURE.value
         elif evidence and any(item.get("retrieval_status") == "RETRIEVAL_FAILURE" for item in evidence):
-            status = "RETRIEVAL_FAILURE"
+            status = IntelligenceStatus.RETRIEVAL_FAILURE.value
         elif evidence and any(item.get("analysis_status") == "ANALYSIS_FAILURE" for item in evidence):
-            status = "ANALYSIS_FAILURE"
+            status = IntelligenceStatus.ANALYSIS_FAILURE.value
         elif evidence and not any(item.get("evidence_available", True) for item in evidence):
-            status = "INSUFFICIENT_EVIDENCE"
+            status = IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
         elif evidence:
             maximum = max(item.get("importance_score", 0) for item in evidence)
-            status = "MAJOR_UPDATE" if maximum >= 75 else "UPDATE" if maximum >= 45 else "MINOR_UPDATE"
+            status = IntelligenceStatus.MAJOR_UPDATE.value if maximum >= 75 else IntelligenceStatus.UPDATE.value if maximum >= 45 else IntelligenceStatus.MINOR_UPDATE.value
         else:
-            status = "NO_MAJOR_UPDATE" if healthy and searched else "INSUFFICIENT_EVIDENCE"
+            status = IntelligenceStatus.NO_MAJOR_UPDATE.value if healthy and searched else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
         candidate_count = sum(int(item.get("candidate_count", 1)) for item in evidence)
         relevant_count = sum(int(item.get("relevant_count", 1)) for item in evidence)
         event_count = sum(int(item.get("event_count", 1)) for item in evidence)

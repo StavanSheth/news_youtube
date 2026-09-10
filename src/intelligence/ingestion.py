@@ -140,6 +140,8 @@ def enriched_rss(
                         "trust_tier": source.get("trust_tier", 4),
                         "region": source.get("region", "global"),
                         "country": source.get("country", "GLOBAL"),
+                        "retrieved_at": datetime.now(UTC).isoformat(),
+                        "updated_at": entry.get("updated", ""),
                         "summary": summary,
                         "author": entry.get("author", ""),
                         "tags": [tag.get("term", "") for tag in entry.get("tags", [])],

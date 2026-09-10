@@ -4,6 +4,7 @@ import json
 from typing import Any, Protocol
 
 from .schema import normalized_analysis
+from .identity import make_content_id, make_evidence_id, make_source_id
 
 
 SOURCE_DATA_POLICY = (
@@ -74,8 +75,15 @@ class GeminiProvider:
         )
         result = normalized_analysis(_json_object(response.text))
         default_url = item.get("url", "")
+        source_id = item.get("metadata", {}).get("source_id") or make_source_id(item.get("source", "unknown"))
+        content_id = item.get("metadata", {}).get("content_id") or make_content_id(
+            source_id, default_url, item.get("title", ""), item.get("published_at", ""), item.get("text", "")
+        )
         for entry in result["evidence"]:
             entry["source_url"] = entry.get("source_url") or default_url
+            entry["evidence_id"] = make_evidence_id(content_id, entry["type"], entry["text"], entry["source_url"])
+            entry["content_id"] = content_id
+            entry["source_id"] = source_id
         return result
 
 
@@ -99,7 +107,7 @@ class DryRunProvider:
             if stream == "news"
             else "Review the transcript or description for the method, tool, and follow-up experiment."
         )
-        return normalized_analysis(
+        result = normalized_analysis(
             {
                 "facts": [fact],
                 "changes": [f"The source reports: {fact[:220]}"],
@@ -112,3 +120,12 @@ class DryRunProvider:
                 ],
             }
         )
+        source_id = item.get("metadata", {}).get("source_id") or make_source_id(item.get("source", "unknown"))
+        content_id = item.get("metadata", {}).get("content_id") or make_content_id(
+            source_id, item.get("url", ""), item.get("title", ""), item.get("published_at", ""), item.get("text", "")
+        )
+        for entry in result["evidence"]:
+            entry["evidence_id"] = make_evidence_id(content_id, entry["type"], entry["text"], entry["source_url"])
+            entry["content_id"] = content_id
+            entry["source_id"] = source_id
+        return result

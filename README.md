@@ -27,7 +27,7 @@ Create a YouTube Data API key in Google Cloud with YouTube Data API v3 enabled. 
 
 `.github/workflows/intelligence.yml` runs at 07:30, 13:30, and 19:30 Asia/Kolkata (02:00, 08:00, 14:00 UTC). GitHub Actions cron uses UTC, hence the translated expressions. It also supports manual dispatch.
 
-Every run writes `output/YYYY/MM/DD/HHMM/digest.md` and `digest.html`. The HTML is a purpose-built responsive newsletter template in `templates/newsletter.html`, not a Markdown conversion. The generated HTML is the email body and both report files are attached.
+Every run writes `output/<edition_key>/<run_id>/digest.md` and `digest.html`, where the logical edition key is `YYYY-MM-DD|EDITION|TIMEZONE` and the filesystem folder uses a safe equivalent. The HTML is a purpose-built responsive newsletter template in `templates/newsletter.html`, not a Markdown conversion. The generated HTML is the email body and both report files are attached. Runtime version contracts and run state are persisted under `data/`.
 
 Each run also writes `quality.json` and `source_validation.json`. SMTP delivery is attempted only when the deterministic quality gate passes; source failures are recorded separately from `NO_MAJOR_UPDATE` coverage.
 

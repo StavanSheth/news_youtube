@@ -5,6 +5,10 @@ pipeline:
   allow_global_youtube_discovery: false
   min_relevance_score: 0.35
   lookback_days: 7
+edition:
+  type: NIGHT
+  timezone: Asia/Kolkata
+  publication_cutoff_local: "23:59:59"
 gemini:
   model: gemini-3.6-flash
   temperature: 0.2

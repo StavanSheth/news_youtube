@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
 
 
@@ -31,7 +31,7 @@ class Analysis:
     actionable_insights: list[str]
     routine: dict[str, list[str]] | None = None
     uncertainties: list[str] = field(default_factory=list)
-    processed_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    processed_at: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
 
     def to_dict(self) -> dict[str, Any]:
         payload = asdict(self)

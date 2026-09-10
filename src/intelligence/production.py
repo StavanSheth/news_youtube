@@ -5,7 +5,8 @@ import json
 import logging
 import os
 import re
-from datetime import UTC, datetime, timedelta
+from dataclasses import replace
+from datetime import UTC, datetime, time, timedelta
 from html import escape
 from pathlib import Path
 from typing import Any
@@ -22,6 +23,11 @@ from .manager import IntelligenceManager
 from .microtopics import catalog, classify_micro_topics, coverage
 from .quality import evaluate_output
 from .source_validation import validate_source_registry
+from .contracts import EditionType, RunContext, build_edition_context
+from .identity import make_content_id, make_source_id
+from .persistence import PersistencePaths
+from .statuses import DeliveryStatus
+from zoneinfo import ZoneInfo
 
 LOGGER = logging.getLogger(__name__)
 
@@ -36,6 +42,23 @@ def parse_time(value: str) -> datetime | None:
         return parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
     except (TypeError, ValueError):
         return None
+
+
+def edition_context_for(settings: dict[str, Any], started_at: datetime, versions: Any) -> tuple[Any, RunContext]:
+    edition_config = settings.get("edition", {})
+    timezone = edition_config.get("timezone", settings.get("pipeline", {}).get("timezone", "UTC"))
+    local_date = started_at.astimezone(ZoneInfo(timezone)).date()
+    cutoff_value = edition_config.get("publication_cutoff_local", "23:59:59")
+    cutoff = time.fromisoformat(cutoff_value) if isinstance(cutoff_value, str) else cutoff_value
+    edition = build_edition_context(
+        local_date,
+        EditionType(str(edition_config.get("type", "NIGHT")).upper()),
+        timezone,
+        cutoff,
+        versions,
+    )
+    run = RunContext.create(edition, started_at)
+    return replace(edition, run_id=run.run_id), run
 
 
 def content_hash(item: dict[str, Any]) -> str:
@@ -210,18 +233,23 @@ def relevance(
 def render(
     root: Path, stories: list[dict[str, Any]], run_time: datetime,
     micro_topic_coverage: list[dict[str, Any]] | None = None, source_health: dict[str, Any] | None = None,
+    run_context: RunContext | None = None,
 ) -> tuple[Path, Path]:
-    output = root / "output" / run_time.strftime("%Y/%m/%d/%H%M")
+    output = (
+        PersistencePaths.for_root(root).run_dir(run_context)
+        if run_context
+        else root / "output" / run_time.strftime("%Y/%m/%d/%H%M")
+    )
     output.mkdir(parents=True, exist_ok=True)
     from .newsletter import NewsletterModel
 
     newsletter = NewsletterModel.from_stories(
-        stories, run_time.isoformat(), micro_topic_coverage, source_health
+        stories, run_context.edition_key if run_context else run_time.isoformat(), micro_topic_coverage, source_health
     )
     executive = newsletter.executive_summary
     markdown = [
         "# Daily Intelligence",
-        f"**Edition:** {run_time:%Y-%m-%d %H:%M UTC}",
+        f"**Edition:** {newsletter.edition}",
         "",
         "## Executive Brief",
     ]
@@ -320,7 +348,9 @@ def render(
 def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> tuple[Path, Path]:
     config = load_config(root)
     started = utc_now()
-    state = RepositoryState(root / "data", config.settings.get("state", {}))
+    paths = PersistencePaths.for_root(root)
+    edition_context, run_context = edition_context_for(config.settings, started, config.versions)
+    state = RepositoryState(paths.data, config.settings.get("state", {}))
     pipe = config.settings["pipeline"]
     feeds = config.settings.get("news", {}).get(
         "sources", config.settings.get("news", {}).get("feeds", [])
@@ -342,7 +372,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
                 "title": item.get("title", "Fixture item"), "url": item.get("url", "https://fixture.test/item"),
                 "text": item.get("text", ""), "published_at": item.get("published_at", ""),
                 "source": item.get("source", "Fixture"), "priority": item.get("priority", 8),
-                "metadata": {"source_id": "fixture", "source_type": "fixture", "trust_tier": 1, **item.get("metadata", {})},
+                "metadata": {"source_id": "fixture", "source_type": "fixture", "trust_tier": 1, "retrieved_at": started.isoformat(), **item.get("metadata", {})},
             })
         source_health["fixture"] = {"status": "HEALTHY", "entries": len(discovered), "source": "Fixture corpus", "trust_tier": 1}
         source_validation["fixture"].update({
@@ -371,7 +401,6 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
             ]
         except Exception as error:  # A source/API failure must not discard RSS intelligence.
             LOGGER.warning("YouTube discovery failed: %s", type(error).__name__)
-    cutoff = utc_now() - timedelta(days=int(pipe.get("lookback_days", 7)))
     event_groups = group_events(discovered)
     discovered = [
         {**group["items"][0], "metadata": {
@@ -382,12 +411,28 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         }}
         for group in event_groups
     ]
+    for item in discovered:
+        metadata = item.setdefault("metadata", {})
+        metadata.setdefault("source_id", make_source_id(item.get("source", "unknown")))
+        metadata.setdefault(
+            "content_id",
+            make_content_id(
+                metadata["source_id"],
+                item.get("url", ""),
+                item.get("title", ""),
+                item.get("published_at", ""),
+                item.get("text", ""),
+            ),
+        )
+        metadata.setdefault("retrieved_at", started.isoformat())
+    lookback_floor = edition_context.publication_cutoff_utc - timedelta(days=int(pipe.get("lookback_days", 7)))
+    publication_cutoff = edition_context.publication_cutoff_utc
     eligible = [
         item
         for item in discovered
         if (
             not parse_time(item.get("published_at", ""))
-            or parse_time(item["published_at"]) >= cutoff
+            or lookback_floor <= parse_time(item["published_at"]) <= publication_cutoff
         )
         and not state.seen(item)
         and state.retry_due(item["id"])
@@ -452,6 +497,8 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
                     "importance_score": event_importance(importance, corroboration, weights=config.settings["scoring"].get("importance_weights")),
                     "confidence_score": round(confidence_score(item, analysis, corroboration) * 100),
                     "entities": entities, "opportunities": detect_opportunities(item, analysis),
+                    "content_id": item.get("metadata", {}).get("content_id", ""),
+                    "source_id": item.get("metadata", {}).get("source_id", ""),
                     "region": item.get("metadata", {}).get("region", "global"),
                     "country": item.get("metadata", {}).get("country", "GLOBAL"),
                     "content_type": item.get("metadata", {}).get("content_type", "news"),
@@ -465,6 +512,8 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
                     "processed_at": utc_now().isoformat(),
                     "topics": [topic["key"] for topic in topics],
                     "content_hash": content_hash(item),
+                    "content_id": item.get("metadata", {}).get("content_id", ""),
+                    "source_id": item.get("metadata", {}).get("source_id", ""),
                 }
             )
             state.success(item, topics, importance, change)
@@ -476,7 +525,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         "checked_sources": len(source_health),
     }
     micro_topic_coverage = coverage(micro_topic_catalog, coverage_assignments, source_summary)
-    markdown, html = render(root, stories, started, micro_topic_coverage, source_health)
+    markdown, html = render(root, stories, started, micro_topic_coverage, source_health, run_context)
     quality = evaluate_output(
         stories,
         markdown.read_text(encoding="utf-8"),
@@ -539,6 +588,13 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         {
             "started": started.isoformat(),
             "completed": utc_now().isoformat(),
+            "run_id": run_context.run_id,
+            "edition": edition_context.edition.value,
+            "edition_key": edition_context.edition_key,
+            "edition_timezone": edition_context.timezone,
+            "publication_cutoff_local": edition_context.publication_cutoff_local.isoformat(),
+            "publication_cutoff_utc": edition_context.publication_cutoff_utc.isoformat(),
+            "versions": config.versions.to_dict(),
             "discovered": len(discovered),
             "eligible": len(eligible),
             "processed": len(compact),
@@ -553,7 +609,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         compact,
     )
     delivery = {"status": "SKIPPED_DRY_RUN" if dry_run else "DISABLED", "updated_at": utc_now().isoformat()}
-    (root / "data" / "source_validation.json").write_text(
+    paths.data_file("source_validation.json").write_text(
         json.dumps(source_validation, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     if config.settings.get("email", {}).get("enabled") and not dry_run and quality["passed"]:
@@ -563,13 +619,13 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
                 markdown,
                 f"{config.settings['email'].get('subject_prefix', 'Daily Intelligence')} - {started:%d %b %Y %H:%M}",
             )
-            delivery = {"status": "SENT", "updated_at": utc_now().isoformat()}
+            delivery = {"status": DeliveryStatus.DELIVERY_CONFIRMED.value, "updated_at": utc_now().isoformat()}
         except Exception as error:  # Delivery failure is recorded by logs after report/state persistence.
             LOGGER.warning("SMTP delivery failed: %s", type(error).__name__)
-            delivery = {"status": "FAILED", "error_type": type(error).__name__, "updated_at": utc_now().isoformat()}
+            delivery = {"status": DeliveryStatus.DELIVERY_FAILED.value, "error_type": type(error).__name__, "updated_at": utc_now().isoformat()}
     elif not dry_run and not quality["passed"]:
         delivery = {"status": "QUALITY_REVIEW_REQUIRED", "updated_at": utc_now().isoformat()}
-    (root / "data" / "delivery_state.json").write_text(
+    paths.data_file("delivery_state.json").write_text(
         json.dumps(delivery, indent=2) + "\n", encoding="utf-8"
     )
     return markdown, html

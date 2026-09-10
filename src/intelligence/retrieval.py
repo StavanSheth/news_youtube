@@ -4,7 +4,10 @@ from __future__ import annotations
 
 import re
 from collections import Counter
+from datetime import UTC, datetime
 from typing import Any
+
+from .identity import make_content_id, make_evidence_id, make_source_id
 
 
 def _terms(value: str) -> list[str]:
@@ -16,18 +19,31 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
     text = item.get("text", "") or ""
     stride = max(1, size - overlap)
     chunks = [text[index : index + size] for index in range(0, max(1, len(text)), stride)] or [""]
+    source_id = item.get("metadata", {}).get("source_id") or make_source_id(item.get("source", "unknown"))
+    content_id = item.get("metadata", {}).get("content_id") or make_content_id(
+        source_id, item.get("url", ""), item.get("title", ""), item.get("published_at", ""), text
+    )
+    evidence_type = "transcript" if item.get("kind") == "youtube" else "article"
+    retrieved_at = item.get("metadata", {}).get("retrieved_at") or datetime.now(UTC).isoformat()
     return [
         {
-            "id": f"{item.get('id', 'item')}:{index}",
+            "id": f"{content_id}:{index}",
             "text": chunk,
             "metadata": {
                 key: item.get(key, "")
                 for key in ("id", "url", "source", "title", "kind", "published_at")
             }
             | {
+                "source_id": source_id,
+                "content_id": content_id,
+                "evidence_id": make_evidence_id(content_id, evidence_type, chunk, item.get("url", "")),
+                "evidence_type": evidence_type,
                 "event_id": item.get("metadata", {}).get("event_id", ""),
                 "topics": item.get("topics", []),
                 "micro_topics": item.get("micro_topics", []),
+                "updated_at": item.get("metadata", {}).get("updated_at", ""),
+                "retrieved_at": retrieved_at,
+                "trust_tier": item.get("metadata", {}).get("trust_tier", 4),
             },
         }
         for index, chunk in enumerate(chunks)
