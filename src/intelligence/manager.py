@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any, Protocol
+import re
 
 from .retrieval import RAGManager
 from .themes import analysis_profile, select_theme
@@ -30,8 +31,9 @@ class MicroTopicManager:
             seen.add(key)
             theme = select_theme(classification, self.themes, item)
             profile = analysis_profile(classification, theme, item)
+            evidence_item = self._isolate_item(item, classification)
             self.stats["retrieval_calls"] += 1
-            packet = self.rag.retrieve(item, classification, theme, item.get("metadata", {}).get("event_context"))
+            packet = self.rag.retrieve(evidence_item, classification, theme, evidence_item.get("metadata", {}).get("event_context"))
             evidence = packet["chunks"]
             if not evidence:
                 results.append({
@@ -50,7 +52,7 @@ class MicroTopicManager:
                 used += len(bounded[-1]["text"])
             self.stats["micro_topic_analyses"] += 1
             try:
-                analysis = self._analyze_with_retry(item, profile, bounded)
+                analysis = self._analyze_with_retry(evidence_item, profile, bounded)
                 analysis_status = "OK"
             except Exception:
                 analysis = {}
@@ -64,6 +66,28 @@ class MicroTopicManager:
                 "analysis_status": analysis_status,
             })
         return results
+
+    @staticmethod
+    def _isolate_item(item: dict[str, Any], classification: dict[str, Any]) -> dict[str, Any]:
+        """Build a bounded evidence view containing only matched micro-topic windows."""
+        signals = list(classification.get("positive_signals") or classification.get("signals") or [])
+        source_text = str(item.get("text", ""))
+        windows: list[str] = []
+        sentences = re.split(r"(?<=[.!?])\s+", source_text)
+        for signal in signals:
+            matching_sentences = [sentence for sentence in sentences if re.search(re.escape(str(signal)), sentence, flags=re.IGNORECASE)]
+            if matching_sentences:
+                windows.extend(matching_sentences)
+                continue
+            match = re.search(re.escape(str(signal)), source_text, flags=re.IGNORECASE)
+            if match:
+                start = max(0, match.start() - 160)
+                windows.append(source_text[start : min(len(source_text), match.end() + 320)])
+        isolated_text = "\n\n".join(dict.fromkeys(windows))
+        if not isolated_text and signals:
+            isolated_text = "Matched signals: " + ", ".join(map(str, signals))
+        metadata = {**item.get("metadata", {}), "micro_topic_id": classification.get("micro_topic_id"), "evidence_isolated": True}
+        return {**item, "text": isolated_text, "metadata": metadata}
 
     def _analyze_with_retry(self, item: dict[str, Any], profile: dict[str, Any], evidence: list[dict[str, Any]]) -> dict[str, Any]:
         attempts = max(1, int(self.settings.get("max_ai_attempts", 2)))

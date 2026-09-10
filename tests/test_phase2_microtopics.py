@@ -139,3 +139,25 @@ def test_manager_keeps_queries_and_contexts_isolated_per_microtopic():
     assert retriever.calls == ["m1", "m2"]
     assert provider.contexts == [("m1", ["m1"]), ("m2", ["m2"])]
     assert [result["retrieval"]["query"] for result in results] == ["m1", "m2"]
+
+
+def test_manager_sends_isolated_evidence_view_to_retriever_and_provider():
+    class Retriever:
+        metrics = {}
+        def retrieve(self, item, classification, theme, event_context=None):
+            return {"micro_topic": classification["micro_topic"], "query": "q", "chunks": [{"text": item["text"], "metadata": item["metadata"]}], "status": "OK"}
+
+    class Provider:
+        def __init__(self):
+            self.items = []
+        def analyze_micro_topic(self, item, profile, evidence):
+            self.items.append(item)
+            return {"facts": ["ok"], "evidence": [{"type": "fact", "text": "ok"}]}
+
+    provider = Provider()
+    manager = __import__("intelligence.manager", fromlist=["MicroTopicManager"]).MicroTopicManager(
+        provider, [{"id": "domain-fallback", "domain": "all", "micro_topic": "any", "questions": ["what_changed"]}], {"max_retrieved_context_chars": 500}, Retriever()
+    )
+    manager.analyze({"id": "x", "kind": "news", "title": "RAG", "text": "RAG evidence. Unrelated agent evidence."}, [{"domain": "a", "topic": "A", "micro_topic": "rag", "signals": ["RAG"]}])
+    assert provider.items[0]["metadata"]["evidence_isolated"] is True
+    assert "Unrelated agent" not in provider.items[0]["text"]

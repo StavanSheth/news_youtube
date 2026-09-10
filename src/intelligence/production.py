@@ -509,6 +509,11 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
                     "publishable_count": int(bool(matched_result and matched_result.get("evidence") and matched_result.get("analysis_status") == "OK")),
                     "retrieval_status": (matched_result or {}).get("retrieval", {}).get("status", "EMPTY_RETRIEVAL"),
                     "analysis_status": (matched_result or {}).get("analysis_status", "ANALYSIS_FAILURE"),
+                    "evaluation_status": (
+                        "FAILED"
+                        if not matched_result or (matched_result.get("retrieval", {}).get("status") == "RETRIEVAL_FAILURE") or matched_result.get("analysis_status") == "ANALYSIS_FAILURE"
+                        else "EVALUATION_COMPLETE"
+                    ),
                 })
             if not results:
                 state.success(item, topics, importance, "LOW_EVIDENCE")
@@ -559,7 +564,11 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         ]
         key = f"{entry['domain']}:{entry['micro_topic']}"
         evaluation_ledger[key] = {
-            "evaluation_status": "EVALUATION_COMPLETE" if assignments else "NOT_STARTED",
+            "evaluation_status": (
+                "FAILED" if any(item.get("evaluation_status") == "FAILED" for item in assignments)
+                else "EVALUATION_COMPLETE" if assignments and all(item.get("evaluation_status") == "EVALUATION_COMPLETE" for item in assignments)
+                else "NOT_STARTED"
+            ),
             "sources_checked": len(source_health),
             "candidate_count": sum(int(item.get("candidate_count", 0)) for item in assignments),
             "relevant_count": sum(int(item.get("relevant_count", 0)) for item in assignments),
