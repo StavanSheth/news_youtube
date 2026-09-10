@@ -46,7 +46,10 @@ def catalog(
             # Production profiles must opt into evidence signals. The legacy
             # two-argument API keeps its derived alias behavior for callers
             # that have not loaded the Phase 2 profile overlay yet.
+            explicit = bool(profile.get("aliases") or profile.get("positive_signals"))
             aliases = profile.get("aliases", [micro_topic.replace("-", " ")]) if profiles is None else profile.get("aliases", [])
+            if profiles is not None and not explicit:
+                aliases = [micro_topic.replace("-", " ")]
             aliases = [alias for alias in aliases if _words(str(alias)) - GENERIC_TERMS]
             entries.append(
                 {
@@ -61,7 +64,8 @@ def catalog(
                     "classification_threshold": float(profile.get("classification_threshold", 0.5)),
                     "priority": profile.get("priority", domain_topic.get("priority", 5)),
                     "enabled": profile.get("enabled", domain_topic.get("enabled", True)),
-                    "profile": profile,
+                    "profile": {**profile, "profile_origin": "explicit" if explicit else "derived"},
+                    "profile_origin": "explicit" if explicit else "derived",
                 }
             )
     return entries

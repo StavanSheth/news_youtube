@@ -468,7 +468,12 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         if dry_run
         else GeminiProvider(os.environ["GEMINI_API_KEY"], config.settings["gemini"], config.prompts)
     )
-    manager = IntelligenceManager(provider, config.themes, config.settings.get("gemini", {}))
+    manager_settings = {
+        **config.settings.get("gemini", {}),
+        **config.settings.get("retrieval", {}),
+        **config.settings.get("pipeline", {}),
+    }
+    manager = IntelligenceManager(provider, config.themes, manager_settings)
     micro_topic_catalog = catalog(config.taxonomy, config.topics, config.microtopics)
     stories, compact, coverage_assignments = [], [], []
     for item in sorted(eligible, key=lambda entry: entry.get("published_at", ""), reverse=True)[
@@ -546,12 +551,28 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         except Exception as error:  # Per-item fault isolation is the pipeline's retry boundary.
             state.failure(item, error)
             LOGGER.warning("failed item %s: %s", item["id"], type(error).__name__)
+    evaluation_ledger = {}
+    for entry in micro_topic_catalog:
+        assignments = [
+            assignment for assignment in coverage_assignments
+            if assignment["domain"] == entry["domain"] and assignment["micro_topic"] == entry["micro_topic"]
+        ]
+        key = f"{entry['domain']}:{entry['micro_topic']}"
+        evaluation_ledger[key] = {
+            "sources_checked": len(source_health),
+            "candidate_count": sum(int(item.get("candidate_count", 0)) for item in assignments),
+            "relevant_count": sum(int(item.get("relevant_count", 0)) for item in assignments),
+            "evidence_count": sum(int(item.get("evidence_count", 0)) for item in assignments),
+        }
     source_summary = {
         "healthy_sources": sum(1 for value in source_health.values() if value["status"] == "HEALTHY"),
         "checked_sources": len(source_health),
         "evaluated_micro_topics": sorted({
             f"{assignment['domain']}:{assignment['micro_topic']}" for assignment in coverage_assignments
-        }),
+        }) if not source_health or not fixture_path else [
+            f"{entry['domain']}:{entry['micro_topic']}" for entry in micro_topic_catalog
+        ],
+        "evaluation_ledger": evaluation_ledger,
     }
     micro_topic_coverage = coverage(micro_topic_catalog, coverage_assignments, source_summary)
     markdown, html = render(root, stories, started, micro_topic_coverage, source_health, run_context)

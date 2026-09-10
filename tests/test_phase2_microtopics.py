@@ -24,6 +24,14 @@ def test_every_taxonomy_leaf_has_stable_profile_and_identity():
     assert len(entries) == expected
     assert len({entry["micro_topic_id"] for entry in entries}) == expected
     assert all(entry["profile"]["analysis_contract"] for entry in entries)
+    assert all(entry["profile_origin"] in {"explicit", "derived"} for entry in entries)
+
+
+def test_unconfigured_leaf_gets_observable_derived_signal_profile():
+    _, entries = _entries()
+    entry = next(item for item in entries if item["micro_topic"] == "ports")
+    assert entry["profile_origin"] == "derived"
+    assert entry["aliases"] == ["ports"]
 
 
 def test_classifier_requires_specific_evidence_and_explains_result():
