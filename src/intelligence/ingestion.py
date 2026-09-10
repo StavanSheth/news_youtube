@@ -99,6 +99,7 @@ def enriched_rss(
             if getattr(parsed, "bozo", False) and not parsed.entries:
                 raise ValueError(type(getattr(parsed, "bozo_exception", None)).__name__)
             health[source_id] = {
+                "source_id": source_id,
                 "status": (SourceStatus.HEALTHY if parsed.entries else SourceStatus.EMPTY).value,
                 "entries": len(parsed.entries),
                 "source": source.get("name", source_id),
@@ -106,6 +107,7 @@ def enriched_rss(
             }
         except Exception as error:
             health[source_id] = {
+                "source_id": source_id,
                 "status": SourceStatus.FAILED.value, "entries": 0, "source": source.get("name", source_id),
                 "trust_tier": source.get("trust_tier", 4), "error": type(error).__name__,
             }

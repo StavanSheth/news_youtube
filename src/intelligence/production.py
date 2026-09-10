@@ -581,6 +581,11 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
             f"{assignment['domain']}:{assignment['micro_topic']}" for assignment in coverage_assignments
         }),
         "evaluation_ledger": evaluation_ledger,
+        "source_failures": [
+            {"source": value.get("source"), "source_id": source_id, "status": value.get("status"), "error": value.get("error"), "failure_reason": value.get("failure_reason")}
+            for source_id, value in source_health.items()
+            if value.get("status") in {SourceStatus.FAILED.value, SourceStatus.SOURCE_UNAVAILABLE.value}
+        ],
     }
     micro_topic_coverage = coverage(micro_topic_catalog, coverage_assignments, source_summary)
     markdown, html = render(root, stories, started, micro_topic_coverage, source_health, run_context)
@@ -662,6 +667,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
             "source_health": source_health,
             "micro_topic_coverage": micro_topic_coverage,
             "quality": quality,
+            "run_status": quality["status"],
             "manager_stats": manager.stats,
             "report": str(markdown.relative_to(root)),
         },

@@ -97,9 +97,19 @@ def evaluate_output(
     scores["actionability_score"] = round(sum(bool(story.get("analysis", {}).get("actionable_insights")) for story in stories) / max(1, len(stories)) * 100)
     scores["intelligence_score"] = round(sum(scores[name] for name in ("classification_score", "theme_score", "evidence_score", "actionability_score")) / 4)
     scores["overall"] = round(sum(scores.values()) / len(scores))
+    source_failures = [
+        value for value in source_health.values()
+        if value.get("status") in {"FAILED", "SOURCE_UNAVAILABLE"}
+    ]
+    quality_status = "PASS" if not source_failures and all(checks.values()) and scores["overall"] >= 95 else "QUALITY_REVIEW_REQUIRED"
     return {
         "checks": checks,
         "scores": scores,
-        "passed": all(checks.values()) and scores["overall"] >= 95,
+        "passed": quality_status == "PASS",
+        "status": quality_status,
+        "source_failures": [
+            {"source": value.get("source"), "source_id": value.get("source_id"), "status": value.get("status"), "error": value.get("error"), "failure_reason": value.get("failure_reason")}
+            for value in source_failures
+        ],
         "minimum_score": 95,
     }

@@ -116,6 +116,7 @@ def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], s
     for assignment in assignments:
         assigned[(assignment["domain"], assignment["micro_topic"])].append(assignment)
     healthy = bool(source_health.get("healthy_sources", 0))
+    source_failure = bool(source_health.get("source_failures"))
     ledger = source_health.get("evaluation_ledger", {})
     rows = []
     for entry in entries:
@@ -139,7 +140,7 @@ def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], s
             checked = ledger.get(evaluation_key, {}).get("evaluation_status") == "EVALUATION_COMPLETE"
             if not checked:
                 checked = evaluation_key in source_health.get("evaluated_micro_topics", [])
-            status = IntelligenceStatus.NO_RELEVANT_CONTENT.value if checked and healthy else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
+            status = IntelligenceStatus.SOURCE_FAILURE.value if source_failure else IntelligenceStatus.NO_RELEVANT_CONTENT.value if checked and healthy else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
         candidate_count = sum(int(item.get("candidate_count", 0)) for item in evidence)
         relevant_count = sum(int(item.get("relevant_count", 0)) for item in evidence)
         event_count = sum(int(item.get("event_count", 0)) for item in evidence)

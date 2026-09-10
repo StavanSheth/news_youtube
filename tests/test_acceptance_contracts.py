@@ -4,6 +4,7 @@ from types import SimpleNamespace
 
 from intelligence.enrichment import extract_entities
 from intelligence.manager import IntelligenceManager
+from intelligence.microtopics import coverage
 from intelligence.provider import SOURCE_DATA_POLICY, _json_object
 from intelligence.quality import evaluate_output
 from intelligence.retrieval import RAGManager, retrieve
@@ -87,3 +88,21 @@ def test_quality_rejects_uncited_facts():
     result = evaluate_output([story], "# digest", "<html><body><p>ok</p></body></html>", [{"status": "UPDATE"}], {"source": {"status": "HEALTHY"}})
     assert not result["passed"]
     assert not result["checks"]["claims_cited"]
+
+
+def test_quality_marks_source_failure_for_review():
+    result = evaluate_output([], "# digest", "<html><body><p>ok</p></body></html>", [{"status": "SOURCE_FAILURE"}], {
+        "reuters": {"source": "Reuters", "source_id": "reuters", "status": "FAILED", "error": "ValueError"},
+    })
+    assert result["status"] == "QUALITY_REVIEW_REQUIRED"
+    assert not result["passed"]
+    assert result["source_failures"][0]["error"] == "ValueError"
+
+
+def test_coverage_does_not_hide_source_failure_as_insufficient_evidence():
+    rows = coverage(
+        [{"domain": "world", "topic": "Geopolitics", "micro_topic": "conflict"}],
+        [],
+        {"healthy_sources": 0, "checked_sources": 1, "source_failures": [{"source_id": "reuters"}]},
+    )
+    assert rows[0]["status"] == "SOURCE_FAILURE"
