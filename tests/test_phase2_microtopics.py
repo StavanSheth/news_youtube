@@ -170,5 +170,13 @@ def test_evidence_scope_is_structured_and_serializable():
     assert metadata["micro_topic_id"] == "micro-a"
     assert metadata["evidence_ids"] == ["e1"]
     assert metadata["evidence_isolated"] is True
-    assert scope.allows({"metadata": {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a"}})
+    assert scope.allows({"metadata": {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "evidence_id": "e1"}})
     assert not scope.allows({"metadata": {"micro_topic_id": "micro-b", "content_id": "content-a", "source_id": "source-a"}})
+
+
+def test_evidence_scope_rejects_wrong_event_and_entity():
+    scope = EvidenceScope("micro-a", "content-a", "source-a", allowed_events=("event-a",), allowed_entities=("entity-a",))
+    base = {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "event_id": "event-a", "entity_ids": ["entity-a"]}
+    assert scope.allows({"metadata": base})
+    assert not scope.allows({"metadata": {**base, "event_id": "event-b"}})
+    assert not scope.allows({"metadata": {**base, "entity_ids": ["entity-b"]}})

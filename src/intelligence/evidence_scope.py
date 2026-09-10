@@ -29,11 +29,22 @@ class EvidenceScope:
 
     def allows(self, chunk: dict[str, Any]) -> bool:
         metadata = chunk.get("metadata", {})
-        return (
+        identity_ok = (
             metadata.get("micro_topic_id") == self.micro_topic_id
             and metadata.get("content_id") == self.source_content_id
             and metadata.get("source_id") == self.source_id
         )
+        if not identity_ok:
+            return False
+        if self.allowed_events and metadata.get("event_id", "") not in self.allowed_events:
+            return False
+        if self.allowed_entities:
+            chunk_entities = set(metadata.get("entity_ids", []))
+            if not chunk_entities.intersection(self.allowed_entities):
+                return False
+        if self.evidence_ids and metadata.get("evidence_id", "") not in self.evidence_ids:
+            return False
+        return True
 
     def to_metadata(self) -> dict[str, Any]:
         return {

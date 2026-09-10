@@ -12,7 +12,14 @@ from .themes import analysis_profile, select_theme
 class RAGProvider(Protocol):
     metrics: dict[str, Any]
 
-    def retrieve(self, item: dict[str, Any], classification: dict[str, Any], theme: dict[str, Any], event_context: dict[str, Any] | None = None) -> dict[str, Any]: ...
+    def retrieve(
+        self,
+        item: dict[str, Any],
+        classification: dict[str, Any],
+        theme: dict[str, Any],
+        event_context: dict[str, Any] | None = None,
+        scope: EvidenceScope | None = None,
+    ) -> dict[str, Any]: ...
 
 
 class MicroTopicManager:
@@ -94,6 +101,7 @@ class MicroTopicManager:
             source_id=str(item.get("metadata", {}).get("source_id") or make_source_id(item.get("source", "unknown"))),
             allowed_spans=tuple(windows),
             allowed_claims=tuple(windows),
+            allowed_events=tuple(filter(None, [item.get("metadata", {}).get("event_id", "")])),
             isolation_confidence=float(classification.get("classification_confidence", classification.get("confidence", 0.0))),
         )
         metadata = {**item.get("metadata", {}), **scope.to_metadata()}
