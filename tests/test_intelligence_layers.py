@@ -54,7 +54,8 @@ def test_theme_profile_differs_for_news_and_video():
 
 def test_coverage_distinguishes_no_update_from_missing_evidence():
     entries = [{"domain": "finance", "topic": "Finance", "micro_topic": "interest-rates"}]
-    assert coverage(entries, [], {"healthy_sources": 1})[0]["status"] == "NO_MAJOR_UPDATE"
+    assert coverage(entries, [], {"healthy_sources": 1})[0]["status"] == "INSUFFICIENT_EVIDENCE"
+    assert coverage(entries, [], {"healthy_sources": 1, "evaluated_micro_topics": ["finance:interest-rates"]})[0]["status"] == "NO_RELEVANT_CONTENT"
     assert coverage(entries, [], {"healthy_sources": 0})[0]["status"] == "INSUFFICIENT_EVIDENCE"
     assert coverage(
         entries,

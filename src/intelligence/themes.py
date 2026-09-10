@@ -24,37 +24,36 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         if topic not in {"any", classification.get("topic"), classification.get("topic_key")}:
             continue
         if micro == classification["micro_topic"]:
-            level = 4
+            level, resolution = 4, "exact_micro_topic"
         elif topic not in {"any", None}:
-            level = 3
+            level, resolution = 3, "topic_fallback"
         elif theme.get("domain", "all") == classification["domain"]:
-            level = 2
+            level, resolution = 2, "domain_fallback"
         else:
-            level = 1
-        candidates.append((level, theme))
+            level, resolution = 1, "global_fallback"
+        candidates.append((level, {**theme, "resolution_level": resolution, "fallback_used": level < 4}))
     if candidates:
-        return max(candidates, key=lambda match: (match[0], int(match[1].get("priority", 0))))[1]
-    # A configured fallback is still specialized at runtime, so taxonomy leaves never
-    # collapse into one generic profile merely because YAML lacks a bespoke entry.
+        best_level = max(level for level, _ in candidates)
+        best = [theme for level, theme in candidates if level == best_level]
+        if len(best) > 1:
+            best.sort(key=lambda theme: (-int(theme.get("priority", 0)), str(theme.get("id", ""))))
+        return best[0]
+    # A controlled configured fallback is explicit and observable; no theme is invented.
     fallback = next((theme for theme in themes if theme.get("id") == "domain-fallback"), {})
-    report_type = "technical_deep_dive" if classification["domain"] in {
-        "artificial-intelligence", "software-engineering", "cybersecurity", "semiconductors", "research"
-    } else "executive_brief"
+    if not fallback:
+        raise ValueError(f"No configured theme or controlled fallback for {classification['micro_topic']}")
     return {
         **fallback,
-        "id": f"{classification['domain']}-{classification['micro_topic']}-analysis",
         "domain": classification["domain"],
-        "micro_topic": classification["micro_topic"],
-        "priority": classification.get("priority", 1),
         "topic": classification.get("topic", ""),
+        "micro_topic": classification["micro_topic"],
         "content_stream": [stream],
         "questions": (
             ["main_argument", "claims", "methods", "tools", "workflows", "experiments", "practical_applications"]
-            if stream == "video"
-            else ["what_changed", "what_is_confirmed", "why_it_matters", "who_is_affected", "what_to_watch"]
+            if stream == "video" else fallback.get("questions", [])
         ),
-        "evidence": {"required": ["fact"], "distinguish": ["fact", "official_statement", "reported_claim", "opinion", "inference", "speculation"]},
-        "output": {"report_type": report_type, "sections": ["summary", "evidence", "implications", "actions", "sources"]},
+        "resolution_level": "controlled_fallback",
+        "fallback_used": True,
     }
 
 
@@ -66,5 +65,8 @@ def analysis_profile(classification: dict[str, Any], theme: dict[str, Any], item
         "content_type": item.get("metadata", {}).get("content_type", item.get("kind", "news")),
         "theme": theme.get("id", "domain-fallback"), "questions": theme.get("questions", []),
         "evidence_rules": theme.get("evidence", {}), "output": theme.get("output", {}),
+        "theme_resolution_level": theme.get("resolution_level", "unknown"),
+        "fallback_used": bool(theme.get("fallback_used", False)),
+        "analysis_contract": theme.get("analysis_contract", {}),
         "video_requirements": ["main argument", "claims", "methods", "tools", "workflows", "experiments"] if stream == "video" else [],
     }

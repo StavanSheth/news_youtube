@@ -38,6 +38,31 @@ def validate_topics(topics: list[dict[str, Any]], taxonomy: dict[str, Any]) -> N
             raise ValueError(f"Invalid report type: {report_type}")
 
 
+def validate_microtopics(config: dict[str, Any], taxonomy: dict[str, Any]) -> None:
+    """Validate the profile overlay used for every taxonomy micro-topic."""
+    defaults = config.get("defaults")
+    if not isinstance(defaults, dict):
+        raise ValueError("Micro-topic configuration requires defaults")
+    required = {"classification_threshold", "analysis_contract", "no_update_policy"}
+    if required - defaults.keys():
+        raise ValueError(f"Micro-topic defaults missing: {sorted(required - defaults.keys())}")
+    report_types = set(taxonomy["report_types"])
+    for domain, definition in config.get("domains", {}).items():
+        if domain not in taxonomy["domains"]:
+            raise ValueError(f"Invalid micro-topic profile domain: {domain}")
+        for micro_topic, profile in definition.get("overrides", {}).items():
+            if micro_topic not in taxonomy["domains"][domain].get("topics", []):
+                raise ValueError(f"Invalid micro-topic override: {domain}/{micro_topic}")
+            threshold = float(profile.get("classification_threshold", defaults["classification_threshold"]))
+            if not 0 <= threshold <= 1:
+                raise ValueError(f"Invalid micro-topic threshold: {domain}/{micro_topic}")
+            configured_reports = profile.get("report_types", defaults.get("report_types", []))
+            if not configured_reports or not set(configured_reports) <= report_types:
+                raise ValueError(f"Invalid micro-topic report types: {domain}/{micro_topic}")
+            if len(profile.get("aliases", [])) != len(set(profile.get("aliases", []))):
+                raise ValueError(f"Duplicate micro-topic aliases: {domain}/{micro_topic}")
+
+
 def validate_themes(themes: list[dict[str, Any]], taxonomy: dict[str, Any]) -> None:
     ids = [theme.get("id") for theme in themes]
     if any(not theme_id for theme_id in ids) or len(ids) != len(set(ids)):
@@ -49,6 +74,7 @@ def validate_themes(themes: list[dict[str, Any]], taxonomy: dict[str, Any]) -> N
         for definition in taxonomy["domains"].values()
         for micro_topic in definition.get("topics", [])
     }
+    route_keys: set[tuple[Any, ...]] = set()
     for theme in themes:
         if theme.get("domain", "all") not in valid_domains:
             raise ValueError(f"Invalid theme domain: {theme.get('domain')}")
@@ -58,6 +84,14 @@ def validate_themes(themes: list[dict[str, Any]], taxonomy: dict[str, Any]) -> N
         micro_topic = theme.get("micro_topic", "any")
         if micro_topic not in {"any", "*"} and micro_topic not in valid_micro_topics:
             raise ValueError(f"Invalid theme micro-topic: {micro_topic}")
+        if theme.get("id") == "domain-fallback" and theme.get("micro_topic", "any") not in {"any", "*"}:
+            raise ValueError("domain-fallback must be global")
+        if theme.get("id") != "domain-fallback" and not theme.get("questions"):
+            raise ValueError(f"Theme {theme.get('id')} requires analysis questions")
+        route_key = (theme.get("domain", "all"), theme.get("topic", "any"), micro_topic, tuple(theme.get("content_stream", ["all"]) if isinstance(theme.get("content_stream", ["all"]), list) else [theme.get("content_stream")]))
+        if route_key in route_keys:
+            raise ValueError(f"Ambiguous theme routing: {route_key}")
+        route_keys.add(route_key)
 
 
 def validate_sources(sources: list[dict[str, Any]]) -> None:

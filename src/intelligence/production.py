@@ -469,7 +469,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         else GeminiProvider(os.environ["GEMINI_API_KEY"], config.settings["gemini"], config.prompts)
     )
     manager = IntelligenceManager(provider, config.themes, config.settings.get("gemini", {}))
-    micro_topic_catalog = catalog(config.taxonomy, config.topics)
+    micro_topic_catalog = catalog(config.taxonomy, config.topics, config.microtopics)
     stories, compact, coverage_assignments = [], [], []
     for item in sorted(eligible, key=lambda entry: entry.get("published_at", ""), reverse=True)[
         : int(pipe["max_items_per_run"])
@@ -549,6 +549,9 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
     source_summary = {
         "healthy_sources": sum(1 for value in source_health.values() if value["status"] == "HEALTHY"),
         "checked_sources": len(source_health),
+        "evaluated_micro_topics": sorted({
+            f"{assignment['domain']}:{assignment['micro_topic']}" for assignment in coverage_assignments
+        }),
     }
     micro_topic_coverage = coverage(micro_topic_catalog, coverage_assignments, source_summary)
     markdown, html = render(root, stories, started, micro_topic_coverage, source_health, run_context)

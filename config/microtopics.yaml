@@ -1,0 +1,58 @@
+version: 1
+defaults:
+  enabled: true
+  classification_threshold: 0.5
+  priority: Medium
+  significance_rules:
+    min_positive_signals: 1
+  required_evidence: [fact]
+  required_entities: []
+  event_expectations: [material_change]
+  opportunity_triggers: []
+  report_types: [short_summary]
+  analysis_contract:
+    questions: [what_changed, why_it_matters, what_to_watch]
+    evidence_required: [fact]
+    output_sections: [summary, evidence, implications, actions, sources]
+  no_update_policy: checked_only
+domains:
+  artificial-intelligence:
+    priority: High
+    overrides:
+      foundation-models:
+        aliases: [foundation model, base model]
+        positive_signals: [model release, benchmark, model capability, model access, model pricing]
+        negative_signals: [port infrastructure, regulation bill]
+        report_types: [technical_deep_dive, executive_summary]
+      ai-agents:
+        aliases: [AI agent, agent, agents, agentic]
+        positive_signals: [tool use, autonomy, memory, workflow orchestration, agent evaluation]
+        negative_signals: [single model benchmark, model weights, training run]
+        report_types: [technical_deep_dive, case_study]
+      rag:
+        aliases: [retrieval augmented generation, RAG]
+        positive_signals: [retrieval, reranking, chunking, embeddings, context relevance]
+        negative_signals: [agent autonomy, semiconductor packaging, policy bill]
+        report_types: [technical_deep_dive]
+      embeddings:
+        aliases: [embedding, embeddings, vector search]
+        positive_signals: [embedding model, similarity search, vector index]
+        negative_signals: [agent autonomy, benchmark leaderboard]
+        report_types: [technical_deep_dive]
+      ai-infrastructure:
+        aliases: [AI infrastructure, inference infrastructure]
+        positive_signals: [GPU cluster, accelerator, serving, inference stack, data center]
+        negative_signals: [agent workflow, regulation bill, model benchmark]
+        report_types: [technical_deep_dive]
+      ai-regulation:
+        aliases: [AI regulation, AI law, AI policy]
+        positive_signals: [regulator, compliance, legislation, rules, safety standard]
+        negative_signals: [model benchmark, agent workflow, GPU cluster]
+        report_types: [executive_brief]
+      coding-models:
+        aliases: [coding model, code model, code assistant]
+        positive_signals: [code generation, software engineering, programming benchmark]
+        negative_signals: [general model release, agent workflow]
+        report_types: [technical_deep_dive]
+themes:
+  required_resolution: exact_or_controlled_fallback

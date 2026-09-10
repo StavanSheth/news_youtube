@@ -6,7 +6,7 @@ from typing import Any
 
 import yaml
 
-from .validation import validate_sources, validate_taxonomy, validate_topics, validate_themes
+from .validation import validate_microtopics, validate_sources, validate_taxonomy, validate_topics, validate_themes
 from .contracts import VersionContract
 
 
@@ -18,6 +18,7 @@ class AppConfig:
     settings: dict[str, Any]
     taxonomy: dict[str, Any]
     themes: list[dict[str, Any]]
+    microtopics: dict[str, Any]
     entities: list[dict[str, Any]]
     versions: VersionContract
 
@@ -36,6 +37,8 @@ def load_config(root: Path) -> AppConfig:
     if versions.taxonomy_version != str(taxonomy.get("version", "")):
         raise ValueError("version.yaml taxonomy_version must match taxonomy.yaml version")
     validate_topics(topics, taxonomy)
+    microtopics = _read_yaml(config_dir / "microtopics.yaml")
+    validate_microtopics(microtopics, taxonomy)
     themes = _read_yaml(config_dir / "themes.yaml").get("themes", [])
     validate_themes(themes, taxonomy)
     settings = _read_yaml(config_dir / "settings.yaml")
@@ -53,6 +56,7 @@ def load_config(root: Path) -> AppConfig:
         settings=settings,
         taxonomy=_read_yaml(config_dir / "taxonomy.yaml"),
         themes=themes,
+        microtopics=microtopics,
         entities=_read_yaml(config_dir / "entities.yaml").get("entities", []),
         versions=versions,
     )
