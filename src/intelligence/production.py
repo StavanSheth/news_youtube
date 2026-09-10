@@ -91,13 +91,6 @@ class RepositoryState:
 
     def _file(self, name: str) -> Path:
         return self.paths.data_file(name) if self.paths else self.data_dir / name
-        self.videos = self._read("processed_videos.json", {})
-        self.news = self._read("processed_news.json", {})
-        self.runs = self._read("processing_state.json", {"runs": [], "recent_items": []})
-        self.failures = self._read("failed_items.json", {})
-        self.entities = self._read("entities.json", {})
-        self.events = self._read("events.json", {})
-        self.trends = self._read("trends.json", {})
 
     def _read(self, name: str, fallback: Any) -> Any:
         try:

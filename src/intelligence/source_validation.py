@@ -5,6 +5,7 @@ from typing import Any, Callable
 from urllib.parse import urlparse
 
 import feedparser
+import requests
 
 from .statuses import SourceStatus
 
@@ -20,7 +21,7 @@ def validate_source_registry(
     parser: Callable[[str], Any] | None = None,
 ) -> dict[str, dict[str, Any]]:
     """Validate every configured source without enabling inaccessible sources."""
-    parse = parser or feedparser.parse
+    parse = parser
     report: dict[str, dict[str, Any]] = {}
     for source in sources:
         source_id = source.get("id", source.get("name", "source"))
@@ -51,7 +52,12 @@ def validate_source_registry(
             report[source_id] = record
             continue
         try:
-            parsed = parse(url)
+            if parse:
+                parsed = parse(url)
+            else:
+                response = requests.get(url, timeout=timeout, headers={"User-Agent": "news-youtube-intelligence/1.0"})
+                response.raise_for_status()
+                parsed = feedparser.parse(response.content)
             entries = list(getattr(parsed, "entries", []) or [])
             record["http_status"] = getattr(parsed, "status", None)
             record["item_count"] = len(entries)

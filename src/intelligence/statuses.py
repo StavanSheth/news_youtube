@@ -65,3 +65,52 @@ class PipelineStage(StrEnum):
     EMAIL_SENT = "EMAIL_SENT"
     ARCHIVED = "ARCHIVED"
     RUN_COMPLETED = "RUN_COMPLETED"
+
+    # Canonical Set E stage names. Existing lifecycle names above remain for
+    # compatibility; this vocabulary formalizes the full ordering contract.
+    COLLECT = "COLLECT"
+    CHEAP_FILTER = "CHEAP_FILTER"
+    DEDUPLICATE = "DEDUPLICATE"
+    ENTITY_EVENT = "ENTITY_EVENT"
+    EVENT_GROUPING = "EVENT_GROUPING"
+    THEME_ROUTING = "THEME_ROUTING"
+    MICRO_TOPIC = "MICRO_TOPIC"
+    RAG = "RAG"
+    CONTEXT = "CONTEXT"
+    AI = "AI"
+    SCHEMA_VALIDATION = "SCHEMA_VALIDATION"
+    SEMANTIC_VALIDATION = "SEMANTIC_VALIDATION"
+    PROVENANCE = "PROVENANCE"
+    BUSINESS_RULES = "BUSINESS_RULES"
+    ENRICHMENT = "ENRICHMENT"
+    NEWSLETTER = "NEWSLETTER"
+    RENDER = "RENDER"
+    SMTP = "SMTP"
+    ARCHIVE = "ARCHIVE"
+
+
+CANONICAL_PIPELINE_ORDER: tuple[PipelineStage, ...] = (
+    PipelineStage.COLLECT,
+    PipelineStage.NORMALIZED,
+    PipelineStage.CHEAP_FILTER,
+    PipelineStage.DEDUPLICATE,
+    PipelineStage.CLASSIFIED,
+    PipelineStage.ENTITY_EVENT,
+    PipelineStage.EVENT_GROUPING,
+    PipelineStage.THEME_ROUTING,
+    PipelineStage.MICRO_TOPIC,
+    PipelineStage.RAG,
+    PipelineStage.CONTEXT,
+    PipelineStage.AI,
+    PipelineStage.SCHEMA_VALIDATION,
+    PipelineStage.SEMANTIC_VALIDATION,
+    PipelineStage.PROVENANCE,
+    PipelineStage.BUSINESS_RULES,
+    PipelineStage.ENRICHMENT,
+    PipelineStage.SYNTHESIS,
+    PipelineStage.NEWSLETTER,
+    PipelineStage.RENDER,
+    PipelineStage.SMTP,
+    PipelineStage.ARCHIVE,
+    PipelineStage.RUN_COMPLETED,
+)

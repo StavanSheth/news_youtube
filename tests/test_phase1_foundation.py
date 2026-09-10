@@ -31,7 +31,8 @@ from intelligence.persistence import PersistencePaths
 from intelligence import pipeline
 from intelligence.production import eligible_for_edition
 from intelligence.models import SourceItem
-from intelligence.statuses import IntelligenceStatus, PipelineStage
+from intelligence.source_validation import validate_source_registry
+from intelligence.statuses import CANONICAL_PIPELINE_ORDER, IntelligenceStatus, PipelineStage
 
 
 ROOT = Path(__file__).parents[1]
@@ -161,6 +162,46 @@ def test_edition_validation_and_logical_persistence_areas():
     assert {paths.logical_dir(name).name for name in ("raw", "normalized", "rag", "events", "entities", "state", "runs")} == {
         "raw", "normalized", "rag", "events", "entities", "state", "runs"
     }
+
+
+def test_canonical_pipeline_order_is_unique_and_complete():
+    assert len(CANONICAL_PIPELINE_ORDER) == len(set(CANONICAL_PIPELINE_ORDER))
+    assert CANONICAL_PIPELINE_ORDER[0] == PipelineStage.COLLECT
+    assert CANONICAL_PIPELINE_ORDER[-1] == PipelineStage.RUN_COMPLETED
+    assert PipelineStage.PROVENANCE in CANONICAL_PIPELINE_ORDER
+    assert CANONICAL_PIPELINE_ORDER.index(PipelineStage.RAG) < CANONICAL_PIPELINE_ORDER.index(PipelineStage.AI)
+
+
+def test_malformed_optional_source_timestamps_are_not_promoted_to_validity():
+    item = {"published_at": "2026-09-10T10:00:00+00:00", "metadata": {
+        "updated_at": "bad-updated", "retrieved_at": "bad-retrieved"
+    }}
+    timestamps = source_timestamps_from_mapping(item)
+    assert timestamps.publication_status == TimestampStatus.VALID
+    assert timestamps.updated_at is None
+    assert timestamps.retrieved_at is not None
+
+
+def test_source_validation_applies_timeout_to_default_http_fetch(monkeypatch):
+    calls = {}
+
+    class Response:
+        content = b"<rss><channel><item><title>Story</title><link>https://example.test/story</link></item></channel></rss>"
+
+        def raise_for_status(self):
+            return None
+
+    def fake_get(url, timeout, headers):
+        calls.update({"url": url, "timeout": timeout, "headers": headers})
+        return Response()
+
+    monkeypatch.setattr("intelligence.source_validation.requests.get", fake_get)
+    report = validate_source_registry(
+        [{"id": "source-1", "name": "Source", "enabled": True, "feed_url": "https://example.test/feed"}],
+        timeout=3,
+    )
+    assert calls["timeout"] == 3
+    assert report["source-1"]["status"] == "HEALTHY"
 
 
 def test_legacy_pipeline_entry_point_delegates_to_authoritative_runner(monkeypatch, tmp_path):
