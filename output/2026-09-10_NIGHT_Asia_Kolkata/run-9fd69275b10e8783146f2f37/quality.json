@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "no_duplicate_stories": true,
+    "no_duplicate_facts": true,
+    "source_links": true,
+    "source_labels": true,
+    "importance_present": true,
+    "confidence_present": true,
+    "micro_topic_present": true,
+    "theme_present": true,
+    "evidence_classified": true,
+    "claims_cited": true,
+    "coverage_present": true,
+    "markdown_present": true,
+    "html_present": true,
+    "html_balanced": true,
+    "source_health_recorded": true,
+    "source_health_ok": false
+  },
+  "scores": {
+    "coverage_score": 67,
+    "classification_score": 100,
+    "theme_score": 100,
+    "evidence_score": 100,
+    "newsletter_score": 100,
+    "retrieval_score": 0,
+    "source_score": 0,
+    "actionability_score": 0,
+    "intelligence_score": 75,
+    "overall": 60
+  },
+  "passed": false,
+  "minimum_score": 95
+}
