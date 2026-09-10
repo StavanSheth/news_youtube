@@ -1,0 +1,1341 @@
+{
+  "reuters-world": {
+    "source": "Reuters World",
+    "source_id": "reuters-world",
+    "enabled": true,
+    "trust_tier": 2,
+    "region": "global",
+    "country": "GLOBAL",
+    "topics": [
+      "wars-conflicts",
+      "markets",
+      "product-launches"
+    ],
+    "micro_topics": [
+      "strategic-competition",
+      "macroeconomics",
+      "product-launches"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "wars-conflicts",
+      "markets",
+      "product-launches"
+    ],
+    "micro_topics_detected": [
+      "strategic-competition",
+      "macroeconomics",
+      "product-launches"
+    ],
+    "checked_at": "2026-09-10T06:02:13.078181+00:00",
+    "url": "https://feeds.reuters.com/Reuters/worldNews",
+    "status": "SOURCE_UNAVAILABLE",
+    "failure_reason": "ConnectionError"
+  },
+  "bbc-world": {
+    "source": "BBC World",
+    "source_id": "bbc-world",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "global",
+    "country": "GLOBAL",
+    "topics": [
+      "wars-conflicts",
+      "markets",
+      "product-launches"
+    ],
+    "micro_topics": [
+      "strategic-competition",
+      "macroeconomics",
+      "product-launches"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "wars-conflicts",
+      "markets",
+      "product-launches"
+    ],
+    "micro_topics_detected": [
+      "strategic-competition",
+      "macroeconomics",
+      "product-launches"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155684+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "nasa-news": {
+    "source": "NASA News",
+    "source_id": "nasa-news",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "north-america",
+    "country": "US",
+    "topics": [
+      "launches",
+      "missions",
+      "space-policy",
+      "engineering"
+    ],
+    "micro_topics": [
+      "launches",
+      "missions",
+      "space-policy",
+      "engineering"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "launches",
+      "missions",
+      "space-policy",
+      "engineering"
+    ],
+    "micro_topics_detected": [
+      "launches",
+      "missions",
+      "space-policy",
+      "engineering"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155706+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "rbi-rss": {
+    "source": "Reserve Bank of India RSS",
+    "source_id": "rbi-rss",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "central-banks",
+      "interest-rates",
+      "regulation"
+    ],
+    "micro_topics": [
+      "central-banks",
+      "interest-rates",
+      "regulation"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "central-banks",
+      "interest-rates",
+      "regulation"
+    ],
+    "micro_topics_detected": [
+      "central-banks",
+      "interest-rates",
+      "regulation"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155723+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "ap-global": {
+    "source": "AP Global",
+    "source_id": "ap-global",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "global",
+    "country": "GLOBAL",
+    "topics": [
+      "wars-conflicts",
+      "markets"
+    ],
+    "micro_topics": [
+      "strategic-competition",
+      "macroeconomics"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "wars-conflicts",
+      "markets"
+    ],
+    "micro_topics_detected": [
+      "strategic-competition",
+      "macroeconomics"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155729+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "financial-times": {
+    "source": "Financial Times",
+    "source_id": "financial-times",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "global",
+    "country": "GLOBAL",
+    "topics": [
+      "markets",
+      "strategy"
+    ],
+    "micro_topics": [
+      "macroeconomics",
+      "product-launches"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "markets",
+      "strategy"
+    ],
+    "micro_topics_detected": [
+      "macroeconomics",
+      "product-launches"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155733+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "bloomberg": {
+    "source": "Bloomberg",
+    "source_id": "bloomberg",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "global",
+    "country": "GLOBAL",
+    "topics": [
+      "markets",
+      "macroeconomics"
+    ],
+    "micro_topics": [
+      "macroeconomics",
+      "markets"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "markets",
+      "macroeconomics"
+    ],
+    "micro_topics_detected": [
+      "macroeconomics",
+      "markets"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155738+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "wsj": {
+    "source": "Wall Street Journal",
+    "source_id": "wsj",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "north-america",
+    "country": "US",
+    "topics": [
+      "markets",
+      "strategy"
+    ],
+    "micro_topics": [
+      "macroeconomics",
+      "product-launches"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "markets",
+      "strategy"
+    ],
+    "micro_topics_detected": [
+      "macroeconomics",
+      "product-launches"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155749+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "pib-india": {
+    "source": "Press Information Bureau",
+    "source_id": "pib-india",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "national-policy",
+      "ministries"
+    ],
+    "micro_topics": [
+      "national-policy",
+      "grants"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "national-policy",
+      "ministries"
+    ],
+    "micro_topics_detected": [
+      "national-policy",
+      "grants"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155755+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "sebi-india": {
+    "source": "SEBI",
+    "source_id": "sebi-india",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "regulation",
+      "banking"
+    ],
+    "micro_topics": [
+      "regulation"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "regulation",
+      "banking"
+    ],
+    "micro_topics_detected": [
+      "regulation"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155760+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "meity-india": {
+    "source": "MeitY",
+    "source_id": "meity-india",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "digital-policy",
+      "ai-policy"
+    ],
+    "micro_topics": [
+      "ai-regulation",
+      "digital-policy"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "digital-policy",
+      "ai-policy"
+    ],
+    "micro_topics_detected": [
+      "ai-regulation",
+      "digital-policy"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155765+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "isro-india": {
+    "source": "ISRO",
+    "source_id": "isro-india",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "launches",
+      "missions"
+    ],
+    "micro_topics": [
+      "launches",
+      "missions"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "launches",
+      "missions"
+    ],
+    "micro_topics_detected": [
+      "launches",
+      "missions"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155771+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "india-defence": {
+    "source": "Ministry of Defence India",
+    "source_id": "india-defence",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "defence-policy",
+      "procurement"
+    ],
+    "micro_topics": [
+      "defence-policy",
+      "procurement"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "defence-policy",
+      "procurement"
+    ],
+    "micro_topics_detected": [
+      "defence-policy",
+      "procurement"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155778+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "india-mea": {
+    "source": "Ministry of External Affairs India",
+    "source_id": "india-mea",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "diplomacy",
+      "bilateral-relations"
+    ],
+    "micro_topics": [
+      "diplomacy",
+      "strategic-competition"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "diplomacy",
+      "bilateral-relations"
+    ],
+    "micro_topics_detected": [
+      "diplomacy",
+      "strategic-competition"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155783+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "india-finance-ministry": {
+    "source": "Ministry of Finance India",
+    "source_id": "india-finance-ministry",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "budget",
+      "macroeconomics"
+    ],
+    "micro_topics": [
+      "macroeconomics",
+      "national-policy"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "budget",
+      "macroeconomics"
+    ],
+    "micro_topics_detected": [
+      "macroeconomics",
+      "national-policy"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155788+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "dpiit-india": {
+    "source": "DPIIT",
+    "source_id": "dpiit-india",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "startups",
+      "industrial-policy"
+    ],
+    "micro_topics": [
+      "funding",
+      "industrial-policy"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "startups",
+      "industrial-policy"
+    ],
+    "micro_topics_detected": [
+      "funding",
+      "industrial-policy"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155793+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "india-commerce": {
+    "source": "Ministry of Commerce India",
+    "source_id": "india-commerce",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "india-south-asia",
+    "country": "IN",
+    "topics": [
+      "trade",
+      "exports"
+    ],
+    "micro_topics": [
+      "trade",
+      "supply-chains"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "trade",
+      "exports"
+    ],
+    "micro_topics_detected": [
+      "trade",
+      "supply-chains"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155797+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "white-house": {
+    "source": "White House",
+    "source_id": "white-house",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "north-america",
+    "country": "US",
+    "topics": [
+      "national-policy",
+      "diplomacy"
+    ],
+    "micro_topics": [
+      "national-policy",
+      "strategic-competition"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "national-policy",
+      "diplomacy"
+    ],
+    "micro_topics_detected": [
+      "national-policy",
+      "strategic-competition"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155801+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "us-congress": {
+    "source": "US Congress",
+    "source_id": "us-congress",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "north-america",
+    "country": "US",
+    "topics": [
+      "legislation",
+      "regulation"
+    ],
+    "micro_topics": [
+      "legislation",
+      "regulation"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "legislation",
+      "regulation"
+    ],
+    "micro_topics_detected": [
+      "legislation",
+      "regulation"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155817+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "federal-reserve": {
+    "source": "Federal Reserve",
+    "source_id": "federal-reserve",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "north-america",
+    "country": "US",
+    "topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155822+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "us-sec": {
+    "source": "US SEC",
+    "source_id": "us-sec",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "north-america",
+    "country": "US",
+    "topics": [
+      "regulation",
+      "equities"
+    ],
+    "micro_topics": [
+      "regulation",
+      "equities"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "regulation",
+      "equities"
+    ],
+    "micro_topics_detected": [
+      "regulation",
+      "equities"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155826+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "nist": {
+    "source": "NIST",
+    "source_id": "nist",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "north-america",
+    "country": "US",
+    "topics": [
+      "vulnerabilities",
+      "security-tooling"
+    ],
+    "micro_topics": [
+      "cves",
+      "security-tooling"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "vulnerabilities",
+      "security-tooling"
+    ],
+    "micro_topics_detected": [
+      "cves",
+      "security-tooling"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155831+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "european-commission": {
+    "source": "European Commission",
+    "source_id": "european-commission",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "europe-eu",
+    "country": "EU",
+    "topics": [
+      "regulation",
+      "trade"
+    ],
+    "micro_topics": [
+      "ai-regulation",
+      "trade"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "regulation",
+      "trade"
+    ],
+    "micro_topics_detected": [
+      "ai-regulation",
+      "trade"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155836+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "ecb": {
+    "source": "European Central Bank",
+    "source_id": "ecb",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "europe-eu",
+    "country": "EU",
+    "topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155841+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "esa": {
+    "source": "European Space Agency",
+    "source_id": "esa",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "europe-eu",
+    "country": "EU",
+    "topics": [
+      "missions",
+      "engineering"
+    ],
+    "micro_topics": [
+      "missions",
+      "engineering"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "missions",
+      "engineering"
+    ],
+    "micro_topics_detected": [
+      "missions",
+      "engineering"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155846+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "cern": {
+    "source": "CERN",
+    "source_id": "cern",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "europe-eu",
+    "country": "EU",
+    "topics": [
+      "physics",
+      "research"
+    ],
+    "micro_topics": [
+      "research",
+      "breakthroughs"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "physics",
+      "research"
+    ],
+    "micro_topics_detected": [
+      "research",
+      "breakthroughs"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155850+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "uk-government": {
+    "source": "UK Government",
+    "source_id": "uk-government",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "uk",
+    "country": "GB",
+    "topics": [
+      "national-policy",
+      "regulation"
+    ],
+    "micro_topics": [
+      "national-policy",
+      "regulation"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "national-policy",
+      "regulation"
+    ],
+    "micro_topics_detected": [
+      "national-policy",
+      "regulation"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155855+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "bank-of-england": {
+    "source": "Bank of England",
+    "source_id": "bank-of-england",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "uk",
+    "country": "GB",
+    "topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155859+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "pboc": {
+    "source": "Peoples Bank of China",
+    "source_id": "pboc",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "china",
+    "country": "CN",
+    "topics": [
+      "central-banks",
+      "currencies"
+    ],
+    "micro_topics": [
+      "central-banks",
+      "currencies"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "central-banks",
+      "currencies"
+    ],
+    "micro_topics_detected": [
+      "central-banks",
+      "currencies"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155864+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "xinhua": {
+    "source": "Xinhua",
+    "source_id": "xinhua",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "china",
+    "country": "CN",
+    "topics": [
+      "diplomacy",
+      "trade"
+    ],
+    "micro_topics": [
+      "strategic-competition",
+      "trade"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "diplomacy",
+      "trade"
+    ],
+    "micro_topics_detected": [
+      "strategic-competition",
+      "trade"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155869+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "meti-japan": {
+    "source": "METI Japan",
+    "source_id": "meti-japan",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "japan",
+    "country": "JP",
+    "topics": [
+      "industrial-policy",
+      "export-controls"
+    ],
+    "micro_topics": [
+      "semiconductor-policy",
+      "export-controls"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "industrial-policy",
+      "export-controls"
+    ],
+    "micro_topics_detected": [
+      "semiconductor-policy",
+      "export-controls"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155873+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "bank-of-japan": {
+    "source": "Bank of Japan",
+    "source_id": "bank-of-japan",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "japan",
+    "country": "JP",
+    "topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155878+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "jaxa": {
+    "source": "JAXA",
+    "source_id": "jaxa",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "japan",
+    "country": "JP",
+    "topics": [
+      "missions",
+      "launches"
+    ],
+    "micro_topics": [
+      "missions",
+      "launches"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "missions",
+      "launches"
+    ],
+    "micro_topics_detected": [
+      "missions",
+      "launches"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155882+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "south-korea-msit": {
+    "source": "South Korea MSIT",
+    "source_id": "south-korea-msit",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "south-korea",
+    "country": "KR",
+    "topics": [
+      "digital-policy",
+      "ai-policy"
+    ],
+    "micro_topics": [
+      "ai-regulation",
+      "digital-policy"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "digital-policy",
+      "ai-policy"
+    ],
+    "micro_topics_detected": [
+      "ai-regulation",
+      "digital-policy"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155888+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "bank-of-korea": {
+    "source": "Bank of Korea",
+    "source_id": "bank-of-korea",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "south-korea",
+    "country": "KR",
+    "topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155893+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "yonhap": {
+    "source": "Yonhap",
+    "source_id": "yonhap",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "south-korea",
+    "country": "KR",
+    "topics": [
+      "strategic-competition",
+      "supply-chains"
+    ],
+    "micro_topics": [
+      "strategic-competition",
+      "supply-chains"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "strategic-competition",
+      "supply-chains"
+    ],
+    "micro_topics_detected": [
+      "strategic-competition",
+      "supply-chains"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155897+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "uae-wam": {
+    "source": "UAE Government WAM",
+    "source_id": "uae-wam",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "middle-east",
+    "country": "AE",
+    "topics": [
+      "national-policy",
+      "trade"
+    ],
+    "micro_topics": [
+      "national-policy",
+      "trade"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "national-policy",
+      "trade"
+    ],
+    "micro_topics_detected": [
+      "national-policy",
+      "trade"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155901+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "saudi-spa": {
+    "source": "Saudi Press Agency",
+    "source_id": "saudi-spa",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "middle-east",
+    "country": "SA",
+    "topics": [
+      "national-policy",
+      "diplomacy"
+    ],
+    "micro_topics": [
+      "national-policy",
+      "diplomacy"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "national-policy",
+      "diplomacy"
+    ],
+    "micro_topics_detected": [
+      "national-policy",
+      "diplomacy"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155906+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "qatar-qna": {
+    "source": "Qatar News Agency",
+    "source_id": "qatar-qna",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "middle-east",
+    "country": "QA",
+    "topics": [
+      "diplomacy",
+      "trade"
+    ],
+    "micro_topics": [
+      "diplomacy",
+      "trade"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "diplomacy",
+      "trade"
+    ],
+    "micro_topics_detected": [
+      "diplomacy",
+      "trade"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155910+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "australia-government": {
+    "source": "Australian Government",
+    "source_id": "australia-government",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "australia-oceania",
+    "country": "AU",
+    "topics": [
+      "national-policy",
+      "regulation"
+    ],
+    "micro_topics": [
+      "national-policy",
+      "regulation"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "national-policy",
+      "regulation"
+    ],
+    "micro_topics_detected": [
+      "national-policy",
+      "regulation"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155915+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "rba": {
+    "source": "Reserve Bank of Australia",
+    "source_id": "rba",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "australia-oceania",
+    "country": "AU",
+    "topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "micro_topics_detected": [
+      "central-banks",
+      "interest-rates"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155920+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "csiro": {
+    "source": "CSIRO",
+    "source_id": "csiro",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "australia-oceania",
+    "country": "AU",
+    "topics": [
+      "engineering",
+      "breakthroughs"
+    ],
+    "micro_topics": [
+      "engineering",
+      "breakthroughs"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "engineering",
+      "breakthroughs"
+    ],
+    "micro_topics_detected": [
+      "engineering",
+      "breakthroughs"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155924+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "australian-space-agency": {
+    "source": "Australian Space Agency",
+    "source_id": "australian-space-agency",
+    "enabled": false,
+    "trust_tier": 1,
+    "region": "australia-oceania",
+    "country": "AU",
+    "topics": [
+      "missions",
+      "space-policy"
+    ],
+    "micro_topics": [
+      "missions",
+      "space-policy"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "missions",
+      "space-policy"
+    ],
+    "micro_topics_detected": [
+      "missions",
+      "space-policy"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155928+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  },
+  "abc-australia": {
+    "source": "ABC Australia",
+    "source_id": "abc-australia",
+    "enabled": false,
+    "trust_tier": 2,
+    "region": "australia-oceania",
+    "country": "AU",
+    "topics": [
+      "markets",
+      "diplomacy"
+    ],
+    "micro_topics": [
+      "macroeconomics",
+      "diplomacy"
+    ],
+    "item_count": 0,
+    "usable_content_count": 0,
+    "relevant_content_count": 0,
+    "topics_detected": [
+      "markets",
+      "diplomacy"
+    ],
+    "micro_topics_detected": [
+      "macroeconomics",
+      "diplomacy"
+    ],
+    "checked_at": "2026-09-10T06:02:13.155935+00:00",
+    "status": "DISABLED",
+    "failure_reason": "DISABLED_BY_CONFIGURATION"
+  }
+}
