@@ -73,8 +73,9 @@ def catalog(
 
 def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Classify only micro-topics with independent, explainable evidence."""
-    text = f"{item.get('title', '')}\n{item.get('text', '')}"
-    text_lower = text.lower()
+    title_lower = str(item.get("title", "")).lower()
+    body_lower = str(item.get("text", "")).lower()
+    text_lower = f"{title_lower}\n{body_lower}"
     matches: list[dict[str, Any]] = []
     for entry in entries:
         if not entry["enabled"]:
@@ -83,15 +84,21 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
         signals = sorted({phrase for phrase in positive_phrases if phrase and _phrase_found(phrase, text_lower)})
         negative = sorted({phrase for phrase in entry.get("negative_signals", []) if _phrase_found(phrase, text_lower)})
         direct = [phrase for phrase in signals if phrase in entry.get("aliases", [])]
-        score = min(1.0, len(direct) * 0.35 + len(signals) * 0.2 - len(negative) * 0.25)
+        title_signals = [phrase for phrase in signals if _phrase_found(phrase, title_lower)]
+        body_signals = [phrase for phrase in signals if _phrase_found(phrase, body_lower)]
+        weighted_positive = len(title_signals) * 0.2 + len(body_signals) * 0.15 + len(direct) * 0.35
+        weighted_negative = len([phrase for phrase in negative if _phrase_found(phrase, title_lower)]) * 0.35 + len(negative) * 0.15
+        score = min(1.0, weighted_positive - weighted_negative)
         threshold = float(entry.get("classification_threshold", 0.5))
-        if signals and score >= threshold and not (negative and score < threshold + 0.2):
+        conflicted = bool(negative and weighted_negative >= 0.35 and weighted_positive < threshold + 0.25)
+        if signals and score >= threshold and not conflicted:
             confidence = round(max(0.0, min(1.0, score)), 3)
             matches.append({
                 **entry,
                 "signals": signals,
                 "positive_signals": signals,
                 "matched_negative_signals": negative,
+                "classification_status": "CLASSIFIED",
                 "confidence": round(confidence, 3),
                 "classification_score": confidence,
                 "classification_confidence": confidence,

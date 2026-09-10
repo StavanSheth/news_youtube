@@ -52,6 +52,16 @@ def test_negative_signal_prevents_agent_false_positive_for_model_article():
     assert "ai-agents" not in {entry["micro_topic"] for entry in matches}
 
 
+def test_near_neighbor_articles_isolate_models_and_agents():
+    _, entries = _entries()
+    model = classify_micro_topics({"title": "New foundation model benchmark", "text": "The model beats the previous benchmark with no agent workflow or tool use."}, entries)
+    agent = classify_micro_topics({"title": "AI agent tool-use workflow", "text": "The agent uses memory and tools; no model release or benchmark."}, entries)
+    assert "foundation-models" in {entry["micro_topic"] for entry in model}
+    assert "ai-agents" not in {entry["micro_topic"] for entry in model}
+    assert "ai-agents" in {entry["micro_topic"] for entry in agent}
+    assert "foundation-models" not in {entry["micro_topic"] for entry in agent}
+
+
 def test_multiple_microtopics_require_independent_signals_and_are_deterministic():
     _, entries = _entries()
     item = {"title": "RAG agents", "text": "Agents use tool use and retrieval reranking with embeddings."}

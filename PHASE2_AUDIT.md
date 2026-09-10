@@ -2,15 +2,15 @@
 
 ## Result
 
-Phase 2: 90%
-Status: PARTIAL, ready for Phase 3 routing integration
+Phase 2: 82%
+Status: PARTIAL, closure hardening in progress
 
-The deterministic micro-topic and theme routing foundation is implemented. The
-remaining percentage is intentional: only seven high-value micro-topics have
-specialized positive/negative signal overlays and three bespoke themes exist in
-the current product configuration. The other taxonomy leaves are covered by a
-validated default contract and an explicit controlled fallback, not by invented
-runtime themes.
+The deterministic micro-topic and theme routing foundation is implemented. Seven
+high-value micro-topics have specialized positive/negative signal overlays; the
+remaining leaves use observable derived profiles. The ledger records actual
+assignments and does not infer that every catalog leaf was evaluated merely
+because it exists. The remaining gap is curated semantic coverage, not hidden
+runtime behavior.
 
 ## Coverage
 
@@ -19,6 +19,7 @@ runtime themes.
 | Enabled taxonomy micro-topics | 222 |
 | Stable identities | 222 |
 | Explicit signal overlays | 7 |
+| Observable derived profiles | 215 |
 | Configured themes | 4, including controlled fallback |
 | Missing theme resolution | 0; fallback is observable |
 
@@ -32,7 +33,7 @@ runtime themes.
 | Exact micro-topic isolation | PASS | production profiles require explicit signals | negative and multi-topic tests |
 | Theme precedence | PASS | single `select_theme` router | `test_theme_fallback_is_controlled_and_stream_specific` |
 | No invented generic themes | PASS | configured `domain-fallback`, no runtime theme IDs | fallback test and validation |
-| Truthful coverage statuses | PASS | evaluated-only `NO_RELEVANT_CONTENT` | coverage tests |
+| Truthful coverage statuses | PASS | actual assignment/evaluation ledger | coverage tests |
 | Early configuration validation | PASS | profile and theme validators | invalid configuration test |
 | RAG/AI isolation | DEFERRED TO PHASE 3 | existing bounded manager remains the integration boundary | existing acceptance tests |
 
@@ -48,7 +49,7 @@ runtime themes.
 
 ## Remaining Work
 
-- P1: add specialized signal overlays and themes for the remaining product-priority
+- P0: add specialized signal overlays and themes for the remaining product-priority
   micro-topics as the curated taxonomy is finalized.
 - P2: expose resolution level and classification explanation in the newsletter
   coverage presentation.

@@ -503,9 +503,9 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
                     **micro_topic,
                     "importance_score": event_importance(importance, item.get("metadata", {}).get("corroboration", {}).get("source_count", 1), weights=config.settings["scoring"].get("importance_weights")),
                     "evidence_available": bool(matched_result and matched_result.get("evidence")),
-                    "candidate_count": 1,
-                    "relevant_count": 1,
-                    "event_count": 1,
+                    "candidate_count": int(bool(matched_result)),
+                    "relevant_count": int(bool(matched_result and matched_result.get("evidence"))),
+                    "event_count": int(bool(item.get("metadata", {}).get("event_id"))),
                     "publishable_count": int(bool(matched_result and matched_result.get("evidence") and matched_result.get("analysis_status") == "OK")),
                     "retrieval_status": (matched_result or {}).get("retrieval", {}).get("status", "EMPTY_RETRIEVAL"),
                     "analysis_status": (matched_result or {}).get("analysis_status", "ANALYSIS_FAILURE"),
@@ -569,9 +569,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         "checked_sources": len(source_health),
         "evaluated_micro_topics": sorted({
             f"{assignment['domain']}:{assignment['micro_topic']}" for assignment in coverage_assignments
-        }) if not source_health or not fixture_path else [
-            f"{entry['domain']}:{entry['micro_topic']}" for entry in micro_topic_catalog
-        ],
+        }),
         "evaluation_ledger": evaluation_ledger,
     }
     micro_topic_coverage = coverage(micro_topic_catalog, coverage_assignments, source_summary)

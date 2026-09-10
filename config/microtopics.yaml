@@ -27,7 +27,7 @@ domains:
       ai-agents:
         aliases: [AI agent, agent, agents, agentic]
         positive_signals: [tool use, autonomy, memory, workflow orchestration, agent evaluation]
-        negative_signals: [single model benchmark, model weights, training run]
+        negative_signals: [single model benchmark, model benchmark, foundation model, model weights, training run]
         report_types: [technical_deep_dive, case_study]
       rag:
         aliases: [retrieval augmented generation, RAG]
