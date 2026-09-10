@@ -115,7 +115,7 @@ def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], s
     for assignment in assignments:
         assigned[(assignment["domain"], assignment["micro_topic"])].append(assignment)
     healthy = bool(source_health.get("healthy_sources", 0))
-    checked = bool(source_health.get("evaluated_micro_topics") or source_health.get("evaluated"))
+    ledger = source_health.get("evaluation_ledger", {})
     rows = []
     for entry in entries:
         evidence = assigned[(entry["domain"], entry["micro_topic"])]
@@ -133,10 +133,12 @@ def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], s
         elif evidence:
             maximum = max(item.get("importance_score", 0) for item in evidence)
             status = IntelligenceStatus.MAJOR_UPDATE.value if maximum >= 75 else IntelligenceStatus.MINOR_UPDATE.value
-        elif checked and healthy:
-            status = IntelligenceStatus.NO_RELEVANT_CONTENT.value
         else:
-            status = IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
+            evaluation_key = f"{entry['domain']}:{entry['micro_topic']}"
+            checked = ledger.get(evaluation_key, {}).get("evaluation_status") == "COMPLETE"
+            if not checked:
+                checked = evaluation_key in source_health.get("evaluated_micro_topics", [])
+            status = IntelligenceStatus.NO_RELEVANT_CONTENT.value if checked and healthy else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
         candidate_count = sum(int(item.get("candidate_count", 0)) for item in evidence)
         relevant_count = sum(int(item.get("relevant_count", 0)) for item in evidence)
         event_count = sum(int(item.get("event_count", 0)) for item in evidence)

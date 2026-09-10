@@ -1,15 +1,21 @@
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Protocol
 
 from .retrieval import RAGManager
 from .themes import analysis_profile, select_theme
 
 
+class RAGProvider(Protocol):
+    metrics: dict[str, Any]
+
+    def retrieve(self, item: dict[str, Any], classification: dict[str, Any], theme: dict[str, Any], event_context: dict[str, Any] | None = None) -> dict[str, Any]: ...
+
+
 class MicroTopicManager:
     """AI-last orchestrator: one bounded request per relevant micro-topic."""
 
-    def __init__(self, provider: Any, themes: list[dict[str, Any]], settings: dict[str, Any], retriever: Any | None = None) -> None:
+    def __init__(self, provider: Any, themes: list[dict[str, Any]], settings: dict[str, Any], retriever: RAGProvider | None = None) -> None:
         self.provider, self.themes, self.settings = provider, themes, settings
         self.rag = retriever or RAGManager(settings)
         self.stats = {"micro_topic_analyses": 0, "retrieval_calls": 0, "ai_calls": 0, "retries": 0, "retrieval": self.rag.metrics}

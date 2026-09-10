@@ -38,6 +38,62 @@ themes:
     personal: {actions: false, routines: false, beliefs_to_reconsider: true, things_to_monitor: true}
     triggers: {case_study: false, opportunity: false, deep_dive: true, trend: true}
     output: {report_type: executive_brief, sections: [summary, evidence, implications, scenarios, sources]}
+  - id: cybersecurity-incident-family
+    domain: cybersecurity
+    topic: any
+    micro_topic: any
+    priority: 7
+    questions: [what_happened, affected_versions, exploit_status, attack_vector, mitigation, what_to_watch]
+    evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference]}
+    output: {report_type: executive_brief, sections: [summary, evidence, affected_entities, remediation, sources]}
+  - id: semiconductor-capacity-family
+    domain: semiconductors
+    topic: any
+    micro_topic: any
+    priority: 7
+    questions: [what_changed, supplier_or_fabric, capacity_or_yield, equipment_or_process, customer_commitments, supply_chain_impact]
+    evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference]}
+    output: {report_type: technical_deep_dive, sections: [summary, evidence, capacity, dependencies, implications, sources]}
+  - id: infrastructure-operations-family
+    domain: shipping-logistics
+    topic: any
+    micro_topic: any
+    priority: 7
+    questions: [what_changed, affected_asset, throughput_or_capacity, congestion_or_delay, affected_operators, routes, what_to_watch]
+    evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference]}
+    output: {report_type: executive_brief, sections: [summary, evidence, operational_impact, affected_entities, watchlist, sources]}
+  - id: energy-market-family
+    domain: energy
+    topic: any
+    micro_topic: any
+    priority: 7
+    questions: [what_changed, production_or_generation, price_or_market_effect, affected_companies, policy_or_security_context, what_to_watch]
+    evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference]}
+    output: {report_type: top_event, sections: [summary, evidence, numbers, market_impact, watchlist, sources]}
+  - id: space-mission-family
+    domain: space
+    topic: any
+    micro_topic: any
+    priority: 7
+    questions: [what_changed, mission_or_vehicle, milestone, schedule, technical_risk, stakeholders, what_to_watch]
+    evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference]}
+    output: {report_type: technical_deep_dive, sections: [summary, evidence, milestone, risks, implications, sources]}
+  - id: policy-regulation-family
+    domain: government-policy
+    topic: any
+    micro_topic: any
+    priority: 7
+    questions: [what_changed, authority, affected_entities, implementation_timeline, compliance_or_funding_effect, what_to_watch]
+    evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference]}
+    output: {report_type: executive_brief, sections: [summary, evidence, affected_entities, implications, watchlist, sources]}
+  - id: scientific-research-family
+    domain: research
+    topic: any
+    micro_topic: any
+    priority: 7
+    questions: [what_was_found, method, evidence_quality, limitations, replication_or_validation, practical_implications]
+    evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference, speculation]}
+    output: {report_type: technical_deep_dive, sections: [summary, evidence, method, limitations, implications, sources]}
   - id: domain-fallback
     domain: all
     topic: any

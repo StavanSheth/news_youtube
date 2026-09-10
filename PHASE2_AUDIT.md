@@ -20,7 +20,7 @@ runtime behavior.
 | Stable identities | 222 |
 | Explicit signal overlays | 7 |
 | Observable derived profiles | 215 |
-| Configured themes | 4, including controlled fallback |
+| Configured themes | 11, including domain families and controlled fallback |
 | Missing theme resolution | 0; fallback is observable |
 
 ## Requirement Matrix
@@ -32,6 +32,7 @@ runtime behavior.
 | Explainable confidence and reason | PASS | classification result fields | `test_classifier_requires_specific_evidence_and_explains_result` |
 | Exact micro-topic isolation | PASS | production profiles require explicit signals | negative and multi-topic tests |
 | Theme precedence | PASS | single `select_theme` router | `test_theme_fallback_is_controlled_and_stream_specific` |
+| Domain theme families | PASS | cybersecurity, semiconductors, infrastructure, energy, space, policy, research | config validation and routing |
 | No invented generic themes | PASS | configured `domain-fallback`, no runtime theme IDs | fallback test and validation |
 | Truthful coverage statuses | PASS | actual assignment/evaluation ledger | coverage tests |
 | Early configuration validation | PASS | profile and theme validators | invalid configuration test |
