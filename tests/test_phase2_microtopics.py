@@ -122,7 +122,7 @@ def test_manager_keeps_queries_and_contexts_isolated_per_microtopic():
             self.metrics = {}
             self.calls = []
 
-        def retrieve(self, item, classification, theme, event_context=None):
+        def retrieve(self, item, classification, theme, event_context=None, scope=None):
             self.calls.append(classification["micro_topic"])
             return {"micro_topic": classification["micro_topic"], "query": classification["micro_topic"], "chunks": [{"text": classification["micro_topic"], "metadata": {}}], "status": "OK"}
 
@@ -145,7 +145,7 @@ def test_manager_keeps_queries_and_contexts_isolated_per_microtopic():
 def test_manager_sends_isolated_evidence_view_to_retriever_and_provider():
     class Retriever:
         metrics = {}
-        def retrieve(self, item, classification, theme, event_context=None):
+        def retrieve(self, item, classification, theme, event_context=None, scope=None):
             return {"micro_topic": classification["micro_topic"], "query": "q", "chunks": [{"text": item["text"], "metadata": item["metadata"]}], "status": "OK"}
 
     class Provider:
@@ -170,3 +170,5 @@ def test_evidence_scope_is_structured_and_serializable():
     assert metadata["micro_topic_id"] == "micro-a"
     assert metadata["evidence_ids"] == ["e1"]
     assert metadata["evidence_isolated"] is True
+    assert scope.allows({"metadata": {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a"}})
+    assert not scope.allows({"metadata": {"micro_topic_id": "micro-b", "content_id": "content-a", "source_id": "source-a"}})

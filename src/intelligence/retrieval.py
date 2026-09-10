@@ -9,6 +9,7 @@ from typing import Any
 
 from .contracts import EvidenceType, provenance_from_mapping
 from .identity import make_content_id, make_source_id
+from .evidence_scope import EvidenceScope
 
 
 def _terms(value: str) -> list[str]:
@@ -55,6 +56,7 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
                 "updated_at": item.get("metadata", {}).get("updated_at", ""),
                 "retrieved_at": retrieved_at,
                 "trust_tier": item.get("metadata", {}).get("trust_tier", 4),
+                "micro_topic_id": item.get("metadata", {}).get("micro_topic_id", ""),
             },
         })
     return result
@@ -123,6 +125,7 @@ class RAGManager:
         classification: dict[str, Any],
         theme: dict[str, Any],
         event_context: dict[str, Any] | None = None,
+        scope: EvidenceScope | None = None,
     ) -> dict[str, Any]:
         self.metrics["retrievals"] += 1
         try:
@@ -132,6 +135,8 @@ class RAGManager:
                 int(self.settings.get("retrieval_chunk_overlap", 180)),
             )
             self.metrics["chunks_indexed"] += len(chunks)
+            if scope is not None:
+                chunks = [chunk for chunk in chunks if scope.allows(chunk)]
             query = " ".join(
                 filter(None, [
                     micro_topic_query(classification),

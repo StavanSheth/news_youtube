@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any, Protocol
 import re
 from .evidence_scope import EvidenceScope
+from .identity import make_source_id
 
 from .retrieval import RAGManager
 from .themes import analysis_profile, select_theme
@@ -32,9 +33,9 @@ class MicroTopicManager:
             seen.add(key)
             theme = select_theme(classification, self.themes, item)
             profile = analysis_profile(classification, theme, item)
-            evidence_item = self._isolate_item(item, classification)
+            evidence_item, scope = self._isolate_item(item, classification)
             self.stats["retrieval_calls"] += 1
-            packet = self.rag.retrieve(evidence_item, classification, theme, evidence_item.get("metadata", {}).get("event_context"))
+            packet = self.rag.retrieve(evidence_item, classification, theme, evidence_item.get("metadata", {}).get("event_context"), scope)
             evidence = packet["chunks"]
             if not evidence:
                 results.append({
@@ -69,7 +70,7 @@ class MicroTopicManager:
         return results
 
     @staticmethod
-    def _isolate_item(item: dict[str, Any], classification: dict[str, Any]) -> dict[str, Any]:
+    def _isolate_item(item: dict[str, Any], classification: dict[str, Any]) -> tuple[dict[str, Any], EvidenceScope]:
         """Build a bounded evidence view containing only matched micro-topic windows."""
         signals = list(classification.get("positive_signals") or classification.get("signals") or [])
         source_text = str(item.get("text", ""))
@@ -89,14 +90,14 @@ class MicroTopicManager:
             isolated_text = "Matched signals: " + ", ".join(map(str, signals))
         scope = EvidenceScope(
             micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
-            source_content_id=str(item.get("metadata", {}).get("content_id", item.get("id", ""))),
-            source_id=str(item.get("metadata", {}).get("source_id", item.get("source", ""))),
+            source_content_id=str(item.get("metadata", {}).get("content_id") or item.get("id") or "unknown-content"),
+            source_id=str(item.get("metadata", {}).get("source_id") or make_source_id(item.get("source", "unknown"))),
             allowed_spans=tuple(windows),
             allowed_claims=tuple(windows),
             isolation_confidence=float(classification.get("classification_confidence", classification.get("confidence", 0.0))),
         )
         metadata = {**item.get("metadata", {}), **scope.to_metadata()}
-        return {**item, "text": isolated_text, "metadata": metadata}
+        return {**item, "text": isolated_text, "metadata": metadata}, scope
 
     def _analyze_with_retry(self, item: dict[str, Any], profile: dict[str, Any], evidence: list[dict[str, Any]]) -> dict[str, Any]:
         attempts = max(1, int(self.settings.get("max_ai_attempts", 2)))
