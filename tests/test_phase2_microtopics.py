@@ -142,7 +142,7 @@ def test_manager_keeps_queries_and_contexts_isolated_per_microtopic():
     assert [result["retrieval"]["query"] for result in results] == ["m1", "m2"]
 
 
-def test_manager_sends_isolated_evidence_view_to_retriever_and_provider():
+def test_manager_preserves_source_context_while_scoping_evidence():
     class Retriever:
         metrics = {}
         def retrieve(self, item, classification, theme, event_context=None, scope=None):
@@ -161,7 +161,7 @@ def test_manager_sends_isolated_evidence_view_to_retriever_and_provider():
     )
     manager.analyze({"id": "x", "kind": "news", "title": "RAG", "text": "RAG evidence. Unrelated agent evidence."}, [{"domain": "a", "topic": "A", "micro_topic": "rag", "signals": ["RAG"]}])
     assert provider.items[0]["metadata"]["evidence_isolated"] is True
-    assert "Unrelated agent" not in provider.items[0]["text"]
+    assert "Unrelated agent" in provider.items[0]["text"]
 
 
 def test_evidence_scope_is_structured_and_serializable():
