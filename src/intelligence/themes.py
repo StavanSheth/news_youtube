@@ -48,10 +48,7 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         "topic": classification.get("topic", ""),
         "micro_topic": classification["micro_topic"],
         "content_stream": [stream],
-        "questions": (
-            ["main_argument", "claims", "methods", "tools", "workflows", "experiments", "practical_applications"]
-            if stream == "video" else fallback.get("questions", [])
-        ),
+        "questions": fallback.get("content_streams", {}).get(stream, {}).get("questions", fallback.get("questions", [])),
         "resolution_level": "controlled_fallback",
         "fallback_used": True,
     }
@@ -68,5 +65,5 @@ def analysis_profile(classification: dict[str, Any], theme: dict[str, Any], item
         "theme_resolution_level": theme.get("resolution_level", "unknown"),
         "fallback_used": bool(theme.get("fallback_used", False)),
         "analysis_contract": theme.get("analysis_contract", {}),
-        "video_requirements": ["main argument", "claims", "methods", "tools", "workflows", "experiments"] if stream == "video" else [],
+        "video_requirements": theme.get("content_streams", {}).get("video", {}).get("questions", []) if stream == "video" else [],
     }

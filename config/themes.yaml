@@ -1,4 +1,12 @@
 themes:
+  - id: ai-agents-intelligence
+    domain: artificial-intelligence
+    topic: Artificial Intelligence
+    micro_topic: ai-agents
+    priority: 11
+    questions: [what_agent_capability_changed, what_can_be_automated, what_reliability_limits_remain, what_evidence_validates_the_claim]
+    evidence: {required: [fact, implementation_evidence, independent_validation], distinguish: [fact, official_statement, reported_claim, opinion, inference, speculation]}
+    output: {report_type: technical_deep_dive, sections: [summary, capability, reliability, evidence, implications, actions, sources]}
   - id: ai-models-tools
     domain: artificial-intelligence
     topic: Artificial Intelligence
@@ -102,6 +110,9 @@ themes:
     detect: {keywords: []}
     extract: [what_changed, evidence, affected_entities, uncertainty]
     questions: [what_happened, why_it_matters, what_to_watch]
+    content_streams:
+      video:
+        questions: [main_argument, claims, methods, tools, workflows, experiments, practical_applications]
     evidence: {required: [fact], distinguish: [fact, official_statement, reported_claim, opinion, inference, speculation]}
     practical: {use_cases: false, workflows: false, experiments: false}
     personal: {actions: true, routines: false, beliefs_to_reconsider: false, things_to_monitor: true}
