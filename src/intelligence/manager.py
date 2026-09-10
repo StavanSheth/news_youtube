@@ -2,10 +2,12 @@ from __future__ import annotations
 
 from typing import Any, Protocol
 from .evidence_scope import EvidenceScope
+from .evidence_projection import project_micro_topic_context
 from .identity import make_source_id
 
 from .retrieval import RAGManager
 from .themes import analysis_profile, select_theme
+from .statuses import IntelligenceStatus
 
 
 class RAGProvider(Protocol):
@@ -60,11 +62,11 @@ class MicroTopicManager:
                 used += len(bounded[-1]["text"])
             self.stats["micro_topic_analyses"] += 1
             try:
-                analysis = self._analyze_with_retry(evidence_item, profile, bounded)
+                analysis = self._analyze_with_retry(project_micro_topic_context(evidence_item, classification, scope, bounded), profile, bounded)
                 analysis_status = "OK"
-            except Exception:
+            except (TimeoutError, ValueError, RuntimeError) as error:
                 analysis = {}
-                analysis_status = "ANALYSIS_FAILURE"
+                analysis_status = IntelligenceStatus.ANALYSIS_FAILURE.value
                 self.stats.setdefault("analysis_failures", 0)
                 self.stats["analysis_failures"] += 1
             results.append({
@@ -83,18 +85,14 @@ class MicroTopicManager:
         document here preserves cross-sentence context for claims and entities.
         """
         signals = list(classification.get("positive_signals") or classification.get("signals") or [])
-        source_text = str(item.get("text", ""))
-        windows: list[str] = []
         scope = EvidenceScope(
             micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
             source_content_id=str(item.get("metadata", {}).get("content_id") or item.get("id") or "unknown-content"),
             source_id=str(item.get("metadata", {}).get("source_id") or make_source_id(item.get("source", "unknown"))),
-            allowed_spans=tuple(signals),
-            allowed_claims=tuple(signals),
             allowed_events=tuple(filter(None, [item.get("metadata", {}).get("event_id", "")])),
             isolation_confidence=float(classification.get("classification_confidence", classification.get("confidence", 0.0))),
         )
-        metadata = {**item.get("metadata", {}), **scope.to_metadata()}
+        metadata = {**item.get("metadata", {}), "classification": classification, **scope.to_metadata()}
         return {**item, "metadata": metadata}, scope
 
     def _analyze_with_retry(self, item: dict[str, Any], profile: dict[str, Any], evidence: list[dict[str, Any]]) -> dict[str, Any]:

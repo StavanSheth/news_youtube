@@ -161,7 +161,8 @@ def test_manager_preserves_source_context_while_scoping_evidence():
     )
     manager.analyze({"id": "x", "kind": "news", "title": "RAG", "text": "RAG evidence. Unrelated agent evidence."}, [{"domain": "a", "topic": "A", "micro_topic": "rag", "signals": ["RAG"]}])
     assert provider.items[0]["metadata"]["evidence_isolated"] is True
-    assert "Unrelated agent" in provider.items[0]["text"]
+    assert provider.items[0]["relevant_context"]
+    assert "Unrelated agent" not in provider.items[0]["text"]
 
 
 def test_evidence_scope_is_structured_and_serializable():

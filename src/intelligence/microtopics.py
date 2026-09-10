@@ -24,6 +24,16 @@ def _phrase_found(phrase: str, text: str) -> bool:
     return bool(re.search(rf"(?<!\w){re.escape(phrase.lower())}(?!\w)", text.lower()))
 
 
+def score_micro_topic_chunk(chunk_text: str, classification: dict[str, Any]) -> dict[str, Any]:
+    """Score one chunk using the already-authoritative classification signals."""
+    positive = [str(value) for value in classification.get("positive_signals", classification.get("signals", []))]
+    negative = [str(value) for value in classification.get("matched_negative_signals", classification.get("negative_signals", []))]
+    matched = [value for value in positive if _phrase_found(value, chunk_text)]
+    rejected = [value for value in negative if _phrase_found(value, chunk_text)]
+    score = min(1.0, max(0.0, len(matched) * 0.25 - len(rejected) * 0.2))
+    return {"matched_signals": matched, "negative_signals": rejected, "score": round(score, 3), "relevant": bool(matched and not rejected)}
+
+
 def _profile_for(domain: str, micro_topic: str, profiles: dict[str, Any] | None) -> dict[str, Any]:
     profiles = profiles or {}
     defaults = dict(profiles.get("defaults", {}))

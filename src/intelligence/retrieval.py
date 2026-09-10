@@ -10,6 +10,8 @@ from typing import Any
 from .contracts import EvidenceType, provenance_from_mapping
 from .identity import make_content_id, make_source_id
 from .evidence_scope import EvidenceScope
+from .microtopics import score_micro_topic_chunk
+from .statuses import IntelligenceStatus
 
 
 def _terms(value: str) -> list[str]:
@@ -29,6 +31,7 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
     retrieved_at = item.get("metadata", {}).get("retrieved_at") or datetime.now(UTC).isoformat()
     provenance_type = EvidenceType.TRANSCRIPT if item.get("kind") == "youtube" else EvidenceType.ARTICLE
     result = []
+    classification = item.get("metadata", {}).get("classification", {})
     for index, chunk in enumerate(chunks):
         provenance = None
         if item.get("url", "").startswith(("http://", "https://")):
@@ -57,6 +60,9 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
                 "retrieved_at": retrieved_at,
                 "trust_tier": item.get("metadata", {}).get("trust_tier", 4),
                 "micro_topic_id": item.get("metadata", {}).get("micro_topic_id", ""),
+                "span_id": f"{content_id}:span:{index * stride}:{min(len(text), index * stride + len(chunk))}",
+                "micro_topic_match": score_micro_topic_chunk(chunk, classification) if classification else {},
+                "evidence_span_ids": [],
             },
         })
     return result
@@ -117,7 +123,7 @@ class RAGManager:
 
     def __init__(self, settings: dict[str, Any]) -> None:
         self.settings = settings
-        self.metrics = {"retrievals": 0, "chunks_indexed": 0, "chunks_selected": 0, "failures": 0}
+        self.metrics = {"retrievals": 0, "chunks_indexed": 0, "chunks_selected": 0, "failures": 0, "chunks_before_scope": 0, "chunks_after_scope": 0, "chunks_rejected_scope": 0, "scope_rejection_rate": 0.0}
 
     def retrieve(
         self,
@@ -135,8 +141,12 @@ class RAGManager:
                 int(self.settings.get("retrieval_chunk_overlap", 180)),
             )
             self.metrics["chunks_indexed"] += len(chunks)
+            self.metrics["chunks_before_scope"] += len(chunks)
             if scope is not None:
                 chunks = [chunk for chunk in chunks if scope.allows(chunk)]
+            self.metrics["chunks_after_scope"] += len(chunks)
+            self.metrics["chunks_rejected_scope"] += self.metrics["chunks_before_scope"] - self.metrics["chunks_after_scope"]
+            self.metrics["scope_rejection_rate"] = round(self.metrics["chunks_rejected_scope"] / max(1, self.metrics["chunks_before_scope"]), 3)
             query = " ".join(
                 filter(None, [
                     micro_topic_query(classification),
@@ -156,7 +166,7 @@ class RAGManager:
                 "micro_topic": classification.get("micro_topic", ""),
                 "query": query,
                 "chunks": selected,
-                "status": "OK" if selected else "EMPTY_RETRIEVAL",
+                "status": "OK" if selected else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value,
             }
         except Exception as error:
             self.metrics["failures"] += 1
@@ -164,6 +174,6 @@ class RAGManager:
                 "micro_topic": classification.get("micro_topic", ""),
                 "query": "",
                 "chunks": [],
-                "status": "RETRIEVAL_FAILURE",
+                "status": IntelligenceStatus.RETRIEVAL_FAILURE.value,
                 "error_type": type(error).__name__,
             }

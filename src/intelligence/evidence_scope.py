@@ -11,8 +11,8 @@ class EvidenceScope:
     micro_topic_id: str
     source_content_id: str
     source_id: str
-    allowed_spans: tuple[str, ...] = ()
-    allowed_claims: tuple[str, ...] = ()
+    allowed_span_ids: tuple[str, ...] = ()
+    allowed_claim_ids: tuple[str, ...] = ()
     allowed_entities: tuple[str, ...] = ()
     allowed_events: tuple[str, ...] = ()
     evidence_ids: tuple[str, ...] = ()
@@ -44,6 +44,10 @@ class EvidenceScope:
                 return False
         if self.evidence_ids and metadata.get("evidence_id", "") not in self.evidence_ids:
             return False
+        if self.allowed_span_ids and metadata.get("span_id", "") not in self.allowed_span_ids:
+            return False
+        if self.allowed_claim_ids and metadata.get("claim_id", "") not in self.allowed_claim_ids:
+            return False
         return True
 
     def to_metadata(self) -> dict[str, Any]:
@@ -53,6 +57,8 @@ class EvidenceScope:
             "content_id": self.source_content_id,
             "source_id": self.source_id,
             "evidence_ids": list(self.evidence_ids),
+            "allowed_span_ids": list(self.allowed_span_ids),
+            "allowed_claim_ids": list(self.allowed_claim_ids),
             "allowed_entities": list(self.allowed_entities),
             "allowed_events": list(self.allowed_events),
             "isolation_reason": self.isolation_reason,
