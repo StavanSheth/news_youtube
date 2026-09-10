@@ -5,6 +5,7 @@ from collections import defaultdict
 from typing import Any
 
 from .identity import make_micro_topic_id
+from .classification import KeywordClassifier
 from .statuses import IntelligenceStatus
 
 
@@ -28,10 +29,8 @@ def score_micro_topic_chunk(chunk_text: str, classification: dict[str, Any]) -> 
     """Score one chunk using the already-authoritative classification signals."""
     positive = [str(value) for value in classification.get("positive_signals", classification.get("signals", []))]
     negative = [str(value) for value in classification.get("matched_negative_signals", classification.get("negative_signals", []))]
-    matched = [value for value in positive if _phrase_found(value, chunk_text)]
-    rejected = [value for value in negative if _phrase_found(value, chunk_text)]
-    score = min(1.0, max(0.0, len(matched) * 0.25 - len(rejected) * 0.2))
-    return {"matched_signals": matched, "negative_signals": rejected, "score": round(score, 3), "relevant": bool(matched and not rejected)}
+    result = KeywordClassifier.score(chunk_text, positive, negative)
+    return {**result, "relevant": bool(result["matched_signals"] and not result["negative_signals"])}
 
 
 def _profile_for(domain: str, micro_topic: str, profiles: dict[str, Any] | None) -> dict[str, Any]:
@@ -44,7 +43,7 @@ def _profile_for(domain: str, micro_topic: str, profiles: dict[str, Any] | None)
 
 
 def catalog(
-    taxonomy: dict[str, Any], topics: list[dict[str, Any]], profiles: dict[str, Any] | None = None,
+    taxonomy: dict[str, Any], topics: list[dict[str, Any]], profiles: dict[str, Any] | None = None, *, strict: bool = False,
 ) -> list[dict[str, Any]]:
     """Create a canonical Domain -> Topic -> Micro-topic catalog from configuration."""
     configured = {topic.get("key"): topic for topic in topics}
@@ -61,6 +60,8 @@ def catalog(
             if profiles is not None and not explicit:
                 aliases = [micro_topic.replace("-", " ")]
             aliases = [alias for alias in aliases if _words(str(alias)) - GENERIC_TERMS]
+            if strict and not explicit and profile.get("enabled", domain_topic.get("enabled", True)):
+                raise ValueError(f"Enabled micro-topic lacks explicit production profile: {domain}:{micro_topic}")
             entries.append(
                 {
                     "domain": domain,
@@ -81,6 +82,15 @@ def catalog(
     return entries
 
 
+def validate_microtopic_coverage(entries: list[dict[str, Any]], *, strict: bool = False) -> dict[str, Any]:
+    """Return explicit/derived profile coverage and optionally fail production startup."""
+    derived = [entry for entry in entries if entry.get("profile_origin") == "derived" and entry.get("enabled", True)]
+    report = {"total": len(entries), "enabled": sum(bool(entry.get("enabled", True)) for entry in entries), "explicit": len(entries) - len(derived), "derived": len(derived), "missing": 0, "derived_ids": [entry["micro_topic_id"] for entry in derived]}
+    if strict and derived:
+        raise ValueError(f"Enabled micro-topics use derived profiles: {', '.join(report['derived_ids'])}")
+    return report
+
+
 def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Classify only micro-topics with independent, explainable evidence."""
     title_lower = str(item.get("title", "")).lower()
@@ -91,14 +101,15 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
         if not entry["enabled"]:
             continue
         positive_phrases = list(entry.get("aliases", [])) + list(entry.get("positive_signals", []))
-        signals = sorted({phrase for phrase in positive_phrases if phrase and _phrase_found(phrase, text_lower)})
-        negative = sorted({phrase for phrase in entry.get("negative_signals", []) if _phrase_found(phrase, text_lower)})
+        scored = KeywordClassifier.score(text_lower, positive_phrases, list(entry.get("negative_signals", [])), title=title_lower)
+        signals = scored["matched_signals"]
+        negative = scored["negative_signals"]
         direct = [phrase for phrase in signals if phrase in entry.get("aliases", [])]
         title_signals = [phrase for phrase in signals if _phrase_found(phrase, title_lower)]
         body_signals = [phrase for phrase in signals if _phrase_found(phrase, body_lower)]
+        score = scored["score"]
         weighted_positive = len(title_signals) * 0.2 + len(body_signals) * 0.15 + len(direct) * 0.35
         weighted_negative = len([phrase for phrase in negative if _phrase_found(phrase, title_lower)]) * 0.35 + len(negative) * 0.15
-        score = min(1.0, weighted_positive - weighted_negative)
         threshold = float(entry.get("classification_threshold", 0.5))
         conflicted = bool(negative and weighted_negative >= 0.35 and weighted_positive < threshold + 0.25)
         if signals and score >= threshold and not conflicted:
