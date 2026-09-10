@@ -83,6 +83,15 @@ def test_theme_fallback_is_controlled_and_stream_specific():
     assert "main_argument" in analysis_profile(classification, video, {"kind": "youtube"})["questions"]
 
 
+def test_domain_family_is_distinct_from_controlled_fallback():
+    config, _ = _entries()
+    family = select_theme({"domain": "cybersecurity", "topic": "Cybersecurity", "micro_topic": "ransomware"}, config.themes, {"kind": "news"})
+    fallback = select_theme({"domain": "quantum-computing", "topic": "Quantum", "micro_topic": "error-correction"}, config.themes, {"kind": "news"})
+    assert family["resolution_level"] == "domain_family"
+    assert family["fallback_used"] is True
+    assert fallback["resolution_level"] == "controlled_fallback"
+
+
 def test_invalid_microtopic_and_theme_configuration_fails_early():
     config, _ = _entries()
     with pytest.raises(ValueError, match="Invalid micro-topic override"):

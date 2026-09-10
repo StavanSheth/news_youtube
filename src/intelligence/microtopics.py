@@ -102,6 +102,7 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
                 "confidence": round(confidence, 3),
                 "classification_score": confidence,
                 "classification_confidence": confidence,
+                "confidence_method": "heuristic_weighted_signal_score",
                 "classification_reason": f"matched {', '.join(signals)}" + (f"; excluded by {', '.join(negative)}" if negative else ""),
                 "topic_id": entry["topic_key"],
                 "analysis_contract": entry["profile"].get("analysis_contract", {}),
@@ -135,7 +136,7 @@ def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], s
             status = IntelligenceStatus.MAJOR_UPDATE.value if maximum >= 75 else IntelligenceStatus.MINOR_UPDATE.value
         else:
             evaluation_key = f"{entry['domain']}:{entry['micro_topic']}"
-            checked = ledger.get(evaluation_key, {}).get("evaluation_status") == "COMPLETE"
+            checked = ledger.get(evaluation_key, {}).get("evaluation_status") == "EVALUATION_COMPLETE"
             if not checked:
                 checked = evaluation_key in source_health.get("evaluated_micro_topics", [])
             status = IntelligenceStatus.NO_RELEVANT_CONTENT.value if checked and healthy else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value

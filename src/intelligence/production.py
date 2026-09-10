@@ -559,7 +559,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         ]
         key = f"{entry['domain']}:{entry['micro_topic']}"
         evaluation_ledger[key] = {
-            "evaluation_status": "COMPLETE" if assignments else "NOT_EVALUATED",
+            "evaluation_status": "EVALUATION_COMPLETE" if assignments else "NOT_STARTED",
             "sources_checked": len(source_health),
             "candidate_count": sum(int(item.get("candidate_count", 0)) for item in assignments),
             "relevant_count": sum(int(item.get("relevant_count", 0)) for item in assignments),

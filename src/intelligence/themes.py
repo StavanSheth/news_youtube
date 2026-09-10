@@ -28,7 +28,7 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         elif topic not in {"any", None}:
             level, resolution = 3, "topic_fallback"
         elif theme.get("domain", "all") == classification["domain"]:
-            level, resolution = 2, "domain_fallback"
+            level, resolution = 2, "domain_family"
         else:
             level, resolution = 1, "global_fallback"
         candidates.append((level, {**theme, "resolution_level": resolution, "fallback_used": level < 4}))
