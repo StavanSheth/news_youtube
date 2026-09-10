@@ -28,6 +28,9 @@ class SourceItem:
         )
         self.published_at = self.timestamps.published_at.isoformat() if self.timestamps.published_at else self.published_at
         self.metadata.setdefault("timestamp_status", self.timestamps.publication_status.value)
+        self.metadata.setdefault("published_at_status", self.timestamps.published_at_status.value)
+        self.metadata.setdefault("updated_at_status", self.timestamps.updated_at_status.value)
+        self.metadata.setdefault("retrieved_at_status", self.timestamps.retrieved_at_status.value)
         source_key = self.metadata.get("source_key") or self.metadata.get("source_id") or self.source or "unknown"
         self.metadata["source_key"] = source_key
         source_id = make_source_id(source_key)

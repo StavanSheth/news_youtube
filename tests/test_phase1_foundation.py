@@ -76,6 +76,9 @@ def test_time_contract_separates_source_timestamps_and_rejects_naive_values():
     timestamps = SourceTimestamps(published, published + timedelta(hours=1), published + timedelta(hours=2))
     assert timestamps.published_at != timestamps.updated_at
     assert timestamps.retrieved_at > timestamps.published_at
+    assert timestamps.published_at_status == TimestampStatus.VALID
+    assert timestamps.updated_at_status == TimestampStatus.VALID
+    assert timestamps.retrieved_at_status == TimestampStatus.VALID
     with pytest.raises(ValueError, match="timezone-aware"):
         SourceTimestamps(datetime(2026, 9, 10, 10))
     with pytest.raises(ValueError, match="cannot precede"):
@@ -179,7 +182,9 @@ def test_malformed_optional_source_timestamps_are_not_promoted_to_validity():
     timestamps = source_timestamps_from_mapping(item)
     assert timestamps.publication_status == TimestampStatus.VALID
     assert timestamps.updated_at is None
-    assert timestamps.retrieved_at is not None
+    assert timestamps.retrieved_at is None
+    assert timestamps.updated_at_status == TimestampStatus.INVALID
+    assert timestamps.retrieved_at_status == TimestampStatus.INVALID
 
 
 def test_source_validation_applies_timeout_to_default_http_fetch(monkeypatch):

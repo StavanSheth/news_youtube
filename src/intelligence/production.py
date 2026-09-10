@@ -444,6 +444,9 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         metadata.setdefault("retrieved_at", started.isoformat())
         timestamps = source_timestamps_from_mapping(item, started)
         metadata["timestamp_status"] = timestamps.publication_status.value
+        metadata["published_at_status"] = timestamps.published_at_status.value
+        metadata["updated_at_status"] = timestamps.updated_at_status.value
+        metadata["retrieved_at_status"] = timestamps.retrieved_at_status.value
         timestamp_status_counts[timestamps.publication_status.value] = timestamp_status_counts.get(timestamps.publication_status.value, 0) + 1
         if timestamps.published_at:
             item["published_at"] = timestamps.published_at.isoformat()

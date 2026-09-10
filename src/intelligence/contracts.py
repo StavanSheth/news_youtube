@@ -71,7 +71,9 @@ class SourceTimestamps:
     published_at: datetime | None = None
     updated_at: datetime | None = None
     retrieved_at: datetime | None = None
-    publication_status: TimestampStatus = TimestampStatus.MISSING
+    published_at_status: TimestampStatus = TimestampStatus.MISSING
+    updated_at_status: TimestampStatus = TimestampStatus.MISSING
+    retrieved_at_status: TimestampStatus = TimestampStatus.MISSING
 
     def __post_init__(self) -> None:
         for name in ("published_at", "updated_at", "retrieved_at"):
@@ -80,8 +82,17 @@ class SourceTimestamps:
                 require_aware(value, name)
         if self.published_at and self.retrieved_at and self.retrieved_at < self.published_at:
             raise ValueError("retrieved_at cannot precede published_at")
-        if self.published_at and self.publication_status == TimestampStatus.MISSING:
-            object.__setattr__(self, "publication_status", TimestampStatus.VALID)
+        if self.published_at and self.published_at_status == TimestampStatus.MISSING:
+            object.__setattr__(self, "published_at_status", TimestampStatus.VALID)
+        if self.updated_at and self.updated_at_status == TimestampStatus.MISSING:
+            object.__setattr__(self, "updated_at_status", TimestampStatus.VALID)
+        if self.retrieved_at and self.retrieved_at_status == TimestampStatus.MISSING:
+            object.__setattr__(self, "retrieved_at_status", TimestampStatus.VALID)
+
+    @property
+    def publication_status(self) -> TimestampStatus:
+        """Backward-compatible alias for the publication timestamp status."""
+        return self.published_at_status
 
     @classmethod
     def from_values(
@@ -93,19 +104,31 @@ class SourceTimestamps:
     ) -> "SourceTimestamps":
         published, publication_status = _parse_external_timestamp(published_at)
         updated, _ = _parse_external_timestamp(updated_at)
-        retrieved, _ = _parse_external_timestamp(retrieved_at)
-        retrieved = retrieved or default_retrieved_at or datetime.now(UTC)
-        if retrieved.tzinfo is None or retrieved.utcoffset() is None:
+        retrieved, retrieved_status = _parse_external_timestamp(retrieved_at)
+        if retrieved is None and retrieved_status == TimestampStatus.MISSING:
+            retrieved = default_retrieved_at or datetime.now(UTC)
+            retrieved_status = TimestampStatus.VALID
+        if retrieved is not None and (retrieved.tzinfo is None or retrieved.utcoffset() is None):
             retrieved = retrieved.replace(tzinfo=UTC)
-        if published and retrieved < published:
+        if published and retrieved and retrieved < published:
             retrieved = published
-        return cls(published, updated, retrieved, publication_status)
+        return cls(
+            published,
+            updated,
+            retrieved,
+            publication_status,
+            _parse_external_timestamp(updated_at)[1],
+            retrieved_status,
+        )
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "published_at": self.published_at.isoformat() if self.published_at else None,
             "updated_at": self.updated_at.isoformat() if self.updated_at else None,
             "retrieved_at": self.retrieved_at.isoformat() if self.retrieved_at else None,
+            "published_at_status": self.published_at_status.value,
+            "updated_at_status": self.updated_at_status.value,
+            "retrieved_at_status": self.retrieved_at_status.value,
             "publication_status": self.publication_status.value,
         }
 
