@@ -104,7 +104,7 @@ def test_manager_routes_each_microtopic_with_bounded_context():
         {"domain": "artificial-intelligence", "topic": "AI", "micro_topic": "rag", "signals": ["retrieval"]},
         {"domain": "artificial-intelligence", "topic": "AI", "micro_topic": "ai-agents", "signals": ["agents"]},
     ]
-    results = manager.analyze({"id": "x", "kind": "news", "title": "RAG agents", "text": "retrieval agents " * 100}, classifications)
+    results = manager.analyze({"id": "x", "kind": "news", "source": "Fixture", "title": "RAG agents", "text": "retrieval agents " * 100}, classifications)
     assert {result["classification"]["micro_topic"] for result in results} == {"rag", "ai-agents"}
     assert len(provider.calls) == 2
     assert all(size <= 100 for _, size in provider.calls)

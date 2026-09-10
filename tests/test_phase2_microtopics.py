@@ -110,7 +110,7 @@ def test_coverage_never_claims_no_major_update_for_unchecked_microtopic():
 def test_coverage_uses_canonical_update_statuses_and_real_counts():
     entry = {"domain": "finance", "topic": "Finance", "micro_topic": "interest-rates"}
     row = coverage([entry], [{"domain": "finance", "micro_topic": "interest-rates", "importance_score": 50, "candidate_count": 3, "relevant_count": 2, "event_count": 1, "publishable_count": 1}], {"healthy_sources": 1, "evaluated": True})[0]
-    assert row["status"] == "MINOR_UPDATE"
+    assert row["status"] == "NO_MAJOR_UPDATE"
     assert row["candidate_count"] == 3
     assert row["relevant_count"] == 2
     assert row["event_count"] == 1
@@ -136,7 +136,7 @@ def test_manager_keeps_queries_and_contexts_isolated_per_microtopic():
 
     retriever, provider = Retriever(), Provider()
     manager = __import__("intelligence.manager", fromlist=["MicroTopicManager"]).MicroTopicManager(provider, [{"id": "domain-fallback", "domain": "all", "micro_topic": "any", "questions": ["what_changed"]}], {"max_retrieved_context_chars": 100}, retriever)
-    results = manager.analyze({"id": "x", "kind": "news", "title": "isolated", "text": "source"}, [{"domain": "a", "topic": "A", "micro_topic": "m1"}, {"domain": "b", "topic": "B", "micro_topic": "m2"}])
+    results = manager.analyze({"id": "x", "kind": "news", "source": "Fixture", "title": "isolated", "text": "source"}, [{"domain": "a", "topic": "A", "micro_topic": "m1"}, {"domain": "b", "topic": "B", "micro_topic": "m2"}])
     assert retriever.calls == ["m1", "m2"]
     assert provider.contexts == [("m1", ["m1"]), ("m2", ["m2"])]
     assert [result["retrieval"]["query"] for result in results] == ["m1", "m2"]
@@ -159,7 +159,7 @@ def test_manager_preserves_source_context_while_scoping_evidence():
     manager = __import__("intelligence.manager", fromlist=["MicroTopicManager"]).MicroTopicManager(
         provider, [{"id": "domain-fallback", "domain": "all", "micro_topic": "any", "questions": ["what_changed"]}], {"max_retrieved_context_chars": 500}, Retriever()
     )
-    manager.analyze({"id": "x", "kind": "news", "title": "RAG", "text": "RAG evidence. Unrelated agent evidence."}, [{"domain": "a", "topic": "A", "micro_topic": "rag", "signals": ["RAG"]}])
+    manager.analyze({"id": "x", "kind": "news", "source": "Fixture", "title": "RAG", "text": "RAG evidence. Unrelated agent evidence."}, [{"domain": "a", "topic": "A", "micro_topic": "rag", "signals": ["RAG"]}])
     assert provider.items[0]["metadata"]["evidence_isolated"] is True
     assert provider.items[0]["relevant_context"]
     assert "Unrelated agent" not in provider.items[0]["text"]

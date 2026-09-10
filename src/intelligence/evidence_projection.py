@@ -35,4 +35,5 @@ def project_micro_topic_context(
             "micro_topic": classification.get("micro_topic", ""),
             "signals": classification.get("signals", []),
         },
+        "metadata": scope.to_metadata(),
     }

@@ -71,7 +71,7 @@ def test_failed_ai_isolated_per_microtopic():
         {"retrieval_chunk_size": 80, "retrieval_top_k": 1, "max_ai_attempts": 2},
     )
     result = manager.analyze(
-        {"id": "x", "kind": "news", "title": "RAG retrieval", "text": "RAG retrieval evidence"},
+        {"id": "x", "kind": "news", "source": "Fixture", "title": "RAG retrieval", "text": "RAG retrieval evidence"},
         [{"domain": "artificial-intelligence", "topic": "AI", "micro_topic": "rag", "signals": ["retrieval"]}],
     )
     assert result[0]["analysis_status"] == "ANALYSIS_FAILURE"
@@ -99,10 +99,10 @@ def test_quality_marks_source_failure_for_review():
     assert result["source_failures"][0]["error"] == "ValueError"
 
 
-def test_coverage_does_not_hide_source_failure_as_insufficient_evidence():
+def test_coverage_reports_only_microtopic_scoped_source_failures():
     rows = coverage(
         [{"domain": "world", "topic": "Geopolitics", "micro_topic": "conflict"}],
-        [],
+        [{"domain": "world", "micro_topic": "conflict", "source_status": "SOURCE_FAILURE"}],
         {"healthy_sources": 0, "checked_sources": 1, "source_failures": [{"source_id": "reuters"}]},
     )
     assert rows[0]["status"] == "SOURCE_FAILURE"

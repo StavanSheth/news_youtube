@@ -131,37 +131,47 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
     return sorted(matches, key=lambda match: (-match["classification_score"], str(match["micro_topic"])))
 
 
+def evaluate_micro_topic_status(assignments: list[dict[str, Any]], evaluation: dict[str, Any]) -> str:
+    """Return a truthful final state for one completed micro-topic evaluation."""
+    if any(item.get("source_status") == IntelligenceStatus.SOURCE_FAILURE.value for item in assignments):
+        return IntelligenceStatus.SOURCE_FAILURE.value
+    if any(item.get("retrieval_status") == IntelligenceStatus.RETRIEVAL_FAILURE.value for item in assignments):
+        return IntelligenceStatus.RETRIEVAL_FAILURE.value
+    if any(item.get("analysis_status") == IntelligenceStatus.ANALYSIS_FAILURE.value for item in assignments):
+        return IntelligenceStatus.ANALYSIS_FAILURE.value
+    if any(item.get("budget_skipped") for item in assignments):
+        return IntelligenceStatus.BUDGET_SKIPPED.value
+    if evaluation.get("evaluation_status") != "EVALUATION_COMPLETE":
+        return IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
+    if not assignments or not any(item.get("evidence_available", False) for item in assignments):
+        return IntelligenceStatus.NO_RELEVANT_CONTENT.value
+    maximum = max(float(item.get("importance_score", 0)) for item in assignments)
+    if maximum >= 75:
+        return IntelligenceStatus.MAJOR_UPDATE.value
+    if any(item.get("material_change", False) for item in assignments):
+        return IntelligenceStatus.MINOR_UPDATE.value
+    return IntelligenceStatus.NO_MAJOR_UPDATE.value
+
+
 def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], source_health: dict[str, Any]) -> list[dict[str, Any]]:
     """Report evaluated coverage without treating unchecked leaves as no update."""
     assigned: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for assignment in assignments:
         assigned[(assignment["domain"], assignment["micro_topic"])].append(assignment)
-    healthy = bool(source_health.get("healthy_sources", 0))
-    source_failure = bool(source_health.get("source_failures"))
     ledger = source_health.get("evaluation_ledger", {})
     rows = []
     for entry in entries:
         evidence = assigned[(entry["domain"], entry["micro_topic"])]
-        searched = bool(source_health.get("healthy_sources", 0) or source_health.get("checked_sources", 0))
-        if evidence and any(item.get("source_status") == "SOURCE_FAILURE" for item in evidence):
-            status = IntelligenceStatus.SOURCE_FAILURE.value
-        elif evidence and any(item.get("retrieval_status") == "RETRIEVAL_FAILURE" for item in evidence):
-            status = IntelligenceStatus.RETRIEVAL_FAILURE.value
-        elif evidence and any(item.get("analysis_status") == "ANALYSIS_FAILURE" for item in evidence):
-            status = IntelligenceStatus.ERROR.value
-        elif evidence and any(item.get("budget_skipped") for item in evidence):
-            status = IntelligenceStatus.BUDGET_SKIPPED.value
-        elif evidence and not any(item.get("evidence_available", True) for item in evidence):
-            status = IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
-        elif evidence:
-            maximum = max(item.get("importance_score", 0) for item in evidence)
-            status = IntelligenceStatus.MAJOR_UPDATE.value if maximum >= 75 else IntelligenceStatus.MINOR_UPDATE.value
-        else:
-            evaluation_key = f"{entry['domain']}:{entry['micro_topic']}"
-            checked = ledger.get(evaluation_key, {}).get("evaluation_status") == "EVALUATION_COMPLETE"
-            if not checked:
-                checked = evaluation_key in source_health.get("evaluated_micro_topics", [])
-            status = IntelligenceStatus.SOURCE_FAILURE.value if source_failure else IntelligenceStatus.NO_RELEVANT_CONTENT.value if checked and healthy else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
+        evaluation_key = f"{entry['domain']}:{entry['micro_topic']}"
+        evaluation = ledger.get(evaluation_key, {})
+        if evidence and not evaluation:
+            evaluation = {"evaluation_status": "EVALUATION_COMPLETE"}
+        checked = evaluation.get("evaluation_status") == "EVALUATION_COMPLETE"
+        if not checked:
+            checked = evaluation_key in source_health.get("evaluated_micro_topics", [])
+            evaluation = {**evaluation, "evaluation_status": "EVALUATION_COMPLETE" if checked else "NOT_STARTED"}
+        searched = checked
+        status = evaluate_micro_topic_status(evidence, evaluation)
         candidate_count = sum(int(item.get("candidate_count", 0)) for item in evidence)
         relevant_count = sum(int(item.get("relevant_count", 0)) for item in evidence)
         event_count = sum(int(item.get("event_count", 0)) for item in evidence)
