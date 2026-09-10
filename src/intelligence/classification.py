@@ -27,6 +27,41 @@ class KeywordClassifier:
         return {"matched_signals": matched, "negative_signals": rejected, "title_matches": title_matches, "body_matches": body_matches, "score": round(score, 3)}
 
 
+def topic_matches(item: dict[str, Any], topics: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Compatibility topic-level classifier owned by the shared classification module."""
+    text = f"{item.get('title', '')}\n{item.get('text', '')}"
+    matches = []
+    for raw in topics:
+        if not raw.get("enabled", True):
+            continue
+        terms = [str(term) for term in raw.get("keywords", []) + raw.get("aliases", [])]
+        found = KeywordClassifier.matching(terms, text)
+        score = len(found) / max(1, min(4, len(terms)))
+        if score >= float(raw.get("classification_threshold", 0.25)):
+            matches.append({"key": raw.get("key", raw.get("id", raw["name"].lower().replace(" ", "-"))), "name": raw["name"], "score": round(score, 2), "config": raw, "matches": found})
+    return sorted(matches, key=lambda match: (match["score"], match["config"].get("priority", 0)), reverse=True)
+
+
+def relevance(item: dict[str, Any], topics: list[dict[str, Any]], weights: dict[str, float]) -> float:
+    if not topics:
+        return 0.0
+    published = _parse_time(item.get("published_at", ""))
+    age_hours = max(0.0, (datetime.now(UTC) - published).total_seconds() / 3600) if published else 72.0
+    recency = max(0.0, 1 - age_hours / 168)
+    completeness = min(len(item.get("text", "")) / 1500, 1.0)
+    topic_score = max(topic["score"] for topic in topics)
+    priority = min(float(item.get("priority", 1)) / 10, 1.0)
+    return round(topic_score * weights.get("topic_relevance", 0.4) + priority * weights.get("source_priority", 0.2) + recency * weights.get("recency", 0.2) + completeness * weights.get("content_completeness", 0.2), 3)
+
+
+def _parse_time(value: str) -> datetime | None:
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        return parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
+    except (TypeError, ValueError):
+        return None
+
+
 def classify(text: str, topics: list[dict]) -> list[dict]:
     haystack = text.lower()
     matches = []

@@ -4,7 +4,6 @@ import hashlib
 import json
 import logging
 import os
-import re
 from dataclasses import replace
 from datetime import UTC, datetime, time, timedelta
 from html import escape
@@ -24,6 +23,7 @@ from .microtopics import catalog, classify_micro_topics, coverage
 from .quality import evaluate_output
 from .source_validation import validate_source_registry
 from .contracts import EditionType, RunContext, TimestampStatus, build_edition_context, source_timestamps_from_mapping
+from .classification import relevance, topic_matches
 from .identity import make_content_id, make_source_id
 from .persistence import PersistencePaths
 from .statuses import DeliveryStatus, SourceStatus
@@ -189,58 +189,6 @@ class RepositoryState:
             ),
         )[:-maximum]:
             mapping.pop(key, None)
-
-
-def topic_matches(item: dict[str, Any], topics: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    text = f"{item.get('title', '')}\n{item.get('text', '')}".lower()
-    matches = []
-    for raw in topics:
-        if not raw.get("enabled", True):
-            continue
-        terms = [str(term).lower() for term in raw.get("keywords", []) + raw.get("aliases", [])]
-        found = sorted(
-            {
-                term
-                for term in terms
-                if len(term) > 1 and re.search(rf"(?<!\w){re.escape(term)}(?!\w)", text)
-            }
-        )
-        score = len(found) / max(1, min(4, len(terms)))
-        if score >= float(raw.get("classification_threshold", 0.25)):
-            matches.append(
-                {
-                    "key": raw.get("key", raw.get("id", raw["name"].lower().replace(" ", "-"))),
-                    "name": raw["name"],
-                    "score": round(score, 2),
-                    "config": raw,
-                    "matches": found,
-                }
-            )
-    return sorted(
-        matches,
-        key=lambda match: (match["score"], match["config"].get("priority", 0)),
-        reverse=True,
-    )
-
-
-def relevance(
-    item: dict[str, Any], topics: list[dict[str, Any]], weights: dict[str, float]
-) -> float:
-    if not topics:
-        return 0.0
-    published = parse_time(item.get("published_at", ""))
-    age_hours = max(0.0, (utc_now() - published).total_seconds() / 3600) if published else 72.0
-    recency = max(0.0, 1 - age_hours / 168)
-    completeness = min(len(item.get("text", "")) / 1500, 1.0)
-    topic_score = max(topic["score"] for topic in topics)
-    priority = min(float(item.get("priority", 1)) / 10, 1.0)
-    return round(
-        topic_score * weights.get("topic_relevance", 0.4)
-        + priority * weights.get("source_priority", 0.2)
-        + recency * weights.get("recency", 0.2)
-        + completeness * weights.get("content_completeness", 0.2),
-        3,
-    )
 
 
 def render(
