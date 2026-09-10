@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Protocol
 import re
+from .evidence_scope import EvidenceScope
 
 from .retrieval import RAGManager
 from .themes import analysis_profile, select_theme
@@ -86,7 +87,15 @@ class MicroTopicManager:
         isolated_text = "\n\n".join(dict.fromkeys(windows))
         if not isolated_text and signals:
             isolated_text = "Matched signals: " + ", ".join(map(str, signals))
-        metadata = {**item.get("metadata", {}), "micro_topic_id": classification.get("micro_topic_id"), "evidence_isolated": True}
+        scope = EvidenceScope(
+            micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
+            source_content_id=str(item.get("metadata", {}).get("content_id", item.get("id", ""))),
+            source_id=str(item.get("metadata", {}).get("source_id", item.get("source", ""))),
+            allowed_spans=tuple(windows),
+            allowed_claims=tuple(windows),
+            isolation_confidence=float(classification.get("classification_confidence", classification.get("confidence", 0.0))),
+        )
+        metadata = {**item.get("metadata", {}), **scope.to_metadata()}
         return {**item, "text": isolated_text, "metadata": metadata}
 
     def _analyze_with_retry(self, item: dict[str, Any], profile: dict[str, Any], evidence: list[dict[str, Any]]) -> dict[str, Any]:

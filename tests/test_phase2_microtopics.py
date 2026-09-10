@@ -8,6 +8,7 @@ from intelligence.config import load_config
 from intelligence.microtopics import catalog, classify_micro_topics, coverage
 from intelligence.themes import analysis_profile, select_theme
 from intelligence.validation import validate_microtopics, validate_themes
+from intelligence.evidence_scope import EvidenceScope
 
 
 ROOT = Path(__file__).parents[1]
@@ -161,3 +162,11 @@ def test_manager_sends_isolated_evidence_view_to_retriever_and_provider():
     manager.analyze({"id": "x", "kind": "news", "title": "RAG", "text": "RAG evidence. Unrelated agent evidence."}, [{"domain": "a", "topic": "A", "micro_topic": "rag", "signals": ["RAG"]}])
     assert provider.items[0]["metadata"]["evidence_isolated"] is True
     assert "Unrelated agent" not in provider.items[0]["text"]
+
+
+def test_evidence_scope_is_structured_and_serializable():
+    scope = EvidenceScope("micro-a", "content-a", "source-a", ("claim",), ("claim",), evidence_ids=("e1",), isolation_confidence=0.8)
+    metadata = scope.to_metadata()
+    assert metadata["micro_topic_id"] == "micro-a"
+    assert metadata["evidence_ids"] == ["e1"]
+    assert metadata["evidence_isolated"] is True
