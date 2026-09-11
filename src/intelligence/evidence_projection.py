@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from typing import Any
+import re
 
 
 def project_micro_topic_context(
@@ -13,9 +14,15 @@ def project_micro_topic_context(
     provenance = []
     for chunk in evidence:
         metadata = chunk.get("metadata", {})
+        text = chunk.get("text", "")
+        if not metadata.get("span_id") and classification.get("signals"):
+            sentences = re.split(r"(?<=[.!?])\s+", text)
+            relevant = [sentence for sentence in sentences if any(str(signal).lower() in sentence.lower() for signal in classification.get("signals", []))]
+            if relevant:
+                text = " ".join(relevant)
         span = {
             "span_id": metadata.get("span_id", chunk.get("id", "")),
-            "text": chunk.get("text", ""),
+            "text": text,
             "source": metadata.get("provenance"),
         }
         spans.append(span)

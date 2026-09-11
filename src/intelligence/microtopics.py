@@ -7,6 +7,7 @@ from typing import Any
 from .identity import make_micro_topic_id
 from .classification import KeywordClassifier
 from .statuses import IntelligenceStatus
+from .profiles import resolve_profile
 
 
 GENERIC_TERMS = {
@@ -43,7 +44,7 @@ def _profile_for(domain: str, micro_topic: str, profiles: dict[str, Any] | None)
 
 
 def catalog(
-    taxonomy: dict[str, Any], topics: list[dict[str, Any]], profiles: dict[str, Any] | None = None, matrix: dict[str, Any] | None = None, *, strict: bool = False,
+    taxonomy: dict[str, Any], topics: list[dict[str, Any]], profiles: dict[str, Any] | None = None, matrix: dict[str, Any] | None = None, templates: dict[str, Any] | None = None, *, strict: bool = False,
 ) -> list[dict[str, Any]]:
     """Create a canonical Domain -> Topic -> Micro-topic catalog from configuration."""
     configured = {topic.get("key"): topic for topic in topics}
@@ -60,21 +61,23 @@ def catalog(
             for domain, definition in taxonomy.get("domains", {}).items()
         }
     for domain, leaves in domain_leaves.items():
-        definition = taxonomy.get("domains", {}).get(domain, {})
         domain_topic = configured.get(domain, {})
         for record in leaves:
             micro_topic = record["id"]
             profile = _profile_for(domain, micro_topic, profiles)
             if matrix_records:
-                profile = {
-                    **profile,
+                matrix_profile = {
                     "aliases": list(dict.fromkeys([record["name"], micro_topic.replace("-", " ")])),
                     "positive_signals": [part.strip() for part in record["evaluation"].split(",") if len(part.strip()) > 3][:6],
                     "required_evidence": [record["required_evidence"]],
                     "source_hints": [part.strip() for part in record["resources"].split("+")],
-                    "analysis_contract": {**profile.get("analysis_contract", {}), "objective": record["evaluation"], "important_output": record["important_output"]},
+                    "analysis_contract": {"objective": record["evaluation"], "important_output": record["important_output"]},
                     "profile_origin": "matrix",
                 }
+                profile = {**matrix_profile, **profile, "analysis_contract": {**matrix_profile["analysis_contract"], **profile.get("analysis_contract", {})}}
+            template_id = record.get("template", "technology_capability")
+            if templates:
+                profile = resolve_profile(domain, domain_topic.get("name", domain), micro_topic, template_id, templates, profile, enabled=profile.get("enabled", domain_topic.get("enabled", True)))
             # Production profiles must opt into evidence signals. The legacy
             # two-argument API keeps its derived alias behavior for callers
             # that have not loaded the Phase 2 profile overlay yet.
@@ -100,6 +103,8 @@ def catalog(
                     "enabled": profile.get("enabled", domain_topic.get("enabled", True)),
                     "profile": {**profile, "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived")},
                     "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived"),
+                    "profile_id": profile.get("profile_id", f"{domain}.{micro_topic}"),
+                    "template_id": profile.get("template_id", template_id),
                 }
             )
     return entries
@@ -164,9 +169,11 @@ def evaluate_micro_topic_status(assignments: list[dict[str, Any]], evaluation: d
         return IntelligenceStatus.ANALYSIS_FAILURE.value
     if any(item.get("budget_skipped") for item in assignments):
         return IntelligenceStatus.BUDGET_SKIPPED.value
+    if assignments and any("evidence_available" in item and not item.get("evidence_available") for item in assignments) and not evaluation:
+        return IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
     if evaluation.get("evaluation_status") != "EVALUATION_COMPLETE":
         return IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
-    if not assignments or not any(item.get("evidence_available", False) for item in assignments):
+    if not assignments or not any(item.get("evidence_available", bool(item.get("relevant_count", 0) or item.get("evidence_count", 0))) for item in assignments):
         return IntelligenceStatus.NO_RELEVANT_CONTENT.value
     maximum = max(float(item.get("importance_score", 0)) for item in assignments)
     if maximum >= 75:
@@ -187,7 +194,7 @@ def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], s
         evidence = assigned[(entry["domain"], entry["micro_topic"])]
         evaluation_key = f"{entry['domain']}:{entry['micro_topic']}"
         evaluation = ledger.get(evaluation_key, {})
-        if evidence and not evaluation:
+        if evidence and not evaluation and any(item.get("evidence_available", bool(item.get("relevant_count", 0) or item.get("evidence_count", 0))) for item in evidence):
             evaluation = {"evaluation_status": "EVALUATION_COMPLETE"}
         checked = evaluation.get("evaluation_status") == "EVALUATION_COMPLETE"
         if not checked:

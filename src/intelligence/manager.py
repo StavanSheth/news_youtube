@@ -64,7 +64,7 @@ class MicroTopicManager:
             try:
                 analysis = self._analyze_with_retry(project_micro_topic_context(evidence_item, classification, scope, bounded), profile, bounded)
                 analysis_status = "OK"
-            except (TimeoutError, ValueError, RuntimeError) as error:
+            except (TimeoutError, ValueError, RuntimeError):
                 analysis = {}
                 analysis_status = IntelligenceStatus.ANALYSIS_FAILURE.value
                 self.stats.setdefault("analysis_failures", 0)

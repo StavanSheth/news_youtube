@@ -25,6 +25,8 @@ def test_canonical_matrix_has_236_explicit_runtime_records():
     assert len(config.microtopic_matrix["records"]) == 236
     assert len(entries) == 236
     assert all(entry["profile_origin"] == "matrix" for entry in entries)
+    assert len(config.themes) >= 236
+    assert all(entry["template_id"] for entry in entries)
 
 
 def test_every_taxonomy_leaf_has_stable_profile_and_identity():
@@ -86,9 +88,9 @@ def test_theme_fallback_is_controlled_and_stream_specific():
     classification = {"domain": "artificial-intelligence", "topic": "Artificial Intelligence", "micro_topic": "ai-agents"}
     theme = select_theme(classification, config.themes, {"kind": "news"})
     video = select_theme(classification, config.themes, {"kind": "youtube"})
-    assert theme["resolution_level"] == "controlled_fallback"
-    assert theme["fallback_used"] is True
-    assert video["id"] == theme["id"] == "domain-fallback"
+    assert theme["resolution_level"] == "exact_micro_topic"
+    assert theme["fallback_used"] is False
+    assert video["resolution_level"] == "exact_micro_topic"
     assert "main_argument" in analysis_profile(classification, video, {"kind": "youtube"})["questions"]
 
 
@@ -96,9 +98,9 @@ def test_domain_family_is_distinct_from_controlled_fallback():
     config, _ = _entries()
     family = select_theme({"domain": "cybersecurity", "topic": "Cybersecurity", "micro_topic": "ransomware"}, config.themes, {"kind": "news"})
     fallback = select_theme({"domain": "quantum-computing", "topic": "Quantum", "micro_topic": "error-correction"}, config.themes, {"kind": "news"})
-    assert family["resolution_level"] == "domain_family"
-    assert family["fallback_used"] is True
-    assert fallback["resolution_level"] == "controlled_fallback"
+    assert family["resolution_level"] == "exact_micro_topic"
+    assert family["fallback_used"] is False
+    assert fallback["resolution_level"] == "exact_micro_topic"
 
 
 def test_invalid_microtopic_and_theme_configuration_fails_early():
@@ -174,12 +176,12 @@ def test_manager_preserves_source_context_while_scoping_evidence():
 
 
 def test_evidence_scope_is_structured_and_serializable():
-    scope = EvidenceScope("micro-a", "content-a", "source-a", ("claim",), ("claim",), evidence_ids=("e1",), isolation_confidence=0.8)
+    scope = EvidenceScope("micro-a", "content-a", "source-a", allowed_span_ids=("span-1",), allowed_claim_ids=("claim-1",), evidence_ids=("e1",), isolation_confidence=0.8)
     metadata = scope.to_metadata()
     assert metadata["micro_topic_id"] == "micro-a"
     assert metadata["evidence_ids"] == ["e1"]
     assert metadata["evidence_isolated"] is True
-    assert scope.allows({"metadata": {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "evidence_id": "e1"}})
+    assert scope.allows({"metadata": {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "evidence_id": "e1", "span_id": "span-1", "claim_id": "claim-1"}})
     assert not scope.allows({"metadata": {"micro_topic_id": "micro-b", "content_id": "content-a", "source_id": "source-a"}})
 
 

@@ -7,8 +7,9 @@ from typing import Any
 import yaml
 import json
 
-from .validation import validate_microtopic_matrix, validate_microtopics, validate_sources, validate_taxonomy, validate_topics, validate_themes
+from .validation import validate_dimensions, validate_microtopic_matrix, validate_normalization_registry, validate_microtopics, validate_profile_templates, validate_sources, validate_taxonomy, validate_topics, validate_themes
 from .contracts import VersionContract
+from .profiles import build_matrix_themes
 
 
 @dataclass(frozen=True)
@@ -21,6 +22,9 @@ class AppConfig:
     themes: list[dict[str, Any]]
     microtopics: dict[str, Any]
     microtopic_matrix: dict[str, Any]
+    normalization_registry: dict[str, Any]
+    dimensions: dict[str, Any]
+    profile_templates: dict[str, Any]
     entities: list[dict[str, Any]]
     versions: VersionContract
 
@@ -48,8 +52,15 @@ def load_config(root: Path) -> AppConfig:
     validate_microtopics(microtopics, taxonomy)
     matrix = _read_json(config_dir / "microtopic_matrix.json")
     validate_microtopic_matrix(matrix)
+    normalization = _read_json(config_dir / "normalization_registry.json")
+    validate_normalization_registry(normalization, matrix)
+    dimensions = _read_json(config_dir / "dimensions.json")
+    validate_dimensions(dimensions)
+    profile_templates = _read_json(config_dir / "profile_templates.json")
+    validate_profile_templates(matrix, profile_templates)
     themes = _read_yaml(config_dir / "themes.yaml").get("themes", [])
-    validate_themes(themes, taxonomy)
+    themes = build_matrix_themes(matrix["records"], profile_templates, themes)
+    validate_themes(themes, taxonomy, matrix)
     settings = _read_yaml(config_dir / "settings.yaml")
     registry_path = config_dir / "source_registry.yaml"
     if registry_path.exists():
@@ -67,6 +78,9 @@ def load_config(root: Path) -> AppConfig:
         themes=themes,
         microtopics=microtopics,
         microtopic_matrix=matrix,
+        normalization_registry=normalization,
+        dimensions=dimensions,
+        profile_templates=profile_templates,
         entities=_read_yaml(config_dir / "entities.yaml").get("entities", []),
         versions=versions,
     )

@@ -16,6 +16,37 @@ def validate_microtopic_matrix(matrix: dict[str, Any]) -> None:
             raise ValueError(f"Incomplete matrix record: {record.get('domain')}/{record.get('id')}")
 
 
+def validate_normalization_registry(registry: dict[str, Any], matrix: dict[str, Any]) -> None:
+    records = registry.get("records", [])
+    if len(records) != len(matrix.get("records", [])):
+        raise ValueError("Normalization registry must preserve every matrix row")
+    ids = [record.get("original_id") for record in records]
+    if ids != list(range(1, len(records) + 1)):
+        raise ValueError("Normalization registry original IDs must be contiguous 1..N")
+    allowed_statuses = {"KEEP", "MERGE", "HIERARCHY", "EVENT", "ENTITY", "CONTENT", "ATTRIBUTE", "OPPORTUNITY", "CATEGORY", "DEPRECATE", "SPLIT"}
+    allowed_types = {"MICRO_TOPIC", "CATEGORY", "EVENT_TYPE", "ENTITY_TYPE", "CONTENT_TYPE", "ATTRIBUTE", "OPPORTUNITY_TYPE"}
+    for record in records:
+        if record.get("status") not in allowed_statuses or record.get("record_type") not in allowed_types or not record.get("canonical_id"):
+            raise ValueError(f"Invalid normalization record: {record.get('original_id')}")
+
+
+def validate_dimensions(dimensions: dict[str, Any]) -> None:
+    for key in ("event_types", "entity_types", "content_types", "attributes"):
+        values = dimensions.get(key)
+        if not isinstance(values, list) or not values or len(values) != len(set(values)):
+            raise ValueError(f"Dimensions field {key!r} must be a unique non-empty list")
+    geography = dimensions.get("geography", {})
+    if not geography.get("regions") or not geography.get("countries"):
+        raise ValueError("Dimensions geography requires regions and countries")
+
+
+def validate_profile_templates(matrix: dict[str, Any], templates: dict[str, Any]) -> None:
+    available = templates.get("templates", templates)
+    unknown = sorted({record.get("template") for record in matrix.get("records", []) if record.get("template") not in available})
+    if unknown:
+        raise ValueError(f"Unknown profile templates: {unknown}")
+
+
 def validate_taxonomy(taxonomy: dict[str, Any]) -> None:
     required = {"domains", "priorities", "event_types", "report_types"}
     missing = required - taxonomy.keys()
@@ -76,7 +107,7 @@ def validate_microtopics(config: dict[str, Any], taxonomy: dict[str, Any]) -> No
                 raise ValueError(f"Duplicate micro-topic aliases: {domain}/{micro_topic}")
 
 
-def validate_themes(themes: list[dict[str, Any]], taxonomy: dict[str, Any]) -> None:
+def validate_themes(themes: list[dict[str, Any]], taxonomy: dict[str, Any], matrix: dict[str, Any] | None = None) -> None:
     ids = [theme.get("id") for theme in themes]
     if any(not theme_id for theme_id in ids) or len(ids) != len(set(ids)):
         raise ValueError("Themes must have unique non-empty ids")
@@ -87,6 +118,7 @@ def validate_themes(themes: list[dict[str, Any]], taxonomy: dict[str, Any]) -> N
         for definition in taxonomy["domains"].values()
         for micro_topic in definition.get("topics", [])
     }
+    valid_micro_topics.update(record.get("id") for record in (matrix or {}).get("records", []))
     route_keys: set[tuple[Any, ...]] = set()
     for theme in themes:
         if theme.get("domain", "all") not in valid_domains:

@@ -37,7 +37,10 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         best = [theme for level, theme in candidates if level == best_level]
         if len(best) > 1:
             best.sort(key=lambda theme: (-int(theme.get("priority", 0)), str(theme.get("id", ""))))
-        return best[0]
+        selected = best[0]
+        if stream == "video" and "main_argument" not in selected.get("questions", []):
+            selected = {**selected, "questions": [*selected.get("questions", []), "main_argument", "claims", "methods", "limitations"]}
+        return selected
     # A controlled configured fallback is explicit and observable; no theme is invented.
     fallback = next((theme for theme in themes if theme.get("id") == "domain-fallback"), {})
     if not fallback:

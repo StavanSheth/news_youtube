@@ -1,0 +1,3310 @@
+{
+  "version": 1,
+  "source": "Phase 2 normalization authority",
+  "records": [
+    {
+      "original_id": 1,
+      "original_name": "Foundation Models",
+      "normalized_name": "foundation_models",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.foundation_models",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "foundation-models"
+      ]
+    },
+    {
+      "original_id": 2,
+      "original_name": "LLMs",
+      "normalized_name": "llms",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.llms",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "llms"
+      ]
+    },
+    {
+      "original_id": 3,
+      "original_name": "Multimodal AI",
+      "normalized_name": "multimodal_ai",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.multimodal",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "multimodal-ai"
+      ]
+    },
+    {
+      "original_id": 4,
+      "original_name": "Reasoning Models",
+      "normalized_name": "reasoning_models",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.reasoning_models",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "reasoning-models"
+      ]
+    },
+    {
+      "original_id": 5,
+      "original_name": "AI Agents",
+      "normalized_name": "ai_agents",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.agents",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-agents"
+      ]
+    },
+    {
+      "original_id": 6,
+      "original_name": "Agentic Workflows",
+      "normalized_name": "agentic_workflows",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.agentic_workflows",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "agentic-workflows"
+      ]
+    },
+    {
+      "original_id": 7,
+      "original_name": "Coding Models",
+      "normalized_name": "coding_models",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.coding_models",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "coding-models"
+      ]
+    },
+    {
+      "original_id": 8,
+      "original_name": "RAG",
+      "normalized_name": "rag",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.rag",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "rag"
+      ]
+    },
+    {
+      "original_id": 9,
+      "original_name": "Embeddings",
+      "normalized_name": "embeddings",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.embeddings",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "embeddings"
+      ]
+    },
+    {
+      "original_id": 10,
+      "original_name": "Training",
+      "normalized_name": "training",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.training",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "training"
+      ]
+    },
+    {
+      "original_id": 11,
+      "original_name": "Inference",
+      "normalized_name": "inference",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.inference",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "inference"
+      ]
+    },
+    {
+      "original_id": 12,
+      "original_name": "Fine-tuning",
+      "normalized_name": "fine_tuning",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.fine_tuning",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "fine-tuning"
+      ]
+    },
+    {
+      "original_id": 13,
+      "original_name": "AI Infrastructure",
+      "normalized_name": "ai_infrastructure",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.infrastructure",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-infrastructure"
+      ]
+    },
+    {
+      "original_id": 14,
+      "original_name": "AI Tooling",
+      "normalized_name": "ai_tooling",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.tooling",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-tooling"
+      ]
+    },
+    {
+      "original_id": 15,
+      "original_name": "Open-source AI",
+      "normalized_name": "open_source_ai",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.open_source",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "open-source-ai"
+      ]
+    },
+    {
+      "original_id": 16,
+      "original_name": "Enterprise AI",
+      "normalized_name": "enterprise_ai",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.enterprise",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "enterprise-ai"
+      ]
+    },
+    {
+      "original_id": 17,
+      "original_name": "AI Applications",
+      "normalized_name": "ai_applications",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.applications",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-applications"
+      ]
+    },
+    {
+      "original_id": 18,
+      "original_name": "AI Research",
+      "normalized_name": "ai_research",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.research",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-research"
+      ]
+    },
+    {
+      "original_id": 19,
+      "original_name": "AI Safety / Alignment",
+      "normalized_name": "ai_safety_alignment",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.safety_alignment",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-safety-alignment"
+      ]
+    },
+    {
+      "original_id": 20,
+      "original_name": "AI Evaluation",
+      "normalized_name": "ai_evaluation",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.evaluation",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-evaluation"
+      ]
+    },
+    {
+      "original_id": 21,
+      "original_name": "AI Regulation",
+      "normalized_name": "ai_regulation",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.regulation",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-regulation"
+      ]
+    },
+    {
+      "original_id": 22,
+      "original_name": "AI Startups",
+      "normalized_name": "ai_startups",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.startups",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "ai",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-startups"
+      ]
+    },
+    {
+      "original_id": 23,
+      "original_name": "AI Applications",
+      "normalized_name": "ai_applications",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "ai.applications",
+      "status": "MERGE",
+      "reason": "Duplicate or overlapping source row mapped to canonical concept",
+      "parent_id": "ai",
+      "replacement_id": "ai.applications",
+      "original_taxonomy_ids": [
+        "ai-application-launches"
+      ]
+    },
+    {
+      "original_id": 24,
+      "original_name": "Programming Languages",
+      "normalized_name": "programming_languages",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.languages",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "programming-languages"
+      ]
+    },
+    {
+      "original_id": 25,
+      "original_name": "Frameworks",
+      "normalized_name": "frameworks",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.frameworks",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "frameworks"
+      ]
+    },
+    {
+      "original_id": 26,
+      "original_name": "IDE & Developer Tools",
+      "normalized_name": "ide_developer_tools",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.ide_tools",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ide-and-developer-tools"
+      ]
+    },
+    {
+      "original_id": 27,
+      "original_name": "APIs",
+      "normalized_name": "apis",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.apis",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "apis"
+      ]
+    },
+    {
+      "original_id": 28,
+      "original_name": "SDKs",
+      "normalized_name": "sdks",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.sdks",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "sdks"
+      ]
+    },
+    {
+      "original_id": 29,
+      "original_name": "Backend",
+      "normalized_name": "backend",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.backend",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "backend"
+      ]
+    },
+    {
+      "original_id": 30,
+      "original_name": "Frontend",
+      "normalized_name": "frontend",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.frontend",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "frontend"
+      ]
+    },
+    {
+      "original_id": 31,
+      "original_name": "Databases",
+      "normalized_name": "databases",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.databases",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "databases"
+      ]
+    },
+    {
+      "original_id": 32,
+      "original_name": "Architecture",
+      "normalized_name": "architecture",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.architecture",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "architecture"
+      ]
+    },
+    {
+      "original_id": 33,
+      "original_name": "DevOps",
+      "normalized_name": "devops",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.devops",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "devops"
+      ]
+    },
+    {
+      "original_id": 34,
+      "original_name": "CI/CD",
+      "normalized_name": "ci_cd",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.cicd",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ci-cd"
+      ]
+    },
+    {
+      "original_id": 35,
+      "original_name": "Testing",
+      "normalized_name": "testing",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.testing",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "testing"
+      ]
+    },
+    {
+      "original_id": 36,
+      "original_name": "Observability",
+      "normalized_name": "observability",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.observability",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "observability"
+      ]
+    },
+    {
+      "original_id": 37,
+      "original_name": "Cloud / Infrastructure",
+      "normalized_name": "cloud_infrastructure",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "software.cloud_infrastructure",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "software",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "cloud-infrastructure"
+      ]
+    },
+    {
+      "original_id": 38,
+      "original_name": "Open-source Releases",
+      "normalized_name": "open_source_releases",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=release",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "open-source-releases"
+      ]
+    },
+    {
+      "original_id": 39,
+      "original_name": "Repositories",
+      "normalized_name": "repositories",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "oss.repositories",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "oss",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "repositories"
+      ]
+    },
+    {
+      "original_id": 40,
+      "original_name": "Model Tooling",
+      "normalized_name": "model_tooling",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "oss.model_tooling",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "oss",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "model-tooling"
+      ]
+    },
+    {
+      "original_id": 41,
+      "original_name": "Agent Frameworks",
+      "normalized_name": "agent_frameworks",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "oss.agent_frameworks",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "oss",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "agent-frameworks"
+      ]
+    },
+    {
+      "original_id": 42,
+      "original_name": "MCP",
+      "normalized_name": "mcp",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "oss.mcp",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "oss",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "mcp"
+      ]
+    },
+    {
+      "original_id": 43,
+      "original_name": "Developer Tools",
+      "normalized_name": "developer_tools",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "oss.developer_tools",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "oss",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "developer-tools"
+      ]
+    },
+    {
+      "original_id": 44,
+      "original_name": "Inference / Serving",
+      "normalized_name": "inference_serving",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "oss.inference_serving",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "oss",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "inference-serving"
+      ]
+    },
+    {
+      "original_id": 45,
+      "original_name": "Libraries",
+      "normalized_name": "libraries",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "oss.libraries",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "oss",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "libraries"
+      ]
+    },
+    {
+      "original_id": 46,
+      "original_name": "Adoption",
+      "normalized_name": "adoption",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "oss.adoption",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "oss",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "adoption"
+      ]
+    },
+    {
+      "original_id": 47,
+      "original_name": "High-impact Projects",
+      "normalized_name": "high_impact_projects",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "significance=high_impact",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "high-impact-projects"
+      ]
+    },
+    {
+      "original_id": 48,
+      "original_name": "Releases",
+      "normalized_name": "releases",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=release",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "releases"
+      ]
+    },
+    {
+      "original_id": 49,
+      "original_name": "Maintainers",
+      "normalized_name": "maintainers",
+      "record_type": "ENTITY_TYPE",
+      "canonical_id": "maintainer_governance",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "maintainers"
+      ]
+    },
+    {
+      "original_id": 50,
+      "original_name": "Hardware",
+      "normalized_name": "hardware",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.hardware",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "quantum",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "hardware"
+      ]
+    },
+    {
+      "original_id": 51,
+      "original_name": "Processors",
+      "normalized_name": "processors",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.processors",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "quantum",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "processors"
+      ]
+    },
+    {
+      "original_id": 52,
+      "original_name": "Algorithms",
+      "normalized_name": "algorithms",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.algorithms",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "quantum",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "algorithms"
+      ]
+    },
+    {
+      "original_id": 53,
+      "original_name": "Error Correction",
+      "normalized_name": "error_correction",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.error_correction",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "quantum",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "error-correction"
+      ]
+    },
+    {
+      "original_id": 54,
+      "original_name": "Networking",
+      "normalized_name": "networking",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.networking",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "quantum",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "networking"
+      ]
+    },
+    {
+      "original_id": 55,
+      "original_name": "Cryptography",
+      "normalized_name": "cryptography",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.cryptography",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "quantum",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "cryptography"
+      ]
+    },
+    {
+      "original_id": 56,
+      "original_name": "Research",
+      "normalized_name": "research",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.research",
+      "status": "MERGE",
+      "reason": "Duplicate or overlapping source row mapped to canonical concept",
+      "parent_id": "quantum",
+      "replacement_id": "quantum.research",
+      "original_taxonomy_ids": [
+        "research"
+      ]
+    },
+    {
+      "original_id": 57,
+      "original_name": "Government Programs",
+      "normalized_name": "government_programs",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.government_programs",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "quantum",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "government-programs"
+      ]
+    },
+    {
+      "original_id": 58,
+      "original_name": "Applications",
+      "normalized_name": "applications",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "quantum.applications",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "quantum",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "applications"
+      ]
+    },
+    {
+      "original_id": 59,
+      "original_name": "Launches",
+      "normalized_name": "launches",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=launch",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "launches"
+      ]
+    },
+    {
+      "original_id": 60,
+      "original_name": "Rockets",
+      "normalized_name": "rockets",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.rockets",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "rockets"
+      ]
+    },
+    {
+      "original_id": 61,
+      "original_name": "Spacecraft",
+      "normalized_name": "spacecraft",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.spacecraft",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "spacecraft"
+      ]
+    },
+    {
+      "original_id": 62,
+      "original_name": "Satellites",
+      "normalized_name": "satellites",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.satellites",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "satellites"
+      ]
+    },
+    {
+      "original_id": 63,
+      "original_name": "Missions",
+      "normalized_name": "missions",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.missions",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "missions"
+      ]
+    },
+    {
+      "original_id": 64,
+      "original_name": "Earth Observation",
+      "normalized_name": "earth_observation",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.earth_observation",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "earth-observation"
+      ]
+    },
+    {
+      "original_id": 65,
+      "original_name": "Lunar Programs",
+      "normalized_name": "lunar_programs",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.lunar",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "lunar-programs"
+      ]
+    },
+    {
+      "original_id": 66,
+      "original_name": "Mars / Deep Space",
+      "normalized_name": "mars_deep_space",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.deep_space",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "mars-deep-space"
+      ]
+    },
+    {
+      "original_id": 67,
+      "original_name": "Exploration",
+      "normalized_name": "exploration",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.exploration",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "exploration"
+      ]
+    },
+    {
+      "original_id": 68,
+      "original_name": "Commercial Space",
+      "normalized_name": "commercial_space",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.commercial",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "commercial-space"
+      ]
+    },
+    {
+      "original_id": 69,
+      "original_name": "Space Infrastructure",
+      "normalized_name": "space_infrastructure",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.infrastructure",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "space-infrastructure"
+      ]
+    },
+    {
+      "original_id": 70,
+      "original_name": "Space Policy",
+      "normalized_name": "space_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.policy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "space",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "space-policy"
+      ]
+    },
+    {
+      "original_id": 71,
+      "original_name": "Space Policy",
+      "normalized_name": "space_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "space.policy",
+      "status": "MERGE",
+      "reason": "Duplicate or overlapping source row mapped to canonical concept",
+      "parent_id": "space",
+      "replacement_id": "space.policy",
+      "original_taxonomy_ids": [
+        "space-policy-strategy"
+      ]
+    },
+    {
+      "original_id": 72,
+      "original_name": "Procurement",
+      "normalized_name": "procurement",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.procurement",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "procurement"
+      ]
+    },
+    {
+      "original_id": 73,
+      "original_name": "Military Technology",
+      "normalized_name": "military_technology",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.military_technology",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "military-technology"
+      ]
+    },
+    {
+      "original_id": 74,
+      "original_name": "Drones",
+      "normalized_name": "drones",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.drones",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "drones"
+      ]
+    },
+    {
+      "original_id": 75,
+      "original_name": "Missiles",
+      "normalized_name": "missiles",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.missiles",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "missiles"
+      ]
+    },
+    {
+      "original_id": 76,
+      "original_name": "Air Defence",
+      "normalized_name": "air_defence",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.air_defence",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "air-defence"
+      ]
+    },
+    {
+      "original_id": 77,
+      "original_name": "Naval Systems",
+      "normalized_name": "naval_systems",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.naval_systems",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "naval-systems"
+      ]
+    },
+    {
+      "original_id": 78,
+      "original_name": "Electronic Warfare",
+      "normalized_name": "electronic_warfare",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.electronic_warfare",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "electronic-warfare"
+      ]
+    },
+    {
+      "original_id": 79,
+      "original_name": "Cyber Warfare",
+      "normalized_name": "cyber_warfare",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.cyber_warfare",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "cyber-warfare"
+      ]
+    },
+    {
+      "original_id": 80,
+      "original_name": "Military AI",
+      "normalized_name": "military_ai",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.military_ai",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "military-ai"
+      ]
+    },
+    {
+      "original_id": 81,
+      "original_name": "Defence Policy",
+      "normalized_name": "defence_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.policy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "defence-policy"
+      ]
+    },
+    {
+      "original_id": 82,
+      "original_name": "Strategic Capabilities",
+      "normalized_name": "strategic_capabilities",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.strategic_capabilities",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "defence",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "strategic-capabilities"
+      ]
+    },
+    {
+      "original_id": 83,
+      "original_name": "Defence Procurement",
+      "normalized_name": "defence_procurement",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "defence.procurement",
+      "status": "MERGE",
+      "reason": "Duplicate or overlapping source row mapped to canonical concept",
+      "parent_id": "defence",
+      "replacement_id": "defence.procurement",
+      "original_taxonomy_ids": [
+        "defence-procurement"
+      ]
+    },
+    {
+      "original_id": 84,
+      "original_name": "CVEs",
+      "normalized_name": "cves",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "cyber.vulnerability",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "cves"
+      ]
+    },
+    {
+      "original_id": 85,
+      "original_name": "Vulnerabilities",
+      "normalized_name": "vulnerabilities",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.vulnerability",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "vulnerabilities"
+      ]
+    },
+    {
+      "original_id": 86,
+      "original_name": "Exploits",
+      "normalized_name": "exploits",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.exploit",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "exploits"
+      ]
+    },
+    {
+      "original_id": 87,
+      "original_name": "Breaches",
+      "normalized_name": "breaches",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.incidents",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "breaches"
+      ]
+    },
+    {
+      "original_id": 88,
+      "original_name": "Ransomware",
+      "normalized_name": "ransomware",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.ransomware",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ransomware"
+      ]
+    },
+    {
+      "original_id": 89,
+      "original_name": "Malware",
+      "normalized_name": "malware",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.malware",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "malware"
+      ]
+    },
+    {
+      "original_id": 90,
+      "original_name": "Threat Actors",
+      "normalized_name": "threat_actors",
+      "record_type": "ENTITY_TYPE",
+      "canonical_id": "cyber.threat_actor",
+      "status": "ENTITY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "threat-actors"
+      ]
+    },
+    {
+      "original_id": 91,
+      "original_name": "Campaigns",
+      "normalized_name": "campaigns",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.campaigns",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "campaigns"
+      ]
+    },
+    {
+      "original_id": 92,
+      "original_name": "Identity",
+      "normalized_name": "identity",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.identity_security",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "identity"
+      ]
+    },
+    {
+      "original_id": 93,
+      "original_name": "Cloud Security",
+      "normalized_name": "cloud_security",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.cloud_security",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "cloud-security"
+      ]
+    },
+    {
+      "original_id": 94,
+      "original_name": "Application Security",
+      "normalized_name": "application_security",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.application_security",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "application-security"
+      ]
+    },
+    {
+      "original_id": 95,
+      "original_name": "AI Security",
+      "normalized_name": "ai_security",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.ai_security",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-security"
+      ]
+    },
+    {
+      "original_id": 96,
+      "original_name": "Security Tools",
+      "normalized_name": "security_tools",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.security_tools",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "security-tools"
+      ]
+    },
+    {
+      "original_id": 97,
+      "original_name": "National Cybersecurity Policy",
+      "normalized_name": "national_cybersecurity_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "cyber.policy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "cyber",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "national-cybersecurity-policy"
+      ]
+    },
+    {
+      "original_id": 98,
+      "original_name": "Chip Design",
+      "normalized_name": "chip_design",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.design",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "chip-design"
+      ]
+    },
+    {
+      "original_id": 99,
+      "original_name": "Fabs",
+      "normalized_name": "fabs",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.manufacturing",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "fabs"
+      ]
+    },
+    {
+      "original_id": 100,
+      "original_name": "Foundries",
+      "normalized_name": "foundries",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.foundries",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "foundries"
+      ]
+    },
+    {
+      "original_id": 101,
+      "original_name": "GPUs",
+      "normalized_name": "gpus",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.compute.gpu",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor.compute",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "gpus"
+      ]
+    },
+    {
+      "original_id": 102,
+      "original_name": "CPUs",
+      "normalized_name": "cpus",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.compute.cpu",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor.compute",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "cpus"
+      ]
+    },
+    {
+      "original_id": 103,
+      "original_name": "Accelerators",
+      "normalized_name": "accelerators",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.compute.accelerators",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor.compute",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "accelerators"
+      ]
+    },
+    {
+      "original_id": 104,
+      "original_name": "Memory",
+      "normalized_name": "memory",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.memory",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "memory"
+      ]
+    },
+    {
+      "original_id": 105,
+      "original_name": "HBM",
+      "normalized_name": "hbm",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.memory.hbm",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor.memory",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "hbm"
+      ]
+    },
+    {
+      "original_id": 106,
+      "original_name": "Manufacturing Equipment",
+      "normalized_name": "manufacturing_equipment",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.equipment",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "manufacturing-equipment"
+      ]
+    },
+    {
+      "original_id": 107,
+      "original_name": "Packaging",
+      "normalized_name": "packaging",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.packaging",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "packaging"
+      ]
+    },
+    {
+      "original_id": 108,
+      "original_name": "Process Nodes",
+      "normalized_name": "process_nodes",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.process_nodes",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "process-nodes"
+      ]
+    },
+    {
+      "original_id": 109,
+      "original_name": "Export Controls",
+      "normalized_name": "export_controls",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=export_control",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "export-controls"
+      ]
+    },
+    {
+      "original_id": 110,
+      "original_name": "Supply Chains",
+      "normalized_name": "supply_chains",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "semiconductor.supply_chain",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "semiconductor",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "supply-chains"
+      ]
+    },
+    {
+      "original_id": 111,
+      "original_name": "Capacity",
+      "normalized_name": "capacity",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "capacity",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "capacity"
+      ]
+    },
+    {
+      "original_id": 112,
+      "original_name": "Funding",
+      "normalized_name": "funding",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=funding",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "funding"
+      ]
+    },
+    {
+      "original_id": 113,
+      "original_name": "Seed / Series Rounds",
+      "normalized_name": "seed_series_rounds",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "funding.stage",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "funding",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "seed-series-rounds"
+      ]
+    },
+    {
+      "original_id": 114,
+      "original_name": "VC Activity",
+      "normalized_name": "vc_activity",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "startup.vc_activity",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "startup",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "vc-activity"
+      ]
+    },
+    {
+      "original_id": 115,
+      "original_name": "Acquisitions",
+      "normalized_name": "acquisitions",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=acquisition",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "acquisitions"
+      ]
+    },
+    {
+      "original_id": 116,
+      "original_name": "IPOs",
+      "normalized_name": "ipos",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=ipo",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ipos"
+      ]
+    },
+    {
+      "original_id": 117,
+      "original_name": "Accelerators",
+      "normalized_name": "accelerators",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "startup.accelerators",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "startup",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "accelerators"
+      ]
+    },
+    {
+      "original_id": 118,
+      "original_name": "Valuation",
+      "normalized_name": "valuation",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "startup.valuation",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "startup",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "valuation"
+      ]
+    },
+    {
+      "original_id": 119,
+      "original_name": "Exits",
+      "normalized_name": "exits",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=exit",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "exits"
+      ]
+    },
+    {
+      "original_id": 120,
+      "original_name": "Launches",
+      "normalized_name": "launches",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=product_or_model_launch",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "launches"
+      ]
+    },
+    {
+      "original_id": 121,
+      "original_name": "Failures",
+      "normalized_name": "failures",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=shutdown_or_failure",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "failures"
+      ]
+    },
+    {
+      "original_id": 122,
+      "original_name": "Regulation",
+      "normalized_name": "regulation",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=regulation",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "regulation"
+      ]
+    },
+    {
+      "original_id": 123,
+      "original_name": "Legislation",
+      "normalized_name": "legislation",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=legislation",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "legislation"
+      ]
+    },
+    {
+      "original_id": 124,
+      "original_name": "Ministries",
+      "normalized_name": "ministries",
+      "record_type": "ENTITY_TYPE",
+      "canonical_id": "government.ministry",
+      "status": "ENTITY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "government",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ministries"
+      ]
+    },
+    {
+      "original_id": 125,
+      "original_name": "Digital Policy",
+      "normalized_name": "digital_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "policy.digital",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "policy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "digital-policy"
+      ]
+    },
+    {
+      "original_id": 126,
+      "original_name": "AI Policy",
+      "normalized_name": "ai_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "policy.ai",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "policy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-policy"
+      ]
+    },
+    {
+      "original_id": 127,
+      "original_name": "Semiconductor Policy",
+      "normalized_name": "semiconductor_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "policy.semiconductor",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "policy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "semiconductor-policy"
+      ]
+    },
+    {
+      "original_id": 128,
+      "original_name": "Industrial Policy",
+      "normalized_name": "industrial_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "policy.industrial",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "policy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "industrial-policy"
+      ]
+    },
+    {
+      "original_id": 129,
+      "original_name": "Subsidies",
+      "normalized_name": "subsidies",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "opportunity.subsidy",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "subsidies"
+      ]
+    },
+    {
+      "original_id": 130,
+      "original_name": "Grants",
+      "normalized_name": "grants",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.grant",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "grants"
+      ]
+    },
+    {
+      "original_id": 131,
+      "original_name": "Tenders",
+      "normalized_name": "tenders",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.tender",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "tenders"
+      ]
+    },
+    {
+      "original_id": 132,
+      "original_name": "Implementation",
+      "normalized_name": "implementation",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "policy.lifecycle=implementation",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "policy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "implementation"
+      ]
+    },
+    {
+      "original_id": 133,
+      "original_name": "Policy Outcomes",
+      "normalized_name": "policy_outcomes",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "policy.outcome",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "policy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "policy-outcomes"
+      ]
+    },
+    {
+      "original_id": 134,
+      "original_name": "State/Provincial Policy",
+      "normalized_name": "state_provincial_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "regional.policy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "regional",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "state-provincial-policy"
+      ]
+    },
+    {
+      "original_id": 135,
+      "original_name": "Incentives",
+      "normalized_name": "incentives",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "regional.incentives",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "regional",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "incentives"
+      ]
+    },
+    {
+      "original_id": 136,
+      "original_name": "Industrial Parks",
+      "normalized_name": "industrial_parks",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "regional.industrial_parks",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "regional",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "industrial-parks"
+      ]
+    },
+    {
+      "original_id": 137,
+      "original_name": "Infrastructure",
+      "normalized_name": "infrastructure",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "regional.infrastructure",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "regional",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "infrastructure"
+      ]
+    },
+    {
+      "original_id": 138,
+      "original_name": "Local Regulation",
+      "normalized_name": "local_regulation",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=regulation",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "local-regulation"
+      ]
+    },
+    {
+      "original_id": 139,
+      "original_name": "Regional Investment",
+      "normalized_name": "regional_investment",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "regional.investment",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "regional",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "regional-investment"
+      ]
+    },
+    {
+      "original_id": 140,
+      "original_name": "Regional Technology Policy",
+      "normalized_name": "regional_technology_policy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "regional.technology_policy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "regional",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "regional-technology-policy"
+      ]
+    },
+    {
+      "original_id": 141,
+      "original_name": "Bilateral Relations",
+      "normalized_name": "bilateral_relations",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "geopolitics.bilateral",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "geopolitics",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "bilateral-relations"
+      ]
+    },
+    {
+      "original_id": 142,
+      "original_name": "Alliances",
+      "normalized_name": "alliances",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "geopolitics.alliances",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "geopolitics",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "alliances"
+      ]
+    },
+    {
+      "original_id": 143,
+      "original_name": "Sanctions",
+      "normalized_name": "sanctions",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=sanction",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "sanctions"
+      ]
+    },
+    {
+      "original_id": 144,
+      "original_name": "Wars / Conflicts",
+      "normalized_name": "wars_conflicts",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "geopolitics.conflict",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "geopolitics",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "wars-conflicts"
+      ]
+    },
+    {
+      "original_id": 145,
+      "original_name": "Diplomacy",
+      "normalized_name": "diplomacy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "geopolitics.diplomacy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "geopolitics",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "diplomacy"
+      ]
+    },
+    {
+      "original_id": 146,
+      "original_name": "Trade",
+      "normalized_name": "trade",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "geopolitics.trade",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "geopolitics",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "trade"
+      ]
+    },
+    {
+      "original_id": 147,
+      "original_name": "Technology Restrictions",
+      "normalized_name": "technology_restrictions",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=export_control",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "technology-restrictions"
+      ]
+    },
+    {
+      "original_id": 148,
+      "original_name": "Strategic Supply Chains",
+      "normalized_name": "strategic_supply_chains",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "geopolitics.supply_chains",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "geopolitics",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "strategic-supply-chains"
+      ]
+    },
+    {
+      "original_id": 149,
+      "original_name": "Strategic Competition",
+      "normalized_name": "strategic_competition",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "geopolitics.strategic_competition",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "geopolitics",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "strategic-competition"
+      ]
+    },
+    {
+      "original_id": 150,
+      "original_name": "Regional Blocs",
+      "normalized_name": "regional_blocs",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "geopolitics.regional_blocs",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "geopolitics",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "regional-blocs"
+      ]
+    },
+    {
+      "original_id": 151,
+      "original_name": "Oil",
+      "normalized_name": "oil",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.oil",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "oil"
+      ]
+    },
+    {
+      "original_id": 152,
+      "original_name": "Gas",
+      "normalized_name": "gas",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.gas",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "gas"
+      ]
+    },
+    {
+      "original_id": 153,
+      "original_name": "Electricity",
+      "normalized_name": "electricity",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.electricity",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "electricity"
+      ]
+    },
+    {
+      "original_id": 154,
+      "original_name": "Renewables",
+      "normalized_name": "renewables",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.renewables",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "renewables"
+      ]
+    },
+    {
+      "original_id": 155,
+      "original_name": "Nuclear",
+      "normalized_name": "nuclear",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.nuclear",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "nuclear"
+      ]
+    },
+    {
+      "original_id": 156,
+      "original_name": "Batteries",
+      "normalized_name": "batteries",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.batteries",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "batteries"
+      ]
+    },
+    {
+      "original_id": 157,
+      "original_name": "Grids",
+      "normalized_name": "grids",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.grids",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "grids"
+      ]
+    },
+    {
+      "original_id": 158,
+      "original_name": "Energy Companies",
+      "normalized_name": "energy_companies",
+      "record_type": "ENTITY_TYPE",
+      "canonical_id": "energy.company",
+      "status": "ENTITY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "energy-companies"
+      ]
+    },
+    {
+      "original_id": 159,
+      "original_name": "Energy Markets",
+      "normalized_name": "energy_markets",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.markets",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "energy-markets"
+      ]
+    },
+    {
+      "original_id": 160,
+      "original_name": "Production",
+      "normalized_name": "production",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "energy.production",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "production"
+      ]
+    },
+    {
+      "original_id": 161,
+      "original_name": "Energy Transition",
+      "normalized_name": "energy_transition",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.transition",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "energy-transition"
+      ]
+    },
+    {
+      "original_id": 162,
+      "original_name": "Energy Security",
+      "normalized_name": "energy_security",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.security",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "energy-security"
+      ]
+    },
+    {
+      "original_id": 163,
+      "original_name": "Energy Infrastructure",
+      "normalized_name": "energy_infrastructure",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "energy.infrastructure",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "energy",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "energy-infrastructure"
+      ]
+    },
+    {
+      "original_id": 164,
+      "original_name": "Ports",
+      "normalized_name": "ports",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "shipping.ports",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "shipping",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ports"
+      ]
+    },
+    {
+      "original_id": 165,
+      "original_name": "Shipping Lines",
+      "normalized_name": "shipping_lines",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "shipping.carriers",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "shipping",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "shipping-lines"
+      ]
+    },
+    {
+      "original_id": 166,
+      "original_name": "Freight",
+      "normalized_name": "freight",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "shipping.freight",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "shipping",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "freight"
+      ]
+    },
+    {
+      "original_id": 167,
+      "original_name": "Logistics Infrastructure",
+      "normalized_name": "logistics_infrastructure",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "shipping.infrastructure",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "shipping",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "logistics-infrastructure"
+      ]
+    },
+    {
+      "original_id": 168,
+      "original_name": "Chokepoints",
+      "normalized_name": "chokepoints",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "shipping.chokepoints",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "shipping",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "chokepoints"
+      ]
+    },
+    {
+      "original_id": 169,
+      "original_name": "Maritime Trade",
+      "normalized_name": "maritime_trade",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "shipping.maritime_trade",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "shipping",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "maritime-trade"
+      ]
+    },
+    {
+      "original_id": 170,
+      "original_name": "Container Rates",
+      "normalized_name": "container_rates",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "shipping.container_rates",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "shipping",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "container-rates"
+      ]
+    },
+    {
+      "original_id": 171,
+      "original_name": "Disruptions",
+      "normalized_name": "disruptions",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=disruption",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "disruptions"
+      ]
+    },
+    {
+      "original_id": 172,
+      "original_name": "Resilience",
+      "normalized_name": "resilience",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "shipping.resilience",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "shipping",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "resilience"
+      ]
+    },
+    {
+      "original_id": 173,
+      "original_name": "Factories",
+      "normalized_name": "factories",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "manufacturing.factories",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "manufacturing",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "factories"
+      ]
+    },
+    {
+      "original_id": 174,
+      "original_name": "Industrial Corridors",
+      "normalized_name": "industrial_corridors",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "manufacturing.industrial_corridors",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "manufacturing",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "industrial-corridors"
+      ]
+    },
+    {
+      "original_id": 175,
+      "original_name": "Incentives",
+      "normalized_name": "incentives",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "manufacturing.incentives",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "manufacturing",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "incentives"
+      ]
+    },
+    {
+      "original_id": 176,
+      "original_name": "Reshoring",
+      "normalized_name": "reshoring",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "manufacturing.reshoring",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "manufacturing",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "reshoring"
+      ]
+    },
+    {
+      "original_id": 177,
+      "original_name": "Localization",
+      "normalized_name": "localization",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "manufacturing.localization",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "manufacturing",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "localization"
+      ]
+    },
+    {
+      "original_id": 178,
+      "original_name": "Capacity",
+      "normalized_name": "capacity",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "manufacturing.capacity",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": "manufacturing",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "capacity"
+      ]
+    },
+    {
+      "original_id": 179,
+      "original_name": "Exports",
+      "normalized_name": "exports",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "manufacturing.exports",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "manufacturing",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "exports"
+      ]
+    },
+    {
+      "original_id": 180,
+      "original_name": "Industrial Strategy",
+      "normalized_name": "industrial_strategy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "manufacturing.strategy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "manufacturing",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "industrial-strategy"
+      ]
+    },
+    {
+      "original_id": 181,
+      "original_name": "Executives",
+      "normalized_name": "executives",
+      "record_type": "ENTITY_TYPE",
+      "canonical_id": "person.type=executive",
+      "status": "ENTITY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "person",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "executives"
+      ]
+    },
+    {
+      "original_id": 182,
+      "original_name": "Founders",
+      "normalized_name": "founders",
+      "record_type": "ENTITY_TYPE",
+      "canonical_id": "person.type=founder",
+      "status": "ENTITY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "person",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "founders"
+      ]
+    },
+    {
+      "original_id": 183,
+      "original_name": "Researchers",
+      "normalized_name": "researchers",
+      "record_type": "ENTITY_TYPE",
+      "canonical_id": "person.type=researcher",
+      "status": "ENTITY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "person",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "researchers"
+      ]
+    },
+    {
+      "original_id": 184,
+      "original_name": "Government Leaders",
+      "normalized_name": "government_leaders",
+      "record_type": "ENTITY_TYPE",
+      "canonical_id": "person.type=government_leader",
+      "status": "ENTITY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "person",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "government-leaders"
+      ]
+    },
+    {
+      "original_id": 185,
+      "original_name": "Appointments",
+      "normalized_name": "appointments",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=leadership_change.subtype=appointment",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "event_type=leadership_change",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "appointments"
+      ]
+    },
+    {
+      "original_id": 186,
+      "original_name": "Departures",
+      "normalized_name": "departures",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=leadership_change.subtype=departure",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "event_type=leadership_change",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "departures"
+      ]
+    },
+    {
+      "original_id": 187,
+      "original_name": "Statements",
+      "normalized_name": "statements",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=statement",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "statements"
+      ]
+    },
+    {
+      "original_id": 188,
+      "original_name": "Strategic Decisions",
+      "normalized_name": "strategic_decisions",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=strategic_decision",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "strategic-decisions"
+      ]
+    },
+    {
+      "original_id": 189,
+      "original_name": "Product Launches",
+      "normalized_name": "product_launches",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=product_or_model_launch",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "product-launches"
+      ]
+    },
+    {
+      "original_id": 190,
+      "original_name": "Strategy",
+      "normalized_name": "strategy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "company.strategy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "company",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "strategy"
+      ]
+    },
+    {
+      "original_id": 191,
+      "original_name": "Acquisitions",
+      "normalized_name": "acquisitions",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=acquisition",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "acquisitions"
+      ]
+    },
+    {
+      "original_id": 192,
+      "original_name": "Partnerships",
+      "normalized_name": "partnerships",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=partnership",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "partnerships"
+      ]
+    },
+    {
+      "original_id": 193,
+      "original_name": "Earnings",
+      "normalized_name": "earnings",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "event_type=earnings_or_result",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "earnings"
+      ]
+    },
+    {
+      "original_id": 194,
+      "original_name": "Infrastructure",
+      "normalized_name": "infrastructure",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "company.infrastructure",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "company",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "infrastructure"
+      ]
+    },
+    {
+      "original_id": 195,
+      "original_name": "Platform Changes",
+      "normalized_name": "platform_changes",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "company.platform",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "company",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "platform-changes"
+      ]
+    },
+    {
+      "original_id": 196,
+      "original_name": "Corporate AI / Technology Strategy",
+      "normalized_name": "corporate_ai_technology_strategy",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "company.ai_strategy",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "company",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "corporate-ai-technology-strategy"
+      ]
+    },
+    {
+      "original_id": 197,
+      "original_name": "Google I/O",
+      "normalized_name": "google_i_o",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "conference.google_io",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "conference",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "google-i-o"
+      ]
+    },
+    {
+      "original_id": 198,
+      "original_name": "GTC",
+      "normalized_name": "gtc",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "conference.gtc",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "conference",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "gtc"
+      ]
+    },
+    {
+      "original_id": 199,
+      "original_name": "WWDC",
+      "normalized_name": "wwdc",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "conference.wwdc",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "conference",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "wwdc"
+      ]
+    },
+    {
+      "original_id": 200,
+      "original_name": "NeurIPS",
+      "normalized_name": "neurips",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "conference.neurips",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "conference",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "neurips"
+      ]
+    },
+    {
+      "original_id": 201,
+      "original_name": "ICML",
+      "normalized_name": "icml",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "conference.icml",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "conference",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "icml"
+      ]
+    },
+    {
+      "original_id": 202,
+      "original_name": "CVPR",
+      "normalized_name": "cvpr",
+      "record_type": "EVENT_TYPE",
+      "canonical_id": "conference.cvpr",
+      "status": "EVENT",
+      "reason": "Cross-cutting event dimension",
+      "parent_id": "conference",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "cvpr"
+      ]
+    },
+    {
+      "original_id": 203,
+      "original_name": "Major Industry Events",
+      "normalized_name": "major_industry_events",
+      "record_type": "CATEGORY",
+      "canonical_id": "conference.major_industry_event",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "conference",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "major-industry-events"
+      ]
+    },
+    {
+      "original_id": 204,
+      "original_name": "Keynotes",
+      "normalized_name": "keynotes",
+      "record_type": "CONTENT_TYPE",
+      "canonical_id": "content_type=keynote",
+      "status": "CONTENT",
+      "reason": "Retained as canonical subject",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "keynotes"
+      ]
+    },
+    {
+      "original_id": 205,
+      "original_name": "AI Research",
+      "normalized_name": "ai_research",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "research.field=ai",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "research",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "ai-research"
+      ]
+    },
+    {
+      "original_id": 206,
+      "original_name": "Computer Science",
+      "normalized_name": "computer_science",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "research.field=computer_science",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "research",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "computer-science"
+      ]
+    },
+    {
+      "original_id": 207,
+      "original_name": "Medicine",
+      "normalized_name": "medicine",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "research.field=medicine",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "research",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "medicine"
+      ]
+    },
+    {
+      "original_id": 208,
+      "original_name": "Economics",
+      "normalized_name": "economics",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "research.field=economics",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "research",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "economics"
+      ]
+    },
+    {
+      "original_id": 209,
+      "original_name": "Physics",
+      "normalized_name": "physics",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "research.field=physics",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "research",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "physics"
+      ]
+    },
+    {
+      "original_id": 210,
+      "original_name": "Climate",
+      "normalized_name": "climate",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "research.field=climate",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "research",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "climate"
+      ]
+    },
+    {
+      "original_id": 211,
+      "original_name": "Engineering",
+      "normalized_name": "engineering",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "research.field=engineering",
+      "status": "HIERARCHY",
+      "reason": "Retained as canonical subject",
+      "parent_id": "research",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "engineering"
+      ]
+    },
+    {
+      "original_id": 212,
+      "original_name": "Breakthroughs",
+      "normalized_name": "breakthroughs",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "significance=breakthrough",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "breakthroughs"
+      ]
+    },
+    {
+      "original_id": 213,
+      "original_name": "Preprints",
+      "normalized_name": "preprints",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "publication_status=preprint",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "preprints"
+      ]
+    },
+    {
+      "original_id": 214,
+      "original_name": "Peer-reviewed Papers",
+      "normalized_name": "peer_reviewed_papers",
+      "record_type": "ATTRIBUTE",
+      "canonical_id": "publication_status=peer_reviewed",
+      "status": "ATTRIBUTE",
+      "reason": "Cross-cutting attribute dimension",
+      "parent_id": null,
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "peer-reviewed-papers"
+      ]
+    },
+    {
+      "original_id": 215,
+      "original_name": "Grants",
+      "normalized_name": "grants",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.grant",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "grants"
+      ]
+    },
+    {
+      "original_id": 216,
+      "original_name": "Tenders",
+      "normalized_name": "tenders",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.tender",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "tenders"
+      ]
+    },
+    {
+      "original_id": 217,
+      "original_name": "Scholarships",
+      "normalized_name": "scholarships",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.scholarship",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "scholarships"
+      ]
+    },
+    {
+      "original_id": 218,
+      "original_name": "Fellowships",
+      "normalized_name": "fellowships",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.fellowship",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "fellowships"
+      ]
+    },
+    {
+      "original_id": 219,
+      "original_name": "Accelerators",
+      "normalized_name": "accelerators",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.accelerator",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "accelerators"
+      ]
+    },
+    {
+      "original_id": 220,
+      "original_name": "Hackathons",
+      "normalized_name": "hackathons",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.hackathon",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "hackathons"
+      ]
+    },
+    {
+      "original_id": 221,
+      "original_name": "Funding Programs",
+      "normalized_name": "funding_programs",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.funding_program",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "funding-programs"
+      ]
+    },
+    {
+      "original_id": 222,
+      "original_name": "Government Schemes",
+      "normalized_name": "government_schemes",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.government_scheme",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "government-schemes"
+      ]
+    },
+    {
+      "original_id": 223,
+      "original_name": "Calls for Participation",
+      "normalized_name": "calls_for_participation",
+      "record_type": "OPPORTUNITY_TYPE",
+      "canonical_id": "opportunity.call",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "opportunity",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "calls-for-participation"
+      ]
+    },
+    {
+      "original_id": 224,
+      "original_name": "Central Banks",
+      "normalized_name": "central_banks",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.central_banks",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "central-banks"
+      ]
+    },
+    {
+      "original_id": 225,
+      "original_name": "Interest Rates",
+      "normalized_name": "interest_rates",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.interest_rates",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "interest-rates"
+      ]
+    },
+    {
+      "original_id": 226,
+      "original_name": "Inflation",
+      "normalized_name": "inflation",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.inflation",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "inflation"
+      ]
+    },
+    {
+      "original_id": 227,
+      "original_name": "GDP",
+      "normalized_name": "gdp",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.gdp",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "gdp"
+      ]
+    },
+    {
+      "original_id": 228,
+      "original_name": "Employment",
+      "normalized_name": "employment",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.employment",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "employment"
+      ]
+    },
+    {
+      "original_id": 229,
+      "original_name": "Equities",
+      "normalized_name": "equities",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.equities",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "equities"
+      ]
+    },
+    {
+      "original_id": 230,
+      "original_name": "Bonds",
+      "normalized_name": "bonds",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.bonds",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "bonds"
+      ]
+    },
+    {
+      "original_id": 231,
+      "original_name": "Currencies",
+      "normalized_name": "currencies",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.fx",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "currencies"
+      ]
+    },
+    {
+      "original_id": 232,
+      "original_name": "Commodities",
+      "normalized_name": "commodities",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.commodities",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "commodities"
+      ]
+    },
+    {
+      "original_id": 233,
+      "original_name": "Banking",
+      "normalized_name": "banking",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.banking",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "banking"
+      ]
+    },
+    {
+      "original_id": 234,
+      "original_name": "Credit",
+      "normalized_name": "credit",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.credit",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "credit"
+      ]
+    },
+    {
+      "original_id": 235,
+      "original_name": "Asset Managers",
+      "normalized_name": "asset_managers",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.asset_managers",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "asset-managers"
+      ]
+    },
+    {
+      "original_id": 236,
+      "original_name": "Macroeconomics",
+      "normalized_name": "macroeconomics",
+      "record_type": "MICRO_TOPIC",
+      "canonical_id": "finance.macro",
+      "status": "KEEP",
+      "reason": "Retained as canonical subject",
+      "parent_id": "finance",
+      "replacement_id": null,
+      "original_taxonomy_ids": [
+        "macroeconomics"
+      ]
+    }
+  ]
+}

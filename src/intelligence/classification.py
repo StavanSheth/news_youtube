@@ -15,7 +15,18 @@ class KeywordClassifier:
     @classmethod
     def matching(cls, phrases: list[str], text: str) -> list[str]:
         haystack = cls.normalize(text)
-        return sorted({phrase for phrase in phrases if phrase and re.search(rf"(?<!\w){re.escape(cls.normalize(phrase))}(?!\w)", haystack)})
+        matched = set()
+        for phrase in phrases:
+            normalized = cls.normalize(phrase)
+            if not normalized:
+                continue
+            for found in re.finditer(rf"(?<!\w){re.escape(normalized)}(?!\w)", haystack):
+                prefix = haystack[max(0, found.start() - 24):found.start()]
+                if re.search(r"\b(?:no|not|without|never)\b", prefix):
+                    continue
+                matched.add(phrase)
+                break
+        return sorted(matched)
 
     @classmethod
     def score(cls, text: str, positive: list[str], negative: list[str], *, title: str = "") -> dict[str, Any]:

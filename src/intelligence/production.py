@@ -4,6 +4,7 @@ import hashlib
 import json
 import logging
 import os
+import re
 from dataclasses import replace
 from datetime import UTC, datetime, time, timedelta
 from html import escape
@@ -422,7 +423,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         **config.settings.get("pipeline", {}),
     }
     manager = IntelligenceManager(provider, config.themes, manager_settings)
-    micro_topic_catalog = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix)
+    micro_topic_catalog = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
     stories, compact, coverage_assignments = [], [], []
     for item in sorted(eligible, key=lambda entry: entry.get("published_at", ""), reverse=True)[
         : int(pipe["max_items_per_run"])

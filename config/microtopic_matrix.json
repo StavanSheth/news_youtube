@@ -8,7 +8,8 @@
       "evaluation": "New model, architecture, capability, benchmark, context, modalities, pricing, deployment",
       "required_evidence": "Official model release + benchmark/model card + independent validation",
       "resources": "NEWS-TECH + RESEARCH + GITHUB + AI-SEARCH",
-      "important_output": "capability change, benchmark, limitations, practical impact"
+      "important_output": "capability change, benchmark, limitations, practical impact",
+      "template": "technology_capability"
     },
     {
       "id": "llms",
@@ -17,7 +18,8 @@
       "evaluation": "Model quality, reasoning, context, latency, cost, adoption, API changes",
       "required_evidence": "Model release/API docs/benchmarks",
       "resources": "NEWS-TECH + RESEARCH + GITHUB",
-      "important_output": "model comparison + workflow impact"
+      "important_output": "model comparison + workflow impact",
+      "template": "technology_capability"
     },
     {
       "id": "multimodal-ai",
@@ -26,7 +28,8 @@
       "evaluation": "Image/audio/video/text capability, cross-modal reasoning, input/output changes",
       "required_evidence": "Demo + technical documentation + benchmark",
       "resources": "NEWS-TECH + RESEARCH + GITHUB",
-      "important_output": "modality capability + limitations"
+      "important_output": "modality capability + limitations",
+      "template": "technology_capability"
     },
     {
       "id": "reasoning-models",
@@ -35,7 +38,8 @@
       "evaluation": "Reasoning mechanism, test-time compute, benchmark movement, latency/cost",
       "required_evidence": "Papers, model cards, benchmarks, deployments",
       "resources": "RESEARCH + NEWS-TECH + GITHUB",
-      "important_output": "reasoning gain vs cost"
+      "important_output": "reasoning gain vs cost",
+      "template": "technology_capability"
     },
     {
       "id": "ai-agents",
@@ -44,7 +48,8 @@
       "evaluation": "Agent architecture, autonomy, tools, planning, memory, reliability",
       "required_evidence": "Technical implementation/demo/production evidence",
       "resources": "NEWS-TECH + GITHUB + RESEARCH",
-      "important_output": "autonomy, workflow, failure modes"
+      "important_output": "autonomy, workflow, failure modes",
+      "template": "technology_capability"
     },
     {
       "id": "agentic-workflows",
@@ -53,7 +58,8 @@
       "evaluation": "Multi-step workflow orchestration, human-in-loop, tool chaining",
       "required_evidence": "Production/demo/workflow evidence",
       "resources": "GITHUB + NEWS-TECH + AI-SEARCH",
-      "important_output": "workflow improvement + operational risks"
+      "important_output": "workflow improvement + operational risks",
+      "template": "technology_capability"
     },
     {
       "id": "coding-models",
@@ -62,7 +68,8 @@
       "evaluation": "Coding benchmark, repo-level reasoning, debugging, agentic coding",
       "required_evidence": "SWE benchmarks, GitHub projects, model releases",
       "resources": "GITHUB + RESEARCH + NEWS-TECH",
-      "important_output": "developer productivity + failure modes"
+      "important_output": "developer productivity + failure modes",
+      "template": "technology_capability"
     },
     {
       "id": "rag",
@@ -71,7 +78,8 @@
       "evaluation": "Retrieval architecture, queries, chunking, embeddings, reranking, hybrid retrieval, grounding, latency/cost",
       "required_evidence": "Architecture + benchmark + production evidence",
       "resources": "RESEARCH + GITHUB + NEWS-TECH",
-      "important_output": "retrieval quality + implementation implications"
+      "important_output": "retrieval quality + implementation implications",
+      "template": "technology_capability"
     },
     {
       "id": "embeddings",
@@ -80,7 +88,8 @@
       "evaluation": "Embedding quality, dimensions, multilinguality, retrieval benchmark, cost",
       "required_evidence": "Model benchmark/documentation",
       "resources": "RESEARCH + GITHUB",
-      "important_output": "retrieval performance"
+      "important_output": "retrieval performance",
+      "template": "technology_capability"
     },
     {
       "id": "training",
@@ -89,7 +98,8 @@
       "evaluation": "Training methods, datasets, compute, scaling, efficiency",
       "required_evidence": "Papers + model technical reports",
       "resources": "RESEARCH + NEWS-TECH",
-      "important_output": "technical change + compute implications"
+      "important_output": "technical change + compute implications",
+      "template": "technology_capability"
     },
     {
       "id": "inference",
@@ -98,7 +108,8 @@
       "evaluation": "Serving, quantization, batching, latency, throughput, hardware",
       "required_evidence": "Benchmarks + implementation + deployment evidence",
       "resources": "GITHUB + RESEARCH + SEMICONDUCTOR",
-      "important_output": "cost/latency/throughput"
+      "important_output": "cost/latency/throughput",
+      "template": "technology_infrastructure"
     },
     {
       "id": "fine-tuning",
@@ -107,7 +118,8 @@
       "evaluation": "LoRA/PEFT/full fine-tuning, data efficiency, evaluation",
       "required_evidence": "Technical paper/release/benchmark",
       "resources": "RESEARCH + GITHUB",
-      "important_output": "when/why fine-tuning matters"
+      "important_output": "when/why fine-tuning matters",
+      "template": "technology_capability"
     },
     {
       "id": "ai-infrastructure",
@@ -116,7 +128,8 @@
       "evaluation": "GPU clusters, inference infrastructure, networking, storage, orchestration",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "NEWS-TECH + GITHUB + SEMICONDUCTOR",
-      "important_output": "infrastructure change"
+      "important_output": "infrastructure change",
+      "template": "technology_infrastructure"
     },
     {
       "id": "ai-tooling",
@@ -125,7 +138,8 @@
       "evaluation": "Developer frameworks, evaluation tools, observability, pipelines",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "developer utility/adoption"
+      "important_output": "developer utility/adoption",
+      "template": "technology_capability"
     },
     {
       "id": "open-source-ai",
@@ -134,7 +148,8 @@
       "evaluation": "Open models, licenses, releases, community adoption",
       "required_evidence": "Repository + model release + license",
       "resources": "GITHUB + RESEARCH",
-      "important_output": "openness, adoption, license implications"
+      "important_output": "openness, adoption, license implications",
+      "template": "technology_capability"
     },
     {
       "id": "enterprise-ai",
@@ -143,7 +158,8 @@
       "evaluation": "Enterprise deployments, ROI, security, governance, procurement",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + NEWS-TECH + GOV",
-      "important_output": "actual deployment vs marketing"
+      "important_output": "actual deployment vs marketing",
+      "template": "technology_capability"
     },
     {
       "id": "ai-applications",
@@ -152,7 +168,8 @@
       "evaluation": "Concrete applications and measurable outcomes",
       "required_evidence": "Product/demo/customer evidence",
       "resources": "NEWS-TECH + COMPANY + GITHUB",
-      "important_output": "use case + measurable value"
+      "important_output": "use case + measurable value",
+      "template": "technology_capability"
     },
     {
       "id": "ai-research",
@@ -161,7 +178,8 @@
       "evaluation": "Novel methods, results, reproducibility, research significance",
       "required_evidence": "Paper/preprint + benchmark",
       "resources": "RESEARCH",
-      "important_output": "research contribution"
+      "important_output": "research contribution",
+      "template": "technology_capability"
     },
     {
       "id": "ai-safety-alignment",
@@ -170,7 +188,8 @@
       "evaluation": "Safety technique, alignment method, evals, incidents, governance",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + GOV-US + NEWS-TECH",
-      "important_output": "risk + mitigation"
+      "important_output": "risk + mitigation",
+      "template": "technology_capability"
     },
     {
       "id": "ai-evaluation",
@@ -179,7 +198,8 @@
       "evaluation": "Benchmarks, eval methodology, contamination, reliability, real-world performance",
       "required_evidence": "Benchmark + methodology + independent testing",
       "resources": "RESEARCH + GITHUB",
-      "important_output": "evaluation validity"
+      "important_output": "evaluation validity",
+      "template": "technology_capability"
     },
     {
       "id": "ai-regulation",
@@ -188,7 +208,8 @@
       "evaluation": "Laws, regulations, standards, compliance requirements",
       "required_evidence": "Official government/regulatory text",
       "resources": "GOV-US + GOV-EU + GOV-INDIA + NEWS-GLOBAL",
-      "important_output": "obligation, deadline, affected entities"
+      "important_output": "obligation, deadline, affected entities",
+      "template": "technology_capability"
     },
     {
       "id": "ai-startups",
@@ -197,7 +218,8 @@
       "evaluation": "Funding, products, differentiation, customers, model/infrastructure strategy",
       "required_evidence": "Funding announcement + company/product evidence",
       "resources": "STARTUP + NEWS-TECH",
-      "important_output": "startup significance"
+      "important_output": "startup significance",
+      "template": "technology_capability"
     },
     {
       "id": "ai-application-launches",
@@ -206,7 +228,8 @@
       "evaluation": "Application launches, workflow integration, measurable user impact",
       "required_evidence": "Product docs + customer evidence",
       "resources": "NEWS-TECH + COMPANY + GITHUB",
-      "important_output": "adoption + business impact"
+      "important_output": "adoption + business impact",
+      "template": "technology_capability"
     },
     {
       "id": "programming-languages",
@@ -215,7 +238,8 @@
       "evaluation": "Releases, language features, performance, safety, ecosystem",
       "required_evidence": "Official release + benchmark + GitHub",
       "resources": "GITHUB + RESEARCH + NEWS-TECH",
-      "important_output": "practical developer impact"
+      "important_output": "practical developer impact",
+      "template": "technology_capability"
     },
     {
       "id": "frameworks",
@@ -224,7 +248,8 @@
       "evaluation": "API changes, architecture, performance, adoption, breaking changes",
       "required_evidence": "Release/docs/repositories",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "upgrade/adoption implications"
+      "important_output": "upgrade/adoption implications",
+      "template": "technology_capability"
     },
     {
       "id": "ide-and-developer-tools",
@@ -233,7 +258,8 @@
       "evaluation": "AI features, debugging, productivity, integrations",
       "required_evidence": "Product release + demo + user evidence",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "productivity impact"
+      "important_output": "productivity impact",
+      "template": "technology_capability"
     },
     {
       "id": "apis",
@@ -242,7 +268,8 @@
       "evaluation": "New APIs, versioning, limits, pricing, reliability",
       "required_evidence": "Official API docs/release",
       "resources": "COMPANY + GITHUB + NEWS-TECH",
-      "important_output": "integration impact"
+      "important_output": "integration impact",
+      "template": "technology_capability"
     },
     {
       "id": "sdks",
@@ -251,7 +278,8 @@
       "evaluation": "New SDKs, language coverage, breaking changes",
       "required_evidence": "Repository/release/docs",
       "resources": "GITHUB + COMPANY",
-      "important_output": "developer migration"
+      "important_output": "developer migration",
+      "template": "technology_capability"
     },
     {
       "id": "backend",
@@ -260,7 +288,8 @@
       "evaluation": "Architecture, databases, scaling, performance, patterns",
       "required_evidence": "Technical implementation",
       "resources": "GITHUB + NEWS-TECH + RESEARCH",
-      "important_output": "architecture impact"
+      "important_output": "architecture impact",
+      "template": "technology_capability"
     },
     {
       "id": "frontend",
@@ -269,7 +298,8 @@
       "evaluation": "Framework/rendering changes, performance, accessibility",
       "required_evidence": "Release + benchmark + implementation",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "UX/developer impact"
+      "important_output": "UX/developer impact",
+      "template": "technology_capability"
     },
     {
       "id": "databases",
@@ -278,7 +308,8 @@
       "evaluation": "New engines/features, indexing, vector DB, transactions, performance",
       "required_evidence": "Docs/benchmarks/GitHub",
       "resources": "GITHUB + RESEARCH + NEWS-TECH",
-      "important_output": "technical tradeoff"
+      "important_output": "technical tradeoff",
+      "template": "technology_capability"
     },
     {
       "id": "architecture",
@@ -287,7 +318,8 @@
       "evaluation": "Distributed systems, modularity, event-driven/serverless patterns",
       "required_evidence": "Engineering evidence",
       "resources": "RESEARCH + GITHUB + NEWS-TECH",
-      "important_output": "architectural implication"
+      "important_output": "architectural implication",
+      "template": "technology_capability"
     },
     {
       "id": "devops",
@@ -296,7 +328,8 @@
       "evaluation": "Deployment, automation, infrastructure tooling",
       "required_evidence": "Release + implementation",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "operational impact"
+      "important_output": "operational impact",
+      "template": "technology_capability"
     },
     {
       "id": "ci-cd",
@@ -305,7 +338,8 @@
       "evaluation": "Pipeline changes, testing integration, security, deployment",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "release reliability"
+      "important_output": "release reliability",
+      "template": "technology_capability"
     },
     {
       "id": "testing",
@@ -314,7 +348,8 @@
       "evaluation": "Test frameworks, property testing, AI testing, coverage",
       "required_evidence": "Technical implementation/benchmarks",
       "resources": "GITHUB + RESEARCH",
-      "important_output": "quality impact"
+      "important_output": "quality impact",
+      "template": "technology_capability"
     },
     {
       "id": "observability",
@@ -323,7 +358,8 @@
       "evaluation": "Logging, tracing, metrics, LLM observability",
       "required_evidence": "Product/release + technical evidence",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "monitoring capability"
+      "important_output": "monitoring capability",
+      "template": "technology_capability"
     },
     {
       "id": "cloud-infrastructure",
@@ -332,7 +368,8 @@
       "evaluation": "Cloud products, compute, networking, storage, serverless",
       "required_evidence": "Provider announcement/docs",
       "resources": "NEWS-TECH + COMPANY + GITHUB",
-      "important_output": "cost/performance"
+      "important_output": "cost/performance",
+      "template": "technology_capability"
     },
     {
       "id": "open-source-releases",
@@ -341,7 +378,8 @@
       "evaluation": "Major releases, breaking changes, adoption",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GITHUB",
-      "important_output": "release significance"
+      "important_output": "release significance",
+      "template": "technology_capability"
     },
     {
       "id": "repositories",
@@ -350,7 +388,8 @@
       "evaluation": "New repositories, activity, architecture, contributors",
       "required_evidence": "Repo + release history",
       "resources": "GITHUB",
-      "important_output": "project significance"
+      "important_output": "project significance",
+      "template": "technology_capability"
     },
     {
       "id": "model-tooling",
@@ -359,7 +398,8 @@
       "evaluation": "Model serving/training/evaluation tooling",
       "required_evidence": "Code + release + adoption",
       "resources": "GITHUB + RESEARCH",
-      "important_output": "technical value"
+      "important_output": "technical value",
+      "template": "technology_capability"
     },
     {
       "id": "agent-frameworks",
@@ -368,7 +408,8 @@
       "evaluation": "Architecture, tools, memory, orchestration, adoption",
       "required_evidence": "Repo + examples",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "agent capability"
+      "important_output": "agent capability",
+      "template": "technology_capability"
     },
     {
       "id": "mcp",
@@ -377,7 +418,8 @@
       "evaluation": "MCP servers/tools/spec changes, adoption, security",
       "required_evidence": "Official spec/repositories",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "ecosystem impact"
+      "important_output": "ecosystem impact",
+      "template": "technology_capability"
     },
     {
       "id": "developer-tools",
@@ -386,7 +428,8 @@
       "evaluation": "Tool capability, integrations, adoption",
       "required_evidence": "Repository/release",
       "resources": "GITHUB",
-      "important_output": "developer utility"
+      "important_output": "developer utility",
+      "template": "technology_capability"
     },
     {
       "id": "inference-serving",
@@ -395,7 +438,8 @@
       "evaluation": "Serving stack, optimization, hardware compatibility",
       "required_evidence": "Code + benchmarks",
       "resources": "GITHUB + RESEARCH",
-      "important_output": "performance"
+      "important_output": "performance",
+      "template": "technology_capability"
     },
     {
       "id": "libraries",
@@ -404,7 +448,8 @@
       "evaluation": "API, stability, adoption, compatibility",
       "required_evidence": "Release/repository",
       "resources": "GITHUB",
-      "important_output": "developer relevance"
+      "important_output": "developer relevance",
+      "template": "technology_capability"
     },
     {
       "id": "adoption",
@@ -413,7 +458,8 @@
       "evaluation": "Stars alone insufficient; contributors, releases, downstream use",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "actual adoption"
+      "important_output": "actual adoption",
+      "template": "technology_capability"
     },
     {
       "id": "high-impact-projects",
@@ -422,7 +468,8 @@
       "evaluation": "Strategic/technical importance",
       "required_evidence": "Repo + independent coverage",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "significance"
+      "important_output": "significance",
+      "template": "technology_capability"
     },
     {
       "id": "releases",
@@ -431,7 +478,8 @@
       "evaluation": "Major version/release changes",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GITHUB",
-      "important_output": "breaking/important changes"
+      "important_output": "breaking/important changes",
+      "template": "technology_capability"
     },
     {
       "id": "maintainers",
@@ -440,7 +488,8 @@
       "evaluation": "Leadership, ownership, governance changes",
       "required_evidence": "Repository/governance evidence",
       "resources": "GITHUB + NEWS-TECH",
-      "important_output": "project continuity"
+      "important_output": "project continuity",
+      "template": "technology_capability"
     },
     {
       "id": "hardware",
@@ -449,7 +498,8 @@
       "evaluation": "Qubit architecture, fidelity, scaling, roadmap",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + NEWS-TECH + AI-SEARCH",
-      "important_output": "Qubit architecture, fidelity, scaling, roadmap"
+      "important_output": "Qubit architecture, fidelity, scaling, roadmap",
+      "template": "research_breakthrough"
     },
     {
       "id": "processors",
@@ -458,7 +508,8 @@
       "evaluation": "Processor generations, qubits, error rates, benchmarks",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + COMPANY",
-      "important_output": "Processor generations, qubits, error rates, benchmarks"
+      "important_output": "Processor generations, qubits, error rates, benchmarks",
+      "template": "research_breakthrough"
     },
     {
       "id": "algorithms",
@@ -467,7 +518,8 @@
       "evaluation": "New algorithms, complexity, demonstrated advantage",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH",
-      "important_output": "New algorithms, complexity, demonstrated advantage"
+      "important_output": "New algorithms, complexity, demonstrated advantage",
+      "template": "research_breakthrough"
     },
     {
       "id": "error-correction",
@@ -476,7 +528,8 @@
       "evaluation": "Logical qubits, error suppression, thresholds",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH",
-      "important_output": "Logical qubits, error suppression, thresholds"
+      "important_output": "Logical qubits, error suppression, thresholds",
+      "template": "research_breakthrough"
     },
     {
       "id": "networking",
@@ -485,7 +538,8 @@
       "evaluation": "Quantum networking, communication, repeaters",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + NEWS-TECH",
-      "important_output": "Quantum networking, communication, repeaters"
+      "important_output": "Quantum networking, communication, repeaters",
+      "template": "research_breakthrough"
     },
     {
       "id": "cryptography",
@@ -494,7 +548,8 @@
       "evaluation": "Quantum threats, post-quantum cryptography, migration",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + GOV + NEWS-TECH",
-      "important_output": "Quantum threats, post-quantum cryptography, migration"
+      "important_output": "Quantum threats, post-quantum cryptography, migration",
+      "template": "research_breakthrough"
     },
     {
       "id": "research",
@@ -503,7 +558,8 @@
       "evaluation": "New experimental/theoretical results",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH",
-      "important_output": "New experimental/theoretical results"
+      "important_output": "New experimental/theoretical results",
+      "template": "research_breakthrough"
     },
     {
       "id": "government-programs",
@@ -512,7 +568,8 @@
       "evaluation": "National quantum programs/funding",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV-US + GOV-EU + GOV-INDIA + GOV-EAST-ASIA",
-      "important_output": "National quantum programs/funding"
+      "important_output": "National quantum programs/funding",
+      "template": "research_breakthrough"
     },
     {
       "id": "applications",
@@ -521,7 +578,8 @@
       "evaluation": "Concrete commercial/scientific use cases",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + COMPANY + NEWS-TECH",
-      "important_output": "Concrete commercial/scientific use cases"
+      "important_output": "Concrete commercial/scientific use cases",
+      "template": "research_breakthrough"
     },
     {
       "id": "launches",
@@ -530,7 +588,8 @@
       "evaluation": "Launch date, vehicle, payload, success/failure",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SPACE + NEWS-GLOBAL",
-      "important_output": "Launch date, vehicle, payload, success/failure"
+      "important_output": "Launch date, vehicle, payload, success/failure",
+      "template": "space_mission"
     },
     {
       "id": "rockets",
@@ -539,7 +598,8 @@
       "evaluation": "New vehicles, engines, reuse, performance",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SPACE + NEWS-TECH",
-      "important_output": "New vehicles, engines, reuse, performance"
+      "important_output": "New vehicles, engines, reuse, performance",
+      "template": "space_mission"
     },
     {
       "id": "spacecraft",
@@ -548,7 +608,8 @@
       "evaluation": "New spacecraft capability/design",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SPACE + RESEARCH",
-      "important_output": "New spacecraft capability/design"
+      "important_output": "New spacecraft capability/design",
+      "template": "space_mission"
     },
     {
       "id": "satellites",
@@ -557,7 +618,8 @@
       "evaluation": "Deployment, constellation, capability",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SPACE + CelesTrak",
-      "important_output": "Deployment, constellation, capability"
+      "important_output": "Deployment, constellation, capability",
+      "template": "space_mission"
     },
     {
       "id": "missions",
@@ -566,7 +628,8 @@
       "evaluation": "Mission objectives/status/results",
       "required_evidence": "NASA/ESA + SPACE",
       "resources": "NASA/ESA + SPACE",
-      "important_output": "Mission objectives/status/results"
+      "important_output": "Mission objectives/status/results",
+      "template": "space_mission"
     },
     {
       "id": "earth-observation",
@@ -575,7 +638,8 @@
       "evaluation": "EO satellites, imagery, applications",
       "required_evidence": "NASA + ESA + CelesTrak",
       "resources": "NASA + ESA + CelesTrak",
-      "important_output": "EO satellites, imagery, applications"
+      "important_output": "EO satellites, imagery, applications",
+      "template": "space_mission"
     },
     {
       "id": "lunar-programs",
@@ -584,7 +648,8 @@
       "evaluation": "Lunar missions, landers, infrastructure",
       "required_evidence": "NASA/ESA + SPACE",
       "resources": "NASA/ESA + SPACE",
-      "important_output": "Lunar missions, landers, infrastructure"
+      "important_output": "Lunar missions, landers, infrastructure",
+      "template": "space_mission"
     },
     {
       "id": "mars-deep-space",
@@ -593,7 +658,8 @@
       "evaluation": "Exploration and scientific milestones",
       "required_evidence": "NASA + ESA + RESEARCH",
       "resources": "NASA + ESA + RESEARCH",
-      "important_output": "Exploration and scientific milestones"
+      "important_output": "Exploration and scientific milestones",
+      "template": "space_mission"
     },
     {
       "id": "exploration",
@@ -602,7 +668,8 @@
       "evaluation": "Human/robotic exploration",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SPACE + RESEARCH",
-      "important_output": "Human/robotic exploration"
+      "important_output": "Human/robotic exploration",
+      "template": "space_mission"
     },
     {
       "id": "commercial-space",
@@ -611,7 +678,8 @@
       "evaluation": "Commercial launches/services/funding",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SPACE + COMPANY + STARTUP",
-      "important_output": "Commercial launches/services/funding"
+      "important_output": "Commercial launches/services/funding",
+      "template": "space_mission"
     },
     {
       "id": "space-infrastructure",
@@ -620,7 +688,8 @@
       "evaluation": "Ground stations, satellite networks, launch infrastructure",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SPACE + GOV",
-      "important_output": "Ground stations, satellite networks, launch infrastructure"
+      "important_output": "Ground stations, satellite networks, launch infrastructure",
+      "template": "space_mission"
     },
     {
       "id": "space-policy",
@@ -629,7 +698,8 @@
       "evaluation": "Regulation, spectrum, orbital policy",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + SPACE",
-      "important_output": "Regulation, spectrum, orbital policy"
+      "important_output": "Regulation, spectrum, orbital policy",
+      "template": "space_mission"
     },
     {
       "id": "space-policy-strategy",
@@ -638,7 +708,8 @@
       "evaluation": "National/commercial strategic policy change",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + NEWS-GLOBAL",
-      "important_output": "National/commercial strategic policy change"
+      "important_output": "National/commercial strategic policy change",
+      "template": "space_mission"
     },
     {
       "id": "procurement",
@@ -647,7 +718,8 @@
       "evaluation": "Contract, buyer, supplier, value, delivery",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "PROCUREMENT + GOV-US + GOV-INDIA",
-      "important_output": "Contract, buyer, supplier, value, delivery"
+      "important_output": "Contract, buyer, supplier, value, delivery",
+      "template": "defence_capability"
     },
     {
       "id": "military-technology",
@@ -656,7 +728,8 @@
       "evaluation": "Capability changes and operational readiness",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "MILITARY + NEWS-GLOBAL",
-      "important_output": "Capability changes and operational readiness"
+      "important_output": "Capability changes and operational readiness",
+      "template": "defence_capability"
     },
     {
       "id": "drones",
@@ -665,7 +738,8 @@
       "evaluation": "Platform, autonomy, deployment, effectiveness",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "MILITARY + RESEARCH",
-      "important_output": "Platform, autonomy, deployment, effectiveness"
+      "important_output": "Platform, autonomy, deployment, effectiveness",
+      "template": "defence_capability"
     },
     {
       "id": "missiles",
@@ -674,7 +748,8 @@
       "evaluation": "Development, range, deployment, interception",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "MILITARY + GEOPOLITICS",
-      "important_output": "Development, range, deployment, interception"
+      "important_output": "Development, range, deployment, interception",
+      "template": "defence_capability"
     },
     {
       "id": "air-defence",
@@ -683,7 +758,8 @@
       "evaluation": "Systems, interception, deployment",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "MILITARY + GEOPOLITICS",
-      "important_output": "Systems, interception, deployment"
+      "important_output": "Systems, interception, deployment",
+      "template": "defence_capability"
     },
     {
       "id": "naval-systems",
@@ -692,7 +768,8 @@
       "evaluation": "Ships, submarines, sensors, weapons",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "MILITARY + SHIPPING",
-      "important_output": "Ships, submarines, sensors, weapons"
+      "important_output": "Ships, submarines, sensors, weapons",
+      "template": "defence_capability"
     },
     {
       "id": "electronic-warfare",
@@ -701,7 +778,8 @@
       "evaluation": "Jamming, spoofing, detection, countermeasures",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "MILITARY + RESEARCH",
-      "important_output": "Jamming, spoofing, detection, countermeasures"
+      "important_output": "Jamming, spoofing, detection, countermeasures",
+      "template": "defence_capability"
     },
     {
       "id": "cyber-warfare",
@@ -710,7 +788,8 @@
       "evaluation": "State operations, offensive/defensive capabilities",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GEOPOLITICS",
-      "important_output": "State operations, offensive/defensive capabilities"
+      "important_output": "State operations, offensive/defensive capabilities",
+      "template": "defence_capability"
     },
     {
       "id": "military-ai",
@@ -719,7 +798,8 @@
       "evaluation": "AI-enabled targeting, autonomy, logistics",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "MILITARY + AI + RESEARCH",
-      "important_output": "AI-enabled targeting, autonomy, logistics"
+      "important_output": "AI-enabled targeting, autonomy, logistics",
+      "template": "defence_capability"
     },
     {
       "id": "defence-policy",
@@ -728,7 +808,8 @@
       "evaluation": "Strategy, budgets, doctrine",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + GEOPOLITICS",
-      "important_output": "Strategy, budgets, doctrine"
+      "important_output": "Strategy, budgets, doctrine",
+      "template": "defence_capability"
     },
     {
       "id": "strategic-capabilities",
@@ -737,7 +818,8 @@
       "evaluation": "Nuclear, missile defence, strategic assets",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GEOPOLITICS + MILITARY",
-      "important_output": "Nuclear, missile defence, strategic assets"
+      "important_output": "Nuclear, missile defence, strategic assets",
+      "template": "defence_capability"
     },
     {
       "id": "defence-procurement",
@@ -746,7 +828,8 @@
       "evaluation": "Major procurement decisions and industrial impact",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "PROCUREMENT + MILITARY",
-      "important_output": "Major procurement decisions and industrial impact"
+      "important_output": "Major procurement decisions and industrial impact",
+      "template": "defence_capability"
     },
     {
       "id": "cves",
@@ -755,7 +838,8 @@
       "evaluation": "CVE severity, affected products, exploitability",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + NVD/CVE feeds where available",
-      "important_output": "CVE severity, affected products, exploitability"
+      "important_output": "CVE severity, affected products, exploitability",
+      "template": "security_vulnerability"
     },
     {
       "id": "vulnerabilities",
@@ -764,7 +848,8 @@
       "evaluation": "Technical weakness, affected systems, remediation",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GITHUB",
-      "important_output": "Technical weakness, affected systems, remediation"
+      "important_output": "Technical weakness, affected systems, remediation",
+      "template": "security_vulnerability"
     },
     {
       "id": "exploits",
@@ -773,7 +858,8 @@
       "evaluation": "Exploit availability, weaponization, exploitation evidence",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GDELT",
-      "important_output": "Exploit availability, weaponization, exploitation evidence"
+      "important_output": "Exploit availability, weaponization, exploitation evidence",
+      "template": "security_vulnerability"
     },
     {
       "id": "breaches",
@@ -782,7 +868,8 @@
       "evaluation": "Victim, data exposure, attack vector",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + NEWS-GLOBAL",
-      "important_output": "Victim, data exposure, attack vector"
+      "important_output": "Victim, data exposure, attack vector",
+      "template": "security_incident"
     },
     {
       "id": "ransomware",
@@ -791,7 +878,8 @@
       "evaluation": "Campaign, victim, malware, attribution",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GEOPOLITICS",
-      "important_output": "Campaign, victim, malware, attribution"
+      "important_output": "Campaign, victim, malware, attribution",
+      "template": "security_incident"
     },
     {
       "id": "malware",
@@ -800,7 +888,8 @@
       "evaluation": "Malware family, behavior, distribution",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + RESEARCH",
-      "important_output": "Malware family, behavior, distribution"
+      "important_output": "Malware family, behavior, distribution",
+      "template": "threat_intelligence"
     },
     {
       "id": "threat-actors",
@@ -809,7 +898,8 @@
       "evaluation": "Actor identity, TTPs, attribution confidence",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GEOPOLITICS",
-      "important_output": "Actor identity, TTPs, attribution confidence"
+      "important_output": "Actor identity, TTPs, attribution confidence",
+      "template": "threat_intelligence"
     },
     {
       "id": "campaigns",
@@ -818,7 +908,8 @@
       "evaluation": "Campaign timeline, targets, infrastructure",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GDELT",
-      "important_output": "Campaign timeline, targets, infrastructure"
+      "important_output": "Campaign timeline, targets, infrastructure",
+      "template": "threat_intelligence"
     },
     {
       "id": "identity",
@@ -827,7 +918,8 @@
       "evaluation": "IAM, authentication, identity attacks",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + NEWS-TECH",
-      "important_output": "IAM, authentication, identity attacks"
+      "important_output": "IAM, authentication, identity attacks",
+      "template": "technology_capability"
     },
     {
       "id": "cloud-security",
@@ -836,7 +928,8 @@
       "evaluation": "Cloud vulnerabilities/misconfiguration",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GITHUB",
-      "important_output": "Cloud vulnerabilities/misconfiguration"
+      "important_output": "Cloud vulnerabilities/misconfiguration",
+      "template": "security_vulnerability"
     },
     {
       "id": "application-security",
@@ -845,7 +938,8 @@
       "evaluation": "Web/API/software vulnerabilities",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GITHUB",
-      "important_output": "Web/API/software vulnerabilities"
+      "important_output": "Web/API/software vulnerabilities",
+      "template": "security_vulnerability"
     },
     {
       "id": "ai-security",
@@ -854,7 +948,8 @@
       "evaluation": "Prompt injection, model attacks, AI supply chain",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + AI + RESEARCH",
-      "important_output": "Prompt injection, model attacks, AI supply chain"
+      "important_output": "Prompt injection, model attacks, AI supply chain",
+      "template": "security_vulnerability"
     },
     {
       "id": "security-tools",
@@ -863,7 +958,8 @@
       "evaluation": "New scanners, EDR, SIEM, security tooling",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CYBER + GITHUB",
-      "important_output": "New scanners, EDR, SIEM, security tooling"
+      "important_output": "New scanners, EDR, SIEM, security tooling",
+      "template": "technology_capability"
     },
     {
       "id": "national-cybersecurity-policy",
@@ -872,7 +968,8 @@
       "evaluation": "Laws, national strategy, incident response",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + CYBER",
-      "important_output": "Laws, national strategy, incident response"
+      "important_output": "Laws, national strategy, incident response",
+      "template": "policy_regulation"
     },
     {
       "id": "chip-design",
@@ -881,7 +978,8 @@
       "evaluation": "Architecture, process, IP, performance",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + RESEARCH",
-      "important_output": "Architecture, process, IP, performance"
+      "important_output": "Architecture, process, IP, performance",
+      "template": "technology_capability"
     },
     {
       "id": "fabs",
@@ -890,7 +988,8 @@
       "evaluation": "New fabs, capacity, geography, investment",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + GOV",
-      "important_output": "New fabs, capacity, geography, investment"
+      "important_output": "New fabs, capacity, geography, investment",
+      "template": "technology_infrastructure"
     },
     {
       "id": "foundries",
@@ -899,7 +998,8 @@
       "evaluation": "Manufacturing contracts, nodes, capacity",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + COMPANY",
-      "important_output": "Manufacturing contracts, nodes, capacity"
+      "important_output": "Manufacturing contracts, nodes, capacity",
+      "template": "technology_infrastructure"
     },
     {
       "id": "gpus",
@@ -908,7 +1008,8 @@
       "evaluation": "Architecture, performance, availability",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + AI",
-      "important_output": "Architecture, performance, availability"
+      "important_output": "Architecture, performance, availability",
+      "template": "technology_capability"
     },
     {
       "id": "cpus",
@@ -917,7 +1018,8 @@
       "evaluation": "Architecture, performance, roadmap",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + GITHUB",
-      "important_output": "Architecture, performance, roadmap"
+      "important_output": "Architecture, performance, roadmap",
+      "template": "technology_capability"
     },
     {
       "id": "accelerators",
@@ -926,7 +1028,8 @@
       "evaluation": "AI/HPC accelerator capabilities",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + AI",
-      "important_output": "AI/HPC accelerator capabilities"
+      "important_output": "AI/HPC accelerator capabilities",
+      "template": "technology_capability"
     },
     {
       "id": "memory",
@@ -935,7 +1038,8 @@
       "evaluation": "DRAM/NAND/HBM changes",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + MARKET",
-      "important_output": "DRAM/NAND/HBM changes"
+      "important_output": "DRAM/NAND/HBM changes",
+      "template": "technology_capability"
     },
     {
       "id": "hbm",
@@ -944,7 +1048,8 @@
       "evaluation": "HBM generations, capacity, suppliers",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + COMPANY",
-      "important_output": "HBM generations, capacity, suppliers"
+      "important_output": "HBM generations, capacity, suppliers",
+      "template": "technology_capability"
     },
     {
       "id": "manufacturing-equipment",
@@ -953,7 +1058,8 @@
       "evaluation": "Lithography, deposition, inspection",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + RESEARCH",
-      "important_output": "Lithography, deposition, inspection"
+      "important_output": "Lithography, deposition, inspection",
+      "template": "technology_infrastructure"
     },
     {
       "id": "packaging",
@@ -962,7 +1068,8 @@
       "evaluation": "Advanced packaging, chiplets, CoWoS etc.",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + RESEARCH",
-      "important_output": "Advanced packaging, chiplets, CoWoS etc."
+      "important_output": "Advanced packaging, chiplets, CoWoS etc.",
+      "template": "technology_infrastructure"
     },
     {
       "id": "process-nodes",
@@ -971,7 +1078,8 @@
       "evaluation": "Node transitions, yield, performance",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + RESEARCH",
-      "important_output": "Node transitions, yield, performance"
+      "important_output": "Node transitions, yield, performance",
+      "template": "technology_capability"
     },
     {
       "id": "export-controls",
@@ -980,7 +1088,8 @@
       "evaluation": "Restrictions, licenses, affected companies",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + GEOPOLITICS",
-      "important_output": "Restrictions, licenses, affected companies"
+      "important_output": "Restrictions, licenses, affected companies",
+      "template": "technology_capability"
     },
     {
       "id": "supply-chains",
@@ -989,7 +1098,8 @@
       "evaluation": "Dependencies, disruptions, localization",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + TRADE",
-      "important_output": "Dependencies, disruptions, localization"
+      "important_output": "Dependencies, disruptions, localization",
+      "template": "technology_capability"
     },
     {
       "id": "capacity",
@@ -998,7 +1108,8 @@
       "evaluation": "Production capacity, utilization, expansion",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SEMICONDUCTOR + MARKET",
-      "important_output": "Production capacity, utilization, expansion"
+      "important_output": "Production capacity, utilization, expansion",
+      "template": "technology_infrastructure"
     },
     {
       "id": "funding",
@@ -1007,7 +1118,8 @@
       "evaluation": "Round size, investors, valuation, use of funds",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "STARTUP",
-      "important_output": "Round size, investors, valuation, use of funds"
+      "important_output": "Round size, investors, valuation, use of funds",
+      "template": "startup_financing"
     },
     {
       "id": "seed-series-rounds",
@@ -1016,7 +1128,8 @@
       "evaluation": "Stage, traction, lead investor",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "STARTUP",
-      "important_output": "Stage, traction, lead investor"
+      "important_output": "Stage, traction, lead investor",
+      "template": "startup_financing"
     },
     {
       "id": "vc-activity",
@@ -1025,7 +1138,8 @@
       "evaluation": "Sector/geography/volume trends",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "STARTUP + FINANCE",
-      "important_output": "Sector/geography/volume trends"
+      "important_output": "Sector/geography/volume trends",
+      "template": "startup_financing"
     },
     {
       "id": "acquisitions",
@@ -1034,7 +1148,8 @@
       "evaluation": "Buyer, target, strategic rationale",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "STARTUP + COMPANY",
-      "important_output": "Buyer, target, strategic rationale"
+      "important_output": "Buyer, target, strategic rationale",
+      "template": "startup_financing"
     },
     {
       "id": "ipos",
@@ -1043,7 +1158,8 @@
       "evaluation": "Filing, valuation, pricing, market reception",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "FINANCE + GOV-US",
-      "important_output": "Filing, valuation, pricing, market reception"
+      "important_output": "Filing, valuation, pricing, market reception",
+      "template": "startup_financing"
     },
     {
       "id": "accelerators",
@@ -1052,7 +1168,8 @@
       "evaluation": "New cohorts, programs, investment",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "STARTUP + OPPORTUNITY",
-      "important_output": "New cohorts, programs, investment"
+      "important_output": "New cohorts, programs, investment",
+      "template": "startup_financing"
     },
     {
       "id": "valuation",
@@ -1061,7 +1178,8 @@
       "evaluation": "Changes, financing valuation, market comparison",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "FINANCE + STARTUP",
-      "important_output": "Changes, financing valuation, market comparison"
+      "important_output": "Changes, financing valuation, market comparison",
+      "template": "startup_financing"
     },
     {
       "id": "exits",
@@ -1070,7 +1188,8 @@
       "evaluation": "Acquisition/IPO/secondary",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "STARTUP + FINANCE",
-      "important_output": "Acquisition/IPO/secondary"
+      "important_output": "Acquisition/IPO/secondary",
+      "template": "startup_financing"
     },
     {
       "id": "launches",
@@ -1079,7 +1198,8 @@
       "evaluation": "Product/company launch and traction",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "STARTUP + NEWS-TECH",
-      "important_output": "Product/company launch and traction"
+      "important_output": "Product/company launch and traction",
+      "template": "startup_financing"
     },
     {
       "id": "failures",
@@ -1088,7 +1208,8 @@
       "evaluation": "Shutdown, layoffs, insolvency, funding failure",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "STARTUP + NEWS-GLOBAL",
-      "important_output": "Shutdown, layoffs, insolvency, funding failure"
+      "important_output": "Shutdown, layoffs, insolvency, funding failure",
+      "template": "startup_financing"
     },
     {
       "id": "regulation",
@@ -1097,7 +1218,8 @@
       "evaluation": "New binding requirements",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + NEWS-GLOBAL",
-      "important_output": "New binding requirements"
+      "important_output": "New binding requirements",
+      "template": "policy_regulation"
     },
     {
       "id": "legislation",
@@ -1106,7 +1228,8 @@
       "evaluation": "Bills, passage, effective date",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV",
-      "important_output": "Bills, passage, effective date"
+      "important_output": "Bills, passage, effective date",
+      "template": "policy_regulation"
     },
     {
       "id": "ministries",
@@ -1115,7 +1238,8 @@
       "evaluation": "Announcements, programs, leadership",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV",
-      "important_output": "Announcements, programs, leadership"
+      "important_output": "Announcements, programs, leadership",
+      "template": "policy_regulation"
     },
     {
       "id": "digital-policy",
@@ -1124,7 +1248,8 @@
       "evaluation": "Digital infrastructure/governance policy",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + NEWS-TECH",
-      "important_output": "Digital infrastructure/governance policy"
+      "important_output": "Digital infrastructure/governance policy",
+      "template": "policy_regulation"
     },
     {
       "id": "ai-policy",
@@ -1133,7 +1258,8 @@
       "evaluation": "AI strategy/regulation/investment",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + AI",
-      "important_output": "AI strategy/regulation/investment"
+      "important_output": "AI strategy/regulation/investment",
+      "template": "policy_regulation"
     },
     {
       "id": "semiconductor-policy",
@@ -1142,7 +1268,8 @@
       "evaluation": "Incentives/export controls",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + SEMICONDUCTOR",
-      "important_output": "Incentives/export controls"
+      "important_output": "Incentives/export controls",
+      "template": "policy_regulation"
     },
     {
       "id": "industrial-policy",
@@ -1151,7 +1278,8 @@
       "evaluation": "Industry incentives/localization",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + MANUFACTURING",
-      "important_output": "Industry incentives/localization"
+      "important_output": "Industry incentives/localization",
+      "template": "policy_regulation"
     },
     {
       "id": "subsidies",
@@ -1160,7 +1288,8 @@
       "evaluation": "Amount, eligibility, recipients, deadline",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + OPPORTUNITY",
-      "important_output": "Amount, eligibility, recipients, deadline"
+      "important_output": "Amount, eligibility, recipients, deadline",
+      "template": "policy_regulation"
     },
     {
       "id": "grants",
@@ -1169,7 +1298,8 @@
       "evaluation": "Grant program, eligibility, deadline",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "OPPORTUNITY",
-      "important_output": "Grant program, eligibility, deadline"
+      "important_output": "Grant program, eligibility, deadline",
+      "template": "policy_regulation"
     },
     {
       "id": "tenders",
@@ -1178,7 +1308,8 @@
       "evaluation": "Buyer, scope, deadline, value",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "PROCUREMENT",
-      "important_output": "Buyer, scope, deadline, value"
+      "important_output": "Buyer, scope, deadline, value",
+      "template": "policy_regulation"
     },
     {
       "id": "implementation",
@@ -1187,7 +1318,8 @@
       "evaluation": "Whether announced policy is actually implemented",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + NEWS-GLOBAL",
-      "important_output": "Whether announced policy is actually implemented"
+      "important_output": "Whether announced policy is actually implemented",
+      "template": "policy_regulation"
     },
     {
       "id": "policy-outcomes",
@@ -1196,7 +1328,8 @@
       "evaluation": "Measurable effect of existing policy",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + FINANCE + TRADE",
-      "important_output": "Measurable effect of existing policy"
+      "important_output": "Measurable effect of existing policy",
+      "template": "policy_regulation"
     },
     {
       "id": "state-provincial-policy",
@@ -1205,7 +1338,8 @@
       "evaluation": "Local regulation/program",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "REGIONAL + GOV",
-      "important_output": "Local regulation/program"
+      "important_output": "Local regulation/program",
+      "template": "infrastructure_operations"
     },
     {
       "id": "incentives",
@@ -1214,7 +1348,8 @@
       "evaluation": "Tax/investment incentives",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "REGIONAL + OPPORTUNITY",
-      "important_output": "Tax/investment incentives"
+      "important_output": "Tax/investment incentives",
+      "template": "infrastructure_operations"
     },
     {
       "id": "industrial-parks",
@@ -1223,7 +1358,8 @@
       "evaluation": "Development, tenants, capacity",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "REGIONAL + MANUFACTURING",
-      "important_output": "Development, tenants, capacity"
+      "important_output": "Development, tenants, capacity",
+      "template": "infrastructure_operations"
     },
     {
       "id": "infrastructure",
@@ -1232,7 +1368,8 @@
       "evaluation": "Regional infrastructure projects",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "REGIONAL + PROCUREMENT",
-      "important_output": "Regional infrastructure projects"
+      "important_output": "Regional infrastructure projects",
+      "template": "infrastructure_operations"
     },
     {
       "id": "local-regulation",
@@ -1241,7 +1378,8 @@
       "evaluation": "Local compliance changes",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "REGIONAL",
-      "important_output": "Local compliance changes"
+      "important_output": "Local compliance changes",
+      "template": "infrastructure_operations"
     },
     {
       "id": "regional-investment",
@@ -1250,7 +1388,8 @@
       "evaluation": "Investment commitments/projects",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "REGIONAL + FINANCE",
-      "important_output": "Investment commitments/projects"
+      "important_output": "Investment commitments/projects",
+      "template": "infrastructure_operations"
     },
     {
       "id": "regional-technology-policy",
@@ -1259,7 +1398,8 @@
       "evaluation": "Tech/AI/digital policy",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "REGIONAL + AI",
-      "important_output": "Tech/AI/digital policy"
+      "important_output": "Tech/AI/digital policy",
+      "template": "infrastructure_operations"
     },
     {
       "id": "bilateral-relations",
@@ -1268,7 +1408,8 @@
       "evaluation": "Diplomatic/economic/security relationship changes",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GEOPOLITICS",
-      "important_output": "Diplomatic/economic/security relationship changes"
+      "important_output": "Diplomatic/economic/security relationship changes",
+      "template": "geopolitical_event"
     },
     {
       "id": "alliances",
@@ -1277,7 +1418,8 @@
       "evaluation": "New commitments, membership, strategic shifts",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GEOPOLITICS + MILITARY",
-      "important_output": "New commitments, membership, strategic shifts"
+      "important_output": "New commitments, membership, strategic shifts",
+      "template": "geopolitical_event"
     },
     {
       "id": "sanctions",
@@ -1286,7 +1428,8 @@
       "evaluation": "New sanctions, entities, enforcement",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + GEOPOLITICS + FINANCE",
-      "important_output": "New sanctions, entities, enforcement"
+      "important_output": "New sanctions, entities, enforcement",
+      "template": "geopolitical_event"
     },
     {
       "id": "wars-conflicts",
@@ -1295,7 +1438,8 @@
       "evaluation": "Territory, attacks, escalation/de-escalation",
       "required_evidence": "ACLED + GDELT + NEWS-GLOBAL",
       "resources": "ACLED + GDELT + NEWS-GLOBAL",
-      "important_output": "Territory, attacks, escalation/de-escalation"
+      "important_output": "Territory, attacks, escalation/de-escalation",
+      "template": "geopolitical_event"
     },
     {
       "id": "diplomacy",
@@ -1304,7 +1448,8 @@
       "evaluation": "Talks, agreements, official positions",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + NEWS-GLOBAL",
-      "important_output": "Talks, agreements, official positions"
+      "important_output": "Talks, agreements, official positions",
+      "template": "geopolitical_event"
     },
     {
       "id": "trade",
@@ -1313,7 +1458,8 @@
       "evaluation": "Tariffs, restrictions, agreements",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "TRADE + GOV",
-      "important_output": "Tariffs, restrictions, agreements"
+      "important_output": "Tariffs, restrictions, agreements",
+      "template": "geopolitical_event"
     },
     {
       "id": "technology-restrictions",
@@ -1322,7 +1468,8 @@
       "evaluation": "Export controls, investment restrictions",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + SEMICONDUCTOR",
-      "important_output": "Export controls, investment restrictions"
+      "important_output": "Export controls, investment restrictions",
+      "template": "geopolitical_event"
     },
     {
       "id": "strategic-supply-chains",
@@ -1331,7 +1478,8 @@
       "evaluation": "Critical dependency/re-routing",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "TRADE + ENERGY + SEMICONDUCTOR",
-      "important_output": "Critical dependency/re-routing"
+      "important_output": "Critical dependency/re-routing",
+      "template": "geopolitical_event"
     },
     {
       "id": "strategic-competition",
@@ -1340,7 +1488,8 @@
       "evaluation": "Long-term state competition",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GEOPOLITICS + NEWS-GLOBAL",
-      "important_output": "Long-term state competition"
+      "important_output": "Long-term state competition",
+      "template": "geopolitical_event"
     },
     {
       "id": "regional-blocs",
@@ -1349,7 +1498,8 @@
       "evaluation": "BRICS/EU/NATO/etc. policy/economic shifts",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GEOPOLITICS + GOV",
-      "important_output": "BRICS/EU/NATO/etc. policy/economic shifts"
+      "important_output": "BRICS/EU/NATO/etc. policy/economic shifts",
+      "template": "geopolitical_event"
     },
     {
       "id": "oil",
@@ -1358,7 +1508,8 @@
       "evaluation": "Price, supply, inventories, production, disruptions",
       "required_evidence": "EIA + IEA + MARKET",
       "resources": "EIA + IEA + MARKET",
-      "important_output": "Price, supply, inventories, production, disruptions"
+      "important_output": "Price, supply, inventories, production, disruptions",
+      "template": "energy_market"
     },
     {
       "id": "gas",
@@ -1367,7 +1518,8 @@
       "evaluation": "Prices, storage, LNG, pipelines",
       "required_evidence": "EIA + GIE AGSI+",
       "resources": "EIA + GIE AGSI+",
-      "important_output": "Prices, storage, LNG, pipelines"
+      "important_output": "Prices, storage, LNG, pipelines",
+      "template": "energy_market"
     },
     {
       "id": "electricity",
@@ -1376,7 +1528,8 @@
       "evaluation": "Prices, generation, demand",
       "required_evidence": "EIA + energy datasets",
       "resources": "EIA + energy datasets",
-      "important_output": "Prices, generation, demand"
+      "important_output": "Prices, generation, demand",
+      "template": "energy_market"
     },
     {
       "id": "renewables",
@@ -1385,7 +1538,8 @@
       "evaluation": "Capacity, generation, investment",
       "required_evidence": "EIA + IEA + NEWS-TECH",
       "resources": "EIA + IEA + NEWS-TECH",
-      "important_output": "Capacity, generation, investment"
+      "important_output": "Capacity, generation, investment",
+      "template": "energy_market"
     },
     {
       "id": "nuclear",
@@ -1394,7 +1548,8 @@
       "evaluation": "Reactors, construction, policy",
       "required_evidence": "IEA + GOV + RESEARCH",
       "resources": "IEA + GOV + RESEARCH",
-      "important_output": "Reactors, construction, policy"
+      "important_output": "Reactors, construction, policy",
+      "template": "energy_market"
     },
     {
       "id": "batteries",
@@ -1403,7 +1558,8 @@
       "evaluation": "Cell tech, capacity, supply chain",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "NEWS-TECH + SEMICONDUCTOR + RESEARCH",
-      "important_output": "Cell tech, capacity, supply chain"
+      "important_output": "Cell tech, capacity, supply chain",
+      "template": "energy_market"
     },
     {
       "id": "grids",
@@ -1412,7 +1568,8 @@
       "evaluation": "Grid investment, outages, interconnection",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "ENERGY + GOV",
-      "important_output": "Grid investment, outages, interconnection"
+      "important_output": "Grid investment, outages, interconnection",
+      "template": "energy_market"
     },
     {
       "id": "energy-companies",
@@ -1421,7 +1578,8 @@
       "evaluation": "Earnings, projects, strategy",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + ENERGY",
-      "important_output": "Earnings, projects, strategy"
+      "important_output": "Earnings, projects, strategy",
+      "template": "energy_market"
     },
     {
       "id": "energy-markets",
@@ -1430,7 +1588,8 @@
       "evaluation": "Price/market structure changes",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "ENERGY + FINANCE",
-      "important_output": "Price/market structure changes"
+      "important_output": "Price/market structure changes",
+      "template": "energy_market"
     },
     {
       "id": "production",
@@ -1439,7 +1598,8 @@
       "evaluation": "Country/company production changes",
       "required_evidence": "EIA + IEA",
       "resources": "EIA + IEA",
-      "important_output": "Country/company production changes"
+      "important_output": "Country/company production changes",
+      "template": "energy_market"
     },
     {
       "id": "energy-transition",
@@ -1448,7 +1608,8 @@
       "evaluation": "Decarbonization, investment, technology",
       "required_evidence": "IEA + RESEARCH",
       "resources": "IEA + RESEARCH",
-      "important_output": "Decarbonization, investment, technology"
+      "important_output": "Decarbonization, investment, technology",
+      "template": "energy_market"
     },
     {
       "id": "energy-security",
@@ -1457,7 +1618,8 @@
       "evaluation": "Supply vulnerabilities and resilience",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "ENERGY + GEOPOLITICS",
-      "important_output": "Supply vulnerabilities and resilience"
+      "important_output": "Supply vulnerabilities and resilience",
+      "template": "energy_market"
     },
     {
       "id": "energy-infrastructure",
@@ -1466,7 +1628,8 @@
       "evaluation": "Pipelines, LNG, refineries, power assets",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "ENERGY + GEOPOLITICS",
-      "important_output": "Pipelines, LNG, refineries, power assets"
+      "important_output": "Pipelines, LNG, refineries, power assets",
+      "template": "energy_market"
     },
     {
       "id": "ports",
@@ -1475,7 +1638,8 @@
       "evaluation": "Congestion, capacity, disruptions",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SHIPPING + AISStream",
-      "important_output": "Congestion, capacity, disruptions"
+      "important_output": "Congestion, capacity, disruptions",
+      "template": "infrastructure_operations"
     },
     {
       "id": "shipping-lines",
@@ -1484,7 +1648,8 @@
       "evaluation": "Fleet, routes, earnings, capacity",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SHIPPING + COMPANY",
-      "important_output": "Fleet, routes, earnings, capacity"
+      "important_output": "Fleet, routes, earnings, capacity",
+      "template": "infrastructure_operations"
     },
     {
       "id": "freight",
@@ -1493,7 +1658,8 @@
       "evaluation": "Rates, demand, capacity",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SHIPPING + MARKET",
-      "important_output": "Rates, demand, capacity"
+      "important_output": "Rates, demand, capacity",
+      "template": "infrastructure_operations"
     },
     {
       "id": "logistics-infrastructure",
@@ -1502,7 +1668,8 @@
       "evaluation": "Warehouses, corridors, terminals",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SHIPPING + PROCUREMENT",
-      "important_output": "Warehouses, corridors, terminals"
+      "important_output": "Warehouses, corridors, terminals",
+      "template": "infrastructure_operations"
     },
     {
       "id": "chokepoints",
@@ -1511,7 +1678,8 @@
       "evaluation": "Suez, Panama, Hormuz, Malacca etc.",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SHIPPING + GEOPOLITICS",
-      "important_output": "Suez, Panama, Hormuz, Malacca etc."
+      "important_output": "Suez, Panama, Hormuz, Malacca etc.",
+      "template": "infrastructure_operations"
     },
     {
       "id": "maritime-trade",
@@ -1520,7 +1688,8 @@
       "evaluation": "Volumes, routes, disruption",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SHIPPING + TRADE",
-      "important_output": "Volumes, routes, disruption"
+      "important_output": "Volumes, routes, disruption",
+      "template": "infrastructure_operations"
     },
     {
       "id": "container-rates",
@@ -1529,7 +1698,8 @@
       "evaluation": "Spot/contract rate movement",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SHIPPING + MARKET",
-      "important_output": "Spot/contract rate movement"
+      "important_output": "Spot/contract rate movement",
+      "template": "infrastructure_operations"
     },
     {
       "id": "disruptions",
@@ -1538,7 +1708,8 @@
       "evaluation": "Port/route/supply disruption",
       "required_evidence": "AISStream + NEWS-GLOBAL",
       "resources": "AISStream + NEWS-GLOBAL",
-      "important_output": "Port/route/supply disruption"
+      "important_output": "Port/route/supply disruption",
+      "template": "infrastructure_operations"
     },
     {
       "id": "resilience",
@@ -1547,7 +1718,8 @@
       "evaluation": "Diversification, rerouting, inventory",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "SHIPPING + TRADE",
-      "important_output": "Diversification, rerouting, inventory"
+      "important_output": "Diversification, rerouting, inventory",
+      "template": "infrastructure_operations"
     },
     {
       "id": "factories",
@@ -1556,7 +1728,8 @@
       "evaluation": "New facilities, investment, capacity",
       "required_evidence": "MANUFACTURING + GOV",
       "resources": "MANUFACTURING + GOV",
-      "important_output": "New facilities, investment, capacity"
+      "important_output": "New facilities, investment, capacity",
+      "template": "infrastructure_operations"
     },
     {
       "id": "industrial-corridors",
@@ -1565,7 +1738,8 @@
       "evaluation": "Infrastructure/industrial ecosystem development",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "REGIONAL + GOV",
-      "important_output": "Infrastructure/industrial ecosystem development"
+      "important_output": "Infrastructure/industrial ecosystem development",
+      "template": "infrastructure_operations"
     },
     {
       "id": "incentives",
@@ -1574,7 +1748,8 @@
       "evaluation": "Subsidies/tax incentives",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + OPPORTUNITY",
-      "important_output": "Subsidies/tax incentives"
+      "important_output": "Subsidies/tax incentives",
+      "template": "infrastructure_operations"
     },
     {
       "id": "reshoring",
@@ -1583,7 +1758,8 @@
       "evaluation": "Manufacturing relocation",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "TRADE + GOV",
-      "important_output": "Manufacturing relocation"
+      "important_output": "Manufacturing relocation",
+      "template": "infrastructure_operations"
     },
     {
       "id": "localization",
@@ -1592,7 +1768,8 @@
       "evaluation": "Local content/capacity",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + COMPANY",
-      "important_output": "Local content/capacity"
+      "important_output": "Local content/capacity",
+      "template": "infrastructure_operations"
     },
     {
       "id": "capacity",
@@ -1601,7 +1778,8 @@
       "evaluation": "Production capacity/utilization",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + MARKET",
-      "important_output": "Production capacity/utilization"
+      "important_output": "Production capacity/utilization",
+      "template": "infrastructure_operations"
     },
     {
       "id": "exports",
@@ -1610,7 +1788,8 @@
       "evaluation": "Industrial export changes",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "TRADE",
-      "important_output": "Industrial export changes"
+      "important_output": "Industrial export changes",
+      "template": "infrastructure_operations"
     },
     {
       "id": "industrial-strategy",
@@ -1619,7 +1798,8 @@
       "evaluation": "National manufacturing strategy",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + TRADE",
-      "important_output": "National manufacturing strategy"
+      "important_output": "National manufacturing strategy",
+      "template": "infrastructure_operations"
     },
     {
       "id": "executives",
@@ -1628,7 +1808,8 @@
       "evaluation": "Appointment, departure, strategy, statements",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "PEOPLE + COMPANY",
-      "important_output": "Appointment, departure, strategy, statements"
+      "important_output": "Appointment, departure, strategy, statements",
+      "template": "leadership_change"
     },
     {
       "id": "founders",
@@ -1637,7 +1818,8 @@
       "evaluation": "Company strategy, product/funding influence",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "PEOPLE + STARTUP",
-      "important_output": "Company strategy, product/funding influence"
+      "important_output": "Company strategy, product/funding influence",
+      "template": "leadership_change"
     },
     {
       "id": "researchers",
@@ -1646,7 +1828,8 @@
       "evaluation": "Research breakthroughs, affiliations",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH",
-      "important_output": "Research breakthroughs, affiliations"
+      "important_output": "Research breakthroughs, affiliations",
+      "template": "leadership_change"
     },
     {
       "id": "government-leaders",
@@ -1655,7 +1838,8 @@
       "evaluation": "Policy decisions/statements",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + NEWS-GLOBAL",
-      "important_output": "Policy decisions/statements"
+      "important_output": "Policy decisions/statements",
+      "template": "leadership_change"
     },
     {
       "id": "appointments",
@@ -1664,7 +1848,8 @@
       "evaluation": "Who/role/reason/timing",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "GOV + COMPANY",
-      "important_output": "Who/role/reason/timing"
+      "important_output": "Who/role/reason/timing",
+      "template": "leadership_change"
     },
     {
       "id": "departures",
@@ -1673,7 +1858,8 @@
       "evaluation": "Why/impact/replacement",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + NEWS-GLOBAL",
-      "important_output": "Why/impact/replacement"
+      "important_output": "Why/impact/replacement",
+      "template": "leadership_change"
     },
     {
       "id": "statements",
@@ -1682,7 +1868,8 @@
       "evaluation": "Exact source position vs interpretation",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "NEWS-GLOBAL + official",
-      "important_output": "Exact source position vs interpretation"
+      "important_output": "Exact source position vs interpretation",
+      "template": "leadership_change"
     },
     {
       "id": "strategic-decisions",
@@ -1691,7 +1878,8 @@
       "evaluation": "Decision + evidence + consequences",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "PEOPLE + COMPANY + GOV",
-      "important_output": "Decision + evidence + consequences"
+      "important_output": "Decision + evidence + consequences",
+      "template": "leadership_change"
     },
     {
       "id": "product-launches",
@@ -1700,7 +1888,8 @@
       "evaluation": "Product, capability, availability, differentiation",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + NEWS-TECH",
-      "important_output": "Product, capability, availability, differentiation"
+      "important_output": "Product, capability, availability, differentiation",
+      "template": "company_strategy"
     },
     {
       "id": "strategy",
@@ -1709,7 +1898,8 @@
       "evaluation": "Corporate direction and strategic shifts",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + FINANCE",
-      "important_output": "Corporate direction and strategic shifts"
+      "important_output": "Corporate direction and strategic shifts",
+      "template": "company_strategy"
     },
     {
       "id": "acquisitions",
@@ -1718,7 +1908,8 @@
       "evaluation": "Target, price if available, rationale",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + FINANCE",
-      "important_output": "Target, price if available, rationale"
+      "important_output": "Target, price if available, rationale",
+      "template": "company_strategy"
     },
     {
       "id": "partnerships",
@@ -1727,7 +1918,8 @@
       "evaluation": "Parties, scope, commercial/technical implications",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY",
-      "important_output": "Parties, scope, commercial/technical implications"
+      "important_output": "Parties, scope, commercial/technical implications",
+      "template": "company_strategy"
     },
     {
       "id": "earnings",
@@ -1736,7 +1928,8 @@
       "evaluation": "Revenue, growth, margins, guidance",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "FINANCE + COMPANY",
-      "important_output": "Revenue, growth, margins, guidance"
+      "important_output": "Revenue, growth, margins, guidance",
+      "template": "company_strategy"
     },
     {
       "id": "infrastructure",
@@ -1745,7 +1938,8 @@
       "evaluation": "Data centers, compute, cloud infrastructure",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + AI + SEMICONDUCTOR",
-      "important_output": "Data centers, compute, cloud infrastructure"
+      "important_output": "Data centers, compute, cloud infrastructure",
+      "template": "company_strategy"
     },
     {
       "id": "platform-changes",
@@ -1754,7 +1948,8 @@
       "evaluation": "APIs, pricing, policies, ecosystem changes",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + GITHUB",
-      "important_output": "APIs, pricing, policies, ecosystem changes"
+      "important_output": "APIs, pricing, policies, ecosystem changes",
+      "template": "company_strategy"
     },
     {
       "id": "corporate-ai-technology-strategy",
@@ -1763,7 +1958,8 @@
       "evaluation": "AI investment, products, organizational changes",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "COMPANY + AI + FINANCE",
-      "important_output": "AI investment, products, organizational changes"
+      "important_output": "AI investment, products, organizational changes",
+      "template": "company_strategy"
     },
     {
       "id": "google-i-o",
@@ -1772,7 +1968,8 @@
       "evaluation": "Product/model/platform announcements",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CONFERENCES + NEWS-TECH",
-      "important_output": "Product/model/platform announcements"
+      "important_output": "Product/model/platform announcements",
+      "template": "technology_capability"
     },
     {
       "id": "gtc",
@@ -1781,7 +1978,8 @@
       "evaluation": "GPU/AI infrastructure announcements",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CONFERENCES + SEMICONDUCTOR",
-      "important_output": "GPU/AI infrastructure announcements"
+      "important_output": "GPU/AI infrastructure announcements",
+      "template": "technology_capability"
     },
     {
       "id": "wwdc",
@@ -1790,7 +1988,8 @@
       "evaluation": "Apple platform/developer announcements",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CONFERENCES + NEWS-TECH",
-      "important_output": "Apple platform/developer announcements"
+      "important_output": "Apple platform/developer announcements",
+      "template": "technology_capability"
     },
     {
       "id": "neurips",
@@ -1799,7 +1998,8 @@
       "evaluation": "Important research/results",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CONFERENCES + RESEARCH",
-      "important_output": "Important research/results"
+      "important_output": "Important research/results",
+      "template": "technology_capability"
     },
     {
       "id": "icml",
@@ -1808,7 +2008,8 @@
       "evaluation": "ML research/results",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CONFERENCES + RESEARCH",
-      "important_output": "ML research/results"
+      "important_output": "ML research/results",
+      "template": "technology_capability"
     },
     {
       "id": "cvpr",
@@ -1817,7 +2018,8 @@
       "evaluation": "Vision/multimodal research",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CONFERENCES + RESEARCH",
-      "important_output": "Vision/multimodal research"
+      "important_output": "Vision/multimodal research",
+      "template": "technology_capability"
     },
     {
       "id": "major-industry-events",
@@ -1826,7 +2028,8 @@
       "evaluation": "Major launches/strategy announcements",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "CONFERENCES + NEWS-GLOBAL",
-      "important_output": "Major launches/strategy announcements"
+      "important_output": "Major launches/strategy announcements",
+      "template": "technology_capability"
     },
     {
       "id": "keynotes",
@@ -1835,7 +2038,8 @@
       "evaluation": "Actual claims/demos, not headline interpretation",
       "required_evidence": "YouTube configured channels + CONFERENCES",
       "resources": "YouTube configured channels + CONFERENCES",
-      "important_output": "Actual claims/demos, not headline interpretation"
+      "important_output": "Actual claims/demos, not headline interpretation",
+      "template": "technology_capability"
     },
     {
       "id": "ai-research",
@@ -1844,7 +2048,8 @@
       "evaluation": "Novel method/result/reproducibility",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + GITHUB",
-      "important_output": "Novel method/result/reproducibility"
+      "important_output": "Novel method/result/reproducibility",
+      "template": "research_breakthrough"
     },
     {
       "id": "computer-science",
@@ -1853,7 +2058,8 @@
       "evaluation": "Algorithms/systems/software research",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH",
-      "important_output": "Algorithms/systems/software research"
+      "important_output": "Algorithms/systems/software research",
+      "template": "research_breakthrough"
     },
     {
       "id": "medicine",
@@ -1862,7 +2068,8 @@
       "evaluation": "Clinical/scientific result, methodology",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + official medical sources",
-      "important_output": "Clinical/scientific result, methodology"
+      "important_output": "Clinical/scientific result, methodology",
+      "template": "research_breakthrough"
     },
     {
       "id": "economics",
@@ -1871,7 +2078,8 @@
       "evaluation": "Models/data/policy implications",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + FINANCE",
-      "important_output": "Models/data/policy implications"
+      "important_output": "Models/data/policy implications",
+      "template": "research_breakthrough"
     },
     {
       "id": "physics",
@@ -1880,7 +2088,8 @@
       "evaluation": "Experimental/theoretical breakthrough",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH",
-      "important_output": "Experimental/theoretical breakthrough"
+      "important_output": "Experimental/theoretical breakthrough",
+      "template": "research_breakthrough"
     },
     {
       "id": "climate",
@@ -1889,7 +2098,8 @@
       "evaluation": "Climate science/model/observation",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + ENVIRONMENT",
-      "important_output": "Climate science/model/observation"
+      "important_output": "Climate science/model/observation",
+      "template": "research_breakthrough"
     },
     {
       "id": "engineering",
@@ -1898,7 +2108,8 @@
       "evaluation": "Engineering method/system improvement",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + GITHUB",
-      "important_output": "Engineering method/system improvement"
+      "important_output": "Engineering method/system improvement",
+      "template": "research_breakthrough"
     },
     {
       "id": "breakthroughs",
@@ -1907,7 +2118,8 @@
       "evaluation": "Evidence that result materially changes capability/knowledge",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH + NEWS-GLOBAL",
-      "important_output": "Evidence that result materially changes capability/knowledge"
+      "important_output": "Evidence that result materially changes capability/knowledge",
+      "template": "research_breakthrough"
     },
     {
       "id": "preprints",
@@ -1916,7 +2128,8 @@
       "evaluation": "Novelty + uncertainty + lack of peer review",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH",
-      "important_output": "Novelty + uncertainty + lack of peer review"
+      "important_output": "Novelty + uncertainty + lack of peer review",
+      "template": "research_breakthrough"
     },
     {
       "id": "peer-reviewed-papers",
@@ -1925,7 +2138,8 @@
       "evaluation": "Published evidence, methodology, significance",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "RESEARCH",
-      "important_output": "Published evidence, methodology, significance"
+      "important_output": "Published evidence, methodology, significance",
+      "template": "research_breakthrough"
     },
     {
       "id": "grants",
@@ -1934,7 +2148,8 @@
       "evaluation": "Issuer, eligibility, amount, deadline",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "issuer, eligibility, deadline, URL",
-      "important_output": "Issuer, eligibility, amount, deadline"
+      "important_output": "Issuer, eligibility, amount, deadline",
+      "template": "opportunity"
     },
     {
       "id": "tenders",
@@ -1943,7 +2158,8 @@
       "evaluation": "Buyer, scope, value, deadline",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "buyer, scope, deadline, URL",
-      "important_output": "Buyer, scope, value, deadline"
+      "important_output": "Buyer, scope, value, deadline",
+      "template": "opportunity"
     },
     {
       "id": "scholarships",
@@ -1952,7 +2168,8 @@
       "evaluation": "Eligibility, institution, deadline",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "issuer, eligibility, deadline",
-      "important_output": "Eligibility, institution, deadline"
+      "important_output": "Eligibility, institution, deadline",
+      "template": "opportunity"
     },
     {
       "id": "fellowships",
@@ -1961,7 +2178,8 @@
       "evaluation": "Eligibility, duration, funding",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "issuer, eligibility, deadline",
-      "important_output": "Eligibility, duration, funding"
+      "important_output": "Eligibility, duration, funding",
+      "template": "opportunity"
     },
     {
       "id": "accelerators",
@@ -1970,7 +2188,8 @@
       "evaluation": "Cohort, eligibility, funding, deadline",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "program, eligibility, deadline",
-      "important_output": "Cohort, eligibility, funding, deadline"
+      "important_output": "Cohort, eligibility, funding, deadline",
+      "template": "opportunity"
     },
     {
       "id": "hackathons",
@@ -1979,7 +2198,8 @@
       "evaluation": "Organizer, challenge, eligibility, date",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "organizer, deadline/date",
-      "important_output": "Organizer, challenge, eligibility, date"
+      "important_output": "Organizer, challenge, eligibility, date",
+      "template": "opportunity"
     },
     {
       "id": "funding-programs",
@@ -1988,7 +2208,8 @@
       "evaluation": "Government/private funding scheme",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "issuer, eligibility, deadline",
-      "important_output": "Government/private funding scheme"
+      "important_output": "Government/private funding scheme",
+      "template": "opportunity"
     },
     {
       "id": "government-schemes",
@@ -1997,7 +2218,8 @@
       "evaluation": "Scheme, beneficiary, eligibility",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "scheme + eligibility",
-      "important_output": "Scheme, beneficiary, eligibility"
+      "important_output": "Scheme, beneficiary, eligibility",
+      "template": "opportunity"
     },
     {
       "id": "calls-for-participation",
@@ -2006,7 +2228,8 @@
       "evaluation": "Conference/research/program call",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "organizer, deadline, eligibility",
-      "important_output": "Conference/research/program call"
+      "important_output": "Conference/research/program call",
+      "template": "opportunity"
     },
     {
       "id": "central-banks",
@@ -2015,7 +2238,8 @@
       "evaluation": "Decision, guidance, balance sheet, rationale",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "FINANCE + GOV",
-      "important_output": "Decision, guidance, balance sheet, rationale"
+      "important_output": "Decision, guidance, balance sheet, rationale",
+      "template": "market_macro"
     },
     {
       "id": "interest-rates",
@@ -2024,7 +2248,8 @@
       "evaluation": "Rate change, expectations, market response",
       "required_evidence": "FRED + central banks + MARKET",
       "resources": "FRED + central banks + MARKET",
-      "important_output": "Rate change, expectations, market response"
+      "important_output": "Rate change, expectations, market response",
+      "template": "market_macro"
     },
     {
       "id": "inflation",
@@ -2033,7 +2258,8 @@
       "evaluation": "CPI/PCE/etc., drivers, trend",
       "required_evidence": "FRED + official statistics",
       "resources": "FRED + official statistics",
-      "important_output": "CPI/PCE/etc., drivers, trend"
+      "important_output": "CPI/PCE/etc., drivers, trend",
+      "template": "market_macro"
     },
     {
       "id": "gdp",
@@ -2042,7 +2268,8 @@
       "evaluation": "Growth, revisions, components",
       "required_evidence": "FRED + World Bank + official statistics",
       "resources": "FRED + World Bank + official statistics",
-      "important_output": "Growth, revisions, components"
+      "important_output": "Growth, revisions, components",
+      "template": "market_macro"
     },
     {
       "id": "employment",
@@ -2051,7 +2278,8 @@
       "evaluation": "Jobs, unemployment, wages",
       "required_evidence": "FRED + official statistics",
       "resources": "FRED + official statistics",
-      "important_output": "Jobs, unemployment, wages"
+      "important_output": "Jobs, unemployment, wages",
+      "template": "market_macro"
     },
     {
       "id": "equities",
@@ -2060,7 +2288,8 @@
       "evaluation": "Market movement, earnings, valuation, catalysts",
       "required_evidence": "Finnhub + Yahoo + NEWS-GLOBAL",
       "resources": "Finnhub + Yahoo + NEWS-GLOBAL",
-      "important_output": "Market movement, earnings, valuation, catalysts"
+      "important_output": "Market movement, earnings, valuation, catalysts",
+      "template": "market_asset"
     },
     {
       "id": "bonds",
@@ -2069,7 +2298,8 @@
       "evaluation": "Yields, spreads, issuance, rate sensitivity",
       "required_evidence": "FRED + MARKET",
       "resources": "FRED + MARKET",
-      "important_output": "Yields, spreads, issuance, rate sensitivity"
+      "important_output": "Yields, spreads, issuance, rate sensitivity",
+      "template": "market_asset"
     },
     {
       "id": "currencies",
@@ -2078,7 +2308,8 @@
       "evaluation": "FX movement, policy drivers, trade impact",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "MARKET + central banks",
-      "important_output": "FX movement, policy drivers, trade impact"
+      "important_output": "FX movement, policy drivers, trade impact",
+      "template": "market_asset"
     },
     {
       "id": "commodities",
@@ -2087,7 +2318,8 @@
       "evaluation": "Price/supply/demand/geopolitical drivers",
       "required_evidence": "EIA + CFTC + MARKET",
       "resources": "EIA + CFTC + MARKET",
-      "important_output": "Price/supply/demand/geopolitical drivers"
+      "important_output": "Price/supply/demand/geopolitical drivers",
+      "template": "market_asset"
     },
     {
       "id": "banking",
@@ -2096,7 +2328,8 @@
       "evaluation": "Capital, liquidity, failures, regulation",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "FINANCE + GOV",
-      "important_output": "Capital, liquidity, failures, regulation"
+      "important_output": "Capital, liquidity, failures, regulation",
+      "template": "market_macro"
     },
     {
       "id": "credit",
@@ -2105,7 +2338,8 @@
       "evaluation": "Credit spreads, defaults, lending conditions",
       "required_evidence": "FRED + FINANCE",
       "resources": "FRED + FINANCE",
-      "important_output": "Credit spreads, defaults, lending conditions"
+      "important_output": "Credit spreads, defaults, lending conditions",
+      "template": "market_macro"
     },
     {
       "id": "asset-managers",
@@ -2114,7 +2348,8 @@
       "evaluation": "AUM, flows, strategy, holdings",
       "required_evidence": "Primary or independently corroborated evidence",
       "resources": "FINANCE + COMPANY",
-      "important_output": "AUM, flows, strategy, holdings"
+      "important_output": "AUM, flows, strategy, holdings",
+      "template": "market_asset"
     },
     {
       "id": "macroeconomics",
@@ -2123,7 +2358,8 @@
       "evaluation": "Cross-indicator macro regime changes",
       "required_evidence": "FRED + IMF + World Bank + FINANCE",
       "resources": "FRED + IMF + World Bank + FINANCE",
-      "important_output": "Cross-indicator macro regime changes"
+      "important_output": "Cross-indicator macro regime changes",
+      "template": "market_macro"
     }
   ]
 }

@@ -1,0 +1,843 @@
+{
+  "version": 1,
+  "templates": {
+    "market_macro": {
+      "output": {
+        "sections": [
+          "summary",
+          "numbers",
+          "drivers",
+          "risks",
+          "watchlist"
+        ],
+        "report_types": [
+          "top_event",
+          "executive_brief"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.75,
+        "max_secondary": 1,
+        "threshold": 0.6,
+        "secondary_threshold": 0.63
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "published_data"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "official_statement",
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_changed_in_the_data",
+          "what_are_the_drivers",
+          "what_is_the_market_or_policy_transmission",
+          "what_should_be_monitored"
+        ]
+      }
+    },
+    "startup_financing": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "transaction",
+          "implications",
+          "watchlist"
+        ],
+        "report_types": [
+          "top_event"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.75,
+        "max_secondary": 1,
+        "threshold": 0.6,
+        "secondary_threshold": 0.63
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "filing",
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_financing_or_transaction_occurred",
+          "who_is_involved",
+          "what_is_the_business_significance",
+          "what_is_uncertain"
+        ]
+      }
+    },
+    "company_strategy": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "strategy",
+          "implications",
+          "what_to_watch"
+        ],
+        "report_types": [
+          "executive_brief",
+          "case_study"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.74,
+        "max_secondary": 2,
+        "threshold": 0.58,
+        "secondary_threshold": 0.61
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "filing",
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_company_behavior_changed",
+          "what_is_the_evidence",
+          "what_are_the_implications",
+          "what_should_be_monitored"
+        ]
+      }
+    },
+    "security_incident": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "blast_radius",
+          "mitigation",
+          "what_to_watch"
+        ],
+        "report_types": [
+          "executive_brief",
+          "flash_update"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "14d"
+      },
+      "classification": {
+        "primary_threshold": 0.8,
+        "max_secondary": 1,
+        "threshold": 0.65,
+        "secondary_threshold": 0.68
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "reported_event"
+        ],
+        "minimum_sources": 2,
+        "preferred": [
+          "official_statement",
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_happened",
+          "who_is_affected",
+          "what_is_confirmed",
+          "what_is_the_mitigation"
+        ]
+      }
+    },
+    "geopolitical_event": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "actors",
+          "implications",
+          "watchlist"
+        ],
+        "report_types": [
+          "executive_brief"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.78,
+        "max_secondary": 1,
+        "threshold": 0.62,
+        "secondary_threshold": 0.65
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 2,
+        "preferred": [
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_changed",
+          "which_actors_and_interests_matter",
+          "what_are_the_second_order_effects",
+          "what_should_be_monitored"
+        ]
+      }
+    },
+    "leadership_change": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "role_or_decision",
+          "implications",
+          "watchlist"
+        ],
+        "report_types": [
+          "executive_brief"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.8,
+        "max_secondary": 1,
+        "threshold": 0.65,
+        "secondary_threshold": 0.68
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_role_or_decision_changed",
+          "why_is_it_material",
+          "what_are_the_implications",
+          "what_should_be_monitored"
+        ]
+      }
+    },
+    "technology_capability": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "implications",
+          "limitations",
+          "what_to_watch"
+        ],
+        "report_types": [
+          "technical_deep_dive",
+          "short_summary"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.72,
+        "max_secondary": 2,
+        "threshold": 0.55,
+        "secondary_threshold": 0.58
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "fact",
+          "official_statement"
+        ],
+        "independent_validation": true,
+        "minimum_sources": 1,
+        "preferred": [
+          "technical_documentation",
+          "independent_validation"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_changed",
+          "what_evidence_supports_it",
+          "what_are_the_limitations",
+          "what_is_the_practical_impact"
+        ]
+      }
+    },
+    "market_asset": {
+      "output": {
+        "sections": [
+          "summary",
+          "numbers",
+          "drivers",
+          "risks",
+          "watchlist"
+        ],
+        "report_types": [
+          "top_event"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "7d"
+      },
+      "classification": {
+        "primary_threshold": 0.75,
+        "max_secondary": 1,
+        "threshold": 0.6,
+        "secondary_threshold": 0.63
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "market_data"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "official_statement",
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_moved",
+          "what_catalyst_or_driver_matters",
+          "what_is_the_risk",
+          "what_should_be_monitored"
+        ]
+      }
+    },
+    "space_mission": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "milestone",
+          "risks",
+          "what_to_watch"
+        ],
+        "report_types": [
+          "technical_deep_dive",
+          "flash_update"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.78,
+        "max_secondary": 1,
+        "threshold": 0.62,
+        "secondary_threshold": 0.65
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "telemetry",
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_mission_or_capability_changed",
+          "what_is_confirmed",
+          "what_are_the_risks_or_limitations",
+          "what_is_next"
+        ]
+      }
+    },
+    "policy_regulation": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "affected_entities",
+          "timeline",
+          "implications",
+          "actions"
+        ],
+        "report_types": [
+          "executive_brief"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "90d"
+      },
+      "classification": {
+        "primary_threshold": 0.78,
+        "max_secondary": 1,
+        "threshold": 0.62,
+        "secondary_threshold": 0.65
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "primary_document"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_requirement_changed",
+          "who_is_affected",
+          "what_is_the_effective_date",
+          "what_action_is_required"
+        ]
+      }
+    },
+    "threat_intelligence": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "actors",
+          "targets",
+          "mitigation",
+          "what_to_watch"
+        ],
+        "report_types": [
+          "executive_brief"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.8,
+        "max_secondary": 1,
+        "threshold": 0.65,
+        "secondary_threshold": 0.68
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "technical_report"
+        ],
+        "minimum_sources": 2,
+        "preferred": [
+          "independent_validation"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "which_actor_or_campaign",
+          "what_ttps_or_targets",
+          "what_is_the_attribution_confidence",
+          "what_should_be_monitored"
+        ]
+      }
+    },
+    "energy_market": {
+      "output": {
+        "sections": [
+          "summary",
+          "numbers",
+          "drivers",
+          "market_impact",
+          "watchlist"
+        ],
+        "report_types": [
+          "top_event"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "14d"
+      },
+      "classification": {
+        "primary_threshold": 0.75,
+        "max_secondary": 1,
+        "threshold": 0.6,
+        "secondary_threshold": 0.63
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "published_data"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "official_statement",
+          "market_data"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_supply_demand_or_price_changed",
+          "what_is_the_driver",
+          "what_is_the_geographic_or_market_impact",
+          "what_should_be_monitored"
+        ]
+      }
+    },
+    "research_breakthrough": {
+      "output": {
+        "sections": [
+          "summary",
+          "method",
+          "evidence",
+          "limitations",
+          "implications",
+          "sources"
+        ],
+        "report_types": [
+          "technical_deep_dive"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "90d"
+      },
+      "classification": {
+        "primary_threshold": 0.78,
+        "max_secondary": 1,
+        "threshold": 0.62,
+        "secondary_threshold": 0.65
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "research_paper"
+        ],
+        "independent_validation": true,
+        "minimum_sources": 1,
+        "preferred": [
+          "peer_review",
+          "independent_validation"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_question_was_studied",
+          "what_method_and_evidence_were_used",
+          "what_are_the_limitations",
+          "what_is_reproducible"
+        ]
+      }
+    },
+    "security_vulnerability": {
+      "output": {
+        "sections": [
+          "summary",
+          "affected_systems",
+          "severity",
+          "mitigation",
+          "sources"
+        ],
+        "report_types": [
+          "executive_brief",
+          "flash_update"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "14d"
+      },
+      "classification": {
+        "primary_threshold": 0.8,
+        "max_secondary": 1,
+        "threshold": 0.65,
+        "secondary_threshold": 0.68
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "technical_advisory"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "cve",
+          "vendor_advisory"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_is_affected",
+          "what_is_the_severity",
+          "what_is_the_attack_vector",
+          "what_is_the_mitigation"
+        ]
+      }
+    },
+    "technology_infrastructure": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "capacity",
+          "dependencies",
+          "implications",
+          "what_to_watch"
+        ],
+        "report_types": [
+          "technical_deep_dive",
+          "executive_brief"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.76,
+        "max_secondary": 2,
+        "threshold": 0.6,
+        "secondary_threshold": 0.62
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "fact",
+          "official_statement"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "technical_documentation",
+          "capacity_data"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_capacity_or_system_changed",
+          "what_is_the_operational_impact",
+          "what_dependencies_or_constraints_exist"
+        ]
+      }
+    },
+    "defence_capability": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "capability",
+          "strategic_implications",
+          "uncertainty"
+        ],
+        "report_types": [
+          "executive_brief"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "30d"
+      },
+      "classification": {
+        "primary_threshold": 0.8,
+        "max_secondary": 1,
+        "threshold": 0.65,
+        "secondary_threshold": 0.68
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 2,
+        "preferred": [
+          "independent_reporting",
+          "technical_evidence"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_capability_changed",
+          "what_is_confirmed",
+          "what_are_the_strategic_implications",
+          "what_remains_uncertain"
+        ]
+      }
+    },
+    "infrastructure_operations": {
+      "output": {
+        "sections": [
+          "summary",
+          "evidence",
+          "operations",
+          "affected_entities",
+          "watchlist"
+        ],
+        "report_types": [
+          "executive_brief"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "14d"
+      },
+      "classification": {
+        "primary_threshold": 0.75,
+        "max_secondary": 1,
+        "threshold": 0.6,
+        "secondary_threshold": 0.63
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_MAJOR_UPDATE"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "operational_data",
+          "independent_reporting"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "what_operational_condition_changed",
+          "who_or_what_is_affected",
+          "what_is_the_capacity_or_delay_impact",
+          "what_should_be_monitored"
+        ]
+      }
+    },
+    "opportunity": {
+      "output": {
+        "sections": [
+          "summary",
+          "issuer",
+          "eligibility",
+          "deadline",
+          "benefits",
+          "action"
+        ],
+        "report_types": [
+          "opportunity"
+        ]
+      },
+      "retrieval": {
+        "diversity": "source",
+        "freshness": "90d"
+      },
+      "classification": {
+        "primary_threshold": 0.8,
+        "max_secondary": 1,
+        "threshold": 0.65,
+        "secondary_threshold": 0.68
+      },
+      "status": {
+        "insufficient_evidence_policy": "INSUFFICIENT_EVIDENCE",
+        "no_update_policy": "NO_RELEVANT_CONTENT"
+      },
+      "evidence": {
+        "required": [
+          "official_statement"
+        ],
+        "minimum_sources": 1,
+        "preferred": [
+          "primary_document"
+        ]
+      },
+      "analysis": {
+        "questions": [
+          "who_is_eligible",
+          "what_is_the_deadline",
+          "what_are_the_benefits",
+          "what_action_is_required"
+        ]
+      }
+    }
+  }
+}
