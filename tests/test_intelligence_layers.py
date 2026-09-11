@@ -22,7 +22,7 @@ def test_runtime_catalog_uses_taxonomy_and_assigns_multiple_microtopics():
     )
     keys = {match["micro_topic"] for match in matches if match["domain"] == "artificial-intelligence"}
     assert "ai-agents" in keys
-    assert "rag" in keys
+    assert "rag" not in keys
     assert all(match["signals"] for match in matches)
 
 

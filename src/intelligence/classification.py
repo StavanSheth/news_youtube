@@ -13,10 +13,11 @@ class KeywordClassifier:
         return re.sub(r"\s+", " ", str(value or "").lower()).strip()
 
     @classmethod
-    def matching(cls, phrases: list[str], text: str) -> list[str]:
+    def matching(cls, phrases: list[str] | list[dict[str, Any]], text: str) -> list[str]:
         haystack = cls.normalize(text)
         matched = set()
-        for phrase in phrases:
+        for raw in phrases:
+            phrase = raw.get("phrase", "") if isinstance(raw, dict) else raw
             normalized = cls.normalize(phrase)
             if not normalized:
                 continue
@@ -24,18 +25,76 @@ class KeywordClassifier:
                 prefix = haystack[max(0, found.start() - 24):found.start()]
                 if re.search(r"\b(?:no|not|without|never)\b", prefix):
                     continue
-                matched.add(phrase)
+                matched.add(str(phrase))
                 break
         return sorted(matched)
 
     @classmethod
-    def score(cls, text: str, positive: list[str], negative: list[str], *, title: str = "") -> dict[str, Any]:
+    def negative_signal_score(
+        cls,
+        text: str,
+        negative: list[str] | list[dict[str, Any]],
+        *,
+        title: str = "",
+        positive_matches: list[str] | None = None,
+    ) -> dict[str, Any]:
+        """Score exclusions without treating incidental context as contradiction."""
+        positive_matches = positive_matches or []
+        title_matches = set(cls.matching(negative, title))
+        matched = cls.matching(negative, text)
+        entries = {cls.normalize(str(item.get("phrase", "")) if isinstance(item, dict) else str(item)): item for item in negative}
+        penalties = {"weak": 0.07, "medium": 0.16, "strong": 0.28}
+        penalty = 0.0
+        effective: list[str] = []
+        contradictions: list[str] = []
+        normalized_text = cls.normalize(text)
+        for phrase in matched:
+            entry = entries.get(cls.normalize(phrase), phrase)
+            strength = str(entry.get("strength", "medium") if isinstance(entry, dict) else "medium").lower()
+            value = penalties.get(strength, penalties["medium"])
+            index = normalized_text.find(cls.normalize(phrase))
+            nearby_positive = any(abs(index - normalized_text.find(cls.normalize(pos))) <= 90 for pos in positive_matches if normalized_text.find(cls.normalize(pos)) >= 0)
+            if nearby_positive and phrase not in title_matches:
+                value *= 0.35
+            if phrase in title_matches and not nearby_positive:
+                contradictions.append(phrase) if strength == "strong" else None
+            effective.append(phrase)
+            penalty += value * (1.5 if phrase in title_matches else 1.0)
+        contradiction_penalty = min(0.35, len(contradictions) * 0.25)
+        return {
+            "matched_negative_signals": effective,
+            "negative_penalty": round(min(0.8, penalty), 3),
+            "contradiction_penalty": round(contradiction_penalty, 3),
+            "negative_strengths": {phrase: str(entries.get(cls.normalize(phrase), {}).get("strength", "medium") if isinstance(entries.get(cls.normalize(phrase)), dict) else "medium") for phrase in effective},
+        }
+
+    @classmethod
+    def score(cls, text: str, positive: list[str] | list[dict[str, Any]], negative: list[str] | list[dict[str, Any]], *, title: str = "") -> dict[str, Any]:
         matched = cls.matching(positive, text)
-        rejected = cls.matching(negative, text)
         title_matches = cls.matching(positive, title)
         body_matches = [value for value in matched if value not in title_matches]
-        score = min(1.0, max(0.0, len(title_matches) * 0.2 + len(body_matches) * 0.15 + len(matched) * 0.35 - len(cls.matching(negative, title)) * 0.35 - len(rejected) * 0.15))
-        return {"matched_signals": matched, "negative_signals": rejected, "title_matches": title_matches, "body_matches": body_matches, "score": round(score, 3)}
+        entries = {cls.normalize(str(item.get("phrase", "")) if isinstance(item, dict) else str(item)): item for item in positive}
+        strengths = {"weak": 0.10, "medium": 0.18, "strong": 0.36}
+        positive_score = 0.0
+        for phrase in matched:
+            entry = entries.get(cls.normalize(phrase), phrase)
+            strength = str(entry.get("strength", "medium") if isinstance(entry, dict) else "medium").lower()
+            positive_score += strengths.get(strength, strengths["medium"])
+            if phrase in title_matches:
+                positive_score += 0.14
+        negative_result = cls.negative_signal_score(text, negative, title=title, positive_matches=matched)
+        score = min(1.0, max(0.0, positive_score - negative_result["negative_penalty"] - negative_result["contradiction_penalty"]))
+        return {
+            "matched_signals": matched,
+            "negative_signals": negative_result["matched_negative_signals"],
+            "title_matches": title_matches,
+            "body_matches": body_matches,
+            "positive_score": round(positive_score, 3),
+            "negative_penalty": negative_result["negative_penalty"],
+            "contradiction_penalty": negative_result["contradiction_penalty"],
+            "negative_strengths": negative_result["negative_strengths"],
+            "score": round(score, 3),
+        }
 
 
 def topic_matches(item: dict[str, Any], topics: list[dict[str, Any]]) -> list[dict[str, Any]]:

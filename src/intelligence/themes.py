@@ -1,6 +1,19 @@
 from __future__ import annotations
 
 from typing import Any
+import json
+import re
+
+
+def theme_fingerprint(theme: dict[str, Any]) -> str:
+    """Fingerprint meaningful theme content while ignoring routing IDs."""
+    meaningful = {
+        key: theme.get(key)
+        for key in ("objective", "questions", "retrieval_intent", "evidence", "output", "watch_items", "disambiguation_focus", "analysis_contract")
+        if theme.get(key) not in (None, "", [], {})
+    }
+    normalized = re.sub(r"\s+", " ", json.dumps(meaningful, sort_keys=True, ensure_ascii=True).lower()).strip()
+    return normalized
 
 
 def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], item: dict[str, Any]) -> dict[str, Any]:
@@ -40,6 +53,7 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         selected = best[0]
         if stream == "video" and "main_argument" not in selected.get("questions", []):
             selected = {**selected, "questions": [*selected.get("questions", []), "main_argument", "claims", "methods", "limitations"]}
+        selected = {**selected, "theme_id": selected.get("id"), "fallback_reason": None if not selected.get("fallback_used") else "exact_theme_missing"}
         return selected
     # A controlled configured fallback is explicit and observable; no theme is invented.
     fallback = next((theme for theme in themes if theme.get("id") == "domain-fallback"), {})
@@ -54,6 +68,8 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         "questions": fallback.get("content_streams", {}).get(stream, {}).get("questions", fallback.get("questions", [])),
         "resolution_level": "controlled_fallback",
         "fallback_used": True,
+        "theme_id": fallback.get("id", "domain-fallback"),
+        "fallback_reason": "no_exact_topic_or_domain_theme",
     }
 
 
@@ -68,5 +84,7 @@ def analysis_profile(classification: dict[str, Any], theme: dict[str, Any], item
         "theme_resolution_level": theme.get("resolution_level", "unknown"),
         "fallback_used": bool(theme.get("fallback_used", False)),
         "analysis_contract": theme.get("analysis_contract", {}),
+        "retrieval_intent": theme.get("retrieval_intent", {}),
+        "watch_items": theme.get("watch_items", []),
         "video_requirements": theme.get("content_streams", {}).get("video", {}).get("questions", []) if stream == "video" else [],
     }

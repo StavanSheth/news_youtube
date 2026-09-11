@@ -1,0 +1,8 @@
+[
+  {"title": "New foundation model achieves state-of-the-art benchmark", "text": "Model architecture, pretraining, model weights and context window improve capability.", "primary_micro_topic": "foundation-models"},
+  {"title": "New GPU data center expands AI inference capacity", "text": "A GPU cluster adds serving throughput and data-center capacity.", "primary_micro_topic": "ai-infrastructure"},
+  {"title": "New foundation model requires additional GPU capacity", "text": "The model release requires more infrastructure to serve inference.", "primary_micro_topic": "foundation-models"},
+  {"title": "Autonomous agent uses a foundation model to execute workflows", "text": "Tool use, agent execution, workflow orchestration and reliability are the focus.", "primary_micro_topic": "ai-agents"},
+  {"title": "New reranking system improves retrieval grounding", "text": "Reranking improves retrieval quality, context selection and citation grounding.", "primary_micro_topic": "rag"},
+  {"title": "Central bank raises interest rates", "text": "The policy decision changes borrowing costs and market expectations.", "primary_micro_topic": "interest-rates"}
+]

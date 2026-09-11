@@ -7,7 +7,7 @@ from typing import Any
 import yaml
 import json
 
-from .validation import validate_dimensions, validate_microtopic_matrix, validate_normalization_registry, validate_microtopics, validate_profile_templates, validate_sources, validate_taxonomy, validate_topics, validate_themes
+from .validation import validate_dimensions, validate_microtopic_matrix, validate_microtopic_profiles, validate_normalization_registry, validate_microtopics, validate_profile_templates, validate_sources, validate_taxonomy, validate_topics, validate_themes, validate_theme_specificity
 from .contracts import VersionContract
 from .profiles import build_matrix_themes
 
@@ -61,6 +61,8 @@ def load_config(root: Path) -> AppConfig:
     themes = _read_yaml(config_dir / "themes.yaml").get("themes", [])
     themes = build_matrix_themes(matrix["records"], profile_templates, themes)
     validate_themes(themes, taxonomy, matrix)
+    validate_microtopic_profiles(microtopics, taxonomy, matrix, themes, profile_templates)
+    validate_theme_specificity(themes)
     settings = _read_yaml(config_dir / "settings.yaml")
     registry_path = config_dir / "source_registry.yaml"
     if registry_path.exists():

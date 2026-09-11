@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from .themes import theme_fingerprint
+
 
 def validate_microtopic_matrix(matrix: dict[str, Any]) -> None:
     records = matrix.get("records", [])
@@ -45,6 +47,49 @@ def validate_profile_templates(matrix: dict[str, Any], templates: dict[str, Any]
     unknown = sorted({record.get("template") for record in matrix.get("records", []) if record.get("template") not in available})
     if unknown:
         raise ValueError(f"Unknown profile templates: {unknown}")
+
+
+def validate_microtopic_profiles(config: dict[str, Any], taxonomy: dict[str, Any], matrix: dict[str, Any], themes: list[dict[str, Any]], templates: dict[str, Any]) -> None:
+    """Validate the executable registry without treating analysis prose as signals."""
+    matrix_keys = {(row.get("domain"), row.get("id")) for row in matrix.get("records", [])}
+    matrix_domains = {domain for domain, _ in matrix_keys}
+    taxonomy_domains = set(taxonomy.get("domains", {}))
+    if not matrix_domains <= taxonomy_domains:
+        raise ValueError(f"Taxonomy and micro-topic matrix disagree; unknown matrix domains={sorted(matrix_domains - taxonomy_domains)}")
+    theme_keys = {(theme.get("domain"), theme.get("micro_topic")) for theme in themes if theme.get("micro_topic") not in {None, "any", "*"}}
+    available = templates.get("templates", templates)
+    for row in matrix.get("records", []):
+        domain, micro_topic = row["domain"], row["id"]
+        explicit = config.get("domains", {}).get(domain, {}).get("overrides", {}).get(micro_topic, {})
+        template_id = row.get("template")
+        if template_id not in available:
+            raise ValueError(f"Invalid template for {domain}/{micro_topic}: {template_id}")
+        signals = list(explicit.get("positive_signals", []))
+        if not signals:
+            signals = [f"{row.get('name', micro_topic)} release", f"{row.get('name', micro_topic)} announcement"]
+        if not any(len(str(value.get("phrase", "") if isinstance(value, dict) else value).split()) >= 2 for value in signals):
+            raise ValueError(f"Micro-topic has no specific positive signal: {domain}/{micro_topic}")
+        threshold = explicit.get("primary_threshold", explicit.get("classification_threshold", 0.5))
+        if not 0 <= float(threshold) <= 1:
+            raise ValueError(f"Invalid profile threshold: {domain}/{micro_topic}")
+        contract = explicit.get("analysis_contract", config.get("defaults", {}).get("analysis_contract", {}))
+        if not contract:
+            raise ValueError(f"Missing analysis contract: {domain}/{micro_topic}")
+        if (domain, micro_topic) not in theme_keys:
+            raise ValueError(f"Missing exact theme: {domain}/{micro_topic}")
+
+
+def validate_theme_specificity(themes: list[dict[str, Any]]) -> dict[str, Any]:
+    fingerprints: dict[str, list[str]] = {}
+    for theme in themes:
+        if theme.get("id") == "domain-fallback":
+            continue
+        fingerprints.setdefault(theme_fingerprint(theme), []).append(str(theme.get("id")))
+    duplicates = [ids for ids in fingerprints.values() if len(ids) > 1]
+    if duplicates:
+        raise ValueError(f"Duplicate meaningful theme fingerprints: {duplicates[:3]}")
+    generic = [theme.get("id") for theme in themes if theme.get("id") != "domain-fallback" and len(theme_fingerprint(theme)) < 80]
+    return {"total": len(themes), "unique_fingerprints": len(fingerprints), "duplicate_fingerprints": duplicates, "generic": generic}
 
 
 def validate_taxonomy(taxonomy: dict[str, Any]) -> None:

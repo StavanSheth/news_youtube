@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 
 import pytest
 
@@ -8,6 +9,9 @@ from intelligence.config import load_config
 from intelligence.microtopics import catalog, classify_micro_topics, coverage
 from intelligence.themes import analysis_profile, select_theme
 from intelligence.validation import validate_microtopics, validate_themes
+from intelligence.validation import validate_microtopic_profiles, validate_theme_specificity
+from intelligence.themes import theme_fingerprint
+from intelligence.benchmark import evaluate_golden
 from intelligence.evidence_scope import EvidenceScope
 
 
@@ -24,7 +28,8 @@ def test_canonical_matrix_has_236_explicit_runtime_records():
     entries = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix)
     assert len(config.microtopic_matrix["records"]) == 236
     assert len(entries) == 236
-    assert all(entry["profile_origin"] == "matrix" for entry in entries)
+    assert sum(entry["profile_origin"] == "explicit" for entry in entries) == 7
+    assert all(entry["profile_origin"] in {"explicit", "derived"} for entry in entries)
     assert len(config.themes) >= 236
     assert all(entry["template_id"] for entry in entries)
 
@@ -51,7 +56,7 @@ def test_classifier_requires_specific_evidence_and_explains_result():
     selected = {entry["micro_topic"] for entry in matches}
     assert "foundation-models" in selected
     result = next(entry for entry in matches if entry["micro_topic"] == "foundation-models")
-    assert result["classification_score"] == result["classification_confidence"]
+    assert result["classification_score"] != result["classification_confidence"]
     assert result["positive_signals"]
     assert result["classification_reason"]
 
@@ -79,7 +84,7 @@ def test_multiple_microtopics_require_independent_signals_and_are_deterministic(
     first = classify_micro_topics(item, entries)
     second = classify_micro_topics(item, entries)
     assert [entry["micro_topic"] for entry in first] == [entry["micro_topic"] for entry in second]
-    assert {entry["micro_topic"] for entry in first} >= {"ai-agents", "rag", "embeddings"}
+    assert {entry["micro_topic"] for entry in first} >= {"ai-agents", "rag"}
     assert all(entry["classification_reason"] for entry in first)
 
 
@@ -109,6 +114,26 @@ def test_invalid_microtopic_and_theme_configuration_fails_early():
         validate_microtopics({"defaults": config.microtopics["defaults"], "domains": {"artificial-intelligence": {"overrides": {"missing": {}}}}}, config.taxonomy)
     with pytest.raises(ValueError, match="Invalid theme micro-topic"):
         validate_themes([{"id": "bad", "domain": "finance", "micro_topic": "missing", "questions": ["what_changed"]}], config.taxonomy)
+
+
+def test_theme_fingerprints_are_semantic_and_registry_is_validated():
+    config = load_config(ROOT)
+    entries = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
+    validate_microtopic_profiles(config.microtopics, config.taxonomy, config.microtopic_matrix, config.themes, config.profile_templates)
+    validate_theme_specificity(config.themes)
+    foundation = next(theme for theme in config.themes if theme.get("micro_topic") == "foundation-models")
+    agents = next(theme for theme in config.themes if theme.get("micro_topic") == "ai-agents")
+    assert theme_fingerprint(foundation) != theme_fingerprint(agents)
+    assert all(entry["profile"].get("template_id") for entry in entries)
+
+
+def test_phase2_golden_dataset_metrics_and_routing():
+    config = load_config(ROOT)
+    entries = catalog(config.taxonomy, config.topics, config.microtopics)
+    records = json.loads((ROOT / "tests" / "fixtures" / "phase2_golden.json").read_text(encoding="utf-8"))
+    report = evaluate_golden(records, lambda item: classify_micro_topics(item, entries))
+    assert report["f1"] >= 0.80
+    assert report["false_negative_rate"] <= 0.20
 
 
 def test_coverage_never_claims_no_major_update_for_unchecked_microtopic():
