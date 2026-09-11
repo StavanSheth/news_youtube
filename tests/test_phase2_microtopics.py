@@ -19,6 +19,14 @@ def _entries():
     return config, catalog(config.taxonomy, config.topics, config.microtopics)
 
 
+def test_canonical_matrix_has_236_explicit_runtime_records():
+    config = load_config(ROOT)
+    entries = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix)
+    assert len(config.microtopic_matrix["records"]) == 236
+    assert len(entries) == 236
+    assert all(entry["profile_origin"] == "matrix" for entry in entries)
+
+
 def test_every_taxonomy_leaf_has_stable_profile_and_identity():
     config, entries = _entries()
     expected = sum(len(domain["topics"]) for domain in config.taxonomy["domains"].values())

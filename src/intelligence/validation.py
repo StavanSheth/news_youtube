@@ -3,6 +3,19 @@ from __future__ import annotations
 from typing import Any
 
 
+def validate_microtopic_matrix(matrix: dict[str, Any]) -> None:
+    records = matrix.get("records", [])
+    if not isinstance(records, list) or len(records) != 236:
+        raise ValueError("Micro-topic matrix must contain exactly 236 records")
+    keys = [(record.get("domain"), record.get("id")) for record in records]
+    if any(not domain or not micro_topic for domain, micro_topic in keys) or len(keys) != len(set(keys)):
+        raise ValueError("Micro-topic matrix records require unique domain/id pairs")
+    required = {"name", "evaluation", "required_evidence", "resources", "important_output"}
+    for record in records:
+        if required - record.keys() or any(not str(record[field]).strip() for field in required):
+            raise ValueError(f"Incomplete matrix record: {record.get('domain')}/{record.get('id')}")
+
+
 def validate_taxonomy(taxonomy: dict[str, Any]) -> None:
     required = {"domains", "priorities", "event_types", "report_types"}
     missing = required - taxonomy.keys()

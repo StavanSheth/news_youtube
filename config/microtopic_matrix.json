@@ -1,0 +1,2129 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "id": "foundation-models",
+      "domain": "artificial-intelligence",
+      "name": "Foundation Models",
+      "evaluation": "New model, architecture, capability, benchmark, context, modalities, pricing, deployment",
+      "required_evidence": "Official model release + benchmark/model card + independent validation",
+      "resources": "NEWS-TECH + RESEARCH + GITHUB + AI-SEARCH",
+      "important_output": "capability change, benchmark, limitations, practical impact"
+    },
+    {
+      "id": "llms",
+      "domain": "artificial-intelligence",
+      "name": "LLMs",
+      "evaluation": "Model quality, reasoning, context, latency, cost, adoption, API changes",
+      "required_evidence": "Model release/API docs/benchmarks",
+      "resources": "NEWS-TECH + RESEARCH + GITHUB",
+      "important_output": "model comparison + workflow impact"
+    },
+    {
+      "id": "multimodal-ai",
+      "domain": "artificial-intelligence",
+      "name": "Multimodal AI",
+      "evaluation": "Image/audio/video/text capability, cross-modal reasoning, input/output changes",
+      "required_evidence": "Demo + technical documentation + benchmark",
+      "resources": "NEWS-TECH + RESEARCH + GITHUB",
+      "important_output": "modality capability + limitations"
+    },
+    {
+      "id": "reasoning-models",
+      "domain": "artificial-intelligence",
+      "name": "Reasoning Models",
+      "evaluation": "Reasoning mechanism, test-time compute, benchmark movement, latency/cost",
+      "required_evidence": "Papers, model cards, benchmarks, deployments",
+      "resources": "RESEARCH + NEWS-TECH + GITHUB",
+      "important_output": "reasoning gain vs cost"
+    },
+    {
+      "id": "ai-agents",
+      "domain": "artificial-intelligence",
+      "name": "AI Agents",
+      "evaluation": "Agent architecture, autonomy, tools, planning, memory, reliability",
+      "required_evidence": "Technical implementation/demo/production evidence",
+      "resources": "NEWS-TECH + GITHUB + RESEARCH",
+      "important_output": "autonomy, workflow, failure modes"
+    },
+    {
+      "id": "agentic-workflows",
+      "domain": "artificial-intelligence",
+      "name": "Agentic Workflows",
+      "evaluation": "Multi-step workflow orchestration, human-in-loop, tool chaining",
+      "required_evidence": "Production/demo/workflow evidence",
+      "resources": "GITHUB + NEWS-TECH + AI-SEARCH",
+      "important_output": "workflow improvement + operational risks"
+    },
+    {
+      "id": "coding-models",
+      "domain": "artificial-intelligence",
+      "name": "Coding Models",
+      "evaluation": "Coding benchmark, repo-level reasoning, debugging, agentic coding",
+      "required_evidence": "SWE benchmarks, GitHub projects, model releases",
+      "resources": "GITHUB + RESEARCH + NEWS-TECH",
+      "important_output": "developer productivity + failure modes"
+    },
+    {
+      "id": "rag",
+      "domain": "artificial-intelligence",
+      "name": "RAG",
+      "evaluation": "Retrieval architecture, queries, chunking, embeddings, reranking, hybrid retrieval, grounding, latency/cost",
+      "required_evidence": "Architecture + benchmark + production evidence",
+      "resources": "RESEARCH + GITHUB + NEWS-TECH",
+      "important_output": "retrieval quality + implementation implications"
+    },
+    {
+      "id": "embeddings",
+      "domain": "artificial-intelligence",
+      "name": "Embeddings",
+      "evaluation": "Embedding quality, dimensions, multilinguality, retrieval benchmark, cost",
+      "required_evidence": "Model benchmark/documentation",
+      "resources": "RESEARCH + GITHUB",
+      "important_output": "retrieval performance"
+    },
+    {
+      "id": "training",
+      "domain": "artificial-intelligence",
+      "name": "Training",
+      "evaluation": "Training methods, datasets, compute, scaling, efficiency",
+      "required_evidence": "Papers + model technical reports",
+      "resources": "RESEARCH + NEWS-TECH",
+      "important_output": "technical change + compute implications"
+    },
+    {
+      "id": "inference",
+      "domain": "artificial-intelligence",
+      "name": "Inference",
+      "evaluation": "Serving, quantization, batching, latency, throughput, hardware",
+      "required_evidence": "Benchmarks + implementation + deployment evidence",
+      "resources": "GITHUB + RESEARCH + SEMICONDUCTOR",
+      "important_output": "cost/latency/throughput"
+    },
+    {
+      "id": "fine-tuning",
+      "domain": "artificial-intelligence",
+      "name": "Fine-tuning",
+      "evaluation": "LoRA/PEFT/full fine-tuning, data efficiency, evaluation",
+      "required_evidence": "Technical paper/release/benchmark",
+      "resources": "RESEARCH + GITHUB",
+      "important_output": "when/why fine-tuning matters"
+    },
+    {
+      "id": "ai-infrastructure",
+      "domain": "artificial-intelligence",
+      "name": "AI Infrastructure",
+      "evaluation": "GPU clusters, inference infrastructure, networking, storage, orchestration",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "NEWS-TECH + GITHUB + SEMICONDUCTOR",
+      "important_output": "infrastructure change"
+    },
+    {
+      "id": "ai-tooling",
+      "domain": "artificial-intelligence",
+      "name": "AI Tooling",
+      "evaluation": "Developer frameworks, evaluation tools, observability, pipelines",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "developer utility/adoption"
+    },
+    {
+      "id": "open-source-ai",
+      "domain": "artificial-intelligence",
+      "name": "Open-source AI",
+      "evaluation": "Open models, licenses, releases, community adoption",
+      "required_evidence": "Repository + model release + license",
+      "resources": "GITHUB + RESEARCH",
+      "important_output": "openness, adoption, license implications"
+    },
+    {
+      "id": "enterprise-ai",
+      "domain": "artificial-intelligence",
+      "name": "Enterprise AI",
+      "evaluation": "Enterprise deployments, ROI, security, governance, procurement",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + NEWS-TECH + GOV",
+      "important_output": "actual deployment vs marketing"
+    },
+    {
+      "id": "ai-applications",
+      "domain": "artificial-intelligence",
+      "name": "AI Applications",
+      "evaluation": "Concrete applications and measurable outcomes",
+      "required_evidence": "Product/demo/customer evidence",
+      "resources": "NEWS-TECH + COMPANY + GITHUB",
+      "important_output": "use case + measurable value"
+    },
+    {
+      "id": "ai-research",
+      "domain": "artificial-intelligence",
+      "name": "AI Research",
+      "evaluation": "Novel methods, results, reproducibility, research significance",
+      "required_evidence": "Paper/preprint + benchmark",
+      "resources": "RESEARCH",
+      "important_output": "research contribution"
+    },
+    {
+      "id": "ai-safety-alignment",
+      "domain": "artificial-intelligence",
+      "name": "AI Safety / Alignment",
+      "evaluation": "Safety technique, alignment method, evals, incidents, governance",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + GOV-US + NEWS-TECH",
+      "important_output": "risk + mitigation"
+    },
+    {
+      "id": "ai-evaluation",
+      "domain": "artificial-intelligence",
+      "name": "AI Evaluation",
+      "evaluation": "Benchmarks, eval methodology, contamination, reliability, real-world performance",
+      "required_evidence": "Benchmark + methodology + independent testing",
+      "resources": "RESEARCH + GITHUB",
+      "important_output": "evaluation validity"
+    },
+    {
+      "id": "ai-regulation",
+      "domain": "artificial-intelligence",
+      "name": "AI Regulation",
+      "evaluation": "Laws, regulations, standards, compliance requirements",
+      "required_evidence": "Official government/regulatory text",
+      "resources": "GOV-US + GOV-EU + GOV-INDIA + NEWS-GLOBAL",
+      "important_output": "obligation, deadline, affected entities"
+    },
+    {
+      "id": "ai-startups",
+      "domain": "artificial-intelligence",
+      "name": "AI Startups",
+      "evaluation": "Funding, products, differentiation, customers, model/infrastructure strategy",
+      "required_evidence": "Funding announcement + company/product evidence",
+      "resources": "STARTUP + NEWS-TECH",
+      "important_output": "startup significance"
+    },
+    {
+      "id": "ai-application-launches",
+      "domain": "artificial-intelligence",
+      "name": "AI Applications",
+      "evaluation": "Application launches, workflow integration, measurable user impact",
+      "required_evidence": "Product docs + customer evidence",
+      "resources": "NEWS-TECH + COMPANY + GITHUB",
+      "important_output": "adoption + business impact"
+    },
+    {
+      "id": "programming-languages",
+      "domain": "software-engineering",
+      "name": "Programming Languages",
+      "evaluation": "Releases, language features, performance, safety, ecosystem",
+      "required_evidence": "Official release + benchmark + GitHub",
+      "resources": "GITHUB + RESEARCH + NEWS-TECH",
+      "important_output": "practical developer impact"
+    },
+    {
+      "id": "frameworks",
+      "domain": "software-engineering",
+      "name": "Frameworks",
+      "evaluation": "API changes, architecture, performance, adoption, breaking changes",
+      "required_evidence": "Release/docs/repositories",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "upgrade/adoption implications"
+    },
+    {
+      "id": "ide-and-developer-tools",
+      "domain": "software-engineering",
+      "name": "IDE & Developer Tools",
+      "evaluation": "AI features, debugging, productivity, integrations",
+      "required_evidence": "Product release + demo + user evidence",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "productivity impact"
+    },
+    {
+      "id": "apis",
+      "domain": "software-engineering",
+      "name": "APIs",
+      "evaluation": "New APIs, versioning, limits, pricing, reliability",
+      "required_evidence": "Official API docs/release",
+      "resources": "COMPANY + GITHUB + NEWS-TECH",
+      "important_output": "integration impact"
+    },
+    {
+      "id": "sdks",
+      "domain": "software-engineering",
+      "name": "SDKs",
+      "evaluation": "New SDKs, language coverage, breaking changes",
+      "required_evidence": "Repository/release/docs",
+      "resources": "GITHUB + COMPANY",
+      "important_output": "developer migration"
+    },
+    {
+      "id": "backend",
+      "domain": "software-engineering",
+      "name": "Backend",
+      "evaluation": "Architecture, databases, scaling, performance, patterns",
+      "required_evidence": "Technical implementation",
+      "resources": "GITHUB + NEWS-TECH + RESEARCH",
+      "important_output": "architecture impact"
+    },
+    {
+      "id": "frontend",
+      "domain": "software-engineering",
+      "name": "Frontend",
+      "evaluation": "Framework/rendering changes, performance, accessibility",
+      "required_evidence": "Release + benchmark + implementation",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "UX/developer impact"
+    },
+    {
+      "id": "databases",
+      "domain": "software-engineering",
+      "name": "Databases",
+      "evaluation": "New engines/features, indexing, vector DB, transactions, performance",
+      "required_evidence": "Docs/benchmarks/GitHub",
+      "resources": "GITHUB + RESEARCH + NEWS-TECH",
+      "important_output": "technical tradeoff"
+    },
+    {
+      "id": "architecture",
+      "domain": "software-engineering",
+      "name": "Architecture",
+      "evaluation": "Distributed systems, modularity, event-driven/serverless patterns",
+      "required_evidence": "Engineering evidence",
+      "resources": "RESEARCH + GITHUB + NEWS-TECH",
+      "important_output": "architectural implication"
+    },
+    {
+      "id": "devops",
+      "domain": "software-engineering",
+      "name": "DevOps",
+      "evaluation": "Deployment, automation, infrastructure tooling",
+      "required_evidence": "Release + implementation",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "operational impact"
+    },
+    {
+      "id": "ci-cd",
+      "domain": "software-engineering",
+      "name": "CI/CD",
+      "evaluation": "Pipeline changes, testing integration, security, deployment",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "release reliability"
+    },
+    {
+      "id": "testing",
+      "domain": "software-engineering",
+      "name": "Testing",
+      "evaluation": "Test frameworks, property testing, AI testing, coverage",
+      "required_evidence": "Technical implementation/benchmarks",
+      "resources": "GITHUB + RESEARCH",
+      "important_output": "quality impact"
+    },
+    {
+      "id": "observability",
+      "domain": "software-engineering",
+      "name": "Observability",
+      "evaluation": "Logging, tracing, metrics, LLM observability",
+      "required_evidence": "Product/release + technical evidence",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "monitoring capability"
+    },
+    {
+      "id": "cloud-infrastructure",
+      "domain": "software-engineering",
+      "name": "Cloud / Infrastructure",
+      "evaluation": "Cloud products, compute, networking, storage, serverless",
+      "required_evidence": "Provider announcement/docs",
+      "resources": "NEWS-TECH + COMPANY + GITHUB",
+      "important_output": "cost/performance"
+    },
+    {
+      "id": "open-source-releases",
+      "domain": "software-engineering",
+      "name": "Open-source Releases",
+      "evaluation": "Major releases, breaking changes, adoption",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GITHUB",
+      "important_output": "release significance"
+    },
+    {
+      "id": "repositories",
+      "domain": "github-open-source",
+      "name": "Repositories",
+      "evaluation": "New repositories, activity, architecture, contributors",
+      "required_evidence": "Repo + release history",
+      "resources": "GITHUB",
+      "important_output": "project significance"
+    },
+    {
+      "id": "model-tooling",
+      "domain": "github-open-source",
+      "name": "Model Tooling",
+      "evaluation": "Model serving/training/evaluation tooling",
+      "required_evidence": "Code + release + adoption",
+      "resources": "GITHUB + RESEARCH",
+      "important_output": "technical value"
+    },
+    {
+      "id": "agent-frameworks",
+      "domain": "github-open-source",
+      "name": "Agent Frameworks",
+      "evaluation": "Architecture, tools, memory, orchestration, adoption",
+      "required_evidence": "Repo + examples",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "agent capability"
+    },
+    {
+      "id": "mcp",
+      "domain": "github-open-source",
+      "name": "MCP",
+      "evaluation": "MCP servers/tools/spec changes, adoption, security",
+      "required_evidence": "Official spec/repositories",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "ecosystem impact"
+    },
+    {
+      "id": "developer-tools",
+      "domain": "github-open-source",
+      "name": "Developer Tools",
+      "evaluation": "Tool capability, integrations, adoption",
+      "required_evidence": "Repository/release",
+      "resources": "GITHUB",
+      "important_output": "developer utility"
+    },
+    {
+      "id": "inference-serving",
+      "domain": "github-open-source",
+      "name": "Inference / Serving",
+      "evaluation": "Serving stack, optimization, hardware compatibility",
+      "required_evidence": "Code + benchmarks",
+      "resources": "GITHUB + RESEARCH",
+      "important_output": "performance"
+    },
+    {
+      "id": "libraries",
+      "domain": "github-open-source",
+      "name": "Libraries",
+      "evaluation": "API, stability, adoption, compatibility",
+      "required_evidence": "Release/repository",
+      "resources": "GITHUB",
+      "important_output": "developer relevance"
+    },
+    {
+      "id": "adoption",
+      "domain": "github-open-source",
+      "name": "Adoption",
+      "evaluation": "Stars alone insufficient; contributors, releases, downstream use",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "actual adoption"
+    },
+    {
+      "id": "high-impact-projects",
+      "domain": "github-open-source",
+      "name": "High-impact Projects",
+      "evaluation": "Strategic/technical importance",
+      "required_evidence": "Repo + independent coverage",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "significance"
+    },
+    {
+      "id": "releases",
+      "domain": "github-open-source",
+      "name": "Releases",
+      "evaluation": "Major version/release changes",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GITHUB",
+      "important_output": "breaking/important changes"
+    },
+    {
+      "id": "maintainers",
+      "domain": "github-open-source",
+      "name": "Maintainers",
+      "evaluation": "Leadership, ownership, governance changes",
+      "required_evidence": "Repository/governance evidence",
+      "resources": "GITHUB + NEWS-TECH",
+      "important_output": "project continuity"
+    },
+    {
+      "id": "hardware",
+      "domain": "quantum-computing",
+      "name": "Hardware",
+      "evaluation": "Qubit architecture, fidelity, scaling, roadmap",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + NEWS-TECH + AI-SEARCH",
+      "important_output": "Qubit architecture, fidelity, scaling, roadmap"
+    },
+    {
+      "id": "processors",
+      "domain": "quantum-computing",
+      "name": "Processors",
+      "evaluation": "Processor generations, qubits, error rates, benchmarks",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + COMPANY",
+      "important_output": "Processor generations, qubits, error rates, benchmarks"
+    },
+    {
+      "id": "algorithms",
+      "domain": "quantum-computing",
+      "name": "Algorithms",
+      "evaluation": "New algorithms, complexity, demonstrated advantage",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH",
+      "important_output": "New algorithms, complexity, demonstrated advantage"
+    },
+    {
+      "id": "error-correction",
+      "domain": "quantum-computing",
+      "name": "Error Correction",
+      "evaluation": "Logical qubits, error suppression, thresholds",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH",
+      "important_output": "Logical qubits, error suppression, thresholds"
+    },
+    {
+      "id": "networking",
+      "domain": "quantum-computing",
+      "name": "Networking",
+      "evaluation": "Quantum networking, communication, repeaters",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + NEWS-TECH",
+      "important_output": "Quantum networking, communication, repeaters"
+    },
+    {
+      "id": "cryptography",
+      "domain": "quantum-computing",
+      "name": "Cryptography",
+      "evaluation": "Quantum threats, post-quantum cryptography, migration",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + GOV + NEWS-TECH",
+      "important_output": "Quantum threats, post-quantum cryptography, migration"
+    },
+    {
+      "id": "research",
+      "domain": "quantum-computing",
+      "name": "Research",
+      "evaluation": "New experimental/theoretical results",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH",
+      "important_output": "New experimental/theoretical results"
+    },
+    {
+      "id": "government-programs",
+      "domain": "quantum-computing",
+      "name": "Government Programs",
+      "evaluation": "National quantum programs/funding",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV-US + GOV-EU + GOV-INDIA + GOV-EAST-ASIA",
+      "important_output": "National quantum programs/funding"
+    },
+    {
+      "id": "applications",
+      "domain": "quantum-computing",
+      "name": "Applications",
+      "evaluation": "Concrete commercial/scientific use cases",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + COMPANY + NEWS-TECH",
+      "important_output": "Concrete commercial/scientific use cases"
+    },
+    {
+      "id": "launches",
+      "domain": "space",
+      "name": "Launches",
+      "evaluation": "Launch date, vehicle, payload, success/failure",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SPACE + NEWS-GLOBAL",
+      "important_output": "Launch date, vehicle, payload, success/failure"
+    },
+    {
+      "id": "rockets",
+      "domain": "space",
+      "name": "Rockets",
+      "evaluation": "New vehicles, engines, reuse, performance",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SPACE + NEWS-TECH",
+      "important_output": "New vehicles, engines, reuse, performance"
+    },
+    {
+      "id": "spacecraft",
+      "domain": "space",
+      "name": "Spacecraft",
+      "evaluation": "New spacecraft capability/design",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SPACE + RESEARCH",
+      "important_output": "New spacecraft capability/design"
+    },
+    {
+      "id": "satellites",
+      "domain": "space",
+      "name": "Satellites",
+      "evaluation": "Deployment, constellation, capability",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SPACE + CelesTrak",
+      "important_output": "Deployment, constellation, capability"
+    },
+    {
+      "id": "missions",
+      "domain": "space",
+      "name": "Missions",
+      "evaluation": "Mission objectives/status/results",
+      "required_evidence": "NASA/ESA + SPACE",
+      "resources": "NASA/ESA + SPACE",
+      "important_output": "Mission objectives/status/results"
+    },
+    {
+      "id": "earth-observation",
+      "domain": "space",
+      "name": "Earth Observation",
+      "evaluation": "EO satellites, imagery, applications",
+      "required_evidence": "NASA + ESA + CelesTrak",
+      "resources": "NASA + ESA + CelesTrak",
+      "important_output": "EO satellites, imagery, applications"
+    },
+    {
+      "id": "lunar-programs",
+      "domain": "space",
+      "name": "Lunar Programs",
+      "evaluation": "Lunar missions, landers, infrastructure",
+      "required_evidence": "NASA/ESA + SPACE",
+      "resources": "NASA/ESA + SPACE",
+      "important_output": "Lunar missions, landers, infrastructure"
+    },
+    {
+      "id": "mars-deep-space",
+      "domain": "space",
+      "name": "Mars / Deep Space",
+      "evaluation": "Exploration and scientific milestones",
+      "required_evidence": "NASA + ESA + RESEARCH",
+      "resources": "NASA + ESA + RESEARCH",
+      "important_output": "Exploration and scientific milestones"
+    },
+    {
+      "id": "exploration",
+      "domain": "space",
+      "name": "Exploration",
+      "evaluation": "Human/robotic exploration",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SPACE + RESEARCH",
+      "important_output": "Human/robotic exploration"
+    },
+    {
+      "id": "commercial-space",
+      "domain": "space",
+      "name": "Commercial Space",
+      "evaluation": "Commercial launches/services/funding",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SPACE + COMPANY + STARTUP",
+      "important_output": "Commercial launches/services/funding"
+    },
+    {
+      "id": "space-infrastructure",
+      "domain": "space",
+      "name": "Space Infrastructure",
+      "evaluation": "Ground stations, satellite networks, launch infrastructure",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SPACE + GOV",
+      "important_output": "Ground stations, satellite networks, launch infrastructure"
+    },
+    {
+      "id": "space-policy",
+      "domain": "space",
+      "name": "Space Policy",
+      "evaluation": "Regulation, spectrum, orbital policy",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + SPACE",
+      "important_output": "Regulation, spectrum, orbital policy"
+    },
+    {
+      "id": "space-policy-strategy",
+      "domain": "space",
+      "name": "Space Policy",
+      "evaluation": "National/commercial strategic policy change",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + NEWS-GLOBAL",
+      "important_output": "National/commercial strategic policy change"
+    },
+    {
+      "id": "procurement",
+      "domain": "defence",
+      "name": "Procurement",
+      "evaluation": "Contract, buyer, supplier, value, delivery",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "PROCUREMENT + GOV-US + GOV-INDIA",
+      "important_output": "Contract, buyer, supplier, value, delivery"
+    },
+    {
+      "id": "military-technology",
+      "domain": "defence",
+      "name": "Military Technology",
+      "evaluation": "Capability changes and operational readiness",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "MILITARY + NEWS-GLOBAL",
+      "important_output": "Capability changes and operational readiness"
+    },
+    {
+      "id": "drones",
+      "domain": "defence",
+      "name": "Drones",
+      "evaluation": "Platform, autonomy, deployment, effectiveness",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "MILITARY + RESEARCH",
+      "important_output": "Platform, autonomy, deployment, effectiveness"
+    },
+    {
+      "id": "missiles",
+      "domain": "defence",
+      "name": "Missiles",
+      "evaluation": "Development, range, deployment, interception",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "MILITARY + GEOPOLITICS",
+      "important_output": "Development, range, deployment, interception"
+    },
+    {
+      "id": "air-defence",
+      "domain": "defence",
+      "name": "Air Defence",
+      "evaluation": "Systems, interception, deployment",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "MILITARY + GEOPOLITICS",
+      "important_output": "Systems, interception, deployment"
+    },
+    {
+      "id": "naval-systems",
+      "domain": "defence",
+      "name": "Naval Systems",
+      "evaluation": "Ships, submarines, sensors, weapons",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "MILITARY + SHIPPING",
+      "important_output": "Ships, submarines, sensors, weapons"
+    },
+    {
+      "id": "electronic-warfare",
+      "domain": "defence",
+      "name": "Electronic Warfare",
+      "evaluation": "Jamming, spoofing, detection, countermeasures",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "MILITARY + RESEARCH",
+      "important_output": "Jamming, spoofing, detection, countermeasures"
+    },
+    {
+      "id": "cyber-warfare",
+      "domain": "defence",
+      "name": "Cyber Warfare",
+      "evaluation": "State operations, offensive/defensive capabilities",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GEOPOLITICS",
+      "important_output": "State operations, offensive/defensive capabilities"
+    },
+    {
+      "id": "military-ai",
+      "domain": "defence",
+      "name": "Military AI",
+      "evaluation": "AI-enabled targeting, autonomy, logistics",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "MILITARY + AI + RESEARCH",
+      "important_output": "AI-enabled targeting, autonomy, logistics"
+    },
+    {
+      "id": "defence-policy",
+      "domain": "defence",
+      "name": "Defence Policy",
+      "evaluation": "Strategy, budgets, doctrine",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + GEOPOLITICS",
+      "important_output": "Strategy, budgets, doctrine"
+    },
+    {
+      "id": "strategic-capabilities",
+      "domain": "defence",
+      "name": "Strategic Capabilities",
+      "evaluation": "Nuclear, missile defence, strategic assets",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GEOPOLITICS + MILITARY",
+      "important_output": "Nuclear, missile defence, strategic assets"
+    },
+    {
+      "id": "defence-procurement",
+      "domain": "defence",
+      "name": "Defence Procurement",
+      "evaluation": "Major procurement decisions and industrial impact",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "PROCUREMENT + MILITARY",
+      "important_output": "Major procurement decisions and industrial impact"
+    },
+    {
+      "id": "cves",
+      "domain": "cybersecurity",
+      "name": "CVEs",
+      "evaluation": "CVE severity, affected products, exploitability",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + NVD/CVE feeds where available",
+      "important_output": "CVE severity, affected products, exploitability"
+    },
+    {
+      "id": "vulnerabilities",
+      "domain": "cybersecurity",
+      "name": "Vulnerabilities",
+      "evaluation": "Technical weakness, affected systems, remediation",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GITHUB",
+      "important_output": "Technical weakness, affected systems, remediation"
+    },
+    {
+      "id": "exploits",
+      "domain": "cybersecurity",
+      "name": "Exploits",
+      "evaluation": "Exploit availability, weaponization, exploitation evidence",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GDELT",
+      "important_output": "Exploit availability, weaponization, exploitation evidence"
+    },
+    {
+      "id": "breaches",
+      "domain": "cybersecurity",
+      "name": "Breaches",
+      "evaluation": "Victim, data exposure, attack vector",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + NEWS-GLOBAL",
+      "important_output": "Victim, data exposure, attack vector"
+    },
+    {
+      "id": "ransomware",
+      "domain": "cybersecurity",
+      "name": "Ransomware",
+      "evaluation": "Campaign, victim, malware, attribution",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GEOPOLITICS",
+      "important_output": "Campaign, victim, malware, attribution"
+    },
+    {
+      "id": "malware",
+      "domain": "cybersecurity",
+      "name": "Malware",
+      "evaluation": "Malware family, behavior, distribution",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + RESEARCH",
+      "important_output": "Malware family, behavior, distribution"
+    },
+    {
+      "id": "threat-actors",
+      "domain": "cybersecurity",
+      "name": "Threat Actors",
+      "evaluation": "Actor identity, TTPs, attribution confidence",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GEOPOLITICS",
+      "important_output": "Actor identity, TTPs, attribution confidence"
+    },
+    {
+      "id": "campaigns",
+      "domain": "cybersecurity",
+      "name": "Campaigns",
+      "evaluation": "Campaign timeline, targets, infrastructure",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GDELT",
+      "important_output": "Campaign timeline, targets, infrastructure"
+    },
+    {
+      "id": "identity",
+      "domain": "cybersecurity",
+      "name": "Identity",
+      "evaluation": "IAM, authentication, identity attacks",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + NEWS-TECH",
+      "important_output": "IAM, authentication, identity attacks"
+    },
+    {
+      "id": "cloud-security",
+      "domain": "cybersecurity",
+      "name": "Cloud Security",
+      "evaluation": "Cloud vulnerabilities/misconfiguration",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GITHUB",
+      "important_output": "Cloud vulnerabilities/misconfiguration"
+    },
+    {
+      "id": "application-security",
+      "domain": "cybersecurity",
+      "name": "Application Security",
+      "evaluation": "Web/API/software vulnerabilities",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GITHUB",
+      "important_output": "Web/API/software vulnerabilities"
+    },
+    {
+      "id": "ai-security",
+      "domain": "cybersecurity",
+      "name": "AI Security",
+      "evaluation": "Prompt injection, model attacks, AI supply chain",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + AI + RESEARCH",
+      "important_output": "Prompt injection, model attacks, AI supply chain"
+    },
+    {
+      "id": "security-tools",
+      "domain": "cybersecurity",
+      "name": "Security Tools",
+      "evaluation": "New scanners, EDR, SIEM, security tooling",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CYBER + GITHUB",
+      "important_output": "New scanners, EDR, SIEM, security tooling"
+    },
+    {
+      "id": "national-cybersecurity-policy",
+      "domain": "cybersecurity",
+      "name": "National Cybersecurity Policy",
+      "evaluation": "Laws, national strategy, incident response",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + CYBER",
+      "important_output": "Laws, national strategy, incident response"
+    },
+    {
+      "id": "chip-design",
+      "domain": "semiconductors",
+      "name": "Chip Design",
+      "evaluation": "Architecture, process, IP, performance",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + RESEARCH",
+      "important_output": "Architecture, process, IP, performance"
+    },
+    {
+      "id": "fabs",
+      "domain": "semiconductors",
+      "name": "Fabs",
+      "evaluation": "New fabs, capacity, geography, investment",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + GOV",
+      "important_output": "New fabs, capacity, geography, investment"
+    },
+    {
+      "id": "foundries",
+      "domain": "semiconductors",
+      "name": "Foundries",
+      "evaluation": "Manufacturing contracts, nodes, capacity",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + COMPANY",
+      "important_output": "Manufacturing contracts, nodes, capacity"
+    },
+    {
+      "id": "gpus",
+      "domain": "semiconductors",
+      "name": "GPUs",
+      "evaluation": "Architecture, performance, availability",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + AI",
+      "important_output": "Architecture, performance, availability"
+    },
+    {
+      "id": "cpus",
+      "domain": "semiconductors",
+      "name": "CPUs",
+      "evaluation": "Architecture, performance, roadmap",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + GITHUB",
+      "important_output": "Architecture, performance, roadmap"
+    },
+    {
+      "id": "accelerators",
+      "domain": "semiconductors",
+      "name": "Accelerators",
+      "evaluation": "AI/HPC accelerator capabilities",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + AI",
+      "important_output": "AI/HPC accelerator capabilities"
+    },
+    {
+      "id": "memory",
+      "domain": "semiconductors",
+      "name": "Memory",
+      "evaluation": "DRAM/NAND/HBM changes",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + MARKET",
+      "important_output": "DRAM/NAND/HBM changes"
+    },
+    {
+      "id": "hbm",
+      "domain": "semiconductors",
+      "name": "HBM",
+      "evaluation": "HBM generations, capacity, suppliers",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + COMPANY",
+      "important_output": "HBM generations, capacity, suppliers"
+    },
+    {
+      "id": "manufacturing-equipment",
+      "domain": "semiconductors",
+      "name": "Manufacturing Equipment",
+      "evaluation": "Lithography, deposition, inspection",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + RESEARCH",
+      "important_output": "Lithography, deposition, inspection"
+    },
+    {
+      "id": "packaging",
+      "domain": "semiconductors",
+      "name": "Packaging",
+      "evaluation": "Advanced packaging, chiplets, CoWoS etc.",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + RESEARCH",
+      "important_output": "Advanced packaging, chiplets, CoWoS etc."
+    },
+    {
+      "id": "process-nodes",
+      "domain": "semiconductors",
+      "name": "Process Nodes",
+      "evaluation": "Node transitions, yield, performance",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + RESEARCH",
+      "important_output": "Node transitions, yield, performance"
+    },
+    {
+      "id": "export-controls",
+      "domain": "semiconductors",
+      "name": "Export Controls",
+      "evaluation": "Restrictions, licenses, affected companies",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + GEOPOLITICS",
+      "important_output": "Restrictions, licenses, affected companies"
+    },
+    {
+      "id": "supply-chains",
+      "domain": "semiconductors",
+      "name": "Supply Chains",
+      "evaluation": "Dependencies, disruptions, localization",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + TRADE",
+      "important_output": "Dependencies, disruptions, localization"
+    },
+    {
+      "id": "capacity",
+      "domain": "semiconductors",
+      "name": "Capacity",
+      "evaluation": "Production capacity, utilization, expansion",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SEMICONDUCTOR + MARKET",
+      "important_output": "Production capacity, utilization, expansion"
+    },
+    {
+      "id": "funding",
+      "domain": "startups-vc",
+      "name": "Funding",
+      "evaluation": "Round size, investors, valuation, use of funds",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "STARTUP",
+      "important_output": "Round size, investors, valuation, use of funds"
+    },
+    {
+      "id": "seed-series-rounds",
+      "domain": "startups-vc",
+      "name": "Seed / Series Rounds",
+      "evaluation": "Stage, traction, lead investor",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "STARTUP",
+      "important_output": "Stage, traction, lead investor"
+    },
+    {
+      "id": "vc-activity",
+      "domain": "startups-vc",
+      "name": "VC Activity",
+      "evaluation": "Sector/geography/volume trends",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "STARTUP + FINANCE",
+      "important_output": "Sector/geography/volume trends"
+    },
+    {
+      "id": "acquisitions",
+      "domain": "startups-vc",
+      "name": "Acquisitions",
+      "evaluation": "Buyer, target, strategic rationale",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "STARTUP + COMPANY",
+      "important_output": "Buyer, target, strategic rationale"
+    },
+    {
+      "id": "ipos",
+      "domain": "startups-vc",
+      "name": "IPOs",
+      "evaluation": "Filing, valuation, pricing, market reception",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "FINANCE + GOV-US",
+      "important_output": "Filing, valuation, pricing, market reception"
+    },
+    {
+      "id": "accelerators",
+      "domain": "startups-vc",
+      "name": "Accelerators",
+      "evaluation": "New cohorts, programs, investment",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "STARTUP + OPPORTUNITY",
+      "important_output": "New cohorts, programs, investment"
+    },
+    {
+      "id": "valuation",
+      "domain": "startups-vc",
+      "name": "Valuation",
+      "evaluation": "Changes, financing valuation, market comparison",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "FINANCE + STARTUP",
+      "important_output": "Changes, financing valuation, market comparison"
+    },
+    {
+      "id": "exits",
+      "domain": "startups-vc",
+      "name": "Exits",
+      "evaluation": "Acquisition/IPO/secondary",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "STARTUP + FINANCE",
+      "important_output": "Acquisition/IPO/secondary"
+    },
+    {
+      "id": "launches",
+      "domain": "startups-vc",
+      "name": "Launches",
+      "evaluation": "Product/company launch and traction",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "STARTUP + NEWS-TECH",
+      "important_output": "Product/company launch and traction"
+    },
+    {
+      "id": "failures",
+      "domain": "startups-vc",
+      "name": "Failures",
+      "evaluation": "Shutdown, layoffs, insolvency, funding failure",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "STARTUP + NEWS-GLOBAL",
+      "important_output": "Shutdown, layoffs, insolvency, funding failure"
+    },
+    {
+      "id": "regulation",
+      "domain": "government-policy",
+      "name": "Regulation",
+      "evaluation": "New binding requirements",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + NEWS-GLOBAL",
+      "important_output": "New binding requirements"
+    },
+    {
+      "id": "legislation",
+      "domain": "government-policy",
+      "name": "Legislation",
+      "evaluation": "Bills, passage, effective date",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV",
+      "important_output": "Bills, passage, effective date"
+    },
+    {
+      "id": "ministries",
+      "domain": "government-policy",
+      "name": "Ministries",
+      "evaluation": "Announcements, programs, leadership",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV",
+      "important_output": "Announcements, programs, leadership"
+    },
+    {
+      "id": "digital-policy",
+      "domain": "government-policy",
+      "name": "Digital Policy",
+      "evaluation": "Digital infrastructure/governance policy",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + NEWS-TECH",
+      "important_output": "Digital infrastructure/governance policy"
+    },
+    {
+      "id": "ai-policy",
+      "domain": "government-policy",
+      "name": "AI Policy",
+      "evaluation": "AI strategy/regulation/investment",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + AI",
+      "important_output": "AI strategy/regulation/investment"
+    },
+    {
+      "id": "semiconductor-policy",
+      "domain": "government-policy",
+      "name": "Semiconductor Policy",
+      "evaluation": "Incentives/export controls",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + SEMICONDUCTOR",
+      "important_output": "Incentives/export controls"
+    },
+    {
+      "id": "industrial-policy",
+      "domain": "government-policy",
+      "name": "Industrial Policy",
+      "evaluation": "Industry incentives/localization",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + MANUFACTURING",
+      "important_output": "Industry incentives/localization"
+    },
+    {
+      "id": "subsidies",
+      "domain": "government-policy",
+      "name": "Subsidies",
+      "evaluation": "Amount, eligibility, recipients, deadline",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + OPPORTUNITY",
+      "important_output": "Amount, eligibility, recipients, deadline"
+    },
+    {
+      "id": "grants",
+      "domain": "government-policy",
+      "name": "Grants",
+      "evaluation": "Grant program, eligibility, deadline",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "OPPORTUNITY",
+      "important_output": "Grant program, eligibility, deadline"
+    },
+    {
+      "id": "tenders",
+      "domain": "government-policy",
+      "name": "Tenders",
+      "evaluation": "Buyer, scope, deadline, value",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "PROCUREMENT",
+      "important_output": "Buyer, scope, deadline, value"
+    },
+    {
+      "id": "implementation",
+      "domain": "government-policy",
+      "name": "Implementation",
+      "evaluation": "Whether announced policy is actually implemented",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + NEWS-GLOBAL",
+      "important_output": "Whether announced policy is actually implemented"
+    },
+    {
+      "id": "policy-outcomes",
+      "domain": "government-policy",
+      "name": "Policy Outcomes",
+      "evaluation": "Measurable effect of existing policy",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + FINANCE + TRADE",
+      "important_output": "Measurable effect of existing policy"
+    },
+    {
+      "id": "state-provincial-policy",
+      "domain": "regional-government",
+      "name": "State/Provincial Policy",
+      "evaluation": "Local regulation/program",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "REGIONAL + GOV",
+      "important_output": "Local regulation/program"
+    },
+    {
+      "id": "incentives",
+      "domain": "regional-government",
+      "name": "Incentives",
+      "evaluation": "Tax/investment incentives",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "REGIONAL + OPPORTUNITY",
+      "important_output": "Tax/investment incentives"
+    },
+    {
+      "id": "industrial-parks",
+      "domain": "regional-government",
+      "name": "Industrial Parks",
+      "evaluation": "Development, tenants, capacity",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "REGIONAL + MANUFACTURING",
+      "important_output": "Development, tenants, capacity"
+    },
+    {
+      "id": "infrastructure",
+      "domain": "regional-government",
+      "name": "Infrastructure",
+      "evaluation": "Regional infrastructure projects",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "REGIONAL + PROCUREMENT",
+      "important_output": "Regional infrastructure projects"
+    },
+    {
+      "id": "local-regulation",
+      "domain": "regional-government",
+      "name": "Local Regulation",
+      "evaluation": "Local compliance changes",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "REGIONAL",
+      "important_output": "Local compliance changes"
+    },
+    {
+      "id": "regional-investment",
+      "domain": "regional-government",
+      "name": "Regional Investment",
+      "evaluation": "Investment commitments/projects",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "REGIONAL + FINANCE",
+      "important_output": "Investment commitments/projects"
+    },
+    {
+      "id": "regional-technology-policy",
+      "domain": "regional-government",
+      "name": "Regional Technology Policy",
+      "evaluation": "Tech/AI/digital policy",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "REGIONAL + AI",
+      "important_output": "Tech/AI/digital policy"
+    },
+    {
+      "id": "bilateral-relations",
+      "domain": "geopolitics",
+      "name": "Bilateral Relations",
+      "evaluation": "Diplomatic/economic/security relationship changes",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GEOPOLITICS",
+      "important_output": "Diplomatic/economic/security relationship changes"
+    },
+    {
+      "id": "alliances",
+      "domain": "geopolitics",
+      "name": "Alliances",
+      "evaluation": "New commitments, membership, strategic shifts",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GEOPOLITICS + MILITARY",
+      "important_output": "New commitments, membership, strategic shifts"
+    },
+    {
+      "id": "sanctions",
+      "domain": "geopolitics",
+      "name": "Sanctions",
+      "evaluation": "New sanctions, entities, enforcement",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + GEOPOLITICS + FINANCE",
+      "important_output": "New sanctions, entities, enforcement"
+    },
+    {
+      "id": "wars-conflicts",
+      "domain": "geopolitics",
+      "name": "Wars / Conflicts",
+      "evaluation": "Territory, attacks, escalation/de-escalation",
+      "required_evidence": "ACLED + GDELT + NEWS-GLOBAL",
+      "resources": "ACLED + GDELT + NEWS-GLOBAL",
+      "important_output": "Territory, attacks, escalation/de-escalation"
+    },
+    {
+      "id": "diplomacy",
+      "domain": "geopolitics",
+      "name": "Diplomacy",
+      "evaluation": "Talks, agreements, official positions",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + NEWS-GLOBAL",
+      "important_output": "Talks, agreements, official positions"
+    },
+    {
+      "id": "trade",
+      "domain": "geopolitics",
+      "name": "Trade",
+      "evaluation": "Tariffs, restrictions, agreements",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "TRADE + GOV",
+      "important_output": "Tariffs, restrictions, agreements"
+    },
+    {
+      "id": "technology-restrictions",
+      "domain": "geopolitics",
+      "name": "Technology Restrictions",
+      "evaluation": "Export controls, investment restrictions",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + SEMICONDUCTOR",
+      "important_output": "Export controls, investment restrictions"
+    },
+    {
+      "id": "strategic-supply-chains",
+      "domain": "geopolitics",
+      "name": "Strategic Supply Chains",
+      "evaluation": "Critical dependency/re-routing",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "TRADE + ENERGY + SEMICONDUCTOR",
+      "important_output": "Critical dependency/re-routing"
+    },
+    {
+      "id": "strategic-competition",
+      "domain": "geopolitics",
+      "name": "Strategic Competition",
+      "evaluation": "Long-term state competition",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GEOPOLITICS + NEWS-GLOBAL",
+      "important_output": "Long-term state competition"
+    },
+    {
+      "id": "regional-blocs",
+      "domain": "geopolitics",
+      "name": "Regional Blocs",
+      "evaluation": "BRICS/EU/NATO/etc. policy/economic shifts",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GEOPOLITICS + GOV",
+      "important_output": "BRICS/EU/NATO/etc. policy/economic shifts"
+    },
+    {
+      "id": "oil",
+      "domain": "energy",
+      "name": "Oil",
+      "evaluation": "Price, supply, inventories, production, disruptions",
+      "required_evidence": "EIA + IEA + MARKET",
+      "resources": "EIA + IEA + MARKET",
+      "important_output": "Price, supply, inventories, production, disruptions"
+    },
+    {
+      "id": "gas",
+      "domain": "energy",
+      "name": "Gas",
+      "evaluation": "Prices, storage, LNG, pipelines",
+      "required_evidence": "EIA + GIE AGSI+",
+      "resources": "EIA + GIE AGSI+",
+      "important_output": "Prices, storage, LNG, pipelines"
+    },
+    {
+      "id": "electricity",
+      "domain": "energy",
+      "name": "Electricity",
+      "evaluation": "Prices, generation, demand",
+      "required_evidence": "EIA + energy datasets",
+      "resources": "EIA + energy datasets",
+      "important_output": "Prices, generation, demand"
+    },
+    {
+      "id": "renewables",
+      "domain": "energy",
+      "name": "Renewables",
+      "evaluation": "Capacity, generation, investment",
+      "required_evidence": "EIA + IEA + NEWS-TECH",
+      "resources": "EIA + IEA + NEWS-TECH",
+      "important_output": "Capacity, generation, investment"
+    },
+    {
+      "id": "nuclear",
+      "domain": "energy",
+      "name": "Nuclear",
+      "evaluation": "Reactors, construction, policy",
+      "required_evidence": "IEA + GOV + RESEARCH",
+      "resources": "IEA + GOV + RESEARCH",
+      "important_output": "Reactors, construction, policy"
+    },
+    {
+      "id": "batteries",
+      "domain": "energy",
+      "name": "Batteries",
+      "evaluation": "Cell tech, capacity, supply chain",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "NEWS-TECH + SEMICONDUCTOR + RESEARCH",
+      "important_output": "Cell tech, capacity, supply chain"
+    },
+    {
+      "id": "grids",
+      "domain": "energy",
+      "name": "Grids",
+      "evaluation": "Grid investment, outages, interconnection",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "ENERGY + GOV",
+      "important_output": "Grid investment, outages, interconnection"
+    },
+    {
+      "id": "energy-companies",
+      "domain": "energy",
+      "name": "Energy Companies",
+      "evaluation": "Earnings, projects, strategy",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + ENERGY",
+      "important_output": "Earnings, projects, strategy"
+    },
+    {
+      "id": "energy-markets",
+      "domain": "energy",
+      "name": "Energy Markets",
+      "evaluation": "Price/market structure changes",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "ENERGY + FINANCE",
+      "important_output": "Price/market structure changes"
+    },
+    {
+      "id": "production",
+      "domain": "energy",
+      "name": "Production",
+      "evaluation": "Country/company production changes",
+      "required_evidence": "EIA + IEA",
+      "resources": "EIA + IEA",
+      "important_output": "Country/company production changes"
+    },
+    {
+      "id": "energy-transition",
+      "domain": "energy",
+      "name": "Energy Transition",
+      "evaluation": "Decarbonization, investment, technology",
+      "required_evidence": "IEA + RESEARCH",
+      "resources": "IEA + RESEARCH",
+      "important_output": "Decarbonization, investment, technology"
+    },
+    {
+      "id": "energy-security",
+      "domain": "energy",
+      "name": "Energy Security",
+      "evaluation": "Supply vulnerabilities and resilience",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "ENERGY + GEOPOLITICS",
+      "important_output": "Supply vulnerabilities and resilience"
+    },
+    {
+      "id": "energy-infrastructure",
+      "domain": "energy",
+      "name": "Energy Infrastructure",
+      "evaluation": "Pipelines, LNG, refineries, power assets",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "ENERGY + GEOPOLITICS",
+      "important_output": "Pipelines, LNG, refineries, power assets"
+    },
+    {
+      "id": "ports",
+      "domain": "shipping-logistics",
+      "name": "Ports",
+      "evaluation": "Congestion, capacity, disruptions",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SHIPPING + AISStream",
+      "important_output": "Congestion, capacity, disruptions"
+    },
+    {
+      "id": "shipping-lines",
+      "domain": "shipping-logistics",
+      "name": "Shipping Lines",
+      "evaluation": "Fleet, routes, earnings, capacity",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SHIPPING + COMPANY",
+      "important_output": "Fleet, routes, earnings, capacity"
+    },
+    {
+      "id": "freight",
+      "domain": "shipping-logistics",
+      "name": "Freight",
+      "evaluation": "Rates, demand, capacity",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SHIPPING + MARKET",
+      "important_output": "Rates, demand, capacity"
+    },
+    {
+      "id": "logistics-infrastructure",
+      "domain": "shipping-logistics",
+      "name": "Logistics Infrastructure",
+      "evaluation": "Warehouses, corridors, terminals",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SHIPPING + PROCUREMENT",
+      "important_output": "Warehouses, corridors, terminals"
+    },
+    {
+      "id": "chokepoints",
+      "domain": "shipping-logistics",
+      "name": "Chokepoints",
+      "evaluation": "Suez, Panama, Hormuz, Malacca etc.",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SHIPPING + GEOPOLITICS",
+      "important_output": "Suez, Panama, Hormuz, Malacca etc."
+    },
+    {
+      "id": "maritime-trade",
+      "domain": "shipping-logistics",
+      "name": "Maritime Trade",
+      "evaluation": "Volumes, routes, disruption",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SHIPPING + TRADE",
+      "important_output": "Volumes, routes, disruption"
+    },
+    {
+      "id": "container-rates",
+      "domain": "shipping-logistics",
+      "name": "Container Rates",
+      "evaluation": "Spot/contract rate movement",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SHIPPING + MARKET",
+      "important_output": "Spot/contract rate movement"
+    },
+    {
+      "id": "disruptions",
+      "domain": "shipping-logistics",
+      "name": "Disruptions",
+      "evaluation": "Port/route/supply disruption",
+      "required_evidence": "AISStream + NEWS-GLOBAL",
+      "resources": "AISStream + NEWS-GLOBAL",
+      "important_output": "Port/route/supply disruption"
+    },
+    {
+      "id": "resilience",
+      "domain": "shipping-logistics",
+      "name": "Resilience",
+      "evaluation": "Diversification, rerouting, inventory",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "SHIPPING + TRADE",
+      "important_output": "Diversification, rerouting, inventory"
+    },
+    {
+      "id": "factories",
+      "domain": "manufacturing",
+      "name": "Factories",
+      "evaluation": "New facilities, investment, capacity",
+      "required_evidence": "MANUFACTURING + GOV",
+      "resources": "MANUFACTURING + GOV",
+      "important_output": "New facilities, investment, capacity"
+    },
+    {
+      "id": "industrial-corridors",
+      "domain": "manufacturing",
+      "name": "Industrial Corridors",
+      "evaluation": "Infrastructure/industrial ecosystem development",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "REGIONAL + GOV",
+      "important_output": "Infrastructure/industrial ecosystem development"
+    },
+    {
+      "id": "incentives",
+      "domain": "manufacturing",
+      "name": "Incentives",
+      "evaluation": "Subsidies/tax incentives",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + OPPORTUNITY",
+      "important_output": "Subsidies/tax incentives"
+    },
+    {
+      "id": "reshoring",
+      "domain": "manufacturing",
+      "name": "Reshoring",
+      "evaluation": "Manufacturing relocation",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "TRADE + GOV",
+      "important_output": "Manufacturing relocation"
+    },
+    {
+      "id": "localization",
+      "domain": "manufacturing",
+      "name": "Localization",
+      "evaluation": "Local content/capacity",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + COMPANY",
+      "important_output": "Local content/capacity"
+    },
+    {
+      "id": "capacity",
+      "domain": "manufacturing",
+      "name": "Capacity",
+      "evaluation": "Production capacity/utilization",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + MARKET",
+      "important_output": "Production capacity/utilization"
+    },
+    {
+      "id": "exports",
+      "domain": "manufacturing",
+      "name": "Exports",
+      "evaluation": "Industrial export changes",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "TRADE",
+      "important_output": "Industrial export changes"
+    },
+    {
+      "id": "industrial-strategy",
+      "domain": "manufacturing",
+      "name": "Industrial Strategy",
+      "evaluation": "National manufacturing strategy",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + TRADE",
+      "important_output": "National manufacturing strategy"
+    },
+    {
+      "id": "executives",
+      "domain": "leaders-people",
+      "name": "Executives",
+      "evaluation": "Appointment, departure, strategy, statements",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "PEOPLE + COMPANY",
+      "important_output": "Appointment, departure, strategy, statements"
+    },
+    {
+      "id": "founders",
+      "domain": "leaders-people",
+      "name": "Founders",
+      "evaluation": "Company strategy, product/funding influence",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "PEOPLE + STARTUP",
+      "important_output": "Company strategy, product/funding influence"
+    },
+    {
+      "id": "researchers",
+      "domain": "leaders-people",
+      "name": "Researchers",
+      "evaluation": "Research breakthroughs, affiliations",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH",
+      "important_output": "Research breakthroughs, affiliations"
+    },
+    {
+      "id": "government-leaders",
+      "domain": "leaders-people",
+      "name": "Government Leaders",
+      "evaluation": "Policy decisions/statements",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + NEWS-GLOBAL",
+      "important_output": "Policy decisions/statements"
+    },
+    {
+      "id": "appointments",
+      "domain": "leaders-people",
+      "name": "Appointments",
+      "evaluation": "Who/role/reason/timing",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "GOV + COMPANY",
+      "important_output": "Who/role/reason/timing"
+    },
+    {
+      "id": "departures",
+      "domain": "leaders-people",
+      "name": "Departures",
+      "evaluation": "Why/impact/replacement",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + NEWS-GLOBAL",
+      "important_output": "Why/impact/replacement"
+    },
+    {
+      "id": "statements",
+      "domain": "leaders-people",
+      "name": "Statements",
+      "evaluation": "Exact source position vs interpretation",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "NEWS-GLOBAL + official",
+      "important_output": "Exact source position vs interpretation"
+    },
+    {
+      "id": "strategic-decisions",
+      "domain": "leaders-people",
+      "name": "Strategic Decisions",
+      "evaluation": "Decision + evidence + consequences",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "PEOPLE + COMPANY + GOV",
+      "important_output": "Decision + evidence + consequences"
+    },
+    {
+      "id": "product-launches",
+      "domain": "technology-companies",
+      "name": "Product Launches",
+      "evaluation": "Product, capability, availability, differentiation",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + NEWS-TECH",
+      "important_output": "Product, capability, availability, differentiation"
+    },
+    {
+      "id": "strategy",
+      "domain": "technology-companies",
+      "name": "Strategy",
+      "evaluation": "Corporate direction and strategic shifts",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + FINANCE",
+      "important_output": "Corporate direction and strategic shifts"
+    },
+    {
+      "id": "acquisitions",
+      "domain": "technology-companies",
+      "name": "Acquisitions",
+      "evaluation": "Target, price if available, rationale",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + FINANCE",
+      "important_output": "Target, price if available, rationale"
+    },
+    {
+      "id": "partnerships",
+      "domain": "technology-companies",
+      "name": "Partnerships",
+      "evaluation": "Parties, scope, commercial/technical implications",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY",
+      "important_output": "Parties, scope, commercial/technical implications"
+    },
+    {
+      "id": "earnings",
+      "domain": "technology-companies",
+      "name": "Earnings",
+      "evaluation": "Revenue, growth, margins, guidance",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "FINANCE + COMPANY",
+      "important_output": "Revenue, growth, margins, guidance"
+    },
+    {
+      "id": "infrastructure",
+      "domain": "technology-companies",
+      "name": "Infrastructure",
+      "evaluation": "Data centers, compute, cloud infrastructure",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + AI + SEMICONDUCTOR",
+      "important_output": "Data centers, compute, cloud infrastructure"
+    },
+    {
+      "id": "platform-changes",
+      "domain": "technology-companies",
+      "name": "Platform Changes",
+      "evaluation": "APIs, pricing, policies, ecosystem changes",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + GITHUB",
+      "important_output": "APIs, pricing, policies, ecosystem changes"
+    },
+    {
+      "id": "corporate-ai-technology-strategy",
+      "domain": "technology-companies",
+      "name": "Corporate AI / Technology Strategy",
+      "evaluation": "AI investment, products, organizational changes",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "COMPANY + AI + FINANCE",
+      "important_output": "AI investment, products, organizational changes"
+    },
+    {
+      "id": "google-i-o",
+      "domain": "conferences",
+      "name": "Google I/O",
+      "evaluation": "Product/model/platform announcements",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CONFERENCES + NEWS-TECH",
+      "important_output": "Product/model/platform announcements"
+    },
+    {
+      "id": "gtc",
+      "domain": "conferences",
+      "name": "GTC",
+      "evaluation": "GPU/AI infrastructure announcements",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CONFERENCES + SEMICONDUCTOR",
+      "important_output": "GPU/AI infrastructure announcements"
+    },
+    {
+      "id": "wwdc",
+      "domain": "conferences",
+      "name": "WWDC",
+      "evaluation": "Apple platform/developer announcements",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CONFERENCES + NEWS-TECH",
+      "important_output": "Apple platform/developer announcements"
+    },
+    {
+      "id": "neurips",
+      "domain": "conferences",
+      "name": "NeurIPS",
+      "evaluation": "Important research/results",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CONFERENCES + RESEARCH",
+      "important_output": "Important research/results"
+    },
+    {
+      "id": "icml",
+      "domain": "conferences",
+      "name": "ICML",
+      "evaluation": "ML research/results",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CONFERENCES + RESEARCH",
+      "important_output": "ML research/results"
+    },
+    {
+      "id": "cvpr",
+      "domain": "conferences",
+      "name": "CVPR",
+      "evaluation": "Vision/multimodal research",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CONFERENCES + RESEARCH",
+      "important_output": "Vision/multimodal research"
+    },
+    {
+      "id": "major-industry-events",
+      "domain": "conferences",
+      "name": "Major Industry Events",
+      "evaluation": "Major launches/strategy announcements",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "CONFERENCES + NEWS-GLOBAL",
+      "important_output": "Major launches/strategy announcements"
+    },
+    {
+      "id": "keynotes",
+      "domain": "conferences",
+      "name": "Keynotes",
+      "evaluation": "Actual claims/demos, not headline interpretation",
+      "required_evidence": "YouTube configured channels + CONFERENCES",
+      "resources": "YouTube configured channels + CONFERENCES",
+      "important_output": "Actual claims/demos, not headline interpretation"
+    },
+    {
+      "id": "ai-research",
+      "domain": "research",
+      "name": "AI Research",
+      "evaluation": "Novel method/result/reproducibility",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + GITHUB",
+      "important_output": "Novel method/result/reproducibility"
+    },
+    {
+      "id": "computer-science",
+      "domain": "research",
+      "name": "Computer Science",
+      "evaluation": "Algorithms/systems/software research",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH",
+      "important_output": "Algorithms/systems/software research"
+    },
+    {
+      "id": "medicine",
+      "domain": "research",
+      "name": "Medicine",
+      "evaluation": "Clinical/scientific result, methodology",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + official medical sources",
+      "important_output": "Clinical/scientific result, methodology"
+    },
+    {
+      "id": "economics",
+      "domain": "research",
+      "name": "Economics",
+      "evaluation": "Models/data/policy implications",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + FINANCE",
+      "important_output": "Models/data/policy implications"
+    },
+    {
+      "id": "physics",
+      "domain": "research",
+      "name": "Physics",
+      "evaluation": "Experimental/theoretical breakthrough",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH",
+      "important_output": "Experimental/theoretical breakthrough"
+    },
+    {
+      "id": "climate",
+      "domain": "research",
+      "name": "Climate",
+      "evaluation": "Climate science/model/observation",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + ENVIRONMENT",
+      "important_output": "Climate science/model/observation"
+    },
+    {
+      "id": "engineering",
+      "domain": "research",
+      "name": "Engineering",
+      "evaluation": "Engineering method/system improvement",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + GITHUB",
+      "important_output": "Engineering method/system improvement"
+    },
+    {
+      "id": "breakthroughs",
+      "domain": "research",
+      "name": "Breakthroughs",
+      "evaluation": "Evidence that result materially changes capability/knowledge",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH + NEWS-GLOBAL",
+      "important_output": "Evidence that result materially changes capability/knowledge"
+    },
+    {
+      "id": "preprints",
+      "domain": "research",
+      "name": "Preprints",
+      "evaluation": "Novelty + uncertainty + lack of peer review",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH",
+      "important_output": "Novelty + uncertainty + lack of peer review"
+    },
+    {
+      "id": "peer-reviewed-papers",
+      "domain": "research",
+      "name": "Peer-reviewed Papers",
+      "evaluation": "Published evidence, methodology, significance",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "RESEARCH",
+      "important_output": "Published evidence, methodology, significance"
+    },
+    {
+      "id": "grants",
+      "domain": "opportunities",
+      "name": "Grants",
+      "evaluation": "Issuer, eligibility, amount, deadline",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "issuer, eligibility, deadline, URL",
+      "important_output": "Issuer, eligibility, amount, deadline"
+    },
+    {
+      "id": "tenders",
+      "domain": "opportunities",
+      "name": "Tenders",
+      "evaluation": "Buyer, scope, value, deadline",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "buyer, scope, deadline, URL",
+      "important_output": "Buyer, scope, value, deadline"
+    },
+    {
+      "id": "scholarships",
+      "domain": "opportunities",
+      "name": "Scholarships",
+      "evaluation": "Eligibility, institution, deadline",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "issuer, eligibility, deadline",
+      "important_output": "Eligibility, institution, deadline"
+    },
+    {
+      "id": "fellowships",
+      "domain": "opportunities",
+      "name": "Fellowships",
+      "evaluation": "Eligibility, duration, funding",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "issuer, eligibility, deadline",
+      "important_output": "Eligibility, duration, funding"
+    },
+    {
+      "id": "accelerators",
+      "domain": "opportunities",
+      "name": "Accelerators",
+      "evaluation": "Cohort, eligibility, funding, deadline",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "program, eligibility, deadline",
+      "important_output": "Cohort, eligibility, funding, deadline"
+    },
+    {
+      "id": "hackathons",
+      "domain": "opportunities",
+      "name": "Hackathons",
+      "evaluation": "Organizer, challenge, eligibility, date",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "organizer, deadline/date",
+      "important_output": "Organizer, challenge, eligibility, date"
+    },
+    {
+      "id": "funding-programs",
+      "domain": "opportunities",
+      "name": "Funding Programs",
+      "evaluation": "Government/private funding scheme",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "issuer, eligibility, deadline",
+      "important_output": "Government/private funding scheme"
+    },
+    {
+      "id": "government-schemes",
+      "domain": "opportunities",
+      "name": "Government Schemes",
+      "evaluation": "Scheme, beneficiary, eligibility",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "scheme + eligibility",
+      "important_output": "Scheme, beneficiary, eligibility"
+    },
+    {
+      "id": "calls-for-participation",
+      "domain": "opportunities",
+      "name": "Calls for Participation",
+      "evaluation": "Conference/research/program call",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "organizer, deadline, eligibility",
+      "important_output": "Conference/research/program call"
+    },
+    {
+      "id": "central-banks",
+      "domain": "finance",
+      "name": "Central Banks",
+      "evaluation": "Decision, guidance, balance sheet, rationale",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "FINANCE + GOV",
+      "important_output": "Decision, guidance, balance sheet, rationale"
+    },
+    {
+      "id": "interest-rates",
+      "domain": "finance",
+      "name": "Interest Rates",
+      "evaluation": "Rate change, expectations, market response",
+      "required_evidence": "FRED + central banks + MARKET",
+      "resources": "FRED + central banks + MARKET",
+      "important_output": "Rate change, expectations, market response"
+    },
+    {
+      "id": "inflation",
+      "domain": "finance",
+      "name": "Inflation",
+      "evaluation": "CPI/PCE/etc., drivers, trend",
+      "required_evidence": "FRED + official statistics",
+      "resources": "FRED + official statistics",
+      "important_output": "CPI/PCE/etc., drivers, trend"
+    },
+    {
+      "id": "gdp",
+      "domain": "finance",
+      "name": "GDP",
+      "evaluation": "Growth, revisions, components",
+      "required_evidence": "FRED + World Bank + official statistics",
+      "resources": "FRED + World Bank + official statistics",
+      "important_output": "Growth, revisions, components"
+    },
+    {
+      "id": "employment",
+      "domain": "finance",
+      "name": "Employment",
+      "evaluation": "Jobs, unemployment, wages",
+      "required_evidence": "FRED + official statistics",
+      "resources": "FRED + official statistics",
+      "important_output": "Jobs, unemployment, wages"
+    },
+    {
+      "id": "equities",
+      "domain": "finance",
+      "name": "Equities",
+      "evaluation": "Market movement, earnings, valuation, catalysts",
+      "required_evidence": "Finnhub + Yahoo + NEWS-GLOBAL",
+      "resources": "Finnhub + Yahoo + NEWS-GLOBAL",
+      "important_output": "Market movement, earnings, valuation, catalysts"
+    },
+    {
+      "id": "bonds",
+      "domain": "finance",
+      "name": "Bonds",
+      "evaluation": "Yields, spreads, issuance, rate sensitivity",
+      "required_evidence": "FRED + MARKET",
+      "resources": "FRED + MARKET",
+      "important_output": "Yields, spreads, issuance, rate sensitivity"
+    },
+    {
+      "id": "currencies",
+      "domain": "finance",
+      "name": "Currencies",
+      "evaluation": "FX movement, policy drivers, trade impact",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "MARKET + central banks",
+      "important_output": "FX movement, policy drivers, trade impact"
+    },
+    {
+      "id": "commodities",
+      "domain": "finance",
+      "name": "Commodities",
+      "evaluation": "Price/supply/demand/geopolitical drivers",
+      "required_evidence": "EIA + CFTC + MARKET",
+      "resources": "EIA + CFTC + MARKET",
+      "important_output": "Price/supply/demand/geopolitical drivers"
+    },
+    {
+      "id": "banking",
+      "domain": "finance",
+      "name": "Banking",
+      "evaluation": "Capital, liquidity, failures, regulation",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "FINANCE + GOV",
+      "important_output": "Capital, liquidity, failures, regulation"
+    },
+    {
+      "id": "credit",
+      "domain": "finance",
+      "name": "Credit",
+      "evaluation": "Credit spreads, defaults, lending conditions",
+      "required_evidence": "FRED + FINANCE",
+      "resources": "FRED + FINANCE",
+      "important_output": "Credit spreads, defaults, lending conditions"
+    },
+    {
+      "id": "asset-managers",
+      "domain": "finance",
+      "name": "Asset Managers",
+      "evaluation": "AUM, flows, strategy, holdings",
+      "required_evidence": "Primary or independently corroborated evidence",
+      "resources": "FINANCE + COMPANY",
+      "important_output": "AUM, flows, strategy, holdings"
+    },
+    {
+      "id": "macroeconomics",
+      "domain": "finance",
+      "name": "Macroeconomics",
+      "evaluation": "Cross-indicator macro regime changes",
+      "required_evidence": "FRED + IMF + World Bank + FINANCE",
+      "resources": "FRED + IMF + World Bank + FINANCE",
+      "important_output": "Cross-indicator macro regime changes"
+    }
+  ]
+}

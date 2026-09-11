@@ -43,15 +43,38 @@ def _profile_for(domain: str, micro_topic: str, profiles: dict[str, Any] | None)
 
 
 def catalog(
-    taxonomy: dict[str, Any], topics: list[dict[str, Any]], profiles: dict[str, Any] | None = None, *, strict: bool = False,
+    taxonomy: dict[str, Any], topics: list[dict[str, Any]], profiles: dict[str, Any] | None = None, matrix: dict[str, Any] | None = None, *, strict: bool = False,
 ) -> list[dict[str, Any]]:
     """Create a canonical Domain -> Topic -> Micro-topic catalog from configuration."""
     configured = {topic.get("key"): topic for topic in topics}
     entries: list[dict[str, Any]] = []
-    for domain, definition in taxonomy.get("domains", {}).items():
+    matrix_records = (matrix or {}).get("records", [])
+    if matrix_records:
+        domain_leaves = {
+            domain: [record for record in matrix_records if record.get("domain") == domain]
+            for domain in sorted({record.get("domain", "") for record in matrix_records})
+        }
+    else:
+        domain_leaves = {
+            domain: [{"id": micro_topic, "name": micro_topic.replace("-", " ")} for micro_topic in definition.get("topics", [])]
+            for domain, definition in taxonomy.get("domains", {}).items()
+        }
+    for domain, leaves in domain_leaves.items():
+        definition = taxonomy.get("domains", {}).get(domain, {})
         domain_topic = configured.get(domain, {})
-        for micro_topic in definition.get("topics", []):
+        for record in leaves:
+            micro_topic = record["id"]
             profile = _profile_for(domain, micro_topic, profiles)
+            if matrix_records:
+                profile = {
+                    **profile,
+                    "aliases": list(dict.fromkeys([record["name"], micro_topic.replace("-", " ")])),
+                    "positive_signals": [part.strip() for part in record["evaluation"].split(",") if len(part.strip()) > 3][:6],
+                    "required_evidence": [record["required_evidence"]],
+                    "source_hints": [part.strip() for part in record["resources"].split("+")],
+                    "analysis_contract": {**profile.get("analysis_contract", {}), "objective": record["evaluation"], "important_output": record["important_output"]},
+                    "profile_origin": "matrix",
+                }
             # Production profiles must opt into evidence signals. The legacy
             # two-argument API keeps its derived alias behavior for callers
             # that have not loaded the Phase 2 profile overlay yet.
@@ -75,8 +98,8 @@ def catalog(
                     "classification_threshold": float(profile.get("classification_threshold", 0.5)),
                     "priority": profile.get("priority", domain_topic.get("priority", 5)),
                     "enabled": profile.get("enabled", domain_topic.get("enabled", True)),
-                    "profile": {**profile, "profile_origin": "explicit" if explicit else "derived"},
-                    "profile_origin": "explicit" if explicit else "derived",
+                    "profile": {**profile, "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived")},
+                    "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived"),
                 }
             )
     return entries

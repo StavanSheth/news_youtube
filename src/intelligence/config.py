@@ -5,8 +5,9 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+import json
 
-from .validation import validate_microtopics, validate_sources, validate_taxonomy, validate_topics, validate_themes
+from .validation import validate_microtopic_matrix, validate_microtopics, validate_sources, validate_taxonomy, validate_topics, validate_themes
 from .contracts import VersionContract
 
 
@@ -19,6 +20,7 @@ class AppConfig:
     taxonomy: dict[str, Any]
     themes: list[dict[str, Any]]
     microtopics: dict[str, Any]
+    microtopic_matrix: dict[str, Any]
     entities: list[dict[str, Any]]
     versions: VersionContract
 
@@ -26,6 +28,11 @@ class AppConfig:
 def _read_yaml(path: Path) -> dict[str, Any]:
     with path.open(encoding="utf-8") as handle:
         return yaml.safe_load(handle) or {}
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    with path.open(encoding="utf-8-sig") as handle:
+        return json.load(handle)
 
 
 def load_config(root: Path) -> AppConfig:
@@ -39,6 +46,8 @@ def load_config(root: Path) -> AppConfig:
     validate_topics(topics, taxonomy)
     microtopics = _read_yaml(config_dir / "microtopics.yaml")
     validate_microtopics(microtopics, taxonomy)
+    matrix = _read_json(config_dir / "microtopic_matrix.json")
+    validate_microtopic_matrix(matrix)
     themes = _read_yaml(config_dir / "themes.yaml").get("themes", [])
     validate_themes(themes, taxonomy)
     settings = _read_yaml(config_dir / "settings.yaml")
@@ -57,6 +66,7 @@ def load_config(root: Path) -> AppConfig:
         taxonomy=_read_yaml(config_dir / "taxonomy.yaml"),
         themes=themes,
         microtopics=microtopics,
+        microtopic_matrix=matrix,
         entities=_read_yaml(config_dir / "entities.yaml").get("entities", []),
         versions=versions,
     )
