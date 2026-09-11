@@ -1,3 +1,5 @@
+intelligence:
+  profile_mode: production
 pipeline:
   timezone: Asia/Kolkata
   max_items_per_run: 20

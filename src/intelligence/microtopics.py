@@ -7,7 +7,7 @@ from typing import Any
 from .identity import make_micro_topic_id
 from .classification import KeywordClassifier
 from .statuses import IntelligenceStatus
-from .profiles import resolve_microtopic_profile
+from .profiles import compile_semantic_profile, resolve_microtopic_profile
 
 
 GENERIC_TERMS = {
@@ -34,9 +34,9 @@ def _signal(value: Any, *, default_strength: str = "medium") -> dict[str, str]:
 
 def score_micro_topic_chunk(chunk_text: str, classification: dict[str, Any]) -> dict[str, Any]:
     """Score one chunk using the already-authoritative classification signals."""
-    positive = [str(value) for value in classification.get("positive_signals", classification.get("signals", []))]
-    negative = [str(value) for value in classification.get("matched_negative_signals", classification.get("negative_signals", []))]
-    result = KeywordClassifier.score(chunk_text, positive, negative)
+    positive = list(classification.get("positive_signals", classification.get("signals", [])))
+    negative = list(classification.get("matched_negative_signals", classification.get("negative_signals", [])))
+    result = KeywordClassifier.score(chunk_text, positive, negative, signal_groups=classification.get("signal_groups", {}), disambiguators=classification.get("disambiguators", []))
     return {**result, "relevant": bool(result["matched_signals"] and not result["negative_signals"])}
 
 
@@ -72,11 +72,20 @@ def catalog(
             micro_topic = record["id"]
             profile = _profile_for(domain, micro_topic, profiles)
             if matrix_records:
-                matrix_aliases = [value for value in (record["name"], micro_topic.replace("-", " ")) if len(_words(str(value))) >= 2]
+                template_id = record.get("template", "technology_capability")
+                template = ((templates or {}).get("templates", templates or {}).get(template_id, {}))
+                explicit_override = ((profiles or {}).get("domains", {}).get(domain, {}).get("overrides", {}).get(micro_topic, {})) if profiles is not None else {}
+                semantic_profile = compile_semantic_profile(record, template, explicit_override)
                 matrix_profile = {
-                    # The matrix's evaluation text is an analysis objective, never a classifier feature list.
-                    "aliases": list(dict.fromkeys(matrix_aliases)),
-                    "positive_signals": [{"phrase": f"{record['name']} {suffix}", "strength": "strong"} for suffix in ("release", "announcement", "deployment")],
+                    "aliases": semantic_profile["aliases"],
+                    "positive_signals": semantic_profile["positive_signals"],
+                    "signal_groups": semantic_profile["signal_groups"],
+                    "required_signal_groups": semantic_profile["required_signal_groups"],
+                    "minimum_signal_groups": semantic_profile["minimum_signal_groups"],
+                    "disambiguators": semantic_profile["disambiguators"],
+                    "entity_signals": semantic_profile["entity_signals"],
+                    "event_signals": semantic_profile["event_signals"],
+                    "retrieval_intent": semantic_profile["retrieval_intent"],
                     "required_evidence": [record["required_evidence"]],
                     "source_hints": [part.strip() for part in record["resources"].split("+")],
                     "analysis_contract": {"objective": record["evaluation"], "important_output": record["important_output"]},
@@ -114,6 +123,9 @@ def catalog(
                     "exclusion_rules": list(profile.get("exclusion_rules", [])),
                     "entity_signals": list(profile.get("entity_signals", [])),
                     "event_signals": list(profile.get("event_signals", [])),
+                    "signal_groups": profile.get("signal_groups", {}),
+                    "required_signal_groups": list(profile.get("required_signal_groups", [])),
+                    "minimum_signal_groups": int(profile.get("minimum_signal_groups", 1)),
                     "secondary_threshold": float(profile.get("secondary_threshold", profile.get("classification_threshold", 0.25 if profiles is None else 0.5))),
                     "primary_threshold": float(profile.get("primary_threshold", profile.get("classification_threshold", 0.25 if profiles is None else 0.5))),
                     "max_secondary": int(profile.get("max_secondary", 1)),
@@ -122,6 +134,8 @@ def catalog(
                     "priority": profile.get("priority", domain_topic.get("priority", 5)),
                     "enabled": profile.get("enabled", domain_topic.get("enabled", True)),
                     "profile": {**profile, "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived")},
+                    "retrieval_intent": profile.get("retrieval_intent", {}),
+                    "analysis_contract": profile.get("analysis_contract", {}),
                     "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived"),
                     "profile_id": profile.get("profile_id", f"{domain}.{micro_topic}"),
                     "template_id": profile.get("template_id", template_id),
@@ -149,17 +163,30 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
         if not entry["enabled"]:
             continue
         positive_phrases = [{"phrase": alias, "strength": "strong"} for alias in entry.get("aliases", [])] + list(entry.get("positive_signals", []))
-        scored = KeywordClassifier.score(text_lower, positive_phrases, list(entry.get("negative_signals", [])), title=title_lower)
+        scored = KeywordClassifier.score(
+            text_lower,
+            positive_phrases,
+            list(entry.get("negative_signals", [])),
+            title=title_lower,
+            signal_groups=entry.get("signal_groups", {}),
+            disambiguators=entry.get("disambiguators", []),
+        )
         signals = scored["matched_signals"]
         negative = scored["negative_signals"]
         score = scored["score"]
         threshold = float(entry.get("primary_threshold", entry.get("classification_threshold", 0.5)))
-        if signals and score >= float(entry.get("secondary_threshold", threshold)):
+        required_groups = list(entry.get("required_signal_groups", []))
+        matched_groups = scored.get("matched_signal_groups", {})
+        groups_met = sum(bool(matched_groups.get(group)) for group in required_groups)
+        required_group_count = min(int(entry.get("minimum_signal_groups", 1)), len(required_groups)) if required_groups else 0
+        if signals and score >= float(entry.get("secondary_threshold", threshold)) and groups_met >= required_group_count:
             candidates.append({
                 **entry,
                 "signals": signals,
                 "positive_signals": signals,
                 "matched_negative_signals": negative,
+                "matched_signal_groups": matched_groups,
+                "disambiguators": [value for value in entry.get("disambiguators", []) if _phrase_found(str(value), text_lower)],
                 "classification_score": round(score, 3),
                 "negative_penalty": scored["negative_penalty"],
                 "contradiction_penalty": scored["contradiction_penalty"],
@@ -178,15 +205,17 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
     if primary["classification_score"] < primary_threshold:
         return []
     selected = []
+    secondary_count = 0
     for index, candidate in enumerate(candidates):
         if index == 0:
             status = "PRIMARY"
-        elif len(selected) - 1 >= int(primary.get("max_secondary", 1)):
+        elif secondary_count >= int(primary.get("max_secondary", 1)):
             continue
         elif candidate["classification_score"] < float(candidate.get("secondary_threshold", 0.5)) or margin < float(primary.get("runner_up_margin", 0.05)):
             continue
         else:
             status = "SECONDARY"
+            secondary_count += 1
         specificity = min(1.0, sum(max(1, len(str(signal).split())) for signal in candidate["signals"]) / 12)
         confidence = round(max(0.0, min(1.0, 0.45 * candidate["classification_score"] + 0.25 * min(1.0, margin / 0.3) + 0.2 * specificity + 0.1 * (1.0 - candidate["contradiction_penalty"]))), 3)
         candidate.update({"classification_status": status, "primary_score": primary["classification_score"], "runner_up_score": runner_up, "margin": margin, "classification_confidence": confidence, "confidence": confidence})

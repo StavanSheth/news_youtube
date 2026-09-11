@@ -4,5 +4,6 @@
   {"title": "New foundation model requires additional GPU capacity", "text": "The model release requires more infrastructure to serve inference.", "primary_micro_topic": "foundation-models"},
   {"title": "Autonomous agent uses a foundation model to execute workflows", "text": "Tool use, agent execution, workflow orchestration and reliability are the focus.", "primary_micro_topic": "ai-agents"},
   {"title": "New reranking system improves retrieval grounding", "text": "Reranking improves retrieval quality, context selection and citation grounding.", "primary_micro_topic": "rag"},
-  {"title": "Central bank raises interest rates", "text": "The policy decision changes borrowing costs and market expectations.", "primary_micro_topic": "interest-rates"}
+  {"title": "Central bank raises interest rates", "text": "The policy decision changes borrowing costs and market expectations.", "primary_micro_topic": "interest-rates"},
+  {"title": "RAG agent workflow uses retrieval and tools", "text": "Agent orchestration uses reranking, retrieval and tool use.", "primary_micro_topic": "rag", "secondary_micro_topics": ["ai-agents"]}
 ]

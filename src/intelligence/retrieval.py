@@ -168,7 +168,7 @@ class RAGManager:
                 "chunks": selected,
                 "status": "OK" if selected else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value,
             }
-        except Exception as error:
+        except (KeyError, TypeError, ValueError, OSError, RuntimeError) as error:
             self.metrics["failures"] += 1
             return {
                 "micro_topic": classification.get("micro_topic", ""),

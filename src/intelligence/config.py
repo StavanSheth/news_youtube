@@ -58,12 +58,13 @@ def load_config(root: Path) -> AppConfig:
     validate_dimensions(dimensions)
     profile_templates = _read_json(config_dir / "profile_templates.json")
     validate_profile_templates(matrix, profile_templates)
+    settings = _read_yaml(config_dir / "settings.yaml")
     themes = _read_yaml(config_dir / "themes.yaml").get("themes", [])
     themes = build_matrix_themes(matrix["records"], profile_templates, themes)
     validate_themes(themes, taxonomy, matrix)
-    validate_microtopic_profiles(microtopics, taxonomy, matrix, themes, profile_templates)
+    profile_mode = settings.get("intelligence", {}).get("profile_mode", "production")
+    validate_microtopic_profiles(microtopics, taxonomy, matrix, themes, profile_templates, production=profile_mode == "production")
     validate_theme_specificity(themes)
-    settings = _read_yaml(config_dir / "settings.yaml")
     registry_path = config_dir / "source_registry.yaml"
     if registry_path.exists():
         registry = _read_yaml(registry_path).get("sources", [])

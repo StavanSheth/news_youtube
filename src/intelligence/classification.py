@@ -69,7 +69,16 @@ class KeywordClassifier:
         }
 
     @classmethod
-    def score(cls, text: str, positive: list[str] | list[dict[str, Any]], negative: list[str] | list[dict[str, Any]], *, title: str = "") -> dict[str, Any]:
+    def score(
+        cls,
+        text: str,
+        positive: list[str] | list[dict[str, Any]],
+        negative: list[str] | list[dict[str, Any]],
+        *,
+        title: str = "",
+        signal_groups: dict[str, list[str] | list[dict[str, Any]]] | None = None,
+        disambiguators: list[str] | None = None,
+    ) -> dict[str, Any]:
         matched = cls.matching(positive, text)
         title_matches = cls.matching(positive, title)
         body_matches = [value for value in matched if value not in title_matches]
@@ -83,13 +92,23 @@ class KeywordClassifier:
             if phrase in title_matches:
                 positive_score += 0.14
         negative_result = cls.negative_signal_score(text, negative, title=title, positive_matches=matched)
-        score = min(1.0, max(0.0, positive_score - negative_result["negative_penalty"] - negative_result["contradiction_penalty"]))
+        matched_groups = {
+            name: cls.matching(values, text)
+            for name, values in (signal_groups or {}).items()
+            if cls.matching(values, text)
+        }
+        disambiguator_matches = cls.matching(disambiguators or [], text)
+        group_bonus = min(0.2, len(matched_groups) * 0.06)
+        disambiguator_bonus = min(0.12, len(disambiguator_matches) * 0.04)
+        score = min(1.0, max(0.0, positive_score + group_bonus + disambiguator_bonus - negative_result["negative_penalty"] - negative_result["contradiction_penalty"]))
         return {
             "matched_signals": matched,
             "negative_signals": negative_result["matched_negative_signals"],
             "title_matches": title_matches,
             "body_matches": body_matches,
             "positive_score": round(positive_score, 3),
+            "matched_signal_groups": matched_groups,
+            "disambiguator_matches": disambiguator_matches,
             "negative_penalty": negative_result["negative_penalty"],
             "contradiction_penalty": negative_result["contradiction_penalty"],
             "negative_strengths": negative_result["negative_strengths"],

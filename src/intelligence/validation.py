@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from .themes import theme_fingerprint
+from .profiles import compile_semantic_profile
+from .themes import theme_fingerprint, theme_semantic_overlap, theme_specificity_score
 
 
 def validate_microtopic_matrix(matrix: dict[str, Any]) -> None:
@@ -49,7 +50,7 @@ def validate_profile_templates(matrix: dict[str, Any], templates: dict[str, Any]
         raise ValueError(f"Unknown profile templates: {unknown}")
 
 
-def validate_microtopic_profiles(config: dict[str, Any], taxonomy: dict[str, Any], matrix: dict[str, Any], themes: list[dict[str, Any]], templates: dict[str, Any]) -> None:
+def validate_microtopic_profiles(config: dict[str, Any], taxonomy: dict[str, Any], matrix: dict[str, Any], themes: list[dict[str, Any]], templates: dict[str, Any], *, production: bool = True) -> None:
     """Validate the executable registry without treating analysis prose as signals."""
     matrix_keys = {(row.get("domain"), row.get("id")) for row in matrix.get("records", [])}
     matrix_domains = {domain for domain, _ in matrix_keys}
@@ -64,9 +65,8 @@ def validate_microtopic_profiles(config: dict[str, Any], taxonomy: dict[str, Any
         template_id = row.get("template")
         if template_id not in available:
             raise ValueError(f"Invalid template for {domain}/{micro_topic}: {template_id}")
-        signals = list(explicit.get("positive_signals", []))
-        if not signals:
-            signals = [f"{row.get('name', micro_topic)} release", f"{row.get('name', micro_topic)} announcement"]
+        compiled = compile_semantic_profile(row, available[template_id], explicit)
+        signals = list(explicit.get("positive_signals", [])) or list(compiled.get("positive_signals", []))
         if not any(len(str(value.get("phrase", "") if isinstance(value, dict) else value).split()) >= 2 for value in signals):
             raise ValueError(f"Micro-topic has no specific positive signal: {domain}/{micro_topic}")
         threshold = explicit.get("primary_threshold", explicit.get("classification_threshold", 0.5))
@@ -77,6 +77,8 @@ def validate_microtopic_profiles(config: dict[str, Any], taxonomy: dict[str, Any
             raise ValueError(f"Missing analysis contract: {domain}/{micro_topic}")
         if (domain, micro_topic) not in theme_keys:
             raise ValueError(f"Missing exact theme: {domain}/{micro_topic}")
+        if production and (not compiled.get("signal_groups") or not compiled.get("retrieval_intent")):
+            raise ValueError(f"Production profile lacks semantic routing contract: {domain}/{micro_topic}")
 
 
 def validate_theme_specificity(themes: list[dict[str, Any]]) -> dict[str, Any]:
@@ -88,8 +90,14 @@ def validate_theme_specificity(themes: list[dict[str, Any]]) -> dict[str, Any]:
     duplicates = [ids for ids in fingerprints.values() if len(ids) > 1]
     if duplicates:
         raise ValueError(f"Duplicate meaningful theme fingerprints: {duplicates[:3]}")
-    generic = [theme.get("id") for theme in themes if theme.get("id") != "domain-fallback" and len(theme_fingerprint(theme)) < 80]
-    return {"total": len(themes), "unique_fingerprints": len(fingerprints), "duplicate_fingerprints": duplicates, "generic": generic}
+    generic = [theme.get("id") for theme in themes if theme.get("id") != "domain-fallback" and theme_specificity_score(theme) < 0.55]
+    overlap_flags = []
+    exact = [theme for theme in themes if theme.get("id") != "domain-fallback" and theme.get("micro_topic") not in {None, "any", "*"}]
+    for index, left in enumerate(exact):
+        for right in exact[index + 1:]:
+            if left.get("domain") == right.get("domain") and theme_semantic_overlap(left, right)["flag"]:
+                overlap_flags.append({"left": left.get("id"), "right": right.get("id"), **theme_semantic_overlap(left, right)})
+    return {"total": len(themes), "unique_fingerprints": len(fingerprints), "duplicate_fingerprints": duplicates, "generic": generic, "overlap_flags": overlap_flags}
 
 
 def validate_taxonomy(taxonomy: dict[str, Any]) -> None:

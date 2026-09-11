@@ -12,6 +12,7 @@ from intelligence.validation import validate_microtopics, validate_themes
 from intelligence.validation import validate_microtopic_profiles, validate_theme_specificity
 from intelligence.themes import theme_fingerprint
 from intelligence.benchmark import evaluate_golden
+from intelligence.classification import KeywordClassifier
 from intelligence.evidence_scope import EvidenceScope
 
 
@@ -129,11 +130,43 @@ def test_theme_fingerprints_are_semantic_and_registry_is_validated():
 
 def test_phase2_golden_dataset_metrics_and_routing():
     config = load_config(ROOT)
-    entries = catalog(config.taxonomy, config.topics, config.microtopics)
+    entries = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
     records = json.loads((ROOT / "tests" / "fixtures" / "phase2_golden.json").read_text(encoding="utf-8"))
     report = evaluate_golden(records, lambda item: classify_micro_topics(item, entries))
     assert report["f1"] >= 0.80
     assert report["false_negative_rate"] <= 0.20
+    assert report["secondary_precision"] == 1.0
+    assert report["secondary_recall"] == 1.0
+
+
+def test_compiled_profile_exposes_signal_groups_and_disambiguation():
+    config = load_config(ROOT)
+    entries = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
+    foundation = next(entry for entry in entries if entry["micro_topic"] == "foundation-models")
+    assert foundation["signal_groups"]
+    assert foundation["required_signal_groups"]
+    result = classify_micro_topics({"title": "New foundation model benchmark", "text": "Model architecture and model capability benchmark."}, [foundation])[0]
+    assert result["matched_signal_groups"]
+    assert result["classification_reason"]
+
+
+def test_negative_strength_is_context_aware_and_contradiction_is_deterministic():
+    contextual = KeywordClassifier.score(
+        "foundation model requires GPU infrastructure",
+        [{"phrase": "foundation model", "strength": "strong"}],
+        [{"phrase": "GPU infrastructure", "strength": "medium"}],
+        title="foundation model release",
+    )
+    contradiction = KeywordClassifier.score(
+        "data center construction project",
+        [{"phrase": "infrastructure", "strength": "weak"}],
+        [{"phrase": "data center construction", "strength": "strong"}],
+        title="data center construction",
+    )
+    assert contextual["score"] > 0.4
+    assert contextual["contradiction_penalty"] == 0
+    assert contradiction["contradiction_penalty"] > 0
+    assert contradiction["score"] == 0
 
 
 def test_coverage_never_claims_no_major_update_for_unchecked_microtopic():
