@@ -90,7 +90,7 @@ def validate_theme_specificity(themes: list[dict[str, Any]]) -> dict[str, Any]:
     duplicates = [ids for ids in fingerprints.values() if len(ids) > 1]
     if duplicates:
         raise ValueError(f"Duplicate meaningful theme fingerprints: {duplicates[:3]}")
-    generic = [theme.get("id") for theme in themes if theme.get("id") != "domain-fallback" and theme_specificity_score(theme) < 0.55]
+    generic = [theme.get("id") for theme in themes if theme.get("id") != "domain-fallback" and theme.get("micro_topic") not in {None, "any", "*"} and theme_specificity_score(theme) < 0.55]
     overlap_flags = []
     exact = [theme for theme in themes if theme.get("id") != "domain-fallback" and theme.get("micro_topic") not in {None, "any", "*"}]
     for index, left in enumerate(exact):
