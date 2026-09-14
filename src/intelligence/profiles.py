@@ -220,7 +220,31 @@ def build_matrix_themes(
         })
     curated = [{**theme, "theme_origin": theme.get("theme_origin", "CURATED")} for theme in existing]
     generated = [{**theme, "theme_origin": "DERIVED"} for theme in generated]
-    return [*curated, *generated]
+    return [_normalize_theme_contract(theme) for theme in [*curated, *generated]]
+
+
+def _normalize_theme_contract(theme: dict[str, Any]) -> dict[str, Any]:
+    """Give curated and derived themes one observable analytical contract shape.
+
+    The source YAML stays concise; these values are deterministic runtime
+    defaults assembled from fields it already owns.  Explicit contract fields
+    always win over the generated defaults.
+    """
+    output = theme.get("output", {}) or {}
+    evidence = theme.get("evidence", {}) or {}
+    questions = list(theme.get("questions", []))
+    defaults = {
+        "objective": f"Assess {theme.get('micro_topic', theme.get('id', 'the change'))} using topic-specific evidence and implications.",
+        "primary_questions": questions,
+        "required_dimensions": list(output.get("sections", [])),
+        "forbidden_dimensions": [],
+        "decision_criteria": list(evidence.get("required", [])),
+        "comparison_axes": [theme.get("domain", "all"), theme.get("topic", "any"), theme.get("micro_topic", "any")],
+        "watch_indicators": list(theme.get("watch_items", [])),
+        "actionability": output.get("report_type", output.get("report_types", [])),
+    }
+    explicit = theme.get("analysis_contract", {}) or {}
+    return {**theme, "analysis_contract": {**defaults, **explicit}}
 
 
 def coverage_report(entries: list[dict[str, Any]], themes: list[dict[str, Any]], benchmark: dict[str, Any] | None = None) -> dict[str, Any]:

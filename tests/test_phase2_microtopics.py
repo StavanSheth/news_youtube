@@ -129,6 +129,8 @@ def test_theme_fingerprints_are_semantic_and_registry_is_validated():
     agents = next(theme for theme in config.themes if theme.get("micro_topic") == "ai-agents")
     assert theme_fingerprint(foundation) != theme_fingerprint(agents)
     assert all(entry["profile"].get("template_id") for entry in entries)
+    required = {"objective", "primary_questions", "required_dimensions", "forbidden_dimensions", "decision_criteria", "comparison_axes", "watch_indicators", "actionability"}
+    assert all(required <= set(theme["analysis_contract"]) for theme in config.themes if theme.get("id") != "domain-fallback")
 
 
 def test_phase2_golden_dataset_metrics_and_routing():
@@ -330,3 +332,22 @@ def test_scope_builder_populates_available_identity_fields_without_fabrication()
     assert scope.source_id and scope.source_content_id
     assert scope.allowed_entities == ("entity-a",)
     assert scope.allowed_events == ("event-a",)
+
+
+def test_scope_builder_does_not_import_unscoped_document_metadata_when_matches_exist():
+    scope = EvidenceScopeBuilder.build(
+        {
+            "source": "Fixture", "url": "https://example.test/a", "title": "A", "text": "text",
+            "metadata": {
+                "entity_ids": ["entity-document"], "event_id": "event-document",
+                "micro_topic_matches": [
+                    {"micro_topic_id": "rag", "entity_ids": ["entity-rag"], "event_ids": ["event-rag"], "span_ids": ["span-rag"]},
+                    {"micro_topic_id": "ai-agents", "entity_ids": ["entity-agent"], "event_ids": ["event-agent"], "span_ids": ["span-agent"]},
+                ],
+            },
+        },
+        {"micro_topic": "rag", "routing_confidence": 0.8},
+    )
+    assert scope.allowed_entities == ("entity-rag",)
+    assert scope.allowed_events == ("event-rag",)
+    assert scope.allowed_span_ids == ("span-rag",)

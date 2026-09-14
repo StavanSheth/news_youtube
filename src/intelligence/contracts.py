@@ -57,10 +57,22 @@ class ThemeResolutionLevel(StrEnum):
 
 
 class ProductionStatus(StrEnum):
-    READY = "READY"
-    UNDER_TESTED = "UNDER_TESTED"
-    NOT_READY = "NOT_READY"
+    """Validation lifecycle for a configured micro-topic or theme.
+
+    Configuration is deliberately separate from validation.  The compatibility
+    aliases keep older readiness consumers working while new contracts expose
+    the lifecycle terminology directly.
+    """
+
+    BOOTSTRAPPED = "BOOTSTRAPPED"
+    UNDER_TEST = "UNDER_TEST"
+    VALIDATED = "VALIDATED"
+    PRODUCTION_READY = "PRODUCTION_READY"
+    DEPRECATED = "DEPRECATED"
     INVALID = "INVALID"
+    READY = "PRODUCTION_READY"
+    UNDER_TESTED = "UNDER_TEST"
+    NOT_READY = "BOOTSTRAPPED"
 
 
 @dataclass(frozen=True)
@@ -85,7 +97,7 @@ class ProductionReadiness:
     evidence_scope_pass: bool = False
 
     def to_dict(self) -> dict[str, Any]:
-        return {"status": self.status.value, "production_ready": self.status == ProductionStatus.READY, "reasons": list(self.reasons), "profile_complete": self.profile_complete, "benchmark_pass": self.benchmark_pass, "theme_pass": self.theme_pass, "retrieval_contract_pass": self.retrieval_contract_pass, "evidence_scope_pass": self.evidence_scope_pass}
+        return {"status": self.status.value, "production_ready": self.status == ProductionStatus.PRODUCTION_READY, "reasons": list(self.reasons), "profile_complete": self.profile_complete, "benchmark_pass": self.benchmark_pass, "theme_pass": self.theme_pass, "retrieval_contract_pass": self.retrieval_contract_pass, "evidence_scope_pass": self.evidence_scope_pass}
 
 
 @dataclass(frozen=True)

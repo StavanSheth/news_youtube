@@ -5,6 +5,8 @@ from enum import StrEnum
 
 class IntelligenceStatus(StrEnum):
     NOT_CHECKED = "NOT_CHECKED"
+    CHECKING = "CHECKING"
+    CHECKED = "CHECKED"
     CLASSIFIED = "CLASSIFIED"
     EVIDENCE_FOUND = "EVIDENCE_FOUND"
     ANALYSIS_ELIGIBLE = "ANALYSIS_ELIGIBLE"

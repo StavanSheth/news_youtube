@@ -34,3 +34,16 @@ def test_generic_alias_requires_specific_signal_group():
 def test_context_budget_has_one_canonical_character_limit():
     budget = ContextBudget(max_context_chars=500)
     assert budget.retrieval_chars == budget.analysis_chars == budget.provider_chars == 500
+
+
+def test_registry_diagnostics_are_deterministic_and_explain_precedence(tmp_path):
+    registry = RuntimeRegistry(load_config(ROOT))
+    first = registry.resolved_microtopics()
+    assert len(first) == 236
+    assert first == registry.resolved_microtopics()
+    assert {row["production_status"] for row in first} == {"UNDER_TEST"}
+    assert all(row["source_layers"][:3] == ["taxonomy", "matrix", "template"] for row in first)
+    registry.write_diagnostics(tmp_path)
+    assert (tmp_path / "resolved_microtopics.json").is_file()
+    assert (tmp_path / "resolved_themes.json").is_file()
+    assert (tmp_path / "registry_manifest.json").is_file()

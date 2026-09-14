@@ -109,7 +109,17 @@ def validate_theme_specificity(themes: list[dict[str, Any]]) -> dict[str, Any]:
     for theme in exact:
         siblings = [other for other in exact if other.get("domain") == theme.get("domain") and other.get("id") != theme.get("id")]
         differences[str(theme.get("id"))] = theme_difference_score(theme, siblings)
-    return {"total": len(themes), "unique_fingerprints": len(fingerprints), "duplicate_fingerprints": duplicates, "generic": generic, "overlap_flags": overlap_flags, "theme_difference_scores": differences}
+    required_contract_fields = {
+        "objective", "primary_questions", "required_dimensions", "forbidden_dimensions",
+        "decision_criteria", "comparison_axes", "watch_indicators", "actionability",
+    }
+    incomplete_contracts = [
+        theme.get("id") for theme in exact
+        if required_contract_fields - set((theme.get("analysis_contract") or {}))
+    ]
+    if incomplete_contracts:
+        raise ValueError(f"Themes missing analytical contract fields: {incomplete_contracts[:3]}")
+    return {"total": len(themes), "unique_fingerprints": len(fingerprints), "duplicate_fingerprints": duplicates, "generic": generic, "overlap_flags": overlap_flags, "theme_difference_scores": differences, "incomplete_contracts": incomplete_contracts}
 
 
 def validate_taxonomy(taxonomy: dict[str, Any]) -> None:

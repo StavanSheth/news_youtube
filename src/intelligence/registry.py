@@ -6,12 +6,22 @@ in-memory view consumed by callers that need canonical lookup.
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
 from typing import Any
 
 from .microtopics import catalog
+from .profiles import coverage_report
+from .themes import select_theme
 
 
 class RuntimeRegistry:
+    """Canonical in-memory view of layered Phase 2 configuration.
+
+    Precedence is fixed at taxonomy -> matrix -> template -> micro-topic
+    override -> theme override.  ``catalog`` performs that merge once; this
+    class intentionally only exposes the resolved result.
+    """
     def __init__(self, config: Any) -> None:
         self.config = config
         self.entries = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
@@ -46,3 +56,74 @@ class RuntimeRegistry:
             return self._topics[topic_id]
         except KeyError as error:
             raise KeyError(f"Unknown topic_id: {topic_id}") from error
+
+    def resolved_microtopics(self, benchmark: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+        """Return deterministic diagnostic records; never use them as input config."""
+        readiness = {
+            row["micro_topic_id"]: row
+            for row in coverage_report(self.entries, self.config.themes, benchmark)["micro_topic_profiles"]
+        }
+        records = []
+        for entry in self.entries:
+            theme = select_theme(entry, self.config.themes, {"kind": "news"})
+            report = readiness[entry["micro_topic_id"]]
+            records.append({
+                "micro_topic_id": entry["micro_topic_id"],
+                "domain": entry["domain"],
+                "parent_topic": entry["topic_key"],
+                "name": entry["micro_topic"],
+                "enabled": bool(entry.get("enabled", True)),
+                "profile_origin": entry.get("profile_origin_code", entry.get("profile_origin")),
+                "production_status": "PRODUCTION_READY" if report["production_eligibility"] == "READY" else "UNDER_TEST",
+                "source_layers": ["taxonomy", "matrix", "template", *( ["micro_topic_override"] if entry.get("profile_origin_code") == "CURATED" else [])],
+                "classification": {
+                    "primary_threshold": entry.get("primary_threshold"),
+                    "secondary_threshold": entry.get("secondary_threshold"),
+                    "group_policy": entry.get("group_policy", {}),
+                    "profile_quality": entry.get("profile_quality", {}),
+                },
+                "theme_resolution": {
+                    "theme_id": theme.get("theme_id", theme.get("id")),
+                    "resolution_level": theme.get("resolution_level_code"),
+                    "theme_origin": theme.get("theme_origin"),
+                },
+                "analysis_contract": entry.get("analysis_contract", {}),
+                "retrieval_intent": entry.get("retrieval_intent", {}),
+                "readiness_reasons": report["readiness_reasons"],
+            })
+        return sorted(records, key=lambda row: row["micro_topic_id"])
+
+    def resolved_themes(self) -> list[dict[str, Any]]:
+        return sorted(
+            [
+                {
+                    "theme_id": theme.get("id"), "domain": theme.get("domain"),
+                    "micro_topic": theme.get("micro_topic"),
+                    "theme_origin": theme.get("theme_origin", "CURATED"),
+                    "analysis_contract": theme.get("analysis_contract", {}),
+                }
+                for theme in self.config.themes
+            ],
+            key=lambda row: str(row["theme_id"]),
+        )
+
+    def diagnostic_manifest(self, benchmark: dict[str, Any] | None = None) -> dict[str, Any]:
+        microtopics = self.resolved_microtopics(benchmark)
+        themes = self.resolved_themes()
+        return {
+            "schema": "phase2-resolved-registry/v1",
+            "configuration_precedence": ["taxonomy", "matrix", "template", "micro_topic_override", "theme_override"],
+            "micro_topic_count": len(microtopics), "theme_count": len(themes),
+            "production_ready_count": sum(row["production_status"] == "PRODUCTION_READY" for row in microtopics),
+        }
+
+    def write_diagnostics(self, directory: Path, benchmark: dict[str, Any] | None = None) -> None:
+        """Write optional, deterministic developer diagnostics outside source config."""
+        directory.mkdir(parents=True, exist_ok=True)
+        artifacts = {
+            "resolved_microtopics.json": self.resolved_microtopics(benchmark),
+            "resolved_themes.json": self.resolved_themes(),
+            "registry_manifest.json": self.diagnostic_manifest(benchmark),
+        }
+        for name, value in artifacts.items():
+            (directory / name).write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")

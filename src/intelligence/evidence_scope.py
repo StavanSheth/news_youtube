@@ -120,8 +120,26 @@ class EvidenceScopeBuilder:
         metadata = item.get("metadata", {})
         source_id = str(metadata.get("source_id", "")).strip() or make_source_id(str(item.get("source", "")).strip())
         content_id = str(metadata.get("content_id", "")).strip() or make_content_id(source_id, item.get("url", ""), item.get("title", ""), item.get("published_at", ""), item.get("text", ""))
-        entity_ids = tuple(str(value) for value in metadata.get("entity_ids", []) if value)
-        event_ids = tuple(str(value) for value in [metadata.get("event_id", "")] if value)
+        # A document-level entity/event list is useful only when no finer
+        # micro-topic annotation exists.  Once annotations exist, importing
+        # unscoped document metadata would authorize cross-topic evidence.
+        topic_matches = [
+            match for match in metadata.get("micro_topic_matches", [])
+            if isinstance(match, dict)
+            and match.get("micro_topic_id") == classification.get("micro_topic_id", classification.get("micro_topic"))
+        ]
+        if topic_matches:
+            entity_ids = tuple(sorted({str(value) for match in topic_matches for value in match.get("entity_ids", []) if value}))
+            event_ids = tuple(sorted({str(value) for match in topic_matches for value in [*match.get("event_ids", []), match.get("event_id")] if value}))
+            match_span_ids = tuple(sorted({str(value) for match in topic_matches for value in match.get("span_ids", []) if value}))
+            match_claim_ids = tuple(sorted({str(value) for match in topic_matches for value in match.get("claim_ids", []) if value}))
+            match_evidence_ids = tuple(sorted({str(value) for match in topic_matches for value in match.get("evidence_ids", []) if value}))
+        else:
+            entity_ids = tuple(str(value) for value in metadata.get("entity_ids", []) if value)
+            event_ids = tuple(str(value) for value in [*metadata.get("event_ids", []), metadata.get("event_id", "")] if value)
+            match_span_ids = ()
+            match_claim_ids = ()
+            match_evidence_ids = ()
         policy_data = classification.get("evidence_authorization", {}) or {}
         policy = EvidenceAuthorizationPolicy(
             required_entities=tuple(str(value) for value in policy_data.get("required_entities", [])),
@@ -135,11 +153,11 @@ class EvidenceScopeBuilder:
             micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
             source_content_id=content_id,
             source_id=source_id,
-            allowed_span_ids=tuple(signal_span_ids),
-            allowed_claim_ids=tuple(claim_ids),
+            allowed_span_ids=tuple(signal_span_ids) or match_span_ids,
+            allowed_claim_ids=tuple(claim_ids) or match_claim_ids,
             allowed_entities=entity_ids,
             allowed_events=event_ids,
-            evidence_ids=tuple(evidence_ids),
+            evidence_ids=tuple(evidence_ids) or match_evidence_ids,
             isolation_confidence=float(classification.get("routing_confidence", classification.get("classification_confidence", classification.get("confidence", 0.0)))),
             authorization_policy=policy,
         )
