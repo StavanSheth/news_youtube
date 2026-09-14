@@ -45,6 +45,19 @@ def theme_specificity_score(theme: dict[str, Any]) -> float:
     return round(min(1.0, populated / len(fields) * 0.6 + min(1.0, specific / 20) * 0.4), 3)
 
 
+def theme_quality_score(theme: dict[str, Any]) -> float:
+    """Score the distinct analytical contract rather than token count alone."""
+    questions = _theme_tokens(theme, "questions")
+    retrieval = _theme_tokens(theme, "retrieval_intent")
+    evidence = _theme_tokens(theme, "evidence")
+    watch = _theme_tokens(theme, "watch_items")
+    analysis = _theme_tokens(theme, "analysis_contract")
+    dimensions = [questions, retrieval, evidence, watch, analysis]
+    populated = sum(bool(value) for value in dimensions)
+    distinct = len(retrieval | evidence | watch)
+    return round(min(1.0, populated / 5 * 0.6 + min(1.0, distinct / 16) * 0.4), 3)
+
+
 def theme_difference_score(theme: dict[str, Any], siblings: list[dict[str, Any]]) -> float:
     """Score how much a theme differs from its sibling themes using deterministic tokens."""
     if not siblings:
@@ -64,6 +77,8 @@ class ThemeResolution:
     fallback_used: bool
     fallback_reason: str | None
     specificity_score: float
+    theme_origin: str = "CURATED"
+    quality_score: float = 0.0
 
     def to_metadata(self) -> dict[str, Any]:
         return {
@@ -72,12 +87,17 @@ class ThemeResolution:
             "fallback_used": self.fallback_used,
             "fallback_reason": self.fallback_reason,
             "theme_specificity_score": self.specificity_score,
+            "theme_origin": self.theme_origin,
+            "theme_quality_score": self.quality_score,
         }
 
 
 def _resolution(theme: dict[str, Any], level: str, *, fallback_reason: str | None = None) -> dict[str, Any]:
-    result = ThemeResolution(theme.get("id", ""), level, level != "EXACT_MICRO_TOPIC", fallback_reason, theme_specificity_score(theme))
-    return {**theme, **result.to_metadata(), "resolution_level": {"EXACT_MICRO_TOPIC": "exact_micro_topic", "TOPIC_FALLBACK": "topic_fallback", "DOMAIN_FALLBACK": "domain_family", "GLOBAL_FALLBACK": "global_fallback", "CONTROLLED_FALLBACK": "controlled_fallback"}.get(level, level.lower())}
+    origin = str(theme.get("theme_origin", "CURATED" if level == "EXACT_MICRO_TOPIC" else "FALLBACK"))
+    result = ThemeResolution(theme.get("id", ""), level, level != "EXACT_MICRO_TOPIC", fallback_reason, theme_specificity_score(theme), origin, theme_quality_score(theme))
+    level_code = "DERIVED_EXACT" if level == "EXACT_MICRO_TOPIC" and origin in {"DERIVED", "TEMPLATE_DERIVED"} else ("CURATED_EXACT" if level == "EXACT_MICRO_TOPIC" else level)
+    metadata = {**result.to_metadata(), "resolution_level_code": level_code, "theme_quality_score": theme_quality_score(theme)}
+    return {**theme, **metadata, "resolution_level": {"EXACT_MICRO_TOPIC": "exact_micro_topic", "TOPIC_FALLBACK": "topic_fallback", "DOMAIN_FALLBACK": "domain_family", "GLOBAL_FALLBACK": "global_fallback", "CONTROLLED_FALLBACK": "controlled_fallback"}.get(level, level.lower())}
 
 
 def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], item: dict[str, Any]) -> dict[str, Any]:
@@ -137,6 +157,7 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         "theme_origin": fallback.get("theme_origin", "FALLBACK"),
         "fallback_reason": "no_exact_topic_or_domain_theme",
         "theme_specificity_score": theme_specificity_score(fallback),
+        "theme_quality_score": theme_quality_score(fallback),
         "resolution_level_code": "CONTROLLED_FALLBACK",
     }
 

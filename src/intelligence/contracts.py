@@ -34,6 +34,28 @@ class TimestampStatus(StrEnum):
     INVALID = "invalid"
 
 
+class ProfileOrigin(StrEnum):
+    CURATED = "CURATED"
+    MATRIX_DERIVED = "MATRIX_DERIVED"
+    TEMPLATE_DERIVED = "TEMPLATE_DERIVED"
+    FALLBACK = "FALLBACK"
+
+
+class ThemeOrigin(StrEnum):
+    CURATED = "CURATED"
+    DERIVED = "DERIVED"
+    FALLBACK = "FALLBACK"
+
+
+class ThemeResolutionLevel(StrEnum):
+    CURATED_EXACT = "CURATED_EXACT"
+    DERIVED_EXACT = "DERIVED_EXACT"
+    TOPIC_FALLBACK = "TOPIC_FALLBACK"
+    DOMAIN_FALLBACK = "DOMAIN_FALLBACK"
+    GLOBAL_FALLBACK = "GLOBAL_FALLBACK"
+    CONTROLLED_FALLBACK = "CONTROLLED_FALLBACK"
+
+
 @dataclass(frozen=True)
 class MicroTopicDecision:
     """Stable trace record for one deterministic micro-topic routing decision."""

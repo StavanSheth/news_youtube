@@ -23,6 +23,22 @@ _GENERIC_SIGNAL_WORDS = {
 }
 
 
+def profile_quality(profile: dict[str, Any]) -> dict[str, Any]:
+    """Score profile quality from specificity and coverage, not profile existence."""
+    signals = list(profile.get("positive_signals", []))
+    phrases = [str(value.get("phrase", value) if isinstance(value, dict) else value) for value in signals]
+    specific = [value for value in phrases if len(value.split()) >= 2 and not all(word in _GENERIC_SIGNAL_WORDS for word in value.split())]
+    specificity = min(1.0, len(specific) / 4)
+    signal_quality = min(1.0, len(set(phrases)) / 5)
+    negative = profile.get("negative_signals", [])
+    negative_quality = min(1.0, sum(len(str(value.get("phrase", value) if isinstance(value, dict) else value).split()) >= 2 for value in negative) / 2)
+    disambiguation = min(1.0, len(profile.get("disambiguators", [])) / 3)
+    evidence = min(1.0, len(profile.get("required_evidence", profile.get("evidence", {}).get("required", []))) / 2)
+    theme = min(1.0, bool(profile.get("analysis_contract")) + bool(profile.get("retrieval_intent")))
+    score = round(0.25 * specificity + 0.2 * signal_quality + 0.15 * negative_quality + 0.15 * disambiguation + 0.15 * evidence + 0.1 * theme, 3)
+    return {"specificity": round(specificity, 3), "signal_quality": round(signal_quality, 3), "negative_signal_quality": round(negative_quality, 3), "disambiguation_quality": round(disambiguation, 3), "evidence_quality": round(evidence, 3), "theme_quality": round(theme, 3), "profile_quality_score": score}
+
+
 def _semantic_phrases(*values: str) -> list[str]:
     phrases: list[str] = []
     single_terms: list[str] = []
@@ -98,6 +114,7 @@ def compile_semantic_profile(record: dict[str, Any], template: dict[str, Any], e
             "exclusion_concepts": explicit.get("negative_signals", []),
             "freshness": template.get("retrieval", {}).get("freshness", "30d"),
         },
+        "profile_quality": profile_quality({"positive_signals": positive, "negative_signals": explicit.get("negative_signals", []), "disambiguators": explicit.get("disambiguators", []), "required_evidence": [record.get("required_evidence", "")], "analysis_contract": record.get("important_output"), "retrieval_intent": True}),
     }
 
 
@@ -129,6 +146,7 @@ def resolve_microtopic_profile(
         "profile_origin_code": origin_code,
         "resolution_level": "micro_topic" if explicit or semantic_override else "template",
         "fallback_used": False,
+        "profile_quality": profile_quality(resolved),
     })
     return resolved
 
@@ -201,14 +219,14 @@ def build_matrix_themes(
             "resolution_policy": "template_backed_exact",
         })
     curated = [{**theme, "theme_origin": theme.get("theme_origin", "CURATED")} for theme in existing]
-    generated = [{**theme, "theme_origin": "TEMPLATE_DERIVED"} for theme in generated]
+    generated = [{**theme, "theme_origin": "DERIVED"} for theme in generated]
     return [*curated, *generated]
 
 
 def coverage_report(entries: list[dict[str, Any]], themes: list[dict[str, Any]]) -> dict[str, Any]:
     exact = sum(1 for entry in entries if any(theme.get("domain") == entry.get("domain") and theme.get("micro_topic") == entry.get("micro_topic") for theme in themes))
     enabled = [entry for entry in entries if entry.get("enabled", True)]
-    production_ready = [entry for entry in enabled if entry.get("positive_signals") and entry.get("analysis_contract") and entry.get("retrieval_intent") and entry.get("template_id")]
+    production_ready = [entry for entry in enabled if entry.get("positive_signals") and entry.get("analysis_contract") and entry.get("retrieval_intent") and entry.get("template_id") and (entry.get("profile_quality", {}).get("profile_quality_score", 0) >= 0.8 or entry.get("profile_origin_code") == "CURATED")]
     weak = [entry for entry in enabled if entry not in production_ready]
     exact_themes = [theme for theme in themes if theme.get("micro_topic") not in {None, "any", "*"}]
     generated_themes = [theme for theme in exact_themes if str(theme.get("id", "")).startswith("matrix-")]
@@ -219,6 +237,9 @@ def coverage_report(entries: list[dict[str, Any]], themes: list[dict[str, Any]])
         "explicit_profiles": sum(entry.get("profile_origin") == "explicit" for entry in entries),
         "template_derived_profiles": sum(entry.get("profile_origin") in {"template", "derived"} for entry in entries),
         "production_ready_profiles": len(production_ready), "weak_profiles": len(weak), "missing_profiles": len(enabled) - len(production_ready) - len(weak),
+        "profile_quality_threshold": 0.8,
+        "profile_quality_below_threshold": [entry["micro_topic_id"] for entry in enabled if entry.get("profile_quality", {}).get("profile_quality_score", 0) < 0.8],
+        "micro_topic_profiles": [{"micro_topic_id": entry["micro_topic_id"], "profile_origin": entry.get("profile_origin_code", entry.get("profile_origin")), "profile_quality": entry.get("profile_quality", {}), "signal_count": len(entry.get("positive_signals", [])) + len(entry.get("negative_signals", [])), "signal_group_count": len(entry.get("signal_groups", {})), "positive_signal_count": len(entry.get("positive_signals", [])), "negative_signal_count": len(entry.get("negative_signals", [])), "validation_state": "PRODUCTION_READY" if entry in production_ready else "BOOTSTRAP"} for entry in enabled],
         "positive_signal_coverage": round(sum(bool(entry.get("positive_signals")) for entry in enabled) / max(1, len(enabled)) * 100, 2),
         "negative_signal_coverage": round(sum(bool(entry.get("negative_signals")) for entry in enabled) / max(1, len(enabled)) * 100, 2),
         "disambiguator_coverage": round(sum(bool(entry.get("disambiguators")) for entry in enabled) / max(1, len(enabled)) * 100, 2),
@@ -226,5 +247,5 @@ def coverage_report(entries: list[dict[str, Any]], themes: list[dict[str, Any]])
         "analysis_contract_coverage": round(sum(bool(entry.get("analysis_contract")) for entry in enabled) / max(1, len(enabled)) * 100, 2),
         "exact_theme_records": exact,
         "theme_coverage_percent": round(exact / max(1, len(entries)) * 100, 2),
-        "theme_counts": {"exact": exact, "generated": len(generated_themes), "topic_fallback": sum(theme.get("resolution_level") == "topic_fallback" for theme in themes), "domain_fallback": sum(theme.get("resolution_level") == "domain_family" for theme in themes), "global_fallback": sum(theme.get("resolution_level") == "global_fallback" for theme in themes), "missing": len(entries) - exact},
+        "theme_counts": {"exact": exact, "generated": len(generated_themes), "curated_exact": sum(theme.get("theme_origin") == "CURATED" and theme.get("micro_topic") not in {None, "any", "*"} for theme in themes), "derived_exact": sum(theme.get("theme_origin") == "DERIVED" and theme.get("micro_topic") not in {None, "any", "*"} for theme in themes), "topic_fallback": sum(theme.get("resolution_level") == "topic_fallback" for theme in themes), "domain_fallback": sum(theme.get("resolution_level") == "domain_family" for theme in themes), "global_fallback": sum(theme.get("resolution_level") == "global_fallback" for theme in themes), "controlled_fallback": sum(theme.get("resolution_level") == "controlled_fallback" for theme in themes), "missing": len(entries) - exact},
     }

@@ -59,7 +59,7 @@ class MicroTopicManager:
             for entry in evidence:
                 entry_size = len(entry.get("text", ""))
                 if used + entry_size > max_context:
-                    break
+                    continue
                 bounded.append(entry)
                 used += entry_size
             self.stats["micro_topic_analyses"] += 1

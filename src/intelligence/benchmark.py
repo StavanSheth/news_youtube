@@ -6,7 +6,7 @@ from collections import Counter
 from typing import Any, Callable
 
 
-def evaluate_golden(records: list[dict[str, Any]], classify: Callable[[dict[str, Any]], list[dict[str, Any]]]) -> dict[str, Any]:
+def evaluate_golden(records: list[dict[str, Any]], classify: Callable[[dict[str, Any]], list[dict[str, Any]]], *, minimum_support: int = 2) -> dict[str, Any]:
     expected_primary: list[str | None] = []
     expected_sets: list[set[str]] = []
     predicted_primary: list[str | None] = []
@@ -33,7 +33,8 @@ def evaluate_golden(records: list[dict[str, Any]], classify: Callable[[dict[str,
         label_fn = sum(label in actual and label not in guess for actual, guess in zip(expected_sets, predicted_sets))
         p = label_tp / max(1, label_tp + label_fp)
         r = label_tp / max(1, label_tp + label_fn)
-        per_topic[label] = {"support": sum(label in actual for actual in expected_sets), "predictions": sum(label in guess for guess in predicted_sets), "precision": round(p, 3), "recall": round(r, 3), "f1": round(2 * p * r / max(1e-9, p + r), 3)}
+        support = sum(label in actual for actual in expected_sets)
+        per_topic[label] = {"support": support, "tp": label_tp, "fp": label_fp, "fn": label_fn, "predictions": sum(label in guess for guess in predicted_sets), "precision": round(p, 3), "recall": round(r, 3), "f1": round(2 * p * r / max(1e-9, p + r), 3), "validation_state": "VALIDATED" if support >= minimum_support else "UNDER_TESTED"}
     macro_f1 = sum(item["f1"] for item in per_topic.values()) / max(1, len(per_topic))
     weighted_f1 = sum(item["f1"] * item["support"] for item in per_topic.values()) / max(1, sum(item["support"] for item in per_topic.values()))
     secondary_expected = [actual - {primary} for actual, primary in zip(expected_sets, expected_primary)]

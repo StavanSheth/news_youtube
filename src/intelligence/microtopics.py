@@ -7,7 +7,7 @@ from typing import Any
 from .identity import make_micro_topic_id
 from .classification import KeywordClassifier
 from .statuses import IntelligenceStatus
-from .profiles import compile_semantic_profile, resolve_microtopic_profile
+from .profiles import compile_semantic_profile, profile_quality, resolve_microtopic_profile
 from .contracts import MicroTopicDecision
 
 
@@ -174,6 +174,7 @@ def catalog(
                     "analysis_contract": profile.get("analysis_contract", {}),
                     "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived"),
                     "profile_origin_code": profile.get("profile_origin_code", "CURATED" if explicit else "MATRIX_DERIVED"),
+                    "profile_quality": profile.get("profile_quality", profile_quality(profile)),
                     "profile_id": profile.get("profile_id", f"{domain}.{micro_topic}"),
                     "template_id": profile.get("template_id", template_id),
                 }
