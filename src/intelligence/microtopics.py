@@ -118,6 +118,10 @@ def catalog(
                     "event_signals": semantic_profile["event_signals"],
                     "retrieval_intent": semantic_profile["retrieval_intent"],
                     "required_evidence": [record["required_evidence"]],
+                    "required_entities": list(profile.get("required_entities", [])),
+                    "evaluation_dimensions": [part.strip() for part in str(record.get("evaluation", "")).split(",") if part.strip()],
+                    "watch_indicators": [record.get("important_output", "")],
+                    "theme_reference": record.get("id"),
                     "source_hints": [part.strip() for part in record["resources"].split("+")],
                     "analysis_contract": {"objective": record["evaluation"], "important_output": record["important_output"]},
                     "profile_origin": "derived",
@@ -202,7 +206,10 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
     for entry in entries:
         if not entry["enabled"]:
             continue
-        positive_phrases = [{"phrase": alias, "strength": "strong"} for alias in entry.get("aliases", [])] + list(entry.get("positive_signals", []))
+        positive_phrases = [
+            {"phrase": alias, "strength": "strong" if len(str(alias).split()) >= 2 else "weak", "type": "positive", "source": "alias"}
+            for alias in entry.get("aliases", [])
+        ] + list(entry.get("positive_signals", []))
         scored = KeywordClassifier.score(
             text_lower,
             positive_phrases,
@@ -231,6 +238,7 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
                 "contradiction_penalty": scored["contradiction_penalty"],
                 "confidence_method": "heuristic_weighted_signal_score",
                 "classification_reason": f"matched {', '.join(signals)}" + (f"; excluded by {', '.join(negative)}" if negative else ""),
+                "decision_state": "CONTRADICTORY" if scored.get("hard_rejection_reason") and scored.get("positive_score", 0) >= 0.7 else ("REJECTED" if scored.get("hard_rejection_reason") else "MATCH"),
                 "topic_id": entry["topic_key"],
                 "analysis_contract": entry["profile"].get("analysis_contract", {}),
             })

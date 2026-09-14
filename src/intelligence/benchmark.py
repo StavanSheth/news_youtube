@@ -6,7 +6,7 @@ from collections import Counter
 from typing import Any, Callable
 
 
-def evaluate_golden(records: list[dict[str, Any]], classify: Callable[[dict[str, Any]], list[dict[str, Any]]], *, minimum_support: int = 2) -> dict[str, Any]:
+def evaluate_golden(records: list[dict[str, Any]], classify: Callable[[dict[str, Any]], list[dict[str, Any]]], *, minimum_support: int = 10) -> dict[str, Any]:
     expected_primary: list[str | None] = []
     expected_sets: list[set[str]] = []
     predicted_primary: list[str | None] = []
@@ -37,6 +37,9 @@ def evaluate_golden(records: list[dict[str, Any]], classify: Callable[[dict[str,
         per_topic[label] = {"support": support, "tp": label_tp, "fp": label_fp, "fn": label_fn, "predictions": sum(label in guess for guess in predicted_sets), "precision": round(p, 3), "recall": round(r, 3), "f1": round(2 * p * r / max(1e-9, p + r), 3), "validation_state": "VALIDATED" if support >= minimum_support else "UNDER_TESTED"}
     macro_f1 = sum(item["f1"] for item in per_topic.values()) / max(1, len(per_topic))
     weighted_f1 = sum(item["f1"] * item["support"] for item in per_topic.values()) / max(1, sum(item["support"] for item in per_topic.values()))
+    f1_values = sorted(item["f1"] for item in per_topic.values())
+    def percentile(ratio: float) -> float:
+        return f1_values[min(len(f1_values) - 1, int(len(f1_values) * ratio))] if f1_values else 0.0
     secondary_expected = [actual - {primary} for actual, primary in zip(expected_sets, expected_primary)]
     secondary_predicted = [guess - {primary} for guess, primary in zip(predicted_sets, predicted_primary)]
     secondary_tp = sum(len(a & p) for a, p in zip(secondary_expected, secondary_predicted))
@@ -51,6 +54,7 @@ def evaluate_golden(records: list[dict[str, Any]], classify: Callable[[dict[str,
         "precision": round(precision, 3), "recall": round(recall, 3), "f1": round(f1, 3),
         "micro_precision": round(precision, 3), "micro_recall": round(recall, 3), "micro_f1": round(f1, 3),
         "macro_f1": round(macro_f1, 3), "weighted_f1": round(weighted_f1, 3),
+        "worst_topic_f1": round(min(f1_values) if f1_values else 0.0, 3), "p10_f1": round(percentile(0.10), 3), "p25_f1": round(percentile(0.25), 3),
         "exact_set_accuracy": round(sum(a == p for a, p in zip(expected_sets, predicted_sets)) / max(1, len(records)), 3),
         "secondary_precision": round(secondary_precision, 3), "secondary_recall": round(secondary_recall, 3),
         "false_positive_rate": round(fp / max(1, len(records)), 3), "false_negative_rate": round(fn / max(1, len(records)), 3),

@@ -56,6 +56,38 @@ class ThemeResolutionLevel(StrEnum):
     CONTROLLED_FALLBACK = "CONTROLLED_FALLBACK"
 
 
+class ProductionStatus(StrEnum):
+    READY = "READY"
+    UNDER_TESTED = "UNDER_TESTED"
+    NOT_READY = "NOT_READY"
+    INVALID = "INVALID"
+
+
+@dataclass(frozen=True)
+class ProfileCompleteness:
+    score: float
+    specificity: float
+    signal_quality: float
+    negative_signal_quality: float
+    disambiguation_quality: float
+    evidence_quality: float
+    theme_quality: float
+
+
+@dataclass(frozen=True)
+class ProductionReadiness:
+    status: ProductionStatus
+    reasons: tuple[str, ...] = ()
+    profile_complete: bool = False
+    benchmark_pass: bool = False
+    theme_pass: bool = False
+    retrieval_contract_pass: bool = False
+    evidence_scope_pass: bool = False
+
+    def to_dict(self) -> dict[str, Any]:
+        return {"status": self.status.value, "production_ready": self.status == ProductionStatus.READY, "reasons": list(self.reasons), "profile_complete": self.profile_complete, "benchmark_pass": self.benchmark_pass, "theme_pass": self.theme_pass, "retrieval_contract_pass": self.retrieval_contract_pass, "evidence_scope_pass": self.evidence_scope_pass}
+
+
 @dataclass(frozen=True)
 class MicroTopicDecision:
     """Stable trace record for one deterministic micro-topic routing decision."""
@@ -121,10 +153,20 @@ class MicroTopicDecision:
 class ContextBudget:
     """Phase 2 character budget; kept separate from future token budgeting."""
 
-    retrieval_chars: int = 12000
-    analysis_chars: int = 12000
-    provider_chars: int = 12000
+    max_context_chars: int = 12000
     unit: str = "characters"
+
+    @property
+    def retrieval_chars(self) -> int:
+        return self.max_context_chars
+
+    @property
+    def analysis_chars(self) -> int:
+        return self.max_context_chars
+
+    @property
+    def provider_chars(self) -> int:
+        return self.max_context_chars
 
 
 @dataclass(frozen=True)

@@ -228,6 +228,16 @@ def coverage_report(entries: list[dict[str, Any]], themes: list[dict[str, Any]],
     enabled = [entry for entry in entries if entry.get("enabled", True)]
     benchmark_topics = (benchmark or {}).get("per_micro_topic", {})
     production_ready = [entry for entry in enabled if entry.get("positive_signals") and entry.get("analysis_contract") and entry.get("retrieval_intent") and entry.get("template_id") and entry.get("profile_quality", {}).get("profile_completeness_score", 0) >= 0.8 and benchmark_topics.get(entry.get("micro_topic"), {}).get("validation_state") == "VALIDATED"]
+    def readiness(entry: dict[str, Any]) -> tuple[str, list[str]]:
+        reasons: list[str] = []
+        if not entry.get("positive_signals") or not entry.get("analysis_contract"):
+            reasons.append("NOT_READY_PROFILE_INCOMPLETE")
+        if entry.get("profile_quality", {}).get("profile_completeness_score", 0) < 0.8:
+            reasons.append("NOT_READY_PROFILE_GENERIC")
+        benchmark_row = benchmark_topics.get(entry.get("micro_topic"), {})
+        if benchmark_row.get("validation_state") != "VALIDATED":
+            reasons.append("NOT_READY_BENCHMARK_UNDER_SUPPORTED")
+        return ("READY" if not reasons else "UNDER_TESTED", reasons)
     weak = [entry for entry in enabled if entry not in production_ready]
     exact_themes = [theme for theme in themes if theme.get("micro_topic") not in {None, "any", "*"}]
     generated_themes = [theme for theme in exact_themes if str(theme.get("id", "")).startswith("matrix-")]
@@ -240,7 +250,7 @@ def coverage_report(entries: list[dict[str, Any]], themes: list[dict[str, Any]],
         "production_ready_profiles": len(production_ready), "weak_profiles": len(weak), "missing_profiles": len(enabled) - len(production_ready) - len(weak),
         "profile_quality_threshold": 0.8,
         "profile_quality_below_threshold": [entry["micro_topic_id"] for entry in enabled if entry.get("profile_quality", {}).get("profile_quality_score", 0) < 0.8],
-        "micro_topic_profiles": [{"micro_topic_id": entry["micro_topic_id"], "profile_origin": entry.get("profile_origin_code", entry.get("profile_origin")), "profile_quality": entry.get("profile_quality", {}), "signal_count": len(entry.get("positive_signals", [])) + len(entry.get("negative_signals", [])), "signal_group_count": len(entry.get("signal_groups", {})), "positive_signal_count": len(entry.get("positive_signals", [])), "negative_signal_count": len(entry.get("negative_signals", [])), "benchmark": benchmark_topics.get(entry.get("micro_topic"), {"validation_state": "UNDER_TESTED"}), "production_eligibility": "PRODUCTION_READY" if entry in production_ready else "UNDER_TESTED"} for entry in enabled],
+        "micro_topic_profiles": [{"micro_topic_id": entry["micro_topic_id"], "profile_origin": entry.get("profile_origin_code", entry.get("profile_origin")), "profile_quality": entry.get("profile_quality", {}), "signal_count": len(entry.get("positive_signals", [])) + len(entry.get("negative_signals", [])), "signal_group_count": len(entry.get("signal_groups", {})), "positive_signal_count": len(entry.get("positive_signals", [])), "negative_signal_count": len(entry.get("negative_signals", [])), "benchmark": benchmark_topics.get(entry.get("micro_topic"), {"validation_state": "UNDER_TESTED"}), "readiness_reasons": readiness(entry)[1], "production_eligibility": readiness(entry)[0]} for entry in enabled],
         "positive_signal_coverage": round(sum(bool(entry.get("positive_signals")) for entry in enabled) / max(1, len(enabled)) * 100, 2),
         "negative_signal_coverage": round(sum(bool(entry.get("negative_signals")) for entry in enabled) / max(1, len(enabled)) * 100, 2),
         "disambiguator_coverage": round(sum(bool(entry.get("disambiguators")) for entry in enabled) / max(1, len(enabled)) * 100, 2),

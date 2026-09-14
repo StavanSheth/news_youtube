@@ -54,11 +54,7 @@ class MicroTopicManager:
                     "analysis_eligible": False,
                 })
                 continue
-            budget = ContextBudget(
-                retrieval_chars=int(self.settings.get("max_retrieved_context_chars", 12000)),
-                analysis_chars=int(self.settings.get("max_retrieved_context_chars", 12000)),
-                provider_chars=int(self.settings.get("max_retrieved_context_chars", 12000)),
-            )
+            budget = ContextBudget(max_context_chars=int(self.settings.get("max_retrieved_context_chars", 12000)))
             max_context = budget.analysis_chars
             bounded = []
             used = 0
