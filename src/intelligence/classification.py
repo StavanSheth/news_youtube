@@ -51,13 +51,16 @@ class KeywordClassifier:
         for phrase in matched:
             entry = entries.get(cls.normalize(phrase), phrase)
             strength = str(entry.get("strength", "medium") if isinstance(entry, dict) else "medium").lower()
+            signal_type = str(entry.get("type", "contradiction" if strength == "strong" else "distractor") if isinstance(entry, dict) else "distractor").lower()
             value = penalties.get(strength, penalties["medium"])
             index = normalized_text.find(cls.normalize(phrase))
             nearby_positive = any(abs(index - normalized_text.find(cls.normalize(pos))) <= 90 for pos in positive_matches if normalized_text.find(cls.normalize(pos)) >= 0)
-            if nearby_positive and phrase not in title_matches:
+            if signal_type == "distractor" and nearby_positive and phrase not in title_matches:
                 value *= 0.35
-            if phrase in title_matches and not nearby_positive:
+            if signal_type == "contradiction" and phrase in title_matches and not nearby_positive:
                 contradictions.append(phrase) if strength == "strong" else None
+            if signal_type == "exclusion" and phrase in title_matches:
+                value *= 1.25
             effective.append(phrase)
             penalty += value * (1.5 if phrase in title_matches else 1.0)
         contradiction_penalty = min(0.35, len(contradictions) * 0.25)
