@@ -18,11 +18,13 @@ def project_micro_topic_context(
         metadata = chunk.get("metadata", {})
         text = chunk.get("text", "")
         signal_only = False
+        projection_method = "FULL_CHUNK"
         if not metadata.get("span_id") and classification.get("signals"):
             sentences = re.split(r"(?<=[.!?])\s+", text)
             relevant = [sentence for sentence in sentences if any(str(signal).lower() in sentence.lower() for signal in classification.get("signals", []))]
             if relevant:
                 signal_only = True
+                projection_method = "SENTENCE_SIGNAL_FALLBACK"
                 signal_spans.extend(relevant)
                 text = " ".join(relevant)
         span = {
@@ -32,6 +34,7 @@ def project_micro_topic_context(
             "signal_span": signal_only,
             "evidence_span": bool(metadata.get("provenance") or metadata.get("evidence_id") or metadata.get("claim_id")) and not signal_only,
             "evidence_type": metadata.get("evidence_type", "classification_context" if signal_only else "unknown"),
+            "projection_method": projection_method,
         }
         spans.append(span)
         if span["evidence_span"]:

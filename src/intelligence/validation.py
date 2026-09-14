@@ -3,13 +3,16 @@ from __future__ import annotations
 from typing import Any
 
 from .profiles import compile_semantic_profile
-from .themes import theme_fingerprint, theme_semantic_overlap, theme_specificity_score
+from .themes import theme_fingerprint, theme_lexical_overlap, theme_specificity_score
 
 
 def validate_microtopic_matrix(matrix: dict[str, Any]) -> None:
     records = matrix.get("records", [])
-    if not isinstance(records, list) or len(records) != 236:
-        raise ValueError("Micro-topic matrix must contain exactly 236 records")
+    if not isinstance(records, list) or not records:
+        raise ValueError("Micro-topic matrix must contain a non-empty records list")
+    expected_records = matrix.get("expected_records")
+    if expected_records is not None and len(records) != int(expected_records):
+        raise ValueError(f"Micro-topic matrix expected {expected_records} records, found {len(records)}")
     keys = [(record.get("domain"), record.get("id")) for record in records]
     if any(not domain or not micro_topic for domain, micro_topic in keys) or len(keys) != len(set(keys)):
         raise ValueError("Micro-topic matrix records require unique domain/id pairs")
@@ -95,8 +98,8 @@ def validate_theme_specificity(themes: list[dict[str, Any]]) -> dict[str, Any]:
     exact = [theme for theme in themes if theme.get("id") != "domain-fallback" and theme.get("micro_topic") not in {None, "any", "*"}]
     for index, left in enumerate(exact):
         for right in exact[index + 1:]:
-            if left.get("domain") == right.get("domain") and theme_semantic_overlap(left, right)["flag"]:
-                overlap_flags.append({"left": left.get("id"), "right": right.get("id"), **theme_semantic_overlap(left, right)})
+            if left.get("domain") == right.get("domain") and theme_lexical_overlap(left, right)["flag"]:
+                overlap_flags.append({"left": left.get("id"), "right": right.get("id"), **theme_lexical_overlap(left, right)})
     return {"total": len(themes), "unique_fingerprints": len(fingerprints), "duplicate_fingerprints": duplicates, "generic": generic, "overlap_flags": overlap_flags}
 
 

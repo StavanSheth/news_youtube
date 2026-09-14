@@ -63,20 +63,31 @@ def compile_semantic_profile(record: dict[str, Any], template: dict[str, Any], e
             group = "evidence"
         else:
             group = "capability"
-        groups[group].append({"phrase": phrase, "strength": "strong" if len(phrase.split()) >= 3 else "medium"})
+        groups[group].append({
+            "phrase": phrase,
+            "strength": "strong" if len(phrase.split()) >= 3 else "medium",
+            "type": "positive",
+            "specificity": "specific" if len(phrase.split()) >= 2 else "broad",
+            "source": "matrix_semantics",
+        })
     groups = {name: values for name, values in groups.items() if values}
     explicit_signals = explicit.get("positive_signals", [])
     if explicit_signals:
-        groups.setdefault("explicit", []).extend([*explicit.get("aliases", []), *explicit_signals])
+        groups.setdefault("explicit", []).extend([
+            value if isinstance(value, dict) else {"phrase": str(value), "strength": "strong", "type": "positive", "specificity": "specific", "source": "curated_override"}
+            for value in [*explicit.get("aliases", []), *explicit_signals]
+        ])
     positive = [signal for values in groups.values() for signal in values]
     required_groups = explicit.get("required_signal_groups") or (["explicit"] if explicit_signals else list(groups))
     minimum_groups = int(explicit.get("minimum_signal_groups", 1))
+    group_policy = explicit.get("group_policy", {"mode": "AT_LEAST_N", "minimum": minimum_groups, "groups": required_groups})
     return {
         "aliases": [name] if len(name.split()) >= 2 else [],
         "positive_signals": positive,
         "signal_groups": groups,
         "required_signal_groups": required_groups,
         "minimum_signal_groups": minimum_groups,
+        "group_policy": group_policy,
         "disambiguators": _semantic_phrases(record.get("important_output", ""), record.get("required_evidence", ""))[:4],
         "entity_signals": _semantic_phrases(record.get("resources", ""))[:4],
         "event_signals": _semantic_phrases(record.get("evaluation", ""))[:4],
@@ -110,10 +121,12 @@ def resolve_microtopic_profile(
     resolved = _merge(available[template_id], semantic_override)
     resolved = _merge(resolved, explicit)
     origin = "explicit" if explicit else ("derived" if semantic_override else "template")
+    origin_code = "CURATED" if explicit else ("MATRIX_DERIVED" if semantic_override else "TEMPLATE_DERIVED")
     resolved.update({
         "profile_id": f"{domain}.{micro_topic_id}", "template_id": template_id,
         "domain": domain, "topic": topic, "micro_topic": micro_topic_id,
         "enabled": enabled, "profile_origin": origin,
+        "profile_origin_code": origin_code,
         "resolution_level": "micro_topic" if explicit or semantic_override else "template",
         "fallback_used": False,
     })

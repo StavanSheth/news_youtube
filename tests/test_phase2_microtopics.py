@@ -6,7 +6,7 @@ import json
 import pytest
 
 from intelligence.config import load_config
-from intelligence.microtopics import catalog, classify_micro_topics, coverage
+from intelligence.microtopics import catalog, classify_micro_topics, coverage, group_policy_satisfied
 from intelligence.themes import analysis_profile, select_theme
 from intelligence.validation import validate_microtopics, validate_themes
 from intelligence.validation import validate_microtopic_profiles, validate_theme_specificity
@@ -148,6 +148,12 @@ def test_compiled_profile_exposes_signal_groups_and_disambiguation():
     result = classify_micro_topics({"title": "New foundation model benchmark", "text": "Model architecture and model capability benchmark."}, [foundation])[0]
     assert result["matched_signal_groups"]
     assert result["classification_reason"]
+
+
+def test_signal_group_policies_are_explicit_and_deterministic():
+    assert group_policy_satisfied({"mode": "ALL", "groups": ["a", "b"]}, {"a": ["x"], "b": ["y"]}) == (True, [])
+    assert group_policy_satisfied({"mode": "ANY", "groups": ["a", "b"]}, {"a": [], "b": ["y"]}) == (True, ["a"])
+    assert group_policy_satisfied({"mode": "AT_LEAST_N", "minimum": 2, "groups": ["a", "b"]}, {"a": ["x"], "b": []}) == (False, ["b"])
 
 
 def test_negative_strength_is_context_aware_and_contradiction_is_deterministic():

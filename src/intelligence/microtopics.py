@@ -26,11 +26,38 @@ def _phrase_found(phrase: str, text: str) -> bool:
     return bool(re.search(rf"(?<!\w){re.escape(phrase.lower())}(?!\w)", text.lower()))
 
 
-def _signal(value: Any, *, default_strength: str = "medium") -> dict[str, str]:
+def _signal(value: Any, *, default_strength: str = "medium", default_type: str = "distractor") -> dict[str, str]:
     if isinstance(value, dict):
         strength = str(value.get("strength", default_strength)).lower()
-        return {"phrase": str(value.get("phrase", "")).strip(), "strength": strength, "type": str(value.get("type", "contradiction" if strength == "strong" else "distractor")).lower()}
-    return {"phrase": str(value).strip(), "strength": default_strength, "type": "distractor"}
+        return {
+            "phrase": str(value.get("phrase", "")).strip(), "strength": strength,
+            "type": str(value.get("type", "contradiction" if strength == "strong" else default_type)).lower(),
+            "specificity": str(value.get("specificity", "specific" if len(str(value.get("phrase", "")).split()) >= 2 else "broad")),
+            "source": str(value.get("source", "profile")),
+        }
+    phrase = str(value).strip()
+    return {"phrase": phrase, "strength": default_strength, "type": default_type, "specificity": "specific" if len(phrase.split()) >= 2 else "broad", "source": "profile"}
+
+
+def group_policy_satisfied(policy: Any, matched_groups: dict[str, Any]) -> tuple[bool, list[str]]:
+    """Evaluate ALL, ANY, or AT_LEAST_N routing policy without implicit defaults."""
+    if isinstance(policy, dict):
+        mode = str(policy.get("mode", "AT_LEAST_N")).upper()
+        groups = [str(value) for value in policy.get("groups", [])]
+        minimum = int(policy.get("minimum", 1))
+    else:
+        mode, groups, minimum = "AT_LEAST_N", [str(value) for value in (policy or [])], 1
+    matched = {group for group in groups if matched_groups.get(group)}
+    missing = [group for group in groups if group not in matched]
+    if not groups:
+        return True, missing
+    if mode == "ALL":
+        return len(missing) == 0, missing
+    if mode == "ANY":
+        return bool(matched), missing
+    if mode == "AT_LEAST_N":
+        return len(matched) >= max(1, minimum), missing
+    raise ValueError(f"Unknown signal group policy: {mode}")
 
 
 def score_micro_topic_chunk(chunk_text: str, classification: dict[str, Any]) -> dict[str, Any]:
@@ -83,6 +110,7 @@ def catalog(
                     "signal_groups": semantic_profile["signal_groups"],
                     "required_signal_groups": semantic_profile["required_signal_groups"],
                     "minimum_signal_groups": semantic_profile["minimum_signal_groups"],
+                    "group_policy": semantic_profile["group_policy"],
                     "disambiguators": semantic_profile["disambiguators"],
                     "entity_signals": semantic_profile["entity_signals"],
                     "event_signals": semantic_profile["event_signals"],
@@ -118,15 +146,20 @@ def catalog(
                     "micro_topic": micro_topic,
                     "micro_topic_id": make_micro_topic_id(domain, domain_topic.get("key", domain), micro_topic),
                     "aliases": list(dict.fromkeys([*aliases, micro_topic.replace("-", " ")] if profiles is None else aliases)),
-                    "positive_signals": [_signal(value, default_strength="strong") for value in profile.get("positive_signals", []) if _signal(value).get("phrase")],
+                    "positive_signals": [_signal(value, default_strength="strong", default_type="positive") for value in profile.get("positive_signals", []) if _signal(value, default_type="positive").get("phrase")],
                     "negative_signals": [_signal(value) for value in profile.get("negative_signals", []) if _signal(value).get("phrase")],
                     "disambiguators": list(profile.get("disambiguators", [])),
                     "exclusion_rules": list(profile.get("exclusion_rules", [])),
                     "entity_signals": list(profile.get("entity_signals", [])),
                     "event_signals": list(profile.get("event_signals", [])),
-                    "signal_groups": profile.get("signal_groups", {}),
+                    "signal_groups": (
+                        {**profile.get("signal_groups", {}), "explicit": [_signal(value, default_strength="strong", default_type="positive") for value in profile.get("positive_signals", [])]}
+                        if profile.get("positive_signals") and "explicit" not in profile.get("signal_groups", {})
+                        else profile.get("signal_groups", {})
+                    ),
                     "required_signal_groups": list(profile.get("required_signal_groups", [])) if profile.get("signal_groups") else [],
                     "minimum_signal_groups": int(profile.get("minimum_signal_groups", 1)) if profile.get("signal_groups") else 0,
+                    "group_policy": profile.get("group_policy", {"mode": "AT_LEAST_N", "minimum": int(profile.get("minimum_signal_groups", 1)), "groups": list(profile.get("required_signal_groups", []))}),
                     "secondary_threshold": float(profile.get("secondary_threshold", profile.get("classification_threshold", 0.25 if profiles is None else 0.5))),
                     "primary_threshold": float(profile.get("primary_threshold", profile.get("classification_threshold", 0.25 if profiles is None else 0.5))),
                     "max_secondary": int(profile.get("max_secondary", 1)),
@@ -138,6 +171,7 @@ def catalog(
                     "retrieval_intent": profile.get("retrieval_intent", {}),
                     "analysis_contract": profile.get("analysis_contract", {}),
                     "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived"),
+                    "profile_origin_code": profile.get("profile_origin_code", "CURATED" if explicit else "MATRIX_DERIVED"),
                     "profile_id": profile.get("profile_id", f"{domain}.{micro_topic}"),
                     "template_id": profile.get("template_id", template_id),
                 }
@@ -176,11 +210,10 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
         negative = scored["negative_signals"]
         score = scored["score"]
         threshold = float(entry.get("primary_threshold", entry.get("classification_threshold", 0.5)))
-        required_groups = list(entry.get("required_signal_groups", []))
         matched_groups = scored.get("matched_signal_groups", {})
-        groups_met = sum(bool(matched_groups.get(group)) for group in required_groups)
-        required_group_count = min(int(entry.get("minimum_signal_groups", 1)), len(required_groups)) if required_groups else 0
-        if signals and score >= float(entry.get("secondary_threshold", threshold)) and groups_met >= required_group_count:
+        policy = entry.get("group_policy", entry.get("required_signal_groups", []))
+        groups_satisfied, missing_groups = group_policy_satisfied(policy, matched_groups)
+        if signals and score >= float(entry.get("secondary_threshold", threshold)) and groups_satisfied:
             candidates.append({
                 **entry,
                 "signals": signals,
@@ -212,7 +245,11 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
             status = "PRIMARY"
         elif secondary_count >= int(primary.get("max_secondary", 1)):
             continue
-        elif candidate["classification_score"] < float(candidate.get("secondary_threshold", 0.5)) or margin < float(primary.get("runner_up_margin", 0.05)):
+        elif candidate["classification_score"] < float(candidate.get("secondary_threshold", 0.5)) or (
+            margin < float(primary.get("runner_up_margin", 0.05))
+            and not candidate.get("disambiguators")
+            and not candidate.get("matched_signal_groups")
+        ):
             continue
         else:
             status = "SECONDARY"

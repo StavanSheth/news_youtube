@@ -55,10 +55,11 @@ class MicroTopicManager:
             bounded = []
             used = 0
             for entry in evidence:
-                if used >= max_context:
+                entry_size = len(entry.get("text", ""))
+                if used + entry_size > max_context:
                     break
-                bounded.append({**entry, "text": entry["text"][: max_context - used]})
-                used += len(bounded[-1]["text"])
+                bounded.append(entry)
+                used += entry_size
             self.stats["micro_topic_analyses"] += 1
             try:
                 analysis = self._analyze_with_retry(project_micro_topic_context(evidence_item, classification, scope, bounded), profile, bounded)

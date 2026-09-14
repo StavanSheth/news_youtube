@@ -16,6 +16,34 @@ from .statuses import IntelligenceStatus
 
 
 @dataclass(frozen=True)
+class RetrievalIntent:
+    required_concepts: tuple[str, ...] = ()
+    preferred_source_types: tuple[str, ...] = ()
+    evidence_types: tuple[str, ...] = ()
+    exclusion_concepts: tuple[str, ...] = ()
+    freshness: str = "30d"
+
+    @classmethod
+    def from_mapping(cls, value: dict[str, Any]) -> "RetrievalIntent":
+        return cls(
+            required_concepts=tuple(str(item) for item in value.get("required_concepts", [])),
+            preferred_source_types=tuple(str(item) for item in value.get("preferred_source_types", [])),
+            evidence_types=tuple(str(item) for item in value.get("evidence_types", [])),
+            exclusion_concepts=tuple(str(item) for item in value.get("exclusion_concepts", [])),
+            freshness=str(value.get("freshness", "30d")),
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "required_concepts": list(self.required_concepts),
+            "preferred_source_types": list(self.preferred_source_types),
+            "evidence_types": list(self.evidence_types),
+            "exclusion_concepts": list(self.exclusion_concepts),
+            "freshness": self.freshness,
+        }
+
+
+@dataclass(frozen=True)
 class RetrievalRequest:
     query: str
     micro_topic_id: str
@@ -34,6 +62,14 @@ class RetrievalRequest:
             "evidence_types": list(self.evidence_types), "exclusions": list(self.exclusions),
             "freshness": self.freshness, "max_results": self.max_results,
         }
+
+
+@dataclass(frozen=True)
+class RetrievalResult:
+    request: RetrievalRequest | None = None
+    chunks: tuple[dict[str, Any], ...] = ()
+    status: str = "OK"
+    error_type: str | None = None
 
 
 def _terms(value: str) -> list[str]:
@@ -196,12 +232,14 @@ class RAGManager:
             self.metrics["chunks_rejected_scope"] += self.metrics["chunks_before_scope"] - self.metrics["chunks_after_scope"]
             self.metrics["scope_rejection_rate"] = round(self.metrics["chunks_rejected_scope"] / max(1, self.metrics["chunks_before_scope"]), 3)
             retrieval_intent = build_retrieval_intent(classification, theme)
+            intent = RetrievalIntent.from_mapping(retrieval_intent)
+            retrieval_intent = intent.to_dict()
             query = " ".join(
                 filter(None, [
                     micro_topic_query(classification),
-                    " ".join(str(value) for value in retrieval_intent.get("required_concepts", [])),
-                    " ".join(str(value) for value in retrieval_intent.get("evidence_types", [])),
-                    " ".join(str(value) for value in retrieval_intent.get("preferred_source_types", [])),
+                    " ".join(intent.required_concepts),
+                    " ".join(intent.evidence_types),
+                    " ".join(intent.preferred_source_types),
                     " ".join(event_context.get("entities", [])) if event_context else "",
                 ])
             )
@@ -210,10 +248,10 @@ class RAGManager:
                 micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
                 theme_id=str(theme.get("theme_id", theme.get("id", ""))),
                 retrieval_intent=retrieval_intent,
-                preferred_source_types=tuple(str(value) for value in retrieval_intent.get("preferred_source_types", [])),
-                evidence_types=tuple(str(value) for value in retrieval_intent.get("evidence_types", [])),
-                exclusions=tuple(str(value) for value in retrieval_intent.get("exclusion_concepts", [])),
-                freshness=str(retrieval_intent.get("freshness", "30d")),
+                preferred_source_types=intent.preferred_source_types,
+                evidence_types=intent.evidence_types,
+                exclusions=intent.exclusion_concepts,
+                freshness=intent.freshness,
                 max_results=min(int(self.settings.get("retrieval_top_k", 4)), 8),
             )
             selected = retrieve(

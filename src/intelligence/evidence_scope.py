@@ -9,6 +9,16 @@ from .identity import make_content_id, make_source_id
 
 
 @dataclass(frozen=True)
+class EvidenceAuthorizationPolicy:
+    required_entities: tuple[str, ...] = ()
+    optional_entities: tuple[str, ...] = ()
+    forbidden_entities: tuple[str, ...] = ()
+    required_events: tuple[str, ...] = ()
+    optional_events: tuple[str, ...] = ()
+    forbidden_events: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
 class EvidenceScope:
     micro_topic_id: str
     source_content_id: str
@@ -20,6 +30,7 @@ class EvidenceScope:
     evidence_ids: tuple[str, ...] = ()
     isolation_reason: str = "matched_micro_topic_signals"
     isolation_confidence: float = 0.0
+    authorization_policy: EvidenceAuthorizationPolicy = EvidenceAuthorizationPolicy()
 
     def __post_init__(self) -> None:
         if not self.micro_topic_id or not self.source_content_id or not self.source_id:
@@ -44,9 +55,17 @@ class EvidenceScope:
             return False, "MISSING_CHUNK_MICRO_TOPIC_MATCH"
         if self.allowed_events and metadata.get("event_id", "") not in self.allowed_events:
             return False, "EVENT_NOT_AUTHORIZED"
+        event_id = str(metadata.get("event_id", ""))
+        entity_ids = {str(value) for value in metadata.get("entity_ids", [])}
+        policy = self.authorization_policy
+        if event_id in policy.forbidden_events or entity_ids.intersection(policy.forbidden_entities):
+            return False, "FORBIDDEN_EVENT_OR_ENTITY"
+        if policy.required_events and event_id not in policy.required_events:
+            return False, "REQUIRED_EVENT_MISSING"
+        if policy.required_entities and not entity_ids.intersection(policy.required_entities):
+            return False, "REQUIRED_ENTITY_MISSING"
         if self.allowed_entities:
-            chunk_entities = set(metadata.get("entity_ids", []))
-            if not chunk_entities.intersection(self.allowed_entities):
+            if not entity_ids.intersection(self.allowed_entities):
                 return False, "ENTITY_NOT_AUTHORIZED"
         if self.evidence_ids and metadata.get("evidence_id", "") not in self.evidence_ids:
             return False, "EVIDENCE_NOT_AUTHORIZED"
@@ -71,6 +90,14 @@ class EvidenceScope:
             "allowed_events": list(self.allowed_events),
             "isolation_reason": self.isolation_reason,
             "isolation_confidence": self.isolation_confidence,
+            "authorization_policy": {
+                "required_entities": list(self.authorization_policy.required_entities),
+                "optional_entities": list(self.authorization_policy.optional_entities),
+                "forbidden_entities": list(self.authorization_policy.forbidden_entities),
+                "required_events": list(self.authorization_policy.required_events),
+                "optional_events": list(self.authorization_policy.optional_events),
+                "forbidden_events": list(self.authorization_policy.forbidden_events),
+            },
             "evidence_isolated": True,
         }
 
@@ -92,6 +119,15 @@ class EvidenceScopeBuilder:
         content_id = str(metadata.get("content_id", "")).strip() or make_content_id(source_id, item.get("url", ""), item.get("title", ""), item.get("published_at", ""), item.get("text", ""))
         entity_ids = tuple(str(value) for value in metadata.get("entity_ids", []) if value)
         event_ids = tuple(str(value) for value in [metadata.get("event_id", "")] if value)
+        policy_data = classification.get("evidence_authorization", {}) or {}
+        policy = EvidenceAuthorizationPolicy(
+            required_entities=tuple(str(value) for value in policy_data.get("required_entities", [])),
+            optional_entities=tuple(str(value) for value in policy_data.get("optional_entities", [])),
+            forbidden_entities=tuple(str(value) for value in policy_data.get("forbidden_entities", [])),
+            required_events=tuple(str(value) for value in policy_data.get("required_events", [])),
+            optional_events=tuple(str(value) for value in policy_data.get("optional_events", [])),
+            forbidden_events=tuple(str(value) for value in policy_data.get("forbidden_events", [])),
+        )
         return EvidenceScope(
             micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
             source_content_id=content_id,
@@ -102,4 +138,5 @@ class EvidenceScopeBuilder:
             allowed_events=event_ids,
             evidence_ids=tuple(evidence_ids),
             isolation_confidence=float(classification.get("routing_confidence", classification.get("classification_confidence", classification.get("confidence", 0.0)))),
+            authorization_policy=policy,
         )

@@ -23,7 +23,8 @@ def _theme_tokens(theme: dict[str, Any], field: str) -> set[str]:
     return {token for token in re.findall(r"[a-z0-9][a-z0-9_-]{2,}", text.lower()) if token not in {"what", "should", "with", "from", "that", "this"}}
 
 
-def theme_semantic_overlap(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
+def theme_lexical_overlap(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
+    """Measure lexical overlap; this is intentionally not a semantic model."""
     fields = ("analysis_contract", "questions", "retrieval_intent", "evidence", "output", "watch_items", "disambiguation_focus")
     overlaps = {}
     for field in fields:
@@ -31,6 +32,10 @@ def theme_semantic_overlap(left: dict[str, Any], right: dict[str, Any]) -> dict[
         overlaps[field] = round(len(a & b) / max(1, len(a | b)), 3)
     score = round(sum(overlaps.values()) / len(fields), 3)
     return {"score": score, "fields": overlaps, "flag": score >= 0.85}
+
+
+# Compatibility alias for older integrations. The metric is lexical by design.
+theme_semantic_overlap = theme_lexical_overlap
 
 
 def theme_specificity_score(theme: dict[str, Any]) -> float:
@@ -117,6 +122,7 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         "resolution_level": "controlled_fallback",
         "fallback_used": True,
         "theme_id": fallback.get("id", "domain-fallback"),
+        "theme_origin": fallback.get("theme_origin", "FALLBACK"),
         "fallback_reason": "no_exact_topic_or_domain_theme",
         "theme_specificity_score": theme_specificity_score(fallback),
         "resolution_level_code": "CONTROLLED_FALLBACK",
