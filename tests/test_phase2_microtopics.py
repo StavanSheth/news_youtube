@@ -13,7 +13,7 @@ from intelligence.validation import validate_microtopic_profiles, validate_theme
 from intelligence.themes import theme_fingerprint
 from intelligence.benchmark import evaluate_golden
 from intelligence.classification import KeywordClassifier
-from intelligence.evidence_scope import EvidenceScope
+from intelligence.evidence_scope import EvidenceScope, EvidenceScopeBuilder
 
 
 ROOT = Path(__file__).parents[1]
@@ -239,13 +239,27 @@ def test_evidence_scope_is_structured_and_serializable():
     assert metadata["micro_topic_id"] == "micro-a"
     assert metadata["evidence_ids"] == ["e1"]
     assert metadata["evidence_isolated"] is True
-    assert scope.allows({"metadata": {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "evidence_id": "e1", "span_id": "span-1", "claim_id": "claim-1"}})
+    assert scope.allows({"metadata": {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "evidence_id": "e1", "span_id": "span-1", "claim_id": "claim-1", "micro_topic_matches": [{"micro_topic_id": "micro-a"}], "provenance": {"source_url": "https://example.test/a"}}})
     assert not scope.allows({"metadata": {"micro_topic_id": "micro-b", "content_id": "content-a", "source_id": "source-a"}})
 
 
 def test_evidence_scope_rejects_wrong_event_and_entity():
     scope = EvidenceScope("micro-a", "content-a", "source-a", allowed_events=("event-a",), allowed_entities=("entity-a",))
-    base = {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "event_id": "event-a", "entity_ids": ["entity-a"]}
+    base = {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "event_id": "event-a", "entity_ids": ["entity-a"], "micro_topic_matches": [{"micro_topic_id": "micro-a"}], "provenance": {"source_url": "https://example.test/a"}}
     assert scope.allows({"metadata": base})
     assert not scope.allows({"metadata": {**base, "event_id": "event-b"}})
     assert not scope.allows({"metadata": {**base, "entity_ids": ["entity-b"]}})
+
+
+def test_evidence_scope_rejects_parent_tag_without_chunk_match():
+    scope = EvidenceScope("micro-a", "content-a", "source-a")
+    chunk = {"metadata": {"micro_topic_id": "micro-a", "content_id": "content-a", "source_id": "source-a", "provenance": {"source_url": "https://example.test/a"}, "micro_topic_matches": []}}
+    assert not scope.allows(chunk)
+    assert scope.authorize(chunk)[1] == "MISSING_CHUNK_MICRO_TOPIC_MATCH"
+
+
+def test_scope_builder_populates_available_identity_fields_without_fabrication():
+    scope = EvidenceScopeBuilder.build({"source": "Fixture", "url": "https://example.test/a", "title": "A", "text": "text", "metadata": {"entity_ids": ["entity-a"], "event_id": "event-a"}}, {"micro_topic": "rag", "routing_confidence": 0.8})
+    assert scope.source_id and scope.source_content_id
+    assert scope.allowed_entities == ("entity-a",)
+    assert scope.allowed_events == ("event-a",)

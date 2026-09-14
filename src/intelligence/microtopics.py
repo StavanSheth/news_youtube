@@ -28,8 +28,9 @@ def _phrase_found(phrase: str, text: str) -> bool:
 
 def _signal(value: Any, *, default_strength: str = "medium") -> dict[str, str]:
     if isinstance(value, dict):
-        return {"phrase": str(value.get("phrase", "")).strip(), "strength": str(value.get("strength", default_strength)).lower()}
-    return {"phrase": str(value).strip(), "strength": default_strength}
+        strength = str(value.get("strength", default_strength)).lower()
+        return {"phrase": str(value.get("phrase", "")).strip(), "strength": strength, "type": str(value.get("type", "contradiction" if strength == "strong" else "distractor")).lower()}
+    return {"phrase": str(value).strip(), "strength": default_strength, "type": "distractor"}
 
 
 def score_micro_topic_chunk(chunk_text: str, classification: dict[str, Any]) -> dict[str, Any]:
@@ -124,8 +125,8 @@ def catalog(
                     "entity_signals": list(profile.get("entity_signals", [])),
                     "event_signals": list(profile.get("event_signals", [])),
                     "signal_groups": profile.get("signal_groups", {}),
-                    "required_signal_groups": list(profile.get("required_signal_groups", [])),
-                    "minimum_signal_groups": int(profile.get("minimum_signal_groups", 1)),
+                    "required_signal_groups": list(profile.get("required_signal_groups", [])) if profile.get("signal_groups") else [],
+                    "minimum_signal_groups": int(profile.get("minimum_signal_groups", 1)) if profile.get("signal_groups") else 0,
                     "secondary_threshold": float(profile.get("secondary_threshold", profile.get("classification_threshold", 0.25 if profiles is None else 0.5))),
                     "primary_threshold": float(profile.get("primary_threshold", profile.get("classification_threshold", 0.25 if profiles is None else 0.5))),
                     "max_secondary": int(profile.get("max_secondary", 1)),
@@ -218,7 +219,22 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
             secondary_count += 1
         specificity = min(1.0, sum(max(1, len(str(signal).split())) for signal in candidate["signals"]) / 12)
         confidence = round(max(0.0, min(1.0, 0.45 * candidate["classification_score"] + 0.25 * min(1.0, margin / 0.3) + 0.2 * specificity + 0.1 * (1.0 - candidate["contradiction_penalty"]))), 3)
-        candidate.update({"classification_status": status, "primary_score": primary["classification_score"], "runner_up_score": runner_up, "margin": margin, "classification_confidence": confidence, "confidence": confidence})
+        missing_groups = [group for group in candidate.get("required_signal_groups", []) if not candidate.get("matched_signal_groups", {}).get(group)]
+        candidate.update({
+            "classification_status": status,
+            "decision": status,
+            "positive_evidence": candidate["signals"],
+            "negative_evidence": candidate.get("matched_negative_signals", []),
+            "missing_signal_groups": missing_groups,
+            "primary_score": primary["classification_score"],
+            "runner_up_score": runner_up,
+            "runner_up_topic": candidates[1].get("micro_topic") if len(candidates) > 1 else None,
+            "margin": margin,
+            "threshold": primary_threshold if index == 0 else float(candidate.get("secondary_threshold", 0.5)),
+            "classification_confidence": confidence,
+            "routing_confidence": confidence,
+            "confidence": confidence,
+        })
         selected.append(candidate)
     return selected
 

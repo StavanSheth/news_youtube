@@ -67,15 +67,16 @@ def compile_semantic_profile(record: dict[str, Any], template: dict[str, Any], e
     groups = {name: values for name, values in groups.items() if values}
     explicit_signals = explicit.get("positive_signals", [])
     if explicit_signals:
-        groups.setdefault("explicit", []).extend(explicit_signals)
+        groups.setdefault("explicit", []).extend([*explicit.get("aliases", []), *explicit_signals])
     positive = [signal for values in groups.values() for signal in values]
-    required_groups = ["explicit"] if explicit_signals else list(groups)
+    required_groups = explicit.get("required_signal_groups") or (["explicit"] if explicit_signals else list(groups))
+    minimum_groups = int(explicit.get("minimum_signal_groups", 1))
     return {
         "aliases": [name] if len(name.split()) >= 2 else [],
         "positive_signals": positive,
         "signal_groups": groups,
         "required_signal_groups": required_groups,
-        "minimum_signal_groups": 1,
+        "minimum_signal_groups": minimum_groups,
         "disambiguators": _semantic_phrases(record.get("important_output", ""), record.get("required_evidence", ""))[:4],
         "entity_signals": _semantic_phrases(record.get("resources", ""))[:4],
         "event_signals": _semantic_phrases(record.get("evaluation", ""))[:4],
@@ -186,7 +187,9 @@ def build_matrix_themes(
             },
             "resolution_policy": "template_backed_exact",
         })
-    return [*existing, *generated]
+    curated = [{**theme, "theme_origin": theme.get("theme_origin", "CURATED")} for theme in existing]
+    generated = [{**theme, "theme_origin": "TEMPLATE_DERIVED"} for theme in generated]
+    return [*curated, *generated]
 
 
 def coverage_report(entries: list[dict[str, Any]], themes: list[dict[str, Any]]) -> dict[str, Any]:

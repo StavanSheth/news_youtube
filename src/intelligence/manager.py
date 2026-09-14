@@ -1,9 +1,8 @@
 from __future__ import annotations
 
 from typing import Any, Protocol
-from .evidence_scope import EvidenceScope
+from .evidence_scope import EvidenceScope, EvidenceScopeBuilder
 from .evidence_projection import project_micro_topic_context
-from .identity import make_content_id, make_source_id
 
 from .retrieval import RAGManager
 from .themes import analysis_profile, select_theme
@@ -84,22 +83,9 @@ class MicroTopicManager:
         Retrieval enforces the scope on canonical chunks. Keeping the original
         document here preserves cross-sentence context for claims and entities.
         """
-        source_name = str(item.get("source", "")).strip()
-        source_id = str(item.get("metadata", {}).get("source_id", "")).strip()
-        if not source_id:
-            if not source_name:
-                raise ValueError("Evidence scope requires a source identity")
-            source_id = make_source_id(source_name)
-        content_id = str(item.get("metadata", {}).get("content_id", "")).strip()
-        if not content_id:
-            content_id = make_content_id(source_id, item.get("url", ""), item.get("title", ""), item.get("published_at", ""), item.get("text", ""))
-        scope = EvidenceScope(
-            micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
-            source_content_id=content_id,
-            source_id=source_id,
-            allowed_events=tuple(filter(None, [item.get("metadata", {}).get("event_id", "")])),
-            isolation_confidence=float(classification.get("classification_confidence", classification.get("confidence", 0.0))),
-        )
+        if not str(item.get("source", "")).strip() and not str(item.get("metadata", {}).get("source_id", "")).strip():
+            raise ValueError("Evidence scope requires a source identity")
+        scope = EvidenceScopeBuilder.build(item, classification)
         metadata = {**item.get("metadata", {}), "classification": classification, **scope.to_metadata()}
         return {**item, "metadata": metadata}, scope
 

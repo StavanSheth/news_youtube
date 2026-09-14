@@ -23,36 +23,57 @@ domains:
         aliases: [foundation model, base model]
         positive_signals: [model release, benchmark, model capability, model access, model pricing]
         negative_signals: [port infrastructure, regulation bill]
+        required_signal_groups: [explicit]
+        minimum_signal_groups: 1
+        disambiguators: [model architecture, model weights, benchmark, context window]
         report_types: [technical_deep_dive, executive_summary]
       ai-agents:
         aliases: [AI agent, agent, agents, agentic]
         positive_signals: [tool use, autonomy, memory, workflow orchestration, agent evaluation]
         negative_signals: [single model benchmark, model benchmark, foundation model, model weights, training run]
+        required_signal_groups: [explicit]
+        minimum_signal_groups: 2
+        disambiguators: [tool use, autonomous execution, agent workflow, multi-agent]
         report_types: [technical_deep_dive, case_study]
       rag:
         aliases: [retrieval augmented generation, RAG]
         positive_signals: [retrieval, reranking, chunking, embeddings, context relevance]
         negative_signals: [agent autonomy, semiconductor packaging, policy bill]
+        required_signal_groups: [explicit]
+        minimum_signal_groups: 2
+        disambiguators: [retrieval, reranking, grounding, citation]
         report_types: [technical_deep_dive]
       embeddings:
         aliases: [embedding, embeddings, vector search]
         positive_signals: [embedding model, similarity search, vector index]
         negative_signals: [agent autonomy, benchmark leaderboard]
+        required_signal_groups: [explicit]
+        minimum_signal_groups: 2
+        disambiguators: [vector index, similarity search, embedding model]
         report_types: [technical_deep_dive]
       ai-infrastructure:
         aliases: [AI infrastructure, inference infrastructure]
         positive_signals: [GPU cluster, accelerator, serving, inference stack, data center]
         negative_signals: [agent workflow, regulation bill, model benchmark]
+        required_signal_groups: [explicit]
+        minimum_signal_groups: 2
+        disambiguators: [GPU cluster, serving, data center, accelerator]
         report_types: [technical_deep_dive]
       ai-regulation:
         aliases: [AI regulation, AI law, AI policy]
         positive_signals: [regulator, compliance, legislation, rules, safety standard]
         negative_signals: [model benchmark, agent workflow, GPU cluster]
+        required_signal_groups: [explicit]
+        minimum_signal_groups: 2
+        disambiguators: [regulator, compliance, legislation, safety standard]
         report_types: [executive_brief]
       coding-models:
         aliases: [coding model, code model, code assistant]
         positive_signals: [code generation, software engineering, programming benchmark]
         negative_signals: [general model release, agent workflow]
+        required_signal_groups: [explicit]
+        minimum_signal_groups: 2
+        disambiguators: [code generation, debugging, software engineering]
         report_types: [technical_deep_dive]
 themes:
   required_resolution: exact_or_controlled_fallback

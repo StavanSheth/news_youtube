@@ -71,7 +71,7 @@ def test_failed_ai_isolated_per_microtopic():
         {"retrieval_chunk_size": 80, "retrieval_top_k": 1, "max_ai_attempts": 2},
     )
     result = manager.analyze(
-        {"id": "x", "kind": "news", "source": "Fixture", "title": "RAG retrieval", "text": "RAG retrieval evidence"},
+            {"id": "x", "kind": "news", "source": "Fixture", "url": "https://example.test/x", "title": "RAG retrieval", "text": "RAG retrieval evidence"},
         [{"domain": "artificial-intelligence", "topic": "AI", "micro_topic": "rag", "signals": ["retrieval"]}],
     )
     assert result[0]["analysis_status"] == "ANALYSIS_FAILURE"

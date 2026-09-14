@@ -5,6 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from .identity import make_content_id, make_source_id
+
 
 @dataclass(frozen=True)
 class EvidenceScope:
@@ -28,27 +30,33 @@ class EvidenceScope:
             raise ValueError("EvidenceScope evidence IDs must be unique")
 
     def allows(self, chunk: dict[str, Any]) -> bool:
+        return self.authorize(chunk)[0]
+
+    def authorize(self, chunk: dict[str, Any]) -> tuple[bool, str]:
         metadata = chunk.get("metadata", {})
         identity_ok = (
-            metadata.get("micro_topic_id") == self.micro_topic_id
-            and metadata.get("content_id") == self.source_content_id
+            metadata.get("content_id") == self.source_content_id
             and metadata.get("source_id") == self.source_id
         )
         if not identity_ok:
-            return False
+            return False, "CONTENT_OR_SOURCE_MISMATCH"
+        if not any(match.get("micro_topic_id") == self.micro_topic_id for match in metadata.get("micro_topic_matches", []) if isinstance(match, dict)):
+            return False, "MISSING_CHUNK_MICRO_TOPIC_MATCH"
         if self.allowed_events and metadata.get("event_id", "") not in self.allowed_events:
-            return False
+            return False, "EVENT_NOT_AUTHORIZED"
         if self.allowed_entities:
             chunk_entities = set(metadata.get("entity_ids", []))
             if not chunk_entities.intersection(self.allowed_entities):
-                return False
+                return False, "ENTITY_NOT_AUTHORIZED"
         if self.evidence_ids and metadata.get("evidence_id", "") not in self.evidence_ids:
-            return False
+            return False, "EVIDENCE_NOT_AUTHORIZED"
         if self.allowed_span_ids and metadata.get("span_id", "") not in self.allowed_span_ids:
-            return False
+            return False, "SPAN_NOT_AUTHORIZED"
         if self.allowed_claim_ids and metadata.get("claim_id", "") not in self.allowed_claim_ids:
-            return False
-        return True
+            return False, "CLAIM_NOT_AUTHORIZED"
+        if not metadata.get("provenance"):
+            return False, "MISSING_PROVENANCE"
+        return True, "AUTHORIZED"
 
     def to_metadata(self) -> dict[str, Any]:
         return {
@@ -65,3 +73,33 @@ class EvidenceScope:
             "isolation_confidence": self.isolation_confidence,
             "evidence_isolated": True,
         }
+
+
+class EvidenceScopeBuilder:
+    """Build scopes from available provenance without inventing identifiers."""
+
+    @staticmethod
+    def build(
+        item: dict[str, Any],
+        classification: dict[str, Any],
+        *,
+        signal_span_ids: tuple[str, ...] = (),
+        claim_ids: tuple[str, ...] = (),
+        evidence_ids: tuple[str, ...] = (),
+    ) -> EvidenceScope:
+        metadata = item.get("metadata", {})
+        source_id = str(metadata.get("source_id", "")).strip() or make_source_id(str(item.get("source", "")).strip())
+        content_id = str(metadata.get("content_id", "")).strip() or make_content_id(source_id, item.get("url", ""), item.get("title", ""), item.get("published_at", ""), item.get("text", ""))
+        entity_ids = tuple(str(value) for value in metadata.get("entity_ids", []) if value)
+        event_ids = tuple(str(value) for value in [metadata.get("event_id", "")] if value)
+        return EvidenceScope(
+            micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
+            source_content_id=content_id,
+            source_id=source_id,
+            allowed_span_ids=tuple(signal_span_ids),
+            allowed_claim_ids=tuple(claim_ids),
+            allowed_entities=entity_ids,
+            allowed_events=event_ids,
+            evidence_ids=tuple(evidence_ids),
+            isolation_confidence=float(classification.get("routing_confidence", classification.get("classification_confidence", classification.get("confidence", 0.0)))),
+        )

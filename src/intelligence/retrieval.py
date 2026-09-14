@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 from collections import Counter
+from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from typing import Any
 
@@ -12,6 +13,27 @@ from .identity import make_content_id, make_source_id
 from .evidence_scope import EvidenceScope
 from .microtopics import score_micro_topic_chunk
 from .statuses import IntelligenceStatus
+
+
+@dataclass(frozen=True)
+class RetrievalRequest:
+    query: str
+    micro_topic_id: str
+    theme_id: str
+    retrieval_intent: dict[str, Any] = field(default_factory=dict)
+    preferred_source_types: tuple[str, ...] = ()
+    evidence_types: tuple[str, ...] = ()
+    exclusions: tuple[str, ...] = ()
+    freshness: str = "30d"
+    max_results: int = 4
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "query": self.query, "micro_topic_id": self.micro_topic_id, "theme_id": self.theme_id,
+            "retrieval_intent": self.retrieval_intent, "preferred_source_types": list(self.preferred_source_types),
+            "evidence_types": list(self.evidence_types), "exclusions": list(self.exclusions),
+            "freshness": self.freshness, "max_results": self.max_results,
+        }
 
 
 def _terms(value: str) -> list[str]:
@@ -40,6 +62,16 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
                 provenance_type,
                 chunk,
             ).to_dict()
+        match = score_micro_topic_chunk(chunk, classification) if classification else {}
+        micro_topic_matches = []
+        configured_threshold = classification.get("secondary_threshold", classification.get("classification_threshold"))
+        is_authorized = match.get("relevant") if configured_threshold is None else match.get("score", 0) >= float(configured_threshold)
+        if classification and match.get("matched_signals") and is_authorized:
+            micro_topic_matches.append({
+                "micro_topic_id": classification.get("micro_topic_id", classification.get("micro_topic", "")),
+                "score": match["score"], "matched_signals": match["matched_signals"],
+                "matched_groups": match.get("matched_signal_groups", {}), "confidence": match["score"],
+            })
         result.append({
             "id": f"{content_id}:{index}",
             "text": chunk,
@@ -59,9 +91,10 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
                 "updated_at": item.get("metadata", {}).get("updated_at", ""),
                 "retrieved_at": retrieved_at,
                 "trust_tier": item.get("metadata", {}).get("trust_tier", 4),
-                "micro_topic_id": item.get("metadata", {}).get("micro_topic_id", ""),
+                "micro_topic_id": "",
+                "micro_topic_matches": micro_topic_matches,
                 "span_id": f"{content_id}:span:{index * stride}:{min(len(text), index * stride + len(chunk))}",
-                "micro_topic_match": score_micro_topic_chunk(chunk, classification) if classification else {},
+                "micro_topic_match": match,
                 "evidence_span_ids": [],
             },
         })
@@ -118,6 +151,21 @@ def micro_topic_query(classification: dict[str, Any]) -> str:
     )
 
 
+def build_retrieval_intent(classification: dict[str, Any], theme: dict[str, Any]) -> dict[str, Any]:
+    """Normalize structured theme/profile retrieval intent for the retriever."""
+    intent = dict(theme.get("retrieval_intent", {}) or {})
+    profile_intent = classification.get("profile", {}).get("retrieval_intent", {}) if isinstance(classification.get("profile"), dict) else {}
+    for key, value in profile_intent.items():
+        if not intent.get(key):
+            intent[key] = value
+    intent.setdefault("required_concepts", [classification.get("micro_topic", "")])
+    intent.setdefault("preferred_source_types", [])
+    intent.setdefault("evidence_types", [])
+    intent.setdefault("exclusion_concepts", [])
+    intent.setdefault("freshness", "30d")
+    return intent
+
+
 class RAGManager:
     """Repository-compatible retrieval manager with an explicit evidence packet."""
 
@@ -147,18 +195,31 @@ class RAGManager:
             self.metrics["chunks_after_scope"] += len(chunks)
             self.metrics["chunks_rejected_scope"] += self.metrics["chunks_before_scope"] - self.metrics["chunks_after_scope"]
             self.metrics["scope_rejection_rate"] = round(self.metrics["chunks_rejected_scope"] / max(1, self.metrics["chunks_before_scope"]), 3)
+            retrieval_intent = build_retrieval_intent(classification, theme)
             query = " ".join(
                 filter(None, [
                     micro_topic_query(classification),
-                    theme.get("id", ""),
-                    " ".join(theme.get("questions", [])),
+                    " ".join(str(value) for value in retrieval_intent.get("required_concepts", [])),
+                    " ".join(str(value) for value in retrieval_intent.get("evidence_types", [])),
+                    " ".join(str(value) for value in retrieval_intent.get("preferred_source_types", [])),
                     " ".join(event_context.get("entities", [])) if event_context else "",
                 ])
             )
+            request = RetrievalRequest(
+                query=query,
+                micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
+                theme_id=str(theme.get("theme_id", theme.get("id", ""))),
+                retrieval_intent=retrieval_intent,
+                preferred_source_types=tuple(str(value) for value in retrieval_intent.get("preferred_source_types", [])),
+                evidence_types=tuple(str(value) for value in retrieval_intent.get("evidence_types", [])),
+                exclusions=tuple(str(value) for value in retrieval_intent.get("exclusion_concepts", [])),
+                freshness=str(retrieval_intent.get("freshness", "30d")),
+                max_results=min(int(self.settings.get("retrieval_top_k", 4)), 8),
+            )
             selected = retrieve(
                 chunks,
-                query,
-                min(int(self.settings.get("retrieval_top_k", 4)), 8),
+                request.query,
+                request.max_results,
                 filters={"kind": item.get("kind")} if item.get("kind") else None,
             )
             self.metrics["chunks_selected"] += len(selected)
@@ -167,6 +228,8 @@ class RAGManager:
                 "query": query,
                 "chunks": selected,
                 "status": "OK" if selected else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value,
+                "retrieval_intent": retrieval_intent,
+                "retrieval_request": request.to_dict(),
             }
         except (KeyError, TypeError, ValueError, OSError, RuntimeError) as error:
             self.metrics["failures"] += 1

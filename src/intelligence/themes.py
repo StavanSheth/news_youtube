@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any
+from dataclasses import dataclass
 import json
 import re
 
@@ -39,6 +40,29 @@ def theme_specificity_score(theme: dict[str, Any]) -> float:
     return round(min(1.0, populated / len(fields) * 0.6 + min(1.0, specific / 20) * 0.4), 3)
 
 
+@dataclass(frozen=True)
+class ThemeResolution:
+    theme_id: str
+    resolution_level: str
+    fallback_used: bool
+    fallback_reason: str | None
+    specificity_score: float
+
+    def to_metadata(self) -> dict[str, Any]:
+        return {
+            "theme_id": self.theme_id,
+            "resolution_level_code": self.resolution_level,
+            "fallback_used": self.fallback_used,
+            "fallback_reason": self.fallback_reason,
+            "theme_specificity_score": self.specificity_score,
+        }
+
+
+def _resolution(theme: dict[str, Any], level: str, *, fallback_reason: str | None = None) -> dict[str, Any]:
+    result = ThemeResolution(theme.get("id", ""), level, level != "EXACT_MICRO_TOPIC", fallback_reason, theme_specificity_score(theme))
+    return {**theme, **result.to_metadata(), "resolution_level": {"EXACT_MICRO_TOPIC": "exact_micro_topic", "TOPIC_FALLBACK": "topic_fallback", "DOMAIN_FALLBACK": "domain_family", "GLOBAL_FALLBACK": "global_fallback", "CONTROLLED_FALLBACK": "controlled_fallback"}.get(level, level.lower())}
+
+
 def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], item: dict[str, Any]) -> dict[str, Any]:
     """Resolve exact micro-topic, topic, domain, then global themes in that order."""
     stream = "video" if item.get("kind") == "youtube" else "news"
@@ -60,14 +84,15 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         if topic not in {"any", classification.get("topic"), classification.get("topic_key")}:
             continue
         if micro == classification["micro_topic"]:
-            level, resolution = 4, "exact_micro_topic"
+            level = 4
         elif topic not in {"any", None}:
-            level, resolution = 3, "topic_fallback"
+            level = 3
         elif theme.get("domain", "all") == classification["domain"]:
-            level, resolution = 2, "domain_family"
+            level = 2
         else:
-            level, resolution = 1, "global_fallback"
-        candidates.append((level, {**theme, "resolution_level": resolution, "fallback_used": level < 4}))
+            level = 1
+        level_code = {4: "EXACT_MICRO_TOPIC", 3: "TOPIC_FALLBACK", 2: "DOMAIN_FALLBACK", 1: "GLOBAL_FALLBACK"}[level]
+        candidates.append((level, _resolution(theme, level_code, fallback_reason=None if level == 4 else "exact_theme_missing")))
     if candidates:
         best_level = max(level for level, _ in candidates)
         best = [theme for level, theme in candidates if level == best_level]
@@ -94,6 +119,7 @@ def select_theme(classification: dict[str, Any], themes: list[dict[str, Any]], i
         "theme_id": fallback.get("id", "domain-fallback"),
         "fallback_reason": "no_exact_topic_or_domain_theme",
         "theme_specificity_score": theme_specificity_score(fallback),
+        "resolution_level_code": "CONTROLLED_FALLBACK",
     }
 
 
