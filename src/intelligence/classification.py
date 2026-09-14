@@ -1,8 +1,23 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime
+from dataclasses import dataclass
 import re
 from typing import Any
+
+
+@dataclass(frozen=True)
+class SignalMatch:
+    signal_id: str
+    phrase: str
+    start: int
+    end: int
+    signal_type: str
+    strength: str
+    source_field: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return {"signal_id": self.signal_id, "phrase": self.phrase, "start": self.start, "end": self.end, "signal_type": self.signal_type, "strength": self.strength, "source_field": self.source_field}
 
 
 class KeywordClassifier:
@@ -28,6 +43,23 @@ class KeywordClassifier:
                 matched.add(str(phrase))
                 break
         return sorted(matched)
+
+    @classmethod
+    def matching_spans(cls, phrases: list[str] | list[dict[str, Any]], text: str, *, source_field: str) -> list[SignalMatch]:
+        haystack = cls.normalize(text)
+        matches: list[SignalMatch] = []
+        for raw in phrases:
+            phrase = str(raw.get("phrase", "") if isinstance(raw, dict) else raw)
+            normalized = cls.normalize(phrase)
+            if not normalized:
+                continue
+            found = re.search(rf"(?<!\w){re.escape(normalized)}(?!\w)", haystack)
+            if found and not re.search(r"\b(?:no|not|without|never)\b", haystack[max(0, found.start() - 24):found.start()]):
+                strength = str(raw.get("strength", "medium") if isinstance(raw, dict) else "medium").lower()
+                signal_type = str(raw.get("type", "positive") if isinstance(raw, dict) else "positive").lower()
+                signal_id = str(raw.get("signal_id", f"signal-{re.sub(r'[^a-z0-9]+', '-', normalized).strip('-')}") if isinstance(raw, dict) else f"signal-{re.sub(r'[^a-z0-9]+', '-', normalized).strip('-')}")
+                matches.append(SignalMatch(signal_id, phrase, found.start(), found.end(), signal_type, strength, source_field))
+        return matches
 
     @classmethod
     def negative_signal_score(
@@ -100,6 +132,8 @@ class KeywordClassifier:
         disambiguators: list[str] | None = None,
     ) -> dict[str, Any]:
         matched = cls.matching(positive, text)
+        positive_spans = cls.matching_spans(positive, text, source_field="positive")
+        negative_spans = cls.matching_spans(negative, text, source_field="negative")
         title_matches = cls.matching(positive, title)
         body_matches = [value for value in matched if value not in title_matches]
         entries = {cls.normalize(str(item.get("phrase", "")) if isinstance(item, dict) else str(item)): item for item in positive}
@@ -125,6 +159,7 @@ class KeywordClassifier:
             score = 0.0
         return {
             "matched_signals": matched,
+            "signal_matches": [match.to_dict() for match in [*positive_spans, *negative_spans]],
             "negative_signals": negative_result["matched_negative_signals"],
             "title_matches": title_matches,
             "body_matches": body_matches,

@@ -80,6 +80,19 @@ class MicroTopicDecision:
     theme_resolution: str | None = None
     profile_origin: str | None = None
 
+    @classmethod
+    def from_mapping(cls, value: Mapping[str, Any]) -> "MicroTopicDecision":
+        return cls(
+            micro_topic_id=str(value.get("micro_topic_id", "")), domain_id=str(value.get("domain_id", "")), topic_id=str(value.get("topic_id", "")),
+            decision=str(value.get("decision", "UNRESOLVED")), score=float(value.get("score", 0)), confidence=float(value.get("confidence", 0)),
+            threshold=float(value.get("threshold", 0)), margin=float(value.get("margin", 0)),
+            matched_signals=tuple(value.get("matched_signals", [])), matched_signal_groups=dict(value.get("matched_signal_groups", {})),
+            missing_signal_groups=tuple(value.get("missing_signal_groups", [])), positive_signals=tuple(value.get("positive_signals", [])),
+            negative_signals=tuple(value.get("negative_signals", [])), distractors=tuple(value.get("distractors", [])),
+            contradictions=tuple(value.get("contradictions", [])), exclusions=tuple(value.get("exclusions", [])),
+            theme_id=value.get("theme_id"), theme_resolution=value.get("theme_resolution"), profile_origin=value.get("profile_origin"),
+        )
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "micro_topic_id": self.micro_topic_id, "domain_id": self.domain_id, "topic_id": self.topic_id,
@@ -91,6 +104,35 @@ class MicroTopicDecision:
             "contradictions": list(self.contradictions), "exclusions": list(self.exclusions),
             "theme_id": self.theme_id, "theme_resolution": self.theme_resolution, "profile_origin": self.profile_origin,
         }
+
+
+@dataclass(frozen=True)
+class ContextBudget:
+    """Phase 2 character budget; kept separate from future token budgeting."""
+
+    retrieval_chars: int = 12000
+    analysis_chars: int = 12000
+    provider_chars: int = 12000
+    unit: str = "characters"
+
+
+@dataclass(frozen=True)
+class MicroTopicJob:
+    """Typed handoff from deterministic routing to retrieval/analysis."""
+
+    micro_topic_id: str
+    domain_id: str
+    topic_id: str
+    decision: MicroTopicDecision
+    theme: Mapping[str, Any]
+    evidence_scope: Mapping[str, Any]
+    retrieval_intent: Mapping[str, Any]
+    analysis_requirements: Mapping[str, Any]
+    confidence: float
+    provenance: Mapping[str, Any]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {"micro_topic_id": self.micro_topic_id, "domain_id": self.domain_id, "topic_id": self.topic_id, "decision": self.decision.to_dict(), "theme": dict(self.theme), "evidence_scope": dict(self.evidence_scope), "retrieval_intent": dict(self.retrieval_intent), "analysis_requirements": dict(self.analysis_requirements), "confidence": self.confidence, "provenance": dict(self.provenance)}
 
 
 @dataclass(frozen=True)

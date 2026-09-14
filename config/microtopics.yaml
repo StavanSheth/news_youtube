@@ -15,6 +15,11 @@ defaults:
     evidence_required: [fact]
     output_sections: [summary, evidence, implications, actions, sources]
   no_update_policy: checked_only
+  profile_policy:
+    allow_derived: true
+    allow_bootstrap: true
+    allow_bootstrap_for_production: false
+    require_validation_for_production: true
 domains:
   artificial-intelligence:
     priority: High

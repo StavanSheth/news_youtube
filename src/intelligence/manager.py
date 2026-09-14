@@ -7,6 +7,7 @@ from .evidence_projection import project_micro_topic_context
 from .retrieval import RAGManager
 from .themes import analysis_profile, select_theme
 from .statuses import IntelligenceStatus
+from .contracts import ContextBudget, MicroTopicDecision, MicroTopicJob
 
 
 class RAGProvider(Protocol):
@@ -53,7 +54,12 @@ class MicroTopicManager:
                     "analysis_eligible": False,
                 })
                 continue
-            max_context = int(self.settings.get("max_retrieved_context_chars", 12000))
+            budget = ContextBudget(
+                retrieval_chars=int(self.settings.get("max_retrieved_context_chars", 12000)),
+                analysis_chars=int(self.settings.get("max_retrieved_context_chars", 12000)),
+                provider_chars=int(self.settings.get("max_retrieved_context_chars", 12000)),
+            )
+            max_context = budget.analysis_chars
             bounded = []
             used = 0
             for entry in evidence:
@@ -63,8 +69,14 @@ class MicroTopicManager:
                 bounded.append(entry)
                 used += entry_size
             self.stats["micro_topic_analyses"] += 1
+            job = MicroTopicJob(
+                micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
+                domain_id=str(classification.get("domain", "")), topic_id=str(classification.get("topic_id", classification.get("topic_key", ""))),
+                decision=MicroTopicDecision.from_mapping(classification.get("decision_contract", {"micro_topic_id": classification.get("micro_topic", ""), "domain_id": classification.get("domain", ""), "topic_id": classification.get("topic_key", ""), "decision": classification.get("decision", "PRIMARY"), "score": classification.get("classification_score", 0), "confidence": classification.get("confidence", 0), "threshold": classification.get("threshold", 0), "margin": classification.get("margin", 0), "matched_signals": classification.get("signals", []), "profile_origin": classification.get("profile_origin_code")})),
+                theme=theme, evidence_scope=scope.to_metadata(), retrieval_intent=profile.get("retrieval_intent", {}), analysis_requirements=profile.get("analysis_contract", {}), confidence=float(classification.get("confidence", 0)), provenance={"content_id": scope.source_content_id, "source_id": scope.source_id},
+            )
             try:
-                analysis = self._analyze_with_retry(project_micro_topic_context(evidence_item, classification, scope, bounded), profile, bounded)
+                analysis = self._analyze_with_retry(project_micro_topic_context(evidence_item, classification, scope, bounded), {**profile, "micro_topic_job": job.to_dict()}, bounded)
                 analysis_status = "OK"
                 evidence_state = IntelligenceStatus.ANALYSIS_COMPLETED.value
             except (TimeoutError, ValueError, RuntimeError):

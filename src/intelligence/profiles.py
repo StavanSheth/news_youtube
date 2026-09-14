@@ -36,7 +36,7 @@ def profile_quality(profile: dict[str, Any]) -> dict[str, Any]:
     evidence = min(1.0, len(profile.get("required_evidence", profile.get("evidence", {}).get("required", []))) / 2)
     theme = min(1.0, bool(profile.get("analysis_contract")) + bool(profile.get("retrieval_intent")))
     score = round(0.25 * specificity + 0.2 * signal_quality + 0.15 * negative_quality + 0.15 * disambiguation + 0.15 * evidence + 0.1 * theme, 3)
-    return {"specificity": round(specificity, 3), "signal_quality": round(signal_quality, 3), "negative_signal_quality": round(negative_quality, 3), "disambiguation_quality": round(disambiguation, 3), "evidence_quality": round(evidence, 3), "theme_quality": round(theme, 3), "profile_quality_score": score}
+    return {"specificity": round(specificity, 3), "signal_quality": round(signal_quality, 3), "negative_signal_quality": round(negative_quality, 3), "disambiguation_quality": round(disambiguation, 3), "evidence_quality": round(evidence, 3), "theme_quality": round(theme, 3), "profile_completeness_score": score, "profile_quality_score": score, "classification_validation_score": None, "benchmark_status": "UNDER_TESTED"}
 
 
 def _semantic_phrases(*values: str) -> list[str]:

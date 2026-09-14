@@ -130,16 +130,18 @@ def catalog(
                 profile = resolve_microtopic_profile(micro_topic, domain=domain, topic=domain_topic.get("name", domain), template_id=template_id, templates=templates, explicit=explicit, semantic_override=semantic, enabled=profile.get("enabled", domain_topic.get("enabled", True)))
             elif profiles is not None and profiles.get("domains", {}).get(domain, {}).get("overrides", {}).get(micro_topic):
                 profile["profile_origin"] = "explicit"
+                profile["profile_origin_code"] = "CURATED"
             # Production profiles must opt into evidence signals. The legacy
             # two-argument API keeps its derived alias behavior for callers
             # that have not loaded the Phase 2 profile overlay yet.
-            explicit = bool(profile.get("aliases") or profile.get("positive_signals"))
+            profile_origin_code = str(profile.get("profile_origin_code", "MATRIX_DERIVED"))
+            profile_is_curated = profile_origin_code == "CURATED"
             aliases = profile.get("aliases", [micro_topic.replace("-", " ")]) if profiles is None else profile.get("aliases", [])
-            if profiles is not None and not explicit:
+            if profiles is not None and not profile.get("aliases"):
                 aliases = [micro_topic.replace("-", " ")]
             aliases = [alias for alias in aliases if _words(str(alias)) - GENERIC_TERMS]
-            if strict and not explicit and profile.get("enabled", domain_topic.get("enabled", True)):
-                raise ValueError(f"Enabled micro-topic lacks explicit production profile: {domain}:{micro_topic}")
+            if strict and not profile_is_curated and profile.get("enabled", domain_topic.get("enabled", True)):
+                raise ValueError(f"Enabled micro-topic is not curated for strict mode: {domain}:{micro_topic}")
             entries.append(
                 {
                     "domain": domain,
@@ -169,11 +171,11 @@ def catalog(
                     "classification_threshold": float(profile.get("classification_threshold", 0.25 if profiles is None else 0.5)),
                     "priority": profile.get("priority", domain_topic.get("priority", 5)),
                     "enabled": profile.get("enabled", domain_topic.get("enabled", True)),
-                    "profile": {**profile, "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived")},
+                    "profile": {**profile, "profile_origin": profile.get("profile_origin", "explicit" if profile_is_curated else "derived")},
                     "retrieval_intent": profile.get("retrieval_intent", {}),
                     "analysis_contract": profile.get("analysis_contract", {}),
-                    "profile_origin": profile.get("profile_origin", "explicit" if explicit else "derived"),
-                    "profile_origin_code": profile.get("profile_origin_code", "CURATED" if explicit else "MATRIX_DERIVED"),
+                    "profile_origin": profile.get("profile_origin", "explicit" if profile_is_curated else "derived"),
+                    "profile_origin_code": profile_origin_code,
                     "profile_quality": profile.get("profile_quality", profile_quality(profile)),
                     "profile_id": profile.get("profile_id", f"{domain}.{micro_topic}"),
                     "template_id": profile.get("template_id", template_id),

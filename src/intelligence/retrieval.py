@@ -214,9 +214,10 @@ def retrieve(
     count = max(1, len(chunks))
     ranked = []
     for chunk in chunks:
+        metadata = chunk.get("metadata", {})
         terms = Counter(_terms(chunk["text"]))
         score = sum((1 + count / (1 + document_frequency[term])) * min(terms[term], 3) for term in query_terms)
-        trust_tier = int(chunk.get("metadata", {}).get("trust_tier", 4) or 4)
+        trust_tier = int(metadata.get("trust_tier", 4) or 4)
         score += max(0, 5 - trust_tier) * 0.15
         if retrieval_intent:
             score += sum(0.12 for term in retrieval_intent.required_concepts if str(term).lower() in chunk["text"].lower())
@@ -280,12 +281,15 @@ class RAGManager:
                 int(self.settings.get("retrieval_chunk_overlap", 180)),
             )
             self.metrics["chunks_indexed"] += len(chunks)
-            self.metrics["chunks_before_scope"] += len(chunks)
+            before_scope = len(chunks)
             if scope is not None:
                 chunks = [chunk for chunk in chunks if scope.allows(chunk)]
-            scope_rejected_all = bool(scope is not None and self.metrics["chunks_before_scope"] and not chunks)
-            self.metrics["chunks_after_scope"] += len(chunks)
-            self.metrics["chunks_rejected_scope"] += self.metrics["chunks_before_scope"] - self.metrics["chunks_after_scope"]
+            after_scope = len(chunks)
+            rejected_scope = before_scope - after_scope
+            scope_rejected_all = bool(scope is not None and before_scope and not chunks)
+            self.metrics["chunks_before_scope"] += before_scope
+            self.metrics["chunks_after_scope"] += after_scope
+            self.metrics["chunks_rejected_scope"] += rejected_scope
             self.metrics["scope_rejection_rate"] = round(self.metrics["chunks_rejected_scope"] / max(1, self.metrics["chunks_before_scope"]), 3)
             retrieval_intent = build_retrieval_intent(classification, theme)
             intent = RetrievalIntent.from_mapping(retrieval_intent)
@@ -327,7 +331,13 @@ class RAGManager:
                 "status": "OK" if selected else (IntelligenceStatus.NO_RELEVANT_CONTENT.value if scope_rejected_all else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value),
                 "retrieval_intent": retrieval_intent,
                 "retrieval_request": request.to_dict(),
-                "diagnostics": freshness_diagnostics,
+                "diagnostics": {
+                    **freshness_diagnostics,
+                    "before_scope": before_scope,
+                    "after_scope": after_scope,
+                    "rejected_scope": rejected_scope,
+                    "scope_rejection_rate": round(rejected_scope / max(1, before_scope), 3),
+                },
             }
         except (KeyError, TypeError, ValueError, OSError, RuntimeError) as error:
             self.metrics["failures"] += 1
