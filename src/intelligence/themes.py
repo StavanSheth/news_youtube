@@ -45,6 +45,18 @@ def theme_specificity_score(theme: dict[str, Any]) -> float:
     return round(min(1.0, populated / len(fields) * 0.6 + min(1.0, specific / 20) * 0.4), 3)
 
 
+def theme_difference_score(theme: dict[str, Any], siblings: list[dict[str, Any]]) -> float:
+    """Score how much a theme differs from its sibling themes using deterministic tokens."""
+    if not siblings:
+        return 1.0
+    tokens = set().union(*(_theme_tokens(theme, field) for field in ("retrieval_intent", "evidence", "watch_items", "disambiguation_focus")))
+    overlaps = []
+    for sibling in siblings:
+        other = set().union(*(_theme_tokens(sibling, field) for field in ("retrieval_intent", "evidence", "watch_items", "disambiguation_focus")))
+        overlaps.append(len(tokens & other) / max(1, len(tokens | other)))
+    return round(1.0 - max(overlaps), 3)
+
+
 @dataclass(frozen=True)
 class ThemeResolution:
     theme_id: str

@@ -47,6 +47,10 @@ class KeywordClassifier:
         penalty = 0.0
         effective: list[str] = []
         contradictions: list[str] = []
+        distractors: list[str] = []
+        exclusions: list[str] = []
+        contributions: dict[str, float] = {"distractor": 0.0, "contradiction": 0.0, "exclusion": 0.0}
+        hard_rejection_reason = None
         normalized_text = cls.normalize(text)
         for phrase in matched:
             entry = entries.get(cls.normalize(phrase), phrase)
@@ -59,16 +63,29 @@ class KeywordClassifier:
                 value *= 0.35
             if signal_type == "contradiction" and phrase in title_matches and not nearby_positive:
                 contradictions.append(phrase) if strength == "strong" else None
-            if signal_type == "exclusion" and phrase in title_matches:
+            if signal_type == "exclusion":
                 value *= 1.25
+                exclusions.append(phrase)
+                hard_rejection_reason = f"hard_exclusion:{phrase}"
+            elif signal_type == "distractor":
+                distractors.append(phrase)
+            elif signal_type == "contradiction":
+                contradictions.append(phrase) if phrase not in contradictions else None
             effective.append(phrase)
-            penalty += value * (1.5 if phrase in title_matches else 1.0)
+            contribution = value * (1.5 if phrase in title_matches else 1.0)
+            contributions[signal_type] = round(contributions.get(signal_type, 0.0) + contribution, 3)
+            penalty += contribution
         contradiction_penalty = min(0.35, len(contradictions) * 0.25)
         return {
             "matched_negative_signals": effective,
             "negative_penalty": round(min(0.8, penalty), 3),
             "contradiction_penalty": round(contradiction_penalty, 3),
             "negative_strengths": {phrase: str(entries.get(cls.normalize(phrase), {}).get("strength", "medium") if isinstance(entries.get(cls.normalize(phrase)), dict) else "medium") for phrase in effective},
+            "matched_distractors": distractors,
+            "matched_contradictions": contradictions,
+            "matched_exclusions": exclusions,
+            "negative_contributions": contributions,
+            "hard_rejection_reason": hard_rejection_reason,
         }
 
     @classmethod
@@ -104,6 +121,8 @@ class KeywordClassifier:
         group_bonus = min(0.2, len(matched_groups) * 0.06)
         disambiguator_bonus = min(0.12, len(disambiguator_matches) * 0.04)
         score = min(1.0, max(0.0, positive_score + group_bonus + disambiguator_bonus - negative_result["negative_penalty"] - negative_result["contradiction_penalty"]))
+        if negative_result["hard_rejection_reason"]:
+            score = 0.0
         return {
             "matched_signals": matched,
             "negative_signals": negative_result["matched_negative_signals"],
@@ -115,6 +134,11 @@ class KeywordClassifier:
             "negative_penalty": negative_result["negative_penalty"],
             "contradiction_penalty": negative_result["contradiction_penalty"],
             "negative_strengths": negative_result["negative_strengths"],
+            "matched_distractors": negative_result["matched_distractors"],
+            "matched_contradictions": negative_result["matched_contradictions"],
+            "matched_exclusions": negative_result["matched_exclusions"],
+            "signal_contributions": {"positive": round(positive_score, 3), "groups": round(group_bonus, 3), "disambiguation": round(disambiguator_bonus, 3), **negative_result["negative_contributions"]},
+            "hard_rejection_reason": negative_result["hard_rejection_reason"],
             "score": round(score, 3),
         }
 

@@ -7,7 +7,8 @@ import pytest
 
 from intelligence.config import load_config
 from intelligence.microtopics import catalog, classify_micro_topics, coverage, group_policy_satisfied
-from intelligence.themes import analysis_profile, select_theme
+from intelligence.themes import analysis_profile, select_theme, theme_difference_score
+from intelligence.retrieval import RetrievalIntent, filter_freshness
 from intelligence.validation import validate_microtopics, validate_themes
 from intelligence.validation import validate_microtopic_profiles, validate_theme_specificity
 from intelligence.themes import theme_fingerprint
@@ -173,6 +174,48 @@ def test_negative_strength_is_context_aware_and_contradiction_is_deterministic()
     assert contextual["contradiction_penalty"] == 0
     assert contradiction["contradiction_penalty"] > 0
     assert contradiction["score"] == 0
+
+
+def test_negative_categories_preserve_reason_and_distractor_does_not_reject():
+    distractor = KeywordClassifier.score(
+        "foundation model uses GPU infrastructure",
+        [{"phrase": "foundation model", "strength": "strong"}],
+        [{"phrase": "GPU infrastructure", "strength": "medium", "type": "distractor"}],
+    )
+    exclusion = KeywordClassifier.score(
+        "foundation model is unrelated to port infrastructure",
+        [{"phrase": "foundation model", "strength": "strong"}],
+        [{"phrase": "port infrastructure", "strength": "strong", "type": "exclusion"}],
+    )
+    assert distractor["matched_distractors"] == ["GPU infrastructure"]
+    assert distractor["hard_rejection_reason"] is None
+    assert exclusion["matched_exclusions"] == ["port infrastructure"]
+    assert exclusion["hard_rejection_reason"]
+    assert exclusion["score"] == 0
+
+
+def test_freshness_filter_is_timezone_aware_and_records_unparseable_dates():
+    from datetime import UTC, datetime
+    now = datetime(2026, 9, 14, tzinfo=UTC)
+    chunks = [
+        {"metadata": {"published_at": "2026-08-01T00:00:00+00:00"}},
+        {"metadata": {"published_at": "2026-09-14T01:00:00+05:30"}},
+        {"metadata": {"published_at": "not-a-date"}},
+        {"metadata": {}},
+    ]
+    kept, diagnostics = filter_freshness(chunks, "30d", now=now)
+    assert len(kept) == 3
+    assert diagnostics["freshness_filtered_count"] == 1
+    assert diagnostics["freshness_invalid_count"] == 1
+    assert diagnostics["freshness_missing_count"] == 1
+
+
+def test_typed_retrieval_and_theme_difference_contracts_are_deterministic():
+    intent = RetrievalIntent.from_mapping({"required_concepts": ["RAG"], "freshness": "7d"})
+    assert intent.to_dict()["required_concepts"] == ["RAG"]
+    left = {"retrieval_intent": {"required_concepts": ["reranking"]}, "evidence": ["benchmark"]}
+    right = {"retrieval_intent": {"required_concepts": ["model release"]}, "evidence": ["model card"]}
+    assert theme_difference_score(left, [right]) > 0
 
 
 def test_coverage_never_claims_no_major_update_for_unchecked_microtopic():

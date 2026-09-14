@@ -49,6 +49,8 @@ class MicroTopicManager:
                     "classification": classification, "theme": theme, "profile": profile,
                     "evidence": [], "retrieval": packet, "analysis": {},
                     "analysis_status": packet.get("status", "EMPTY_RETRIEVAL"),
+                    "evidence_state": packet.get("status", IntelligenceStatus.INSUFFICIENT_EVIDENCE.value),
+                    "analysis_eligible": False,
                 })
                 continue
             max_context = int(self.settings.get("max_retrieved_context_chars", 12000))
@@ -64,9 +66,11 @@ class MicroTopicManager:
             try:
                 analysis = self._analyze_with_retry(project_micro_topic_context(evidence_item, classification, scope, bounded), profile, bounded)
                 analysis_status = "OK"
+                evidence_state = IntelligenceStatus.ANALYSIS_COMPLETED.value
             except (TimeoutError, ValueError, RuntimeError):
                 analysis = {}
                 analysis_status = IntelligenceStatus.ANALYSIS_FAILURE.value
+                evidence_state = IntelligenceStatus.ANALYSIS_FAILURE.value
                 self.stats.setdefault("analysis_failures", 0)
                 self.stats["analysis_failures"] += 1
             results.append({
@@ -74,6 +78,8 @@ class MicroTopicManager:
                 "retrieval": {**packet, "chunks": bounded},
                 "analysis": analysis,
                 "analysis_status": analysis_status,
+                "evidence_state": evidence_state,
+                "analysis_eligible": True,
             })
         return results
 

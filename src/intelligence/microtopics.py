@@ -8,6 +8,7 @@ from .identity import make_micro_topic_id
 from .classification import KeywordClassifier
 from .statuses import IntelligenceStatus
 from .profiles import compile_semantic_profile, resolve_microtopic_profile
+from .contracts import MicroTopicDecision
 
 
 GENERIC_TERMS = {
@@ -29,14 +30,15 @@ def _phrase_found(phrase: str, text: str) -> bool:
 def _signal(value: Any, *, default_strength: str = "medium", default_type: str = "distractor") -> dict[str, str]:
     if isinstance(value, dict):
         strength = str(value.get("strength", default_strength)).lower()
+        phrase = str(value.get("phrase", "")).strip()
         return {
-            "phrase": str(value.get("phrase", "")).strip(), "strength": strength,
+            "phrase": phrase, "signal_id": f"signal-{re.sub(r'[^a-z0-9]+', '-', phrase.lower()).strip('-')}", "strength": strength,
             "type": str(value.get("type", "contradiction" if strength == "strong" else default_type)).lower(),
             "specificity": str(value.get("specificity", "specific" if len(str(value.get("phrase", "")).split()) >= 2 else "broad")),
             "source": str(value.get("source", "profile")),
         }
     phrase = str(value).strip()
-    return {"phrase": phrase, "strength": default_strength, "type": default_type, "specificity": "specific" if len(phrase.split()) >= 2 else "broad", "source": "profile"}
+    return {"phrase": phrase, "signal_id": f"signal-{re.sub(r'[^a-z0-9]+', '-', phrase.lower()).strip('-')}", "strength": default_strength, "type": default_type, "specificity": "specific" if len(phrase.split()) >= 2 else "broad", "source": "profile"}
 
 
 def group_policy_satisfied(policy: Any, matched_groups: dict[str, Any]) -> tuple[bool, list[str]]:
@@ -65,7 +67,7 @@ def score_micro_topic_chunk(chunk_text: str, classification: dict[str, Any]) -> 
     positive = list(classification.get("positive_signals", classification.get("signals", [])))
     negative = list(classification.get("matched_negative_signals", classification.get("negative_signals", [])))
     result = KeywordClassifier.score(chunk_text, positive, negative, signal_groups=classification.get("signal_groups", {}), disambiguators=classification.get("disambiguators", []))
-    return {**result, "relevant": bool(result["matched_signals"] and not result["negative_signals"])}
+    return {**result, "relevant": bool(result["matched_signals"] and not result.get("hard_rejection_reason") and result["score"] > 0)}
 
 
 def _profile_for(domain: str, micro_topic: str, profiles: dict[str, Any] | None) -> dict[str, Any]:
@@ -257,6 +259,20 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
         specificity = min(1.0, sum(max(1, len(str(signal).split())) for signal in candidate["signals"]) / 12)
         confidence = round(max(0.0, min(1.0, 0.45 * candidate["classification_score"] + 0.25 * min(1.0, margin / 0.3) + 0.2 * specificity + 0.1 * (1.0 - candidate["contradiction_penalty"]))), 3)
         missing_groups = [group for group in candidate.get("required_signal_groups", []) if not candidate.get("matched_signal_groups", {}).get(group)]
+        decision = MicroTopicDecision(
+            micro_topic_id=str(candidate.get("micro_topic_id", candidate.get("micro_topic", ""))),
+            domain_id=str(candidate.get("domain", "")), topic_id=str(candidate.get("topic_id", candidate.get("topic_key", ""))),
+            decision=status, score=float(candidate["classification_score"]), confidence=confidence,
+            threshold=primary_threshold if index == 0 else float(candidate.get("secondary_threshold", 0.5)),
+            margin=margin, matched_signals=tuple(candidate["signals"]),
+            matched_signal_groups=candidate.get("matched_signal_groups", {}),
+            missing_signal_groups=tuple(missing_groups), positive_signals=tuple(candidate["signals"]),
+            negative_signals=tuple(candidate.get("matched_negative_signals", [])),
+            distractors=tuple(candidate.get("matched_distractors", [])),
+            contradictions=tuple(candidate.get("matched_contradictions", [])),
+            exclusions=tuple(candidate.get("matched_exclusions", [])),
+            profile_origin=candidate.get("profile_origin_code", candidate.get("profile_origin")),
+        )
         candidate.update({
             "classification_status": status,
             "decision": status,
@@ -271,6 +287,7 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
             "classification_confidence": confidence,
             "routing_confidence": confidence,
             "confidence": confidence,
+            "decision_contract": decision.to_dict(),
         })
         selected.append(candidate)
     return selected

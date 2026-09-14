@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from collections import Counter
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from typing import Any
 
 from .contracts import EvidenceType, provenance_from_mapping
@@ -54,13 +54,14 @@ class RetrievalRequest:
     exclusions: tuple[str, ...] = ()
     freshness: str = "30d"
     max_results: int = 4
+    max_context: int = 12000
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "query": self.query, "micro_topic_id": self.micro_topic_id, "theme_id": self.theme_id,
             "retrieval_intent": self.retrieval_intent, "preferred_source_types": list(self.preferred_source_types),
             "evidence_types": list(self.evidence_types), "exclusions": list(self.exclusions),
-            "freshness": self.freshness, "max_results": self.max_results,
+            "freshness": self.freshness, "max_results": self.max_results, "max_context": self.max_context,
         }
 
 
@@ -76,8 +77,8 @@ def _terms(value: str) -> list[str]:
     return re.findall(r"[a-z0-9][a-z0-9+._-]{1,}", value.lower())
 
 
-def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) -> list[dict[str, Any]]:
-    """Split text on a bounded window while retaining source/event metadata."""
+def deterministic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) -> list[dict[str, Any]]:
+    """Split text using deterministic character windows; this is not semantic chunking."""
     text = item.get("text", "") or ""
     stride = max(1, size - overlap)
     chunks = [text[index : index + size] for index in range(0, max(1, len(text)), stride)] or [""]
@@ -137,9 +138,53 @@ def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) 
     return result
 
 
+def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) -> list[dict[str, Any]]:
+    """Backward-compatible name for deterministic character-window chunking."""
+    return deterministic_chunks(item, size, overlap)
+
+
+def _freshness_days(value: str) -> int | None:
+    match = re.fullmatch(r"(\d+)d", str(value or "").strip().lower())
+    return int(match.group(1)) if match else None
+
+
+def filter_freshness(chunks: list[dict[str, Any]], freshness: str, *, now: datetime | None = None) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    """Filter only parseable old timestamps; retain missing/invalid/future dates with diagnostics."""
+    days = _freshness_days(freshness)
+    diagnostics = {"freshness_filtered_count": 0, "freshness_missing_count": 0, "freshness_invalid_count": 0, "freshness_future_count": 0}
+    if days is None:
+        return chunks, diagnostics
+    now = now or datetime.now(UTC)
+    cutoff = now - timedelta(days=days)
+    kept = []
+    for chunk in chunks:
+        raw = chunk.get("metadata", {}).get("published_at", "")
+        if not raw:
+            diagnostics["freshness_missing_count"] += 1
+            kept.append(chunk)
+            continue
+        try:
+            published = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+            if published.tzinfo is None or published.utcoffset() is None:
+                raise ValueError
+            published = published.astimezone(UTC)
+        except (TypeError, ValueError):
+            diagnostics["freshness_invalid_count"] += 1
+            kept.append(chunk)
+            continue
+        if published > now:
+            diagnostics["freshness_future_count"] += 1
+            kept.append(chunk)
+        elif published < cutoff:
+            diagnostics["freshness_filtered_count"] += 1
+        else:
+            kept.append(chunk)
+    return kept, diagnostics
+
+
 def retrieve(
     chunks: list[dict[str, Any]], query: str, limit: int = 4,
-    filters: dict[str, Any] | None = None,
+    filters: dict[str, Any] | None = None, retrieval_intent: RetrievalIntent | None = None,
 ) -> list[dict[str, Any]]:
     """Rank chunks with lexical scoring, metadata filters, and a deterministic rerank."""
     query_terms = set(_terms(query))
@@ -149,6 +194,9 @@ def retrieve(
     filtered = []
     for chunk in chunks:
         metadata = chunk.get("metadata", {})
+        text_lower = chunk.get("text", "").lower()
+        if retrieval_intent and any(str(term).lower() in text_lower for term in retrieval_intent.exclusion_concepts):
+            continue
         if any(
             value and (
                 metadata.get(key) != value
@@ -170,6 +218,13 @@ def retrieve(
         score = sum((1 + count / (1 + document_frequency[term])) * min(terms[term], 3) for term in query_terms)
         trust_tier = int(chunk.get("metadata", {}).get("trust_tier", 4) or 4)
         score += max(0, 5 - trust_tier) * 0.15
+        if retrieval_intent:
+            score += sum(0.12 for term in retrieval_intent.required_concepts if str(term).lower() in chunk["text"].lower())
+            source_type = str(metadata.get("source_type", metadata.get("kind", ""))).lower()
+            if any(str(value).lower() == source_type for value in retrieval_intent.preferred_source_types):
+                score += 0.08
+            if any(str(value).lower() == str(metadata.get("evidence_type", "")).lower() for value in retrieval_intent.evidence_types):
+                score += 0.08
         if score:
             ranked.append({**chunk, "score": round(score, 3)})
     return sorted(ranked, key=lambda entry: entry["score"], reverse=True)[:limit]
@@ -228,12 +283,14 @@ class RAGManager:
             self.metrics["chunks_before_scope"] += len(chunks)
             if scope is not None:
                 chunks = [chunk for chunk in chunks if scope.allows(chunk)]
+            scope_rejected_all = bool(scope is not None and self.metrics["chunks_before_scope"] and not chunks)
             self.metrics["chunks_after_scope"] += len(chunks)
             self.metrics["chunks_rejected_scope"] += self.metrics["chunks_before_scope"] - self.metrics["chunks_after_scope"]
             self.metrics["scope_rejection_rate"] = round(self.metrics["chunks_rejected_scope"] / max(1, self.metrics["chunks_before_scope"]), 3)
             retrieval_intent = build_retrieval_intent(classification, theme)
             intent = RetrievalIntent.from_mapping(retrieval_intent)
             retrieval_intent = intent.to_dict()
+            chunks, freshness_diagnostics = filter_freshness(chunks, intent.freshness)
             query = " ".join(
                 filter(None, [
                     micro_topic_query(classification),
@@ -253,21 +310,24 @@ class RAGManager:
                 exclusions=intent.exclusion_concepts,
                 freshness=intent.freshness,
                 max_results=min(int(self.settings.get("retrieval_top_k", 4)), 8),
+                max_context=int(self.settings.get("max_retrieved_context_chars", 12000)),
             )
             selected = retrieve(
                 chunks,
                 request.query,
                 request.max_results,
                 filters={"kind": item.get("kind")} if item.get("kind") else None,
+                retrieval_intent=intent,
             )
             self.metrics["chunks_selected"] += len(selected)
             return {
                 "micro_topic": classification.get("micro_topic", ""),
                 "query": query,
                 "chunks": selected,
-                "status": "OK" if selected else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value,
+                "status": "OK" if selected else (IntelligenceStatus.NO_RELEVANT_CONTENT.value if scope_rejected_all else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value),
                 "retrieval_intent": retrieval_intent,
                 "retrieval_request": request.to_dict(),
+                "diagnostics": freshness_diagnostics,
             }
         except (KeyError, TypeError, ValueError, OSError, RuntimeError) as error:
             self.metrics["failures"] += 1

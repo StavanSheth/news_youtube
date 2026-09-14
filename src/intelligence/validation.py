@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from .profiles import compile_semantic_profile
-from .themes import theme_fingerprint, theme_lexical_overlap, theme_specificity_score
+from .themes import theme_difference_score, theme_fingerprint, theme_lexical_overlap, theme_specificity_score
 
 
 def validate_microtopic_matrix(matrix: dict[str, Any]) -> None:
@@ -82,6 +82,11 @@ def validate_microtopic_profiles(config: dict[str, Any], taxonomy: dict[str, Any
             raise ValueError(f"Missing exact theme: {domain}/{micro_topic}")
         if production and (not compiled.get("signal_groups") or not compiled.get("retrieval_intent")):
             raise ValueError(f"Production profile lacks semantic routing contract: {domain}/{micro_topic}")
+        policy = compiled.get("group_policy")
+        if not isinstance(policy, dict) or str(policy.get("mode", "")).upper() not in {"ALL", "ANY", "AT_LEAST_N"} or not policy.get("groups"):
+            raise ValueError(f"Invalid classification policy: {domain}/{micro_topic}")
+        if int(policy.get("minimum", 1)) < 1 or int(policy.get("minimum", 1)) > len(policy.get("groups", [])) and str(policy.get("mode")).upper() == "AT_LEAST_N":
+            raise ValueError(f"Impossible classification policy: {domain}/{micro_topic}")
 
 
 def validate_theme_specificity(themes: list[dict[str, Any]]) -> dict[str, Any]:
@@ -100,7 +105,11 @@ def validate_theme_specificity(themes: list[dict[str, Any]]) -> dict[str, Any]:
         for right in exact[index + 1:]:
             if left.get("domain") == right.get("domain") and theme_lexical_overlap(left, right)["flag"]:
                 overlap_flags.append({"left": left.get("id"), "right": right.get("id"), **theme_lexical_overlap(left, right)})
-    return {"total": len(themes), "unique_fingerprints": len(fingerprints), "duplicate_fingerprints": duplicates, "generic": generic, "overlap_flags": overlap_flags}
+    differences = {}
+    for theme in exact:
+        siblings = [other for other in exact if other.get("domain") == theme.get("domain") and other.get("id") != theme.get("id")]
+        differences[str(theme.get("id"))] = theme_difference_score(theme, siblings)
+    return {"total": len(themes), "unique_fingerprints": len(fingerprints), "duplicate_fingerprints": duplicates, "generic": generic, "overlap_flags": overlap_flags, "theme_difference_scores": differences}
 
 
 def validate_taxonomy(taxonomy: dict[str, Any]) -> None:

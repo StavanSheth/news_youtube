@@ -52,6 +52,8 @@ def project_micro_topic_context(
         "signal_spans": signal_spans,
         "evidence_span_ids": evidence_spans,
         "evidence_ids": [str(chunk.get("id", "")) for chunk in evidence],
+        "event_id": item.get("metadata", {}).get("event_id", ""),
+        "event_ids": list(item.get("metadata", {}).get("event_ids", [])),
         "provenance": provenance,
         "classification": {
             "micro_topic": classification.get("micro_topic", ""),

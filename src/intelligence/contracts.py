@@ -35,6 +35,43 @@ class TimestampStatus(StrEnum):
 
 
 @dataclass(frozen=True)
+class MicroTopicDecision:
+    """Stable trace record for one deterministic micro-topic routing decision."""
+
+    micro_topic_id: str
+    domain_id: str
+    topic_id: str
+    decision: str
+    score: float
+    confidence: float
+    threshold: float
+    margin: float
+    matched_signals: tuple[str, ...] = ()
+    matched_signal_groups: dict[str, Any] = field(default_factory=dict)
+    missing_signal_groups: tuple[str, ...] = ()
+    positive_signals: tuple[str, ...] = ()
+    negative_signals: tuple[str, ...] = ()
+    distractors: tuple[str, ...] = ()
+    contradictions: tuple[str, ...] = ()
+    exclusions: tuple[str, ...] = ()
+    theme_id: str | None = None
+    theme_resolution: str | None = None
+    profile_origin: str | None = None
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "micro_topic_id": self.micro_topic_id, "domain_id": self.domain_id, "topic_id": self.topic_id,
+            "decision": self.decision, "score": self.score, "confidence": self.confidence,
+            "threshold": self.threshold, "margin": self.margin,
+            "matched_signals": list(self.matched_signals), "matched_signal_groups": self.matched_signal_groups,
+            "missing_signal_groups": list(self.missing_signal_groups), "positive_signals": list(self.positive_signals),
+            "negative_signals": list(self.negative_signals), "distractors": list(self.distractors),
+            "contradictions": list(self.contradictions), "exclusions": list(self.exclusions),
+            "theme_id": self.theme_id, "theme_resolution": self.theme_resolution, "profile_origin": self.profile_origin,
+        }
+
+
+@dataclass(frozen=True)
 class VersionContract:
     application_version: str
     schema_version: str
