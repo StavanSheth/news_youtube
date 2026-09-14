@@ -15,6 +15,8 @@ from intelligence.themes import theme_fingerprint
 from intelligence.benchmark import evaluate_golden
 from intelligence.classification import KeywordClassifier
 from intelligence.evidence_scope import EvidenceScope, EvidenceScopeBuilder
+from intelligence.contracts import MicroTopicDecision
+from intelligence.profiles import coverage_report
 
 
 ROOT = Path(__file__).parents[1]
@@ -216,6 +218,22 @@ def test_typed_retrieval_and_theme_difference_contracts_are_deterministic():
     left = {"retrieval_intent": {"required_concepts": ["reranking"]}, "evidence": ["benchmark"]}
     right = {"retrieval_intent": {"required_concepts": ["model release"]}, "evidence": ["model card"]}
     assert theme_difference_score(left, [right]) > 0
+
+
+def test_decision_contract_preserves_missing_numeric_values():
+    decision = MicroTopicDecision.from_mapping({"micro_topic_id": "x", "decision": "UNRESOLVED"})
+    assert decision.score is None
+    assert decision.confidence is None
+    with pytest.raises(ValueError):
+        MicroTopicDecision.from_mapping({"micro_topic_id": "x", "score": "invalid"})
+
+
+def test_profile_coverage_does_not_call_untested_profiles_production_ready():
+    config = load_config(ROOT)
+    entries = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
+    report = coverage_report(entries, config.themes)
+    assert report["production_ready_profiles"] == 0
+    assert all(row["production_eligibility"] == "UNDER_TESTED" for row in report["micro_topic_profiles"])
 
 
 def test_coverage_never_claims_no_major_update_for_unchecked_microtopic():

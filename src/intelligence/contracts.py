@@ -64,10 +64,10 @@ class MicroTopicDecision:
     domain_id: str
     topic_id: str
     decision: str
-    score: float
-    confidence: float
-    threshold: float
-    margin: float
+    score: float | None
+    confidence: float | None
+    threshold: float | None
+    margin: float | None
     matched_signals: tuple[str, ...] = ()
     matched_signal_groups: dict[str, Any] = field(default_factory=dict)
     missing_signal_groups: tuple[str, ...] = ()
@@ -82,14 +82,25 @@ class MicroTopicDecision:
 
     @classmethod
     def from_mapping(cls, value: Mapping[str, Any]) -> "MicroTopicDecision":
+        def number(name: str) -> float | None:
+            raw = value.get(name)
+            if raw is None:
+                return None
+            if isinstance(raw, bool):
+                raise ValueError(f"Invalid decision {name}: boolean")
+            try:
+                return float(raw)
+            except (TypeError, ValueError) as error:
+                raise ValueError(f"Invalid decision {name}: {raw!r}") from error
+
         return cls(
             micro_topic_id=str(value.get("micro_topic_id", "")), domain_id=str(value.get("domain_id", "")), topic_id=str(value.get("topic_id", "")),
-            decision=str(value.get("decision", "UNRESOLVED")), score=float(value.get("score", 0)), confidence=float(value.get("confidence", 0)),
-            threshold=float(value.get("threshold", 0)), margin=float(value.get("margin", 0)),
-            matched_signals=tuple(value.get("matched_signals", [])), matched_signal_groups=dict(value.get("matched_signal_groups", {})),
-            missing_signal_groups=tuple(value.get("missing_signal_groups", [])), positive_signals=tuple(value.get("positive_signals", [])),
-            negative_signals=tuple(value.get("negative_signals", [])), distractors=tuple(value.get("distractors", [])),
-            contradictions=tuple(value.get("contradictions", [])), exclusions=tuple(value.get("exclusions", [])),
+            decision=str(value.get("decision", "UNRESOLVED")), score=number("score"), confidence=number("confidence"),
+            threshold=number("threshold"), margin=number("margin"),
+            matched_signals=tuple(value.get("matched_signals") or ()), matched_signal_groups=dict(value.get("matched_signal_groups") or {}),
+            missing_signal_groups=tuple(value.get("missing_signal_groups") or ()), positive_signals=tuple(value.get("positive_signals") or ()),
+            negative_signals=tuple(value.get("negative_signals") or ()), distractors=tuple(value.get("distractors") or ()),
+            contradictions=tuple(value.get("contradictions") or ()), exclusions=tuple(value.get("exclusions") or ()),
             theme_id=value.get("theme_id"), theme_resolution=value.get("theme_resolution"), profile_origin=value.get("profile_origin"),
         )
 

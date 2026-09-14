@@ -53,7 +53,10 @@ class EvidenceScope:
             return False, "CONTENT_OR_SOURCE_MISMATCH"
         if not any(match.get("micro_topic_id") == self.micro_topic_id for match in metadata.get("micro_topic_matches", []) if isinstance(match, dict)):
             return False, "MISSING_CHUNK_MICRO_TOPIC_MATCH"
-        if self.allowed_events and metadata.get("event_id", "") not in self.allowed_events:
+        event_ids = {str(value) for value in metadata.get("event_ids", []) if value}
+        if metadata.get("event_id"):
+            event_ids.add(str(metadata.get("event_id")))
+        if self.allowed_events and not event_ids.intersection(self.allowed_events):
             return False, "EVENT_NOT_AUTHORIZED"
         event_id = str(metadata.get("event_id", ""))
         entity_ids = {str(value) for value in metadata.get("entity_ids", [])}
