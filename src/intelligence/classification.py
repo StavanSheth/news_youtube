@@ -229,6 +229,68 @@ def classify(text: str, topics: list[dict]) -> list[dict]:
     return matches
 
 
+def select_micro_topic_decisions(
+    candidates: list[dict[str, Any]],
+    *,
+    default_primary_threshold: float = 0.5,
+    default_secondary_threshold: float = 0.5,
+    default_runner_up_margin: float = 0.05,
+    default_max_secondary: int = 1,
+) -> list[dict[str, Any]]:
+    """Deterministic selection of primary, secondary, ambiguous, or rejected decisions without side-effects."""
+    if not candidates:
+        return []
+
+    # Copy and sort descending by score, then micro_topic_id for tie-breaking
+    sorted_candidates = [dict(c) for c in candidates]
+    sorted_candidates.sort(
+        key=lambda c: (-float(c.get("classification_score", c.get("score", 0.0))), str(c.get("micro_topic_id", c.get("micro_topic", "")))),
+    )
+
+    primary = sorted_candidates[0]
+    primary_score = float(primary.get("classification_score", primary.get("score", 0.0)))
+    runner_up_score = float(sorted_candidates[1].get("classification_score", sorted_candidates[1].get("score", 0.0))) if len(sorted_candidates) > 1 else 0.0
+    margin = round(primary_score - runner_up_score, 3)
+
+    primary_threshold = float(primary.get("primary_threshold", primary.get("classification_threshold", default_primary_threshold)))
+    runner_up_margin = float(primary.get("runner_up_margin", default_runner_up_margin))
+
+    if primary.get("hard_rejection_reason"):
+        return []
+
+    if primary_score < primary_threshold:
+        return []
+
+    selected: list[dict[str, Any]] = []
+    secondary_count = 0
+
+    for index, candidate in enumerate(sorted_candidates):
+        cand = dict(candidate)
+        cand_score = float(cand.get("classification_score", cand.get("score", 0.0)))
+        cand_sec_thresh = float(cand.get("secondary_threshold", cand.get("classification_threshold", default_secondary_threshold)))
+
+        if index == 0:
+            if margin < runner_up_margin and not cand.get("disambiguators") and not cand.get("matched_signal_groups"):
+                status = "AMBIGUOUS"
+            else:
+                status = "PRIMARY"
+        elif cand_score < cand_sec_thresh:
+            continue
+        elif secondary_count >= int(primary.get("max_secondary", default_max_secondary)):
+            continue
+        else:
+            status = "SECONDARY"
+            secondary_count += 1
+
+        cand["decision"] = status
+        cand["margin"] = margin
+        cand["primary_score"] = primary_score
+        cand["runner_up_score"] = runner_up_score
+        selected.append(cand)
+
+    return selected
+
+
 def relevance_score(item, matches: list[dict], scoring: dict) -> float:
     if not matches:
         return 0.0

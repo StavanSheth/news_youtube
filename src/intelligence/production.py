@@ -71,9 +71,14 @@ def edition_context_for(settings: dict[str, Any], started_at: datetime, versions
     return replace(edition, run_id=run.run_id), run
 
 
-def content_hash(item: dict[str, Any]) -> str:
+def content_fingerprint(item: dict[str, Any]) -> str:
+    """Short sha256 fingerprint of item title/text/url for deduplication checks."""
     text = "\n".join((item.get("title", ""), item.get("text", ""), item.get("url", "")))
     return hashlib.sha256(text.encode("utf-8")).hexdigest()[:24]
+
+
+# Compatibility alias for short text fingerprinting
+content_hash = content_fingerprint
 
 
 class RepositoryState:
@@ -422,7 +427,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         **config.settings.get("retrieval", {}),
         **config.settings.get("pipeline", {}),
     }
-    manager = IntelligenceManager(provider, config.themes, manager_settings)
+    manager = IntelligenceManager(provider, config.registry or config.themes, manager_settings)
     micro_topic_catalog = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
     stories, compact, coverage_assignments = [], [], []
     for item in sorted(eligible, key=lambda entry: entry.get("published_at", ""), reverse=True)[

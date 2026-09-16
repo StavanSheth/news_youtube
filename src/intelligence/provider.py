@@ -119,6 +119,7 @@ class DryRunProvider:
                 "actionable_insights": [action],
                 "uncertainties": ["Fixture analysis is deterministic and does not replace provider review."],
                 "confidence": 0.75,
+                "synthetic_confidence": True,
                 "evidence": [
                     {"type": "fact", "text": fact, "source_url": item.get("url", "")}
                 ],

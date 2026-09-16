@@ -234,6 +234,10 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
                 "matched_signal_groups": matched_groups,
                 "disambiguators": [value for value in entry.get("disambiguators", []) if _phrase_found(str(value), text_lower)],
                 "classification_score": round(score, 3),
+                "primary_threshold": float(entry.get("primary_threshold", entry.get("classification_threshold", 0.5))),
+                "secondary_threshold": float(entry.get("secondary_threshold", entry.get("classification_threshold", 0.5))),
+                "max_secondary": int(entry.get("max_secondary", 1)),
+                "runner_up_margin": float(entry.get("runner_up_margin", 0.05)),
                 "negative_penalty": scored["negative_penalty"],
                 "contradiction_penalty": scored["contradiction_penalty"],
                 "confidence_method": "heuristic_weighted_signal_score",
@@ -241,32 +245,23 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
                 "decision_state": "CONTRADICTORY" if scored.get("hard_rejection_reason") and scored.get("positive_score", 0) >= 0.7 else ("REJECTED" if scored.get("hard_rejection_reason") else "MATCH"),
                 "topic_id": entry["topic_key"],
                 "analysis_contract": entry["profile"].get("analysis_contract", {}),
+                "hard_rejection_reason": scored.get("hard_rejection_reason"),
             })
-    candidates.sort(key=lambda match: (-match["classification_score"], str(match["micro_topic"])))
-    if not candidates:
+
+    from .classification import select_micro_topic_decisions
+    selected_candidates = select_micro_topic_decisions(candidates)
+    if not selected_candidates:
         return []
-    primary = candidates[0]
-    runner_up = candidates[1]["classification_score"] if len(candidates) > 1 else 0.0
-    margin = round(primary["classification_score"] - runner_up, 3)
+
+    primary = selected_candidates[0]
+    primary_score = primary["classification_score"]
+    runner_up = primary.get("runner_up_score", 0.0)
+    margin = primary.get("margin", 0.0)
     primary_threshold = float(primary.get("primary_threshold", primary.get("classification_threshold", 0.5)))
-    if primary["classification_score"] < primary_threshold:
-        return []
-    selected = []
-    secondary_count = 0
-    for index, candidate in enumerate(candidates):
-        if index == 0:
-            status = "PRIMARY"
-        elif secondary_count >= int(primary.get("max_secondary", 1)):
-            continue
-        elif candidate["classification_score"] < float(candidate.get("secondary_threshold", 0.5)) or (
-            margin < float(primary.get("runner_up_margin", 0.05))
-            and not candidate.get("disambiguators")
-            and not candidate.get("matched_signal_groups")
-        ):
-            continue
-        else:
-            status = "SECONDARY"
-            secondary_count += 1
+
+    result = []
+    for candidate in selected_candidates:
+        status = candidate["decision"]
         specificity = min(1.0, sum(max(1, len(str(signal).split())) for signal in candidate["signals"]) / 12)
         confidence = round(max(0.0, min(1.0, 0.45 * candidate["classification_score"] + 0.25 * min(1.0, margin / 0.3) + 0.2 * specificity + 0.1 * (1.0 - candidate["contradiction_penalty"]))), 3)
         missing_groups = [group for group in candidate.get("required_signal_groups", []) if not candidate.get("matched_signal_groups", {}).get(group)]
@@ -274,7 +269,7 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
             micro_topic_id=str(candidate.get("micro_topic_id", candidate.get("micro_topic", ""))),
             domain_id=str(candidate.get("domain", "")), topic_id=str(candidate.get("topic_id", candidate.get("topic_key", ""))),
             decision=status, score=float(candidate["classification_score"]), confidence=confidence,
-            threshold=primary_threshold if index == 0 else float(candidate.get("secondary_threshold", 0.5)),
+            threshold=primary_threshold if status in {"PRIMARY", "AMBIGUOUS"} else float(candidate.get("secondary_threshold", 0.5)),
             margin=margin, matched_signals=tuple(candidate["signals"]),
             matched_signal_groups=candidate.get("matched_signal_groups", {}),
             missing_signal_groups=tuple(missing_groups), positive_signals=tuple(candidate["signals"]),
@@ -290,18 +285,18 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
             "positive_evidence": candidate["signals"],
             "negative_evidence": candidate.get("matched_negative_signals", []),
             "missing_signal_groups": missing_groups,
-            "primary_score": primary["classification_score"],
+            "primary_score": primary_score,
             "runner_up_score": runner_up,
-            "runner_up_topic": candidates[1].get("micro_topic") if len(candidates) > 1 else None,
+            "runner_up_topic": selected_candidates[1].get("micro_topic") if len(selected_candidates) > 1 else None,
             "margin": margin,
-            "threshold": primary_threshold if index == 0 else float(candidate.get("secondary_threshold", 0.5)),
+            "threshold": primary_threshold if status in {"PRIMARY", "AMBIGUOUS"} else float(candidate.get("secondary_threshold", 0.5)),
             "classification_confidence": confidence,
             "routing_confidence": confidence,
             "confidence": confidence,
             "decision_contract": decision.to_dict(),
         })
-        selected.append(candidate)
-    return selected
+        result.append(candidate)
+    return result
 
 
 def evaluate_micro_topic_status(assignments: list[dict[str, Any]], evaluation: dict[str, Any]) -> str:

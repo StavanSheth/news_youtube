@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cross-1",
+    "title": "Autonomous AI Agent uses Retrieval Augmented Generation and Embeddings",
+    "text": "The autonomous AI agent coordinates tool use and memory, leveraging retrieval augmented generation (RAG) and dense vector embeddings.",
+    "primary_micro_topic": "ai-agents",
+    "secondary_micro_topics": ["rag", "vector-databases"]
+  },
+  {
+    "id": "cross-2",
+    "title": "Foundation model pre-training and GPU cluster infrastructure",
+    "text": "Training large foundation models requires high-throughput GPU clusters and distributed AI infrastructure.",
+    "primary_micro_topic": "foundation-models",
+    "secondary_micro_topics": ["ai-infrastructure"]
+  }
+]

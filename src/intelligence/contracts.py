@@ -195,9 +195,38 @@ class MicroTopicJob:
     analysis_requirements: Mapping[str, Any]
     confidence: float
     provenance: Mapping[str, Any]
+    classification_score: float | None = None
+    classification_confidence: float | None = None
+    classification_margin: float | None = None
+    profile_origin: str | None = None
+    theme_origin: str | None = None
+    production_status: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return {"micro_topic_id": self.micro_topic_id, "domain_id": self.domain_id, "topic_id": self.topic_id, "decision": self.decision.to_dict(), "theme": dict(self.theme), "evidence_scope": dict(self.evidence_scope), "retrieval_intent": dict(self.retrieval_intent), "analysis_requirements": dict(self.analysis_requirements), "confidence": self.confidence, "provenance": dict(self.provenance)}
+        score = self.classification_score if self.classification_score is not None else getattr(self.decision, "score", None)
+        conf = self.classification_confidence if self.classification_confidence is not None else self.confidence
+        margin = self.classification_margin if self.classification_margin is not None else getattr(self.decision, "margin", None)
+        prof_origin = self.profile_origin or getattr(self.decision, "profile_origin", None)
+        thm_origin = self.theme_origin or self.theme.get("theme_origin")
+        prod_status = self.production_status or self.theme.get("production_status", ProductionStatus.PRODUCTION_READY.value)
+        return {
+            "micro_topic_id": self.micro_topic_id,
+            "domain_id": self.domain_id,
+            "topic_id": self.topic_id,
+            "decision": self.decision.to_dict() if hasattr(self.decision, "to_dict") else dict(self.decision),
+            "theme": dict(self.theme),
+            "evidence_scope": dict(self.evidence_scope),
+            "retrieval_intent": dict(self.retrieval_intent),
+            "analysis_requirements": dict(self.analysis_requirements),
+            "confidence": self.confidence,
+            "provenance": dict(self.provenance),
+            "classification_score": score,
+            "classification_confidence": conf,
+            "classification_margin": margin,
+            "profile_origin": prof_origin,
+            "theme_origin": thm_origin,
+            "production_status": prod_status,
+        }
 
 
 @dataclass(frozen=True)
