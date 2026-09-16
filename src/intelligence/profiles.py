@@ -139,11 +139,13 @@ def resolve_microtopic_profile(
     resolved = _merge(resolved, explicit)
     origin = "explicit" if explicit else ("derived" if semantic_override else "template")
     origin_code = "CURATED" if explicit else ("MATRIX_DERIVED" if semantic_override else "TEMPLATE_DERIVED")
+    status = "PRODUCTION_READY" if explicit else "UNDER_TEST"
     resolved.update({
         "profile_id": f"{domain}.{micro_topic_id}", "template_id": template_id,
         "domain": domain, "topic": topic, "micro_topic": micro_topic_id,
         "enabled": enabled, "profile_origin": origin,
         "profile_origin_code": origin_code,
+        "production_status": status,
         "resolution_level": "micro_topic" if explicit or semantic_override else "template",
         "fallback_used": False,
         "profile_quality": profile_quality(resolved),

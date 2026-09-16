@@ -1,0 +1,17 @@
+[
+  {
+    "micro_topic": "foundation-models",
+    "expected_questions": ["what_changed", "model_architecture", "capabilities", "limitations"],
+    "min_specificity_score": 0.6
+  },
+  {
+    "micro_topic": "ai-agents",
+    "expected_questions": ["what_changed", "agent_architecture", "tool_use", "memory"],
+    "min_specificity_score": 0.6
+  },
+  {
+    "micro_topic": "rag",
+    "expected_questions": ["what_changed", "retrieval_method", "chunking", "ranking"],
+    "min_specificity_score": 0.6
+  }
+]

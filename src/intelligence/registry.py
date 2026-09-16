@@ -26,6 +26,8 @@ class RuntimeRegistry:
         self.config = config
         self.entries = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
         self._micro_topics = {entry["micro_topic_id"]: entry for entry in self.entries}
+        for entry in self.entries:
+            self._micro_topics.setdefault(entry["micro_topic"], entry)
         self._themes = {str(theme.get("id")): theme for theme in config.themes if theme.get("id")}
         self._domains = dict(config.taxonomy.get("domains", {}))
         self._topics = {str(topic.get("key", topic.get("id"))): topic for topic in config.topics}
@@ -36,8 +38,36 @@ class RuntimeRegistry:
         except KeyError as error:
             raise KeyError(f"Unknown micro_topic_id: {micro_topic_id}") from error
 
+    def micro_topic(self, micro_topic_id: str) -> dict[str, Any]:
+        return self.get_micro_topic(micro_topic_id)
+
     def get_profile(self, micro_topic_id: str) -> dict[str, Any]:
         return self.get_micro_topic(micro_topic_id)["profile"]
+
+    def classification_profile(self, micro_topic_id: str) -> dict[str, Any]:
+        entry = self.get_micro_topic(micro_topic_id)
+        return {
+            "aliases": entry.get("aliases", []),
+            "positive_signals": entry.get("positive_signals", []),
+            "negative_signals": entry.get("negative_signals", []),
+            "disambiguators": entry.get("disambiguators", []),
+            "signal_groups": entry.get("signal_groups", {}),
+            "required_signal_groups": entry.get("required_signal_groups", []),
+            "group_policy": entry.get("group_policy", {}),
+            "primary_threshold": entry.get("primary_threshold"),
+            "secondary_threshold": entry.get("secondary_threshold"),
+            "max_secondary": entry.get("max_secondary"),
+            "runner_up_margin": entry.get("runner_up_margin"),
+            "profile_origin": entry.get("profile_origin_code", entry.get("profile_origin")),
+        }
+
+    def analysis_profile(self, micro_topic_id: str) -> dict[str, Any]:
+        entry = self.get_micro_topic(micro_topic_id)
+        return {
+            "analysis_contract": entry.get("analysis_contract", {}),
+            "retrieval_intent": entry.get("retrieval_intent", {}),
+            "profile_quality": entry.get("profile_quality", {}),
+        }
 
     def get_theme(self, theme_id: str) -> dict[str, Any]:
         try:
@@ -45,17 +75,29 @@ class RuntimeRegistry:
         except KeyError as error:
             raise KeyError(f"Unknown theme_id: {theme_id}") from error
 
+    def theme(self, theme_id: str) -> dict[str, Any]:
+        return self.get_theme(theme_id)
+
+    def resolve_theme(self, classification: dict[str, Any], item: dict[str, Any]) -> dict[str, Any]:
+        return select_theme(classification, self.config.themes, item)
+
     def get_domain(self, domain_id: str) -> dict[str, Any]:
         try:
             return self._domains[domain_id]
         except KeyError as error:
             raise KeyError(f"Unknown domain_id: {domain_id}") from error
 
+    def domain(self, domain_id: str) -> dict[str, Any]:
+        return self.get_domain(domain_id)
+
     def get_topic(self, topic_id: str) -> dict[str, Any]:
         try:
             return self._topics[topic_id]
         except KeyError as error:
             raise KeyError(f"Unknown topic_id: {topic_id}") from error
+
+    def topic(self, topic_id: str) -> dict[str, Any]:
+        return self.get_topic(topic_id)
 
     def resolved_microtopics(self, benchmark: dict[str, Any] | None = None) -> list[dict[str, Any]]:
         """Return deterministic diagnostic records; never use them as input config."""

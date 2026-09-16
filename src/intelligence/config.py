@@ -27,6 +27,7 @@ class AppConfig:
     profile_templates: dict[str, Any]
     entities: list[dict[str, Any]]
     versions: VersionContract
+    registry: Any = None
 
 
 def _read_yaml(path: Path) -> dict[str, Any]:
@@ -72,7 +73,7 @@ def load_config(root: Path) -> AppConfig:
         existing = {source.get("id") for source in configured}
         configured.extend(source for source in registry if source.get("id") not in existing)
     validate_sources(settings.get("news", {}).get("sources", []))
-    return AppConfig(
+    app_config = AppConfig(
         channels=_read_yaml(config_dir / "channels.yaml").get("channels", []),
         topics=topics,
         prompts=_read_yaml(config_dir / "prompts.yaml"),
@@ -87,3 +88,6 @@ def load_config(root: Path) -> AppConfig:
         entities=_read_yaml(config_dir / "entities.yaml").get("entities", []),
         versions=versions,
     )
+    from .registry import RuntimeRegistry
+    object.__setattr__(app_config, "registry", RuntimeRegistry(app_config))
+    return app_config

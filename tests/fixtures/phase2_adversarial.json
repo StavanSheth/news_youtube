@@ -1,0 +1,26 @@
+[
+  {
+    "id": "adv-1",
+    "title": "New foundation model achieves higher benchmark scores",
+    "text": "Researchers released a new foundation model with state-of-the-art benchmark results.",
+    "primary_micro_topic": "foundation-models"
+  },
+  {
+    "id": "adv-2",
+    "title": "New benchmark methodology for evaluating AI systems",
+    "text": "A comprehensive benchmark suite for evaluating AI evaluation methods and safety.",
+    "primary_micro_topic": "ai-evaluation"
+  },
+  {
+    "id": "adv-3",
+    "title": "GPU benchmark improves inference latency",
+    "text": "Hardware infrastructure benchmarks demonstrate faster GPU inference and chip throughput.",
+    "primary_micro_topic": "ai-infrastructure"
+  },
+  {
+    "id": "adv-4",
+    "title": "AI company announces agent workflow product",
+    "text": "The autonomous agent system plans multi-step tool use and memory workflows.",
+    "primary_micro_topic": "ai-agents"
+  }
+]

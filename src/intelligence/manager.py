@@ -26,8 +26,15 @@ class RAGProvider(Protocol):
 class MicroTopicManager:
     """AI-last orchestrator: one bounded request per relevant micro-topic."""
 
-    def __init__(self, provider: Any, themes: list[dict[str, Any]], settings: dict[str, Any], retriever: RAGProvider | None = None) -> None:
-        self.provider, self.themes, self.settings = provider, themes, settings
+    def __init__(self, provider: Any, themes: Any, settings: dict[str, Any], retriever: RAGProvider | None = None) -> None:
+        self.provider = provider
+        if hasattr(themes, "get_theme") or hasattr(themes, "config"):
+            self.registry = themes
+            self.themes = themes.config.themes
+        else:
+            self.registry = None
+            self.themes = themes
+        self.settings = settings
         self.rag = retriever or RAGManager(settings)
         self.stats = {"micro_topic_analyses": 0, "retrieval_calls": 0, "ai_calls": 0, "retries": 0, "retrieval": self.rag.metrics}
 

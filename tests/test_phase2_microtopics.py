@@ -351,3 +351,24 @@ def test_scope_builder_does_not_import_unscoped_document_metadata_when_matches_e
     assert scope.allowed_entities == ("entity-rag",)
     assert scope.allowed_events == ("event-rag",)
     assert scope.allowed_span_ids == ("span-rag",)
+
+
+def test_select_micro_topic_decisions_calculates_margin_and_enforces_max_secondary():
+    from intelligence.classification import select_micro_topic_decisions
+    candidates = [
+        {"micro_topic_id": "a", "classification_score": 0.9, "primary_threshold": 0.5, "secondary_threshold": 0.3, "max_secondary": 1},
+        {"micro_topic_id": "b", "classification_score": 0.7, "primary_threshold": 0.5, "secondary_threshold": 0.3},
+        {"micro_topic_id": "c", "classification_score": 0.6, "primary_threshold": 0.5, "secondary_threshold": 0.3},
+    ]
+    selected = select_micro_topic_decisions(candidates)
+    assert len(selected) == 2
+    assert selected[0]["decision"] == "PRIMARY"
+    assert selected[0]["margin"] == 0.2
+    assert selected[1]["decision"] == "SECONDARY"
+
+
+def test_app_config_initializes_runtime_registry():
+    config = load_config(ROOT)
+    assert config.registry is not None
+    mt = config.registry.get_micro_topic("foundation-models")
+    assert mt["domain"] == "artificial-intelligence"
