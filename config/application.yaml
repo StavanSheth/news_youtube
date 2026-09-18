@@ -1,0 +1,33 @@
+application:
+  name: news-youtube-intelligence
+  profile_mode: production
+
+pipeline:
+  timezone: Asia/Kolkata
+  max_items_per_run: 20
+  max_keyword_results_per_topic: 3
+  allow_global_youtube_discovery: false
+  min_relevance_score: 0.35
+  lookback_days: 7
+
+edition:
+  type: NIGHT
+  timezone: Asia/Kolkata
+  publication_cutoff_local: "23:59:59"
+
+state:
+  max_processed_items: 5000
+  max_failed_items: 500
+  max_recent_runs: 100
+  change_detection_days: 14
+
+scoring:
+  topic_relevance: 0.40
+  source_priority: 0.20
+  recency: 0.20
+  content_completeness: 0.20
+  importance_weights:
+    relevance: 0.60
+    corroboration: 0.15
+    novelty: 0.10
+    strategic_impact: 0.15

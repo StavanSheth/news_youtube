@@ -1,0 +1,20 @@
+global:
+  source_items: 100
+  rag_items: 10
+  context_chunks: 20
+  context_chars: 25000
+  input_tokens: 30000
+  output_tokens: 8000
+  ai_calls: 30
+  total_tokens: 40000
+  retries: 5
+
+p0_reservation:
+  ai_calls: 5
+  input_tokens: 8000
+  output_tokens: 2000
+
+microtopic_limits:
+  max_ai_calls: 2
+  max_context_chars: 12000
+  max_retries: 1

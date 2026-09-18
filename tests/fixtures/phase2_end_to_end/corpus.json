@@ -1,0 +1,98 @@
+[
+  {
+    "id": "e2e-rss-ai-models-1",
+    "source": "Ars Technica",
+    "kind": "article",
+    "title": "Frontier AI lab releases new multimodal reasoning model",
+    "url": "https://arstechnica.test/science/2026/09/frontier-reasoning-model",
+    "published_at": "2026-09-18T08:00:00+00:00",
+    "text": "Frontier AI lab today announced the release of a new multimodal reasoning model capable of solving complex competitive mathematics and software engineering benchmarks. The model exhibits a 40% reduction in inference cost and introduces novel chain-of-thought verification mechanisms.",
+    "metadata": {
+      "trust_tier": 1,
+      "source_id": "source-ars-technica",
+      "event_id": "event-frontier-reasoning-release"
+    }
+  },
+  {
+    "id": "e2e-rss-ai-models-duplicate",
+    "source": "Ars Technica",
+    "kind": "article",
+    "title": "Frontier AI lab releases new multimodal reasoning model",
+    "url": "https://arstechnica.test/science/2026/09/frontier-reasoning-model",
+    "published_at": "2026-09-18T08:00:00+00:00",
+    "text": "Frontier AI lab today announced the release of a new multimodal reasoning model capable of solving complex competitive mathematics and software engineering benchmarks. The model exhibits a 40% reduction in inference cost and introduces novel chain-of-thought verification mechanisms.",
+    "metadata": {
+      "trust_tier": 1,
+      "source_id": "source-ars-technica",
+      "event_id": "event-frontier-reasoning-release"
+    }
+  },
+  {
+    "id": "e2e-rss-same-event-second-source",
+    "source": "TechCrunch",
+    "kind": "article",
+    "title": "Industry analysis: Frontier reasoning model launch and market impact",
+    "url": "https://techcrunch.test/2026/09/18/frontier-reasoning-market-impact",
+    "published_at": "2026-09-18T09:30:00+00:00",
+    "text": "Following the morning launch of the frontier reasoning model, cloud providers and venture investors evaluated its commercial implications. The model's low latency inference threatens incumbent API pricing tiers.",
+    "metadata": {
+      "trust_tier": 2,
+      "source_id": "source-techcrunch",
+      "event_id": "event-frontier-reasoning-release"
+    }
+  },
+  {
+    "id": "e2e-youtube-transcript-1",
+    "source": "Yannic Kilcher",
+    "kind": "youtube",
+    "title": "Paper Review: Multimodal Reasoning Architecture Explained",
+    "url": "https://www.youtube.com/watch?v=mockReasoningVideo",
+    "published_at": "2026-09-18T11:00:00+00:00",
+    "text": "In this video we walk through the architecture diagram of the new reasoning model. Specifically, notice how attention weights are dynamically adjusted during test-time compute. This yields significant gains on Olympiad benchmarks.",
+    "metadata": {
+      "trust_tier": 2,
+      "source_id": "source-yannic-kilcher",
+      "event_id": "event-frontier-reasoning-release"
+    }
+  },
+  {
+    "id": "e2e-irrelevant-cooking",
+    "source": "Culinary Daily",
+    "kind": "article",
+    "title": "Traditional sourdough bread fermentation techniques",
+    "url": "https://culinary.test/sourdough-baking",
+    "published_at": "2026-09-18T07:00:00+00:00",
+    "text": "Achieving an open crumb in artisan sourdough requires 78% hydration and an extended 14-hour cold retard in the refrigerator.",
+    "metadata": {
+      "trust_tier": 4,
+      "source_id": "source-culinary-daily"
+    }
+  },
+  {
+    "id": "e2e-future-item",
+    "source": "Futuristic Leaks",
+    "kind": "article",
+    "title": "Quantum AI cluster breaks supercomputer records",
+    "url": "https://futureleaks.test/quantum-2099",
+    "published_at": "2099-01-01T00:00:00+00:00",
+    "text": "In year 2099, quantum computing clusters have achieved continuous room-temperature coherence across one million logical qubits.",
+    "metadata": {
+      "trust_tier": 4,
+      "source_id": "source-futureleaks"
+    }
+  },
+  {
+    "id": "e2e-youtube-transcript-failure",
+    "source": "Video Feed",
+    "kind": "youtube",
+    "title": "Corrupt Stream With Empty Transcript",
+    "url": "https://www.youtube.com/watch?v=corruptedEmptyStream",
+    "published_at": "2026-09-18T12:00:00+00:00",
+    "text": "",
+    "metadata": {
+      "trust_tier": 4,
+      "source_id": "source-video-feed",
+      "transcript_failed": true
+    }
+  }
+]

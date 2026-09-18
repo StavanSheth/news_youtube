@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 import re
 
-from .contracts import EditionContext, RunContext
+from ..contracts import EditionContext, RunContext
 
 
 def _safe_segment(value: str) -> str:

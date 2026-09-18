@@ -5,6 +5,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 from typing import Any
 
+from .budget import ContextBudgeter
 from .corpus import EvidenceCorpus, RepositoryEvidenceCorpus
 from .diversity import apply_diversity_filtering
 from .eligibility import filter_eligible_candidates
@@ -135,20 +136,11 @@ class ProductionRAGManager:
                 target_count=top_k,
             )
 
-            # Step 7b: Enforce context character budget limit
+            # Step 7b: Enforce context character and token budget limit via ContextBudgeter
             max_chars = int(self.settings.get("max_retrieved_context_chars", 12000))
-            bounded_chunks = []
-            cur_chars = 0
-            for chunk in selected_chunks:
-                chunk_len = len(chunk.get("text", ""))
-                if bounded_chunks and cur_chars + chunk_len > max_chars:
-                    break
-                if not bounded_chunks and chunk_len > max_chars:
-                    chunk = {**chunk, "text": chunk.get("text", "")[:max_chars]}
-                    chunk_len = max_chars
-                bounded_chunks.append(chunk)
-                cur_chars += chunk_len
-            selected_chunks = bounded_chunks
+            max_tokens = int(self.settings.get("max_context_tokens", 3000))
+            budgeter = ContextBudgeter(max_chars=max_chars, max_tokens=max_tokens, max_items=top_k)
+            selected_chunks, budget_trace = budgeter.enforce_budget(selected_chunks)
 
             self.metrics["chunks_selected"] += len(selected_chunks)
             self.metrics["diversity_skips"] += diversity_diag.get("diversity_skipped", 0)
@@ -173,7 +165,8 @@ class ProductionRAGManager:
                     "evidence_count": len(selected_chunks),
                     "evidence_ids": [c.get("id") for c in selected_chunks],
                 },
-                budget={"max_results": request.max_results, "max_context": request.max_context},
+                budget={"max_results": request.max_results, "max_context": request.max_context, **budget_trace},
+                budget_trace=budget_trace,
             )
 
             scope_rejected_all = bool(scope is not None and before_scope and not selected_chunks)

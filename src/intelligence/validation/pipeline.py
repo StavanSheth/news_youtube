@@ -80,7 +80,21 @@ def validate_analysis(
     provenance_status = "PASS" if prov_ok else "FAIL"
 
     # Stage 4: Business Rules Validation
-    biz_ok, biz_errs = validate_business_rules(analysis)
+    publication_cutoff = None
+    channel_restrictions = None
+    if micro_topic_job:
+        if isinstance(micro_topic_job, dict):
+            publication_cutoff = micro_topic_job.get("publication_cutoff_utc") or micro_topic_job.get("publication_cutoff")
+            channel_restrictions = micro_topic_job.get("channel_restrictions")
+        elif hasattr(micro_topic_job, "publication_cutoff_utc"):
+            publication_cutoff = getattr(micro_topic_job, "publication_cutoff_utc", None)
+            channel_restrictions = getattr(micro_topic_job, "channel_restrictions", None)
+
+    biz_ok, biz_errs = validate_business_rules(
+        analysis,
+        publication_cutoff=publication_cutoff,
+        channel_restrictions=channel_restrictions,
+    )
     errors.extend(biz_errs)
     business_status = "PASS" if biz_ok else "FAIL"
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from .budget import BudgetTrace, ContextBudgeter, estimate_tokens
 from .corpus import EvidenceCorpus, RepositoryEvidenceCorpus, deterministic_chunks, semantic_chunks
 from .diversity import apply_diversity_filtering
 from .eligibility import check_chunk_eligibility, filter_eligible_candidates
@@ -15,6 +16,8 @@ from .ranking import rank_evidence_chunks
 from .retrieval import HybridRetriever, LocalCrossEncoderReranker, NoOpReranker, Reranker
 
 __all__ = [
+    "BudgetTrace",
+    "ContextBudgeter",
     "ContextPacket",
     "EvidenceCorpus",
     "EvidenceIndex",
@@ -30,6 +33,7 @@ __all__ = [
     "build_retrieval_request",
     "check_chunk_eligibility",
     "deterministic_chunks",
+    "estimate_tokens",
     "extract_provenance_chain",
     "filter_eligible_candidates",
     "rank_evidence_chunks",

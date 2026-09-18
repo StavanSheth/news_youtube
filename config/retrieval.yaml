@@ -1,0 +1,14 @@
+retrieval:
+  top_k: 4
+  max_retrieved_context_chars: 12000
+  chunk_size: 1400
+  chunk_overlap: 180
+  fusion_k: 60
+  diversity_max_per_source: 2
+  freshness_default: 30d
+  weights:
+    lexical: 0.25
+    dense: 0.25
+    source_quality: 0.20
+    freshness: 0.15
+    micro_topic: 0.15

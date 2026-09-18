@@ -212,13 +212,14 @@ def test_source_validation_applies_timeout_to_default_http_fetch(monkeypatch):
 def test_legacy_pipeline_entry_point_delegates_to_authoritative_runner(monkeypatch, tmp_path):
     calls = {}
 
-    def fake_run(root, dry_run=False):
+    def fake_run(root, dry_run=False, fixture_path=None):
         calls["root"] = root
         calls["dry_run"] = dry_run
         return (root / "digest.md", root / "digest.html")
 
-    monkeypatch.setattr(pipeline, "run_production", fake_run)
+    monkeypatch.setattr(pipeline, "run_pipeline", fake_run)
     result = pipeline.run(tmp_path, dry_run=True)
 
     assert result == (tmp_path / "digest.md", tmp_path / "digest.html")
     assert calls == {"root": tmp_path, "dry_run": True}
+

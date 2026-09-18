@@ -1,3 +1,5 @@
+"""Canonical NewsletterModel shared by Markdown and HTML renderers."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -35,7 +37,7 @@ class NewsletterModel:
         micro_topic_coverage: list[dict[str, Any]] | None = None,
         source_health: dict[str, Any] | None = None,
     ) -> "NewsletterModel":
-        from .enrichment import trend_signals
+        from ..enrichment import trend_signals
 
         executive = sorted(
             stories,

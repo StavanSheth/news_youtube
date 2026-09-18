@@ -4,105 +4,13 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Protocol
 
-from ..contracts import EvidenceType, provenance_from_mapping
-from ..identity import make_content_id, make_source_id
-from ..microtopics import score_micro_topic_chunk
+from ..evidence.chunking import deterministic_chunks, semantic_chunks
 from .index import EvidenceIndex
 from .query import RetrievalRequest
 from .retrieval import HybridRetriever
-
-
-def deterministic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) -> list[dict[str, Any]]:
-    """Split text using deterministic character windows; this is not semantic chunking."""
-    text = item.get("text", "") or ""
-    stride = max(1, size - overlap)
-    chunks = [text[index : index + size] for index in range(0, max(1, len(text)), stride)] or [""]
-    source_id = item.get("metadata", {}).get("source_id") or make_source_id(item.get("source", "unknown"))
-    content_id = item.get("metadata", {}).get("content_id") or make_content_id(
-        source_id, item.get("url", ""), item.get("title", ""), item.get("published_at", ""), text
-    )
-    evidence_type = "transcript" if item.get("kind") == "youtube" else "article"
-    retrieved_at = item.get("metadata", {}).get("retrieved_at") or datetime.now(UTC).isoformat()
-    provenance_type = EvidenceType.TRANSCRIPT if item.get("kind") == "youtube" else EvidenceType.ARTICLE
-    result = []
-    classifications = []
-    if item.get("metadata", {}).get("classification"):
-        classifications.append(item["metadata"]["classification"])
-    if isinstance(item.get("metadata", {}).get("classifications"), list):
-        for c in item["metadata"]["classifications"]:
-            if isinstance(c, dict) and c not in classifications:
-                classifications.append(c)
-    if isinstance(item.get("micro_topics"), list):
-        for mt in item["micro_topics"]:
-            if isinstance(mt, dict) and mt not in classifications:
-                classifications.append(mt)
-
-    for index, chunk in enumerate(chunks):
-        provenance = None
-        if item.get("url", "").startswith(("http://", "https://")):
-            provenance = provenance_from_mapping(
-                {**item, "metadata": {**item.get("metadata", {}), "content_id": content_id, "source_id": source_id, "retrieved_at": retrieved_at}},
-                provenance_type,
-                chunk,
-            ).to_dict()
-        micro_topic_matches = []
-        last_match: dict[str, Any] = {}
-        for cls in classifications:
-            match = score_micro_topic_chunk(chunk, cls)
-            last_match = match
-            if match.get("relevant"):
-                micro_topic_id = str(cls.get("micro_topic_id") or cls.get("micro_topic", ""))
-                micro_topic_slug = str(cls.get("micro_topic", ""))
-                match_entry = {
-                    "micro_topic_id": micro_topic_id,
-                    "micro_topic": micro_topic_slug,
-                    "score": match["score"],
-                    "matched_signals": match["matched_signals"],
-                    "matched_groups": match.get("matched_signal_groups", {}),
-                    "confidence": match["score"],
-                }
-                micro_topic_matches.append(match_entry)
-                if micro_topic_slug and micro_topic_slug != micro_topic_id:
-                    micro_topic_matches.append({
-                        **match_entry,
-                        "micro_topic_id": micro_topic_slug,
-                    })
-        result.append({
-            "id": f"{content_id}:{index}",
-            "text": chunk,
-            "metadata": {
-                key: item.get(key, "")
-                for key in ("id", "url", "source", "title", "kind", "published_at")
-            }
-            | {
-                "source_id": source_id,
-                "content_id": content_id,
-                "provenance": provenance,
-                "provenance_status": "VALID" if provenance else "MISSING_SOURCE_URL",
-                "evidence_type": evidence_type,
-                "event_id": item.get("metadata", {}).get("event_id", ""),
-                "topics": item.get("topics", []),
-                "micro_topics": item.get("micro_topics", []),
-                "updated_at": item.get("metadata", {}).get("updated_at", ""),
-                "retrieved_at": retrieved_at,
-                "trust_tier": item.get("metadata", {}).get("trust_tier", 4),
-                "micro_topic_id": item.get("metadata", {}).get("micro_topic_id", ""),
-                "micro_topic_matches": micro_topic_matches,
-                "span_id": f"{content_id}:span:{index * stride}:{min(len(text), index * stride + len(chunk))}",
-                "micro_topic_match": last_match,
-                "evidence_span_ids": [],
-            },
-        })
-    return result
-
-
-def semantic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) -> list[dict[str, Any]]:
-    """Backward-compatible name for deterministic character-window chunking."""
-    return deterministic_chunks(item, size, overlap)
 
 
 class EvidenceCorpus(Protocol):
@@ -204,3 +112,11 @@ class RepositoryEvidenceCorpus:
     @property
     def total_chunks(self) -> int:
         return len(self._chunks)
+
+
+__all__ = [
+    "EvidenceCorpus",
+    "RepositoryEvidenceCorpus",
+    "deterministic_chunks",
+    "semantic_chunks",
+]

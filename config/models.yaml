@@ -1,0 +1,21 @@
+provider: gemini
+
+analysis:
+  model: gemini-3.6-flash
+  temperature: 0.2
+  max_output_tokens: 4096
+  chunk_size: 9000
+  chunk_overlap: 500
+  max_chunks_per_item: 6
+  max_ai_attempts: 2
+
+retrieval:
+  embedding_model: text-embedding-004
+  chunk_size: 1400
+  chunk_overlap: 180
+  top_k: 4
+  max_retrieved_context_chars: 12000
+
+limits:
+  max_input_tokens: 30720
+  max_output_tokens: 4096
