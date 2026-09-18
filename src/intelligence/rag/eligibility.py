@@ -84,27 +84,29 @@ def check_chunk_eligibility(
 
         # Exclusion concepts
         text_lower = text.lower()
-        for exclusion in request.exclusions:
+        all_exclusions = tuple(dict.fromkeys(tuple(request.exclusions) + tuple(request.exclusion_concepts)))
+        for exclusion in all_exclusions:
             if exclusion and str(exclusion).lower() in text_lower:
                 return False, f"EXCLUDED_CONCEPT:{exclusion}"
 
-        # Micro-topic match authorization check
+        # Micro-topic match authorization check (only if chunk has micro-topic metadata)
         if request.micro_topic_id:
-            matches = metadata.get("micro_topic_matches", [])
-            has_direct_match = any(
-                isinstance(m, dict) and m.get("micro_topic_id") == request.micro_topic_id
-                for m in matches
-            )
-            has_tag_match = metadata.get("micro_topic_id") == request.micro_topic_id
-            # Normalize concepts for text search
-            concepts_to_check = [request.micro_topic_id, *request.required_concepts]
-            has_concept_match = any(
-                c.replace("-", " ").replace("_", " ").rstrip("s").lower() in text_lower
-                for c in concepts_to_check
-                if c
-            )
-            if not (has_direct_match or has_tag_match or has_concept_match):
-                return False, "UNAUTHORIZED_MICRO_TOPIC"
+            matches = metadata.get("micro_topic_matches")
+            tag = metadata.get("micro_topic_id")
+            if matches is not None or tag is not None:
+                has_direct_match = any(
+                    isinstance(m, dict) and m.get("micro_topic_id") == request.micro_topic_id
+                    for m in (matches or [])
+                )
+                has_tag_match = tag == request.micro_topic_id
+                concepts_to_check = [request.micro_topic_id, *request.required_concepts]
+                has_concept_match = any(
+                    c.replace("-", " ").replace("_", " ").rstrip("s").lower() in text_lower
+                    for c in concepts_to_check
+                    if c
+                )
+                if not (has_direct_match or has_tag_match or has_concept_match):
+                    return False, "UNAUTHORIZED_MICRO_TOPIC"
 
     # Provenance requirement
     if "provenance" in metadata and metadata["provenance"] is None and url:

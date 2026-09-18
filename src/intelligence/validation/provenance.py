@@ -13,6 +13,9 @@ def verify_provenance(claim: dict[str, Any], context_packet: Any | None = None) 
         evidence_ids = [*evidence_ids, claim["evidence_id"]]
 
     if not context_packet:
+        claim_type = str(claim.get("claim_type", "FACT")).upper()
+        if claim_type in {"FACT", "REPORTED", "OFFICIAL"} and not claim.get("inference") and not claim.get("speculation"):
+            return False, ["Material claim cannot be verified without ContextPacket (fail-closed)"]
         return True, []
 
     chunk_map: dict[str, dict[str, Any]] = {}
@@ -64,10 +67,24 @@ def validate_claim_provenance(
     analysis: dict[str, Any],
     context_packet: Any | None = None,
 ) -> tuple[bool, list[str]]:
-    """Enforce claim-level provenance and citation integrity."""
+    """Enforce claim-level provenance and citation integrity with fail-closed guarantee."""
     errors = []
     if not analysis:
         return False, ["Analysis payload is empty"]
+
+    # Fail-closed check: Material claims without context packet must fail
+    claims = analysis.get("claims", [])
+    facts = analysis.get("facts", [])
+    has_material_claims = any(
+        isinstance(c, dict)
+        and str(c.get("claim_type", "FACT")).upper() in {"FACT", "REPORTED", "OFFICIAL"}
+        and not bool(c.get("inference", False))
+        and not bool(c.get("speculation", False))
+        for c in (claims if isinstance(claims, list) else [])
+    ) or (isinstance(facts, list) and bool(facts) and not bool(analysis.get("evidence")))
+
+    if not context_packet and has_material_claims:
+        return False, ["Material factual claim cannot be verified: no ContextPacket provided (fail-closed)"]
 
     available_evidence_ids: set[str] = set()
     if context_packet:
@@ -81,7 +98,6 @@ def validate_claim_provenance(
             available_evidence_ids = set(context_packet.evidence_ids)
 
     # 1. Inspect claims if explicitly structured
-    claims = analysis.get("claims", [])
     if isinstance(claims, list) and claims:
         for claim in claims:
             if not isinstance(claim, dict):

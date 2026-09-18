@@ -97,68 +97,19 @@ class ProductionReadiness:
     evidence_scope_pass: bool = False
 
     def to_dict(self) -> dict[str, Any]:
-        return {"status": self.status.value, "production_ready": self.status == ProductionStatus.PRODUCTION_READY, "reasons": list(self.reasons), "profile_complete": self.profile_complete, "benchmark_pass": self.benchmark_pass, "theme_pass": self.theme_pass, "retrieval_contract_pass": self.retrieval_contract_pass, "evidence_scope_pass": self.evidence_scope_pass}
-
-
-@dataclass(frozen=True)
-class MicroTopicDecision:
-    """Stable trace record for one deterministic micro-topic routing decision."""
-
-    micro_topic_id: str
-    domain_id: str
-    topic_id: str
-    decision: str
-    score: float | None
-    confidence: float | None
-    threshold: float | None
-    margin: float | None
-    matched_signals: tuple[str, ...] = ()
-    matched_signal_groups: dict[str, Any] = field(default_factory=dict)
-    missing_signal_groups: tuple[str, ...] = ()
-    positive_signals: tuple[str, ...] = ()
-    negative_signals: tuple[str, ...] = ()
-    distractors: tuple[str, ...] = ()
-    contradictions: tuple[str, ...] = ()
-    exclusions: tuple[str, ...] = ()
-    theme_id: str | None = None
-    theme_resolution: str | None = None
-    profile_origin: str | None = None
-
-    @classmethod
-    def from_mapping(cls, value: Mapping[str, Any]) -> "MicroTopicDecision":
-        def number(name: str) -> float | None:
-            raw = value.get(name)
-            if raw is None:
-                return None
-            if isinstance(raw, bool):
-                raise ValueError(f"Invalid decision {name}: boolean")
-            try:
-                return float(raw)
-            except (TypeError, ValueError) as error:
-                raise ValueError(f"Invalid decision {name}: {raw!r}") from error
-
-        return cls(
-            micro_topic_id=str(value.get("micro_topic_id", "")), domain_id=str(value.get("domain_id", "")), topic_id=str(value.get("topic_id", "")),
-            decision=str(value.get("decision", "UNRESOLVED")), score=number("score"), confidence=number("confidence"),
-            threshold=number("threshold"), margin=number("margin"),
-            matched_signals=tuple(value.get("matched_signals") or ()), matched_signal_groups=dict(value.get("matched_signal_groups") or {}),
-            missing_signal_groups=tuple(value.get("missing_signal_groups") or ()), positive_signals=tuple(value.get("positive_signals") or ()),
-            negative_signals=tuple(value.get("negative_signals") or ()), distractors=tuple(value.get("distractors") or ()),
-            contradictions=tuple(value.get("contradictions") or ()), exclusions=tuple(value.get("exclusions") or ()),
-            theme_id=value.get("theme_id"), theme_resolution=value.get("theme_resolution"), profile_origin=value.get("profile_origin"),
-        )
-
-    def to_dict(self) -> dict[str, Any]:
         return {
-            "micro_topic_id": self.micro_topic_id, "domain_id": self.domain_id, "topic_id": self.topic_id,
-            "decision": self.decision, "score": self.score, "confidence": self.confidence,
-            "threshold": self.threshold, "margin": self.margin,
-            "matched_signals": list(self.matched_signals), "matched_signal_groups": self.matched_signal_groups,
-            "missing_signal_groups": list(self.missing_signal_groups), "positive_signals": list(self.positive_signals),
-            "negative_signals": list(self.negative_signals), "distractors": list(self.distractors),
-            "contradictions": list(self.contradictions), "exclusions": list(self.exclusions),
-            "theme_id": self.theme_id, "theme_resolution": self.theme_resolution, "profile_origin": self.profile_origin,
+            "status": self.status.value,
+            "production_ready": self.status == ProductionStatus.PRODUCTION_READY,
+            "reasons": list(self.reasons),
+            "profile_complete": self.profile_complete,
+            "benchmark_pass": self.benchmark_pass,
+            "theme_pass": self.theme_pass,
+            "retrieval_contract_pass": self.retrieval_contract_pass,
+            "evidence_scope_pass": self.evidence_scope_pass,
         }
+
+
+from .microtopics.decisions import MicroTopicDecision  # noqa: E402
 
 
 @dataclass(frozen=True)
@@ -193,8 +144,8 @@ class MicroTopicJob:
     evidence_scope: Mapping[str, Any]
     retrieval_intent: Mapping[str, Any]
     analysis_requirements: Mapping[str, Any]
-    confidence: float
-    provenance: Mapping[str, Any]
+    confidence: float = 0.0
+    provenance: Mapping[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {"micro_topic_id": self.micro_topic_id, "domain_id": self.domain_id, "topic_id": self.topic_id, "decision": self.decision.to_dict(), "theme": dict(self.theme), "evidence_scope": dict(self.evidence_scope), "retrieval_intent": dict(self.retrieval_intent), "analysis_requirements": dict(self.analysis_requirements), "confidence": self.confidence, "provenance": dict(self.provenance)}

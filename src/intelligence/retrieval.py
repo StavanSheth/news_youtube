@@ -1,4 +1,4 @@
-"""Lightweight, deterministic retrieval compatibility facade delegating to authoritative RAG."""
+"""Authoritative retrieval compatibility facade delegating completely to intelligence.rag."""
 
 from __future__ import annotations
 
@@ -13,6 +13,10 @@ from .rag.manager import ProductionRAGManager
 from .rag.query import RetrievalRequest
 
 RAGManager = ProductionRAGManager
+
+
+def _terms(value: str) -> list[str]:
+    return re.findall(r"[a-z0-9][a-z0-9+._-]{1,}", value.lower())
 
 
 @dataclass(frozen=True)
@@ -51,19 +55,25 @@ class RetrievalResult:
     error_type: str | None = None
 
 
-def _terms(value: str) -> list[str]:
-    return re.findall(r"[a-z0-9][a-z0-9+._-]{1,}", value.lower())
-
-
 def _freshness_days(value: str) -> int | None:
     match = re.fullmatch(r"(\d+)d", str(value or "").strip().lower())
     return int(match.group(1)) if match else None
 
 
-def filter_freshness(chunks: list[dict[str, Any]], freshness: str, *, now: datetime | None = None) -> tuple[list[dict[str, Any]], dict[str, int]]:
+def filter_freshness(
+    chunks: list[dict[str, Any]],
+    freshness: str,
+    *,
+    now: datetime | None = None,
+) -> tuple[list[dict[str, Any]], dict[str, int]]:
     """Filter only parseable old timestamps; retain missing/invalid/future dates with diagnostics."""
     days = _freshness_days(freshness)
-    diagnostics = {"freshness_filtered_count": 0, "freshness_missing_count": 0, "freshness_invalid_count": 0, "freshness_future_count": 0}
+    diagnostics = {
+        "freshness_filtered_count": 0,
+        "freshness_missing_count": 0,
+        "freshness_invalid_count": 0,
+        "freshness_future_count": 0,
+    }
     if days is None:
         return chunks, diagnostics
     now = now or datetime.now(UTC)
@@ -95,8 +105,11 @@ def filter_freshness(chunks: list[dict[str, Any]], freshness: str, *, now: datet
 
 
 def retrieve(
-    chunks: list[dict[str, Any]], query: str, limit: int = 4,
-    filters: dict[str, Any] | None = None, retrieval_intent: RetrievalIntent | None = None,
+    chunks: list[dict[str, Any]],
+    query: str,
+    limit: int = 4,
+    filters: dict[str, Any] | None = None,
+    retrieval_intent: RetrievalIntent | None = None,
 ) -> list[dict[str, Any]]:
     """Rank chunks with lexical scoring, metadata filters, and a deterministic rerank."""
     query_terms = set(_terms(query))
@@ -156,7 +169,6 @@ def micro_topic_query(classification: dict[str, Any]) -> str:
 
 
 def build_retrieval_intent(classification: dict[str, Any], theme: dict[str, Any]) -> dict[str, Any]:
-    """Normalize structured theme/profile retrieval intent for the retriever."""
     intent = dict(theme.get("retrieval_intent", {}) or {})
     profile_intent = classification.get("profile", {}).get("retrieval_intent", {}) if isinstance(classification.get("profile"), dict) else {}
     for key, value in profile_intent.items():
@@ -171,8 +183,8 @@ def build_retrieval_intent(classification: dict[str, Any], theme: dict[str, Any]
 
 
 __all__ = [
-    "RAGManager",
     "ProductionRAGManager",
+    "RAGManager",
     "RetrievalIntent",
     "RetrievalRequest",
     "RetrievalResult",

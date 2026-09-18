@@ -91,6 +91,8 @@ def resolve_micro_topic_status(
 
     # Check evaluation state
     eval_status = evaluation.get("evaluation_status", "")
+    if eval_status == "FAILED" or bool(evaluation.get("error")):
+        return CoverageState.ERROR, "TECHNICAL_FAILURE"
     if eval_status == "NOT_STARTED":
         return CoverageState.CHECKED_INSUFFICIENT_EVIDENCE, "EVALUATION_NOT_STARTED"
 

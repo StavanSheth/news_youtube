@@ -26,6 +26,18 @@ class RetrievalRequest:
     max_context: int = 12000
     publication_cutoff: str | None = None
     retrieval_intent: dict[str, Any] = field(default_factory=dict)
+    exclusion_concepts: tuple[str, ...] | list[str] = ()
+
+    def __post_init__(self) -> None:
+        merged = []
+        for item in (self.exclusions, self.exclusion_concepts):
+            if isinstance(item, (list, tuple, set)):
+                merged.extend(str(x) for x in item if x)
+            elif item:
+                merged.append(str(item))
+        distinct = tuple(dict.fromkeys(merged))
+        object.__setattr__(self, "exclusions", distinct)
+        object.__setattr__(self, "exclusion_concepts", distinct)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -39,6 +51,7 @@ class RetrievalRequest:
             "preferred_source_types": list(self.preferred_source_types),
             "evidence_types": list(self.evidence_types),
             "exclusions": list(self.exclusions),
+            "exclusion_concepts": list(self.exclusion_concepts),
             "freshness": self.freshness,
             "event_context": self.event_context,
             "entity_context": self.entity_context,

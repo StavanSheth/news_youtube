@@ -11,7 +11,9 @@ from typing import Any, Protocol
 from ..contracts import EvidenceType, provenance_from_mapping
 from ..identity import make_content_id, make_source_id
 from ..microtopics import score_micro_topic_chunk
+from .index import EvidenceIndex
 from .query import RetrievalRequest
+from .retrieval import HybridRetriever
 
 
 def deterministic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 180) -> list[dict[str, Any]]:
@@ -88,7 +90,7 @@ def deterministic_chunks(item: dict[str, Any], size: int = 1400, overlap: int = 
                 "updated_at": item.get("metadata", {}).get("updated_at", ""),
                 "retrieved_at": retrieved_at,
                 "trust_tier": item.get("metadata", {}).get("trust_tier", 4),
-                "micro_topic_id": "",
+                "micro_topic_id": item.get("metadata", {}).get("micro_topic_id", ""),
                 "micro_topic_matches": micro_topic_matches,
                 "span_id": f"{content_id}:span:{index * stride}:{min(len(text), index * stride + len(chunk))}",
                 "micro_topic_match": last_match,
@@ -117,7 +119,7 @@ class EvidenceCorpus(Protocol):
 
 @dataclass
 class RepositoryEvidenceCorpus:
-    """Repository-native corpus storing in-memory candidates backed by disk persistence."""
+    """Repository-native corpus storing candidates backed by BM25 and dense multi-indexing."""
 
     storage_dir: Path | None = None
     chunk_size: int = 1400
@@ -126,6 +128,8 @@ class RepositoryEvidenceCorpus:
     _indexed_content_ids: set[str] = field(default_factory=set)
 
     def __post_init__(self) -> None:
+        self.index = EvidenceIndex()
+        self.retriever = HybridRetriever(self.index)
         if self.storage_dir and self.storage_dir.is_dir():
             self._load_from_storage()
 
@@ -160,11 +164,14 @@ class RepositoryEvidenceCorpus:
                     for nm in new_matches:
                         if not any(em.get("micro_topic_id") == nm.get("micro_topic_id") for em in existing_matches):
                             existing_matches.append(nm)
+                    self.index.add(existing)
                     return
                 else:
                     self._chunks[idx] = chunk
+                    self.index.add(chunk)
                     return
         self._chunks.append(chunk)
+        self.index.add(chunk)
         if content_id:
             self._indexed_content_ids.add(content_id)
 
@@ -179,14 +186,20 @@ class RepositoryEvidenceCorpus:
             self._add_chunk(chunk)
 
     def search(self, query: RetrievalRequest) -> list[dict[str, Any]]:
-        """Return candidate chunks matching coarse query criteria."""
-        candidates = []
-        for chunk in self._chunks:
+        """Return candidate chunks using indexed hybrid BM25 and dense retrieval."""
+        top_k = max(20, getattr(query, "top_k", 4) * 5)
+        candidates = self.retriever.retrieve_candidates(query, top_k=top_k)
+        if not candidates:
+            # Fallback to micro-topic scoped candidates or entity search if available
+            candidates = self.index.search_by_micro_topic(query.micro_topic_id, top_k=top_k)
+        # Ensure metadata contains copies to avoid cross-chunk mutation
+        res = []
+        for chunk in candidates:
             meta = dict(chunk.get("metadata", {}))
             if "micro_topic_matches" in meta:
                 meta["micro_topic_matches"] = list(meta["micro_topic_matches"])
-            candidates.append({**chunk, "metadata": meta})
-        return candidates
+            res.append({**chunk, "metadata": meta})
+        return res
 
     @property
     def total_chunks(self) -> int:

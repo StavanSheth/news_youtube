@@ -1,0 +1,61 @@
+{
+  "corpus": [
+    {
+      "id": "doc-1",
+      "text": "Deep residual networks provide residual skip connections for computer vision image classification models.",
+      "metadata": {"content_id": "item-1", "source_id": "ai_today", "micro_topic_id": "foundation-models"}
+    },
+    {
+      "id": "doc-2",
+      "text": "Extreme ultraviolet EUV lithography advances wafer manufacturing for advanced silicon node fabrication.",
+      "metadata": {"content_id": "item-2", "source_id": "semiconductor_wire", "micro_topic_id": "ai-infrastructure"}
+    },
+    {
+      "id": "doc-3",
+      "text": "Transformer architecture uses multi-head self-attention mechanisms for language modeling and context processing.",
+      "metadata": {"content_id": "item-3", "source_id": "ml_research", "micro_topic_id": "foundation-models"}
+    },
+    {
+      "id": "doc-4",
+      "text": "Reciprocal rank fusion combines BM25 lexical search and dense embeddings for hybrid retrieval reranking.",
+      "metadata": {"content_id": "item-4", "source_id": "ir_journal", "micro_topic_id": "rag"}
+    },
+    {
+      "id": "doc-5",
+      "text": "Central bank interest rate hikes influence macro borrowing costs, bond yields, and inflation projections.",
+      "metadata": {"content_id": "item-5", "source_id": "finance_times", "micro_topic_id": "interest-rates"}
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q1",
+      "query": "residual skip connections vision",
+      "micro_topic_id": "foundation-models",
+      "relevant_docs": ["doc-1"]
+    },
+    {
+      "query_id": "q2",
+      "query": "EUV lithography silicon wafer manufacturing",
+      "micro_topic_id": "ai-infrastructure",
+      "relevant_docs": ["doc-2"]
+    },
+    {
+      "query_id": "q3",
+      "query": "self-attention transformer language model",
+      "micro_topic_id": "foundation-models",
+      "relevant_docs": ["doc-3"]
+    },
+    {
+      "query_id": "q4",
+      "query": "hybrid retrieval BM25 reciprocal rank fusion",
+      "micro_topic_id": "rag",
+      "relevant_docs": ["doc-4"]
+    },
+    {
+      "query_id": "q5",
+      "query": "central bank interest rate inflation",
+      "micro_topic_id": "interest-rates",
+      "relevant_docs": ["doc-5"]
+    }
+  ]
+}

@@ -80,7 +80,8 @@ class BudgetManager:
         self.global_usage = BudgetUsage()
         self.micro_topic_usage: dict[str, BudgetUsage] = {}
         self.skips: list[BudgetSkipRecord] = []
-        self._reservations: dict[str, dict[str, int]] = {}
+        self._reservations: dict[str, int] = {}
+        self._dimension_reservations: dict[str, int] = {}
 
     @staticmethod
     def _parse_limits(config: dict[str, Any]) -> BudgetLimits:
@@ -113,16 +114,25 @@ class BudgetManager:
     ) -> tuple[bool, str]:
         """Check if execution can proceed under priority protection rules."""
         priority = priority.upper()
+        p0_reserve = int(self.config.get("p0_reserved_calls", self.config.get("p0_reserve", 0)))
+        reserved_calls = self._dimension_reservations.get("ai_calls", 0)
+
         # Check global AI calls
-        remaining_calls = self.global_limits.ai_calls - self.global_usage.ai_calls
+        remaining_calls = self.global_limits.ai_calls - (self.global_usage.ai_calls + reserved_calls)
         if remaining_calls < estimated_calls:
             # P0 is protected if at least 1 call remains
             if priority == "P0" and remaining_calls >= 1:
                 return True, "PROCEED"
             return False, "GLOBAL_AI_CALL_BUDGET_EXHAUSTED"
 
+        # Check P0 reserve protection against P1/P2
+        if p0_reserve > 0 and priority != "P0":
+            if remaining_calls - estimated_calls < p0_reserve:
+                return False, "RESERVED_FOR_P0"
+
         # Check global context chars
-        if self.global_usage.context_chars + estimated_chars > self.global_limits.context_chars:
+        reserved_chars = self._dimension_reservations.get("context_chars", 0)
+        if self.global_usage.context_chars + reserved_chars + estimated_chars > self.global_limits.context_chars:
             if priority != "P0":
                 return False, "GLOBAL_CONTEXT_CHAR_BUDGET_EXHAUSTED"
 
@@ -160,6 +170,7 @@ class BudgetManager:
         )
         if not can_run:
             now_iso = datetime.now(UTC).isoformat()
+            reserved_calls = self._dimension_reservations.get("ai_calls", 0)
             record = self.skip(
                 micro_topic_id=micro_topic_id,
                 reason=reason,
@@ -171,9 +182,23 @@ class BudgetManager:
                     "requested_chars": estimated_chars,
                     "global_calls_used": self.global_usage.ai_calls,
                     "global_calls_limit": self.global_limits.ai_calls,
+                    "budget_trace": {
+                        "pool": priority,
+                        "dimension": "ai_calls",
+                        "limit": self.global_limits.ai_calls,
+                        "allocated": self.global_usage.ai_calls + reserved_calls,
+                        "remaining": max(0, self.global_limits.ai_calls - (self.global_usage.ai_calls + reserved_calls)),
+                        "required": estimated_calls,
+                    },
                 },
             )
             return False, reason, record
+
+        # Automatically record reservation upon authorization
+        self.reserve(micro_topic_id, "ai_calls", estimated_calls)
+        if estimated_chars > 0:
+            self.reserve(micro_topic_id, "context_chars", estimated_chars)
+
         return True, "AUTHORIZED", None
 
     def reserve(
@@ -183,8 +208,11 @@ class BudgetManager:
         amount: int,
     ) -> bool:
         """Reserve budget units before starting an operation."""
+        if amount <= 0:
+            return True
         key = f"{micro_topic_id}:{dimension}"
         self._reservations[key] = self._reservations.get(key, 0) + amount
+        self._dimension_reservations[dimension] = self._dimension_reservations.get(dimension, 0) + amount
         return True
 
     def release(
@@ -194,9 +222,15 @@ class BudgetManager:
         amount: int,
     ) -> None:
         """Release unused reserved budget units."""
+        if amount <= 0:
+            return
         key = f"{micro_topic_id}:{dimension}"
-        if key in self._reservations:
-            self._reservations[key] = max(0, self._reservations[key] - amount)
+        current = self._reservations.get(key, 0)
+        released = min(current, amount)
+        self._reservations[key] = max(0, current - released)
+        self._dimension_reservations[dimension] = max(
+            0, self._dimension_reservations.get(dimension, 0) - released
+        )
 
     def consume(
         self,
@@ -204,7 +238,17 @@ class BudgetManager:
         dimension: str,
         amount: int,
     ) -> None:
-        """Record actual budget consumption."""
+        """Record actual budget consumption and reconcile active reservations."""
+        # Reconcile pending reservation if present
+        key = f"{micro_topic_id}:{dimension}"
+        if key in self._reservations:
+            reserved = self._reservations[key]
+            reconciled = min(reserved, amount)
+            self._reservations[key] = max(0, reserved - reconciled)
+            self._dimension_reservations[dimension] = max(
+                0, self._dimension_reservations.get(dimension, 0) - reconciled
+            )
+
         if hasattr(self.global_usage, dimension):
             current = getattr(self.global_usage, dimension)
             setattr(self.global_usage, dimension, current + amount)

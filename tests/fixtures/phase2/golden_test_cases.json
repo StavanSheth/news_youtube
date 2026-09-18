@@ -1,0 +1,47 @@
+{
+  "test_cases": [
+    {
+      "id": "tc-01-exact-primary",
+      "title": "State of the Art Foundation Model Released with Expanded Context",
+      "text": "Deep neural architecture with 2M token context window, open model weights, and pretraining dataset benchmarks.",
+      "expected_domain": "artificial-intelligence",
+      "expected_topic": "foundation-models",
+      "expected_micro_topic": "foundation-models",
+      "expected_decision": "PRIMARY"
+    },
+    {
+      "id": "tc-02-multi-microtopic",
+      "title": "Autonomous Agent Platform Deploys Foundation Model on Custom GPU Clusters",
+      "text": "Autonomous agent tool use, workflow orchestration, and planning loop powered by foundation model inference across datacenter GPU clusters.",
+      "expected_domain": "artificial-intelligence",
+      "expected_topic": "ai-agents",
+      "expected_micro_topic": "ai-agents",
+      "expected_decision": "PRIMARY",
+      "expected_secondary": ["foundation-models", "ai-infrastructure"]
+    },
+    {
+      "id": "tc-03-negative-exclusion",
+      "title": "Cryptocurrency Blockchain Tokens Used in Decentralized Trading App",
+      "text": "Blockchain ledger tokens, smart contracts, and crypto liquidity pools for decentralized exchange without machine learning or neural networks.",
+      "expected_exclusion": true,
+      "expected_micro_topic": null
+    },
+    {
+      "id": "tc-04-temporal-boundary",
+      "title": "Semiconductor Fab Announces 2nm Wafer Production",
+      "text": "Extreme ultraviolet lithography yields advance next-generation packaging and silicon wafer manufacturing.",
+      "published_at": "2026-09-18T10:00:00+00:00",
+      "cutoff_at": "2026-09-18T12:00:00+00:00",
+      "expected_eligible": true
+    },
+    {
+      "id": "tc-05-future-leakage-protection",
+      "title": "Future Quantum Computing Qubit Announcement",
+      "text": "Surface code qubit physical threshold demonstration.",
+      "published_at": "2026-09-18T18:00:00+00:00",
+      "cutoff_at": "2026-09-18T12:00:00+00:00",
+      "expected_eligible": false,
+      "expected_rejection_reason": "FUTURE_EVIDENCE_EXCEEDS_CUTOFF"
+    }
+  ]
+}

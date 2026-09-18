@@ -9,7 +9,7 @@ from .budgets import BudgetManager
 from .validation import validate_analysis
 from .themes import analysis_profile, select_theme
 from .statuses import IntelligenceStatus
-from .contracts import ContextBudget, MicroTopicDecision, MicroTopicJob
+from .contracts import MicroTopicDecision, MicroTopicJob
 
 
 class RAGProvider(Protocol):
@@ -131,17 +131,9 @@ class MicroTopicManager:
                 })
                 continue
 
-            # Step 3: Bounded context packing
-            budget = ContextBudget(max_context_chars=int(self.settings.get("max_retrieved_context_chars", 12000)))
-            max_context = budget.analysis_chars
-            bounded = []
-            used = 0
-            for entry in evidence:
-                entry_size = len(entry.get("text", ""))
-                if used + entry_size > max_context:
-                    continue
-                bounded.append(entry)
-                used += entry_size
+            # Step 3: Authoritative context packet evidence (budgeted by RAG)
+            bounded = list(evidence)
+            used = sum(len(entry.get("text", "")) for entry in bounded)
 
             self.stats["micro_topic_analyses"] += 1
             job = MicroTopicJob(

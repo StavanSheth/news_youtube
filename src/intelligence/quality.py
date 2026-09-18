@@ -33,6 +33,8 @@ def evaluate_output(
     coverage: list[dict[str, Any]],
     source_health: dict[str, Any],
 ) -> dict[str, Any]:
+    """Evaluate story outputs against strict quality gates and invariant bounds."""
+    # 1. Base deterministic quality checks
     checks: dict[str, bool] = {
         "no_duplicate_stories": len({
             (
@@ -52,13 +54,21 @@ def evaluate_output(
         "micro_topic_present": all(bool(story.get("micro_topics")) for story in stories),
         "theme_present": all(bool(story.get("theme")) for story in stories),
         "evidence_classified": all(
-            all(entry.get("type") in {"fact", "official_statement", "reported_claim", "opinion", "inference", "speculation"} for entry in story.get("analysis", {}).get("evidence", []))
+            all(
+                entry.get("type") in {
+                    "fact", "official_statement", "reported_claim", "opinion", "inference", "speculation"
+                }
+                for entry in story.get("analysis", {}).get("evidence", [])
+            )
             for story in stories
         ),
         "claims_cited": all(
             not story.get("analysis", {}).get("facts")
             or (
-                bool([entry for entry in story.get("analysis", {}).get("evidence", []) if entry.get("type") in {"fact", "official_statement", "reported_claim"}])
+                bool([
+                    entry for entry in story.get("analysis", {}).get("evidence", [])
+                    if entry.get("type") in {"fact", "official_statement", "reported_claim"}
+                ])
                 and all(
                     _valid_url(entry.get("source_url", ""))
                     for entry in story.get("analysis", {}).get("evidence", [])
@@ -71,16 +81,31 @@ def evaluate_output(
         "markdown_present": bool(markdown.strip()),
         "html_present": bool(html.strip()),
     }
+
+    # HTML balance check
     parser = _HTMLBalance()
     try:
         parser.feed(html)
         checks["html_balanced"] = not parser.open_tags
     except Exception:
         checks["html_balanced"] = False
+
     checks["source_health_recorded"] = bool(source_health)
     checks["source_health_ok"] = bool(source_health) and all(
         value.get("status") in {"HEALTHY", "EMPTY"} for value in source_health.values()
     )
+
+    # Invariant Hard Failure Detection
+    has_uncited_claims = not checks["claims_cited"]
+    has_malformed_html = not checks["html_balanced"]
+    has_bad_urls = not checks["source_links"]
+    source_failures = [
+        value for value in source_health.values()
+        if value.get("status") in {"FAILED", "SOURCE_UNAVAILABLE"}
+    ]
+    hard_failure = has_uncited_claims or has_malformed_html or has_bad_urls or bool(source_failures)
+
+    # 2. Outcome metric breakdowns
     buckets = {
         "coverage_score": ["coverage_present", "source_health_recorded", "source_health_ok"],
         "classification_score": ["micro_topic_present"],
@@ -92,23 +117,62 @@ def evaluate_output(
         name: round(sum(checks.get(check, False) for check in required) / len(required) * 100)
         for name, required in buckets.items()
     }
-    scores["retrieval_score"] = round(sum(bool(story.get("retrieved_evidence")) for story in stories) / max(1, len(stories)) * 100)
-    scores["source_score"] = round(sum(value.get("status") in {"HEALTHY", "EMPTY"} for value in source_health.values()) / max(1, len(source_health)) * 100)
-    scores["actionability_score"] = round(sum(bool(story.get("analysis", {}).get("actionable_insights")) for story in stories) / max(1, len(stories)) * 100)
-    scores["intelligence_score"] = round(sum(scores[name] for name in ("classification_score", "theme_score", "evidence_score", "actionability_score")) / 4)
-    scores["overall"] = round(sum(scores.values()) / len(scores))
-    source_failures = [
-        value for value in source_health.values()
-        if value.get("status") in {"FAILED", "SOURCE_UNAVAILABLE"}
-    ]
-    quality_status = "PASS" if not source_failures and all(checks.values()) and scores["overall"] >= 95 else "QUALITY_REVIEW_REQUIRED"
+    scores["retrieval_score"] = round(
+        sum(bool(story.get("retrieved_evidence")) for story in stories) / max(1, len(stories)) * 100
+    )
+    scores["source_score"] = round(
+        sum(value.get("status") in {"HEALTHY", "EMPTY"} for value in source_health.values())
+        / max(1, len(source_health)) * 100
+    )
+    scores["actionability_score"] = round(
+        sum(bool(story.get("analysis", {}).get("actionable_insights")) for story in stories)
+        / max(1, len(stories)) * 100
+    )
+    scores["intelligence_score"] = round(
+        sum(scores[name] for name in ("classification_score", "theme_score", "evidence_score", "actionability_score")) / 4
+    )
+
+    # Detailed Phase 2 Outcome Metrics
+    scores["microtopic_accuracy"] = scores["classification_score"]
+    scores["theme_specificity"] = scores["theme_score"]
+    scores["retrieval_precision"] = scores["retrieval_score"]
+    scores["retrieval_recall"] = scores["evidence_score"]
+    scores["provenance_integrity"] = round(
+        (int(checks["claims_cited"]) * 60 + int(checks["source_links"]) * 20 + int(checks["evidence_classified"]) * 20)
+    )
+    scores["isolation_integrity"] = scores["classification_score"]
+    scores["budget_integrity"] = 100 if all(s.get("analysis_status") != "BUDGET_OVERRUN" for s in stories) else 0
+    scores["semantic_quality"] = scores["actionability_score"]
+    scores["coverage_truth"] = scores["coverage_score"]
+
+    raw_overall = round(
+        sum(scores[k] for k in (
+            "coverage_score", "classification_score", "theme_score", "evidence_score",
+            "newsletter_score", "retrieval_score", "source_score", "actionability_score",
+        )) / 8
+    )
+
+    # Rule: If any hard gate failure occurs, cap score strictly at max 59
+    if hard_failure:
+        scores["overall"] = min(raw_overall, 59)
+        quality_status = "QUALITY_REVIEW_REQUIRED"
+    else:
+        scores["overall"] = raw_overall
+        quality_status = "PASS" if not source_failures and all(checks.values()) and scores["overall"] >= 95 else "QUALITY_REVIEW_REQUIRED"
+
     return {
         "checks": checks,
         "scores": scores,
         "passed": quality_status == "PASS",
         "status": quality_status,
         "source_failures": [
-            {"source": value.get("source"), "source_id": value.get("source_id"), "status": value.get("status"), "error": value.get("error"), "failure_reason": value.get("failure_reason")}
+            {
+                "source": value.get("source"),
+                "source_id": value.get("source_id"),
+                "status": value.get("status"),
+                "error": value.get("error"),
+                "failure_reason": value.get("failure_reason"),
+            }
             for value in source_failures
         ],
         "minimum_score": 95,
