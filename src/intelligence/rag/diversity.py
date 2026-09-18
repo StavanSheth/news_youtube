@@ -69,17 +69,6 @@ def apply_diversity_filtering(
         if len(selected) >= target_count:
             break
 
-    # Second pass: if we haven't reached target_count and candidates remain, fill from skipped
-    if len(selected) < target_count and skipped:
-        for skip_entry in list(skipped):
-            chunk_id = skip_entry.get("id")
-            chunk = next((c for c in candidates if c.get("id") == chunk_id and c not in selected), None)
-            if chunk:
-                selected.append(chunk)
-                skipped.remove(skip_entry)
-            if len(selected) >= target_count:
-                break
-
     diagnostics = {
         "diversity_candidates": len(ranked_chunks),
         "diversity_selected": len(selected),

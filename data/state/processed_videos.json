@@ -21,13 +21,13 @@
   },
   "gold-02-agent-workflow": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:19.697759+00:00",
+    "processed_at": "2026-09-18T16:14:33.008901+00:00",
     "published_at": "2026-09-18T07:30:00+00:00",
     "content_hash": "ea28d222ee399e583f33e5fa",
     "topics": [
       "artificial-intelligence"
     ],
     "score": 0.579,
-    "change": "NEW"
+    "change": "UPDATED"
   }
 }

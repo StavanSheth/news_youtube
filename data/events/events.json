@@ -2,13 +2,19 @@
   "event-f15daf8e09f36415": {
     "event_id": "event-f15daf8e09f36415",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.269259+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Foundation model benchmark release achieves new reasoning milestone",
     "entities": [],
-    "domains": [],
-    "topics": [],
-    "micro_topics": [],
+    "domains": [
+      "artificial-intelligence"
+    ],
+    "topics": [
+      "artificial-intelligence"
+    ],
+    "micro_topics": [
+      "foundation-models"
+    ],
     "sources": [
       {
         "source": "Official AI Lab",
@@ -27,15 +33,36 @@
       ],
       "has_primary": true
     },
-    "importance": 0,
-    "confidence": 0,
-    "evidence": [],
+    "importance": 51,
+    "confidence": 58,
+    "evidence": [
+      {
+        "type": "fact",
+        "text": "The research team releases the new 70B foundation model weights and architecture specification. Pretraining benchmarks show a 12% improvement on complex reasoning benchmarks with reduced inference latency.",
+        "source_url": "https://lab.test/fm-3-release",
+        "provenance": {
+          "evidence_id": "evidence-403f2f90b66359cd64962315",
+          "content_id": "content-86c26f30a674b30d0f886ccf",
+          "source_id": "source-fixture-f16d05ec6b29",
+          "source_url": "https://lab.test/fm-3-release",
+          "evidence_type": "other",
+          "trust_tier": 4,
+          "retrieved_at": "2026-09-18T16:14:32.772848+00:00",
+          "event_id": null,
+          "entity_id": null,
+          "micro_topic_id": "micro-topic-artificial-intelligence-artificial-intelligence-foundation-models"
+        },
+        "evidence_id": "evidence-403f2f90b66359cd64962315",
+        "content_id": "content-86c26f30a674b30d0f886ccf",
+        "source_id": "source-fixture-f16d05ec6b29"
+      }
+    ],
     "related_events": []
   },
   "event-7dcbc62776a4d797": {
     "event_id": "event-7dcbc62776a4d797",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.269259+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "AI agent workflow tutorial and tool use execution",
     "entities": [
@@ -70,15 +97,21 @@
   "event-2b9fcac4936a1e5e": {
     "event_id": "event-2b9fcac4936a1e5e",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.269259+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Hybrid RAG retrieval and reranking benchmark",
     "entities": [
       "rag"
     ],
-    "domains": [],
-    "topics": [],
-    "micro_topics": [],
+    "domains": [
+      "artificial-intelligence"
+    ],
+    "topics": [
+      "artificial-intelligence"
+    ],
+    "micro_topics": [
+      "foundation-models"
+    ],
     "sources": [
       {
         "source": "Search Engineering Lab",
@@ -97,15 +130,36 @@
       ],
       "has_primary": true
     },
-    "importance": 0,
-    "confidence": 0,
-    "evidence": [],
+    "importance": 70,
+    "confidence": 58,
+    "evidence": [
+      {
+        "type": "fact",
+        "text": "The retrieval benchmark evaluates dense embeddings, sparse lexical retrieval, chunking window strategies, and cross-encoder reranking to improve grounding accuracy and reduce hallucination.",
+        "source_url": "https://search.test/hybrid-rag",
+        "provenance": {
+          "evidence_id": "evidence-e7ba42c9ead36401c7d96d8d",
+          "content_id": "content-64359c787da6d78171d59714",
+          "source_id": "source-fixture-f16d05ec6b29",
+          "source_url": "https://search.test/hybrid-rag",
+          "evidence_type": "other",
+          "trust_tier": 4,
+          "retrieved_at": "2026-09-18T16:14:33.258024+00:00",
+          "event_id": null,
+          "entity_id": null,
+          "micro_topic_id": "micro-topic-artificial-intelligence-artificial-intelligence-foundation-models"
+        },
+        "evidence_id": "evidence-e7ba42c9ead36401c7d96d8d",
+        "content_id": "content-64359c787da6d78171d59714",
+        "source_id": "source-fixture-f16d05ec6b29"
+      }
+    ],
     "related_events": []
   },
   "event-da6e950a727d2690": {
     "event_id": "event-da6e950a727d2690",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.269259+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "GPU cluster data center expands AI infrastructure capacity",
     "entities": [
@@ -156,7 +210,7 @@
   "event-5c340ce2a2b0374f": {
     "event_id": "event-5c340ce2a2b0374f",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Critical CVE vulnerability patch",
     "entities": [],
@@ -189,7 +243,7 @@
   "event-cc01545d678c7f51": {
     "event_id": "event-cc01545d678c7f51",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Industrial ransomware surge",
     "entities": [],
@@ -222,7 +276,7 @@
   "event-521416c7ee72b96b": {
     "event_id": "event-521416c7ee72b96b",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Semiconductor wafer fab investment",
     "entities": [
@@ -257,7 +311,7 @@
   "event-58419012562bb46c": {
     "event_id": "event-58419012562bb46c",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Central bank rate hike meets expectations",
     "entities": [],
@@ -290,7 +344,7 @@
   "event-feddd10a1924bddd": {
     "event_id": "event-feddd10a1924bddd",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Commercial rocket flight deploys payload to orbit",
     "entities": [],
@@ -323,7 +377,7 @@
   "event-675b13ec0bdf7b77": {
     "event_id": "event-675b13ec0bdf7b77",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Clean tech grant initiative opens application round",
     "entities": [],
@@ -356,7 +410,7 @@
   "event-2526a4389bcbddda": {
     "event_id": "event-2526a4389bcbddda",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Startup Nova raises  Series B enterprise funding",
     "entities": [
@@ -398,7 +452,7 @@
   "event-5b26d49169486a43": {
     "event_id": "event-5b26d49169486a43",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Bond yields trade in narrow range following rate decision",
     "entities": [],
@@ -431,7 +485,7 @@
   "event-54c5b3e2d30613b7": {
     "event_id": "event-54c5b3e2d30613b7",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Unverified rumors hint at mysterious new quantum processor",
     "entities": [],
@@ -464,7 +518,7 @@
   "event-64b55d149529b0c6": {
     "event_id": "event-64b55d149529b0c6",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Satellite launch mission declared complete success by agency",
     "entities": [],
@@ -497,7 +551,7 @@
   "event-e66d5532312e993d": {
     "event_id": "event-e66d5532312e993d",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Radar trackers indicate satellite deployment failed to achieve orbit",
     "entities": [],
@@ -530,7 +584,7 @@
   "event-9ec56d7ddfc849b5": {
     "event_id": "event-9ec56d7ddfc849b5",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "Best organic compost techniques for growing backyard tomatoes",
     "entities": [],
@@ -563,7 +617,7 @@
   "event-f4a802920a803c81": {
     "event_id": "event-f4a802920a803c81",
     "first_seen": "2026-09-18T16:05:18.951184+00:00",
-    "last_seen": "2026-09-18T16:12:53.270261+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00",
     "status": "UPDATED",
     "title": "AI research update on security bounds",
     "entities": [

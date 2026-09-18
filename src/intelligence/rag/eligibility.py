@@ -30,7 +30,7 @@ def _freshness_cutoff(freshness: str, now: datetime) -> datetime | None:
 
 def check_chunk_eligibility(
     chunk: dict[str, Any],
-    request: RetrievalRequest,
+    request: RetrievalRequest | None = None,
     *,
     now: datetime | None = None,
     publication_cutoff: datetime | None = None,
@@ -75,35 +75,36 @@ def check_chunk_eligibility(
         if published_at > now:
             return False, "FUTURE_EVIDENCE_AHEAD_OF_NOW"
 
-    # Freshness check
-    if request.freshness and published_at is not None:
-        cutoff = _freshness_cutoff(request.freshness, now)
-        if cutoff and published_at < cutoff:
-            return False, "FRESHNESS_EXPIRED"
+    if request is not None:
+        # Freshness check
+        if request.freshness and published_at is not None:
+            cutoff = _freshness_cutoff(request.freshness, now)
+            if cutoff and published_at < cutoff:
+                return False, "FRESHNESS_EXPIRED"
 
-    # Exclusion concepts
-    text_lower = text.lower()
-    for exclusion in request.exclusions:
-        if exclusion and str(exclusion).lower() in text_lower:
-            return False, f"EXCLUDED_CONCEPT:{exclusion}"
+        # Exclusion concepts
+        text_lower = text.lower()
+        for exclusion in request.exclusions:
+            if exclusion and str(exclusion).lower() in text_lower:
+                return False, f"EXCLUDED_CONCEPT:{exclusion}"
 
-    # Micro-topic match authorization check
-    if request.micro_topic_id:
-        matches = metadata.get("micro_topic_matches", [])
-        has_direct_match = any(
-            isinstance(m, dict) and m.get("micro_topic_id") == request.micro_topic_id
-            for m in matches
-        )
-        has_tag_match = metadata.get("micro_topic_id") == request.micro_topic_id
-        # Normalize concepts for text search
-        concepts_to_check = [request.micro_topic_id, *request.required_concepts]
-        has_concept_match = any(
-            c.replace("-", " ").replace("_", " ").rstrip("s").lower() in text_lower
-            for c in concepts_to_check
-            if c
-        )
-        if not (has_direct_match or has_tag_match or has_concept_match):
-            return False, "UNAUTHORIZED_MICRO_TOPIC"
+        # Micro-topic match authorization check
+        if request.micro_topic_id:
+            matches = metadata.get("micro_topic_matches", [])
+            has_direct_match = any(
+                isinstance(m, dict) and m.get("micro_topic_id") == request.micro_topic_id
+                for m in matches
+            )
+            has_tag_match = metadata.get("micro_topic_id") == request.micro_topic_id
+            # Normalize concepts for text search
+            concepts_to_check = [request.micro_topic_id, *request.required_concepts]
+            has_concept_match = any(
+                c.replace("-", " ").replace("_", " ").rstrip("s").lower() in text_lower
+                for c in concepts_to_check
+                if c
+            )
+            if not (has_direct_match or has_tag_match or has_concept_match):
+                return False, "UNAUTHORIZED_MICRO_TOPIC"
 
     # Provenance requirement
     if "provenance" in metadata and metadata["provenance"] is None and url:

@@ -1,0 +1,11 @@
+{
+  "rag": {
+    "name": "RAG",
+    "type": "technology",
+    "events": [
+      "event-2b9fcac4936a1e5e"
+    ],
+    "first_seen": "2026-09-18T16:14:18.035295+00:00",
+    "last_seen": "2026-09-18T16:14:36.479937+00:00"
+  }
+}

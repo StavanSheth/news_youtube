@@ -20,6 +20,7 @@ from .provider import DryRunProvider, GeminiProvider
 from .sources import discover_youtube
 from .enrichment import confidence_score, detect_opportunities, extract_entities, trend_signals
 from .manager import IntelligenceManager
+from .budgets import BudgetManager
 from .microtopics import catalog, classify_micro_topics, coverage
 from .quality import evaluate_output
 from .source_validation import validate_source_registry
@@ -92,7 +93,26 @@ class RepositoryState:
         self.trends = self._read("trends.json", {})
 
     def _file(self, name: str) -> Path:
-        return self.paths.data_file(name) if self.paths else self.data_dir / name
+        if self.paths:
+            if name in {"processed_videos.json", "processed_news.json", "processing_state.json", "failed_items.json"}:
+                target = self.paths.state / name
+            elif name == "entities.json":
+                target = self.paths.entities / name
+            elif name == "events.json":
+                target = self.paths.events / name
+            elif name == "trends.json":
+                target = self.paths.state / name
+            else:
+                target = self.paths.data_file(name)
+            legacy = self.paths.data_file(name)
+            if not target.exists() and legacy.exists():
+                try:
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_bytes(legacy.read_bytes())
+                except OSError:
+                    return legacy
+            return target
+        return self.data_dir / name
 
     def _read(self, name: str, fallback: Any) -> Any:
         try:
@@ -309,6 +329,7 @@ def render(
 
 
 def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> tuple[Path, Path]:
+    root = root.resolve()
     config = load_config(root)
     started = utc_now()
     paths = PersistencePaths.for_root(root)
@@ -410,7 +431,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         item
         for item in discovered
         if eligible_for_edition(item, lookback_floor, publication_cutoff)
-        and not state.seen(item)
+        and (bool(fixture_path) or not state.seen(item))
         and state.retry_due(item["id"])
     ]
     provider = (
@@ -423,7 +444,15 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
         **config.settings.get("retrieval", {}),
         **config.settings.get("pipeline", {}),
     }
-    manager = IntelligenceManager(provider, config.themes, manager_settings)
+    budget_manager = BudgetManager(config.settings.get("budgets", {}))
+    manager = IntelligenceManager(
+        provider,
+        config.themes,
+        manager_settings,
+        budget=budget_manager,
+        run_context=run_context,
+        edition_context=edition_context,
+    )
     micro_topic_catalog = catalog(config.taxonomy, config.topics, config.microtopics, config.microtopic_matrix, config.profile_templates)
     stories, compact, coverage_assignments = [], [], []
     for item in sorted(eligible, key=lambda entry: entry.get("published_at", ""), reverse=True)[
@@ -473,7 +502,7 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
             change = state.change_status(item)
             for result in results:
                 analysis = result["analysis"]
-                if not analysis or not result.get("evidence"):
+                if not analysis or not result.get("evidence") or result.get("analysis_status") != "OK":
                     continue
                 story = {
                     **item, "topics": topics, "micro_topics": [result["classification"]],

@@ -20,6 +20,7 @@ class CoverageState:
     BUDGET_SKIPPED = "BUDGET_SKIPPED"
     TRANSCRIPT_UNAVAILABLE = "TRANSCRIPT_UNAVAILABLE"
     ERROR = "ERROR"
+    SOURCE_FAILURE = "SOURCE_FAILURE"
 
 
 @dataclass
@@ -82,7 +83,7 @@ def resolve_micro_topic_status(
     # Check for technical errors
     for item in assignments:
         if item.get("source_status") == IntelligenceStatus.SOURCE_FAILURE.value:
-            return CoverageState.ERROR, "SOURCE_FAILURE"
+            return CoverageState.SOURCE_FAILURE, "SOURCE_FAILURE"
         if item.get("retrieval_status") == IntelligenceStatus.RETRIEVAL_FAILURE.value:
             return CoverageState.ERROR, "RETRIEVAL_FAILURE"
         if item.get("analysis_status") == IntelligenceStatus.ANALYSIS_FAILURE.value:

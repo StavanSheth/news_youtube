@@ -23,7 +23,7 @@ def validate_business_rules(analysis: dict[str, Any]) -> tuple[bool, list[str]]:
     """Validate business rules for actionable insights, opportunities, and scores."""
     errors = []
     if not analysis:
-        return True, []
+        return False, ["Analysis payload is empty"]
 
     # Check actionable insights attribution
     actions = analysis.get("actions", [])

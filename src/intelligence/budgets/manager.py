@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import UTC, datetime
 from typing import Any
 
 
@@ -71,6 +72,7 @@ class BudgetManager:
         global_limits: dict[str, Any] | None = None,
         micro_topic_limits: dict[str, dict[str, Any]] | None = None,
     ) -> None:
+        self.config = dict(global_limits or {})
         self.global_limits = self._parse_limits(global_limits or {})
         self.micro_topic_limits = {
             k: self._parse_limits(v) for k, v in (micro_topic_limits or {}).items()
@@ -82,6 +84,9 @@ class BudgetManager:
 
     @staticmethod
     def _parse_limits(config: dict[str, Any]) -> BudgetLimits:
+        ai_calls_val = config.get("max_ai_calls")
+        if ai_calls_val is None:
+            ai_calls_val = config.get("edition_max_ai_calls", 30)
         return BudgetLimits(
             source_items=int(config.get("max_source_items", 100)),
             rag_items=int(config.get("max_rag_items", 10)),
@@ -89,7 +94,7 @@ class BudgetManager:
             context_chars=int(config.get("max_context_chars", config.get("max_retrieved_context_chars", 25000))),
             input_tokens=int(config.get("max_input_tokens", 30000)),
             output_tokens=int(config.get("max_output_tokens", 8000)),
-            ai_calls=int(config.get("max_ai_calls", 30)),
+            ai_calls=int(ai_calls_val),
             total_tokens=int(config.get("max_total_tokens", 40000)),
             retries=int(config.get("max_retries", 5)),
         )
@@ -130,7 +135,46 @@ class BudgetManager:
             if estimated_chars and usage.context_chars + estimated_chars > limits.context_chars:
                 return False, "MICRO_TOPIC_CONTEXT_CHAR_LIMIT_EXCEEDED"
 
+        max_per_topic = self.config.get("max_ai_calls_per_micro_topic")
+        if max_per_topic is not None:
+            usage = self._get_or_create_usage(micro_topic_id)
+            if usage.ai_calls + estimated_calls > int(max_per_topic):
+                return False, "MICRO_TOPIC_AI_CALL_LIMIT_EXCEEDED"
+
         return True, "PROCEED"
+
+    def authorize(
+        self,
+        micro_topic_id: str,
+        priority: str = "P1",
+        estimated_calls: int = 1,
+        estimated_chars: int = 0,
+        run_id: str = "",
+    ) -> tuple[bool, str, BudgetSkipRecord | None]:
+        """Authorize work BEFORE execution. If not allowed, automatically persist skip record."""
+        can_run, reason = self.can_execute(
+            micro_topic_id,
+            priority=priority,
+            estimated_calls=estimated_calls,
+            estimated_chars=estimated_chars,
+        )
+        if not can_run:
+            now_iso = datetime.now(UTC).isoformat()
+            record = self.skip(
+                micro_topic_id=micro_topic_id,
+                reason=reason,
+                priority=priority,
+                details={
+                    "run_id": run_id,
+                    "timestamp": now_iso,
+                    "requested_calls": estimated_calls,
+                    "requested_chars": estimated_chars,
+                    "global_calls_used": self.global_usage.ai_calls,
+                    "global_calls_limit": self.global_limits.ai_calls,
+                },
+            )
+            return False, reason, record
+        return True, "AUTHORIZED", None
 
     def reserve(
         self,

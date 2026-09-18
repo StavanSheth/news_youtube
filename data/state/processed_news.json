@@ -1,118 +1,118 @@
 {
   "gold-01-fm-launch": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:19.436081+00:00",
+    "processed_at": "2026-09-18T16:14:32.776848+00:00",
     "published_at": "2026-09-18T08:00:00+00:00",
     "content_hash": "0de59b41ac3e576c1ecd2b8e",
     "topics": [
       "artificial-intelligence"
     ],
     "score": 0.478,
-    "change": "NEW"
+    "change": "UPDATED"
   },
   "gold-03-rag-rerank": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:19.943139+00:00",
+    "processed_at": "2026-09-18T16:14:33.264030+00:00",
     "published_at": "2026-09-18T07:00:00+00:00",
     "content_hash": "d5a2f899b8467dc33743ed61",
     "topics": [
       "artificial-intelligence"
     ],
-    "score": 0.728,
-    "change": "NEW"
+    "score": 0.727,
+    "change": "UPDATED"
   },
   "gold-04-gpu-cluster": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:20.201555+00:00",
+    "processed_at": "2026-09-18T16:14:33.531150+00:00",
     "published_at": "2026-09-18T06:30:00+00:00",
     "content_hash": "f39b499328e7fb0ab6bbe30b",
     "topics": [
       "artificial-intelligence"
     ],
     "score": 0.466,
-    "change": "NEW"
+    "change": "UPDATED"
   },
   "gold-05-cve-breach": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:20.419452+00:00",
+    "processed_at": "2026-09-18T16:14:33.737746+00:00",
     "published_at": "2026-09-18T06:00:00+00:00",
     "content_hash": "552bae97f8e9a3897f0bad69",
     "topics": [
       "geopolitics",
       "cybersecurity"
     ],
-    "score": 0.639,
-    "change": "NEW"
+    "score": 0.638,
+    "change": "UPDATED"
   },
   "gold-06-ransomware": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:20.628283+00:00",
+    "processed_at": "2026-09-18T16:14:33.935061+00:00",
     "published_at": "2026-09-18T05:30:00+00:00",
     "content_hash": "33f23559c117901894c9fbfb",
     "topics": [
       "cybersecurity"
     ],
     "score": 0.677,
-    "change": "NEW"
+    "change": "UPDATED"
   },
   "gold-07-chip-fab": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:20.831182+00:00",
+    "processed_at": "2026-09-18T16:14:34.151315+00:00",
     "published_at": "2026-09-18T05:00:00+00:00",
     "content_hash": "532e2efa1b137f7d9979db13",
     "topics": [
       "semiconductors"
     ],
-    "score": 0.623,
-    "change": "NEW"
+    "score": 0.622,
+    "change": "UPDATED"
   },
   "gold-09-central-bank-rates": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:21.050087+00:00",
+    "processed_at": "2026-09-18T16:14:34.365081+00:00",
     "published_at": "2026-09-18T04:00:00+00:00",
     "content_hash": "86aef86b76ce08f48f99d075",
     "topics": [
       "finance"
     ],
     "score": 0.673,
-    "change": "NEW"
+    "change": "UPDATED"
   },
   "gold-10-rocket-launch": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:21.255528+00:00",
+    "processed_at": "2026-09-18T16:14:34.576487+00:00",
     "published_at": "2026-09-18T03:30:00+00:00",
     "content_hash": "4c70198e953ea333fd2babc7",
     "topics": [
       "space"
     ],
     "score": 0.677,
-    "change": "NEW"
+    "change": "UPDATED"
   },
   "gold-11-grant-opportunity": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:21.457104+00:00",
+    "processed_at": "2026-09-18T16:14:34.807097+00:00",
     "published_at": "2026-09-18T03:00:00+00:00",
     "content_hash": "5827151c955c2c243a02e7e0",
     "topics": [
       "government-policy"
     ],
     "score": 0.624,
-    "change": "NEW"
+    "change": "UPDATED"
   },
   "gold-12-dup-event-a": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:21.679885+00:00",
+    "processed_at": "2026-09-18T16:14:35.008388+00:00",
     "published_at": "2026-09-18T02:30:00+00:00",
     "content_hash": "a87775ad2e937cde2c6838e0",
     "topics": [
       "startups-vc"
     ],
     "score": 0.715,
-    "change": "NEW"
+    "change": "UPDATED"
   },
   "gold-14-no-major-update-rates": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:21.921096+00:00",
+    "processed_at": "2026-09-18T16:14:35.230705+00:00",
     "published_at": "2026-09-18T02:00:00+00:00",
     "content_hash": "fa9be10e488c8065b7bce9c2",
     "topics": [
@@ -123,7 +123,7 @@
   },
   "gold-15-insufficient-evidence": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:22.134988+00:00",
+    "processed_at": "2026-09-18T16:14:35.472823+00:00",
     "published_at": "2026-09-18T01:30:00+00:00",
     "content_hash": "a16be04718047497ee41fe3e",
     "topics": [],
@@ -132,29 +132,29 @@
   },
   "gold-17-conflicting-source-b": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:22.372902+00:00",
+    "processed_at": "2026-09-18T16:14:35.749954+00:00",
     "published_at": "2026-09-18T01:05:00+00:00",
     "content_hash": "f7b0f211d800267df6000707",
     "topics": [
       "space"
     ],
-    "score": 0.621,
-    "change": "NEW"
+    "score": 0.62,
+    "change": "UPDATED"
   },
   "gold-16-conflicting-source-a": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:22.581820+00:00",
+    "processed_at": "2026-09-18T16:14:35.945153+00:00",
     "published_at": "2026-09-18T01:00:00+00:00",
     "content_hash": "7399297f2aca732bbd09459e",
     "topics": [
       "space"
     ],
     "score": 0.672,
-    "change": "NEW"
+    "change": "UPDATED"
   },
   "gold-19-irrelevant-gardening": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:22.811539+00:00",
+    "processed_at": "2026-09-18T16:14:36.183120+00:00",
     "published_at": "2026-09-18T00:30:00+00:00",
     "content_hash": "af9c0545be8892019bab1fea",
     "topics": [],
@@ -163,7 +163,7 @@
   },
   "gold-20-prompt-injection": {
     "status": "success",
-    "processed_at": "2026-09-18T16:05:23.021555+00:00",
+    "processed_at": "2026-09-18T16:14:36.421231+00:00",
     "published_at": "2026-09-18T00:15:00+00:00",
     "content_hash": "b3335d4207cc00051f897a9c",
     "topics": [

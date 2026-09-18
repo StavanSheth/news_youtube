@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "no_duplicate_stories": true,
+    "no_duplicate_facts": true,
+    "source_links": true,
+    "source_labels": true,
+    "importance_present": true,
+    "confidence_present": true,
+    "micro_topic_present": true,
+    "theme_present": true,
+    "evidence_classified": true,
+    "claims_cited": true,
+    "coverage_present": true,
+    "markdown_present": true,
+    "html_present": true,
+    "html_balanced": true,
+    "source_health_recorded": true,
+    "source_health_ok": true
+  },
+  "scores": {
+    "coverage_score": 100,
+    "classification_score": 100,
+    "theme_score": 100,
+    "evidence_score": 100,
+    "newsletter_score": 100,
+    "retrieval_score": 100,
+    "source_score": 100,
+    "actionability_score": 100,
+    "intelligence_score": 100,
+    "overall": 100
+  },
+  "passed": true,
+  "status": "PASS",
+  "source_failures": [],
+  "minimum_score": 95
+}

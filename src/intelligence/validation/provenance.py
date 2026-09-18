@@ -5,6 +5,61 @@ from __future__ import annotations
 from typing import Any
 
 
+def verify_provenance(claim: dict[str, Any], context_packet: Any | None = None) -> tuple[bool, list[str]]:
+    """Verify deep provenance integrity: claim -> evidence_id -> content_id -> source_id -> URL."""
+    errors = []
+    evidence_ids = claim.get("evidence_ids", [])
+    if isinstance(claim.get("evidence_id"), str) and claim["evidence_id"] not in evidence_ids:
+        evidence_ids = [*evidence_ids, claim["evidence_id"]]
+
+    if not context_packet:
+        return True, []
+
+    chunk_map: dict[str, dict[str, Any]] = {}
+    valid_eids: set[str] = set()
+    if isinstance(context_packet, dict):
+        for eid in context_packet.get("evidence_ids", []):
+            valid_eids.add(str(eid))
+        for chunk in context_packet.get("retrieved_evidence", []):
+            cid = chunk.get("id") or chunk.get("metadata", {}).get("evidence_id")
+            if cid:
+                chunk_map[str(cid)] = chunk
+                valid_eids.add(str(cid))
+    elif hasattr(context_packet, "retrieved_evidence"):
+        for chunk in context_packet.retrieved_evidence:
+            cid = chunk.get("id") or chunk.get("metadata", {}).get("evidence_id")
+            if cid:
+                chunk_map[str(cid)] = chunk
+                valid_eids.add(str(cid))
+    if hasattr(context_packet, "evidence_ids"):
+        for eid in context_packet.evidence_ids:
+            valid_eids.add(str(eid))
+
+    for eid in evidence_ids:
+        if valid_eids and str(eid) not in valid_eids:
+            errors.append(f"Referenced evidence_id '{eid}' does not exist in context packet")
+            continue
+        chunk = chunk_map.get(str(eid))
+        if not chunk:
+            continue
+        meta = chunk.get("metadata", {})
+        expected_content_id = meta.get("content_id")
+        expected_source_id = meta.get("source_id") or meta.get("source")
+
+        if "content_id" in claim and expected_content_id and claim["content_id"] != expected_content_id:
+            errors.append(
+                f"Provenance mismatch: claim specifies content_id '{claim['content_id']}' "
+                f"but evidence '{eid}' belongs to content_id '{expected_content_id}'"
+            )
+        if "source_id" in claim and expected_source_id and claim["source_id"] != expected_source_id:
+            errors.append(
+                f"Provenance mismatch: claim specifies source_id '{claim['source_id']}' "
+                f"but evidence '{eid}' belongs to source_id '{expected_source_id}'"
+            )
+
+    return len(errors) == 0, errors
+
+
 def validate_claim_provenance(
     analysis: dict[str, Any],
     context_packet: Any | None = None,
@@ -12,7 +67,7 @@ def validate_claim_provenance(
     """Enforce claim-level provenance and citation integrity."""
     errors = []
     if not analysis:
-        return True, []
+        return False, ["Analysis payload is empty"]
 
     available_evidence_ids: set[str] = set()
     if context_packet:
@@ -35,6 +90,8 @@ def validate_claim_provenance(
             is_inference = bool(claim.get("inference", False))
             is_speculation = bool(claim.get("speculation", False))
             evidence_ids = claim.get("evidence_ids", [])
+            if isinstance(claim.get("evidence_id"), str) and claim["evidence_id"] not in evidence_ids:
+                evidence_ids = [*evidence_ids, claim["evidence_id"]]
 
             if claim_type in {"FACT", "REPORTED", "OFFICIAL"} and not is_inference and not is_speculation:
                 if not evidence_ids:
@@ -43,6 +100,11 @@ def validate_claim_provenance(
                     unknown_ids = set(evidence_ids) - available_evidence_ids
                     if unknown_ids:
                         errors.append(f"Claim references evidence IDs not present in context packet: {unknown_ids}")
+
+            # Verify deep provenance integrity
+            deep_ok, deep_errs = verify_provenance(claim, context_packet)
+            if not deep_ok:
+                errors.extend(deep_errs)
 
     # 2. Inspect 'facts' list vs 'evidence' list in classic schema
     facts = analysis.get("facts", [])

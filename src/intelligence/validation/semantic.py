@@ -13,7 +13,7 @@ def validate_semantic_content(
     """Validate that analysis answers micro-topic questions and avoids cross-topic leakage."""
     errors = []
     if not analysis:
-        return True, []
+        return False, ["Analysis payload is empty"]
 
     text_content = " ".join([
         " ".join(analysis.get("facts", [])),
@@ -23,7 +23,27 @@ def validate_semantic_content(
     ]).lower()
 
     if not text_content.strip():
-        return True, []
+        return False, ["Analysis text content is empty; cannot satisfy semantic contract"]
+
+    DIMENSION_FIELD_ALIASES: dict[str, list[str]] = {
+        "summary": ["summary", "interpretation", "changes"],
+        "actions": ["actions", "actionable_insights"],
+        "sources": ["sources", "evidence"],
+        "evidence": ["evidence", "facts"],
+        "implications": ["implications", "interpretation", "risks", "opportunities"],
+        "what_changed": ["changes", "facts"],
+        "why_it_matters": ["interpretation", "implications"],
+        "business_impact": ["implications", "risks", "opportunities"],
+    }
+
+    # Check required dimensions if specified in contract
+    required_dimensions = theme.get("analysis_contract", {}).get("required_dimensions", [])
+    for dim in required_dimensions:
+        dim_key = str(dim).strip().lower()
+        aliases = DIMENSION_FIELD_ALIASES.get(dim_key, [dim_key])
+        has_field = any(bool(analysis.get(alias)) for alias in aliases)
+        if not (has_field or dim_key in text_content or dim_key in analysis):
+            errors.append(f"Analysis fails to address required dimension: '{dim}'")
 
     # Check forbidden dimensions if defined in theme contract
     forbidden_dimensions = theme.get("analysis_contract", {}).get("forbidden_dimensions", [])

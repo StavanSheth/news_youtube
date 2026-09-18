@@ -22,7 +22,7 @@ def validate_usefulness(analysis: dict[str, Any]) -> tuple[bool, list[str]]:
     """Detect generic filler and verify concrete analytical mechanism."""
     warnings = []
     if not analysis:
-        return True, []
+        return False, ["Analysis payload is empty"]
 
     combined_text = " ".join([
         " ".join(analysis.get("facts", [])),

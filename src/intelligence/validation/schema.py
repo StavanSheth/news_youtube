@@ -8,12 +8,8 @@ from typing import Any
 def validate_analysis_schema(analysis: Any) -> tuple[bool, list[str]]:
     """Verify that analysis has valid JSON/dict structure, expected keys, and valid types."""
     errors = []
-    if not isinstance(analysis, dict):
-        return False, ["Analysis payload must be a dictionary"]
-
-    # If analysis is empty dictionary (e.g. from failure or empty retrieval)
-    if not analysis:
-        return True, []
+    if not isinstance(analysis, dict) or not analysis:
+        return False, ["Analysis payload must be a non-empty dictionary"]
 
     # Check importance score if present
     if "importance_score" in analysis:
@@ -41,5 +37,14 @@ def validate_analysis_schema(analysis: Any) -> tuple[bool, list[str]]:
     insights = analysis.get("actionable_insights")
     if insights is not None and not isinstance(insights, list):
         errors.append("Field 'actionable_insights' must be a list")
+
+    has_content = bool(
+        analysis.get("facts")
+        or analysis.get("summary")
+        or analysis.get("interpretation")
+        or analysis.get("claims")
+    )
+    if not has_content:
+        errors.append("Analysis must contain at least one of 'facts', 'summary', 'interpretation', or 'claims'")
 
     return len(errors) == 0, errors

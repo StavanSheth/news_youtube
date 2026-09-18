@@ -60,8 +60,14 @@ class EvidenceScope:
 
         # Every chunk must match the micro-topic
         chunk_micro_matches = metadata.get("micro_topic_matches", [])
+        target_id = self.micro_topic_id
         has_micro_match = any(
-            isinstance(match, dict) and match.get("micro_topic_id") == self.micro_topic_id
+            isinstance(match, dict) and (
+                match.get("micro_topic_id") == target_id
+                or match.get("micro_topic") == target_id
+                or (target_id.endswith(str(match.get("micro_topic_id", "___"))) if match.get("micro_topic_id") else False)
+                or (str(match.get("micro_topic_id", "")).endswith(target_id) if target_id else False)
+            )
             for match in chunk_micro_matches
         )
         if not has_micro_match:

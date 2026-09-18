@@ -6,11 +6,9 @@ from typing import Any
 
 from .identity import make_micro_topic_id
 from .classification import KeywordClassifier
-from .statuses import IntelligenceStatus
 from .profiles import compile_semantic_profile, profile_quality, resolve_microtopic_profile
 from .contracts import MicroTopicDecision
-
-
+from .coverage import resolve_micro_topic_status
 GENERIC_TERMS = {
     "ai", "model", "models", "technology", "research", "policy", "security", "systems",
     "application", "applications", "engineering", "infrastructure", "development", "commercial",
@@ -204,7 +202,7 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
     text_lower = f"{title_lower}\n{body_lower}"
     candidates: list[dict[str, Any]] = []
     for entry in entries:
-        if not entry["enabled"]:
+        if not entry.get("enabled", True):
             continue
         positive_phrases = [
             {"phrase": alias, "strength": "strong" if len(str(alias).split()) >= 2 else "weak", "type": "positive", "source": "alias"}
@@ -304,28 +302,42 @@ def classify_micro_topics(item: dict[str, Any], entries: list[dict[str, Any]]) -
     return selected
 
 
+class MicroTopicClassificationEngine:
+    """Authoritative classification engine mapping source items to MicroTopicDecision contracts."""
+
+    def __init__(self, catalog_entries: list[dict[str, Any]] | None = None) -> None:
+        self.entries = catalog_entries if catalog_entries is not None else []
+
+    def classify(self, item: dict[str, Any], entries: list[dict[str, Any]] | None = None) -> list[MicroTopicDecision]:
+        """Classify item and return strictly typed MicroTopicDecision contracts."""
+        target_entries = entries if entries is not None else self.entries
+        matches = classify_micro_topics(item, target_entries)
+        decisions = []
+        for match in matches:
+            contract_data = match.get("decision_contract")
+            if contract_data:
+                decisions.append(MicroTopicDecision.from_mapping(contract_data))
+            else:
+                decisions.append(
+                    MicroTopicDecision(
+                        micro_topic_id=str(match.get("micro_topic_id", match.get("micro_topic", ""))),
+                        domain_id=str(match.get("domain", "")),
+                        topic_id=str(match.get("topic_id", match.get("topic_key", ""))),
+                        decision=str(match.get("decision", "PRIMARY")),
+                        score=float(match.get("classification_score", 0)),
+                        confidence=float(match.get("confidence", 0)),
+                        threshold=float(match.get("threshold", 0.5)),
+                        margin=float(match.get("margin", 0)),
+                        matched_signals=tuple(match.get("signals", [])),
+                    )
+                )
+        return decisions
+
+
 def evaluate_micro_topic_status(assignments: list[dict[str, Any]], evaluation: dict[str, Any]) -> str:
-    """Return a truthful final state for one completed micro-topic evaluation."""
-    if any(item.get("source_status") == IntelligenceStatus.SOURCE_FAILURE.value for item in assignments):
-        return IntelligenceStatus.SOURCE_FAILURE.value
-    if any(item.get("retrieval_status") == IntelligenceStatus.RETRIEVAL_FAILURE.value for item in assignments):
-        return IntelligenceStatus.RETRIEVAL_FAILURE.value
-    if any(item.get("analysis_status") == IntelligenceStatus.ANALYSIS_FAILURE.value for item in assignments):
-        return IntelligenceStatus.ANALYSIS_FAILURE.value
-    if any(item.get("budget_skipped") for item in assignments):
-        return IntelligenceStatus.BUDGET_SKIPPED.value
-    if assignments and any("evidence_available" in item and not item.get("evidence_available") for item in assignments) and not evaluation:
-        return IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
-    if evaluation.get("evaluation_status") != "EVALUATION_COMPLETE":
-        return IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
-    if not assignments or not any(item.get("evidence_available", bool(item.get("relevant_count", 0) or item.get("evidence_count", 0))) for item in assignments):
-        return IntelligenceStatus.NO_RELEVANT_CONTENT.value
-    maximum = max(float(item.get("importance_score", 0)) for item in assignments)
-    if maximum >= 75:
-        return IntelligenceStatus.MAJOR_UPDATE.value
-    if any(item.get("material_change", False) for item in assignments):
-        return IntelligenceStatus.MINOR_UPDATE.value
-    return IntelligenceStatus.NO_MAJOR_UPDATE.value
+    """Return a truthful final state by delegating to authoritative coverage state machine."""
+    status, _ = resolve_micro_topic_status(assignments, evaluation)
+    return status
 
 
 def coverage(entries: list[dict[str, Any]], assignments: list[dict[str, Any]], source_health: dict[str, Any]) -> list[dict[str, Any]]:

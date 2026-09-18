@@ -15,7 +15,7 @@ from .config import (
     validate_topics,
 )
 from .pipeline import ValidationResult, validate_analysis
-from .provenance import validate_claim_provenance
+from .provenance import validate_claim_provenance, verify_provenance
 from .schema import validate_analysis_schema
 from .semantic import validate_semantic_content
 from .usefulness import validate_usefulness
@@ -36,6 +36,7 @@ __all__ = [
     "ValidationResult",
     "validate_analysis_schema",
     "validate_claim_provenance",
+    "verify_provenance",
     "validate_semantic_content",
     "validate_business_rules",
     "validate_usefulness",

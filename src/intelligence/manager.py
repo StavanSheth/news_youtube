@@ -4,7 +4,9 @@ from typing import Any, Protocol
 from .evidence_scope import EvidenceScope, EvidenceScopeBuilder
 from .evidence_projection import project_micro_topic_context
 
-from .retrieval import RAGManager
+from .rag import ProductionRAGManager
+from .budgets import BudgetManager
+from .validation import validate_analysis
 from .themes import analysis_profile, select_theme
 from .statuses import IntelligenceStatus
 from .contracts import ContextBudget, MicroTopicDecision, MicroTopicJob
@@ -20,16 +22,39 @@ class RAGProvider(Protocol):
         theme: dict[str, Any],
         event_context: dict[str, Any] | None = None,
         scope: EvidenceScope | None = None,
+        run_context: Any | None = None,
+        edition_context: Any | None = None,
+        publication_cutoff_utc: Any | None = None,
     ) -> dict[str, Any]: ...
 
 
 class MicroTopicManager:
     """AI-last orchestrator: one bounded request per relevant micro-topic."""
 
-    def __init__(self, provider: Any, themes: list[dict[str, Any]], settings: dict[str, Any], retriever: RAGProvider | None = None) -> None:
+    def __init__(
+        self,
+        provider: Any,
+        themes: list[dict[str, Any]],
+        settings: dict[str, Any],
+        retriever: RAGProvider | None = None,
+        budget: BudgetManager | None = None,
+        run_context: Any | None = None,
+        edition_context: Any | None = None,
+    ) -> None:
         self.provider, self.themes, self.settings = provider, themes, settings
-        self.rag = retriever or RAGManager(settings)
-        self.stats = {"micro_topic_analyses": 0, "retrieval_calls": 0, "ai_calls": 0, "retries": 0, "retrieval": self.rag.metrics}
+        self.rag = retriever or ProductionRAGManager(settings)
+        self.budget = budget or BudgetManager(settings.get("budgets"))
+        self.run_context = run_context
+        self.edition_context = edition_context
+        self.stats = {
+            "micro_topic_analyses": 0,
+            "retrieval_calls": 0,
+            "ai_calls": 0,
+            "retries": 0,
+            "retrieval": self.rag.metrics,
+            "budget_skips": 0,
+            "validation_failures": 0,
+        }
 
     def analyze(self, item: dict[str, Any], classifications: list[dict[str, Any]]) -> list[dict[str, Any]]:
         results = []
@@ -39,21 +64,74 @@ class MicroTopicManager:
             if key in seen:
                 continue
             seen.add(key)
+            micro_topic_id = str(classification.get("micro_topic_id", classification.get("micro_topic", "")))
             theme = select_theme(classification, self.themes, item)
             profile = analysis_profile(classification, theme, item)
             evidence_item, scope = self._isolate_item(item, classification)
+
+            # Step 1: Pre-execution Budget Authorization
+            priority = str(classification.get("priority", "P1")).upper()
+            run_id = getattr(self.run_context, "run_id", "local_run") if self.run_context else "local_run"
+            authorized, reason, _ = self.budget.authorize(
+                micro_topic_id,
+                priority=priority,
+                estimated_calls=1,
+                run_id=run_id,
+            )
+            if not authorized:
+                self.stats["budget_skips"] += 1
+                results.append({
+                    "classification": classification,
+                    "theme": theme,
+                    "profile": profile,
+                    "evidence": [],
+                    "retrieval": {"status": "BUDGET_SKIPPED", "chunks": []},
+                    "analysis": {},
+                    "analysis_status": "BUDGET_SKIPPED",
+                    "evidence_state": IntelligenceStatus.BUDGET_SKIPPED.value,
+                    "analysis_eligible": False,
+                    "budget_skipped": True,
+                    "budget_reason": reason,
+                })
+                continue
+
+            # Step 2: RAG Retrieval with authoritative cutoff
             self.stats["retrieval_calls"] += 1
-            packet = self.rag.retrieve(evidence_item, classification, theme, evidence_item.get("metadata", {}).get("event_context"), scope)
+            try:
+                packet = self.rag.retrieve(
+                    evidence_item,
+                    classification,
+                    theme,
+                    evidence_item.get("metadata", {}).get("event_context"),
+                    scope,
+                    run_context=self.run_context,
+                    edition_context=self.edition_context,
+                )
+            except TypeError:
+                packet = self.rag.retrieve(
+                    evidence_item,
+                    classification,
+                    theme,
+                    evidence_item.get("metadata", {}).get("event_context"),
+                    scope,
+                )
             evidence = packet["chunks"]
             if not evidence:
                 results.append({
-                    "classification": classification, "theme": theme, "profile": profile,
-                    "evidence": [], "retrieval": packet, "analysis": {},
+                    "classification": classification,
+                    "theme": theme,
+                    "profile": profile,
+                    "evidence": [],
+                    "retrieval": packet,
+                    "analysis": {},
                     "analysis_status": packet.get("status", "EMPTY_RETRIEVAL"),
                     "evidence_state": packet.get("status", IntelligenceStatus.INSUFFICIENT_EVIDENCE.value),
                     "analysis_eligible": False,
+                    "context_packet": packet.get("context_packet"),
                 })
                 continue
+
+            # Step 3: Bounded context packing
             budget = ContextBudget(max_context_chars=int(self.settings.get("max_retrieved_context_chars", 12000)))
             max_context = budget.analysis_chars
             bounded = []
@@ -64,30 +142,79 @@ class MicroTopicManager:
                     continue
                 bounded.append(entry)
                 used += entry_size
+
             self.stats["micro_topic_analyses"] += 1
             job = MicroTopicJob(
-                micro_topic_id=str(classification.get("micro_topic_id", classification.get("micro_topic", ""))),
-                domain_id=str(classification.get("domain", "")), topic_id=str(classification.get("topic_id", classification.get("topic_key", ""))),
-                decision=MicroTopicDecision.from_mapping(classification.get("decision_contract", {"micro_topic_id": classification.get("micro_topic", ""), "domain_id": classification.get("domain", ""), "topic_id": classification.get("topic_key", ""), "decision": classification.get("decision", "PRIMARY"), "score": classification.get("classification_score", 0), "confidence": classification.get("confidence", 0), "threshold": classification.get("threshold", 0), "margin": classification.get("margin", 0), "matched_signals": classification.get("signals", []), "profile_origin": classification.get("profile_origin_code")})),
-                theme=theme, evidence_scope=scope.to_metadata(), retrieval_intent=profile.get("retrieval_intent", {}), analysis_requirements=profile.get("analysis_contract", {}), confidence=float(classification.get("confidence", 0)), provenance={"content_id": scope.source_content_id, "source_id": scope.source_id},
+                micro_topic_id=micro_topic_id,
+                domain_id=str(classification.get("domain", "")),
+                topic_id=str(classification.get("topic_id", classification.get("topic_key", ""))),
+                decision=MicroTopicDecision.from_mapping(classification.get("decision_contract", {
+                    "micro_topic_id": classification.get("micro_topic", ""),
+                    "domain_id": classification.get("domain", ""),
+                    "topic_id": classification.get("topic_key", ""),
+                    "decision": classification.get("decision", "PRIMARY"),
+                    "score": classification.get("classification_score", 0),
+                    "confidence": classification.get("confidence", 0),
+                    "threshold": classification.get("threshold", 0),
+                    "margin": classification.get("margin", 0),
+                    "matched_signals": classification.get("signals", []),
+                    "profile_origin": classification.get("profile_origin_code"),
+                })),
+                theme=theme,
+                evidence_scope=scope.to_metadata(),
+                retrieval_intent=profile.get("retrieval_intent", {}),
+                analysis_requirements=profile.get("analysis_contract", {}),
+                confidence=float(classification.get("confidence", 0)),
+                provenance={"content_id": scope.source_content_id, "source_id": scope.source_id},
             )
+
+            # Step 4: Execute AI Job with bounded context
+            validation_report: dict[str, Any] = {}
             try:
-                analysis = self._analyze_with_retry(project_micro_topic_context(evidence_item, classification, scope, bounded), {**profile, "micro_topic_job": job.to_dict()}, bounded)
-                analysis_status = "OK"
-                evidence_state = IntelligenceStatus.ANALYSIS_COMPLETED.value
+                analysis = self._analyze_with_retry(
+                    project_micro_topic_context(evidence_item, classification, scope, bounded),
+                    {**profile, "micro_topic_job": job.to_dict()},
+                    bounded,
+                )
+
+                # Step 5: Authoritative 5-Stage Validation Pipeline
+                val_result = validate_analysis(
+                    analysis,
+                    micro_topic_job=job,
+                    context_packet=packet.get("context_packet"),
+                )
+                validation_report = val_result.to_dict()
+
+                if not val_result.is_publishable:
+                    analysis_status = IntelligenceStatus.ANALYSIS_FAILURE.value
+                    evidence_state = IntelligenceStatus.ANALYSIS_FAILURE.value
+                    self.stats["validation_failures"] += 1
+                else:
+                    analysis_status = "OK"
+                    evidence_state = IntelligenceStatus.ANALYSIS_COMPLETED.value
+                    # Step 6: Consume budget upon successful valid output
+                    self.budget.consume(micro_topic_id, "ai_calls", 1)
+                    self.budget.consume(micro_topic_id, "context_chars", used)
+
             except (TimeoutError, ValueError, RuntimeError):
                 analysis = {}
                 analysis_status = IntelligenceStatus.ANALYSIS_FAILURE.value
                 evidence_state = IntelligenceStatus.ANALYSIS_FAILURE.value
                 self.stats.setdefault("analysis_failures", 0)
                 self.stats["analysis_failures"] += 1
+
             results.append({
-                "classification": classification, "theme": theme, "profile": profile, "evidence": bounded,
+                "classification": classification,
+                "theme": theme,
+                "profile": profile,
+                "evidence": bounded,
                 "retrieval": {**packet, "chunks": bounded},
                 "analysis": analysis,
                 "analysis_status": analysis_status,
                 "evidence_state": evidence_state,
-                "analysis_eligible": True,
+                "analysis_eligible": (analysis_status == "OK"),
+                "context_packet": packet.get("context_packet"),
+                "validation": validation_report,
             })
         return results
 

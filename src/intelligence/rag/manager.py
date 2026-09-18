@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import UTC, datetime
 from typing import Any
 
 from .corpus import EvidenceCorpus, RepositoryEvidenceCorpus
@@ -27,7 +28,7 @@ class ProductionRAGManager:
             chunk_size=int(settings.get("retrieval_chunk_size", 1400)),
             chunk_overlap=int(settings.get("retrieval_chunk_overlap", 180)),
         )
-        self.metrics: dict[str, Any] = {
+        self.metrics = {
             "retrievals": 0,
             "chunks_indexed": 0,
             "chunks_selected": 0,
@@ -53,6 +54,8 @@ class ProductionRAGManager:
         event_context: dict[str, Any] | None = None,
         scope: EvidenceScope | None = None,
         run_context: Any | None = None,
+        edition_context: Any | None = None,
+        publication_cutoff_utc: datetime | str | None = None,
     ) -> dict[str, Any]:
         """Execute full RAG retrieval pipeline returning structured result and context packet."""
         self.metrics["retrievals"] += 1
@@ -61,12 +64,27 @@ class ProductionRAGManager:
             current_chunks = self.index_item(item)
             before_scope = len(current_chunks)
 
-            # Step 2: Build authoritative RetrievalRequest
+            # Step 2: Build authoritative RetrievalRequest with explicit cutoff
             budget_config = {
                 "max_rag_items": self.settings.get("retrieval_top_k", 4),
                 "max_context_chars": self.settings.get("max_retrieved_context_chars", 12000),
             }
-            cutoff = getattr(run_context, "publication_cutoff_utc", None) if run_context else None
+            cutoff = publication_cutoff_utc
+            if cutoff is None and edition_context is not None:
+                cutoff = getattr(edition_context, "publication_cutoff_utc", None)
+            if cutoff is None and run_context is not None:
+                cutoff = getattr(run_context, "publication_cutoff_utc", None)
+            if cutoff is None:
+                cutoff = datetime.now(UTC)
+            elif isinstance(cutoff, str):
+                try:
+                    parsed = datetime.fromisoformat(cutoff.replace("Z", "+00:00"))
+                    cutoff = parsed.astimezone(UTC) if parsed.tzinfo else parsed.replace(tzinfo=UTC)
+                except Exception:
+                    cutoff = datetime.now(UTC)
+            elif isinstance(cutoff, datetime) and (cutoff.tzinfo is None or cutoff.utcoffset() is None):
+                cutoff = cutoff.replace(tzinfo=UTC)
+
             request = build_retrieval_request(
                 micro_topic=classification.get("micro_topic_id") or classification.get("micro_topic", ""),
                 theme=theme,
@@ -172,4 +190,14 @@ class ProductionRAGManager:
                 "chunks": [],
                 "status": IntelligenceStatus.RETRIEVAL_FAILURE.value,
                 "error_type": type(error).__name__,
+                "diagnostics": {
+                    "before_scope": 0,
+                    "after_scope": 0,
+                    "rejected_scope": 0,
+                    "error": str(error),
+                },
             }
+
+
+RAGManager = ProductionRAGManager
+
