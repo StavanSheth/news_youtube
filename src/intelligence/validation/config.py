@@ -1,9 +1,11 @@
+"""Configuration and taxonomy validators for early startup checking."""
+
 from __future__ import annotations
 
 from typing import Any
 
-from .profiles import compile_semantic_profile
-from .themes import theme_difference_score, theme_fingerprint, theme_lexical_overlap, theme_specificity_score
+from ..profiles import compile_semantic_profile
+from ..themes import theme_difference_score, theme_fingerprint, theme_lexical_overlap, theme_specificity_score
 
 
 def validate_microtopic_matrix(matrix: dict[str, Any]) -> None:

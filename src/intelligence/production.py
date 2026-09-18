@@ -28,6 +28,7 @@ from .classification import relevance, topic_matches
 from .identity import make_content_id, make_source_id
 from .persistence import PersistencePaths
 from .statuses import DeliveryStatus, SourceStatus
+from .publication import archive_edition_run
 from zoneinfo import ZoneInfo
 
 LOGGER = logging.getLogger(__name__)
@@ -550,6 +551,21 @@ def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> 
     )
     (markdown.parent / "source_validation.json").write_text(
         json.dumps(source_validation, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    (markdown.parent / "coverage.json").write_text(
+        json.dumps(micro_topic_coverage, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    archive_edition_run(
+        paths.archive,
+        edition_context.edition_key,
+        run_context.run_id,
+        {
+            "digest.md": markdown.read_text(encoding="utf-8"),
+            "digest.html": html.read_text(encoding="utf-8"),
+            "quality.json": quality,
+            "source_validation.json": source_validation,
+            "coverage.json": micro_topic_coverage,
+        },
     )
     markdown.write_text(
         markdown.read_text(encoding="utf-8")

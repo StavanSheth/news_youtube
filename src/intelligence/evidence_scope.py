@@ -32,6 +32,8 @@ class EvidenceScope:
     isolation_confidence: float = 0.0
     authorization_policy: EvidenceAuthorizationPolicy = EvidenceAuthorizationPolicy()
 
+    allow_historical: bool = True
+
     def __post_init__(self) -> None:
         if not self.micro_topic_id or not self.source_content_id or not self.source_id:
             raise ValueError("EvidenceScope requires micro-topic, content, and source identities")
@@ -45,21 +47,34 @@ class EvidenceScope:
 
     def authorize(self, chunk: dict[str, Any]) -> tuple[bool, str]:
         metadata = chunk.get("metadata", {})
-        identity_ok = (
-            metadata.get("content_id") == self.source_content_id
-            and metadata.get("source_id") == self.source_id
+        chunk_content_id = metadata.get("content_id")
+        chunk_source_id = metadata.get("source_id")
+
+        is_primary_current = (
+            chunk_content_id == self.source_content_id
+            and chunk_source_id == self.source_id
         )
-        if not identity_ok:
+
+        if not is_primary_current and not self.allow_historical:
             return False, "CONTENT_OR_SOURCE_MISMATCH"
-        if not any(match.get("micro_topic_id") == self.micro_topic_id for match in metadata.get("micro_topic_matches", []) if isinstance(match, dict)):
+
+        # Every chunk must match the micro-topic
+        chunk_micro_matches = metadata.get("micro_topic_matches", [])
+        has_micro_match = any(
+            isinstance(match, dict) and match.get("micro_topic_id") == self.micro_topic_id
+            for match in chunk_micro_matches
+        )
+        if not has_micro_match:
             return False, "MISSING_CHUNK_MICRO_TOPIC_MATCH"
+
         event_ids = {str(value) for value in metadata.get("event_ids", []) if value}
         if metadata.get("event_id"):
             event_ids.add(str(metadata.get("event_id")))
         if self.allowed_events and not event_ids.intersection(self.allowed_events):
             return False, "EVENT_NOT_AUTHORIZED"
+
         event_id = str(metadata.get("event_id", ""))
-        entity_ids = {str(value) for value in metadata.get("entity_ids", [])}
+        entity_ids = {str(value) for value in metadata.get("entity_ids", []) if value}
         policy = self.authorization_policy
         if event_id in policy.forbidden_events or entity_ids.intersection(policy.forbidden_entities):
             return False, "FORBIDDEN_EVENT_OR_ENTITY"
@@ -67,9 +82,9 @@ class EvidenceScope:
             return False, "REQUIRED_EVENT_MISSING"
         if policy.required_entities and not entity_ids.intersection(policy.required_entities):
             return False, "REQUIRED_ENTITY_MISSING"
-        if self.allowed_entities:
-            if not entity_ids.intersection(self.allowed_entities):
-                return False, "ENTITY_NOT_AUTHORIZED"
+        if self.allowed_entities and not entity_ids.intersection(self.allowed_entities):
+            return False, "ENTITY_NOT_AUTHORIZED"
+
         if self.evidence_ids and metadata.get("evidence_id", "") not in self.evidence_ids:
             return False, "EVIDENCE_NOT_AUTHORIZED"
         if self.allowed_span_ids and metadata.get("span_id", "") not in self.allowed_span_ids:
@@ -78,6 +93,22 @@ class EvidenceScope:
             return False, "CLAIM_NOT_AUTHORIZED"
         if not metadata.get("provenance"):
             return False, "MISSING_PROVENANCE"
+
+        # Determine explicit relationship
+        if is_primary_current:
+            relationship = "PRIMARY_CURRENT"
+        elif self.allowed_events and event_ids.intersection(self.allowed_events):
+            relationship = "SHARED_EVENT"
+        elif self.allowed_entities and entity_ids.intersection(self.allowed_entities):
+            relationship = "SHARED_ENTITY"
+        else:
+            relationship = "HISTORICAL_RELEVANT"
+
+        metadata["authorization_reason"] = relationship
+        metadata["micro_topic_id"] = self.micro_topic_id
+        if "evidence_id" not in metadata:
+            metadata["evidence_id"] = chunk.get("id", f"{chunk_content_id}:chunk")
+
         return True, "AUTHORIZED"
 
     def to_metadata(self) -> dict[str, Any]:
@@ -106,8 +137,6 @@ class EvidenceScope:
 
 
 class EvidenceScopeBuilder:
-    """Build scopes from available provenance without inventing identifiers."""
-
     @staticmethod
     def build(
         item: dict[str, Any],
