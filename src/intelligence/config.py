@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import UTC, datetime
+import json
+import os
 from pathlib import Path
 from typing import Any
 
 import yaml
-import json
 
 from .validation import (
     validate_dimensions,
@@ -122,3 +124,78 @@ def load_config(root: Path) -> AppConfig:
         entities=_read_yaml(config_dir / "entities.yaml").get("entities", []),
         versions=versions,
     )
+
+
+def validate_runtime_production_config(root: Path) -> dict[str, Any]:
+    """Fail-fast validation for all production-critical runtime configurations."""
+    config_dir = root / "config"
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    # 1. Provider configuration
+    settings_file = config_dir / "settings.yaml"
+    if not settings_file.is_file():
+        errors.append("MISSING_SETTINGS_FILE: config/settings.yaml not found")
+    else:
+        settings = _read_yaml(settings_file)
+        if not settings.get("intelligence"):
+            errors.append("MISSING_PROVIDER_CONFIG: intelligence provider settings missing")
+
+        budgets = settings.get("budgets", {})
+        if not budgets:
+            errors.append("INVALID_TOKEN_BUDGET: budgets configuration missing")
+        elif any(v < 0 for v in budgets.values() if isinstance(v, (int, float))):
+            errors.append("INVALID_TOKEN_BUDGET: negative budget limits configured")
+
+        pipeline_cfg = settings.get("pipeline", {})
+        timeout = pipeline_cfg.get("timeout_seconds", 30)
+        if timeout <= 0:
+            errors.append("INVALID_TIMEOUT: timeout_seconds must be positive")
+
+        retry_count = pipeline_cfg.get("retry_count", 3)
+        if retry_count < 0:
+            errors.append("INVALID_RETRY_COUNT: retry_count cannot be negative")
+
+        smtp_cfg = settings.get("smtp", {})
+        if smtp_cfg.get("enabled"):
+            if not smtp_cfg.get("host") or not smtp_cfg.get("port"):
+                errors.append("INVALID_SMTP_CONFIGURATION: host or port missing for enabled SMTP")
+
+    # 2. Source configuration
+    source_file = config_dir / "source_registry.yaml"
+    if not source_file.is_file():
+        errors.append("MISSING_SOURCE_CONFIG: config/source_registry.yaml not found")
+    else:
+        sources = _read_yaml(source_file).get("sources", [])
+        if not sources:
+            errors.append("EMPTY_SOURCE_REGISTRY: no sources configured")
+        sids = [s.get("id") for s in sources]
+        if len(sids) != len(set(sids)):
+            errors.append("DUPLICATE_SOURCE_IDS: duplicate source IDs found")
+
+    # 3. Theme configuration
+    themes = _load_themes(config_dir)
+    mt_themes = [t for t in themes if t.get("micro_topic") not in {"any", "*", None}]
+    if len(mt_themes) < 236:
+        errors.append(f"INCOMPLETE_THEME_CONFIGURATION: expected 236 bespoke micro-topic themes, found {len(mt_themes)}")
+
+    # 4. Persistence paths
+    for p in ("data", "output"):
+        target = root / p
+        try:
+            target.mkdir(parents=True, exist_ok=True)
+        except Exception as exc:
+            errors.append(f"INVALID_PERSISTENCE_PATH: cannot access {p}: {exc}")
+
+    # 5. API credentials check (verify no placeholder/whitespace values when set)
+    for env_var in ("GEMINI_API_KEY", "YOUTUBE_API_KEY", "NEWS_API_KEY"):
+        val = os.environ.get(env_var, "")
+        if val and (val.strip() in {"PLACEHOLDER", "YOUR_KEY_HERE", "NONE"} or " " in val):
+            errors.append(f"INVALID_API_CREDENTIALS: {env_var} contains invalid placeholder or whitespace")
+
+    return {
+        "valid": len(errors) == 0,
+        "errors": errors,
+        "warnings": warnings,
+        "checked_at": datetime.now(UTC).isoformat(),
+    }

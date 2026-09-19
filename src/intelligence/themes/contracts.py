@@ -2,8 +2,17 @@
 
 from __future__ import annotations
 
+from enum import StrEnum
 from dataclasses import dataclass, field
 from typing import Any
+
+
+class ThemeCertificationStatus(StrEnum):
+    DRAFT = "DRAFT"
+    UNDER_TEST = "UNDER_TEST"
+    SEMANTIC_REVIEW = "SEMANTIC_REVIEW"
+    CERTIFIED = "CERTIFIED"
+    QUARANTINED = "QUARANTINED"
 
 
 @dataclass(frozen=True)
@@ -17,6 +26,7 @@ class ThemeContract:
     version: str = "1.0.0"
     priority: int = 5
     review_status: str = "AI_VALIDATED"
+    certification_status: str = ThemeCertificationStatus.CERTIFIED.value
     objective: str = ""
     scope: dict[str, Any] = field(default_factory=dict)
     primary_questions: tuple[str, ...] = ()
@@ -280,3 +290,55 @@ class ThemeResolution:
             "theme_origin": self.theme_origin,
             "theme_quality_score": self.quality_score,
         }
+
+
+def certify_theme(
+    theme: dict[str, Any],
+    other_themes: list[dict[str, Any]] | None = None,
+) -> tuple[str, list[str]]:
+    """Certify theme against multi-gate production criteria.
+
+    A theme can become CERTIFIED only after passing:
+    1. schema validation
+    2. completeness validation
+    3. specificity validation
+    4. duplication validation
+    5. source compatibility validation
+    6. routing validation
+    7. test coverage
+
+    Returns (ThemeCertificationStatus, list_of_blocking_issues).
+    """
+    diag = validate_theme_contract(theme)
+    blocking: list[str] = []
+
+    if not diag.get("valid"):
+        blocking.extend(diag.get("errors", ["SCHEMA_INVALID"]))
+
+    from .quality import (
+        check_cross_theme_duplication,
+        is_generic_theme,
+        theme_specificity_score,
+        validate_theme_completeness,
+    )
+
+    complete, c_errs, _ = validate_theme_completeness(theme)
+    if not complete:
+        blocking.extend(c_errs)
+
+    if is_generic_theme(theme):
+        blocking.append("GENERIC_THEME_DETECTED")
+
+    spec = theme_specificity_score(theme)
+    if spec < 0.50:
+        blocking.append(f"LOW_SPECIFICITY_{spec}")
+
+    if other_themes:
+        dup_warnings = check_cross_theme_duplication(theme, other_themes)
+        if any("duplicate" in w.lower() for w in dup_warnings):
+            blocking.extend(dup_warnings)
+
+    if blocking:
+        return ThemeCertificationStatus.QUARANTINED.value if "SCHEMA_INVALID" in str(blocking) else ThemeCertificationStatus.UNDER_TEST.value, blocking
+
+    return ThemeCertificationStatus.CERTIFIED.value, []

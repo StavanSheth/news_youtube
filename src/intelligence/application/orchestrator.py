@@ -215,77 +215,93 @@ class ApplicationOrchestrator:
             for job in proc.micro_topic_jobs:
                 cls_info = job["classification"]
                 theme = job["theme"]
-
-                # RAG retrieval
-                rag_res = rag_manager.retrieve(
-                    norm_item,
-                    cls_info,
-                    theme,
-                    edition_context=edition_context,
-                    run_context=run_context,
-                )
-                if rag_res.get("status") != "OK":
-                    continue
-
-                context_packet = rag_res["context_packet"]
-
                 micro_id = str(cls_info.get("micro_topic_id") or cls_info.get("micro_topic", ""))
-                packet_micro = str(context_packet.get("micro_topic_id") or context_packet.get("micro_topic", ""))
-                theme_micro = str(theme.get("micro_topic_id") or theme.get("micro_topic", ""))
 
-                # Enforce Section 18 1-by-1 micro-topic isolation guarantee
-                if packet_micro and packet_micro != micro_id:
-                    raise AssertionError(f"Execution isolation violation: ContextPacket micro_topic_id ({packet_micro}) != job ({micro_id})")
-                if theme_micro and theme_micro != micro_id and theme_micro not in ("any", "*"):
-                    LOGGER.debug("Theme fallback in use: theme %s for job %s", theme_micro, micro_id)
+                try:
+                    # RAG retrieval
+                    rag_res = rag_manager.retrieve(
+                        norm_item,
+                        cls_info,
+                        theme,
+                        edition_context=edition_context,
+                        run_context=run_context,
+                    )
+                    if rag_res.get("status") != "OK":
+                        continue
 
-                can_run, reason, skip_rec = self.budget_manager.authorize(
-                    micro_id,
-                    priority="P0" if int(job.get("priority", 5)) >= 8 else "P1",
-                    estimated_calls=1,
-                    estimated_chars=len(str(context_packet)),
-                    run_id=run_context.run_id,
-                )
-                if not can_run:
-                    LOGGER.warning("Budget skipped AI for micro-topic %s: %s", micro_id, reason)
-                    if skip_rec:
-                        self.repository.save_budget_snapshot(
-                            f"skip_{run_context.run_id}_{micro_id}",
-                            skip_rec.to_dict(),
-                        )
+                    context_packet = rag_res["context_packet"]
+
+                    packet_micro = str(context_packet.get("micro_topic_id") or context_packet.get("micro_topic", ""))
+                    theme_micro = str(theme.get("micro_topic_id") or theme.get("micro_topic", ""))
+
+                    # Enforce Section 18 1-by-1 micro-topic isolation guarantee
+                    if packet_micro and packet_micro != micro_id:
+                        raise AssertionError(f"Execution isolation violation: ContextPacket micro_topic_id ({packet_micro}) != job ({micro_id})")
+                    if theme_micro and theme_micro != micro_id and theme_micro not in ("any", "*"):
+                        LOGGER.debug("Theme fallback in use: theme %s for job %s", theme_micro, micro_id)
+
+                    can_run, reason, skip_rec = self.budget_manager.authorize(
+                        micro_id,
+                        priority="P0" if int(job.get("priority", 5)) >= 8 else "P1",
+                        estimated_calls=1,
+                        estimated_chars=len(str(context_packet)),
+                        run_id=run_context.run_id,
+                    )
+                    if not can_run:
+                        LOGGER.warning("Budget skipped AI for micro-topic %s: %s", micro_id, reason)
+                        if skip_rec:
+                            self.repository.save_budget_snapshot(
+                                f"skip_{run_context.run_id}_{micro_id}",
+                                skip_rec.to_dict(),
+                            )
+                        continue
+
+                    # AI Analysis
+                    analysis_output = ai_provider.analyze_micro_topic(
+                        norm_item,
+                        cls_info,
+                        list(context_packet["retrieved_evidence"]),
+                    )
+                    self.budget_manager.consume(micro_id, "ai_calls", 1)
+                    self.budget_manager.consume(micro_id, "context_chars", len(str(context_packet)))
+
+                    # Stage 11: VALIDATING (5-stage)
+                    val_res = validate_analysis(
+                        analysis_output,
+                        micro_topic_job=job,
+                        context_packet=context_packet,
+                    )
+                    if not val_res.is_publishable:
+                        LOGGER.warning("Validation rejected story %s: %s", norm_item.get("title"), val_res.errors)
+                        continue
+
+                    story_entry = {
+                        **norm_item,
+                        "analysis": analysis_output,
+                        "topics": [cls_info.get("micro_topic_id") or cls_info.get("micro_topic", "")],
+                        "importance_score": 75,
+                        "validation": val_res.to_dict(),
+                    }
+                    analyzed_stories.append(story_entry)
+                    self.repository.save_analysis(
+                        f"{proc.content_id}_{job['micro_topic_id']}",
+                        story_entry,
+                    )
+                except Exception as exc:
+                    failure_record = {
+                        "micro_topic_id": micro_id,
+                        "stage": "AI_ANALYSIS",
+                        "error_code": type(exc).__name__,
+                        "exception_type": str(type(exc)),
+                        "error_message": str(exc),
+                        "retryable": False,
+                        "attempt": 1,
+                        "timestamp": now_utc().isoformat(),
+                        "correlation_id": getattr(run_context, "run_id", "unknown"),
+                    }
+                    LOGGER.error("Micro-topic job %s isolated failure: %s", micro_id, exc)
+                    self.repository.save_state(f"failure_{run_context.run_id}_{micro_id}", failure_record)
                     continue
-
-                # AI Analysis
-                analysis_output = ai_provider.analyze_micro_topic(
-                    norm_item,
-                    cls_info,
-                    list(context_packet["retrieved_evidence"]),
-                )
-                self.budget_manager.consume(micro_id, "ai_calls", 1)
-                self.budget_manager.consume(micro_id, "context_chars", len(str(context_packet)))
-
-                # Stage 11: VALIDATING (5-stage)
-                val_res = validate_analysis(
-                    analysis_output,
-                    micro_topic_job=job,
-                    context_packet=context_packet,
-                )
-                if not val_res.is_publishable:
-                    LOGGER.warning("Validation rejected story %s: %s", norm_item.get("title"), val_res.errors)
-                    continue
-
-                story_entry = {
-                    **norm_item,
-                    "analysis": analysis_output,
-                    "topics": [cls_info.get("micro_topic_id") or cls_info.get("micro_topic", "")],
-                    "importance_score": 75,
-                    "validation": val_res.to_dict(),
-                }
-                analyzed_stories.append(story_entry)
-                self.repository.save_analysis(
-                    f"{proc.content_id}_{job['micro_topic_id']}",
-                    story_entry,
-                )
 
         # Stage 12: ENRICHING
         # Event grouping & entity extraction

@@ -12,6 +12,8 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlparse
 
+import feedparser  # noqa: F401
+import requests  # noqa: F401
 
 from .ingestion.providers import (
     NewsAPIProvider,

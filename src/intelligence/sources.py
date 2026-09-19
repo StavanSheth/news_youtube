@@ -102,6 +102,13 @@ class CollectionBudget:
         return asdict(self)
 
 
+class ComplianceErrorCode(StrEnum):
+    LICENSE_UNKNOWN = "LICENSE_UNKNOWN"
+    RETENTION_UNDEFINED = "RETENTION_UNDEFINED"
+    STORAGE_NOT_PERMITTED = "STORAGE_NOT_PERMITTED"
+    ATTRIBUTION_REQUIRED = "ATTRIBUTION_REQUIRED"
+
+
 @dataclass(frozen=True)
 class SourceContract:
     id: str
@@ -123,6 +130,9 @@ class SourceContract:
     authentication_env_var: str | None = None
     attribution_required: bool = True
     storage_permission: bool = True
+    content_storage_allowed: bool = True
+    raw_content_allowed: bool = True
+    derived_content_allowed: bool = True
     retention_policy: str = "REQUIRED"
     license_status: str = "PERMITTED"
     fallback_behavior: str = "DEGRADE"
@@ -131,6 +141,19 @@ class SourceContract:
     refresh: str = "daily"
     priority: float = 1.0
     metadata: dict[str, Any] = field(default_factory=dict)
+
+    def validate_compliance(self) -> tuple[bool, list[str]]:
+        """Validate legal, license, storage, and retention compliance."""
+        errors: list[str] = []
+        lic = str(self.license_status).upper()
+        if lic in ("LICENSE_UNKNOWN", "UNKNOWN", "UNRESOLVED", "DENIED", "RESTRICTED_DENIED"):
+            errors.append(ComplianceErrorCode.LICENSE_UNKNOWN.value)
+        ret = str(self.retention_policy).upper()
+        if ret in ("RETENTION_UNDEFINED", "UNDEFINED", "UNKNOWN", "NONE"):
+            errors.append(ComplianceErrorCode.RETENTION_UNDEFINED.value)
+        if not self.storage_permission or not self.content_storage_allowed:
+            errors.append(ComplianceErrorCode.STORAGE_NOT_PERMITTED.value)
+        return len(errors) == 0, errors
 
     @property
     def source_id(self) -> str:
@@ -195,6 +218,9 @@ class SourceContract:
             authentication_env_var=data.get("authentication_env_var") or None,
             attribution_required=bool(data.get("attribution_required", True)),
             storage_permission=bool(data.get("storage_permission", True)),
+            content_storage_allowed=bool(data.get("content_storage_allowed", True)),
+            raw_content_allowed=bool(data.get("raw_content_allowed", True)),
+            derived_content_allowed=bool(data.get("derived_content_allowed", True)),
             retention_policy=str(data.get("retention_policy", "REQUIRED")),
             license_status=str(data.get("license_status", "PERMITTED")),
             fallback_behavior=str(data.get("fallback_behavior", "DEGRADE")),

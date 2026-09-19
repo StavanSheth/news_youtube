@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T15:27:06.515641+00:00",
+  "generated_at": "2026-09-19T15:59:50.429082+00:00",
   "phase_2": {
     "score": 100.0,
     "status": "PASS",
@@ -158,7 +158,7 @@
           {
             "check": "average_specificity_above_threshold",
             "passed": true,
-            "weight": 40.0,
+            "weight": 30.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -180,10 +180,10 @@
             "details": {}
           },
           {
-            "check": "minimum_specificity_bound",
+            "check": "microtopic_specificity_machinery_verified",
             "passed": true,
-            "weight": 10.0,
-            "blocking": false,
+            "weight": 20.0,
+            "blocking": true,
             "message": "",
             "details": {}
           }
@@ -420,14 +420,14 @@
         "category": "Execution Isolation",
         "score": 100.0,
         "status": "PASS",
-        "tests_total": 3,
-        "tests_passed": 3,
+        "tests_total": 4,
+        "tests_passed": 4,
         "tests_failed": 0,
         "evidence": [
           {
             "check": "cache_key_microtopic_isolation",
             "passed": true,
-            "weight": 40.0,
+            "weight": 30.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -435,7 +435,7 @@
           {
             "check": "budget_consumption_isolation",
             "passed": true,
-            "weight": 30.0,
+            "weight": 25.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -443,8 +443,16 @@
           {
             "check": "one_topic_at_a_time_architecture",
             "passed": true,
-            "weight": 30.0,
+            "weight": 25.0,
             "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "runtime_production_config_validated",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": true,
             "message": "",
             "details": {}
           }
@@ -513,14 +521,14 @@
         "category": "Source Contracts",
         "score": 100.0,
         "status": "PASS",
-        "tests_total": 3,
-        "tests_passed": 3,
+        "tests_total": 4,
+        "tests_passed": 4,
         "tests_failed": 0,
         "evidence": [
           {
             "check": "source_contract_invariants_valid",
             "passed": true,
-            "weight": 50.0,
+            "weight": 40.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -528,7 +536,7 @@
           {
             "check": "minimum_40_sources_configured",
             "passed": true,
-            "weight": 30.0,
+            "weight": 20.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -540,6 +548,14 @@
             "blocking": false,
             "message": "",
             "details": {}
+          },
+          {
+            "check": "source_license_and_retention_compliance_verified",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
           }
         ],
         "blocking_failures": []
@@ -548,14 +564,22 @@
         "category": "Source Acceptance",
         "score": 100.0,
         "status": "PASS",
-        "tests_total": 3,
-        "tests_passed": 3,
+        "tests_total": 4,
+        "tests_passed": 4,
         "tests_failed": 0,
         "evidence": [
           {
             "check": "provider_dispatcher_integrated",
             "passed": true,
-            "weight": 40.0,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "provider_resolver_abstraction_verified",
+            "passed": true,
+            "weight": 30.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -563,7 +587,7 @@
           {
             "check": "disabled_source_lifecycle_respected",
             "passed": true,
-            "weight": 30.0,
+            "weight": 20.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -571,7 +595,7 @@
           {
             "check": "acceptance_state_machine_valid",
             "passed": true,
-            "weight": 30.0,
+            "weight": 20.0,
             "blocking": false,
             "message": "",
             "details": {}
@@ -933,14 +957,14 @@
         "category": "Observability",
         "score": 100.0,
         "status": "PASS",
-        "tests_total": 3,
-        "tests_passed": 3,
+        "tests_total": 4,
+        "tests_passed": 4,
         "tests_failed": 0,
         "evidence": [
           {
             "check": "structured_events_telemetry",
             "passed": true,
-            "weight": 50.0,
+            "weight": 40.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -948,7 +972,7 @@
           {
             "check": "secret_masking_formatter",
             "passed": true,
-            "weight": 30.0,
+            "weight": 25.0,
             "blocking": true,
             "message": "",
             "details": {}
@@ -956,8 +980,16 @@
           {
             "check": "pipeline_stage_event_taxonomy",
             "passed": true,
-            "weight": 20.0,
+            "weight": 15.0,
             "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "metrics_registry_aggregated_rates_verified",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": true,
             "message": "",
             "details": {}
           }

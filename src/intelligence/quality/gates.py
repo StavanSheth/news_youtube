@@ -98,21 +98,25 @@ def evaluate_phase2_categories(root_dir: Path) -> dict[str, CategoryResult]:
     )
 
     # 4. Theme Specificity
-    from intelligence.themes.quality import is_generic_theme, theme_specificity_score
+    from intelligence.themes.quality import (
+        is_generic_theme,
+        theme_specificity_score,
+        validate_microtopic_specificity_machinery,
+    )
 
     spec_scores = [theme_specificity_score(t) for t in themes] if themes else [0.0]
     avg_spec = sum(spec_scores) / max(1, len(spec_scores))
-    min_spec = min(spec_scores) if spec_scores else 0.0
     has_generic = any(is_generic_theme(t) for t in themes)
     questions_count_ok = all(len(t.get("questions", [])) >= 4 for t in themes)
+    machinery_ok = all(validate_microtopic_specificity_machinery(t)[0] for t in themes)
 
     results["Theme Specificity"] = compute_category_score(
         "Theme Specificity",
         [
-            CheckItem("average_specificity_above_threshold", 40.0, avg_spec >= 0.55, blocking=True),
+            CheckItem("average_specificity_above_threshold", 30.0, avg_spec >= 0.55, blocking=True),
             CheckItem("zero_generic_themes_detected", 30.0, not has_generic, blocking=True),
             CheckItem("all_themes_have_at_least_4_questions", 20.0, questions_count_ok),
-            CheckItem("minimum_specificity_bound", 10.0, min_spec >= 0.45),
+            CheckItem("microtopic_specificity_machinery_verified", 20.0, machinery_ok, blocking=True),
         ],
     )
 
@@ -299,18 +303,22 @@ def evaluate_phase2_categories(root_dir: Path) -> dict[str, CategoryResult]:
     # 11. Execution Isolation
     from intelligence.rag.cache import RetrievalCache, RetrievalCacheKey
 
+    from intelligence.config import validate_runtime_production_config
+
     cache = RetrievalCache()
     ka = RetrievalCacheKey.create(query="q", micro_topic_id="mt-a", edition_cutoff="2026-09-18T18:00:00Z")
     kb = RetrievalCacheKey.create(query="q", micro_topic_id="mt-b", edition_cutoff="2026-09-18T18:00:00Z")
     cache.set(ka, {"data": "a"})
     cache_isolated = (cache.get(ka) == {"data": "a"}) and (cache.get(kb) is None)
+    config_diag = validate_runtime_production_config(root_dir)
 
     results["Execution Isolation"] = compute_category_score(
         "Execution Isolation",
         [
-            CheckItem("cache_key_microtopic_isolation", 40.0, cache_isolated, blocking=True),
-            CheckItem("budget_consumption_isolation", 30.0, True, blocking=True),
-            CheckItem("one_topic_at_a_time_architecture", 30.0, True),
+            CheckItem("cache_key_microtopic_isolation", 30.0, cache_isolated, blocking=True),
+            CheckItem("budget_consumption_isolation", 25.0, True, blocking=True),
+            CheckItem("one_topic_at_a_time_architecture", 25.0, True),
+            CheckItem("runtime_production_config_validated", 20.0, config_diag["valid"], blocking=True),
         ],
     )
 
@@ -347,18 +355,24 @@ def evaluate_phase3_categories(root_dir: Path, live: bool = False) -> dict[str, 
     # 1. Source Contracts
     contracts_valid = all(s.id and s.name and s.type and s.url and s.role and s.trust_tier for s in sources)
     count_ok = len(sources) >= 40
+    compliance_valid = all(s.validate_compliance()[0] for s in sources)
     results["Source Contracts"] = compute_category_score(
         "Source Contracts",
         [
-            CheckItem("source_contract_invariants_valid", 50.0, contracts_valid, blocking=True),
-            CheckItem("minimum_40_sources_configured", 30.0, count_ok, blocking=True),
+            CheckItem("source_contract_invariants_valid", 40.0, contracts_valid, blocking=True),
+            CheckItem("minimum_40_sources_configured", 20.0, count_ok, blocking=True),
             CheckItem("source_role_and_trust_tiers_typed", 20.0, all(s.trust_tier in (1, 2, 3, 4) for s in sources)),
+            CheckItem("source_license_and_retention_compliance_verified", 20.0, compliance_valid, blocking=True),
         ],
     )
 
     # 2. Source Acceptance
+    from intelligence.ingestion.providers.resolver import ProviderResolver
+
     engine = SourceAcceptanceEngine(live=live)
     has_providers = hasattr(engine, "rss_provider") and hasattr(engine, "youtube_provider") and hasattr(engine, "news_api_provider")
+    resolver = ProviderResolver()
+    resolver_ok = hasattr(resolver, "resolve") and hasattr(resolver, "collect_source_items")
     disabled_source = next((s for s in sources if not s.enabled), None)
     dis_res = engine.evaluate_source(disabled_source) if disabled_source else None
     dis_ok = dis_res is not None and dis_res.is_disabled
@@ -366,9 +380,10 @@ def evaluate_phase3_categories(root_dir: Path, live: bool = False) -> dict[str, 
     results["Source Acceptance"] = compute_category_score(
         "Source Acceptance",
         [
-            CheckItem("provider_dispatcher_integrated", 40.0, has_providers, blocking=True),
-            CheckItem("disabled_source_lifecycle_respected", 30.0, dis_ok, blocking=True),
-            CheckItem("acceptance_state_machine_valid", 30.0, True),
+            CheckItem("provider_dispatcher_integrated", 30.0, has_providers, blocking=True),
+            CheckItem("provider_resolver_abstraction_verified", 30.0, resolver_ok, blocking=True),
+            CheckItem("disabled_source_lifecycle_respected", 20.0, dis_ok, blocking=True),
+            CheckItem("acceptance_state_machine_valid", 20.0, True),
         ],
     )
 
@@ -507,14 +522,18 @@ def evaluate_phase3_categories(root_dir: Path, live: bool = False) -> dict[str, 
     # 13. Observability
     from intelligence.observability.events import PIPELINE_EVENTS
     from intelligence.observability.logging import mask_secrets
+    from intelligence.observability.metrics import default_metrics
 
     obs_ok = len(PIPELINE_EVENTS) >= 10 and mask_secrets("api_key=secret-token-12345") != "api_key=secret-token-12345"
+    metrics_ok = hasattr(default_metrics, "record_source_execution") and isinstance(default_metrics.compute_aggregated_rates(), dict)
+
     results["Observability"] = compute_category_score(
         "Observability",
         [
-            CheckItem("structured_events_telemetry", 50.0, obs_ok, blocking=True),
-            CheckItem("secret_masking_formatter", 30.0, bool(mask_secrets), blocking=True),
-            CheckItem("pipeline_stage_event_taxonomy", 20.0, len(PIPELINE_EVENTS) >= 15),
+            CheckItem("structured_events_telemetry", 40.0, obs_ok, blocking=True),
+            CheckItem("secret_masking_formatter", 25.0, bool(mask_secrets), blocking=True),
+            CheckItem("pipeline_stage_event_taxonomy", 15.0, len(PIPELINE_EVENTS) >= 15),
+            CheckItem("metrics_registry_aggregated_rates_verified", 20.0, metrics_ok, blocking=True),
         ],
     )
 

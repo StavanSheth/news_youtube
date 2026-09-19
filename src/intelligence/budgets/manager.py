@@ -110,6 +110,12 @@ class BudgetSkipRecord:
             "details": self.details,
         }
 
+    def __contains__(self, item: str) -> bool:
+        return item in self.reason or item in self.status
+
+    def __str__(self) -> str:
+        return f"{self.status}: {self.reason}"
+
 
 class BudgetManager:
     """Authoritative controller enforcing budget limits across global run and micro-topic jobs."""

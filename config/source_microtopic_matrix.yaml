@@ -1,0 +1,3060 @@
+version: 1.0.0
+total_microtopics: 236
+mappings:
+  artificial-intelligence::foundation-models:
+    micro_topic_id: foundation-models
+    domain: artificial-intelligence
+    topic: foundation-models
+    primary_sources:
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    - UCvKRFFb5gkKB4sS5n9v3TdA
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::llms:
+    micro_topic_id: llms
+    domain: artificial-intelligence
+    topic: llms
+    primary_sources:
+    - ars-technica
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - mit-tech-review
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::multimodal-ai:
+    micro_topic_id: multimodal-ai
+    domain: artificial-intelligence
+    topic: multimodal-ai
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::reasoning-models:
+    micro_topic_id: reasoning-models
+    domain: artificial-intelligence
+    topic: reasoning-models
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-agents:
+    micro_topic_id: ai-agents
+    domain: artificial-intelligence
+    topic: ai-agents
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::agentic-workflows:
+    micro_topic_id: agentic-workflows
+    domain: artificial-intelligence
+    topic: agentic-workflows
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::coding-models:
+    micro_topic_id: coding-models
+    domain: artificial-intelligence
+    topic: coding-models
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::rag:
+    micro_topic_id: rag
+    domain: artificial-intelligence
+    topic: rag
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::embeddings:
+    micro_topic_id: embeddings
+    domain: artificial-intelligence
+    topic: embeddings
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::training:
+    micro_topic_id: training
+    domain: artificial-intelligence
+    topic: training
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::inference:
+    micro_topic_id: inference
+    domain: artificial-intelligence
+    topic: inference
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::fine-tuning:
+    micro_topic_id: fine-tuning
+    domain: artificial-intelligence
+    topic: fine-tuning
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-infrastructure:
+    micro_topic_id: ai-infrastructure
+    domain: artificial-intelligence
+    topic: ai-infrastructure
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-tooling:
+    micro_topic_id: ai-tooling
+    domain: artificial-intelligence
+    topic: ai-tooling
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::open-source-ai:
+    micro_topic_id: open-source-ai
+    domain: artificial-intelligence
+    topic: open-source-ai
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::enterprise-ai:
+    micro_topic_id: enterprise-ai
+    domain: artificial-intelligence
+    topic: enterprise-ai
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-applications:
+    micro_topic_id: ai-applications
+    domain: artificial-intelligence
+    topic: ai-applications
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-research:
+    micro_topic_id: ai-research
+    domain: artificial-intelligence
+    topic: ai-research
+    primary_sources:
+    - mit-tech-review
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    - UCSHZKyawb77ixDdsGog4iWA
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - UCvKRFFb5gkKB4sS5n9v3TdA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-safety-alignment:
+    micro_topic_id: ai-safety-alignment
+    domain: artificial-intelligence
+    topic: ai-safety-alignment
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-evaluation:
+    micro_topic_id: ai-evaluation
+    domain: artificial-intelligence
+    topic: ai-evaluation
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-regulation:
+    micro_topic_id: ai-regulation
+    domain: artificial-intelligence
+    topic: ai-regulation
+    primary_sources:
+    - meity-india
+    - european-commission
+    - south-korea-msit
+    secondary_sources:
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    - UCvKRFFb5gkKB4sS5n9v3TdA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-startups:
+    micro_topic_id: ai-startups
+    domain: artificial-intelligence
+    topic: ai-startups
+    primary_sources:
+    - techcrunch
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - ars-technica
+    - mit-tech-review
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  artificial-intelligence::ai-application-launches:
+    micro_topic_id: ai-application-launches
+    domain: artificial-intelligence
+    topic: ai-application-launches
+    primary_sources: []
+    secondary_sources:
+    - meity-india
+    - south-korea-msit
+    - techcrunch
+    - ars-technica
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::programming-languages:
+    micro_topic_id: programming-languages
+    domain: software-engineering
+    topic: programming-languages
+    primary_sources:
+    - UCSHZKyawb77ixDdsGog4iWA
+    secondary_sources:
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::frameworks:
+    micro_topic_id: frameworks
+    domain: software-engineering
+    topic: frameworks
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::ide-and-developer-tools:
+    micro_topic_id: ide-and-developer-tools
+    domain: software-engineering
+    topic: ide-and-developer-tools
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::apis:
+    micro_topic_id: apis
+    domain: software-engineering
+    topic: apis
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::sdks:
+    micro_topic_id: sdks
+    domain: software-engineering
+    topic: sdks
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::backend:
+    micro_topic_id: backend
+    domain: software-engineering
+    topic: backend
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::frontend:
+    micro_topic_id: frontend
+    domain: software-engineering
+    topic: frontend
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::databases:
+    micro_topic_id: databases
+    domain: software-engineering
+    topic: databases
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::architecture:
+    micro_topic_id: architecture
+    domain: software-engineering
+    topic: architecture
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::devops:
+    micro_topic_id: devops
+    domain: software-engineering
+    topic: devops
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::ci-cd:
+    micro_topic_id: ci-cd
+    domain: software-engineering
+    topic: ci-cd
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::testing:
+    micro_topic_id: testing
+    domain: software-engineering
+    topic: testing
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::observability:
+    micro_topic_id: observability
+    domain: software-engineering
+    topic: observability
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::cloud-infrastructure:
+    micro_topic_id: cloud-infrastructure
+    domain: software-engineering
+    topic: cloud-infrastructure
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  software-engineering::open-source-releases:
+    micro_topic_id: open-source-releases
+    domain: software-engineering
+    topic: open-source-releases
+    primary_sources: []
+    secondary_sources:
+    - ars-technica
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  github-open-source::repositories:
+    micro_topic_id: repositories
+    domain: github-open-source
+    topic: repositories
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::model-tooling:
+    micro_topic_id: model-tooling
+    domain: github-open-source
+    topic: model-tooling
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::agent-frameworks:
+    micro_topic_id: agent-frameworks
+    domain: github-open-source
+    topic: agent-frameworks
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::mcp:
+    micro_topic_id: mcp
+    domain: github-open-source
+    topic: mcp
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::developer-tools:
+    micro_topic_id: developer-tools
+    domain: github-open-source
+    topic: developer-tools
+    primary_sources:
+    - ars-technica
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  github-open-source::inference-serving:
+    micro_topic_id: inference-serving
+    domain: github-open-source
+    topic: inference-serving
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::libraries:
+    micro_topic_id: libraries
+    domain: github-open-source
+    topic: libraries
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::adoption:
+    micro_topic_id: adoption
+    domain: github-open-source
+    topic: adoption
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::high-impact-projects:
+    micro_topic_id: high-impact-projects
+    domain: github-open-source
+    topic: high-impact-projects
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::releases:
+    micro_topic_id: releases
+    domain: github-open-source
+    topic: releases
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  github-open-source::maintainers:
+    micro_topic_id: maintainers
+    domain: github-open-source
+    topic: maintainers
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  quantum-computing::hardware:
+    micro_topic_id: hardware
+    domain: quantum-computing
+    topic: hardware
+    primary_sources: []
+    secondary_sources:
+    - cern
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  quantum-computing::processors:
+    micro_topic_id: processors
+    domain: quantum-computing
+    topic: processors
+    primary_sources: []
+    secondary_sources:
+    - cern
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  quantum-computing::algorithms:
+    micro_topic_id: algorithms
+    domain: quantum-computing
+    topic: algorithms
+    primary_sources: []
+    secondary_sources:
+    - cern
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  quantum-computing::error-correction:
+    micro_topic_id: error-correction
+    domain: quantum-computing
+    topic: error-correction
+    primary_sources: []
+    secondary_sources:
+    - cern
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  quantum-computing::networking:
+    micro_topic_id: networking
+    domain: quantum-computing
+    topic: networking
+    primary_sources: []
+    secondary_sources:
+    - cern
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  quantum-computing::cryptography:
+    micro_topic_id: cryptography
+    domain: quantum-computing
+    topic: cryptography
+    primary_sources: []
+    secondary_sources:
+    - cern
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  quantum-computing::research:
+    micro_topic_id: research
+    domain: quantum-computing
+    topic: research
+    primary_sources:
+    - cern
+    - mit-tech-review
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  quantum-computing::government-programs:
+    micro_topic_id: government-programs
+    domain: quantum-computing
+    topic: government-programs
+    primary_sources: []
+    secondary_sources:
+    - cern
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  quantum-computing::applications:
+    micro_topic_id: applications
+    domain: quantum-computing
+    topic: applications
+    primary_sources: []
+    secondary_sources:
+    - cern
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::launches:
+    micro_topic_id: launches
+    domain: space
+    topic: launches
+    primary_sources:
+    - isro-india
+    - jaxa
+    secondary_sources:
+    - esa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::rockets:
+    micro_topic_id: rockets
+    domain: space
+    topic: rockets
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::spacecraft:
+    micro_topic_id: spacecraft
+    domain: space
+    topic: spacecraft
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::satellites:
+    micro_topic_id: satellites
+    domain: space
+    topic: satellites
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::missions:
+    micro_topic_id: missions
+    domain: space
+    topic: missions
+    primary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::earth-observation:
+    micro_topic_id: earth-observation
+    domain: space
+    topic: earth-observation
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::lunar-programs:
+    micro_topic_id: lunar-programs
+    domain: space
+    topic: lunar-programs
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::mars-deep-space:
+    micro_topic_id: mars-deep-space
+    domain: space
+    topic: mars-deep-space
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::exploration:
+    micro_topic_id: exploration
+    domain: space
+    topic: exploration
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::commercial-space:
+    micro_topic_id: commercial-space
+    domain: space
+    topic: commercial-space
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::space-infrastructure:
+    micro_topic_id: space-infrastructure
+    domain: space
+    topic: space-infrastructure
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::space-policy:
+    micro_topic_id: space-policy
+    domain: space
+    topic: space-policy
+    primary_sources:
+    - australian-space-agency
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  space::space-policy-strategy:
+    micro_topic_id: space-policy-strategy
+    domain: space
+    topic: space-policy-strategy
+    primary_sources: []
+    secondary_sources:
+    - isro-india
+    - esa
+    - jaxa
+    - australian-space-agency
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::procurement:
+    micro_topic_id: procurement
+    domain: defence
+    topic: procurement
+    primary_sources:
+    - india-defence
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::military-technology:
+    micro_topic_id: military-technology
+    domain: defence
+    topic: military-technology
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::drones:
+    micro_topic_id: drones
+    domain: defence
+    topic: drones
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::missiles:
+    micro_topic_id: missiles
+    domain: defence
+    topic: missiles
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::air-defence:
+    micro_topic_id: air-defence
+    domain: defence
+    topic: air-defence
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::naval-systems:
+    micro_topic_id: naval-systems
+    domain: defence
+    topic: naval-systems
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::electronic-warfare:
+    micro_topic_id: electronic-warfare
+    domain: defence
+    topic: electronic-warfare
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::cyber-warfare:
+    micro_topic_id: cyber-warfare
+    domain: defence
+    topic: cyber-warfare
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::military-ai:
+    micro_topic_id: military-ai
+    domain: defence
+    topic: military-ai
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::defence-policy:
+    micro_topic_id: defence-policy
+    domain: defence
+    topic: defence-policy
+    primary_sources:
+    - india-defence
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::strategic-capabilities:
+    micro_topic_id: strategic-capabilities
+    domain: defence
+    topic: strategic-capabilities
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  defence::defence-procurement:
+    micro_topic_id: defence-procurement
+    domain: defence
+    topic: defence-procurement
+    primary_sources: []
+    secondary_sources:
+    - india-defence
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::cves:
+    micro_topic_id: cves
+    domain: cybersecurity
+    topic: cves
+    primary_sources:
+    - nist
+    secondary_sources:
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::vulnerabilities:
+    micro_topic_id: vulnerabilities
+    domain: cybersecurity
+    topic: vulnerabilities
+    primary_sources:
+    - nist
+    secondary_sources:
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::exploits:
+    micro_topic_id: exploits
+    domain: cybersecurity
+    topic: exploits
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::breaches:
+    micro_topic_id: breaches
+    domain: cybersecurity
+    topic: breaches
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::ransomware:
+    micro_topic_id: ransomware
+    domain: cybersecurity
+    topic: ransomware
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::malware:
+    micro_topic_id: malware
+    domain: cybersecurity
+    topic: malware
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::threat-actors:
+    micro_topic_id: threat-actors
+    domain: cybersecurity
+    topic: threat-actors
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::campaigns:
+    micro_topic_id: campaigns
+    domain: cybersecurity
+    topic: campaigns
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::identity:
+    micro_topic_id: identity
+    domain: cybersecurity
+    topic: identity
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::cloud-security:
+    micro_topic_id: cloud-security
+    domain: cybersecurity
+    topic: cloud-security
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::application-security:
+    micro_topic_id: application-security
+    domain: cybersecurity
+    topic: application-security
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::ai-security:
+    micro_topic_id: ai-security
+    domain: cybersecurity
+    topic: ai-security
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::security-tools:
+    micro_topic_id: security-tools
+    domain: cybersecurity
+    topic: security-tools
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  cybersecurity::national-cybersecurity-policy:
+    micro_topic_id: national-cybersecurity-policy
+    domain: cybersecurity
+    topic: national-cybersecurity-policy
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - ars-technica
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::chip-design:
+    micro_topic_id: chip-design
+    domain: semiconductors
+    topic: chip-design
+    primary_sources:
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::fabs:
+    micro_topic_id: fabs
+    domain: semiconductors
+    topic: fabs
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::foundries:
+    micro_topic_id: foundries
+    domain: semiconductors
+    topic: foundries
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::gpus:
+    micro_topic_id: gpus
+    domain: semiconductors
+    topic: gpus
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::cpus:
+    micro_topic_id: cpus
+    domain: semiconductors
+    topic: cpus
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::accelerators:
+    micro_topic_id: accelerators
+    domain: semiconductors
+    topic: accelerators
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::memory:
+    micro_topic_id: memory
+    domain: semiconductors
+    topic: memory
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::hbm:
+    micro_topic_id: hbm
+    domain: semiconductors
+    topic: hbm
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::manufacturing-equipment:
+    micro_topic_id: manufacturing-equipment
+    domain: semiconductors
+    topic: manufacturing-equipment
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::packaging:
+    micro_topic_id: packaging
+    domain: semiconductors
+    topic: packaging
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::process-nodes:
+    micro_topic_id: process-nodes
+    domain: semiconductors
+    topic: process-nodes
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::export-controls:
+    micro_topic_id: export-controls
+    domain: semiconductors
+    topic: export-controls
+    primary_sources:
+    - meti-japan
+    secondary_sources:
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::supply-chains:
+    micro_topic_id: supply-chains
+    domain: semiconductors
+    topic: supply-chains
+    primary_sources:
+    - india-commerce
+    - yonhap
+    secondary_sources:
+    - meti-japan
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  semiconductors::capacity:
+    micro_topic_id: capacity
+    domain: semiconductors
+    topic: capacity
+    primary_sources: []
+    secondary_sources:
+    - meti-japan
+    - yonhap
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::funding:
+    micro_topic_id: funding
+    domain: startups-vc
+    topic: funding
+    primary_sources:
+    - dpiit-india
+    - techcrunch
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::seed-series-rounds:
+    micro_topic_id: seed-series-rounds
+    domain: startups-vc
+    topic: seed-series-rounds
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::vc-activity:
+    micro_topic_id: vc-activity
+    domain: startups-vc
+    topic: vc-activity
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::acquisitions:
+    micro_topic_id: acquisitions
+    domain: startups-vc
+    topic: acquisitions
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::ipos:
+    micro_topic_id: ipos
+    domain: startups-vc
+    topic: ipos
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::accelerators:
+    micro_topic_id: accelerators
+    domain: startups-vc
+    topic: accelerators
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::valuation:
+    micro_topic_id: valuation
+    domain: startups-vc
+    topic: valuation
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::exits:
+    micro_topic_id: exits
+    domain: startups-vc
+    topic: exits
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::launches:
+    micro_topic_id: launches
+    domain: startups-vc
+    topic: launches
+    primary_sources:
+    - isro-india
+    - jaxa
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  startups-vc::failures:
+    micro_topic_id: failures
+    domain: startups-vc
+    topic: failures
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - techcrunch
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::regulation:
+    micro_topic_id: regulation
+    domain: government-policy
+    topic: regulation
+    primary_sources:
+    - sebi-india
+    - us-congress
+    - us-sec
+    - european-commission
+    - uk-government
+    secondary_sources:
+    - pib-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    - meti-japan
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::legislation:
+    micro_topic_id: legislation
+    domain: government-policy
+    topic: legislation
+    primary_sources:
+    - us-congress
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::ministries:
+    micro_topic_id: ministries
+    domain: government-policy
+    topic: ministries
+    primary_sources:
+    - pib-india
+    secondary_sources:
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    - us-congress
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::digital-policy:
+    micro_topic_id: digital-policy
+    domain: government-policy
+    topic: digital-policy
+    primary_sources:
+    - meity-india
+    - south-korea-msit
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - india-finance-ministry
+    - white-house
+    - us-congress
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::ai-policy:
+    micro_topic_id: ai-policy
+    domain: government-policy
+    topic: ai-policy
+    primary_sources:
+    - meity-india
+    - south-korea-msit
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - india-finance-ministry
+    - white-house
+    - us-congress
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::semiconductor-policy:
+    micro_topic_id: semiconductor-policy
+    domain: government-policy
+    topic: semiconductor-policy
+    primary_sources:
+    - meti-japan
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::industrial-policy:
+    micro_topic_id: industrial-policy
+    domain: government-policy
+    topic: industrial-policy
+    primary_sources:
+    - dpiit-india
+    - meti-japan
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::subsidies:
+    micro_topic_id: subsidies
+    domain: government-policy
+    topic: subsidies
+    primary_sources: []
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::grants:
+    micro_topic_id: grants
+    domain: government-policy
+    topic: grants
+    primary_sources:
+    - pib-india
+    secondary_sources:
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    - us-congress
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::tenders:
+    micro_topic_id: tenders
+    domain: government-policy
+    topic: tenders
+    primary_sources: []
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::implementation:
+    micro_topic_id: implementation
+    domain: government-policy
+    topic: implementation
+    primary_sources: []
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  government-policy::policy-outcomes:
+    micro_topic_id: policy-outcomes
+    domain: government-policy
+    topic: policy-outcomes
+    primary_sources: []
+    secondary_sources:
+    - pib-india
+    - sebi-india
+    - meity-india
+    - india-finance-ministry
+    - white-house
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  regional-government::state-provincial-policy:
+    micro_topic_id: state-provincial-policy
+    domain: regional-government
+    topic: state-provincial-policy
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  regional-government::incentives:
+    micro_topic_id: incentives
+    domain: regional-government
+    topic: incentives
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  regional-government::industrial-parks:
+    micro_topic_id: industrial-parks
+    domain: regional-government
+    topic: industrial-parks
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  regional-government::infrastructure:
+    micro_topic_id: infrastructure
+    domain: regional-government
+    topic: infrastructure
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  regional-government::local-regulation:
+    micro_topic_id: local-regulation
+    domain: regional-government
+    topic: local-regulation
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  regional-government::regional-investment:
+    micro_topic_id: regional-investment
+    domain: regional-government
+    topic: regional-investment
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  regional-government::regional-technology-policy:
+    micro_topic_id: regional-technology-policy
+    domain: regional-government
+    topic: regional-technology-policy
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  geopolitics::bilateral-relations:
+    micro_topic_id: bilateral-relations
+    domain: geopolitics
+    topic: bilateral-relations
+    primary_sources:
+    - india-mea
+    secondary_sources:
+    - ap-global
+    - india-commerce
+    - white-house
+    - european-commission
+    - xinhua
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::alliances:
+    micro_topic_id: alliances
+    domain: geopolitics
+    topic: alliances
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - india-mea
+    - india-commerce
+    - white-house
+    - european-commission
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::sanctions:
+    micro_topic_id: sanctions
+    domain: geopolitics
+    topic: sanctions
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - india-mea
+    - india-commerce
+    - white-house
+    - european-commission
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::wars-conflicts:
+    micro_topic_id: wars-conflicts
+    domain: geopolitics
+    topic: wars-conflicts
+    primary_sources:
+    - ap-global
+    - reuters
+    secondary_sources:
+    - india-mea
+    - india-commerce
+    - white-house
+    - european-commission
+    - xinhua
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::diplomacy:
+    micro_topic_id: diplomacy
+    domain: geopolitics
+    topic: diplomacy
+    primary_sources:
+    - india-mea
+    - white-house
+    - xinhua
+    - saudi-spa
+    - qatar-qna
+    secondary_sources:
+    - ap-global
+    - india-commerce
+    - european-commission
+    - yonhap
+    - uae-wam
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::trade:
+    micro_topic_id: trade
+    domain: geopolitics
+    topic: trade
+    primary_sources:
+    - india-commerce
+    - european-commission
+    - xinhua
+    - uae-wam
+    - qatar-qna
+    secondary_sources:
+    - ap-global
+    - india-mea
+    - white-house
+    - yonhap
+    - saudi-spa
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::technology-restrictions:
+    micro_topic_id: technology-restrictions
+    domain: geopolitics
+    topic: technology-restrictions
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - india-mea
+    - india-commerce
+    - white-house
+    - european-commission
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::strategic-supply-chains:
+    micro_topic_id: strategic-supply-chains
+    domain: geopolitics
+    topic: strategic-supply-chains
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - india-mea
+    - india-commerce
+    - white-house
+    - european-commission
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::strategic-competition:
+    micro_topic_id: strategic-competition
+    domain: geopolitics
+    topic: strategic-competition
+    primary_sources:
+    - ap-global
+    - india-mea
+    - white-house
+    - xinhua
+    - yonhap
+    secondary_sources:
+    - india-commerce
+    - european-commission
+    - uae-wam
+    - saudi-spa
+    - qatar-qna
+    fallback_sources: []
+    source_gaps: []
+  geopolitics::regional-blocs:
+    micro_topic_id: regional-blocs
+    domain: geopolitics
+    topic: regional-blocs
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - india-mea
+    - india-commerce
+    - white-house
+    - european-commission
+    fallback_sources: []
+    source_gaps: []
+  energy::oil:
+    micro_topic_id: oil
+    domain: energy
+    topic: oil
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::gas:
+    micro_topic_id: gas
+    domain: energy
+    topic: gas
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::electricity:
+    micro_topic_id: electricity
+    domain: energy
+    topic: electricity
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::renewables:
+    micro_topic_id: renewables
+    domain: energy
+    topic: renewables
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::nuclear:
+    micro_topic_id: nuclear
+    domain: energy
+    topic: nuclear
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::batteries:
+    micro_topic_id: batteries
+    domain: energy
+    topic: batteries
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::grids:
+    micro_topic_id: grids
+    domain: energy
+    topic: grids
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::energy-companies:
+    micro_topic_id: energy-companies
+    domain: energy
+    topic: energy-companies
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::energy-markets:
+    micro_topic_id: energy-markets
+    domain: energy
+    topic: energy-markets
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::production:
+    micro_topic_id: production
+    domain: energy
+    topic: production
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::energy-transition:
+    micro_topic_id: energy-transition
+    domain: energy
+    topic: energy-transition
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::energy-security:
+    micro_topic_id: energy-security
+    domain: energy
+    topic: energy-security
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  energy::energy-infrastructure:
+    micro_topic_id: energy-infrastructure
+    domain: energy
+    topic: energy-infrastructure
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::ports:
+    micro_topic_id: ports
+    domain: shipping-logistics
+    topic: ports
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::shipping-lines:
+    micro_topic_id: shipping-lines
+    domain: shipping-logistics
+    topic: shipping-lines
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::freight:
+    micro_topic_id: freight
+    domain: shipping-logistics
+    topic: freight
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::logistics-infrastructure:
+    micro_topic_id: logistics-infrastructure
+    domain: shipping-logistics
+    topic: logistics-infrastructure
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::chokepoints:
+    micro_topic_id: chokepoints
+    domain: shipping-logistics
+    topic: chokepoints
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::maritime-trade:
+    micro_topic_id: maritime-trade
+    domain: shipping-logistics
+    topic: maritime-trade
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::container-rates:
+    micro_topic_id: container-rates
+    domain: shipping-logistics
+    topic: container-rates
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::disruptions:
+    micro_topic_id: disruptions
+    domain: shipping-logistics
+    topic: disruptions
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  shipping-logistics::resilience:
+    micro_topic_id: resilience
+    domain: shipping-logistics
+    topic: resilience
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  manufacturing::factories:
+    micro_topic_id: factories
+    domain: manufacturing
+    topic: factories
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - india-commerce
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  manufacturing::industrial-corridors:
+    micro_topic_id: industrial-corridors
+    domain: manufacturing
+    topic: industrial-corridors
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - india-commerce
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  manufacturing::incentives:
+    micro_topic_id: incentives
+    domain: manufacturing
+    topic: incentives
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - india-commerce
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  manufacturing::reshoring:
+    micro_topic_id: reshoring
+    domain: manufacturing
+    topic: reshoring
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - india-commerce
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  manufacturing::localization:
+    micro_topic_id: localization
+    domain: manufacturing
+    topic: localization
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - india-commerce
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  manufacturing::capacity:
+    micro_topic_id: capacity
+    domain: manufacturing
+    topic: capacity
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - india-commerce
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  manufacturing::exports:
+    micro_topic_id: exports
+    domain: manufacturing
+    topic: exports
+    primary_sources:
+    - india-commerce
+    secondary_sources:
+    - dpiit-india
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  manufacturing::industrial-strategy:
+    micro_topic_id: industrial-strategy
+    domain: manufacturing
+    topic: industrial-strategy
+    primary_sources: []
+    secondary_sources:
+    - dpiit-india
+    - india-commerce
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  leaders-people::executives:
+    micro_topic_id: executives
+    domain: leaders-people
+    topic: executives
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  leaders-people::founders:
+    micro_topic_id: founders
+    domain: leaders-people
+    topic: founders
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  leaders-people::researchers:
+    micro_topic_id: researchers
+    domain: leaders-people
+    topic: researchers
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  leaders-people::government-leaders:
+    micro_topic_id: government-leaders
+    domain: leaders-people
+    topic: government-leaders
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  leaders-people::appointments:
+    micro_topic_id: appointments
+    domain: leaders-people
+    topic: appointments
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  leaders-people::departures:
+    micro_topic_id: departures
+    domain: leaders-people
+    topic: departures
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  leaders-people::statements:
+    micro_topic_id: statements
+    domain: leaders-people
+    topic: statements
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  leaders-people::strategic-decisions:
+    micro_topic_id: strategic-decisions
+    domain: leaders-people
+    topic: strategic-decisions
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  technology-companies::product-launches:
+    micro_topic_id: product-launches
+    domain: technology-companies
+    topic: product-launches
+    primary_sources:
+    - financial-times
+    - wsj
+    - bbc-news
+    - techcrunch
+    - UCvKRFFb5gkKB4sS5n9v3TdA
+    secondary_sources:
+    - reuters
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    fallback_sources: []
+    source_gaps: []
+  technology-companies::strategy:
+    micro_topic_id: strategy
+    domain: technology-companies
+    topic: strategy
+    primary_sources:
+    - financial-times
+    - wsj
+    - reuters
+    - UCrM7B7SL_g1ed38eDoKE8vw
+    secondary_sources:
+    - bbc-news
+    - techcrunch
+    - UCvKRFFb5gkKB4sS5n9v3TdA
+    fallback_sources: []
+    source_gaps: []
+  technology-companies::acquisitions:
+    micro_topic_id: acquisitions
+    domain: technology-companies
+    topic: acquisitions
+    primary_sources: []
+    secondary_sources:
+    - financial-times
+    - wsj
+    - reuters
+    - bbc-news
+    - techcrunch
+    fallback_sources: []
+    source_gaps: []
+  technology-companies::partnerships:
+    micro_topic_id: partnerships
+    domain: technology-companies
+    topic: partnerships
+    primary_sources: []
+    secondary_sources:
+    - financial-times
+    - wsj
+    - reuters
+    - bbc-news
+    - techcrunch
+    fallback_sources: []
+    source_gaps: []
+  technology-companies::earnings:
+    micro_topic_id: earnings
+    domain: technology-companies
+    topic: earnings
+    primary_sources: []
+    secondary_sources:
+    - financial-times
+    - wsj
+    - reuters
+    - bbc-news
+    - techcrunch
+    fallback_sources: []
+    source_gaps: []
+  technology-companies::infrastructure:
+    micro_topic_id: infrastructure
+    domain: technology-companies
+    topic: infrastructure
+    primary_sources: []
+    secondary_sources:
+    - financial-times
+    - wsj
+    - reuters
+    - bbc-news
+    - techcrunch
+    fallback_sources: []
+    source_gaps: []
+  technology-companies::platform-changes:
+    micro_topic_id: platform-changes
+    domain: technology-companies
+    topic: platform-changes
+    primary_sources: []
+    secondary_sources:
+    - financial-times
+    - wsj
+    - reuters
+    - bbc-news
+    - techcrunch
+    fallback_sources: []
+    source_gaps: []
+  technology-companies::corporate-ai-technology-strategy:
+    micro_topic_id: corporate-ai-technology-strategy
+    domain: technology-companies
+    topic: corporate-ai-technology-strategy
+    primary_sources: []
+    secondary_sources:
+    - financial-times
+    - wsj
+    - reuters
+    - bbc-news
+    - techcrunch
+    fallback_sources: []
+    source_gaps: []
+  conferences::google-i-o:
+    micro_topic_id: google-i-o
+    domain: conferences
+    topic: google-i-o
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  conferences::gtc:
+    micro_topic_id: gtc
+    domain: conferences
+    topic: gtc
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  conferences::wwdc:
+    micro_topic_id: wwdc
+    domain: conferences
+    topic: wwdc
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  conferences::neurips:
+    micro_topic_id: neurips
+    domain: conferences
+    topic: neurips
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  conferences::icml:
+    micro_topic_id: icml
+    domain: conferences
+    topic: icml
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  conferences::cvpr:
+    micro_topic_id: cvpr
+    domain: conferences
+    topic: cvpr
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  conferences::major-industry-events:
+    micro_topic_id: major-industry-events
+    domain: conferences
+    topic: major-industry-events
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  conferences::keynotes:
+    micro_topic_id: keynotes
+    domain: conferences
+    topic: keynotes
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  research::ai-research:
+    micro_topic_id: ai-research
+    domain: research
+    topic: ai-research
+    primary_sources:
+    - mit-tech-review
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    - UCSHZKyawb77ixDdsGog4iWA
+    secondary_sources:
+    - nist
+    - esa
+    - cern
+    - csiro
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::computer-science:
+    micro_topic_id: computer-science
+    domain: research
+    topic: computer-science
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - esa
+    - cern
+    - csiro
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::medicine:
+    micro_topic_id: medicine
+    domain: research
+    topic: medicine
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - esa
+    - cern
+    - csiro
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::economics:
+    micro_topic_id: economics
+    domain: research
+    topic: economics
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - esa
+    - cern
+    - csiro
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::physics:
+    micro_topic_id: physics
+    domain: research
+    topic: physics
+    primary_sources:
+    - cern
+    secondary_sources:
+    - nist
+    - esa
+    - csiro
+    - mit-tech-review
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::climate:
+    micro_topic_id: climate
+    domain: research
+    topic: climate
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - esa
+    - cern
+    - csiro
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::engineering:
+    micro_topic_id: engineering
+    domain: research
+    topic: engineering
+    primary_sources:
+    - esa
+    - csiro
+    secondary_sources:
+    - nist
+    - cern
+    - mit-tech-review
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::breakthroughs:
+    micro_topic_id: breakthroughs
+    domain: research
+    topic: breakthroughs
+    primary_sources:
+    - cern
+    - csiro
+    - mit-tech-review
+    secondary_sources:
+    - nist
+    - esa
+    - UC_x5XG1OV2P6uZZ5FSM9Ttw
+    - UCSHZKyawb77ixDdsGog4iWA
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::preprints:
+    micro_topic_id: preprints
+    domain: research
+    topic: preprints
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - esa
+    - cern
+    - csiro
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  research::peer-reviewed-papers:
+    micro_topic_id: peer-reviewed-papers
+    domain: research
+    topic: peer-reviewed-papers
+    primary_sources: []
+    secondary_sources:
+    - nist
+    - esa
+    - cern
+    - csiro
+    - mit-tech-review
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  opportunities::grants:
+    micro_topic_id: grants
+    domain: opportunities
+    topic: grants
+    primary_sources:
+    - pib-india
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps: []
+  opportunities::tenders:
+    micro_topic_id: tenders
+    domain: opportunities
+    topic: tenders
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  opportunities::scholarships:
+    micro_topic_id: scholarships
+    domain: opportunities
+    topic: scholarships
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  opportunities::fellowships:
+    micro_topic_id: fellowships
+    domain: opportunities
+    topic: fellowships
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  opportunities::accelerators:
+    micro_topic_id: accelerators
+    domain: opportunities
+    topic: accelerators
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  opportunities::hackathons:
+    micro_topic_id: hackathons
+    domain: opportunities
+    topic: hackathons
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  opportunities::funding-programs:
+    micro_topic_id: funding-programs
+    domain: opportunities
+    topic: funding-programs
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  opportunities::government-schemes:
+    micro_topic_id: government-schemes
+    domain: opportunities
+    topic: government-schemes
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  opportunities::calls-for-participation:
+    micro_topic_id: calls-for-participation
+    domain: opportunities
+    topic: calls-for-participation
+    primary_sources: []
+    secondary_sources: []
+    fallback_sources:
+    - reuters
+    - bbc-news
+    source_gaps:
+    - NO_DOMAIN_SPECIFIC_SOURCE
+  finance::central-banks:
+    micro_topic_id: central-banks
+    domain: finance
+    topic: central-banks
+    primary_sources:
+    - federal-reserve
+    - ecb
+    - bank-of-england
+    - pboc
+    - bank-of-japan
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::interest-rates:
+    micro_topic_id: interest-rates
+    domain: finance
+    topic: interest-rates
+    primary_sources:
+    - federal-reserve
+    - ecb
+    - bank-of-england
+    - bank-of-japan
+    - bank-of-korea
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::inflation:
+    micro_topic_id: inflation
+    domain: finance
+    topic: inflation
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::gdp:
+    micro_topic_id: gdp
+    domain: finance
+    topic: gdp
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::employment:
+    micro_topic_id: employment
+    domain: finance
+    topic: employment
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::equities:
+    micro_topic_id: equities
+    domain: finance
+    topic: equities
+    primary_sources:
+    - us-sec
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::bonds:
+    micro_topic_id: bonds
+    domain: finance
+    topic: bonds
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::currencies:
+    micro_topic_id: currencies
+    domain: finance
+    topic: currencies
+    primary_sources:
+    - pboc
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::commodities:
+    micro_topic_id: commodities
+    domain: finance
+    topic: commodities
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::banking:
+    micro_topic_id: banking
+    domain: finance
+    topic: banking
+    primary_sources:
+    - sebi-india
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - india-finance-ministry
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::credit:
+    micro_topic_id: credit
+    domain: finance
+    topic: credit
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::asset-managers:
+    micro_topic_id: asset-managers
+    domain: finance
+    topic: asset-managers
+    primary_sources: []
+    secondary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - sebi-india
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
+  finance::macroeconomics:
+    micro_topic_id: macroeconomics
+    domain: finance
+    topic: macroeconomics
+    primary_sources:
+    - ap-global
+    - financial-times
+    - bloomberg
+    - wsj
+    - india-finance-ministry
+    secondary_sources:
+    - sebi-india
+    - federal-reserve
+    - us-sec
+    - ecb
+    - bank-of-england
+    fallback_sources:
+    - bbc-news
+    source_gaps: []
