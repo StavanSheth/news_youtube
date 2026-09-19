@@ -1,0 +1,2131 @@
+{
+  "total_microtopics": 236,
+  "total_themes": 236,
+  "covered_count": 236,
+  "themes": [
+    {
+      "theme_id": "ai-models-tools",
+      "micro_topic_id": "foundation-models",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-llms-theme",
+      "micro_topic_id": "llms",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-multimodal-ai-theme",
+      "micro_topic_id": "multimodal-ai",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-reasoning-models-theme",
+      "micro_topic_id": "reasoning-models",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "ai-agents-intelligence",
+      "micro_topic_id": "ai-agents",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-agentic-workflows-theme",
+      "micro_topic_id": "agentic-workflows",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-coding-models-theme",
+      "micro_topic_id": "coding-models",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-rag-theme",
+      "micro_topic_id": "rag",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-embeddings-theme",
+      "micro_topic_id": "embeddings",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-training-theme",
+      "micro_topic_id": "training",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-inference-theme",
+      "micro_topic_id": "inference",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-fine-tuning-theme",
+      "micro_topic_id": "fine-tuning",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-infrastructure-theme",
+      "micro_topic_id": "ai-infrastructure",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-tooling-theme",
+      "micro_topic_id": "ai-tooling",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-open-source-ai-theme",
+      "micro_topic_id": "open-source-ai",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-enterprise-ai-theme",
+      "micro_topic_id": "enterprise-ai",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-applications-theme",
+      "micro_topic_id": "ai-applications",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-research-theme",
+      "micro_topic_id": "ai-research",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-safety-alignment-theme",
+      "micro_topic_id": "ai-safety-alignment",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-evaluation-theme",
+      "micro_topic_id": "ai-evaluation",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-regulation-theme",
+      "micro_topic_id": "ai-regulation",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-startups-theme",
+      "micro_topic_id": "ai-startups",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "artificial-intelligence-ai-application-launches-theme",
+      "micro_topic_id": "ai-application-launches",
+      "domain": "artificial-intelligence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-programming-languages-theme",
+      "micro_topic_id": "programming-languages",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-frameworks-theme",
+      "micro_topic_id": "frameworks",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-ide-and-developer-tools-theme",
+      "micro_topic_id": "ide-and-developer-tools",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-apis-theme",
+      "micro_topic_id": "apis",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-sdks-theme",
+      "micro_topic_id": "sdks",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-backend-theme",
+      "micro_topic_id": "backend",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-frontend-theme",
+      "micro_topic_id": "frontend",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-databases-theme",
+      "micro_topic_id": "databases",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-architecture-theme",
+      "micro_topic_id": "architecture",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-devops-theme",
+      "micro_topic_id": "devops",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-ci-cd-theme",
+      "micro_topic_id": "ci-cd",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-testing-theme",
+      "micro_topic_id": "testing",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-observability-theme",
+      "micro_topic_id": "observability",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-cloud-infrastructure-theme",
+      "micro_topic_id": "cloud-infrastructure",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "software-engineering-open-source-releases-theme",
+      "micro_topic_id": "open-source-releases",
+      "domain": "software-engineering",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-repositories-theme",
+      "micro_topic_id": "repositories",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-model-tooling-theme",
+      "micro_topic_id": "model-tooling",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-agent-frameworks-theme",
+      "micro_topic_id": "agent-frameworks",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-mcp-theme",
+      "micro_topic_id": "mcp",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-developer-tools-theme",
+      "micro_topic_id": "developer-tools",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-inference-serving-theme",
+      "micro_topic_id": "inference-serving",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-libraries-theme",
+      "micro_topic_id": "libraries",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-adoption-theme",
+      "micro_topic_id": "adoption",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-high-impact-projects-theme",
+      "micro_topic_id": "high-impact-projects",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-releases-theme",
+      "micro_topic_id": "releases",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "github-open-source-maintainers-theme",
+      "micro_topic_id": "maintainers",
+      "domain": "github-open-source",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-cves-theme",
+      "micro_topic_id": "cves",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-vulnerabilities-theme",
+      "micro_topic_id": "vulnerabilities",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-exploits-theme",
+      "micro_topic_id": "exploits",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-breaches-theme",
+      "micro_topic_id": "breaches",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-ransomware-theme",
+      "micro_topic_id": "ransomware",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-malware-theme",
+      "micro_topic_id": "malware",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-threat-actors-theme",
+      "micro_topic_id": "threat-actors",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-campaigns-theme",
+      "micro_topic_id": "campaigns",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-identity-theme",
+      "micro_topic_id": "identity",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-cloud-security-theme",
+      "micro_topic_id": "cloud-security",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-application-security-theme",
+      "micro_topic_id": "application-security",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-ai-security-theme",
+      "micro_topic_id": "ai-security",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-security-tools-theme",
+      "micro_topic_id": "security-tools",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "cybersecurity-national-cybersecurity-policy-theme",
+      "micro_topic_id": "national-cybersecurity-policy",
+      "domain": "cybersecurity",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-chip-design-theme",
+      "micro_topic_id": "chip-design",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-fabs-theme",
+      "micro_topic_id": "fabs",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-foundries-theme",
+      "micro_topic_id": "foundries",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-gpus-theme",
+      "micro_topic_id": "gpus",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-cpus-theme",
+      "micro_topic_id": "cpus",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-accelerators-theme",
+      "micro_topic_id": "accelerators",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-memory-theme",
+      "micro_topic_id": "memory",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-hbm-theme",
+      "micro_topic_id": "hbm",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-manufacturing-equipment-theme",
+      "micro_topic_id": "manufacturing-equipment",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-packaging-theme",
+      "micro_topic_id": "packaging",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-process-nodes-theme",
+      "micro_topic_id": "process-nodes",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-export-controls-theme",
+      "micro_topic_id": "export-controls",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-supply-chains-theme",
+      "micro_topic_id": "supply-chains",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "semiconductors-capacity-theme",
+      "micro_topic_id": "capacity",
+      "domain": "semiconductors",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-launches-theme",
+      "micro_topic_id": "launches",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-rockets-theme",
+      "micro_topic_id": "rockets",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-spacecraft-theme",
+      "micro_topic_id": "spacecraft",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-satellites-theme",
+      "micro_topic_id": "satellites",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-missions-theme",
+      "micro_topic_id": "missions",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-earth-observation-theme",
+      "micro_topic_id": "earth-observation",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-lunar-programs-theme",
+      "micro_topic_id": "lunar-programs",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-mars-deep-space-theme",
+      "micro_topic_id": "mars-deep-space",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-exploration-theme",
+      "micro_topic_id": "exploration",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-commercial-space-theme",
+      "micro_topic_id": "commercial-space",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-space-infrastructure-theme",
+      "micro_topic_id": "space-infrastructure",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-space-policy-theme",
+      "micro_topic_id": "space-policy",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "space-space-policy-strategy-theme",
+      "micro_topic_id": "space-policy-strategy",
+      "domain": "space",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-procurement-theme",
+      "micro_topic_id": "procurement",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-military-technology-theme",
+      "micro_topic_id": "military-technology",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-drones-theme",
+      "micro_topic_id": "drones",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-missiles-theme",
+      "micro_topic_id": "missiles",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-air-defence-theme",
+      "micro_topic_id": "air-defence",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-naval-systems-theme",
+      "micro_topic_id": "naval-systems",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-electronic-warfare-theme",
+      "micro_topic_id": "electronic-warfare",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-cyber-warfare-theme",
+      "micro_topic_id": "cyber-warfare",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-military-ai-theme",
+      "micro_topic_id": "military-ai",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-defence-policy-theme",
+      "micro_topic_id": "defence-policy",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-strategic-capabilities-theme",
+      "micro_topic_id": "strategic-capabilities",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "defence-defence-procurement-theme",
+      "micro_topic_id": "defence-procurement",
+      "domain": "defence",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-regulation-theme",
+      "micro_topic_id": "regulation",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-legislation-theme",
+      "micro_topic_id": "legislation",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-ministries-theme",
+      "micro_topic_id": "ministries",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-digital-policy-theme",
+      "micro_topic_id": "digital-policy",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-ai-policy-theme",
+      "micro_topic_id": "ai-policy",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-semiconductor-policy-theme",
+      "micro_topic_id": "semiconductor-policy",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-industrial-policy-theme",
+      "micro_topic_id": "industrial-policy",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-subsidies-theme",
+      "micro_topic_id": "subsidies",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-grants-theme",
+      "micro_topic_id": "grants",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-tenders-theme",
+      "micro_topic_id": "tenders",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-implementation-theme",
+      "micro_topic_id": "implementation",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "government-policy-policy-outcomes-theme",
+      "micro_topic_id": "policy-outcomes",
+      "domain": "government-policy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-central-banks-theme",
+      "micro_topic_id": "central-banks",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-interest-rates-theme",
+      "micro_topic_id": "interest-rates",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-inflation-theme",
+      "micro_topic_id": "inflation",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-gdp-theme",
+      "micro_topic_id": "gdp",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-employment-theme",
+      "micro_topic_id": "employment",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-equities-theme",
+      "micro_topic_id": "equities",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-bonds-theme",
+      "micro_topic_id": "bonds",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-currencies-theme",
+      "micro_topic_id": "currencies",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-commodities-theme",
+      "micro_topic_id": "commodities",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-banking-theme",
+      "micro_topic_id": "banking",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-credit-theme",
+      "micro_topic_id": "credit",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-asset-managers-theme",
+      "micro_topic_id": "asset-managers",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "finance-markets",
+      "micro_topic_id": "macroeconomics",
+      "domain": "finance",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-bilateral-relations-theme",
+      "micro_topic_id": "bilateral-relations",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-alliances-theme",
+      "micro_topic_id": "alliances",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-sanctions-theme",
+      "micro_topic_id": "sanctions",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-wars-conflicts-theme",
+      "micro_topic_id": "wars-conflicts",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-diplomacy-theme",
+      "micro_topic_id": "diplomacy",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-trade-theme",
+      "micro_topic_id": "trade",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-technology-restrictions-theme",
+      "micro_topic_id": "technology-restrictions",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-strategic-supply-chains-theme",
+      "micro_topic_id": "strategic-supply-chains",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-security",
+      "micro_topic_id": "strategic-competition",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "geopolitics-regional-blocs-theme",
+      "micro_topic_id": "regional-blocs",
+      "domain": "geopolitics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-funding-theme",
+      "micro_topic_id": "funding",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-seed-series-rounds-theme",
+      "micro_topic_id": "seed-series-rounds",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-vc-activity-theme",
+      "micro_topic_id": "vc-activity",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-acquisitions-theme",
+      "micro_topic_id": "acquisitions",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-ipos-theme",
+      "micro_topic_id": "ipos",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-accelerators-theme",
+      "micro_topic_id": "accelerators",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-valuation-theme",
+      "micro_topic_id": "valuation",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-exits-theme",
+      "micro_topic_id": "exits",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-launches-theme",
+      "micro_topic_id": "launches",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "startups-vc-failures-theme",
+      "micro_topic_id": "failures",
+      "domain": "startups-vc",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-ai-research-theme",
+      "micro_topic_id": "ai-research",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-computer-science-theme",
+      "micro_topic_id": "computer-science",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-medicine-theme",
+      "micro_topic_id": "medicine",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-economics-theme",
+      "micro_topic_id": "economics",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-physics-theme",
+      "micro_topic_id": "physics",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-climate-theme",
+      "micro_topic_id": "climate",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-engineering-theme",
+      "micro_topic_id": "engineering",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-breakthroughs-theme",
+      "micro_topic_id": "breakthroughs",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-preprints-theme",
+      "micro_topic_id": "preprints",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "research-peer-reviewed-papers-theme",
+      "micro_topic_id": "peer-reviewed-papers",
+      "domain": "research",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "technology-companies-product-launches-theme",
+      "micro_topic_id": "product-launches",
+      "domain": "technology-companies",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "technology-companies-strategy-theme",
+      "micro_topic_id": "strategy",
+      "domain": "technology-companies",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "technology-companies-acquisitions-theme",
+      "micro_topic_id": "acquisitions",
+      "domain": "technology-companies",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "technology-companies-partnerships-theme",
+      "micro_topic_id": "partnerships",
+      "domain": "technology-companies",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "technology-companies-earnings-theme",
+      "micro_topic_id": "earnings",
+      "domain": "technology-companies",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "technology-companies-infrastructure-theme",
+      "micro_topic_id": "infrastructure",
+      "domain": "technology-companies",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "technology-companies-platform-changes-theme",
+      "micro_topic_id": "platform-changes",
+      "domain": "technology-companies",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "technology-companies-corporate-ai-technology-strategy-theme",
+      "micro_topic_id": "corporate-ai-technology-strategy",
+      "domain": "technology-companies",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-hardware-theme",
+      "micro_topic_id": "hardware",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-processors-theme",
+      "micro_topic_id": "processors",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-algorithms-theme",
+      "micro_topic_id": "algorithms",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-error-correction-theme",
+      "micro_topic_id": "error-correction",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-networking-theme",
+      "micro_topic_id": "networking",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-cryptography-theme",
+      "micro_topic_id": "cryptography",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-research-theme",
+      "micro_topic_id": "research",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-government-programs-theme",
+      "micro_topic_id": "government-programs",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "quantum-computing-applications-theme",
+      "micro_topic_id": "applications",
+      "domain": "quantum-computing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-oil-theme",
+      "micro_topic_id": "oil",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-gas-theme",
+      "micro_topic_id": "gas",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-electricity-theme",
+      "micro_topic_id": "electricity",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-renewables-theme",
+      "micro_topic_id": "renewables",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-nuclear-theme",
+      "micro_topic_id": "nuclear",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-batteries-theme",
+      "micro_topic_id": "batteries",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-grids-theme",
+      "micro_topic_id": "grids",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-energy-companies-theme",
+      "micro_topic_id": "energy-companies",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-energy-markets-theme",
+      "micro_topic_id": "energy-markets",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-production-theme",
+      "micro_topic_id": "production",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-energy-transition-theme",
+      "micro_topic_id": "energy-transition",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-energy-security-theme",
+      "micro_topic_id": "energy-security",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "energy-energy-infrastructure-theme",
+      "micro_topic_id": "energy-infrastructure",
+      "domain": "energy",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-ports-theme",
+      "micro_topic_id": "ports",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-shipping-lines-theme",
+      "micro_topic_id": "shipping-lines",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-freight-theme",
+      "micro_topic_id": "freight",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-logistics-infrastructure-theme",
+      "micro_topic_id": "logistics-infrastructure",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-chokepoints-theme",
+      "micro_topic_id": "chokepoints",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-maritime-trade-theme",
+      "micro_topic_id": "maritime-trade",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-container-rates-theme",
+      "micro_topic_id": "container-rates",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-disruptions-theme",
+      "micro_topic_id": "disruptions",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "shipping-logistics-resilience-theme",
+      "micro_topic_id": "resilience",
+      "domain": "shipping-logistics",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "manufacturing-factories-theme",
+      "micro_topic_id": "factories",
+      "domain": "manufacturing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "manufacturing-industrial-corridors-theme",
+      "micro_topic_id": "industrial-corridors",
+      "domain": "manufacturing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "manufacturing-incentives-theme",
+      "micro_topic_id": "incentives",
+      "domain": "manufacturing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "manufacturing-reshoring-theme",
+      "micro_topic_id": "reshoring",
+      "domain": "manufacturing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "manufacturing-localization-theme",
+      "micro_topic_id": "localization",
+      "domain": "manufacturing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "manufacturing-capacity-theme",
+      "micro_topic_id": "capacity",
+      "domain": "manufacturing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "manufacturing-exports-theme",
+      "micro_topic_id": "exports",
+      "domain": "manufacturing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "manufacturing-industrial-strategy-theme",
+      "micro_topic_id": "industrial-strategy",
+      "domain": "manufacturing",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "leaders-people-executives-theme",
+      "micro_topic_id": "executives",
+      "domain": "leaders-people",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "leaders-people-founders-theme",
+      "micro_topic_id": "founders",
+      "domain": "leaders-people",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "leaders-people-researchers-theme",
+      "micro_topic_id": "researchers",
+      "domain": "leaders-people",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "leaders-people-government-leaders-theme",
+      "micro_topic_id": "government-leaders",
+      "domain": "leaders-people",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "leaders-people-appointments-theme",
+      "micro_topic_id": "appointments",
+      "domain": "leaders-people",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "leaders-people-departures-theme",
+      "micro_topic_id": "departures",
+      "domain": "leaders-people",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "leaders-people-statements-theme",
+      "micro_topic_id": "statements",
+      "domain": "leaders-people",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "leaders-people-strategic-decisions-theme",
+      "micro_topic_id": "strategic-decisions",
+      "domain": "leaders-people",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-grants-theme",
+      "micro_topic_id": "grants",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-tenders-theme",
+      "micro_topic_id": "tenders",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-scholarships-theme",
+      "micro_topic_id": "scholarships",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-fellowships-theme",
+      "micro_topic_id": "fellowships",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-accelerators-theme",
+      "micro_topic_id": "accelerators",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-hackathons-theme",
+      "micro_topic_id": "hackathons",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-funding-programs-theme",
+      "micro_topic_id": "funding-programs",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-government-schemes-theme",
+      "micro_topic_id": "government-schemes",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "opportunities-calls-for-participation-theme",
+      "micro_topic_id": "calls-for-participation",
+      "domain": "opportunities",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "regional-government-state-provincial-policy-theme",
+      "micro_topic_id": "state-provincial-policy",
+      "domain": "regional-government",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "regional-government-incentives-theme",
+      "micro_topic_id": "incentives",
+      "domain": "regional-government",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "regional-government-industrial-parks-theme",
+      "micro_topic_id": "industrial-parks",
+      "domain": "regional-government",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "regional-government-infrastructure-theme",
+      "micro_topic_id": "infrastructure",
+      "domain": "regional-government",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "regional-government-local-regulation-theme",
+      "micro_topic_id": "local-regulation",
+      "domain": "regional-government",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "regional-government-regional-investment-theme",
+      "micro_topic_id": "regional-investment",
+      "domain": "regional-government",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "regional-government-regional-technology-policy-theme",
+      "micro_topic_id": "regional-technology-policy",
+      "domain": "regional-government",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "conferences-google-i-o-theme",
+      "micro_topic_id": "google-i-o",
+      "domain": "conferences",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "conferences-gtc-theme",
+      "micro_topic_id": "gtc",
+      "domain": "conferences",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "conferences-wwdc-theme",
+      "micro_topic_id": "wwdc",
+      "domain": "conferences",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "conferences-neurips-theme",
+      "micro_topic_id": "neurips",
+      "domain": "conferences",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "conferences-icml-theme",
+      "micro_topic_id": "icml",
+      "domain": "conferences",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "conferences-cvpr-theme",
+      "micro_topic_id": "cvpr",
+      "domain": "conferences",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "conferences-major-industry-events-theme",
+      "micro_topic_id": "major-industry-events",
+      "domain": "conferences",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    },
+    {
+      "theme_id": "conferences-keynotes-theme",
+      "micro_topic_id": "keynotes",
+      "domain": "conferences",
+      "contract_valid": true,
+      "specificity": 0.914,
+      "question_count": 6,
+      "review_status": "AI_VALIDATED"
+    }
+  ]
+}

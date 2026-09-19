@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import os
 import sys
 import time
 from datetime import UTC, datetime
@@ -13,10 +12,12 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlparse
 
-import feedparser
-import requests
 
-from .ingestion import RssParser, clean_html
+from .ingestion.providers import (
+    NewsAPIProvider,
+    RSSProvider,
+    YouTubeProvider,
+)
 from .sources import (
     ProductionSourceRegistry,
     SourceAcceptanceResult,
@@ -35,7 +36,7 @@ def _valid_http_url(value: str) -> bool:
 
 
 class SourceAcceptanceEngine:
-    """Deterministic 13-stage source acceptance and verification engine."""
+    """Deterministic 13-stage source acceptance and verification engine with provider dispatch."""
 
     def __init__(
         self,
@@ -52,6 +53,11 @@ class SourceAcceptanceEngine:
         self._valid_topics = {t for d in self.taxonomy.get("domains", {}).values() for t in d.get("topics", [])}
         self._valid_regions = set(self.taxonomy.get("regions", []))
         self._valid_countries = set(self.taxonomy.get("countries", []))
+
+        # Provider Dispatchers
+        self.rss_provider = RSSProvider(timeout=self.timeout, custom_parser=self.custom_parser)
+        self.youtube_provider = YouTubeProvider()
+        self.news_api_provider = NewsAPIProvider()
 
     def evaluate_source(
         self,
@@ -141,189 +147,71 @@ class SourceAcceptanceEngine:
                 details={"reason": "Source disabled in configuration"},
             )
 
-        # Stage 3: AUTHENTICATED check
-        auth_ok = True
-        if contract.authentication_required:
-            env_var = contract.authentication_env_var or "API_KEY"
-            key_val = os.environ.get(env_var, "").strip()
-            if not key_val:
-                auth_ok = False
-                failure_codes.append(f"MISSING_CREDENTIAL_{env_var}")
-        checks["authenticated"] = auth_ok
+        # Stage 2-8, 11, 13: Provider-Specific Dispatch
+        stype = contract.type.lower()
+        method = contract.collection_method.lower()
 
-        # Stage 2: REACHABLE check
-        url = contract.url
-        reachable_ok = _valid_http_url(url)
-        if not reachable_ok:
-            failure_codes.append("INVALID_URL")
-        checks["reachable"] = reachable_ok
+        if stype == "youtube" or "youtube" in method:
+            prov_res = self.youtube_provider.validate(contract, run_id=run_id, live=self.live)
+        elif stype in ("news_api", "newsapi") or "news_api" in method or "newsapi" in method:
+            prov_res = self.news_api_provider.validate(contract, run_id=run_id, live=self.live)
+        else:
+            prov_res = self.rss_provider.validate(contract, run_id=run_id, live=self.live)
 
-        # Network / Collection Stages
-        collection_ok = False
-        response_ok = False
-        schema_ok = False
-        freshness_ok = False
-        extractable_ok = False
-        evidence_ok = False
-        items_seen = 0
-        items_valid = 0
-        items_rejected = 0
-        latest_content_at: str | None = None
-        oldest_content_at: str | None = None
+        # Merge static contract findings with provider execution findings
+        all_failure_codes = list(dict.fromkeys(failure_codes + prov_res.failure_codes))
+        all_warnings = list(dict.fromkeys(warnings + prov_res.warnings))
+        merged_details = {**details, **prov_res.details}
 
-        if reachable_ok and auth_ok:
-            try:
-                if self.custom_parser:
-                    parsed = self.custom_parser(url)
-                else:
-                    # Always call requests.get so timeout is applied and tests can monkeypatch.
-                    # In offline/test mode callers monkeypatch requests.get to return fixture data.
-                    resp = requests.get(
-                        url,
-                        timeout=self.timeout,
-                        headers={"User-Agent": "news-youtube-intelligence/1.0"},
-                    )
-                    resp.raise_for_status()
-                    parsed = feedparser.parse(resp.content)
-
-                http_status = getattr(parsed, "status", 200)
-                details["http_status"] = http_status
-                response_ok = (http_status in {200, 301, 302}) or (not getattr(parsed, "bozo", False))
-                checks["response_valid"] = response_ok
-
-                # Validate feed entries
-                is_valid, feed_reason, entries = RssParser.validate_feed(parsed)
-                collection_ok = is_valid
-                checks["collection_success"] = collection_ok
-                details["feed_status"] = feed_reason
-
-                items_seen = len(entries)
-                valid_entries = []
-                now_utc = datetime.now(UTC)
-                dates: list[datetime] = []
-
-                for entry in entries:
-                    link = entry.get("link", "")
-                    title = entry.get("title", "")
-                    if not link or not title:
-                        items_rejected += 1
-                        continue
-
-                    # Freshness timestamp evaluation
-                    pub_parsed = getattr(entry, "published_parsed", None) or entry.get("published_parsed")
-                    if pub_parsed and len(pub_parsed) >= 6:
-                        try:
-                            dt = datetime(*pub_parsed[:6], tzinfo=UTC)
-                            dates.append(dt)
-                        except (ValueError, TypeError):
-                            pass
-
-                    items_valid += 1
-                    valid_entries.append(entry)
-
-                schema_ok = (items_valid > 0) or (items_seen == 0 and not getattr(parsed, "bozo", False))
-                checks["schema_valid"] = schema_ok
-
-                if dates:
-                    dates.sort()
-                    oldest_dt = dates[0]
-                    latest_dt = dates[-1]
-                    oldest_content_at = oldest_dt.isoformat()
-                    latest_content_at = latest_dt.isoformat()
-
-                    age_hours = (now_utc - latest_dt).total_seconds() / 3600.0
-                    details["latest_item_age_hours"] = round(age_hours, 1)
-
-                    if age_hours <= contract.freshness_policy.stale_after_hours:
-                        freshness_ok = True
-                    else:
-                        failure_codes.append(f"STALE_CONTENT_{round(age_hours, 1)}h_OLD")
-                elif items_valid > 0:
-                    warnings.append("NO_PARSEABLE_PUBLICATION_DATES")
-                    freshness_ok = True  # Not provably stale
-                else:
-                    freshness_ok = True  # Empty feed is handled by schema/collection
-
-                checks["freshness_valid"] = freshness_ok
-
-                # Content Extractability & Evidence Quality
-                if valid_entries:
-                    first_entry = valid_entries[0]
-                    summary_text = clean_html(str(first_entry.get("summary", "") or first_entry.get("title", "")))
-                    extractable_ok = len(summary_text) > 0
-                    evidence_ok = len(summary_text) > 0
-                else:
-                    extractable_ok = True
-                    evidence_ok = True
-
-                checks["content_extractable"] = extractable_ok
-                checks["evidence_valid"] = evidence_ok
-
-                if not schema_ok:
-                    failure_codes.append("SCHEMA_INVALID")
-                if not extractable_ok:
-                    failure_codes.append("CONTENT_UNEXTRACTABLE")
-                if not evidence_ok:
-                    failure_codes.append("EVIDENCE_INSUFFICIENT")
-
-            except Exception as exc:
-                failure_codes.append(f"NETWORK_ERROR_{type(exc).__name__}")
-                details["error"] = str(exc)
-
-        checks["collection_success"] = collection_ok
-        checks["response_valid"] = response_ok
-        checks["schema_valid"] = schema_ok
-        checks["freshness_valid"] = freshness_ok
-        checks["content_extractable"] = extractable_ok
-        checks["evidence_valid"] = evidence_ok
-
-        # Determine Final Acceptance State
-        elapsed_ms = (time.perf_counter() - start_time) * 1000.0
         is_all_passed = (
             configured_ok
             and mapping_ok
             and role_ok
             and license_ok
             and retention_ok
-            and auth_ok
-            and reachable_ok
-            and collection_ok
-            and response_ok
-            and schema_ok
-            and freshness_ok
-            and extractable_ok
-            and evidence_ok
+            and prov_res.authenticated
+            and prov_res.reachable
+            and prov_res.collection_success
+            and prov_res.response_valid
+            and prov_res.schema_valid
+            and prov_res.freshness_valid
+            and prov_res.content_extractable
+            and prov_res.evidence_valid
+            and not all_failure_codes
         )
 
-        status = SourceAcceptanceStatus.READY.value if is_all_passed else SourceAcceptanceStatus.QUARANTINED.value
+        if is_all_passed:
+            final_status = SourceAcceptanceStatus.READY.value
+        else:
+            final_status = SourceAcceptanceStatus.QUARANTINED.value
 
         return SourceAcceptanceResult(
             source_id=sid,
             run_id=run_id,
             checked_at=now_iso,
             configured=configured_ok,
-            reachable=reachable_ok,
-            authenticated=auth_ok,
-            collection_success=collection_ok,
-            response_valid=response_ok,
-            freshness_valid=freshness_ok,
-            schema_valid=schema_ok,
-            content_extractable=extractable_ok,
+            reachable=prov_res.reachable,
+            authenticated=prov_res.authenticated,
+            collection_success=prov_res.collection_success,
+            response_valid=prov_res.response_valid,
+            freshness_valid=prov_res.freshness_valid,
+            schema_valid=prov_res.schema_valid,
+            content_extractable=prov_res.content_extractable,
             role_valid=role_ok,
             mapping_valid=mapping_ok,
-            evidence_valid=evidence_ok,
+            evidence_valid=prov_res.evidence_valid,
             license_valid=license_ok,
             retention_valid=retention_ok,
-            status=status,
-            failure_codes=failure_codes,
-            warnings=warnings,
-            latency_ms=round(elapsed_ms, 2),
-            items_seen=items_seen,
-            items_valid=items_valid,
-            items_rejected=items_rejected,
-            latest_content_at=latest_content_at,
-            oldest_content_at=oldest_content_at,
-            details=details,
+            status=final_status,
+            failure_codes=all_failure_codes,
+            warnings=all_warnings,
+            latency_ms=prov_res.latency_ms,
+            items_seen=prov_res.items_seen,
+            items_valid=prov_res.items_valid,
+            items_rejected=prov_res.items_rejected,
+            latest_content_at=prov_res.latest_content_at,
+            oldest_content_at=prov_res.oldest_content_at,
+            details=merged_details,
         )
 
 

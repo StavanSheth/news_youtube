@@ -1,0 +1,166 @@
+{
+  "version": "1.0.0",
+  "description": "Deterministic RAG Retrieval and Provenance Benchmark Suite",
+  "cases": [
+    {
+      "id": "case-ai-foundation-models",
+      "query": "frontier foundation model reasoning benchmark evaluation",
+      "micro_topic_id": "foundation-models",
+      "expected_source_ids": ["tech-daily", "ai-research-lab"],
+      "expected_content_ids": ["cnt-fm-001", "cnt-fm-002"],
+      "forbidden_source_ids": ["untrusted-rumors", "bad-quarantined-source"],
+      "forbidden_micro_topics": ["shipping-logistics", "crop-farming"],
+      "minimum_precision": 0.85,
+      "minimum_recall": 0.85,
+      "minimum_mrr": 0.90,
+      "test_chunks": [
+        {
+          "id": "chk-fm-1",
+          "text": "Frontier foundation model benchmark release demonstrates high reasoning accuracy across multi-modal benchmarks.",
+          "metadata": {
+            "content_id": "cnt-fm-001",
+            "source_id": "tech-daily",
+            "url": "https://techdaily.test/fm-1",
+            "micro_topic_id": "foundation-models",
+            "published_at": "2026-09-18T10:00:00Z",
+            "retrieved_at": "2026-09-18T11:00:00Z",
+            "trust_tier": 1
+          }
+        },
+        {
+          "id": "chk-fm-2",
+          "text": "Technical report on foundation model evaluation methodologies and test-time compute scaling laws.",
+          "metadata": {
+            "content_id": "cnt-fm-002",
+            "source_id": "ai-research-lab",
+            "url": "https://research.test/fm-eval",
+            "micro_topic_id": "foundation-models",
+            "published_at": "2026-09-18T12:00:00Z",
+            "retrieved_at": "2026-09-18T12:30:00Z",
+            "trust_tier": 1
+          }
+        },
+        {
+          "id": "chk-fm-forbidden-topic",
+          "text": "Bulk container shipping fleet logistics and freight container freight handling operations.",
+          "metadata": {
+            "content_id": "cnt-ship-001",
+            "source_id": "shipping-daily",
+            "url": "https://shipping.test/cargo",
+            "micro_topic_id": "shipping-logistics",
+            "published_at": "2026-09-18T10:00:00Z",
+            "retrieved_at": "2026-09-18T11:00:00Z",
+            "trust_tier": 2
+          }
+        },
+        {
+          "id": "chk-fm-quarantined",
+          "text": "Frontier foundation model unverified internal memo leak claim without provenance.",
+          "metadata": {
+            "content_id": "cnt-quar-001",
+            "source_id": "bad-quarantined-source",
+            "url": "https://rumor.test/leak",
+            "micro_topic_id": "foundation-models",
+            "published_at": "2026-09-18T10:00:00Z",
+            "retrieved_at": "2026-09-18T11:00:00Z",
+            "quarantined": true,
+            "trust_tier": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "case-ai-agents",
+      "query": "autonomous AI agent tool execution and multi-step planning loop",
+      "micro_topic_id": "ai-agents",
+      "expected_source_ids": ["agent-labs", "github-official"],
+      "expected_content_ids": ["cnt-ag-001", "cnt-ag-002"],
+      "forbidden_source_ids": ["crypto-spam"],
+      "forbidden_micro_topics": ["real-estate"],
+      "minimum_precision": 0.85,
+      "minimum_recall": 0.85,
+      "minimum_mrr": 0.90,
+      "test_chunks": [
+        {
+          "id": "chk-ag-1",
+          "text": "Autonomous AI agent architecture featuring resilient tool execution, verification, and sandboxed planning loops.",
+          "metadata": {
+            "content_id": "cnt-ag-001",
+            "source_id": "agent-labs",
+            "url": "https://agentlabs.test/architecture",
+            "micro_topic_id": "ai-agents",
+            "published_at": "2026-09-18T09:00:00Z",
+            "retrieved_at": "2026-09-18T10:00:00Z",
+            "trust_tier": 1
+          }
+        },
+        {
+          "id": "chk-ag-2",
+          "text": "Open-source agent orchestration framework with verified action schemas and recursive error recovery.",
+          "metadata": {
+            "content_id": "cnt-ag-002",
+            "source_id": "github-official",
+            "url": "https://github.test/agent-loop",
+            "micro_topic_id": "ai-agents",
+            "published_at": "2026-09-18T11:00:00Z",
+            "retrieved_at": "2026-09-18T11:15:00Z",
+            "trust_tier": 1
+          }
+        },
+        {
+          "id": "chk-ag-irrelevant",
+          "text": "Residential real estate market price index and suburban housing mortgage rates.",
+          "metadata": {
+            "content_id": "cnt-re-001",
+            "source_id": "realty-times",
+            "url": "https://realty.test/index",
+            "micro_topic_id": "real-estate",
+            "published_at": "2026-09-18T08:00:00Z",
+            "retrieved_at": "2026-09-18T09:00:00Z",
+            "trust_tier": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "case-finance-macroeconomics",
+      "query": "global macroeconomics aggregate GDP growth rate and recession indicators",
+      "micro_topic_id": "macroeconomics",
+      "expected_source_ids": ["imf-official", "central-bank-wire"],
+      "expected_content_ids": ["cnt-macro-001"],
+      "forbidden_source_ids": ["celebrity-gossip"],
+      "forbidden_micro_topics": ["gaming-consoles"],
+      "minimum_precision": 0.85,
+      "minimum_recall": 0.85,
+      "minimum_mrr": 0.90,
+      "test_chunks": [
+        {
+          "id": "chk-macro-1",
+          "text": "Global economic outlook report analyzes aggregate GDP growth rates, cross-country productivity, and economic cycle indicators.",
+          "metadata": {
+            "content_id": "cnt-macro-001",
+            "source_id": "imf-official",
+            "url": "https://imf.test/weo-2026",
+            "micro_topic_id": "macroeconomics",
+            "published_at": "2026-09-18T08:00:00Z",
+            "retrieved_at": "2026-09-18T08:30:00Z",
+            "trust_tier": 1
+          }
+        },
+        {
+          "id": "chk-macro-future",
+          "text": "Future economic predictions for the year 2099.",
+          "metadata": {
+            "content_id": "cnt-future-001",
+            "source_id": "speculation-blog",
+            "url": "https://future.test/2099",
+            "micro_topic_id": "macroeconomics",
+            "published_at": "2099-01-01T00:00:00Z",
+            "retrieved_at": "2026-09-18T09:00:00Z",
+            "trust_tier": 3
+          }
+        }
+      ]
+    }
+  ]
+}

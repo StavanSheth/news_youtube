@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-09-19T15:27:06.480299+00:00",
+  "cases_total": 3,
+  "average_precision": 1.0,
+  "average_recall": 1.0,
+  "average_mrr": 1.0,
+  "provenance_completeness_pct": 100.0,
+  "microtopic_isolation_pct": 100.0,
+  "quarantine_exclusion_pct": 100.0,
+  "freshness_compliance_pct": 100.0,
+  "status": "PASS",
+  "cases": [
+    {
+      "case_id": "case-ai-foundation-models",
+      "micro_topic_id": "foundation-models",
+      "precision": 1.0,
+      "recall": 1.0,
+      "mrr": 1.0,
+      "retrieved_count": 2,
+      "provenance_ok": true,
+      "topic_isolated": true,
+      "no_quarantined": true,
+      "freshness_ok": true
+    },
+    {
+      "case_id": "case-ai-agents",
+      "micro_topic_id": "ai-agents",
+      "precision": 1.0,
+      "recall": 1.0,
+      "mrr": 1.0,
+      "retrieved_count": 2,
+      "provenance_ok": true,
+      "topic_isolated": true,
+      "no_quarantined": true,
+      "freshness_ok": true
+    },
+    {
+      "case_id": "case-finance-macroeconomics",
+      "micro_topic_id": "macroeconomics",
+      "precision": 1.0,
+      "recall": 1.0,
+      "mrr": 1.0,
+      "retrieved_count": 1,
+      "provenance_ok": true,
+      "topic_isolated": true,
+      "no_quarantined": true,
+      "freshness_ok": true
+    }
+  ]
+}

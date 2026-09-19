@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from pathlib import Path
 from typing import Any
 from ..coverage import CoverageState, resolve_micro_topic_status
 
@@ -146,9 +147,11 @@ def build_source_microtopic_matrix(
                 configured.append(s_dict)
 
         source_count = len(configured)
+        enabled_sources = [s for s in configured if s.get("enabled")]
         ready_sources = []
         fresh_sources = []
         failed_sources = []
+        rag_eligible_sources = []
 
         for s_dict in configured:
             sid = s_dict.get("id") or s_dict.get("source_id")
@@ -158,12 +161,18 @@ def build_source_microtopic_matrix(
                 ready_sources.append(s_dict)
                 if s_h.get("fresh", True):
                     fresh_sources.append(s_dict)
+                if status != "QUARANTINED":
+                    rag_eligible_sources.append(s_dict)
             elif status in ("FAILED", "SOURCE_FAILURE", "ERROR"):
                 failed_sources.append(s_dict)
 
         ready_source_count = len(ready_sources)
+        enabled_source_count = len(enabled_sources)
+        healthy_source_count = ready_source_count
         fresh_source_count = len(fresh_sources)
-        evidence_capable = ready_source_count > 0 or fresh_source_count > 0
+        usable_source_count = len([s for s in ready_sources if s.get("enabled")])
+        rag_eligible_source_count = len(rag_eligible_sources)
+        evidence_capable = usable_source_count > 0 or fresh_source_count > 0
 
         if source_count == 0:
             coverage_status = "NO_SOURCE"
@@ -185,10 +194,16 @@ def build_source_microtopic_matrix(
             "domain": domain,
             "topic": topic,
             "source_count": source_count,
-            "ready_source_count": ready_source_count,
+            "enabled_source_count": enabled_source_count,
+            "healthy_source_count": healthy_source_count,
             "fresh_source_count": fresh_source_count,
+            "usable_source_count": usable_source_count,
+            "rag_eligible_source_count": rag_eligible_source_count,
+            "ready_source_count": ready_source_count,
             "evidence_capable": evidence_capable,
+            "status": coverage_status,
             "coverage_status": coverage_status,
+            "usable_protection": "NO_USABLE_SOURCE" if usable_source_count == 0 else "USABLE",
         })
 
     return {
@@ -196,3 +211,25 @@ def build_source_microtopic_matrix(
         "status_counts": status_counts,
         "matrix": results,
     }
+
+
+def check_microtopic_source_protection(coverage_record: dict[str, Any]) -> tuple[bool, str]:
+    """If a micro-topic has 0 usable sources, protection triggers returning NO_USABLE_SOURCE."""
+    usable = coverage_record.get("usable_source_count", 0) or coverage_record.get("ready_source_count", 0)
+    if usable == 0:
+        return False, "NO_USABLE_SOURCE"
+    return True, "USABLE"
+
+
+def generate_source_microtopic_coverage_report(
+    matrix_records: list[dict[str, Any]],
+    sources: list[Any],
+    output_file: Path,
+    source_health: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Generate source_microtopic_coverage.json per Section 33."""
+    import json
+    matrix_data = build_source_microtopic_matrix(matrix_records, sources, source_health=source_health)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    output_file.write_text(json.dumps(matrix_data, indent=2), encoding="utf-8")
+    return matrix_data

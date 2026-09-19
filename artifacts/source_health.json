@@ -1,0 +1,496 @@
+{
+  "total_sources": 49,
+  "enabled_sources": 0,
+  "sources": [
+    {
+      "source_id": "ap-global",
+      "name": "AP Global",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 24
+    },
+    {
+      "source_id": "financial-times",
+      "name": "Financial Times",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 24
+    },
+    {
+      "source_id": "bloomberg",
+      "name": "Bloomberg",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 24
+    },
+    {
+      "source_id": "wsj",
+      "name": "Wall Street Journal",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 24
+    },
+    {
+      "source_id": "pib-india",
+      "name": "Press Information Bureau",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "sebi-india",
+      "name": "SEBI",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "meity-india",
+      "name": "MeitY",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "isro-india",
+      "name": "ISRO",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "india-defence",
+      "name": "Ministry of Defence India",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "india-mea",
+      "name": "Ministry of External Affairs India",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "india-finance-ministry",
+      "name": "Ministry of Finance India",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "dpiit-india",
+      "name": "DPIIT",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "india-commerce",
+      "name": "Ministry of Commerce India",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "white-house",
+      "name": "White House",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "us-congress",
+      "name": "US Congress",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "federal-reserve",
+      "name": "Federal Reserve",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "us-sec",
+      "name": "US SEC",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "nist",
+      "name": "NIST",
+      "type": "rss",
+      "role": "RESEARCH",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "european-commission",
+      "name": "European Commission",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "ecb",
+      "name": "European Central Bank",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "esa",
+      "name": "European Space Agency",
+      "type": "rss",
+      "role": "RESEARCH",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "cern",
+      "name": "CERN",
+      "type": "rss",
+      "role": "RESEARCH",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "uk-government",
+      "name": "UK Government",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "bank-of-england",
+      "name": "Bank of England",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "pboc",
+      "name": "Peoples Bank of China",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "xinhua",
+      "name": "Xinhua",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "meti-japan",
+      "name": "METI Japan",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "bank-of-japan",
+      "name": "Bank of Japan",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "jaxa",
+      "name": "JAXA",
+      "type": "rss",
+      "role": "RESEARCH",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "south-korea-msit",
+      "name": "South Korea MSIT",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "bank-of-korea",
+      "name": "Bank of Korea",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "yonhap",
+      "name": "Yonhap",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "uae-wam",
+      "name": "UAE Government WAM",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "saudi-spa",
+      "name": "Saudi Press Agency",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "qatar-qna",
+      "name": "Qatar News Agency",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "australia-government",
+      "name": "Australian Government",
+      "type": "rss",
+      "role": "GOVERNMENT",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "rba",
+      "name": "Reserve Bank of Australia",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "csiro",
+      "name": "CSIRO",
+      "type": "rss",
+      "role": "RESEARCH",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "australian-space-agency",
+      "name": "Australian Space Agency",
+      "type": "rss",
+      "role": "OFFICIAL",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "abc-australia",
+      "name": "ABC Australia",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "reuters",
+      "name": "Reuters News Wire",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 24
+    },
+    {
+      "source_id": "bbc-news",
+      "name": "BBC World News",
+      "type": "rss",
+      "role": "NEWS",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 24
+    },
+    {
+      "source_id": "techcrunch",
+      "name": "TechCrunch",
+      "type": "rss",
+      "role": "SPECIALIST",
+      "trust_tier": 3,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 24
+    },
+    {
+      "source_id": "ars-technica",
+      "name": "Ars Technica",
+      "type": "rss",
+      "role": "SPECIALIST",
+      "trust_tier": 3,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 24
+    },
+    {
+      "source_id": "mit-tech-review",
+      "name": "MIT Technology Review",
+      "type": "rss",
+      "role": "RESEARCH",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+      "name": "Google DeepMind & Developers",
+      "type": "youtube",
+      "role": "VIDEO",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "UCvKRFFb5gkKB4sS5n9v3TdA",
+      "name": "OpenAI Official",
+      "type": "youtube",
+      "role": "VIDEO",
+      "trust_tier": 1,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "UCrM7B7SL_g1ed38eDoKE8vw",
+      "name": "Bloomberg Technology",
+      "type": "youtube",
+      "role": "VIDEO",
+      "trust_tier": 2,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    },
+    {
+      "source_id": "UCSHZKyawb77ixDdsGog4iWA",
+      "name": "Lex Fridman Podcast",
+      "type": "youtube",
+      "role": "VIDEO",
+      "trust_tier": 3,
+      "enabled": false,
+      "status": "CONFIGURED",
+      "freshness_max_age_hours": 48
+    }
+  ]
+}

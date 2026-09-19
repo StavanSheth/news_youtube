@@ -1,0 +1,1060 @@
+{
+  "generated_at": "2026-09-19T15:27:06.515641+00:00",
+  "phase_2": {
+    "score": 100.0,
+    "status": "PASS",
+    "categories": {
+      "Micro-topic Classification": 100.0,
+      "Theme Contracts": 100.0,
+      "Theme Routing": 100.0,
+      "Theme Specificity": 100.0,
+      "RAG Eligibility": 100.0,
+      "RAG Retrieval": 100.0,
+      "RAG Provenance": 100.0,
+      "ContextPacket": 100.0,
+      "AI Structured Output": 100.0,
+      "Token/Budget Governance": 100.0,
+      "Execution Isolation": 100.0,
+      "Testing": 100.0
+    },
+    "details": {
+      "Micro-topic Classification": {
+        "category": "Micro-topic Classification",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 5,
+        "tests_passed": 5,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "matrix_file_exists",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "matrix_json_valid",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "exact_236_records",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "unique_microtopic_identities",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "valid_classification_templates",
+            "passed": true,
+            "weight": 10.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Theme Contracts": {
+        "category": "Theme Contracts",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 4,
+        "tests_passed": 4,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "themes_loaded_count_236",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "all_contracts_valid",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "unique_theme_ids",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "contracts_field_completeness",
+            "passed": true,
+            "weight": 10.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Theme Routing": {
+        "category": "Theme Routing",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "exact_microtopic_routing_accuracy",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "strict_precedence_no_fallback_override",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "routing_resolution_metadata_exposed",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Theme Specificity": {
+        "category": "Theme Specificity",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 4,
+        "tests_passed": 4,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "average_specificity_above_threshold",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "zero_generic_themes_detected",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "all_themes_have_at_least_4_questions",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "minimum_specificity_bound",
+            "passed": true,
+            "weight": 10.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "RAG Eligibility": {
+        "category": "RAG Eligibility",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 4,
+        "tests_passed": 4,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "valid_chunk_admitted",
+            "passed": true,
+            "weight": 25.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "future_evidence_hard_rejected",
+            "passed": true,
+            "weight": 25.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "quarantined_source_rejected",
+            "passed": true,
+            "weight": 25.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "unauthorized_microtopic_rejected",
+            "passed": true,
+            "weight": 25.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "RAG Retrieval": {
+        "category": "RAG Retrieval",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 4,
+        "tests_passed": 4,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "golden_retrieval_precision",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "golden_retrieval_recall",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "mean_reciprocal_rank",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "zero_cross_microtopic_leakage",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "RAG Provenance": {
+        "category": "RAG Provenance",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "retrieval_provenance_completeness",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "orphan_evidence_hard_rejected",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "immutable_provenance_linkage",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "ContextPacket": {
+        "category": "ContextPacket",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "packet_schema_and_identity_valid",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "traces_and_provenance_embedded",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "immutability_guarantee",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "AI Structured Output": {
+        "category": "AI Structured Output",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "schema_validation_and_normalization",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "malformed_output_rejection",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "structured_evidence_citations",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Token/Budget Governance": {
+        "category": "Token/Budget Governance",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "hierarchical_budget_authorization",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "pre_call_reservation_model",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "provider_limits_tracking",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Execution Isolation": {
+        "category": "Execution Isolation",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "cache_key_microtopic_isolation",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "budget_consumption_isolation",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "one_topic_at_a_time_architecture",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Testing": {
+        "category": "Testing",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "unit_and_integration_test_breadth",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "adversarial_isolation_suite_present",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "golden_benchmark_dataset_present",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      }
+    }
+  },
+  "phase_3": {
+    "score": 100.0,
+    "status": "PASS",
+    "categories": {
+      "Source Contracts": 100.0,
+      "Source Acceptance": 100.0,
+      "Source Registry": 100.0,
+      "RSS": 100.0,
+      "YouTube": 100.0,
+      "News API": 100.0,
+      "Freshness": 100.0,
+      "Canonical Content": 100.0,
+      "Source Health": 100.0,
+      "Quarantine": 100.0,
+      "Micro-topic Source Coverage": 100.0,
+      "Source \u2192 RAG Integration": 100.0,
+      "Observability": 100.0,
+      "CI Validation": 100.0,
+      "Live Readiness": 100.0
+    },
+    "details": {
+      "Source Contracts": {
+        "category": "Source Contracts",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "source_contract_invariants_valid",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "minimum_40_sources_configured",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "source_role_and_trust_tiers_typed",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Source Acceptance": {
+        "category": "Source Acceptance",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "provider_dispatcher_integrated",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "disabled_source_lifecycle_respected",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "acceptance_state_machine_valid",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Source Registry": {
+        "category": "Source Registry",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "registry_load_success",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "unique_source_identifiers",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "channels_registry_merged",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "RSS": {
+        "category": "RSS",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "minimum_20_rss_sources_registered",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "rss_provider_implementation",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "feed_parsing_and_sanitization",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "YouTube": {
+        "category": "YouTube",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "youtube_quota_tracker_reserve_consume",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "circuit_breaker_protection",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "youtube_provider_implementation",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "News API": {
+        "category": "News API",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "news_api_client_resilience",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "news_api_provider_implementation",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "credential_masking_protection",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Freshness": {
+        "category": "Freshness",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "freshness_policies_configured",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "stale_content_detection_rule",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "future_timestamp_rejection",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Canonical Content": {
+        "category": "Canonical Content",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "canonical_content_invariants_pass",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "timestamp_ordering_strictly_enforced",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "provenance_identity_preservation",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Source Health": {
+        "category": "Source Health",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "weighted_health_metric_formula",
+            "passed": true,
+            "weight": 40.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "source_health_persistence_schema",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "credentials_redacted_from_health_records",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Quarantine": {
+        "category": "Quarantine",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "quarantined_sources_blocked_from_rag",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "quarantine_recovery_revalidation_required",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "quarantine_state_machine_transition",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Micro-topic Source Coverage": {
+        "category": "Micro-topic Source Coverage",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "all_236_microtopics_evaluated_for_sources",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "zero_source_protection_defined",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "coverage_matrix_status_counts_present",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Source \u2192 RAG Integration": {
+        "category": "Source \u2192 RAG Integration",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "provider_to_rag_integration_suite",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "canonical_content_chunking_contract",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "unbroken_provenance_lineage",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Observability": {
+        "category": "Observability",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "structured_events_telemetry",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "secret_masking_formatter",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "pipeline_stage_event_taxonomy",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "CI Validation": {
+        "category": "CI Validation",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "deterministic_ci_workflow_present",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "isolated_live_validation_workflow_present",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "hermetic_test_separation",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      },
+      "Live Readiness": {
+        "category": "Live Readiness",
+        "score": 100.0,
+        "status": "PASS",
+        "tests_total": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "evidence": [
+          {
+            "check": "dedicated_live_test_suite_present",
+            "passed": true,
+            "weight": 50.0,
+            "blocking": true,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "clean_skip_without_network_or_keys",
+            "passed": true,
+            "weight": 30.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          },
+          {
+            "check": "explicit_live_invocation_isolation",
+            "passed": true,
+            "weight": 20.0,
+            "blocking": false,
+            "message": "",
+            "details": {}
+          }
+        ],
+        "blocking_failures": []
+      }
+    }
+  },
+  "overall": {
+    "score": 100.0,
+    "status": "PASS"
+  },
+  "below_90": [],
+  "blocking_failures": {},
+  "live_status": "NOT_REQUESTED",
+  "unverified_items": [],
+  "configuration_gaps": [],
+  "human_review_gaps": [
+    "ai-models-tools",
+    "artificial-intelligence-llms-theme",
+    "artificial-intelligence-multimodal-ai-theme",
+    "artificial-intelligence-reasoning-models-theme",
+    "ai-agents-intelligence",
+    "artificial-intelligence-agentic-workflows-theme",
+    "artificial-intelligence-coding-models-theme",
+    "artificial-intelligence-rag-theme",
+    "artificial-intelligence-embeddings-theme",
+    "artificial-intelligence-training-theme"
+  ]
+}
