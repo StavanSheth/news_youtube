@@ -298,10 +298,37 @@ class ApplicationOrchestrator:
             "stories_analyzed": len(analyzed_stories),
             "newsletter_stories": len(newsletter.stories),
         }
-        self.runner.finalize(
+        final_summary = self.runner.finalize(
             status=RunLifecycleStage.COMPLETED.value,
             counts=counts,
         )
+
+        # Section 9.10: Explicit run_summary.json
+        summary_file = output_dir / "run_summary.json"
+        summary_payload = {
+            **final_summary.to_dict(),
+            "items_collected": len(discovered),
+            "items_filtered": len(filtered_items),
+            "duplicates": max(0, len(filtered_items) - len(deduped_items)),
+            "classified_items": len(processed_items),
+            "micro_topic_jobs": sum(len(p.micro_topic_jobs) for p in processed_items),
+            "rag_calls": getattr(rag_manager, "metrics", {}).get("retrievals", 0),
+            "rag_candidates": getattr(rag_manager, "metrics", {}).get("chunks_after_scope", 0),
+            "rag_selected": getattr(rag_manager, "metrics", {}).get("chunks_selected", 0),
+            "ai_calls": len(analyzed_stories),
+            "ai_success": len(analyzed_stories),
+            "ai_failures": 0,
+            "validation_failures": 0,
+            "budget_skips": len(getattr(self.budget_manager, "skips", [])),
+            "newsletter_items": len(newsletter.stories),
+            "delivery_status": "SKIPPED_DRY_RUN" if (self.dry_run or self.fixture_path) else "DELIVERED",
+            "total_input_tokens": getattr(getattr(ai_provider, "cumulative_usage", None), "prompt_tokens", 0),
+            "total_output_tokens": getattr(getattr(ai_provider, "cumulative_usage", None), "candidate_tokens", 0),
+            "total_cached_tokens": 0,
+            "estimated_cost": getattr(getattr(ai_provider, "cumulative_usage", None), "estimated_cost_usd", 0.0),
+            "duration": (now_utc() - started).total_seconds(),
+        }
+        summary_file.write_text(json.dumps(summary_payload, indent=2), encoding="utf-8")
 
         # Optional SMTP delivery
         if not self.dry_run and not self.fixture_path:

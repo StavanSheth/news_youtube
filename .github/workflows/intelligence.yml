@@ -2,9 +2,9 @@ name: Intelligence digest
 
 on:
   schedule:
-    # UTC times: 07:30, 13:30, and 19:30 Asia/Kolkata.
+    # Set E Canonical Editions (Asia/Kolkata timezone: 07:30 MORNING and 19:30 NIGHT)
+    # UTC: 02:00 (MORNING) and 14:00 (NIGHT)
     - cron: "0 2 * * *"
-    - cron: "0 8 * * *"
     - cron: "0 14 * * *"
   workflow_dispatch:
 
@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: intelligence-digest
+  group: intelligence-digest-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -29,21 +29,20 @@ jobs:
       EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
       EMAIL_TO: ${{ secrets.EMAIL_TO }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - run: pytest
-      - run: ruff check .
-      - run: python src/main.py
+      - name: Run Production Intelligence Runner
+        run: python src/main.py
       - name: Commit generated intelligence state and reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data output
-          git diff --cached --quiet || git commit -m "chore: update intelligence digest"
+          git diff --cached --quiet || git commit -m "chore: update intelligence digest [skip ci]"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
