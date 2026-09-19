@@ -1,41 +1,1927 @@
 sources:
-  - {id: ap-global, name: AP Global, type: rss, region: global, country: GLOBAL, domains: [geopolitics, finance], topics: [wars-conflicts, markets], micro_topics: [strategic-competition, macroeconomics], trust_tier: 2, enabled: false, collection_method: rss, feed_url: https://apnews.com/index.rss, fields: [title, summary, published_at, url], refresh: hourly}
-  - {id: financial-times, name: Financial Times, type: rss, region: global, country: GLOBAL, domains: [finance, technology-companies], topics: [markets, strategy], micro_topics: [macroeconomics, product-launches], trust_tier: 2, enabled: false, collection_method: rss, feed_url: https://www.ft.com/rss/home, fields: [title, summary, published_at, url], refresh: hourly}
-  - {id: bloomberg, name: Bloomberg, type: rss, region: global, country: GLOBAL, domains: [finance], topics: [markets, macroeconomics], micro_topics: [macroeconomics, markets], trust_tier: 2, enabled: false, collection_method: rss, feed_url: https://www.bloomberg.com/feeds/podcasts.xml, fields: [title, summary, published_at, url], refresh: hourly}
-  - {id: wsj, name: Wall Street Journal, type: rss, region: north-america, country: US, domains: [finance, technology-companies], topics: [markets, strategy], micro_topics: [macroeconomics, product-launches], trust_tier: 2, enabled: false, collection_method: rss, feed_url: https://feeds.a.dj.com/rss/RSSWorldNews.xml, fields: [title, summary, published_at, url], refresh: hourly}
-  - {id: pib-india, name: Press Information Bureau, type: rss, region: india-south-asia, country: IN, domains: [government-policy], topics: [national-policy, ministries], micro_topics: [national-policy, grants], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://pib.gov.in/RssMain.aspx, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: sebi-india, name: SEBI, type: rss, region: india-south-asia, country: IN, domains: [finance, government-policy], topics: [regulation, banking], micro_topics: [regulation], trust_tier: 1, enabled: false, collection_method: rss, feed_url: "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes", fields: [title, summary, published_at, url], refresh: daily}
-  - {id: meity-india, name: MeitY, type: rss, region: india-south-asia, country: IN, domains: [government-policy, artificial-intelligence], topics: [digital-policy, ai-policy], micro_topics: [ai-regulation, digital-policy], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.meity.gov.in/, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: isro-india, name: ISRO, type: rss, region: india-south-asia, country: IN, domains: [space], topics: [launches, missions], micro_topics: [launches, missions], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.isro.gov.in/Press.html, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: india-defence, name: Ministry of Defence India, type: rss, region: india-south-asia, country: IN, domains: [defence], topics: [defence-policy, procurement], micro_topics: [defence-policy, procurement], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.mod.gov.in/, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: india-mea, name: Ministry of External Affairs India, type: rss, region: india-south-asia, country: IN, domains: [geopolitics], topics: [diplomacy, bilateral-relations], micro_topics: [diplomacy, strategic-competition], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.mea.gov.in/, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: india-finance-ministry, name: Ministry of Finance India, type: rss, region: india-south-asia, country: IN, domains: [finance, government-policy], topics: [budget, macroeconomics], micro_topics: [macroeconomics, national-policy], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.finmin.nic.in/, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: dpiit-india, name: DPIIT, type: rss, region: india-south-asia, country: IN, domains: [startups-vc, manufacturing], topics: [startups, industrial-policy], micro_topics: [funding, industrial-policy], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://dpiit.gov.in/, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: india-commerce, name: Ministry of Commerce India, type: rss, region: india-south-asia, country: IN, domains: [geopolitics, manufacturing], topics: [trade, exports], micro_topics: [trade, supply-chains], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://commerce.gov.in/, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: white-house, name: White House, type: rss, region: north-america, country: US, domains: [government-policy, geopolitics], topics: [national-policy, diplomacy], micro_topics: [national-policy, strategic-competition], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.whitehouse.gov/briefing-room/feed/, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: us-congress, name: US Congress, type: rss, region: north-america, country: US, domains: [government-policy], topics: [legislation, regulation], micro_topics: [legislation, regulation], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.congress.gov/rss/most-recent-bills.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: federal-reserve, name: Federal Reserve, type: rss, region: north-america, country: US, domains: [finance], topics: [central-banks, interest-rates], micro_topics: [central-banks, interest-rates], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.federalreserve.gov/feeds/press_all.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: us-sec, name: US SEC, type: rss, region: north-america, country: US, domains: [finance, government-policy], topics: [regulation, equities], micro_topics: [regulation, equities], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.sec.gov/news/pressreleases.rss, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: nist, name: NIST, type: rss, region: north-america, country: US, domains: [cybersecurity, research], topics: [vulnerabilities, security-tooling], micro_topics: [cves, security-tooling], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.nist.gov/news-events/news/rss.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: european-commission, name: European Commission, type: rss, region: europe-eu, country: EU, domains: [government-policy, geopolitics], topics: [regulation, trade], micro_topics: [ai-regulation, trade], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://ec.europa.eu/commission/presscorner/api/rss, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: ecb, name: European Central Bank, type: rss, region: europe-eu, country: EU, domains: [finance], topics: [central-banks, interest-rates], micro_topics: [central-banks, interest-rates], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.ecb.europa.eu/rss/press.html, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: esa, name: European Space Agency, type: rss, region: europe-eu, country: EU, domains: [space, research], topics: [missions, engineering], micro_topics: [missions, engineering], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.esa.int/rssfeed/TopStories, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: cern, name: CERN, type: rss, region: europe-eu, country: EU, domains: [research, quantum-computing], topics: [physics, research], micro_topics: [research, breakthroughs], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://home.cern/news/rss.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: uk-government, name: UK Government, type: rss, region: uk, country: GB, domains: [government-policy], topics: [national-policy, regulation], micro_topics: [national-policy, regulation], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.gov.uk/government/announcements.atom, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: bank-of-england, name: Bank of England, type: rss, region: uk, country: GB, domains: [finance], topics: [central-banks, interest-rates], micro_topics: [central-banks, interest-rates], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.bankofengland.co.uk/rss/news, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: pboc, name: Peoples Bank of China, type: rss, region: china, country: CN, domains: [finance], topics: [central-banks, currencies], micro_topics: [central-banks, currencies], trust_tier: 1, enabled: false, collection_method: rss, feed_url: http://www.pbc.gov.cn/english/130716/index.html, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: xinhua, name: Xinhua, type: rss, region: china, country: CN, domains: [geopolitics], topics: [diplomacy, trade], micro_topics: [strategic-competition, trade], trust_tier: 2, enabled: false, collection_method: rss, feed_url: http://www.news.cn/english/rss/world.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: meti-japan, name: METI Japan, type: rss, region: japan, country: JP, domains: [government-policy, semiconductors], topics: [industrial-policy, export-controls], micro_topics: [semiconductor-policy, export-controls], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.meti.go.jp/english/press/rss.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: bank-of-japan, name: Bank of Japan, type: rss, region: japan, country: JP, domains: [finance], topics: [central-banks, interest-rates], micro_topics: [central-banks, interest-rates], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.boj.or.jp/en/rss/whatsnew.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: jaxa, name: JAXA, type: rss, region: japan, country: JP, domains: [space], topics: [missions, launches], micro_topics: [missions, launches], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://global.jaxa.jp/rss/press.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: south-korea-msit, name: South Korea MSIT, type: rss, region: south-korea, country: KR, domains: [government-policy, artificial-intelligence], topics: [digital-policy, ai-policy], micro_topics: [ai-regulation, digital-policy], trust_tier: 1, enabled: false, collection_method: rss, feed_url: "https://www.msit.go.kr/eng/bbs/list.do?sCode=eng&mId=4&mPid=2", fields: [title, summary, published_at, url], refresh: daily}
-  - {id: bank-of-korea, name: Bank of Korea, type: rss, region: south-korea, country: KR, domains: [finance], topics: [central-banks, interest-rates], micro_topics: [central-banks, interest-rates], trust_tier: 1, enabled: false, collection_method: rss, feed_url: "https://www.bok.or.kr/eng/bbs/E0000634/list.do?menuNo=400069", fields: [title, summary, published_at, url], refresh: daily}
-  - {id: yonhap, name: Yonhap, type: rss, region: south-korea, country: KR, domains: [geopolitics, semiconductors], topics: [strategic-competition, supply-chains], micro_topics: [strategic-competition, supply-chains], trust_tier: 2, enabled: false, collection_method: rss, feed_url: https://en.yna.co.kr/RSS/news.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: uae-wam, name: UAE Government WAM, type: rss, region: middle-east, country: AE, domains: [government-policy, geopolitics], topics: [national-policy, trade], micro_topics: [national-policy, trade], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://wam.ae/en/rss, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: saudi-spa, name: Saudi Press Agency, type: rss, region: middle-east, country: SA, domains: [government-policy, geopolitics], topics: [national-policy, diplomacy], micro_topics: [national-policy, diplomacy], trust_tier: 2, enabled: false, collection_method: rss, feed_url: https://www.spa.gov.sa/rss.php, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: qatar-qna, name: Qatar News Agency, type: rss, region: middle-east, country: QA, domains: [geopolitics], topics: [diplomacy, trade], micro_topics: [diplomacy, trade], trust_tier: 2, enabled: false, collection_method: rss, feed_url: https://www.qna.org.qa/en/rss, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: australia-government, name: Australian Government, type: rss, region: australia-oceania, country: AU, domains: [government-policy], topics: [national-policy, regulation], micro_topics: [national-policy, regulation], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.australia.gov.au/rss, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: rba, name: Reserve Bank of Australia, type: rss, region: australia-oceania, country: AU, domains: [finance], topics: [central-banks, interest-rates], micro_topics: [central-banks, interest-rates], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.rba.gov.au/rss/rss-cb.xml, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: csiro, name: CSIRO, type: rss, region: australia-oceania, country: AU, domains: [research, manufacturing], topics: [engineering, breakthroughs], micro_topics: [engineering, breakthroughs], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.csiro.au/en/news/rss, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: australian-space-agency, name: Australian Space Agency, type: rss, region: australia-oceania, country: AU, domains: [space], topics: [missions, space-policy], micro_topics: [missions, space-policy], trust_tier: 1, enabled: false, collection_method: rss, feed_url: https://www.industry.gov.au/news/rss, fields: [title, summary, published_at, url], refresh: daily}
-  - {id: abc-australia, name: ABC Australia, type: rss, region: australia-oceania, country: AU, domains: [geopolitics, finance], topics: [markets, diplomacy], micro_topics: [macroeconomics, diplomacy], trust_tier: 2, enabled: false, collection_method: rss, feed_url: https://www.abc.net.au/news/feed/51120/rss.xml, fields: [title, summary, published_at, url], refresh: daily}
+- id: ap-global
+  name: AP Global
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: global
+  country: GLOBAL
+  domains:
+  - geopolitics
+  - finance
+  topics:
+  - wars-conflicts
+  - markets
+  micro_topics:
+  - strategic-competition
+  - macroeconomics
+  collection_method: rss
+  feed_url: https://apnews.com/index.rss
+  enabled: false
+  freshness_policy:
+    max_age_hours: 24
+    stale_after_hours: 48
+    schedule: hourly
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: hourly
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: financial-times
+  name: Financial Times
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: global
+  country: GLOBAL
+  domains:
+  - finance
+  - technology-companies
+  topics:
+  - markets
+  - strategy
+  micro_topics:
+  - macroeconomics
+  - product-launches
+  collection_method: rss
+  feed_url: https://www.ft.com/rss/home
+  enabled: false
+  freshness_policy:
+    max_age_hours: 24
+    stale_after_hours: 48
+    schedule: hourly
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: hourly
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: bloomberg
+  name: Bloomberg
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: global
+  country: GLOBAL
+  domains:
+  - finance
+  topics:
+  - markets
+  - macroeconomics
+  micro_topics:
+  - macroeconomics
+  - markets
+  collection_method: rss
+  feed_url: https://www.bloomberg.com/feeds/podcasts.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 24
+    stale_after_hours: 48
+    schedule: hourly
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: hourly
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: wsj
+  name: Wall Street Journal
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: north-america
+  country: US
+  domains:
+  - finance
+  - technology-companies
+  topics:
+  - markets
+  - strategy
+  micro_topics:
+  - macroeconomics
+  - product-launches
+  collection_method: rss
+  feed_url: https://feeds.a.dj.com/rss/RSSWorldNews.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 24
+    stale_after_hours: 48
+    schedule: hourly
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: hourly
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: pib-india
+  name: Press Information Bureau
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - government-policy
+  topics:
+  - national-policy
+  - ministries
+  micro_topics:
+  - national-policy
+  - grants
+  collection_method: rss
+  feed_url: https://pib.gov.in/RssMain.aspx
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: sebi-india
+  name: SEBI
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - finance
+  - government-policy
+  topics:
+  - regulation
+  - banking
+  micro_topics:
+  - regulation
+  collection_method: rss
+  feed_url: https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: meity-india
+  name: MeitY
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - government-policy
+  - artificial-intelligence
+  topics:
+  - digital-policy
+  - ai-policy
+  micro_topics:
+  - ai-regulation
+  - digital-policy
+  collection_method: rss
+  feed_url: https://www.meity.gov.in/
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: isro-india
+  name: ISRO
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - space
+  topics:
+  - launches
+  - missions
+  micro_topics:
+  - launches
+  - missions
+  collection_method: rss
+  feed_url: https://www.isro.gov.in/Press.html
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: india-defence
+  name: Ministry of Defence India
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - defence
+  topics:
+  - defence-policy
+  - procurement
+  micro_topics:
+  - defence-policy
+  - procurement
+  collection_method: rss
+  feed_url: https://www.mod.gov.in/
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: india-mea
+  name: Ministry of External Affairs India
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - geopolitics
+  topics:
+  - diplomacy
+  - bilateral-relations
+  micro_topics:
+  - diplomacy
+  - strategic-competition
+  collection_method: rss
+  feed_url: https://www.mea.gov.in/
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: india-finance-ministry
+  name: Ministry of Finance India
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - finance
+  - government-policy
+  topics:
+  - macroeconomics
+  - macroeconomics
+  micro_topics:
+  - macroeconomics
+  - national-policy
+  collection_method: rss
+  feed_url: https://www.finmin.nic.in/
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: dpiit-india
+  name: DPIIT
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - startups-vc
+  - manufacturing
+  topics:
+  - funding
+  - industrial-policy
+  micro_topics:
+  - funding
+  - industrial-policy
+  collection_method: rss
+  feed_url: https://dpiit.gov.in/
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: india-commerce
+  name: Ministry of Commerce India
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: india-south-asia
+  country: IN
+  domains:
+  - geopolitics
+  - manufacturing
+  topics:
+  - trade
+  - exports
+  micro_topics:
+  - trade
+  - supply-chains
+  collection_method: rss
+  feed_url: https://commerce.gov.in/
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: white-house
+  name: White House
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: north-america
+  country: US
+  domains:
+  - government-policy
+  - geopolitics
+  topics:
+  - national-policy
+  - diplomacy
+  micro_topics:
+  - national-policy
+  - strategic-competition
+  collection_method: rss
+  feed_url: https://www.whitehouse.gov/briefing-room/feed/
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: us-congress
+  name: US Congress
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: north-america
+  country: US
+  domains:
+  - government-policy
+  topics:
+  - legislation
+  - regulation
+  micro_topics:
+  - legislation
+  - regulation
+  collection_method: rss
+  feed_url: https://www.congress.gov/rss/most-recent-bills.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: federal-reserve
+  name: Federal Reserve
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: north-america
+  country: US
+  domains:
+  - finance
+  topics:
+  - central-banks
+  - interest-rates
+  micro_topics:
+  - central-banks
+  - interest-rates
+  collection_method: rss
+  feed_url: https://www.federalreserve.gov/feeds/press_all.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: us-sec
+  name: US SEC
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: north-america
+  country: US
+  domains:
+  - finance
+  - government-policy
+  topics:
+  - regulation
+  - equities
+  micro_topics:
+  - regulation
+  - equities
+  collection_method: rss
+  feed_url: https://www.sec.gov/news/pressreleases.rss
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: nist
+  name: NIST
+  type: rss
+  role: RESEARCH
+  trust_tier: 1
+  region: north-america
+  country: US
+  domains:
+  - cybersecurity
+  - research
+  topics:
+  - vulnerabilities
+  - security-tooling
+  micro_topics:
+  - cves
+  - security-tooling
+  collection_method: rss
+  feed_url: https://www.nist.gov/news-events/news/rss.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: european-commission
+  name: European Commission
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: europe-eu
+  country: EU
+  domains:
+  - government-policy
+  - geopolitics
+  topics:
+  - regulation
+  - trade
+  micro_topics:
+  - ai-regulation
+  - trade
+  collection_method: rss
+  feed_url: https://ec.europa.eu/commission/presscorner/api/rss
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: ecb
+  name: European Central Bank
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: europe-eu
+  country: EU
+  domains:
+  - finance
+  topics:
+  - central-banks
+  - interest-rates
+  micro_topics:
+  - central-banks
+  - interest-rates
+  collection_method: rss
+  feed_url: https://www.ecb.europa.eu/rss/press.html
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: esa
+  name: European Space Agency
+  type: rss
+  role: RESEARCH
+  trust_tier: 1
+  region: europe-eu
+  country: EU
+  domains:
+  - space
+  - research
+  topics:
+  - missions
+  - engineering
+  micro_topics:
+  - missions
+  - engineering
+  collection_method: rss
+  feed_url: https://www.esa.int/rssfeed/TopStories
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: cern
+  name: CERN
+  type: rss
+  role: RESEARCH
+  trust_tier: 1
+  region: europe-eu
+  country: EU
+  domains:
+  - research
+  - quantum-computing
+  topics:
+  - physics
+  - research
+  micro_topics:
+  - research
+  - breakthroughs
+  collection_method: rss
+  feed_url: https://home.cern/news/rss.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: uk-government
+  name: UK Government
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: uk
+  country: GB
+  domains:
+  - government-policy
+  topics:
+  - national-policy
+  - regulation
+  micro_topics:
+  - national-policy
+  - regulation
+  collection_method: rss
+  feed_url: https://www.gov.uk/government/announcements.atom
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: bank-of-england
+  name: Bank of England
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: uk
+  country: GB
+  domains:
+  - finance
+  topics:
+  - central-banks
+  - interest-rates
+  micro_topics:
+  - central-banks
+  - interest-rates
+  collection_method: rss
+  feed_url: https://www.bankofengland.co.uk/rss/news
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: pboc
+  name: Peoples Bank of China
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: china
+  country: CN
+  domains:
+  - finance
+  topics:
+  - central-banks
+  - currencies
+  micro_topics:
+  - central-banks
+  - currencies
+  collection_method: rss
+  feed_url: http://www.pbc.gov.cn/english/130716/index.html
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: xinhua
+  name: Xinhua
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: china
+  country: CN
+  domains:
+  - geopolitics
+  topics:
+  - diplomacy
+  - trade
+  micro_topics:
+  - strategic-competition
+  - trade
+  collection_method: rss
+  feed_url: http://www.news.cn/english/rss/world.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: meti-japan
+  name: METI Japan
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: japan
+  country: JP
+  domains:
+  - government-policy
+  - semiconductors
+  topics:
+  - industrial-policy
+  - export-controls
+  micro_topics:
+  - semiconductor-policy
+  - export-controls
+  collection_method: rss
+  feed_url: https://www.meti.go.jp/english/press/rss.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: bank-of-japan
+  name: Bank of Japan
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: japan
+  country: JP
+  domains:
+  - finance
+  topics:
+  - central-banks
+  - interest-rates
+  micro_topics:
+  - central-banks
+  - interest-rates
+  collection_method: rss
+  feed_url: https://www.boj.or.jp/en/rss/whatsnew.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: jaxa
+  name: JAXA
+  type: rss
+  role: RESEARCH
+  trust_tier: 1
+  region: japan
+  country: JP
+  domains:
+  - space
+  topics:
+  - missions
+  - launches
+  micro_topics:
+  - missions
+  - launches
+  collection_method: rss
+  feed_url: https://global.jaxa.jp/rss/press.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: south-korea-msit
+  name: South Korea MSIT
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: south-korea
+  country: KR
+  domains:
+  - government-policy
+  - artificial-intelligence
+  topics:
+  - digital-policy
+  - ai-policy
+  micro_topics:
+  - ai-regulation
+  - digital-policy
+  collection_method: rss
+  feed_url: https://www.msit.go.kr/eng/bbs/list.do?sCode=eng&mId=4&mPid=2
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: bank-of-korea
+  name: Bank of Korea
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: south-korea
+  country: KR
+  domains:
+  - finance
+  topics:
+  - central-banks
+  - interest-rates
+  micro_topics:
+  - central-banks
+  - interest-rates
+  collection_method: rss
+  feed_url: https://www.bok.or.kr/eng/bbs/E0000634/list.do?menuNo=400069
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: yonhap
+  name: Yonhap
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: south-korea
+  country: KR
+  domains:
+  - geopolitics
+  - semiconductors
+  topics:
+  - strategic-competition
+  - supply-chains
+  micro_topics:
+  - strategic-competition
+  - supply-chains
+  collection_method: rss
+  feed_url: https://en.yna.co.kr/RSS/news.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: uae-wam
+  name: UAE Government WAM
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: middle-east
+  country: AE
+  domains:
+  - government-policy
+  - geopolitics
+  topics:
+  - national-policy
+  - trade
+  micro_topics:
+  - national-policy
+  - trade
+  collection_method: rss
+  feed_url: https://wam.ae/en/rss
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: saudi-spa
+  name: Saudi Press Agency
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: middle-east
+  country: SA
+  domains:
+  - government-policy
+  - geopolitics
+  topics:
+  - national-policy
+  - diplomacy
+  micro_topics:
+  - national-policy
+  - diplomacy
+  collection_method: rss
+  feed_url: https://www.spa.gov.sa/rss.php
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: qatar-qna
+  name: Qatar News Agency
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: middle-east
+  country: QA
+  domains:
+  - geopolitics
+  topics:
+  - diplomacy
+  - trade
+  micro_topics:
+  - diplomacy
+  - trade
+  collection_method: rss
+  feed_url: https://www.qna.org.qa/en/rss
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: australia-government
+  name: Australian Government
+  type: rss
+  role: GOVERNMENT
+  trust_tier: 1
+  region: australia-oceania
+  country: AU
+  domains:
+  - government-policy
+  topics:
+  - national-policy
+  - regulation
+  micro_topics:
+  - national-policy
+  - regulation
+  collection_method: rss
+  feed_url: https://www.australia.gov.au/rss
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: rba
+  name: Reserve Bank of Australia
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: australia-oceania
+  country: AU
+  domains:
+  - finance
+  topics:
+  - central-banks
+  - interest-rates
+  micro_topics:
+  - central-banks
+  - interest-rates
+  collection_method: rss
+  feed_url: https://www.rba.gov.au/rss/rss-cb.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: csiro
+  name: CSIRO
+  type: rss
+  role: RESEARCH
+  trust_tier: 1
+  region: australia-oceania
+  country: AU
+  domains:
+  - research
+  - manufacturing
+  topics:
+  - engineering
+  - breakthroughs
+  micro_topics:
+  - engineering
+  - breakthroughs
+  collection_method: rss
+  feed_url: https://www.csiro.au/en/news/rss
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: australian-space-agency
+  name: Australian Space Agency
+  type: rss
+  role: OFFICIAL
+  trust_tier: 1
+  region: australia-oceania
+  country: AU
+  domains:
+  - space
+  topics:
+  - missions
+  - space-policy
+  micro_topics:
+  - missions
+  - space-policy
+  collection_method: rss
+  feed_url: https://www.industry.gov.au/news/rss
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: abc-australia
+  name: ABC Australia
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: australia-oceania
+  country: AU
+  domains:
+  - geopolitics
+  - finance
+  topics:
+  - markets
+  - diplomacy
+  micro_topics:
+  - macroeconomics
+  - diplomacy
+  collection_method: rss
+  feed_url: https://www.abc.net.au/news/feed/51120/rss.xml
+  enabled: false
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: reuters
+  name: Reuters News Wire
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: global
+  country: GLOBAL
+  domains:
+  - geopolitics
+  - finance
+  - technology-companies
+  topics:
+  - wars-conflicts
+  - markets
+  - strategy
+  micro_topics:
+  - strategic-competition
+  - macroeconomics
+  collection_method: rss
+  feed_url: https://www.reutersagency.com/feed/?best-topics=business-finance&post_type=best
+  enabled: false
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: hourly
+  freshness_policy:
+    max_age_hours: 24
+    stale_after_hours: 48
+    schedule: hourly
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: bbc-news
+  name: BBC World News
+  type: rss
+  role: NEWS
+  trust_tier: 2
+  region: uk
+  country: GB
+  domains:
+  - geopolitics
+  - technology-companies
+  topics:
+  - diplomacy
+  - product-launches
+  micro_topics:
+  - strategic-competition
+  - product-launches
+  collection_method: rss
+  feed_url: https://feeds.bbci.co.uk/news/world/rss.xml
+  enabled: false
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: hourly
+  freshness_policy:
+    max_age_hours: 24
+    stale_after_hours: 48
+    schedule: hourly
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: techcrunch
+  name: TechCrunch
+  type: rss
+  role: SPECIALIST
+  trust_tier: 3
+  region: north-america
+  country: US
+  domains:
+  - startups-vc
+  - artificial-intelligence
+  - technology-companies
+  topics:
+  - funding
+  - ai-startups
+  - product-launches
+  micro_topics:
+  - funding
+  - ai-startups
+  - product-launches
+  collection_method: rss
+  feed_url: https://techcrunch.com/feed/
+  enabled: false
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: hourly
+  freshness_policy:
+    max_age_hours: 24
+    stale_after_hours: 48
+    schedule: hourly
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: ars-technica
+  name: Ars Technica
+  type: rss
+  role: SPECIALIST
+  trust_tier: 3
+  region: north-america
+  country: US
+  domains:
+  - software-engineering
+  - artificial-intelligence
+  - cybersecurity
+  topics:
+  - developer-tools
+  - llms
+  - security-tooling
+  micro_topics:
+  - developer-tools
+  - llms
+  - security-tooling
+  collection_method: rss
+  feed_url: https://feeds.arstechnica.com/arstechnica/index
+  enabled: false
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: hourly
+  freshness_policy:
+    max_age_hours: 24
+    stale_after_hours: 48
+    schedule: hourly
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2
+- id: mit-tech-review
+  name: MIT Technology Review
+  type: rss
+  role: RESEARCH
+  trust_tier: 2
+  region: north-america
+  country: US
+  domains:
+  - research
+  - artificial-intelligence
+  - quantum-computing
+  topics:
+  - breakthroughs
+  - ai-research
+  - research
+  micro_topics:
+  - breakthroughs
+  - ai-research
+  - research
+  collection_method: rss
+  feed_url: https://www.technologyreview.com/feed/
+  enabled: false
+  fields:
+  - title
+  - summary
+  - published_at
+  - url
+  refresh: daily
+  freshness_policy:
+    max_age_hours: 48
+    stale_after_hours: 72
+    schedule: daily
+  extraction_capability: article_body
+  authentication_required: false
+  authentication_env_var: null
+  attribution_required: true
+  storage_permission: true
+  retention_policy: REQUIRED
+  license_status: PERMITTED
+  fallback_behavior: DEGRADE
+  budgets:
+    max_items_per_run: 25
+    max_pages: 1
+    max_bytes: 5000000
+    timeout_seconds: 15
+    retry_count: 2

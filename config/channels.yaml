@@ -1,5 +1,154 @@
 channels:
-  - id: ""
-    name: "Example channel - set a YouTube channel ID"
+  - id: "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+    name: "Google DeepMind & Developers"
     priority: 1.0
     enabled: false
+    type: "youtube"
+    role: "VIDEO"
+    trust_tier: 1
+    region: "global"
+    country: "GLOBAL"
+    domains:
+      - "artificial-intelligence"
+      - "research"
+    topics:
+      - "foundation-models"
+      - "ai-research"
+    micro_topics:
+      - "foundation-models"
+      - "ai-research"
+    collection_method: "youtube_api"
+    authentication_required: true
+    authentication_env_var: "YOUTUBE_API_KEY"
+    freshness_policy:
+      max_age_hours: 168
+      stale_after_hours: 336
+      schedule: "weekly"
+    extraction_capability: "transcript"
+    attribution_required: true
+    storage_permission: true
+    retention_policy: "REQUIRED"
+    license_status: "PERMITTED"
+    fallback_behavior: "OPTIONAL"
+    budgets:
+      max_items_per_run: 10
+      max_pages: 1
+      max_bytes: 2000000
+      timeout_seconds: 15
+      retry_count: 2
+
+  - id: "UCvKRFFb5gkKB4sS5n9v3TdA"
+    name: "OpenAI Official"
+    priority: 1.0
+    enabled: false
+    type: "youtube"
+    role: "VIDEO"
+    trust_tier: 1
+    region: "north-america"
+    country: "US"
+    domains:
+      - "artificial-intelligence"
+      - "technology-companies"
+    topics:
+      - "foundation-models"
+      - "product-launches"
+    micro_topics:
+      - "foundation-models"
+      - "product-launches"
+    collection_method: "youtube_api"
+    authentication_required: true
+    authentication_env_var: "YOUTUBE_API_KEY"
+    freshness_policy:
+      max_age_hours: 168
+      stale_after_hours: 336
+      schedule: "weekly"
+    extraction_capability: "transcript"
+    attribution_required: true
+    storage_permission: true
+    retention_policy: "REQUIRED"
+    license_status: "PERMITTED"
+    fallback_behavior: "OPTIONAL"
+    budgets:
+      max_items_per_run: 10
+      max_pages: 1
+      max_bytes: 2000000
+      timeout_seconds: 15
+      retry_count: 2
+
+  - id: "UCrM7B7SL_g1ed38eDoKE8vw"
+    name: "Bloomberg Technology"
+    priority: 0.9
+    enabled: false
+    type: "youtube"
+    role: "VIDEO"
+    trust_tier: 2
+    region: "north-america"
+    country: "US"
+    domains:
+      - "technology-companies"
+      - "finance"
+      - "semiconductors"
+    topics:
+      - "strategy"
+      - "markets"
+      - "chip-design"
+    micro_topics:
+      - "corporate-ai-strategy"
+      - "markets"
+    collection_method: "youtube_api"
+    authentication_required: true
+    authentication_env_var: "YOUTUBE_API_KEY"
+    freshness_policy:
+      max_age_hours: 72
+      stale_after_hours: 168
+      schedule: "daily"
+    extraction_capability: "transcript"
+    attribution_required: true
+    storage_permission: true
+    retention_policy: "REQUIRED"
+    license_status: "PERMITTED"
+    fallback_behavior: "OPTIONAL"
+    budgets:
+      max_items_per_run: 15
+      max_pages: 1
+      max_bytes: 2000000
+      timeout_seconds: 15
+      retry_count: 2
+
+  - id: "UCSHZKyawb77ixDdsGog4iWA"
+    name: "Lex Fridman Podcast"
+    priority: 0.8
+    enabled: false
+    type: "youtube"
+    role: "VIDEO"
+    trust_tier: 3
+    region: "global"
+    country: "GLOBAL"
+    domains:
+      - "artificial-intelligence"
+      - "software-engineering"
+      - "research"
+    topics:
+      - "ai-research"
+      - "programming-languages"
+    micro_topics:
+      - "ai-research"
+    collection_method: "youtube_api"
+    authentication_required: true
+    authentication_env_var: "YOUTUBE_API_KEY"
+    freshness_policy:
+      max_age_hours: 336
+      stale_after_hours: 720
+      schedule: "weekly"
+    extraction_capability: "transcript"
+    attribution_required: true
+    storage_permission: true
+    retention_policy: "REQUIRED"
+    license_status: "PERMITTED"
+    fallback_behavior: "OPTIONAL"
+    budgets:
+      max_items_per_run: 5
+      max_pages: 1
+      max_bytes: 3000000
+      timeout_seconds: 15
+      retry_count: 2

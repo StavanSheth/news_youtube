@@ -1,96 +1,43 @@
+"""Modular Ingestion layer exporting canonical content models, provider adapters, and backward-compatible entrypoints."""
+
 from __future__ import annotations
 
 import hashlib
-import re
 from datetime import UTC, datetime
-from html import unescape
-from urllib.parse import urlparse
 
 import feedparser
-import requests
-from youtube_transcript_api import YouTubeTranscriptApi
 
-from .models import SourceItem
-from .statuses import SourceStatus
-
-
-def clean_html(value: str) -> str:
-    value = re.sub(
-        r"<script[^>]*>.*?</script>|<style[^>]*>.*?</style>",
-        " ",
-        value,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-    return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", value))).strip()
-
-
-def article_text(url: str, timeout: int = 15) -> tuple[str, dict[str, str]]:
-    parsed = urlparse(url)
-    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
-        return "", {
-            "article_status": "INVALID_URL",
-            "article_reason": "Only http(s) URLs are allowed",
-        }
-    try:
-        response = requests.get(
-            url, timeout=timeout, headers={"User-Agent": "news-youtube-intelligence/1.0"}
-        )
-        response.raise_for_status()
-        text = clean_html(response.text)
-        if len(text) < 200:
-            return "", {
-                "article_status": "EMPTY",
-                "article_reason": "Extracted page text was too short",
-            }
-        return text[:50000], {
-            "article_status": "AVAILABLE",
-            "article_retrieved_at": datetime.now(UTC).isoformat(),
-        }
-    except requests.RequestException as error:
-        return "", {"article_status": "FAILED", "article_reason": type(error).__name__}
+from ..models import SourceItem
+from ..statuses import SourceStatus
+from .base import BaseProviderAdapter, CanonicalContent, SafeHttpClient
+from .news_api.client import NewsApiClient
+from .news_api.normalizer import NewsApiNormalizer
+from .rss.client import RssClient
+from .rss.normalizer import RssNormalizer, article_text, clean_html
+from .rss.parser import RssParser
+from .youtube.client import YouTubeClient
+from .youtube.normalizer import YouTubeNormalizer
+from .youtube.quota import YouTubeQuotaTracker, default_quota_tracker
+from .youtube.transcripts import TranscriptStatus, YouTubeTranscriptHandler
 
 
 def transcript(
-    video_id: str, languages: list[str], requested: bool = True
+    video_id: str, languages: list[str] | None = None, requested: bool = True
 ) -> tuple[str, dict[str, str]]:
-    if not requested:
-        return "", {"transcript_status": "NOT_REQUESTED"}
-    try:
-        api = YouTubeTranscriptApi()
-        fetched = api.fetch(video_id, languages=languages or None)
-        rows = fetched.to_raw_data()
-        text = " ".join(str(row.get("text", "")) for row in rows).strip()
-        if not text:
-            return "", {
-                "transcript_status": "EMPTY",
-                "transcript_language": getattr(fetched, "language_code", ""),
-            }
-        return text, {
-            "transcript_status": "AVAILABLE",
-            "transcript_language": getattr(fetched, "language_code", ""),
-            "transcript_retrieved_at": datetime.now(UTC).isoformat(),
-        }
-    except Exception as error:  # Library exception types vary between transcript-api releases.
-        name = type(error).__name__.lower()
-        status = (
-            "UNAVAILABLE"
-            if any(
-                token in name for token in ("disabled", "notranscript", "notranscripts", "language")
-            )
-            else "FAILED"
-        )
-        return "", {"transcript_status": status, "transcript_reason": type(error).__name__}
+    """Backward-compatible wrapper around YouTubeTranscriptHandler."""
+    return YouTubeTranscriptHandler.fetch_transcript(video_id, languages=languages, requested=requested)
 
 
 def enriched_rss(
     sources: list[dict], fetch_articles: bool = True, source_health: dict[str, dict] | None = None
 ) -> list[SourceItem]:
+    """Ingest, validate, and normalize configured RSS sources."""
     items: list[SourceItem] = []
     for source in sources:
         if not source.get("enabled", True) or source.get("type", "rss") != "rss":
             continue
         health = source_health if source_health is not None else {}
-        source_id = source.get("id", source.get("name", "rss").lower().replace(" ", "-"))
+        source_id = str(source.get("id", source.get("name", "rss")).lower().replace(" ", "-"))
         try:
             feed_url = source.get("feed_url") or source.get("url", "")
             if not feed_url:
@@ -108,10 +55,14 @@ def enriched_rss(
         except Exception as error:
             health[source_id] = {
                 "source_id": source_id,
-                "status": SourceStatus.FAILED.value, "entries": 0, "source": source.get("name", source_id),
-                "trust_tier": source.get("trust_tier", 4), "error": type(error).__name__,
+                "status": SourceStatus.FAILED.value,
+                "entries": 0,
+                "source": source.get("name", source_id),
+                "trust_tier": source.get("trust_tier", 4),
+                "error": type(error).__name__,
             }
             continue
+
         for entry in parsed.entries:
             url = entry.get("link", "")
             if not url:
@@ -134,7 +85,7 @@ def enriched_rss(
                     url=url,
                     text=full_text or summary,
                     published_at=published,
-                    source=source["name"],
+                    source=source.get("name", source_id),
                     priority=float(source.get("priority", 1)),
                     metadata={
                         **metadata,
@@ -152,3 +103,25 @@ def enriched_rss(
                 )
             )
     return items
+
+
+__all__ = [
+    "BaseProviderAdapter",
+    "CanonicalContent",
+    "NewsApiClient",
+    "NewsApiNormalizer",
+    "RssClient",
+    "RssNormalizer",
+    "RssParser",
+    "SafeHttpClient",
+    "TranscriptStatus",
+    "YouTubeClient",
+    "YouTubeNormalizer",
+    "YouTubeQuotaTracker",
+    "YouTubeTranscriptHandler",
+    "article_text",
+    "clean_html",
+    "default_quota_tracker",
+    "enriched_rss",
+    "transcript",
+]

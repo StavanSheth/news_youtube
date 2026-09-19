@@ -71,7 +71,7 @@ def load_config(root: Path) -> AppConfig:
         configured = settings.setdefault("news", {}).setdefault("sources", [])
         existing = {source.get("id") for source in configured}
         configured.extend(source for source in registry if source.get("id") not in existing)
-    validate_sources(settings.get("news", {}).get("sources", []))
+    validate_sources(settings.get("news", {}).get("sources", []), taxonomy)
     return AppConfig(
         channels=_read_yaml(config_dir / "channels.yaml").get("channels", []),
         topics=topics,

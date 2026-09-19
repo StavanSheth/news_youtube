@@ -20,6 +20,20 @@ class MetricsRegistry:
     def count(self, name: str, value: int = 1) -> None:
         self.counters[name] += value
 
+    def count_source_check(self, status: str) -> None:
+        self.count(f"source_checks_total.{status.lower()}")
+        self.count("source_checks_total")
+
+    def count_source_ready(self) -> None:
+        self.count("sources_ready_total")
+
+    def count_source_quarantined(self) -> None:
+        self.count("sources_quarantined_total")
+
+    def count_youtube_quota(self, units: int) -> None:
+        self.count("youtube_quota_units_used", units)
+        self.count("youtube_requests_total")
+
     def gauge(self, name: str, value: float) -> None:
         self.gauges[name] = float(value)
 

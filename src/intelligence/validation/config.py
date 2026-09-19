@@ -216,17 +216,37 @@ def validate_themes(themes: list[dict[str, Any]], taxonomy: dict[str, Any], matr
         route_keys.add(route_key)
 
 
-def validate_sources(sources: list[dict[str, Any]]) -> None:
+def validate_sources(sources: list[dict[str, Any]], taxonomy: dict[str, Any] | None = None) -> None:
     required = {"id", "name", "type", "region", "country", "domains", "topics", "micro_topics", "trust_tier", "enabled", "collection_method", "fields", "refresh"}
+    valid_roles = {"NEWS", "VIDEO", "RESEARCH", "OFFICIAL", "GOVERNMENT", "COMPANY", "GITHUB", "MARKET", "SPECIALIST"}
+    valid_methods = {"rss", "api", "html", "youtube_api", "manual"}
+    valid_regions = set(taxonomy.get("regions", [])) if taxonomy else None
+    valid_domains = set(taxonomy.get("domains", {}).keys()) if taxonomy else None
     ids = []
     for source in sources:
         missing = required - source.keys()
         if missing:
             raise ValueError(f"Source {source.get('name', '<unknown>')} missing: {sorted(missing)}")
-        ids.append(source["id"])
+        sid = str(source["id"]).strip()
+        if not sid:
+            raise ValueError("Source id cannot be empty")
+        ids.append(sid)
         if source["type"] == "rss" and not (source.get("url") or source.get("feed_url")):
             raise ValueError(f"RSS source {source['id']} needs url or feed_url")
         if not 1 <= int(source["trust_tier"]) <= 4:
             raise ValueError(f"Invalid trust tier for source {source['id']}")
+        role = str(source.get("role", "")).upper()
+        if role and role not in valid_roles:
+            raise ValueError(f"Invalid source role '{role}' for source {source['id']}")
+        method = str(source.get("collection_method", "")).lower()
+        if method and method not in valid_methods:
+            raise ValueError(f"Invalid collection method '{method}' for source {source['id']}")
+        if valid_regions and source.get("region") not in valid_regions:
+            raise ValueError(f"Invalid region '{source.get('region')}' for source {source['id']}")
+        if valid_domains:
+            for d in source.get("domains", []):
+                if d not in valid_domains:
+                    raise ValueError(f"Invalid domain '{d}' for source {source['id']}")
     if len(ids) != len(set(ids)):
         raise ValueError("Source ids must be unique")
+

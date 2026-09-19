@@ -136,6 +136,20 @@ class ApplicationOrchestrator:
                 except Exception as exc:
                     LOGGER.warning("YouTube discovery failed: %s", exc)
 
+        if source_health:
+            try:
+                self.repository.save_all_source_health(source_health)
+                for s_id, sh in source_health.items():
+                    st = str(sh.get("status", ""))
+                    if st:
+                        self.metrics.count_source_check(st)
+                        if st in ("HEALTHY", "READY", "PASS"):
+                            self.metrics.count_source_ready()
+                        elif st in ("QUARANTINED", "QUARANTINE", "FAILED"):
+                            self.metrics.count_source_quarantined()
+            except Exception as exc:
+                LOGGER.warning("Failed to persist source health: %s", exc)
+
         # Stage 3: NORMALIZING & Stage 4: FILTERING
         lookback_days = int(self.config.settings.get("pipeline", {}).get("lookback_days", 3))
         lookback_floor = started - timedelta(days=lookback_days)

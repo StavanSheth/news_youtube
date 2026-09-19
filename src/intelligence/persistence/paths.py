@@ -37,6 +37,14 @@ class PersistencePaths:
         return self.data / name
 
     @property
+    def source_health(self) -> Path:
+        return self.data / "source_health.json"
+
+    @property
+    def source_health_dir(self) -> Path:
+        return self.data / "source_health"
+
+    @property
     def raw(self) -> Path:
         return self.data / "raw"
 

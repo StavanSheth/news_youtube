@@ -92,7 +92,7 @@ def evaluate_output(
 
     checks["source_health_recorded"] = bool(source_health)
     checks["source_health_ok"] = bool(source_health) and all(
-        value.get("status") in {"HEALTHY", "EMPTY"} for value in source_health.values()
+        value.get("status") in {"HEALTHY", "EMPTY", "READY", "PASS"} for value in source_health.values()
     )
 
     # Invariant Hard Failure Detection
@@ -101,7 +101,7 @@ def evaluate_output(
     has_bad_urls = not checks["source_links"]
     source_failures = [
         value for value in source_health.values()
-        if value.get("status") in {"FAILED", "SOURCE_UNAVAILABLE"}
+        if value.get("status") in {"FAILED", "SOURCE_UNAVAILABLE", "QUARANTINED"}
     ]
     hard_failure = has_uncited_claims or has_malformed_html or has_bad_urls or bool(source_failures)
 
@@ -121,7 +121,7 @@ def evaluate_output(
         sum(bool(story.get("retrieved_evidence")) for story in stories) / max(1, len(stories)) * 100
     )
     scores["source_score"] = round(
-        sum(value.get("status") in {"HEALTHY", "EMPTY"} for value in source_health.values())
+        sum(value.get("status") in {"HEALTHY", "EMPTY", "READY", "PASS"} for value in source_health.values())
         / max(1, len(source_health)) * 100
     )
     scores["actionability_score"] = round(

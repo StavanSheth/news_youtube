@@ -22,5 +22,7 @@ jobs:
         run: ruff check .
       - name: Run Test Suite
         run: pytest
+      - name: Validate Source Registry
+        run: python -m intelligence.source_validation --all
       - name: Production Dry-Run Smoke Test
         run: python src/main.py --dry-run

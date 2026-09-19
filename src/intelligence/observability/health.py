@@ -40,3 +40,29 @@ def check_system_health(
         "status": status,
         "checks": checks,
     }
+
+
+def check_source_health(
+    repository: Any,
+) -> dict[str, Any]:
+    """Check source health records from persistence and summarize readiness."""
+    all_health = {}
+    try:
+        all_health = repository.get_all_source_health()
+    except Exception:
+        return {"status": "UNKNOWN", "source_count": 0, "ready": 0, "quarantined": 0, "disabled": 0}
+
+    ready = sum(1 for h in all_health.values() if h.get("status") == "READY")
+    quarantined = sum(1 for h in all_health.values() if h.get("status") in ("QUARANTINED", "QUARANTINE"))
+    disabled = sum(1 for h in all_health.values() if h.get("status") in ("DISABLED", "DISABLE"))
+
+    status = "HEALTHY" if ready > 0 else ("DEGRADED" if quarantined > 0 else "UNKNOWN")
+
+    return {
+        "status": status,
+        "source_count": len(all_health),
+        "ready": ready,
+        "quarantined": quarantined,
+        "disabled": disabled,
+        "sources": {sid: h.get("status", "UNKNOWN") for sid, h in all_health.items()},
+    }
