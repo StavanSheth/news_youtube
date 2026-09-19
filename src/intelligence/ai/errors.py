@@ -77,6 +77,16 @@ def classify_gemini_error(exc: Exception) -> ProviderError:
             cause=exc,
         )
 
+    # Bad Request / 400
+    if "400" in err_str or "bad request" in err_str or "invalid argument" in err_str or "invalid_argument" in err_str:
+        return ProviderError(
+            ErrorCategory.SCHEMA_ERROR,
+            f"Provider rejected request as invalid: {exc}",
+            retryable=False,
+            status_code=400,
+            cause=exc,
+        )
+
     # Authentication
     if "401" in err_str or "403" in err_str or "unauthenticated" in err_str or "permission_denied" in err_str or "api key" in err_str:
         return ProviderError(

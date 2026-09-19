@@ -63,3 +63,26 @@ def estimate_tokens(text: str) -> int:
     words = len(text.split())
     char_estimate = max(1, len(text) // 4)
     return max(int(words * 1.25), char_estimate)
+
+@dataclass(frozen=True)
+class AIUsage:
+    """Normalized provider-specific usage metrics."""
+
+    input_tokens: int = 0
+    output_tokens: int = 0
+    total_tokens: int = 0
+    cached_tokens: int = 0
+    thought_tokens: int = 0
+    tool_tokens: int = 0
+    latency_ms: float = 0.0
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "input_tokens": self.input_tokens,
+            "output_tokens": self.output_tokens,
+            "total_tokens": self.total_tokens,
+            "cached_tokens": self.cached_tokens,
+            "thought_tokens": self.thought_tokens,
+            "tool_tokens": self.tool_tokens,
+            "latency_ms": self.latency_ms,
+        }

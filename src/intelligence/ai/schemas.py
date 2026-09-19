@@ -87,3 +87,53 @@ class AnalysisOutput(BaseModel):
         """Construct from raw or normalized dictionary."""
         norm = normalized_analysis(data)
         return cls(**norm)
+
+class ClaimType(StrEnum):
+    FACT = "FACT"
+    REPORTED_CLAIM = "REPORTED_CLAIM"
+    OFFICIAL_STATEMENT = "OFFICIAL_STATEMENT"
+    INFERENCE = "INFERENCE"
+    SPECULATION = "SPECULATION"
+
+
+class EvidenceReference(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    evidence_id: str
+    claim_type: str = ClaimType.FACT.value
+    claim_text: str
+    source_url: str = ""
+    inference: bool = False
+
+
+class Fact(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    statement: str
+    evidence_id: str = ""
+    claim_type: str = ClaimType.FACT.value
+
+
+class Implication(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    statement: str
+    implication_type: str = "strategic"
+    claim_type: str = ClaimType.INFERENCE.value
+
+
+class Action(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    action_text: str
+    action_type: str = "AI_DERIVED"
+    time_horizon: str = "immediate"
+
+
+class AIAnalysis(BaseModel):
+    """Pydantic model representing structured AI analysis with explicit evidence grounding."""
+    model_config = ConfigDict(extra="ignore")
+
+    summary: str = ""
+    facts: list[Fact] = Field(default_factory=list)
+    implications: list[Implication] = Field(default_factory=list)
+    actions: list[Action] = Field(default_factory=list)
+    uncertainties: list[str] = Field(default_factory=list)
+    evidence: list[EvidenceReference] = Field(default_factory=list)
+    confidence: float = Field(default=0.0, ge=0.0, le=1.0)

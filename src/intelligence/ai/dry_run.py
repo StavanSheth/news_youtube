@@ -107,6 +107,20 @@ class DryRunProvider(AIProvider):
         })
         return result
 
+    def analyze(
+        self,
+        context: Any,
+        contract: Any = None,
+    ) -> dict[str, Any]:
+        """Analyze a ContextPacket under the given contract."""
+        item = getattr(context, "current_content", {}) if hasattr(context, "current_content") else {}
+        evidence = getattr(context, "retrieved_evidence", []) if hasattr(context, "retrieved_evidence") else []
+        profile = {
+            "micro_topic": getattr(context, "micro_topic_id", "general"),
+            "theme_id": getattr(context, "theme_id", "general"),
+        }
+        return self.analyze_micro_topic(item, profile, evidence)
+
 
 class FakeAIProvider(AIProvider):
     """Configurable mock AI provider for testing edge cases, latency, and error recoveries."""
@@ -134,3 +148,17 @@ class FakeAIProvider(AIProvider):
             return normalized_analysis(res)
         dry = DryRunProvider()
         return dry.analyze_micro_topic(item, profile, evidence)
+
+    def analyze(
+        self,
+        context: Any,
+        contract: Any = None,
+    ) -> dict[str, Any]:
+        item = getattr(context, "current_content", {}) if hasattr(context, "current_content") else {}
+        evidence = getattr(context, "retrieved_evidence", []) if hasattr(context, "retrieved_evidence") else []
+        profile = {
+            "micro_topic": getattr(context, "micro_topic_id", "general"),
+            "theme_id": getattr(context, "theme_id", "general"),
+        }
+        return self.analyze_micro_topic(item, profile, evidence)
+
