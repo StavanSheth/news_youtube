@@ -6,6 +6,7 @@ from datetime import UTC, datetime
 from typing import Any
 
 from .budget import ContextBudgeter
+from .cache import RetrievalCache, RetrievalCacheKey
 from .corpus import EvidenceCorpus, RepositoryEvidenceCorpus
 from .diversity import apply_diversity_filtering
 from .eligibility import filter_eligible_candidates
@@ -23,8 +24,10 @@ class ProductionRAGManager:
         self,
         settings: dict[str, Any],
         corpus: EvidenceCorpus | None = None,
+        cache: RetrievalCache | None = None,
     ) -> None:
         self.settings = settings
+        self.cache = cache or RetrievalCache()
         self.corpus = corpus or RepositoryEvidenceCorpus(
             chunk_size=int(settings.get("retrieval_chunk_size", 1400)),
             chunk_overlap=int(settings.get("retrieval_chunk_overlap", 180)),
@@ -94,6 +97,15 @@ class ProductionRAGManager:
                 cutoff=cutoff,
                 budget=budget_config,
             )
+
+            cache_key = RetrievalCacheKey.create(
+                query=request.query,
+                micro_topic_id=request.micro_topic_id,
+                edition_cutoff=cutoff,
+            )
+            cached_result = self.cache.get(cache_key)
+            if cached_result is not None:
+                return cached_result
 
             # Step 3: Search candidates from corpus (current + historical)
             candidates = self.corpus.search(request)
@@ -174,7 +186,7 @@ class ProductionRAGManager:
                 IntelligenceStatus.NO_RELEVANT_CONTENT.value if scope_rejected_all else IntelligenceStatus.INSUFFICIENT_EVIDENCE.value
             )
 
-            return {
+            res = {
                 "micro_topic": classification.get("micro_topic", ""),
                 "query": request.query,
                 "chunks": selected_chunks,
@@ -191,6 +203,8 @@ class ProductionRAGManager:
                     "diversity": diversity_diag,
                 },
             }
+            self.cache.set(cache_key, res)
+            return res
         except Exception as error:
             self.metrics["failures"] += 1
             empty_packet = ContextPacket(

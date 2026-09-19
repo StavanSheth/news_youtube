@@ -94,11 +94,11 @@ def render_newsletter(
     ] or ["- No events met the high-importance threshold."]
 
     sections = (
-        ("News Intelligence", newsletter.news_intelligence),
-        ("Case Studies", newsletter.case_studies),
-        ("Tutorials & Engineering", newsletter.tutorials_engineering),
-        ("Podcasts & Interviews", newsletter.podcasts_interviews),
-        ("Specialist Research", newsletter.specialist_research),
+        ("News Intelligence", getattr(newsletter, "news_intelligence", [])),
+        ("Case Studies", getattr(newsletter, "case_studies", [])),
+        ("Tutorials & Engineering", getattr(newsletter, "technical_deep_dives", getattr(newsletter, "tutorials_engineering", []))),
+        ("Podcasts & Interviews", getattr(newsletter, "video_intelligence", getattr(newsletter, "podcasts_interviews", []))),
+        ("Specialist Research", getattr(newsletter, "specialist_research", [])),
     )
     for title, stream_stories in sections:
         if not stream_stories:

@@ -10,8 +10,8 @@ from .profiles import profile_for
 
 
 def catalog(
-    taxonomy: dict[str, Any],
-    topics: list[dict[str, Any]],
+    taxonomy: dict[str, Any] | None = None,
+    topics: list[dict[str, Any]] | None = None,
     profiles: dict[str, Any] | None = None,
     matrix: dict[str, Any] | None = None,
     templates: dict[str, Any] | None = None,
@@ -19,6 +19,14 @@ def catalog(
     strict: bool = False,
 ) -> list[dict[str, Any]]:
     """Create a canonical Domain -> Topic -> Micro-topic catalog from configuration."""
+    if taxonomy is None or topics is None:
+        from ..infrastructure.config import load_application_config
+        cfg = load_application_config()
+        taxonomy = taxonomy if taxonomy is not None else cfg.taxonomy
+        topics = topics if topics is not None else cfg.topics
+        profiles = profiles if profiles is not None else cfg.microtopics
+        matrix = matrix if matrix is not None else cfg.microtopic_matrix
+        templates = templates if templates is not None else cfg.profile_templates
     configured = {topic.get("key"): topic for topic in topics}
     entries: list[dict[str, Any]] = []
     matrix_records = (matrix or {}).get("records", [])

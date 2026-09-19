@@ -9,6 +9,27 @@ from typing import Any
 
 from .query import RetrievalRequest
 
+from dataclasses import asdict, dataclass
+
+
+@dataclass(frozen=True)
+class RankingBreakdown:
+    """Explicit per-component breakdown of retrieval scores for observability."""
+
+    lexical_score: float
+    dense_score: float
+    micro_topic_score: float
+    freshness_score: float
+    source_quality_score: float
+    corroboration_score: float
+    diversity_penalty: float
+    conflict_penalty: float
+    final_score: float
+
+    def to_dict(self) -> dict[str, float]:
+        return asdict(self)
+
+
 
 def _terms(value: str) -> list[str]:
     return re.findall(r"[a-z0-9][a-z0-9+._-]{1,}", value.lower())
@@ -129,10 +150,22 @@ def rank_evidence_chunks(
             "final_score": final_score,
         }
 
+        breakdown = RankingBreakdown(
+            lexical_score=lexical_score,
+            dense_score=0.5,
+            micro_topic_score=micro_topic_score,
+            freshness_score=freshness_score,
+            source_quality_score=source_score,
+            corroboration_score=corroboration_score,
+            diversity_penalty=duplicate_penalty,
+            conflict_penalty=conflict_penalty,
+            final_score=final_score,
+        )
         ranked.append({
             **chunk,
             "score": final_score,
             "ranking_details": score_components,
+            "ranking_breakdown": breakdown.to_dict(),
         })
 
     # Sort descending by final score

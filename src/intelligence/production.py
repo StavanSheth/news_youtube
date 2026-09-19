@@ -166,8 +166,9 @@ def render(
 
 
 def run(root: Path, dry_run: bool = False, fixture_path: Path | None = None) -> tuple[Path, Path]:
-    """Compatibility facade delegating to authoritative application.pipeline.run_pipeline."""
-    from .application.pipeline import run_pipeline
+    """Execute authoritative production pipeline using ApplicationOrchestrator."""
+    from .application.orchestrator import ApplicationOrchestrator
 
-    return run_pipeline(root, dry_run=dry_run, fixture_path=fixture_path)
+    orchestrator = ApplicationOrchestrator(root, dry_run=dry_run, fixture_path=fixture_path)
+    return orchestrator.run_edition()
 

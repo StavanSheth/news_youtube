@@ -8,6 +8,33 @@ from typing import Any
 
 from .query import RetrievalRequest
 
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class TemporalEvidencePolicy:
+    """Explicit policy enforcing future-data protection and timestamp integrity."""
+
+    publication_cutoff: datetime | None = None
+    now: datetime | None = None
+    max_lookback_days: int = 30
+
+    def evaluate(
+        self,
+        published_at: datetime | None,
+        retrieved_at: datetime | None = None,
+        updated_at: datetime | None = None,
+    ) -> tuple[bool, str]:
+        now = self.now or datetime.now(UTC)
+        if published_at is not None:
+            if self.publication_cutoff is not None and published_at > self.publication_cutoff:
+                return False, "FUTURE_EVIDENCE_EXCEEDS_CUTOFF"
+            if published_at > now:
+                return False, "FUTURE_EVIDENCE_AHEAD_OF_NOW"
+            if retrieved_at and retrieved_at < published_at:
+                return False, "RETRIEVED_PRECEDES_PUBLISHED"
+        return True, "OK"
+
+
 
 def _parse_timestamp(value: Any) -> datetime | None:
     if not value:
@@ -66,14 +93,15 @@ def check_chunk_eligibility(
         except (ValueError, TypeError):
             return False, "INVALID_TRUST_TIER"
 
-    # Temporal / Cutoff check (Future data protection)
+    # Temporal / Cutoff check (Future data protection via TemporalEvidencePolicy)
     raw_published = metadata.get("published_at")
     published_at = _parse_timestamp(raw_published)
-    if published_at is not None:
-        if publication_cutoff is not None and published_at > publication_cutoff:
-            return False, "FUTURE_EVIDENCE_EXCEEDS_CUTOFF"
-        if published_at > now:
-            return False, "FUTURE_EVIDENCE_AHEAD_OF_NOW"
+    retrieved_at = _parse_timestamp(metadata.get("retrieved_at"))
+    updated_at = _parse_timestamp(metadata.get("updated_at"))
+    temporal_policy = TemporalEvidencePolicy(publication_cutoff=publication_cutoff, now=now)
+    temporal_ok, temporal_reason = temporal_policy.evaluate(published_at, retrieved_at, updated_at)
+    if not temporal_ok:
+        return False, temporal_reason
 
     if request is not None:
         # Freshness check

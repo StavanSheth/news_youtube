@@ -9,10 +9,11 @@ import yaml
 from ..config import AppConfig, load_config as base_load_config
 
 
-def load_application_config(root: Path) -> AppConfig:
+def load_application_config(root: Path | None = None) -> AppConfig:
     """Load and merge modular YAML configuration files."""
-    app_config = base_load_config(root)
-    config_dir = root / "config"
+    resolved_root = root if root is not None else Path(__file__).parents[3]
+    app_config = base_load_config(resolved_root)
+    config_dir = resolved_root / "config"
 
     # Merge modular config files if present
     settings = dict(app_config.settings)

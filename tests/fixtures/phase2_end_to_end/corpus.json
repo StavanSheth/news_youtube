@@ -10,7 +10,14 @@
     "metadata": {
       "trust_tier": 1,
       "source_id": "source-ars-technica",
-      "event_id": "event-frontier-reasoning-release"
+      "event_id": "event-frontier-reasoning-release",
+      "classification": {
+        "domain": "artificial-intelligence",
+        "topic": "AI",
+        "micro_topic": "foundation-models",
+        "micro_topic_id": "foundation-models",
+        "signals": ["reasoning model"]
+      }
     }
   },
   {

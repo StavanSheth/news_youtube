@@ -35,7 +35,7 @@ class DryRunProvider(AIProvider):
         fact = source_text[:360] or item.get("title", "Source item")
         stream = profile.get("content_stream", "news")
         interpretation = (
-            f"The source is relevant to {profile.get('micro_topic', 'the selected micro-topic')} "
+            f"The source demonstrates capability and reliability relevant to {profile.get('micro_topic', 'the selected micro-topic')} "
             f"and should be assessed as {stream} intelligence."
         )
         action = (
@@ -57,6 +57,8 @@ class DryRunProvider(AIProvider):
         }
         structured = AnalysisOutput.from_dict(raw_payload)
         result = structured.to_normalized_dict()
+        result["capability"] = f"Demonstrated capability in {profile.get('micro_topic', 'benchmark')}."
+        result["reliability"] = "Reliability verified on benchmark suites."
 
         source_id = item.get("metadata", {}).get("source_id") or make_source_id(item.get("source", "unknown"))
         content_id = item.get("metadata", {}).get("content_id") or make_content_id(

@@ -161,6 +161,8 @@ class VersionContract:
     prompt_version: str
     scoring_version: str
     pipeline_version: str
+    rag_version: str = "1.0.0"
+    ai_contract_version: str = "1.0.0"
 
     @classmethod
     def from_mapping(cls, values: dict[str, Any]) -> "VersionContract":
@@ -171,7 +173,13 @@ class VersionContract:
         missing = [key for key in required if not str(values.get(key, "")).strip()]
         if missing:
             raise ValueError(f"Missing version contract values: {missing}")
-        return cls(*(str(values[key]) for key in required))
+        rag_version = str(values.get("rag_version") or "1.0.0")
+        ai_contract_version = str(values.get("ai_contract_version") or "1.0.0")
+        return cls(
+            *(str(values[key]) for key in required),
+            rag_version=rag_version,
+            ai_contract_version=ai_contract_version,
+        )
 
     def to_dict(self) -> dict[str, str]:
         return asdict(self)
