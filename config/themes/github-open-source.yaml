@@ -1,0 +1,1820 @@
+themes:
+- id: github-open-source-repositories-theme
+  theme_id: github-open-source-repositories-theme
+  micro_topic_id: repositories
+  micro_topic: repositories
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Repositories (repositories) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_repositories_developments
+    - verified_repositories_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_repositories_relevance
+    boundaries:
+    - focus_strictly_on_repositories_domain_significance
+  questions:
+  - what_changed_in_repositories
+  - how_does_new_repositories_differ_from_prior_state
+  - what_verifiable_evidence_supports_repositories
+  - what_are_the_operational_or_market_implications_for_repositories
+  - what_technical_limitations_or_uncertainties_remain_in_repositories
+  - what_is_the_status_of_new_repositories_for_repositories
+  evidence_requirements: &id001
+  - repo
+  - release_history
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_repositories_exceeding_baseline
+    - independent_confirmation_of_repositories_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_repositories
+    - minor_routine_maintenance_or_repackaging_without_new_repositories_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - github
+      freshness: 48h
+      focus:
+      - new_repositories_events
+      - verifiable_changes_in_repositories
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_repositories
+      - what_tools_methods_or_data_were_used_for_repositories
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - repositories_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Repositories (repositories)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Repositories lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Repositories.
+  action_rules:
+    monitor:
+    - track_emerging_repositories_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_repositories_documentation
+    - verify_reproducibility_of_reported_repositories_data
+  watch_rules:
+    monitor:
+    - next_repositories_milestone_or_release_date
+    - peer_review_or_independent_validation_of_repositories
+    - ecosystem_adoption_metrics_for_repositories
+  retrieval_intent:
+    required_concepts:
+    - Repositories
+    - repositories
+    - new repositories
+    - activity
+    - architecture
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_repositories_adoption
+  - verified_metrics_for_repositories
+  - github_open_source_regulatory_or_competitive_response
+  - project significance
+  disambiguation_focus:
+  - Repositories
+  - repositories
+  - 'Repositories specific evaluation: New repositories, activity, architecture, contributors'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-model-tooling-theme
+  theme_id: github-open-source-model-tooling-theme
+  micro_topic_id: model-tooling
+  micro_topic: model-tooling
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Model Tooling (model-tooling) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_model_tooling_developments
+    - verified_model_tooling_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_model_tooling_relevance
+    boundaries:
+    - focus_strictly_on_model-tooling_domain_significance
+  questions:
+  - what_changed_in_model_tooling
+  - how_does_new_model_tooling_differ_from_prior_state
+  - what_verifiable_evidence_supports_model_tooling
+  - what_are_the_operational_or_market_implications_for_model_tooling
+  - what_technical_limitations_or_uncertainties_remain_in_model_tooling
+  - what_is_the_status_of_model_serving_for_model_tooling
+  evidence_requirements: &id006
+  - code
+  - release
+  - adoption
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_model_tooling_exceeding_baseline
+    - independent_confirmation_of_model_tooling_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_model_tooling
+    - minor_routine_maintenance_or_repackaging_without_new_model_tooling_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - github
+      - research
+      freshness: 48h
+      focus:
+      - new_model_tooling_events
+      - verifiable_changes_in_model_tooling
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_model_tooling
+      - what_tools_methods_or_data_were_used_for_model_tooling
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - model_tooling_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Model Tooling (model-tooling)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Model Tooling lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Model Tooling.
+  action_rules:
+    monitor:
+    - track_emerging_model_tooling_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_model_tooling_documentation
+    - verify_reproducibility_of_reported_model_tooling_data
+  watch_rules:
+    monitor:
+    - next_model_tooling_milestone_or_release_date
+    - peer_review_or_independent_validation_of_model_tooling
+    - ecosystem_adoption_metrics_for_model_tooling
+  retrieval_intent:
+    required_concepts:
+    - Model Tooling
+    - model-tooling
+    - model serving
+    - training
+    - evaluation tooling
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_model_tooling_adoption
+  - verified_metrics_for_model_tooling
+  - github_open_source_regulatory_or_competitive_response
+  - technical value
+  disambiguation_focus:
+  - Model Tooling
+  - model-tooling
+  - 'Model Tooling specific evaluation: Model serving/training/evaluation tooling'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-agent-frameworks-theme
+  theme_id: github-open-source-agent-frameworks-theme
+  micro_topic_id: agent-frameworks
+  micro_topic: agent-frameworks
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Agent Frameworks (agent-frameworks) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_agent_frameworks_developments
+    - verified_agent_frameworks_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_agent_frameworks_relevance
+    boundaries:
+    - focus_strictly_on_agent-frameworks_domain_significance
+  questions:
+  - what_changed_in_agent_frameworks
+  - how_does_new_agent_frameworks_differ_from_prior_state
+  - what_verifiable_evidence_supports_agent_frameworks
+  - what_are_the_operational_or_market_implications_for_agent_frameworks
+  - what_technical_limitations_or_uncertainties_remain_in_agent_frameworks
+  - what_is_the_status_of_architecture_for_agent_frameworks
+  evidence_requirements: &id011
+  - repo
+  - examples
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_agent_frameworks_exceeding_baseline
+    - independent_confirmation_of_agent_frameworks_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_agent_frameworks
+    - minor_routine_maintenance_or_repackaging_without_new_agent_frameworks_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_agent_frameworks_events
+      - verifiable_changes_in_agent_frameworks
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_agent_frameworks
+      - what_tools_methods_or_data_were_used_for_agent_frameworks
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - agent_frameworks_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Agent Frameworks (agent-frameworks)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Agent Frameworks lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Agent Frameworks.
+  action_rules:
+    monitor:
+    - track_emerging_agent_frameworks_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_agent_frameworks_documentation
+    - verify_reproducibility_of_reported_agent_frameworks_data
+  watch_rules:
+    monitor:
+    - next_agent_frameworks_milestone_or_release_date
+    - peer_review_or_independent_validation_of_agent_frameworks
+    - ecosystem_adoption_metrics_for_agent_frameworks
+  retrieval_intent:
+    required_concepts:
+    - Agent Frameworks
+    - agent-frameworks
+    - architecture
+    - tools
+    - memory
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_agent_frameworks_adoption
+  - verified_metrics_for_agent_frameworks
+  - github_open_source_regulatory_or_competitive_response
+  - agent capability
+  disambiguation_focus:
+  - Agent Frameworks
+  - agent-frameworks
+  - 'Agent Frameworks specific evaluation: Architecture, tools, memory, orchestration,
+    adoption'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-mcp-theme
+  theme_id: github-open-source-mcp-theme
+  micro_topic_id: mcp
+  micro_topic: mcp
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess MCP (mcp) specifically through verified evidence, measurable change,
+    and practical implications.
+  scope:
+    includes:
+    - all_mcp_developments
+    - verified_mcp_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_mcp_relevance
+    boundaries:
+    - focus_strictly_on_mcp_domain_significance
+  questions:
+  - what_changed_in_mcp
+  - how_does_new_mcp_differ_from_prior_state
+  - what_verifiable_evidence_supports_mcp
+  - what_are_the_operational_or_market_implications_for_mcp
+  - what_technical_limitations_or_uncertainties_remain_in_mcp
+  - what_is_the_status_of_mcp_servers_for_mcp
+  evidence_requirements: &id016
+  - official_spec
+  - repositories
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_mcp_exceeding_baseline
+    - independent_confirmation_of_mcp_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_mcp
+    - minor_routine_maintenance_or_repackaging_without_new_mcp_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_mcp_events
+      - verifiable_changes_in_mcp
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_mcp
+      - what_tools_methods_or_data_were_used_for_mcp
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - mcp_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in MCP (mcp) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding MCP lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for MCP.
+  action_rules:
+    monitor:
+    - track_emerging_mcp_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_mcp_documentation
+    - verify_reproducibility_of_reported_mcp_data
+  watch_rules:
+    monitor:
+    - next_mcp_milestone_or_release_date
+    - peer_review_or_independent_validation_of_mcp
+    - ecosystem_adoption_metrics_for_mcp
+  retrieval_intent:
+    required_concepts:
+    - MCP
+    - mcp
+    - mcp servers
+    - tools
+    - spec changes
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_mcp_adoption
+  - verified_metrics_for_mcp
+  - github_open_source_regulatory_or_competitive_response
+  - ecosystem impact
+  disambiguation_focus:
+  - MCP
+  - mcp
+  - 'MCP specific evaluation: MCP servers/tools/spec changes, adoption, security'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-developer-tools-theme
+  theme_id: github-open-source-developer-tools-theme
+  micro_topic_id: developer-tools
+  micro_topic: developer-tools
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Developer Tools (developer-tools) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_developer_tools_developments
+    - verified_developer_tools_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_developer_tools_relevance
+    boundaries:
+    - focus_strictly_on_developer-tools_domain_significance
+  questions:
+  - what_changed_in_developer_tools
+  - how_does_new_developer_tools_differ_from_prior_state
+  - what_verifiable_evidence_supports_developer_tools
+  - what_are_the_operational_or_market_implications_for_developer_tools
+  - what_technical_limitations_or_uncertainties_remain_in_developer_tools
+  - what_is_the_status_of_tool_capability_for_developer_tools
+  evidence_requirements: &id021
+  - repository
+  - release
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_developer_tools_exceeding_baseline
+    - independent_confirmation_of_developer_tools_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_developer_tools
+    - minor_routine_maintenance_or_repackaging_without_new_developer_tools_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - github
+      freshness: 48h
+      focus:
+      - new_developer_tools_events
+      - verifiable_changes_in_developer_tools
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_developer_tools
+      - what_tools_methods_or_data_were_used_for_developer_tools
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - developer_tools_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Developer Tools (developer-tools)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Developer Tools lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Developer Tools.
+  action_rules:
+    monitor:
+    - track_emerging_developer_tools_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_developer_tools_documentation
+    - verify_reproducibility_of_reported_developer_tools_data
+  watch_rules:
+    monitor:
+    - next_developer_tools_milestone_or_release_date
+    - peer_review_or_independent_validation_of_developer_tools
+    - ecosystem_adoption_metrics_for_developer_tools
+  retrieval_intent:
+    required_concepts:
+    - Developer Tools
+    - developer-tools
+    - tool capability
+    - integrations
+    - adoption
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_developer_tools_adoption
+  - verified_metrics_for_developer_tools
+  - github_open_source_regulatory_or_competitive_response
+  - developer utility
+  disambiguation_focus:
+  - Developer Tools
+  - developer-tools
+  - 'Developer Tools specific evaluation: Tool capability, integrations, adoption'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-inference-serving-theme
+  theme_id: github-open-source-inference-serving-theme
+  micro_topic_id: inference-serving
+  micro_topic: inference-serving
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Inference / Serving (inference-serving) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_inference_serving_developments
+    - verified_inference_/_serving_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_inference_serving_relevance
+    boundaries:
+    - focus_strictly_on_inference-serving_domain_significance
+  questions:
+  - what_changed_in_inference_serving
+  - how_does_new_inference_/_serving_differ_from_prior_state
+  - what_verifiable_evidence_supports_inference_serving
+  - what_are_the_operational_or_market_implications_for_inference_serving
+  - what_technical_limitations_or_uncertainties_remain_in_inference_serving
+  - what_is_the_status_of_serving_stack_for_inference_serving
+  evidence_requirements: &id026
+  - code
+  - benchmarks
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_inference_/_serving_exceeding_baseline
+    - independent_confirmation_of_inference_serving_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_inference_serving
+    - minor_routine_maintenance_or_repackaging_without_new_inference_serving_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - github
+      - research
+      freshness: 48h
+      focus:
+      - new_inference_serving_events
+      - verifiable_changes_in_inference_/_serving
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_inference_serving
+      - what_tools_methods_or_data_were_used_for_inference_/_serving
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - inference_serving_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Inference / Serving (inference-serving)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Inference / Serving lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Inference / Serving.
+  action_rules:
+    monitor:
+    - track_emerging_inference_serving_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_inference_/_serving_documentation
+    - verify_reproducibility_of_reported_inference_serving_data
+  watch_rules:
+    monitor:
+    - next_inference_/_serving_milestone_or_release_date
+    - peer_review_or_independent_validation_of_inference_serving
+    - ecosystem_adoption_metrics_for_inference_serving
+  retrieval_intent:
+    required_concepts:
+    - Inference / Serving
+    - inference-serving
+    - serving stack
+    - optimization
+    - hardware compatibility
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_inference_serving_adoption
+  - verified_metrics_for_inference_/_serving
+  - github_open_source_regulatory_or_competitive_response
+  - performance
+  disambiguation_focus:
+  - Inference / Serving
+  - inference-serving
+  - 'Inference / Serving specific evaluation: Serving stack, optimization, hardware
+    compatibility'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-libraries-theme
+  theme_id: github-open-source-libraries-theme
+  micro_topic_id: libraries
+  micro_topic: libraries
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Libraries (libraries) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_libraries_developments
+    - verified_libraries_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_libraries_relevance
+    boundaries:
+    - focus_strictly_on_libraries_domain_significance
+  questions:
+  - what_changed_in_libraries
+  - how_does_new_libraries_differ_from_prior_state
+  - what_verifiable_evidence_supports_libraries
+  - what_are_the_operational_or_market_implications_for_libraries
+  - what_technical_limitations_or_uncertainties_remain_in_libraries
+  - what_is_the_status_of_api_for_libraries
+  evidence_requirements: &id031
+  - release
+  - repository
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_libraries_exceeding_baseline
+    - independent_confirmation_of_libraries_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_libraries
+    - minor_routine_maintenance_or_repackaging_without_new_libraries_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - github
+      freshness: 48h
+      focus:
+      - new_libraries_events
+      - verifiable_changes_in_libraries
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_libraries
+      - what_tools_methods_or_data_were_used_for_libraries
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - libraries_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Libraries (libraries) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Libraries lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Libraries.
+  action_rules:
+    monitor:
+    - track_emerging_libraries_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_libraries_documentation
+    - verify_reproducibility_of_reported_libraries_data
+  watch_rules:
+    monitor:
+    - next_libraries_milestone_or_release_date
+    - peer_review_or_independent_validation_of_libraries
+    - ecosystem_adoption_metrics_for_libraries
+  retrieval_intent:
+    required_concepts:
+    - Libraries
+    - libraries
+    - api
+    - stability
+    - adoption
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_libraries_adoption
+  - verified_metrics_for_libraries
+  - github_open_source_regulatory_or_competitive_response
+  - developer relevance
+  disambiguation_focus:
+  - Libraries
+  - libraries
+  - 'Libraries specific evaluation: API, stability, adoption, compatibility'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-adoption-theme
+  theme_id: github-open-source-adoption-theme
+  micro_topic_id: adoption
+  micro_topic: adoption
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Adoption (adoption) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_adoption_developments
+    - verified_adoption_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_adoption_relevance
+    boundaries:
+    - focus_strictly_on_adoption_domain_significance
+  questions:
+  - what_changed_in_adoption
+  - how_does_new_adoption_differ_from_prior_state
+  - what_verifiable_evidence_supports_adoption
+  - what_are_the_operational_or_market_implications_for_adoption
+  - what_technical_limitations_or_uncertainties_remain_in_adoption
+  - what_is_the_status_of_stars_alone_insufficient_for_adoption
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_adoption_exceeding_baseline
+    - independent_confirmation_of_adoption_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_adoption
+    - minor_routine_maintenance_or_repackaging_without_new_adoption_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_adoption_events
+      - verifiable_changes_in_adoption
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_adoption
+      - what_tools_methods_or_data_were_used_for_adoption
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - adoption_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Adoption (adoption) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Adoption lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Adoption.
+  action_rules:
+    monitor:
+    - track_emerging_adoption_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_adoption_documentation
+    - verify_reproducibility_of_reported_adoption_data
+  watch_rules:
+    monitor:
+    - next_adoption_milestone_or_release_date
+    - peer_review_or_independent_validation_of_adoption
+    - ecosystem_adoption_metrics_for_adoption
+  retrieval_intent:
+    required_concepts:
+    - Adoption
+    - adoption
+    - stars alone insufficient
+    - contributors
+    - releases
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_adoption_adoption
+  - verified_metrics_for_adoption
+  - github_open_source_regulatory_or_competitive_response
+  - actual adoption
+  disambiguation_focus:
+  - Adoption
+  - adoption
+  - 'Adoption specific evaluation: Stars alone insufficient; contributors, releases,
+    downstream'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-high-impact-projects-theme
+  theme_id: github-open-source-high-impact-projects-theme
+  micro_topic_id: high-impact-projects
+  micro_topic: high-impact-projects
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess High-impact Projects (high-impact-projects) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_high_impact_projects_developments
+    - verified_high-impact_projects_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_high_impact_projects_relevance
+    boundaries:
+    - focus_strictly_on_high-impact-projects_domain_significance
+  questions:
+  - what_changed_in_high_impact_projects
+  - how_does_new_high_impact_projects_differ_from_prior_state
+  - what_verifiable_evidence_supports_high_impact_projects
+  - what_are_the_operational_or_market_implications_for_high_impact_projects
+  - what_technical_limitations_or_uncertainties_remain_in_high_impact_projects
+  - what_is_the_status_of_strategic_for_high_impact_projects
+  evidence_requirements: &id041
+  - repo
+  - independent_coverage
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_high_impact_projects_exceeding_baseline
+    - independent_confirmation_of_high_impact_projects_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_high_impact_projects
+    - minor_routine_maintenance_or_repackaging_without_new_high_impact_projects_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_high_impact_projects_events
+      - verifiable_changes_in_high-impact_projects
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_high_impact_projects
+      - what_tools_methods_or_data_were_used_for_high-impact_projects
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - high_impact_projects_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in High-impact Projects (high-impact-projects)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding High-impact Projects lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for High-impact Projects.
+  action_rules:
+    monitor:
+    - track_emerging_high_impact_projects_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_high-impact_projects_documentation
+    - verify_reproducibility_of_reported_high_impact_projects_data
+  watch_rules:
+    monitor:
+    - next_high-impact_projects_milestone_or_release_date
+    - peer_review_or_independent_validation_of_high_impact_projects
+    - ecosystem_adoption_metrics_for_high_impact_projects
+  retrieval_intent:
+    required_concepts:
+    - High-impact Projects
+    - high-impact-projects
+    - strategic
+    - technical importance
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_high_impact_projects_adoption
+  - verified_metrics_for_high-impact_projects
+  - github_open_source_regulatory_or_competitive_response
+  - significance
+  disambiguation_focus:
+  - High-impact Projects
+  - high-impact-projects
+  - 'High-impact Projects specific evaluation: Strategic/technical importance'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-releases-theme
+  theme_id: github-open-source-releases-theme
+  micro_topic_id: releases
+  micro_topic: releases
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Releases (releases) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_releases_developments
+    - verified_releases_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_releases_relevance
+    boundaries:
+    - focus_strictly_on_releases_domain_significance
+  questions:
+  - what_changed_in_releases
+  - how_does_new_releases_differ_from_prior_state
+  - what_verifiable_evidence_supports_releases
+  - what_are_the_operational_or_market_implications_for_releases
+  - what_technical_limitations_or_uncertainties_remain_in_releases
+  - what_is_the_status_of_major_version_for_releases
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_releases_exceeding_baseline
+    - independent_confirmation_of_releases_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_releases
+    - minor_routine_maintenance_or_repackaging_without_new_releases_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - github
+      freshness: 48h
+      focus:
+      - new_releases_events
+      - verifiable_changes_in_releases
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_releases
+      - what_tools_methods_or_data_were_used_for_releases
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - releases_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Releases (releases) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Releases lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Releases.
+  action_rules:
+    monitor:
+    - track_emerging_releases_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_releases_documentation
+    - verify_reproducibility_of_reported_releases_data
+  watch_rules:
+    monitor:
+    - next_releases_milestone_or_release_date
+    - peer_review_or_independent_validation_of_releases
+    - ecosystem_adoption_metrics_for_releases
+  retrieval_intent:
+    required_concepts:
+    - Releases
+    - releases
+    - major version
+    - release changes
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_releases_adoption
+  - verified_metrics_for_releases
+  - github_open_source_regulatory_or_competitive_response
+  - breaking
+  - important changes
+  disambiguation_focus:
+  - Releases
+  - releases
+  - 'Releases specific evaluation: Major version/release changes'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: github-open-source-maintainers-theme
+  theme_id: github-open-source-maintainers-theme
+  micro_topic_id: maintainers
+  micro_topic: maintainers
+  domain: github-open-source
+  domain_id: github-open-source
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Maintainers (maintainers) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_maintainers_developments
+    - verified_maintainers_activity
+    excludes:
+    - tangential_github-open-source_chatter_without_maintainers_relevance
+    boundaries:
+    - focus_strictly_on_maintainers_domain_significance
+  questions:
+  - what_changed_in_maintainers
+  - how_does_new_maintainers_differ_from_prior_state
+  - what_verifiable_evidence_supports_maintainers
+  - what_are_the_operational_or_market_implications_for_maintainers
+  - what_technical_limitations_or_uncertainties_remain_in_maintainers
+  - what_is_the_status_of_leadership_for_maintainers
+  evidence_requirements: &id051
+  - repository
+  - governance_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_maintainers_exceeding_baseline
+    - independent_confirmation_of_maintainers_milestone_from_primary_source
+    - measurable_impact_on_github_open_source_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_maintainers
+    - minor_routine_maintenance_or_repackaging_without_new_maintainers_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_maintainers_events
+      - verifiable_changes_in_maintainers
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_maintainers
+      - what_tools_methods_or_data_were_used_for_maintainers
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - github_open_source
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - maintainers_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Maintainers (maintainers)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Maintainers lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Maintainers.
+  action_rules:
+    monitor:
+    - track_emerging_maintainers_benchmarks
+    - follow_official_github_open_source_announcements
+    investigate:
+    - audit_claims_against_primary_maintainers_documentation
+    - verify_reproducibility_of_reported_maintainers_data
+  watch_rules:
+    monitor:
+    - next_maintainers_milestone_or_release_date
+    - peer_review_or_independent_validation_of_maintainers
+    - ecosystem_adoption_metrics_for_maintainers
+  retrieval_intent:
+    required_concepts:
+    - Maintainers
+    - maintainers
+    - leadership
+    - ownership
+    - governance changes
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_maintainers_adoption
+  - verified_metrics_for_maintainers
+  - github_open_source_regulatory_or_competitive_response
+  - project continuity
+  disambiguation_focus:
+  - Maintainers
+  - maintainers
+  - 'Maintainers specific evaluation: Leadership, ownership, governance changes'
+  - distinct from other github-open-source topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

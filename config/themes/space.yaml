@@ -1,0 +1,2167 @@
+themes:
+- id: space-launches-theme
+  theme_id: space-launches-theme
+  micro_topic_id: launches
+  micro_topic: launches
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Launches (launches) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_launches_developments
+    - verified_launches_activity
+    excludes:
+    - tangential_space_chatter_without_launches_relevance
+    boundaries:
+    - focus_strictly_on_launches_domain_significance
+  questions:
+  - what_changed_in_launches
+  - how_does_new_launches_differ_from_prior_state
+  - what_verifiable_evidence_supports_launches
+  - what_are_the_operational_or_market_implications_for_launches
+  - what_technical_limitations_or_uncertainties_remain_in_launches
+  - what_is_the_status_of_launch_date_for_launches
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_launches_exceeding_baseline
+    - independent_confirmation_of_launches_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_launches
+    - minor_routine_maintenance_or_repackaging_without_new_launches_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - space
+      - news-global
+      freshness: 48h
+      focus:
+      - new_launches_events
+      - verifiable_changes_in_launches
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_launches
+      - what_tools_methods_or_data_were_used_for_launches
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - launches_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Launches (launches) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Launches lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Launches.
+  action_rules:
+    monitor:
+    - track_emerging_launches_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_launches_documentation
+    - verify_reproducibility_of_reported_launches_data
+  watch_rules:
+    monitor:
+    - next_launches_milestone_or_release_date
+    - peer_review_or_independent_validation_of_launches
+    - ecosystem_adoption_metrics_for_launches
+  retrieval_intent:
+    required_concepts:
+    - Launches
+    - launches
+    - launch date
+    - vehicle
+    - payload
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_launches_adoption
+  - verified_metrics_for_launches
+  - space_regulatory_or_competitive_response
+  - launch date
+  - vehicle
+  disambiguation_focus:
+  - Launches
+  - launches
+  - 'Launches specific evaluation: Launch date, vehicle, payload, success/failure'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - space
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-rockets-theme
+  theme_id: space-rockets-theme
+  micro_topic_id: rockets
+  micro_topic: rockets
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Rockets (rockets) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_rockets_developments
+    - verified_rockets_activity
+    excludes:
+    - tangential_space_chatter_without_rockets_relevance
+    boundaries:
+    - focus_strictly_on_rockets_domain_significance
+  questions:
+  - what_changed_in_rockets
+  - how_does_new_rockets_differ_from_prior_state
+  - what_verifiable_evidence_supports_rockets
+  - what_are_the_operational_or_market_implications_for_rockets
+  - what_technical_limitations_or_uncertainties_remain_in_rockets
+  - what_is_the_status_of_new_vehicles_for_rockets
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_rockets_exceeding_baseline
+    - independent_confirmation_of_rockets_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_rockets
+    - minor_routine_maintenance_or_repackaging_without_new_rockets_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - space
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_rockets_events
+      - verifiable_changes_in_rockets
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_rockets
+      - what_tools_methods_or_data_were_used_for_rockets
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - rockets_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Rockets (rockets) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Rockets lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Rockets.
+  action_rules:
+    monitor:
+    - track_emerging_rockets_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_rockets_documentation
+    - verify_reproducibility_of_reported_rockets_data
+  watch_rules:
+    monitor:
+    - next_rockets_milestone_or_release_date
+    - peer_review_or_independent_validation_of_rockets
+    - ecosystem_adoption_metrics_for_rockets
+  retrieval_intent:
+    required_concepts:
+    - Rockets
+    - rockets
+    - new vehicles
+    - engines
+    - reuse
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_rockets_adoption
+  - verified_metrics_for_rockets
+  - space_regulatory_or_competitive_response
+  - new vehicles
+  - engines
+  disambiguation_focus:
+  - Rockets
+  - rockets
+  - 'Rockets specific evaluation: New vehicles, engines, reuse, performance'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - space
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-spacecraft-theme
+  theme_id: space-spacecraft-theme
+  micro_topic_id: spacecraft
+  micro_topic: spacecraft
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Spacecraft (spacecraft) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_spacecraft_developments
+    - verified_spacecraft_activity
+    excludes:
+    - tangential_space_chatter_without_spacecraft_relevance
+    boundaries:
+    - focus_strictly_on_spacecraft_domain_significance
+  questions:
+  - what_changed_in_spacecraft
+  - how_does_new_spacecraft_differ_from_prior_state
+  - what_verifiable_evidence_supports_spacecraft
+  - what_are_the_operational_or_market_implications_for_spacecraft
+  - what_technical_limitations_or_uncertainties_remain_in_spacecraft
+  - what_is_the_status_of_new_spacecraft_capability_for_spacecraft
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_spacecraft_exceeding_baseline
+    - independent_confirmation_of_spacecraft_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_spacecraft
+    - minor_routine_maintenance_or_repackaging_without_new_spacecraft_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - space
+      - research
+      freshness: 48h
+      focus:
+      - new_spacecraft_events
+      - verifiable_changes_in_spacecraft
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_spacecraft
+      - what_tools_methods_or_data_were_used_for_spacecraft
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - spacecraft_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Spacecraft (spacecraft) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Spacecraft lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Spacecraft.
+  action_rules:
+    monitor:
+    - track_emerging_spacecraft_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_spacecraft_documentation
+    - verify_reproducibility_of_reported_spacecraft_data
+  watch_rules:
+    monitor:
+    - next_spacecraft_milestone_or_release_date
+    - peer_review_or_independent_validation_of_spacecraft
+    - ecosystem_adoption_metrics_for_spacecraft
+  retrieval_intent:
+    required_concepts:
+    - Spacecraft
+    - spacecraft
+    - new spacecraft capability
+    - design
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_spacecraft_adoption
+  - verified_metrics_for_spacecraft
+  - space_regulatory_or_competitive_response
+  - new spacecraft capability
+  - design
+  disambiguation_focus:
+  - Spacecraft
+  - spacecraft
+  - 'Spacecraft specific evaluation: New spacecraft capability/design'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - space
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-satellites-theme
+  theme_id: space-satellites-theme
+  micro_topic_id: satellites
+  micro_topic: satellites
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Satellites (satellites) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_satellites_developments
+    - verified_satellites_activity
+    excludes:
+    - tangential_space_chatter_without_satellites_relevance
+    boundaries:
+    - focus_strictly_on_satellites_domain_significance
+  questions:
+  - what_changed_in_satellites
+  - how_does_new_satellites_differ_from_prior_state
+  - what_verifiable_evidence_supports_satellites
+  - what_are_the_operational_or_market_implications_for_satellites
+  - what_technical_limitations_or_uncertainties_remain_in_satellites
+  - what_is_the_status_of_deployment_for_satellites
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_satellites_exceeding_baseline
+    - independent_confirmation_of_satellites_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_satellites
+    - minor_routine_maintenance_or_repackaging_without_new_satellites_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - space
+      - celestrak
+      freshness: 48h
+      focus:
+      - new_satellites_events
+      - verifiable_changes_in_satellites
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_satellites
+      - what_tools_methods_or_data_were_used_for_satellites
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - satellites_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Satellites (satellites) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Satellites lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Satellites.
+  action_rules:
+    monitor:
+    - track_emerging_satellites_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_satellites_documentation
+    - verify_reproducibility_of_reported_satellites_data
+  watch_rules:
+    monitor:
+    - next_satellites_milestone_or_release_date
+    - peer_review_or_independent_validation_of_satellites
+    - ecosystem_adoption_metrics_for_satellites
+  retrieval_intent:
+    required_concepts:
+    - Satellites
+    - satellites
+    - deployment
+    - constellation
+    - capability
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_satellites_adoption
+  - verified_metrics_for_satellites
+  - space_regulatory_or_competitive_response
+  - deployment
+  - constellation
+  disambiguation_focus:
+  - Satellites
+  - satellites
+  - 'Satellites specific evaluation: Deployment, constellation, capability'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - space
+    - celestrak
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-missions-theme
+  theme_id: space-missions-theme
+  micro_topic_id: missions
+  micro_topic: missions
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Missions (missions) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_missions_developments
+    - verified_missions_activity
+    excludes:
+    - tangential_space_chatter_without_missions_relevance
+    boundaries:
+    - focus_strictly_on_missions_domain_significance
+  questions:
+  - what_changed_in_missions
+  - how_does_new_missions_differ_from_prior_state
+  - what_verifiable_evidence_supports_missions
+  - what_are_the_operational_or_market_implications_for_missions
+  - what_technical_limitations_or_uncertainties_remain_in_missions
+  - what_is_the_status_of_mission_objectives_for_missions
+  evidence_requirements: &id021
+  - nasa
+  - esa
+  - space
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_missions_exceeding_baseline
+    - independent_confirmation_of_missions_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_missions
+    - minor_routine_maintenance_or_repackaging_without_new_missions_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - nasa
+      - esa
+      - space
+      freshness: 48h
+      focus:
+      - new_missions_events
+      - verifiable_changes_in_missions
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_missions
+      - what_tools_methods_or_data_were_used_for_missions
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - missions_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Missions (missions) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Missions lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Missions.
+  action_rules:
+    monitor:
+    - track_emerging_missions_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_missions_documentation
+    - verify_reproducibility_of_reported_missions_data
+  watch_rules:
+    monitor:
+    - next_missions_milestone_or_release_date
+    - peer_review_or_independent_validation_of_missions
+    - ecosystem_adoption_metrics_for_missions
+  retrieval_intent:
+    required_concepts:
+    - Missions
+    - missions
+    - mission objectives
+    - status
+    - results
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_missions_adoption
+  - verified_metrics_for_missions
+  - space_regulatory_or_competitive_response
+  - mission objectives
+  - status
+  disambiguation_focus:
+  - Missions
+  - missions
+  - 'Missions specific evaluation: Mission objectives/status/results'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - nasa
+    - esa
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-earth-observation-theme
+  theme_id: space-earth-observation-theme
+  micro_topic_id: earth-observation
+  micro_topic: earth-observation
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Earth Observation (earth-observation) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_earth_observation_developments
+    - verified_earth_observation_activity
+    excludes:
+    - tangential_space_chatter_without_earth_observation_relevance
+    boundaries:
+    - focus_strictly_on_earth-observation_domain_significance
+  questions:
+  - what_changed_in_earth_observation
+  - how_does_new_earth_observation_differ_from_prior_state
+  - what_verifiable_evidence_supports_earth_observation
+  - what_are_the_operational_or_market_implications_for_earth_observation
+  - what_technical_limitations_or_uncertainties_remain_in_earth_observation
+  - what_is_the_status_of_eo_satellites_for_earth_observation
+  evidence_requirements: &id026
+  - nasa
+  - esa
+  - celestrak
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_earth_observation_exceeding_baseline
+    - independent_confirmation_of_earth_observation_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_earth_observation
+    - minor_routine_maintenance_or_repackaging_without_new_earth_observation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - nasa
+      - esa
+      - celestrak
+      freshness: 48h
+      focus:
+      - new_earth_observation_events
+      - verifiable_changes_in_earth_observation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_earth_observation
+      - what_tools_methods_or_data_were_used_for_earth_observation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - earth_observation_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Earth Observation (earth-observation)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Earth Observation lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Earth Observation.
+  action_rules:
+    monitor:
+    - track_emerging_earth_observation_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_earth_observation_documentation
+    - verify_reproducibility_of_reported_earth_observation_data
+  watch_rules:
+    monitor:
+    - next_earth_observation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_earth_observation
+    - ecosystem_adoption_metrics_for_earth_observation
+  retrieval_intent:
+    required_concepts:
+    - Earth Observation
+    - earth-observation
+    - eo satellites
+    - imagery
+    - applications
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_earth_observation_adoption
+  - verified_metrics_for_earth_observation
+  - space_regulatory_or_competitive_response
+  - eo satellites
+  - imagery
+  disambiguation_focus:
+  - Earth Observation
+  - earth-observation
+  - 'Earth Observation specific evaluation: EO satellites, imagery, applications'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - nasa
+    - esa
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-lunar-programs-theme
+  theme_id: space-lunar-programs-theme
+  micro_topic_id: lunar-programs
+  micro_topic: lunar-programs
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Lunar Programs (lunar-programs) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_lunar_programs_developments
+    - verified_lunar_programs_activity
+    excludes:
+    - tangential_space_chatter_without_lunar_programs_relevance
+    boundaries:
+    - focus_strictly_on_lunar-programs_domain_significance
+  questions:
+  - what_changed_in_lunar_programs
+  - how_does_new_lunar_programs_differ_from_prior_state
+  - what_verifiable_evidence_supports_lunar_programs
+  - what_are_the_operational_or_market_implications_for_lunar_programs
+  - what_technical_limitations_or_uncertainties_remain_in_lunar_programs
+  - what_is_the_status_of_lunar_missions_for_lunar_programs
+  evidence_requirements: &id031
+  - nasa
+  - esa
+  - space
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_lunar_programs_exceeding_baseline
+    - independent_confirmation_of_lunar_programs_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_lunar_programs
+    - minor_routine_maintenance_or_repackaging_without_new_lunar_programs_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - nasa
+      - esa
+      - space
+      freshness: 48h
+      focus:
+      - new_lunar_programs_events
+      - verifiable_changes_in_lunar_programs
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_lunar_programs
+      - what_tools_methods_or_data_were_used_for_lunar_programs
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - lunar_programs_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Lunar Programs (lunar-programs)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Lunar Programs lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Lunar Programs.
+  action_rules:
+    monitor:
+    - track_emerging_lunar_programs_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_lunar_programs_documentation
+    - verify_reproducibility_of_reported_lunar_programs_data
+  watch_rules:
+    monitor:
+    - next_lunar_programs_milestone_or_release_date
+    - peer_review_or_independent_validation_of_lunar_programs
+    - ecosystem_adoption_metrics_for_lunar_programs
+  retrieval_intent:
+    required_concepts:
+    - Lunar Programs
+    - lunar-programs
+    - lunar missions
+    - landers
+    - infrastructure
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_lunar_programs_adoption
+  - verified_metrics_for_lunar_programs
+  - space_regulatory_or_competitive_response
+  - lunar missions
+  - landers
+  disambiguation_focus:
+  - Lunar Programs
+  - lunar-programs
+  - 'Lunar Programs specific evaluation: Lunar missions, landers, infrastructure'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - nasa
+    - esa
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-mars-deep-space-theme
+  theme_id: space-mars-deep-space-theme
+  micro_topic_id: mars-deep-space
+  micro_topic: mars-deep-space
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Mars / Deep Space (mars-deep-space) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_mars_deep_space_developments
+    - verified_mars_/_deep_space_activity
+    excludes:
+    - tangential_space_chatter_without_mars_deep_space_relevance
+    boundaries:
+    - focus_strictly_on_mars-deep-space_domain_significance
+  questions:
+  - what_changed_in_mars_deep_space
+  - how_does_new_mars_/_deep_space_differ_from_prior_state
+  - what_verifiable_evidence_supports_mars_deep_space
+  - what_are_the_operational_or_market_implications_for_mars_deep_space
+  - what_technical_limitations_or_uncertainties_remain_in_mars_deep_space
+  - what_is_the_status_of_exploration_and_scientific_milestones_for_mars_deep_space
+  evidence_requirements: &id036
+  - nasa
+  - esa
+  - research
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_mars_/_deep_space_exceeding_baseline
+    - independent_confirmation_of_mars_deep_space_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_mars_deep_space
+    - minor_routine_maintenance_or_repackaging_without_new_mars_deep_space_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - nasa
+      - esa
+      - research
+      freshness: 48h
+      focus:
+      - new_mars_deep_space_events
+      - verifiable_changes_in_mars_/_deep_space
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_mars_deep_space
+      - what_tools_methods_or_data_were_used_for_mars_/_deep_space
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - mars_deep_space_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Mars / Deep Space (mars-deep-space)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Mars / Deep Space lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Mars / Deep Space.
+  action_rules:
+    monitor:
+    - track_emerging_mars_deep_space_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_mars_/_deep_space_documentation
+    - verify_reproducibility_of_reported_mars_deep_space_data
+  watch_rules:
+    monitor:
+    - next_mars_/_deep_space_milestone_or_release_date
+    - peer_review_or_independent_validation_of_mars_deep_space
+    - ecosystem_adoption_metrics_for_mars_deep_space
+  retrieval_intent:
+    required_concepts:
+    - Mars / Deep Space
+    - mars-deep-space
+    - exploration and scientific milestones
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_mars_deep_space_adoption
+  - verified_metrics_for_mars_/_deep_space
+  - space_regulatory_or_competitive_response
+  - exploration and scientific milestones
+  disambiguation_focus:
+  - Mars / Deep Space
+  - mars-deep-space
+  - 'Mars / Deep Space specific evaluation: Exploration and scientific milestones'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - nasa
+    - esa
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-exploration-theme
+  theme_id: space-exploration-theme
+  micro_topic_id: exploration
+  micro_topic: exploration
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Exploration (exploration) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_exploration_developments
+    - verified_exploration_activity
+    excludes:
+    - tangential_space_chatter_without_exploration_relevance
+    boundaries:
+    - focus_strictly_on_exploration_domain_significance
+  questions:
+  - what_changed_in_exploration
+  - how_does_new_exploration_differ_from_prior_state
+  - what_verifiable_evidence_supports_exploration
+  - what_are_the_operational_or_market_implications_for_exploration
+  - what_technical_limitations_or_uncertainties_remain_in_exploration
+  - what_is_the_status_of_human_for_exploration
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_exploration_exceeding_baseline
+    - independent_confirmation_of_exploration_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_exploration
+    - minor_routine_maintenance_or_repackaging_without_new_exploration_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - space
+      - research
+      freshness: 48h
+      focus:
+      - new_exploration_events
+      - verifiable_changes_in_exploration
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_exploration
+      - what_tools_methods_or_data_were_used_for_exploration
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - exploration_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Exploration (exploration)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Exploration lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Exploration.
+  action_rules:
+    monitor:
+    - track_emerging_exploration_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_exploration_documentation
+    - verify_reproducibility_of_reported_exploration_data
+  watch_rules:
+    monitor:
+    - next_exploration_milestone_or_release_date
+    - peer_review_or_independent_validation_of_exploration
+    - ecosystem_adoption_metrics_for_exploration
+  retrieval_intent:
+    required_concepts:
+    - Exploration
+    - exploration
+    - human
+    - robotic exploration
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_exploration_adoption
+  - verified_metrics_for_exploration
+  - space_regulatory_or_competitive_response
+  - human
+  - robotic exploration
+  disambiguation_focus:
+  - Exploration
+  - exploration
+  - 'Exploration specific evaluation: Human/robotic exploration'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - space
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-commercial-space-theme
+  theme_id: space-commercial-space-theme
+  micro_topic_id: commercial-space
+  micro_topic: commercial-space
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Commercial Space (commercial-space) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_commercial_space_developments
+    - verified_commercial_space_activity
+    excludes:
+    - tangential_space_chatter_without_commercial_space_relevance
+    boundaries:
+    - focus_strictly_on_commercial-space_domain_significance
+  questions:
+  - what_changed_in_commercial_space
+  - how_does_new_commercial_space_differ_from_prior_state
+  - what_verifiable_evidence_supports_commercial_space
+  - what_are_the_operational_or_market_implications_for_commercial_space
+  - what_technical_limitations_or_uncertainties_remain_in_commercial_space
+  - what_is_the_status_of_commercial_launches_for_commercial_space
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_commercial_space_exceeding_baseline
+    - independent_confirmation_of_commercial_space_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_commercial_space
+    - minor_routine_maintenance_or_repackaging_without_new_commercial_space_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - space
+      - company
+      - startup
+      freshness: 48h
+      focus:
+      - new_commercial_space_events
+      - verifiable_changes_in_commercial_space
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_commercial_space
+      - what_tools_methods_or_data_were_used_for_commercial_space
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - commercial_space_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Commercial Space (commercial-space)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Commercial Space lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Commercial Space.
+  action_rules:
+    monitor:
+    - track_emerging_commercial_space_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_commercial_space_documentation
+    - verify_reproducibility_of_reported_commercial_space_data
+  watch_rules:
+    monitor:
+    - next_commercial_space_milestone_or_release_date
+    - peer_review_or_independent_validation_of_commercial_space
+    - ecosystem_adoption_metrics_for_commercial_space
+  retrieval_intent:
+    required_concepts:
+    - Commercial Space
+    - commercial-space
+    - commercial launches
+    - services
+    - funding
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_commercial_space_adoption
+  - verified_metrics_for_commercial_space
+  - space_regulatory_or_competitive_response
+  - commercial launches
+  - services
+  disambiguation_focus:
+  - Commercial Space
+  - commercial-space
+  - 'Commercial Space specific evaluation: Commercial launches/services/funding'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - space
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-space-infrastructure-theme
+  theme_id: space-space-infrastructure-theme
+  micro_topic_id: space-infrastructure
+  micro_topic: space-infrastructure
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Space Infrastructure (space-infrastructure) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_space_infrastructure_developments
+    - verified_space_infrastructure_activity
+    excludes:
+    - tangential_space_chatter_without_space_infrastructure_relevance
+    boundaries:
+    - focus_strictly_on_space-infrastructure_domain_significance
+  questions:
+  - what_changed_in_space_infrastructure
+  - how_does_new_space_infrastructure_differ_from_prior_state
+  - what_verifiable_evidence_supports_space_infrastructure
+  - what_are_the_operational_or_market_implications_for_space_infrastructure
+  - what_technical_limitations_or_uncertainties_remain_in_space_infrastructure
+  - what_is_the_status_of_ground_stations_for_space_infrastructure
+  evidence_requirements: &id051
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_space_infrastructure_exceeding_baseline
+    - independent_confirmation_of_space_infrastructure_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_space_infrastructure
+    - minor_routine_maintenance_or_repackaging_without_new_space_infrastructure_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - space
+      - gov
+      freshness: 48h
+      focus:
+      - new_space_infrastructure_events
+      - verifiable_changes_in_space_infrastructure
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_space_infrastructure
+      - what_tools_methods_or_data_were_used_for_space_infrastructure
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - space_infrastructure_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Space Infrastructure (space-infrastructure)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Space Infrastructure lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Space Infrastructure.
+  action_rules:
+    monitor:
+    - track_emerging_space_infrastructure_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_space_infrastructure_documentation
+    - verify_reproducibility_of_reported_space_infrastructure_data
+  watch_rules:
+    monitor:
+    - next_space_infrastructure_milestone_or_release_date
+    - peer_review_or_independent_validation_of_space_infrastructure
+    - ecosystem_adoption_metrics_for_space_infrastructure
+  retrieval_intent:
+    required_concepts:
+    - Space Infrastructure
+    - space-infrastructure
+    - ground stations
+    - satellite networks
+    - launch infrastructure
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_space_infrastructure_adoption
+  - verified_metrics_for_space_infrastructure
+  - space_regulatory_or_competitive_response
+  - ground stations
+  - satellite networks
+  disambiguation_focus:
+  - Space Infrastructure
+  - space-infrastructure
+  - 'Space Infrastructure specific evaluation: Ground stations, satellite networks,
+    launch infrastructure'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - space
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-space-policy-theme
+  theme_id: space-space-policy-theme
+  micro_topic_id: space-policy
+  micro_topic: space-policy
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Space Policy (space-policy) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_space_policy_developments
+    - verified_space_policy_activity
+    excludes:
+    - tangential_space_chatter_without_space_policy_relevance
+    boundaries:
+    - focus_strictly_on_space-policy_domain_significance
+  questions:
+  - what_changed_in_space_policy
+  - how_does_new_space_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_space_policy
+  - what_are_the_operational_or_market_implications_for_space_policy
+  - what_technical_limitations_or_uncertainties_remain_in_space_policy
+  - what_is_the_status_of_regulation_for_space_policy
+  evidence_requirements: &id056
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_space_policy_exceeding_baseline
+    - independent_confirmation_of_space_policy_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_space_policy
+    - minor_routine_maintenance_or_repackaging_without_new_space_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - gov
+      - space
+      freshness: 48h
+      focus:
+      - new_space_policy_events
+      - verifiable_changes_in_space_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_space_policy
+      - what_tools_methods_or_data_were_used_for_space_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - space_policy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Space Policy (space-policy)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Space Policy lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Space Policy.
+  action_rules:
+    monitor:
+    - track_emerging_space_policy_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_space_policy_documentation
+    - verify_reproducibility_of_reported_space_policy_data
+  watch_rules:
+    monitor:
+    - next_space_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_space_policy
+    - ecosystem_adoption_metrics_for_space_policy
+  retrieval_intent:
+    required_concepts:
+    - Space Policy
+    - space-policy
+    - regulation
+    - spectrum
+    - orbital policy
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_space_policy_adoption
+  - verified_metrics_for_space_policy
+  - space_regulatory_or_competitive_response
+  - regulation
+  - spectrum
+  disambiguation_focus:
+  - Space Policy
+  - space-policy
+  - 'Space Policy specific evaluation: Regulation, spectrum, orbital policy'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - space
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: space-space-policy-strategy-theme
+  theme_id: space-space-policy-strategy-theme
+  micro_topic_id: space-policy-strategy
+  micro_topic: space-policy-strategy
+  domain: space
+  domain_id: space
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Space Policy (space-policy-strategy) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_space_policy_strategy_developments
+    - verified_space_policy_activity
+    excludes:
+    - tangential_space_chatter_without_space_policy_strategy_relevance
+    boundaries:
+    - focus_strictly_on_space-policy-strategy_domain_significance
+  questions:
+  - what_changed_in_space_policy_strategy
+  - how_does_new_space_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_space_policy_strategy
+  - what_are_the_operational_or_market_implications_for_space_policy_strategy
+  - what_technical_limitations_or_uncertainties_remain_in_space_policy_strategy
+  - what_is_the_status_of_national_for_space_policy_strategy
+  evidence_requirements: &id061
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id061
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_space_policy_exceeding_baseline
+    - independent_confirmation_of_space_policy_strategy_milestone_from_primary_source
+    - measurable_impact_on_space_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_space_policy_strategy
+    - minor_routine_maintenance_or_repackaging_without_new_space_policy_strategy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id062
+      preferred_sources: &id065
+      - gov
+      - news-global
+      freshness: 48h
+      focus:
+      - new_space_policy_strategy_events
+      - verifiable_changes_in_space_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id063
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_space_policy_strategy
+      - what_tools_methods_or_data_were_used_for_space_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id062
+    video: *id063
+  entity_extraction:
+    required:
+    - space
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - space_policy_strategy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id064
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id064
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Space Policy (space-policy-strategy)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Space Policy lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Space Policy.
+  action_rules:
+    monitor:
+    - track_emerging_space_policy_strategy_benchmarks
+    - follow_official_space_announcements
+    investigate:
+    - audit_claims_against_primary_space_policy_documentation
+    - verify_reproducibility_of_reported_space_policy_strategy_data
+  watch_rules:
+    monitor:
+    - next_space_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_space_policy_strategy
+    - ecosystem_adoption_metrics_for_space_policy_strategy
+  retrieval_intent:
+    required_concepts:
+    - Space Policy
+    - space-policy-strategy
+    - national
+    - commercial strategic policy change
+    preferred_source_types: *id065
+    evidence_types: *id061
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_space_policy_strategy_adoption
+  - verified_metrics_for_space_policy
+  - space_regulatory_or_competitive_response
+  - national
+  - commercial strategic policy change
+  disambiguation_focus:
+  - Space Policy
+  - space-policy-strategy
+  - 'Space Policy specific evaluation: National/commercial strategic policy change'
+  - distinct from other space topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

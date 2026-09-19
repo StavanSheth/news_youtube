@@ -46,6 +46,90 @@ class CanonicalContent:
     micro_topics: tuple[str, ...] = ()
     metadata: dict[str, Any] = field(default_factory=dict)
 
+    def __post_init__(self) -> None:
+        """Validate canonical content invariants per Section 10."""
+        errors: list[str] = []
+        if not self.content_id:
+            errors.append("Missing content_id")
+        if not self.source_id:
+            errors.append("Missing source_id")
+        if not self.source_type:
+            errors.append("Missing source_type")
+        if not self.title:
+            errors.append("Missing title")
+        if not self.canonical_url:
+            errors.append("Missing canonical_url")
+        if not self.published_at:
+            errors.append("Missing published_at")
+        if not self.retrieved_at:
+            errors.append("Missing retrieved_at")
+        if not self.content_hash:
+            errors.append("Missing content_hash")
+
+        # Validate timestamp ordering (published_at <= updated_at <= retrieved_at)
+        from datetime import UTC, datetime, timedelta
+
+        pub_dt: datetime | None = None
+        upd_dt: datetime | None = None
+        ret_dt: datetime | None = None
+
+        try:
+            pub_dt = datetime.fromisoformat(self.published_at.replace("Z", "+00:00"))
+            if pub_dt.tzinfo is None:
+                pub_dt = pub_dt.replace(tzinfo=UTC)
+        except (ValueError, TypeError):
+            pass
+
+        if self.updated_at:
+            try:
+                upd_dt = datetime.fromisoformat(self.updated_at.replace("Z", "+00:00"))
+                if upd_dt.tzinfo is None:
+                    upd_dt = upd_dt.replace(tzinfo=UTC)
+            except (ValueError, TypeError):
+                pass
+
+        try:
+            ret_dt = datetime.fromisoformat(self.retrieved_at.replace("Z", "+00:00"))
+            if ret_dt.tzinfo is None:
+                ret_dt = ret_dt.replace(tzinfo=UTC)
+        except (ValueError, TypeError):
+            pass
+
+        # Check temporal order allowing 5 minutes clock skew
+        tolerance = timedelta(minutes=5)
+        if pub_dt and ret_dt and pub_dt > ret_dt + tolerance:
+            errors.append(f"Invalid timestamp order: published_at ({self.published_at}) is in future relative to retrieved_at ({self.retrieved_at})")
+        if pub_dt and upd_dt and pub_dt > upd_dt + tolerance:
+            errors.append(f"Invalid timestamp order: published_at ({self.published_at}) exceeds updated_at ({self.updated_at})")
+        if upd_dt and ret_dt and upd_dt > ret_dt + tolerance:
+            errors.append(f"Invalid timestamp order: updated_at ({self.updated_at}) exceeds retrieved_at ({self.retrieved_at})")
+
+        if errors:
+            LOGGER.debug("CanonicalContent validation notices: %s", errors)
+
+    def validate_invariants(self) -> tuple[bool, list[str]]:
+        """Explicit machine-checkable validation of the canonical content contract."""
+        errors: list[str] = []
+        for required in ("content_id", "source_id", "source_type", "title", "canonical_url", "published_at", "retrieved_at", "content_hash"):
+            if not getattr(self, required):
+                errors.append(f"Missing required canonical field: {required}")
+
+        from datetime import UTC, datetime, timedelta
+
+        try:
+            p = datetime.fromisoformat(self.published_at.replace("Z", "+00:00"))
+            r = datetime.fromisoformat(self.retrieved_at.replace("Z", "+00:00"))
+            if p.tzinfo is None:
+                p = p.replace(tzinfo=UTC)
+            if r.tzinfo is None:
+                r = r.replace(tzinfo=UTC)
+            if p > r + timedelta(minutes=5):
+                errors.append(f"published_at ({self.published_at}) is later than retrieved_at ({self.retrieved_at})")
+        except Exception:
+            pass
+
+        return len(errors) == 0, errors
+
     @classmethod
     def create(
         cls,

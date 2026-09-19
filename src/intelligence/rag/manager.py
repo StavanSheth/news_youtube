@@ -206,11 +206,15 @@ class ProductionRAGManager:
                     self.metrics["chunks_rejected_scope"] / self.metrics["chunks_before_scope"], 3
                 )
 
-            # Step 5: Hard eligibility check before ranking
+            # Step 5: Hard eligibility check before ranking (strictly rejecting quarantined sources)
+            quarantined = set(self.settings.get("quarantined_sources", []))
+            disabled = set(self.settings.get("disabled_sources", []))
             eligible_chunks, eligibility_diag = filter_eligible_candidates(
                 scoped_candidates,
                 request,
                 publication_cutoff=cutoff,
+                disabled_sources=disabled,
+                quarantined_sources=quarantined,
             )
             self.metrics["eligibility_rejections"] += eligibility_diag.get("rejected_count", 0)
 

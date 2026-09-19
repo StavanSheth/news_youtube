@@ -56,13 +56,137 @@ def calculate_cost(
     return round(cost_input + cost_output, 6)
 
 
-def estimate_tokens(text: str) -> int:
-    """Fast deterministic token estimation for prompt planning."""
+def estimate_tokens(text: str, safety_margin_percent: int = 15) -> int:
+    """Fast deterministic token estimation with configurable safety margin."""
     if not text:
         return 0
     words = len(text.split())
     char_estimate = max(1, len(text) // 4)
-    return max(int(words * 1.25), char_estimate)
+    base = max(int(words * 1.25), char_estimate)
+    margin = int(base * (safety_margin_percent / 100.0))
+    return base + margin
+
+
+def count_tokens_native(text: str, client: Any | None = None) -> int:
+    """Return provider native token count if client available, otherwise deterministic estimate."""
+    if client and hasattr(client, "count_tokens"):
+        try:
+            res = client.count_tokens(text)
+            if hasattr(res, "total_tokens"):
+                return int(res.total_tokens)
+            if isinstance(res, int):
+                return res
+        except Exception:
+            pass
+    return estimate_tokens(text, safety_margin_percent=0)
+
+
+@dataclass
+class TokenAccountingRecord:
+    """Tracks preflight estimate vs actual usage with mismatch diagnostics."""
+
+    call_id: str
+    micro_topic_id: str
+    estimated_input_tokens: int = 0
+    actual_input_tokens: int = 0
+    estimated_output_tokens: int = 0
+    actual_output_tokens: int = 0
+    total_tokens: int = 0
+    input_mismatch: int = 0
+    output_mismatch: int = 0
+    safety_margin_percent: int = 15
+
+    @classmethod
+    def create(
+        cls,
+        call_id: str,
+        micro_topic_id: str,
+        estimated_input: int,
+        actual_input: int,
+        estimated_output: int = 0,
+        actual_output: int = 0,
+        safety_margin_percent: int = 15,
+    ) -> TokenAccountingRecord:
+        total = actual_input + actual_output
+        return cls(
+            call_id=call_id,
+            micro_topic_id=micro_topic_id,
+            estimated_input_tokens=estimated_input,
+            actual_input_tokens=actual_input,
+            estimated_output_tokens=estimated_output,
+            actual_output_tokens=actual_output,
+            total_tokens=total,
+            input_mismatch=actual_input - estimated_input,
+            output_mismatch=actual_output - estimated_output,
+            safety_margin_percent=safety_margin_percent,
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "call_id": self.call_id,
+            "micro_topic_id": self.micro_topic_id,
+            "estimated_input_tokens": self.estimated_input_tokens,
+            "actual_input_tokens": self.actual_input_tokens,
+            "estimated_output_tokens": self.estimated_output_tokens,
+            "actual_output_tokens": self.actual_output_tokens,
+            "total_tokens": self.total_tokens,
+            "input_mismatch": self.input_mismatch,
+            "output_mismatch": self.output_mismatch,
+            "safety_margin_percent": self.safety_margin_percent,
+        }
+
+
+@dataclass
+class CumulativeUsageTracker:
+    """Cumulative usage aggregator across all pipeline AI interactions."""
+
+    records: list[TokenAccountingRecord] = None  # type: ignore[assignment]
+    total_estimated_input: int = 0
+    total_actual_input: int = 0
+    total_estimated_output: int = 0
+    total_actual_output: int = 0
+    total_tokens: int = 0
+
+    def __post_init__(self) -> None:
+        if self.records is None:
+            self.records = []
+
+    def record_call(
+        self,
+        call_id: str,
+        micro_topic_id: str,
+        estimated_input: int,
+        actual_input: int,
+        estimated_output: int = 0,
+        actual_output: int = 0,
+    ) -> TokenAccountingRecord:
+        rec = TokenAccountingRecord.create(
+            call_id=call_id,
+            micro_topic_id=micro_topic_id,
+            estimated_input=estimated_input,
+            actual_input=actual_input,
+            estimated_output=estimated_output,
+            actual_output=actual_output,
+        )
+        self.records.append(rec)
+        self.total_estimated_input += estimated_input
+        self.total_actual_input += actual_input
+        self.total_estimated_output += estimated_output
+        self.total_actual_output += actual_output
+        self.total_tokens += rec.total_tokens
+        return rec
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "total_calls": len(self.records),
+            "total_estimated_input_tokens": self.total_estimated_input,
+            "actual_input_tokens": self.total_actual_input,
+            "estimated_output_tokens": self.total_estimated_output,
+            "actual_output_tokens": self.total_actual_output,
+            "total_tokens": self.total_tokens,
+            "records": [r.to_dict() for r in self.records],
+        }
+
 
 @dataclass(frozen=True)
 class AIUsage:

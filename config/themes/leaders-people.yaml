@@ -1,0 +1,1323 @@
+themes:
+- id: leaders-people-executives-theme
+  theme_id: leaders-people-executives-theme
+  micro_topic_id: executives
+  micro_topic: executives
+  domain: leaders-people
+  domain_id: leaders-people
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Executives (executives) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_executives_developments
+    - verified_executives_activity
+    excludes:
+    - tangential_leaders-people_chatter_without_executives_relevance
+    boundaries:
+    - focus_strictly_on_executives_domain_significance
+  questions:
+  - what_changed_in_executives
+  - how_does_new_executives_differ_from_prior_state
+  - what_verifiable_evidence_supports_executives
+  - what_are_the_operational_or_market_implications_for_executives
+  - what_technical_limitations_or_uncertainties_remain_in_executives
+  - what_is_the_status_of_appointment_for_executives
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_executives_exceeding_baseline
+    - independent_confirmation_of_executives_milestone_from_primary_source
+    - measurable_impact_on_leaders_people_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_executives
+    - minor_routine_maintenance_or_repackaging_without_new_executives_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - people
+      - company
+      freshness: 48h
+      focus:
+      - new_executives_events
+      - verifiable_changes_in_executives
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_executives
+      - what_tools_methods_or_data_were_used_for_executives
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - leaders_people
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - executives_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Executives (executives) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Executives lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Executives.
+  action_rules:
+    monitor:
+    - track_emerging_executives_benchmarks
+    - follow_official_leaders_people_announcements
+    investigate:
+    - audit_claims_against_primary_executives_documentation
+    - verify_reproducibility_of_reported_executives_data
+  watch_rules:
+    monitor:
+    - next_executives_milestone_or_release_date
+    - peer_review_or_independent_validation_of_executives
+    - ecosystem_adoption_metrics_for_executives
+  retrieval_intent:
+    required_concepts:
+    - Executives
+    - executives
+    - appointment
+    - departure
+    - strategy
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_executives_adoption
+  - verified_metrics_for_executives
+  - leaders_people_regulatory_or_competitive_response
+  - appointment
+  - departure
+  disambiguation_focus:
+  - Executives
+  - executives
+  - 'Executives specific evaluation: Appointment, departure, strategy, statements'
+  - distinct from other leaders-people topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - people
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: leaders-people-founders-theme
+  theme_id: leaders-people-founders-theme
+  micro_topic_id: founders
+  micro_topic: founders
+  domain: leaders-people
+  domain_id: leaders-people
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Founders (founders) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_founders_developments
+    - verified_founders_activity
+    excludes:
+    - tangential_leaders-people_chatter_without_founders_relevance
+    boundaries:
+    - focus_strictly_on_founders_domain_significance
+  questions:
+  - what_changed_in_founders
+  - how_does_new_founders_differ_from_prior_state
+  - what_verifiable_evidence_supports_founders
+  - what_are_the_operational_or_market_implications_for_founders
+  - what_technical_limitations_or_uncertainties_remain_in_founders
+  - what_is_the_status_of_company_strategy_for_founders
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_founders_exceeding_baseline
+    - independent_confirmation_of_founders_milestone_from_primary_source
+    - measurable_impact_on_leaders_people_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_founders
+    - minor_routine_maintenance_or_repackaging_without_new_founders_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - people
+      - startup
+      freshness: 48h
+      focus:
+      - new_founders_events
+      - verifiable_changes_in_founders
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_founders
+      - what_tools_methods_or_data_were_used_for_founders
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - leaders_people
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - founders_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Founders (founders) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Founders lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Founders.
+  action_rules:
+    monitor:
+    - track_emerging_founders_benchmarks
+    - follow_official_leaders_people_announcements
+    investigate:
+    - audit_claims_against_primary_founders_documentation
+    - verify_reproducibility_of_reported_founders_data
+  watch_rules:
+    monitor:
+    - next_founders_milestone_or_release_date
+    - peer_review_or_independent_validation_of_founders
+    - ecosystem_adoption_metrics_for_founders
+  retrieval_intent:
+    required_concepts:
+    - Founders
+    - founders
+    - company strategy
+    - product
+    - funding influence
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_founders_adoption
+  - verified_metrics_for_founders
+  - leaders_people_regulatory_or_competitive_response
+  - company strategy
+  - product
+  disambiguation_focus:
+  - Founders
+  - founders
+  - 'Founders specific evaluation: Company strategy, product/funding influence'
+  - distinct from other leaders-people topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - people
+    - startup
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: leaders-people-researchers-theme
+  theme_id: leaders-people-researchers-theme
+  micro_topic_id: researchers
+  micro_topic: researchers
+  domain: leaders-people
+  domain_id: leaders-people
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Researchers (researchers) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_researchers_developments
+    - verified_researchers_activity
+    excludes:
+    - tangential_leaders-people_chatter_without_researchers_relevance
+    boundaries:
+    - focus_strictly_on_researchers_domain_significance
+  questions:
+  - what_changed_in_researchers
+  - how_does_new_researchers_differ_from_prior_state
+  - what_verifiable_evidence_supports_researchers
+  - what_are_the_operational_or_market_implications_for_researchers
+  - what_technical_limitations_or_uncertainties_remain_in_researchers
+  - what_is_the_status_of_research_breakthroughs_for_researchers
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_researchers_exceeding_baseline
+    - independent_confirmation_of_researchers_milestone_from_primary_source
+    - measurable_impact_on_leaders_people_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_researchers
+    - minor_routine_maintenance_or_repackaging_without_new_researchers_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - research
+      freshness: 48h
+      focus:
+      - new_researchers_events
+      - verifiable_changes_in_researchers
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_researchers
+      - what_tools_methods_or_data_were_used_for_researchers
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - leaders_people
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - researchers_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Researchers (researchers)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Researchers lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Researchers.
+  action_rules:
+    monitor:
+    - track_emerging_researchers_benchmarks
+    - follow_official_leaders_people_announcements
+    investigate:
+    - audit_claims_against_primary_researchers_documentation
+    - verify_reproducibility_of_reported_researchers_data
+  watch_rules:
+    monitor:
+    - next_researchers_milestone_or_release_date
+    - peer_review_or_independent_validation_of_researchers
+    - ecosystem_adoption_metrics_for_researchers
+  retrieval_intent:
+    required_concepts:
+    - Researchers
+    - researchers
+    - research breakthroughs
+    - affiliations
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_researchers_adoption
+  - verified_metrics_for_researchers
+  - leaders_people_regulatory_or_competitive_response
+  - research breakthroughs
+  - affiliations
+  disambiguation_focus:
+  - Researchers
+  - researchers
+  - 'Researchers specific evaluation: Research breakthroughs, affiliations'
+  - distinct from other leaders-people topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: leaders-people-government-leaders-theme
+  theme_id: leaders-people-government-leaders-theme
+  micro_topic_id: government-leaders
+  micro_topic: government-leaders
+  domain: leaders-people
+  domain_id: leaders-people
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Government Leaders (government-leaders) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_government_leaders_developments
+    - verified_government_leaders_activity
+    excludes:
+    - tangential_leaders-people_chatter_without_government_leaders_relevance
+    boundaries:
+    - focus_strictly_on_government-leaders_domain_significance
+  questions:
+  - what_changed_in_government_leaders
+  - how_does_new_government_leaders_differ_from_prior_state
+  - what_verifiable_evidence_supports_government_leaders
+  - what_are_the_operational_or_market_implications_for_government_leaders
+  - what_technical_limitations_or_uncertainties_remain_in_government_leaders
+  - what_is_the_status_of_policy_decisions_for_government_leaders
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_government_leaders_exceeding_baseline
+    - independent_confirmation_of_government_leaders_milestone_from_primary_source
+    - measurable_impact_on_leaders_people_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_government_leaders
+    - minor_routine_maintenance_or_repackaging_without_new_government_leaders_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - gov
+      - news-global
+      freshness: 48h
+      focus:
+      - new_government_leaders_events
+      - verifiable_changes_in_government_leaders
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_government_leaders
+      - what_tools_methods_or_data_were_used_for_government_leaders
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - leaders_people
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - government_leaders_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Government Leaders (government-leaders)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Government Leaders lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Government Leaders.
+  action_rules:
+    monitor:
+    - track_emerging_government_leaders_benchmarks
+    - follow_official_leaders_people_announcements
+    investigate:
+    - audit_claims_against_primary_government_leaders_documentation
+    - verify_reproducibility_of_reported_government_leaders_data
+  watch_rules:
+    monitor:
+    - next_government_leaders_milestone_or_release_date
+    - peer_review_or_independent_validation_of_government_leaders
+    - ecosystem_adoption_metrics_for_government_leaders
+  retrieval_intent:
+    required_concepts:
+    - Government Leaders
+    - government-leaders
+    - policy decisions
+    - statements
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_government_leaders_adoption
+  - verified_metrics_for_government_leaders
+  - leaders_people_regulatory_or_competitive_response
+  - policy decisions
+  - statements
+  disambiguation_focus:
+  - Government Leaders
+  - government-leaders
+  - 'Government Leaders specific evaluation: Policy decisions/statements'
+  - distinct from other leaders-people topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: leaders-people-appointments-theme
+  theme_id: leaders-people-appointments-theme
+  micro_topic_id: appointments
+  micro_topic: appointments
+  domain: leaders-people
+  domain_id: leaders-people
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Appointments (appointments) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_appointments_developments
+    - verified_appointments_activity
+    excludes:
+    - tangential_leaders-people_chatter_without_appointments_relevance
+    boundaries:
+    - focus_strictly_on_appointments_domain_significance
+  questions:
+  - what_changed_in_appointments
+  - how_does_new_appointments_differ_from_prior_state
+  - what_verifiable_evidence_supports_appointments
+  - what_are_the_operational_or_market_implications_for_appointments
+  - what_technical_limitations_or_uncertainties_remain_in_appointments
+  - what_is_the_status_of_who_for_appointments
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_appointments_exceeding_baseline
+    - independent_confirmation_of_appointments_milestone_from_primary_source
+    - measurable_impact_on_leaders_people_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_appointments
+    - minor_routine_maintenance_or_repackaging_without_new_appointments_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - gov
+      - company
+      freshness: 48h
+      focus:
+      - new_appointments_events
+      - verifiable_changes_in_appointments
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_appointments
+      - what_tools_methods_or_data_were_used_for_appointments
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - leaders_people
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - appointments_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Appointments (appointments)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Appointments lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Appointments.
+  action_rules:
+    monitor:
+    - track_emerging_appointments_benchmarks
+    - follow_official_leaders_people_announcements
+    investigate:
+    - audit_claims_against_primary_appointments_documentation
+    - verify_reproducibility_of_reported_appointments_data
+  watch_rules:
+    monitor:
+    - next_appointments_milestone_or_release_date
+    - peer_review_or_independent_validation_of_appointments
+    - ecosystem_adoption_metrics_for_appointments
+  retrieval_intent:
+    required_concepts:
+    - Appointments
+    - appointments
+    - who
+    - role
+    - reason
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_appointments_adoption
+  - verified_metrics_for_appointments
+  - leaders_people_regulatory_or_competitive_response
+  - who
+  - role
+  disambiguation_focus:
+  - Appointments
+  - appointments
+  - 'Appointments specific evaluation: Who/role/reason/timing'
+  - distinct from other leaders-people topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: leaders-people-departures-theme
+  theme_id: leaders-people-departures-theme
+  micro_topic_id: departures
+  micro_topic: departures
+  domain: leaders-people
+  domain_id: leaders-people
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Departures (departures) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_departures_developments
+    - verified_departures_activity
+    excludes:
+    - tangential_leaders-people_chatter_without_departures_relevance
+    boundaries:
+    - focus_strictly_on_departures_domain_significance
+  questions:
+  - what_changed_in_departures
+  - how_does_new_departures_differ_from_prior_state
+  - what_verifiable_evidence_supports_departures
+  - what_are_the_operational_or_market_implications_for_departures
+  - what_technical_limitations_or_uncertainties_remain_in_departures
+  - what_is_the_status_of_why_for_departures
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_departures_exceeding_baseline
+    - independent_confirmation_of_departures_milestone_from_primary_source
+    - measurable_impact_on_leaders_people_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_departures
+    - minor_routine_maintenance_or_repackaging_without_new_departures_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - company
+      - news-global
+      freshness: 48h
+      focus:
+      - new_departures_events
+      - verifiable_changes_in_departures
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_departures
+      - what_tools_methods_or_data_were_used_for_departures
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - leaders_people
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - departures_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Departures (departures) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Departures lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Departures.
+  action_rules:
+    monitor:
+    - track_emerging_departures_benchmarks
+    - follow_official_leaders_people_announcements
+    investigate:
+    - audit_claims_against_primary_departures_documentation
+    - verify_reproducibility_of_reported_departures_data
+  watch_rules:
+    monitor:
+    - next_departures_milestone_or_release_date
+    - peer_review_or_independent_validation_of_departures
+    - ecosystem_adoption_metrics_for_departures
+  retrieval_intent:
+    required_concepts:
+    - Departures
+    - departures
+    - why
+    - impact
+    - replacement
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_departures_adoption
+  - verified_metrics_for_departures
+  - leaders_people_regulatory_or_competitive_response
+  - why
+  - impact
+  disambiguation_focus:
+  - Departures
+  - departures
+  - 'Departures specific evaluation: Why/impact/replacement'
+  - distinct from other leaders-people topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: leaders-people-statements-theme
+  theme_id: leaders-people-statements-theme
+  micro_topic_id: statements
+  micro_topic: statements
+  domain: leaders-people
+  domain_id: leaders-people
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Statements (statements) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_statements_developments
+    - verified_statements_activity
+    excludes:
+    - tangential_leaders-people_chatter_without_statements_relevance
+    boundaries:
+    - focus_strictly_on_statements_domain_significance
+  questions:
+  - what_changed_in_statements
+  - how_does_new_statements_differ_from_prior_state
+  - what_verifiable_evidence_supports_statements
+  - what_are_the_operational_or_market_implications_for_statements
+  - what_technical_limitations_or_uncertainties_remain_in_statements
+  - what_is_the_status_of_exact_source_position_vs_interpretation_for_statements
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_statements_exceeding_baseline
+    - independent_confirmation_of_statements_milestone_from_primary_source
+    - measurable_impact_on_leaders_people_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_statements
+    - minor_routine_maintenance_or_repackaging_without_new_statements_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - news-global
+      - official
+      freshness: 48h
+      focus:
+      - new_statements_events
+      - verifiable_changes_in_statements
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_statements
+      - what_tools_methods_or_data_were_used_for_statements
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - leaders_people
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - statements_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Statements (statements) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Statements lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Statements.
+  action_rules:
+    monitor:
+    - track_emerging_statements_benchmarks
+    - follow_official_leaders_people_announcements
+    investigate:
+    - audit_claims_against_primary_statements_documentation
+    - verify_reproducibility_of_reported_statements_data
+  watch_rules:
+    monitor:
+    - next_statements_milestone_or_release_date
+    - peer_review_or_independent_validation_of_statements
+    - ecosystem_adoption_metrics_for_statements
+  retrieval_intent:
+    required_concepts:
+    - Statements
+    - statements
+    - exact source position vs interpretation
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_statements_adoption
+  - verified_metrics_for_statements
+  - leaders_people_regulatory_or_competitive_response
+  - exact source position vs interpretation
+  disambiguation_focus:
+  - Statements
+  - statements
+  - 'Statements specific evaluation: Exact source position vs interpretation'
+  - distinct from other leaders-people topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-global
+    - official
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: leaders-people-strategic-decisions-theme
+  theme_id: leaders-people-strategic-decisions-theme
+  micro_topic_id: strategic-decisions
+  micro_topic: strategic-decisions
+  domain: leaders-people
+  domain_id: leaders-people
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Strategic Decisions (strategic-decisions) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_strategic_decisions_developments
+    - verified_strategic_decisions_activity
+    excludes:
+    - tangential_leaders-people_chatter_without_strategic_decisions_relevance
+    boundaries:
+    - focus_strictly_on_strategic-decisions_domain_significance
+  questions:
+  - what_changed_in_strategic_decisions
+  - how_does_new_strategic_decisions_differ_from_prior_state
+  - what_verifiable_evidence_supports_strategic_decisions
+  - what_are_the_operational_or_market_implications_for_strategic_decisions
+  - what_technical_limitations_or_uncertainties_remain_in_strategic_decisions
+  - what_is_the_status_of_decision_for_strategic_decisions
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_strategic_decisions_exceeding_baseline
+    - independent_confirmation_of_strategic_decisions_milestone_from_primary_source
+    - measurable_impact_on_leaders_people_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_strategic_decisions
+    - minor_routine_maintenance_or_repackaging_without_new_strategic_decisions_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - people
+      - company
+      - gov
+      freshness: 48h
+      focus:
+      - new_strategic_decisions_events
+      - verifiable_changes_in_strategic_decisions
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_strategic_decisions
+      - what_tools_methods_or_data_were_used_for_strategic_decisions
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - leaders_people
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - strategic_decisions_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Strategic Decisions (strategic-decisions)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Strategic Decisions lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Strategic Decisions.
+  action_rules:
+    monitor:
+    - track_emerging_strategic_decisions_benchmarks
+    - follow_official_leaders_people_announcements
+    investigate:
+    - audit_claims_against_primary_strategic_decisions_documentation
+    - verify_reproducibility_of_reported_strategic_decisions_data
+  watch_rules:
+    monitor:
+    - next_strategic_decisions_milestone_or_release_date
+    - peer_review_or_independent_validation_of_strategic_decisions
+    - ecosystem_adoption_metrics_for_strategic_decisions
+  retrieval_intent:
+    required_concepts:
+    - Strategic Decisions
+    - strategic-decisions
+    - decision
+    - evidence
+    - consequences
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_strategic_decisions_adoption
+  - verified_metrics_for_strategic_decisions
+  - leaders_people_regulatory_or_competitive_response
+  - decision
+  - evidence
+  disambiguation_focus:
+  - Strategic Decisions
+  - strategic-decisions
+  - 'Strategic Decisions specific evaluation: Decision + evidence + consequences'
+  - distinct from other leaders-people topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - people
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

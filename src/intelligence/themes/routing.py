@@ -55,6 +55,7 @@ def _resolution(
         fallback_used=fallback_used,
         fallback_reason=fallback_reason,
         theme_id=str(theme.get("id", "")),
+        micro_topic_id=str(theme.get("micro_topic_id") or theme.get("micro_topic") or ""),
         specificity_score=theme_specificity_score(theme),
         theme_origin=origin,
         quality_score=theme_quality_score(theme),

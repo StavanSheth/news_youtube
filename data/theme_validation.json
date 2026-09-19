@@ -1,0 +1,13 @@
+{
+  "total_records": 236,
+  "covered_count": 236,
+  "uncovered_count": 0,
+  "orphan_count": 0,
+  "duplicate_ids": [],
+  "coverage_percentage": 100.0,
+  "uncovered_micro_topics": [],
+  "orphan_micro_topics": [],
+  "failures": [],
+  "low_specificity": [],
+  "is_complete": true
+}

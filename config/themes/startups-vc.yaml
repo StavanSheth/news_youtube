@@ -1,0 +1,1656 @@
+themes:
+- id: startups-vc-funding-theme
+  theme_id: startups-vc-funding-theme
+  micro_topic_id: funding
+  micro_topic: funding
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Funding (funding) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_funding_developments
+    - verified_funding_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_funding_relevance
+    boundaries:
+    - focus_strictly_on_funding_domain_significance
+  questions:
+  - what_changed_in_funding
+  - how_does_new_funding_differ_from_prior_state
+  - what_verifiable_evidence_supports_funding
+  - what_are_the_operational_or_market_implications_for_funding
+  - what_technical_limitations_or_uncertainties_remain_in_funding
+  - what_is_the_status_of_round_size_for_funding
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_funding_exceeding_baseline
+    - independent_confirmation_of_funding_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_funding
+    - minor_routine_maintenance_or_repackaging_without_new_funding_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - startup
+      freshness: 48h
+      focus:
+      - new_funding_events
+      - verifiable_changes_in_funding
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_funding
+      - what_tools_methods_or_data_were_used_for_funding
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - funding_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Funding (funding) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Funding lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Funding.
+  action_rules:
+    monitor:
+    - track_emerging_funding_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_funding_documentation
+    - verify_reproducibility_of_reported_funding_data
+  watch_rules:
+    monitor:
+    - next_funding_milestone_or_release_date
+    - peer_review_or_independent_validation_of_funding
+    - ecosystem_adoption_metrics_for_funding
+  retrieval_intent:
+    required_concepts:
+    - Funding
+    - funding
+    - round size
+    - investors
+    - valuation
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_funding_adoption
+  - verified_metrics_for_funding
+  - startups_vc_regulatory_or_competitive_response
+  - round size
+  - investors
+  disambiguation_focus:
+  - Funding
+  - funding
+  - 'Funding specific evaluation: Round size, investors, valuation, use of funds'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-seed-series-rounds-theme
+  theme_id: startups-vc-seed-series-rounds-theme
+  micro_topic_id: seed-series-rounds
+  micro_topic: seed-series-rounds
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Seed / Series Rounds (seed-series-rounds) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_seed_series_rounds_developments
+    - verified_seed_/_series_rounds_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_seed_series_rounds_relevance
+    boundaries:
+    - focus_strictly_on_seed-series-rounds_domain_significance
+  questions:
+  - what_changed_in_seed_series_rounds
+  - how_does_new_seed_/_series_rounds_differ_from_prior_state
+  - what_verifiable_evidence_supports_seed_series_rounds
+  - what_are_the_operational_or_market_implications_for_seed_series_rounds
+  - what_technical_limitations_or_uncertainties_remain_in_seed_series_rounds
+  - what_is_the_status_of_stage_for_seed_series_rounds
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_seed_/_series_rounds_exceeding_baseline
+    - independent_confirmation_of_seed_series_rounds_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_seed_series_rounds
+    - minor_routine_maintenance_or_repackaging_without_new_seed_series_rounds_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - startup
+      freshness: 48h
+      focus:
+      - new_seed_series_rounds_events
+      - verifiable_changes_in_seed_/_series_rounds
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_seed_series_rounds
+      - what_tools_methods_or_data_were_used_for_seed_/_series_rounds
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - seed_series_rounds_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Seed / Series Rounds (seed-series-rounds)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Seed / Series Rounds lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Seed / Series Rounds.
+  action_rules:
+    monitor:
+    - track_emerging_seed_series_rounds_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_seed_/_series_rounds_documentation
+    - verify_reproducibility_of_reported_seed_series_rounds_data
+  watch_rules:
+    monitor:
+    - next_seed_/_series_rounds_milestone_or_release_date
+    - peer_review_or_independent_validation_of_seed_series_rounds
+    - ecosystem_adoption_metrics_for_seed_series_rounds
+  retrieval_intent:
+    required_concepts:
+    - Seed / Series Rounds
+    - seed-series-rounds
+    - stage
+    - traction
+    - lead investor
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_seed_series_rounds_adoption
+  - verified_metrics_for_seed_/_series_rounds
+  - startups_vc_regulatory_or_competitive_response
+  - stage
+  - traction
+  disambiguation_focus:
+  - Seed / Series Rounds
+  - seed-series-rounds
+  - 'Seed / Series Rounds specific evaluation: Stage, traction, lead investor'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-vc-activity-theme
+  theme_id: startups-vc-vc-activity-theme
+  micro_topic_id: vc-activity
+  micro_topic: vc-activity
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess VC Activity (vc-activity) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_vc_activity_developments
+    - verified_vc_activity_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_vc_activity_relevance
+    boundaries:
+    - focus_strictly_on_vc-activity_domain_significance
+  questions:
+  - what_changed_in_vc_activity
+  - how_does_new_vc_activity_differ_from_prior_state
+  - what_verifiable_evidence_supports_vc_activity
+  - what_are_the_operational_or_market_implications_for_vc_activity
+  - what_technical_limitations_or_uncertainties_remain_in_vc_activity
+  - what_is_the_status_of_sector_for_vc_activity
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_vc_activity_exceeding_baseline
+    - independent_confirmation_of_vc_activity_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_vc_activity
+    - minor_routine_maintenance_or_repackaging_without_new_vc_activity_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - startup
+      - finance
+      freshness: 48h
+      focus:
+      - new_vc_activity_events
+      - verifiable_changes_in_vc_activity
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_vc_activity
+      - what_tools_methods_or_data_were_used_for_vc_activity
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - vc_activity_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in VC Activity (vc-activity)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding VC Activity lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for VC Activity.
+  action_rules:
+    monitor:
+    - track_emerging_vc_activity_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_vc_activity_documentation
+    - verify_reproducibility_of_reported_vc_activity_data
+  watch_rules:
+    monitor:
+    - next_vc_activity_milestone_or_release_date
+    - peer_review_or_independent_validation_of_vc_activity
+    - ecosystem_adoption_metrics_for_vc_activity
+  retrieval_intent:
+    required_concepts:
+    - VC Activity
+    - vc-activity
+    - sector
+    - geography
+    - volume trends
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_vc_activity_adoption
+  - verified_metrics_for_vc_activity
+  - startups_vc_regulatory_or_competitive_response
+  - sector
+  - geography
+  disambiguation_focus:
+  - VC Activity
+  - vc-activity
+  - 'VC Activity specific evaluation: Sector/geography/volume trends'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-acquisitions-theme
+  theme_id: startups-vc-acquisitions-theme
+  micro_topic_id: acquisitions
+  micro_topic: acquisitions
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Acquisitions (acquisitions) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_acquisitions_developments
+    - verified_acquisitions_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_acquisitions_relevance
+    boundaries:
+    - focus_strictly_on_acquisitions_domain_significance
+  questions:
+  - what_changed_in_acquisitions
+  - how_does_new_acquisitions_differ_from_prior_state
+  - what_verifiable_evidence_supports_acquisitions
+  - what_are_the_operational_or_market_implications_for_acquisitions
+  - what_technical_limitations_or_uncertainties_remain_in_acquisitions
+  - what_is_the_status_of_buyer_for_acquisitions
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_acquisitions_exceeding_baseline
+    - independent_confirmation_of_acquisitions_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_acquisitions
+    - minor_routine_maintenance_or_repackaging_without_new_acquisitions_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - startup
+      - company
+      freshness: 48h
+      focus:
+      - new_acquisitions_events
+      - verifiable_changes_in_acquisitions
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_acquisitions
+      - what_tools_methods_or_data_were_used_for_acquisitions
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - acquisitions_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Acquisitions (acquisitions)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Acquisitions lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Acquisitions.
+  action_rules:
+    monitor:
+    - track_emerging_acquisitions_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_acquisitions_documentation
+    - verify_reproducibility_of_reported_acquisitions_data
+  watch_rules:
+    monitor:
+    - next_acquisitions_milestone_or_release_date
+    - peer_review_or_independent_validation_of_acquisitions
+    - ecosystem_adoption_metrics_for_acquisitions
+  retrieval_intent:
+    required_concepts:
+    - Acquisitions
+    - acquisitions
+    - buyer
+    - target
+    - strategic rationale
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_acquisitions_adoption
+  - verified_metrics_for_acquisitions
+  - startups_vc_regulatory_or_competitive_response
+  - buyer
+  - target
+  disambiguation_focus:
+  - Acquisitions
+  - acquisitions
+  - 'Acquisitions specific evaluation: Buyer, target, strategic rationale'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-ipos-theme
+  theme_id: startups-vc-ipos-theme
+  micro_topic_id: ipos
+  micro_topic: ipos
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess IPOs (ipos) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_ipos_developments
+    - verified_ipos_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_ipos_relevance
+    boundaries:
+    - focus_strictly_on_ipos_domain_significance
+  questions:
+  - what_changed_in_ipos
+  - how_does_new_ipos_differ_from_prior_state
+  - what_verifiable_evidence_supports_ipos
+  - what_are_the_operational_or_market_implications_for_ipos
+  - what_technical_limitations_or_uncertainties_remain_in_ipos
+  - what_is_the_status_of_filing_for_ipos
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ipos_exceeding_baseline
+    - independent_confirmation_of_ipos_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ipos
+    - minor_routine_maintenance_or_repackaging_without_new_ipos_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - finance
+      - gov-us
+      freshness: 48h
+      focus:
+      - new_ipos_events
+      - verifiable_changes_in_ipos
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ipos
+      - what_tools_methods_or_data_were_used_for_ipos
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ipos_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in IPOs (ipos) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding IPOs lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for IPOs.
+  action_rules:
+    monitor:
+    - track_emerging_ipos_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_ipos_documentation
+    - verify_reproducibility_of_reported_ipos_data
+  watch_rules:
+    monitor:
+    - next_ipos_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ipos
+    - ecosystem_adoption_metrics_for_ipos
+  retrieval_intent:
+    required_concepts:
+    - IPOs
+    - ipos
+    - filing
+    - valuation
+    - pricing
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ipos_adoption
+  - verified_metrics_for_ipos
+  - startups_vc_regulatory_or_competitive_response
+  - filing
+  - valuation
+  disambiguation_focus:
+  - IPOs
+  - ipos
+  - 'IPOs specific evaluation: Filing, valuation, pricing, market reception'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - finance
+    - gov-us
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-accelerators-theme
+  theme_id: startups-vc-accelerators-theme
+  micro_topic_id: accelerators
+  micro_topic: accelerators
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Accelerators (accelerators) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_accelerators_developments
+    - verified_accelerators_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_accelerators_relevance
+    boundaries:
+    - focus_strictly_on_accelerators_domain_significance
+  questions:
+  - what_changed_in_accelerators
+  - how_does_new_accelerators_differ_from_prior_state
+  - what_verifiable_evidence_supports_accelerators
+  - what_are_the_operational_or_market_implications_for_accelerators
+  - what_technical_limitations_or_uncertainties_remain_in_accelerators
+  - what_is_the_status_of_new_cohorts_for_accelerators
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_accelerators_exceeding_baseline
+    - independent_confirmation_of_accelerators_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_accelerators
+    - minor_routine_maintenance_or_repackaging_without_new_accelerators_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - startup
+      - opportunity
+      freshness: 48h
+      focus:
+      - new_accelerators_events
+      - verifiable_changes_in_accelerators
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_accelerators
+      - what_tools_methods_or_data_were_used_for_accelerators
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - accelerators_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Accelerators (accelerators)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Accelerators lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Accelerators.
+  action_rules:
+    monitor:
+    - track_emerging_accelerators_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_accelerators_documentation
+    - verify_reproducibility_of_reported_accelerators_data
+  watch_rules:
+    monitor:
+    - next_accelerators_milestone_or_release_date
+    - peer_review_or_independent_validation_of_accelerators
+    - ecosystem_adoption_metrics_for_accelerators
+  retrieval_intent:
+    required_concepts:
+    - Accelerators
+    - accelerators
+    - new cohorts
+    - programs
+    - investment
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_accelerators_adoption
+  - verified_metrics_for_accelerators
+  - startups_vc_regulatory_or_competitive_response
+  - new cohorts
+  - programs
+  disambiguation_focus:
+  - Accelerators
+  - accelerators
+  - 'Accelerators specific evaluation: New cohorts, programs, investment'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    - opportunity
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-valuation-theme
+  theme_id: startups-vc-valuation-theme
+  micro_topic_id: valuation
+  micro_topic: valuation
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Valuation (valuation) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_valuation_developments
+    - verified_valuation_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_valuation_relevance
+    boundaries:
+    - focus_strictly_on_valuation_domain_significance
+  questions:
+  - what_changed_in_valuation
+  - how_does_new_valuation_differ_from_prior_state
+  - what_verifiable_evidence_supports_valuation
+  - what_are_the_operational_or_market_implications_for_valuation
+  - what_technical_limitations_or_uncertainties_remain_in_valuation
+  - what_is_the_status_of_changes_for_valuation
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_valuation_exceeding_baseline
+    - independent_confirmation_of_valuation_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_valuation
+    - minor_routine_maintenance_or_repackaging_without_new_valuation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - finance
+      - startup
+      freshness: 48h
+      focus:
+      - new_valuation_events
+      - verifiable_changes_in_valuation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_valuation
+      - what_tools_methods_or_data_were_used_for_valuation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - valuation_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Valuation (valuation) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Valuation lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Valuation.
+  action_rules:
+    monitor:
+    - track_emerging_valuation_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_valuation_documentation
+    - verify_reproducibility_of_reported_valuation_data
+  watch_rules:
+    monitor:
+    - next_valuation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_valuation
+    - ecosystem_adoption_metrics_for_valuation
+  retrieval_intent:
+    required_concepts:
+    - Valuation
+    - valuation
+    - changes
+    - financing valuation
+    - market comparison
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_valuation_adoption
+  - verified_metrics_for_valuation
+  - startups_vc_regulatory_or_competitive_response
+  - changes
+  - financing valuation
+  disambiguation_focus:
+  - Valuation
+  - valuation
+  - 'Valuation specific evaluation: Changes, financing valuation, market comparison'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - finance
+    - startup
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-exits-theme
+  theme_id: startups-vc-exits-theme
+  micro_topic_id: exits
+  micro_topic: exits
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Exits (exits) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_exits_developments
+    - verified_exits_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_exits_relevance
+    boundaries:
+    - focus_strictly_on_exits_domain_significance
+  questions:
+  - what_changed_in_exits
+  - how_does_new_exits_differ_from_prior_state
+  - what_verifiable_evidence_supports_exits
+  - what_are_the_operational_or_market_implications_for_exits
+  - what_technical_limitations_or_uncertainties_remain_in_exits
+  - what_is_the_status_of_acquisition_for_exits
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_exits_exceeding_baseline
+    - independent_confirmation_of_exits_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_exits
+    - minor_routine_maintenance_or_repackaging_without_new_exits_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - startup
+      - finance
+      freshness: 48h
+      focus:
+      - new_exits_events
+      - verifiable_changes_in_exits
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_exits
+      - what_tools_methods_or_data_were_used_for_exits
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - exits_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Exits (exits) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Exits lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Exits.
+  action_rules:
+    monitor:
+    - track_emerging_exits_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_exits_documentation
+    - verify_reproducibility_of_reported_exits_data
+  watch_rules:
+    monitor:
+    - next_exits_milestone_or_release_date
+    - peer_review_or_independent_validation_of_exits
+    - ecosystem_adoption_metrics_for_exits
+  retrieval_intent:
+    required_concepts:
+    - Exits
+    - exits
+    - acquisition
+    - ipo
+    - secondary
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_exits_adoption
+  - verified_metrics_for_exits
+  - startups_vc_regulatory_or_competitive_response
+  - acquisition
+  - ipo
+  disambiguation_focus:
+  - Exits
+  - exits
+  - 'Exits specific evaluation: Acquisition/IPO/secondary'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-launches-theme
+  theme_id: startups-vc-launches-theme
+  micro_topic_id: launches
+  micro_topic: launches
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Launches (launches) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_launches_developments
+    - verified_launches_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_launches_relevance
+    boundaries:
+    - focus_strictly_on_launches_domain_significance
+  questions:
+  - what_changed_in_launches
+  - how_does_new_launches_differ_from_prior_state
+  - what_verifiable_evidence_supports_launches
+  - what_are_the_operational_or_market_implications_for_launches
+  - what_technical_limitations_or_uncertainties_remain_in_launches
+  - what_is_the_status_of_product_for_launches
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_launches_exceeding_baseline
+    - independent_confirmation_of_launches_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_launches
+    - minor_routine_maintenance_or_repackaging_without_new_launches_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - startup
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_launches_events
+      - verifiable_changes_in_launches
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_launches
+      - what_tools_methods_or_data_were_used_for_launches
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - launches_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Launches (launches) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Launches lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Launches.
+  action_rules:
+    monitor:
+    - track_emerging_launches_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_launches_documentation
+    - verify_reproducibility_of_reported_launches_data
+  watch_rules:
+    monitor:
+    - next_launches_milestone_or_release_date
+    - peer_review_or_independent_validation_of_launches
+    - ecosystem_adoption_metrics_for_launches
+  retrieval_intent:
+    required_concepts:
+    - Launches
+    - launches
+    - product
+    - company launch and traction
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_launches_adoption
+  - verified_metrics_for_launches
+  - startups_vc_regulatory_or_competitive_response
+  - product
+  - company launch and traction
+  disambiguation_focus:
+  - Launches
+  - launches
+  - 'Launches specific evaluation: Product/company launch and traction'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: startups-vc-failures-theme
+  theme_id: startups-vc-failures-theme
+  micro_topic_id: failures
+  micro_topic: failures
+  domain: startups-vc
+  domain_id: startups-vc
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Failures (failures) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_failures_developments
+    - verified_failures_activity
+    excludes:
+    - tangential_startups-vc_chatter_without_failures_relevance
+    boundaries:
+    - focus_strictly_on_failures_domain_significance
+  questions:
+  - what_changed_in_failures
+  - how_does_new_failures_differ_from_prior_state
+  - what_verifiable_evidence_supports_failures
+  - what_are_the_operational_or_market_implications_for_failures
+  - what_technical_limitations_or_uncertainties_remain_in_failures
+  - what_is_the_status_of_shutdown_for_failures
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_failures_exceeding_baseline
+    - independent_confirmation_of_failures_milestone_from_primary_source
+    - measurable_impact_on_startups_vc_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_failures
+    - minor_routine_maintenance_or_repackaging_without_new_failures_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - startup
+      - news-global
+      freshness: 48h
+      focus:
+      - new_failures_events
+      - verifiable_changes_in_failures
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_failures
+      - what_tools_methods_or_data_were_used_for_failures
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - startups_vc
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - failures_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Failures (failures) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Failures lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Failures.
+  action_rules:
+    monitor:
+    - track_emerging_failures_benchmarks
+    - follow_official_startups_vc_announcements
+    investigate:
+    - audit_claims_against_primary_failures_documentation
+    - verify_reproducibility_of_reported_failures_data
+  watch_rules:
+    monitor:
+    - next_failures_milestone_or_release_date
+    - peer_review_or_independent_validation_of_failures
+    - ecosystem_adoption_metrics_for_failures
+  retrieval_intent:
+    required_concepts:
+    - Failures
+    - failures
+    - shutdown
+    - layoffs
+    - insolvency
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_failures_adoption
+  - verified_metrics_for_failures
+  - startups_vc_regulatory_or_competitive_response
+  - shutdown
+  - layoffs
+  disambiguation_focus:
+  - Failures
+  - failures
+  - 'Failures specific evaluation: Shutdown, layoffs, insolvency, funding failure'
+  - distinct from other startups-vc topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

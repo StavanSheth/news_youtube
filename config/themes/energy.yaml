@@ -1,0 +1,2169 @@
+themes:
+- id: energy-oil-theme
+  theme_id: energy-oil-theme
+  micro_topic_id: oil
+  micro_topic: oil
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Oil (oil) specifically through verified evidence, measurable change,
+    and practical implications.
+  scope:
+    includes:
+    - all_oil_developments
+    - verified_oil_activity
+    excludes:
+    - tangential_energy_chatter_without_oil_relevance
+    boundaries:
+    - focus_strictly_on_oil_domain_significance
+  questions:
+  - what_changed_in_oil
+  - how_does_new_oil_differ_from_prior_state
+  - what_verifiable_evidence_supports_oil
+  - what_are_the_operational_or_market_implications_for_oil
+  - what_technical_limitations_or_uncertainties_remain_in_oil
+  - what_is_the_status_of_price_for_oil
+  evidence_requirements: &id001
+  - eia
+  - iea
+  - market
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_oil_exceeding_baseline
+    - independent_confirmation_of_oil_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_oil
+    - minor_routine_maintenance_or_repackaging_without_new_oil_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - eia
+      - iea
+      - market
+      freshness: 48h
+      focus:
+      - new_oil_events
+      - verifiable_changes_in_oil
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_oil
+      - what_tools_methods_or_data_were_used_for_oil
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - oil_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Oil (oil) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Oil lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Oil.
+  action_rules:
+    monitor:
+    - track_emerging_oil_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_oil_documentation
+    - verify_reproducibility_of_reported_oil_data
+  watch_rules:
+    monitor:
+    - next_oil_milestone_or_release_date
+    - peer_review_or_independent_validation_of_oil
+    - ecosystem_adoption_metrics_for_oil
+  retrieval_intent:
+    required_concepts:
+    - Oil
+    - oil
+    - price
+    - supply
+    - inventories
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_oil_adoption
+  - verified_metrics_for_oil
+  - energy_regulatory_or_competitive_response
+  - price
+  - supply
+  disambiguation_focus:
+  - Oil
+  - oil
+  - 'Oil specific evaluation: Price, supply, inventories, production, disruptions'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - eia
+    - iea
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-gas-theme
+  theme_id: energy-gas-theme
+  micro_topic_id: gas
+  micro_topic: gas
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Gas (gas) specifically through verified evidence, measurable change,
+    and practical implications.
+  scope:
+    includes:
+    - all_gas_developments
+    - verified_gas_activity
+    excludes:
+    - tangential_energy_chatter_without_gas_relevance
+    boundaries:
+    - focus_strictly_on_gas_domain_significance
+  questions:
+  - what_changed_in_gas
+  - how_does_new_gas_differ_from_prior_state
+  - what_verifiable_evidence_supports_gas
+  - what_are_the_operational_or_market_implications_for_gas
+  - what_technical_limitations_or_uncertainties_remain_in_gas
+  - what_is_the_status_of_prices_for_gas
+  evidence_requirements: &id006
+  - eia
+  - gie_agsi
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_gas_exceeding_baseline
+    - independent_confirmation_of_gas_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_gas
+    - minor_routine_maintenance_or_repackaging_without_new_gas_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - eia
+      - gie agsi
+      freshness: 48h
+      focus:
+      - new_gas_events
+      - verifiable_changes_in_gas
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_gas
+      - what_tools_methods_or_data_were_used_for_gas
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - gas_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Gas (gas) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Gas lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Gas.
+  action_rules:
+    monitor:
+    - track_emerging_gas_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_gas_documentation
+    - verify_reproducibility_of_reported_gas_data
+  watch_rules:
+    monitor:
+    - next_gas_milestone_or_release_date
+    - peer_review_or_independent_validation_of_gas
+    - ecosystem_adoption_metrics_for_gas
+  retrieval_intent:
+    required_concepts:
+    - Gas
+    - gas
+    - prices
+    - storage
+    - lng
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_gas_adoption
+  - verified_metrics_for_gas
+  - energy_regulatory_or_competitive_response
+  - prices
+  - storage
+  disambiguation_focus:
+  - Gas
+  - gas
+  - 'Gas specific evaluation: Prices, storage, LNG, pipelines'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - eia
+    - gie agsi
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-electricity-theme
+  theme_id: energy-electricity-theme
+  micro_topic_id: electricity
+  micro_topic: electricity
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Electricity (electricity) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_electricity_developments
+    - verified_electricity_activity
+    excludes:
+    - tangential_energy_chatter_without_electricity_relevance
+    boundaries:
+    - focus_strictly_on_electricity_domain_significance
+  questions:
+  - what_changed_in_electricity
+  - how_does_new_electricity_differ_from_prior_state
+  - what_verifiable_evidence_supports_electricity
+  - what_are_the_operational_or_market_implications_for_electricity
+  - what_technical_limitations_or_uncertainties_remain_in_electricity
+  - what_is_the_status_of_prices_for_electricity
+  evidence_requirements: &id011
+  - eia
+  - energy_datasets
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_electricity_exceeding_baseline
+    - independent_confirmation_of_electricity_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_electricity
+    - minor_routine_maintenance_or_repackaging_without_new_electricity_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - eia
+      - energy datasets
+      freshness: 48h
+      focus:
+      - new_electricity_events
+      - verifiable_changes_in_electricity
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_electricity
+      - what_tools_methods_or_data_were_used_for_electricity
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - electricity_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Electricity (electricity)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Electricity lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Electricity.
+  action_rules:
+    monitor:
+    - track_emerging_electricity_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_electricity_documentation
+    - verify_reproducibility_of_reported_electricity_data
+  watch_rules:
+    monitor:
+    - next_electricity_milestone_or_release_date
+    - peer_review_or_independent_validation_of_electricity
+    - ecosystem_adoption_metrics_for_electricity
+  retrieval_intent:
+    required_concepts:
+    - Electricity
+    - electricity
+    - prices
+    - generation
+    - demand
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_electricity_adoption
+  - verified_metrics_for_electricity
+  - energy_regulatory_or_competitive_response
+  - prices
+  - generation
+  disambiguation_focus:
+  - Electricity
+  - electricity
+  - 'Electricity specific evaluation: Prices, generation, demand'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - eia
+    - energy datasets
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-renewables-theme
+  theme_id: energy-renewables-theme
+  micro_topic_id: renewables
+  micro_topic: renewables
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Renewables (renewables) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_renewables_developments
+    - verified_renewables_activity
+    excludes:
+    - tangential_energy_chatter_without_renewables_relevance
+    boundaries:
+    - focus_strictly_on_renewables_domain_significance
+  questions:
+  - what_changed_in_renewables
+  - how_does_new_renewables_differ_from_prior_state
+  - what_verifiable_evidence_supports_renewables
+  - what_are_the_operational_or_market_implications_for_renewables
+  - what_technical_limitations_or_uncertainties_remain_in_renewables
+  - what_is_the_status_of_capacity_for_renewables
+  evidence_requirements: &id016
+  - eia
+  - iea
+  - news_tech
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_renewables_exceeding_baseline
+    - independent_confirmation_of_renewables_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_renewables
+    - minor_routine_maintenance_or_repackaging_without_new_renewables_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - eia
+      - iea
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_renewables_events
+      - verifiable_changes_in_renewables
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_renewables
+      - what_tools_methods_or_data_were_used_for_renewables
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - renewables_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Renewables (renewables) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Renewables lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Renewables.
+  action_rules:
+    monitor:
+    - track_emerging_renewables_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_renewables_documentation
+    - verify_reproducibility_of_reported_renewables_data
+  watch_rules:
+    monitor:
+    - next_renewables_milestone_or_release_date
+    - peer_review_or_independent_validation_of_renewables
+    - ecosystem_adoption_metrics_for_renewables
+  retrieval_intent:
+    required_concepts:
+    - Renewables
+    - renewables
+    - capacity
+    - generation
+    - investment
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_renewables_adoption
+  - verified_metrics_for_renewables
+  - energy_regulatory_or_competitive_response
+  - capacity
+  - generation
+  disambiguation_focus:
+  - Renewables
+  - renewables
+  - 'Renewables specific evaluation: Capacity, generation, investment'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - eia
+    - iea
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-nuclear-theme
+  theme_id: energy-nuclear-theme
+  micro_topic_id: nuclear
+  micro_topic: nuclear
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Nuclear (nuclear) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_nuclear_developments
+    - verified_nuclear_activity
+    excludes:
+    - tangential_energy_chatter_without_nuclear_relevance
+    boundaries:
+    - focus_strictly_on_nuclear_domain_significance
+  questions:
+  - what_changed_in_nuclear
+  - how_does_new_nuclear_differ_from_prior_state
+  - what_verifiable_evidence_supports_nuclear
+  - what_are_the_operational_or_market_implications_for_nuclear
+  - what_technical_limitations_or_uncertainties_remain_in_nuclear
+  - what_is_the_status_of_reactors_for_nuclear
+  evidence_requirements: &id021
+  - iea
+  - gov
+  - research
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_nuclear_exceeding_baseline
+    - independent_confirmation_of_nuclear_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_nuclear
+    - minor_routine_maintenance_or_repackaging_without_new_nuclear_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - iea
+      - gov
+      - research
+      freshness: 48h
+      focus:
+      - new_nuclear_events
+      - verifiable_changes_in_nuclear
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_nuclear
+      - what_tools_methods_or_data_were_used_for_nuclear
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - nuclear_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Nuclear (nuclear) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Nuclear lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Nuclear.
+  action_rules:
+    monitor:
+    - track_emerging_nuclear_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_nuclear_documentation
+    - verify_reproducibility_of_reported_nuclear_data
+  watch_rules:
+    monitor:
+    - next_nuclear_milestone_or_release_date
+    - peer_review_or_independent_validation_of_nuclear
+    - ecosystem_adoption_metrics_for_nuclear
+  retrieval_intent:
+    required_concepts:
+    - Nuclear
+    - nuclear
+    - reactors
+    - construction
+    - policy
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_nuclear_adoption
+  - verified_metrics_for_nuclear
+  - energy_regulatory_or_competitive_response
+  - reactors
+  - construction
+  disambiguation_focus:
+  - Nuclear
+  - nuclear
+  - 'Nuclear specific evaluation: Reactors, construction, policy'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - iea
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-batteries-theme
+  theme_id: energy-batteries-theme
+  micro_topic_id: batteries
+  micro_topic: batteries
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Batteries (batteries) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_batteries_developments
+    - verified_batteries_activity
+    excludes:
+    - tangential_energy_chatter_without_batteries_relevance
+    boundaries:
+    - focus_strictly_on_batteries_domain_significance
+  questions:
+  - what_changed_in_batteries
+  - how_does_new_batteries_differ_from_prior_state
+  - what_verifiable_evidence_supports_batteries
+  - what_are_the_operational_or_market_implications_for_batteries
+  - what_technical_limitations_or_uncertainties_remain_in_batteries
+  - what_is_the_status_of_cell_tech_for_batteries
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_batteries_exceeding_baseline
+    - independent_confirmation_of_batteries_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_batteries
+    - minor_routine_maintenance_or_repackaging_without_new_batteries_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - news-tech
+      - semiconductor
+      - research
+      freshness: 48h
+      focus:
+      - new_batteries_events
+      - verifiable_changes_in_batteries
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_batteries
+      - what_tools_methods_or_data_were_used_for_batteries
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - batteries_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Batteries (batteries) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Batteries lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Batteries.
+  action_rules:
+    monitor:
+    - track_emerging_batteries_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_batteries_documentation
+    - verify_reproducibility_of_reported_batteries_data
+  watch_rules:
+    monitor:
+    - next_batteries_milestone_or_release_date
+    - peer_review_or_independent_validation_of_batteries
+    - ecosystem_adoption_metrics_for_batteries
+  retrieval_intent:
+    required_concepts:
+    - Batteries
+    - batteries
+    - cell tech
+    - capacity
+    - supply chain
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_batteries_adoption
+  - verified_metrics_for_batteries
+  - energy_regulatory_or_competitive_response
+  - cell tech
+  - capacity
+  disambiguation_focus:
+  - Batteries
+  - batteries
+  - 'Batteries specific evaluation: Cell tech, capacity, supply chain'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - semiconductor
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-grids-theme
+  theme_id: energy-grids-theme
+  micro_topic_id: grids
+  micro_topic: grids
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Grids (grids) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_grids_developments
+    - verified_grids_activity
+    excludes:
+    - tangential_energy_chatter_without_grids_relevance
+    boundaries:
+    - focus_strictly_on_grids_domain_significance
+  questions:
+  - what_changed_in_grids
+  - how_does_new_grids_differ_from_prior_state
+  - what_verifiable_evidence_supports_grids
+  - what_are_the_operational_or_market_implications_for_grids
+  - what_technical_limitations_or_uncertainties_remain_in_grids
+  - what_is_the_status_of_grid_investment_for_grids
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_grids_exceeding_baseline
+    - independent_confirmation_of_grids_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_grids
+    - minor_routine_maintenance_or_repackaging_without_new_grids_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - energy
+      - gov
+      freshness: 48h
+      focus:
+      - new_grids_events
+      - verifiable_changes_in_grids
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_grids
+      - what_tools_methods_or_data_were_used_for_grids
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - grids_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Grids (grids) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Grids lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Grids.
+  action_rules:
+    monitor:
+    - track_emerging_grids_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_grids_documentation
+    - verify_reproducibility_of_reported_grids_data
+  watch_rules:
+    monitor:
+    - next_grids_milestone_or_release_date
+    - peer_review_or_independent_validation_of_grids
+    - ecosystem_adoption_metrics_for_grids
+  retrieval_intent:
+    required_concepts:
+    - Grids
+    - grids
+    - grid investment
+    - outages
+    - interconnection
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_grids_adoption
+  - verified_metrics_for_grids
+  - energy_regulatory_or_competitive_response
+  - grid investment
+  - outages
+  disambiguation_focus:
+  - Grids
+  - grids
+  - 'Grids specific evaluation: Grid investment, outages, interconnection'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - energy
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-energy-companies-theme
+  theme_id: energy-energy-companies-theme
+  micro_topic_id: energy-companies
+  micro_topic: energy-companies
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Energy Companies (energy-companies) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_energy_companies_developments
+    - verified_energy_companies_activity
+    excludes:
+    - tangential_energy_chatter_without_energy_companies_relevance
+    boundaries:
+    - focus_strictly_on_energy-companies_domain_significance
+  questions:
+  - what_changed_in_energy_companies
+  - how_does_new_energy_companies_differ_from_prior_state
+  - what_verifiable_evidence_supports_energy_companies
+  - what_are_the_operational_or_market_implications_for_energy_companies
+  - what_technical_limitations_or_uncertainties_remain_in_energy_companies
+  - what_is_the_status_of_earnings_for_energy_companies
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_energy_companies_exceeding_baseline
+    - independent_confirmation_of_energy_companies_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_energy_companies
+    - minor_routine_maintenance_or_repackaging_without_new_energy_companies_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - company
+      - energy
+      freshness: 48h
+      focus:
+      - new_energy_companies_events
+      - verifiable_changes_in_energy_companies
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_energy_companies
+      - what_tools_methods_or_data_were_used_for_energy_companies
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - energy_companies_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Energy Companies (energy-companies)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Energy Companies lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Energy Companies.
+  action_rules:
+    monitor:
+    - track_emerging_energy_companies_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_energy_companies_documentation
+    - verify_reproducibility_of_reported_energy_companies_data
+  watch_rules:
+    monitor:
+    - next_energy_companies_milestone_or_release_date
+    - peer_review_or_independent_validation_of_energy_companies
+    - ecosystem_adoption_metrics_for_energy_companies
+  retrieval_intent:
+    required_concepts:
+    - Energy Companies
+    - energy-companies
+    - earnings
+    - projects
+    - strategy
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_energy_companies_adoption
+  - verified_metrics_for_energy_companies
+  - energy_regulatory_or_competitive_response
+  - earnings
+  - projects
+  disambiguation_focus:
+  - Energy Companies
+  - energy-companies
+  - 'Energy Companies specific evaluation: Earnings, projects, strategy'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - energy
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-energy-markets-theme
+  theme_id: energy-energy-markets-theme
+  micro_topic_id: energy-markets
+  micro_topic: energy-markets
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Energy Markets (energy-markets) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_energy_markets_developments
+    - verified_energy_markets_activity
+    excludes:
+    - tangential_energy_chatter_without_energy_markets_relevance
+    boundaries:
+    - focus_strictly_on_energy-markets_domain_significance
+  questions:
+  - what_changed_in_energy_markets
+  - how_does_new_energy_markets_differ_from_prior_state
+  - what_verifiable_evidence_supports_energy_markets
+  - what_are_the_operational_or_market_implications_for_energy_markets
+  - what_technical_limitations_or_uncertainties_remain_in_energy_markets
+  - what_is_the_status_of_price_for_energy_markets
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_energy_markets_exceeding_baseline
+    - independent_confirmation_of_energy_markets_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_energy_markets
+    - minor_routine_maintenance_or_repackaging_without_new_energy_markets_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - energy
+      - finance
+      freshness: 48h
+      focus:
+      - new_energy_markets_events
+      - verifiable_changes_in_energy_markets
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_energy_markets
+      - what_tools_methods_or_data_were_used_for_energy_markets
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - energy_markets_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Energy Markets (energy-markets)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Energy Markets lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Energy Markets.
+  action_rules:
+    monitor:
+    - track_emerging_energy_markets_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_energy_markets_documentation
+    - verify_reproducibility_of_reported_energy_markets_data
+  watch_rules:
+    monitor:
+    - next_energy_markets_milestone_or_release_date
+    - peer_review_or_independent_validation_of_energy_markets
+    - ecosystem_adoption_metrics_for_energy_markets
+  retrieval_intent:
+    required_concepts:
+    - Energy Markets
+    - energy-markets
+    - price
+    - market structure changes
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_energy_markets_adoption
+  - verified_metrics_for_energy_markets
+  - energy_regulatory_or_competitive_response
+  - price
+  - market structure changes
+  disambiguation_focus:
+  - Energy Markets
+  - energy-markets
+  - 'Energy Markets specific evaluation: Price/market structure changes'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - energy
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-production-theme
+  theme_id: energy-production-theme
+  micro_topic_id: production
+  micro_topic: production
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Production (production) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_production_developments
+    - verified_production_activity
+    excludes:
+    - tangential_energy_chatter_without_production_relevance
+    boundaries:
+    - focus_strictly_on_production_domain_significance
+  questions:
+  - what_changed_in_production
+  - how_does_new_production_differ_from_prior_state
+  - what_verifiable_evidence_supports_production
+  - what_are_the_operational_or_market_implications_for_production
+  - what_technical_limitations_or_uncertainties_remain_in_production
+  - what_is_the_status_of_country_for_production
+  evidence_requirements: &id046
+  - eia
+  - iea
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_production_exceeding_baseline
+    - independent_confirmation_of_production_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_production
+    - minor_routine_maintenance_or_repackaging_without_new_production_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - eia
+      - iea
+      freshness: 48h
+      focus:
+      - new_production_events
+      - verifiable_changes_in_production
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_production
+      - what_tools_methods_or_data_were_used_for_production
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - production_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Production (production) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Production lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Production.
+  action_rules:
+    monitor:
+    - track_emerging_production_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_production_documentation
+    - verify_reproducibility_of_reported_production_data
+  watch_rules:
+    monitor:
+    - next_production_milestone_or_release_date
+    - peer_review_or_independent_validation_of_production
+    - ecosystem_adoption_metrics_for_production
+  retrieval_intent:
+    required_concepts:
+    - Production
+    - production
+    - country
+    - company production changes
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_production_adoption
+  - verified_metrics_for_production
+  - energy_regulatory_or_competitive_response
+  - country
+  - company production changes
+  disambiguation_focus:
+  - Production
+  - production
+  - 'Production specific evaluation: Country/company production changes'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - eia
+    - iea
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-energy-transition-theme
+  theme_id: energy-energy-transition-theme
+  micro_topic_id: energy-transition
+  micro_topic: energy-transition
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Energy Transition (energy-transition) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_energy_transition_developments
+    - verified_energy_transition_activity
+    excludes:
+    - tangential_energy_chatter_without_energy_transition_relevance
+    boundaries:
+    - focus_strictly_on_energy-transition_domain_significance
+  questions:
+  - what_changed_in_energy_transition
+  - how_does_new_energy_transition_differ_from_prior_state
+  - what_verifiable_evidence_supports_energy_transition
+  - what_are_the_operational_or_market_implications_for_energy_transition
+  - what_technical_limitations_or_uncertainties_remain_in_energy_transition
+  - what_is_the_status_of_decarbonization_for_energy_transition
+  evidence_requirements: &id051
+  - iea
+  - research
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_energy_transition_exceeding_baseline
+    - independent_confirmation_of_energy_transition_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_energy_transition
+    - minor_routine_maintenance_or_repackaging_without_new_energy_transition_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - iea
+      - research
+      freshness: 48h
+      focus:
+      - new_energy_transition_events
+      - verifiable_changes_in_energy_transition
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_energy_transition
+      - what_tools_methods_or_data_were_used_for_energy_transition
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - energy_transition_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Energy Transition (energy-transition)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Energy Transition lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Energy Transition.
+  action_rules:
+    monitor:
+    - track_emerging_energy_transition_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_energy_transition_documentation
+    - verify_reproducibility_of_reported_energy_transition_data
+  watch_rules:
+    monitor:
+    - next_energy_transition_milestone_or_release_date
+    - peer_review_or_independent_validation_of_energy_transition
+    - ecosystem_adoption_metrics_for_energy_transition
+  retrieval_intent:
+    required_concepts:
+    - Energy Transition
+    - energy-transition
+    - decarbonization
+    - investment
+    - technology
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_energy_transition_adoption
+  - verified_metrics_for_energy_transition
+  - energy_regulatory_or_competitive_response
+  - decarbonization
+  - investment
+  disambiguation_focus:
+  - Energy Transition
+  - energy-transition
+  - 'Energy Transition specific evaluation: Decarbonization, investment, technology'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - iea
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-energy-security-theme
+  theme_id: energy-energy-security-theme
+  micro_topic_id: energy-security
+  micro_topic: energy-security
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Energy Security (energy-security) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_energy_security_developments
+    - verified_energy_security_activity
+    excludes:
+    - tangential_energy_chatter_without_energy_security_relevance
+    boundaries:
+    - focus_strictly_on_energy-security_domain_significance
+  questions:
+  - what_changed_in_energy_security
+  - how_does_new_energy_security_differ_from_prior_state
+  - what_verifiable_evidence_supports_energy_security
+  - what_are_the_operational_or_market_implications_for_energy_security
+  - what_technical_limitations_or_uncertainties_remain_in_energy_security
+  - what_is_the_status_of_supply_vulnerabilities_and_resilience_for_energy_security
+  evidence_requirements: &id056
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_energy_security_exceeding_baseline
+    - independent_confirmation_of_energy_security_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_energy_security
+    - minor_routine_maintenance_or_repackaging_without_new_energy_security_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - energy
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_energy_security_events
+      - verifiable_changes_in_energy_security
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_energy_security
+      - what_tools_methods_or_data_were_used_for_energy_security
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - energy_security_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Energy Security (energy-security)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Energy Security lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Energy Security.
+  action_rules:
+    monitor:
+    - track_emerging_energy_security_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_energy_security_documentation
+    - verify_reproducibility_of_reported_energy_security_data
+  watch_rules:
+    monitor:
+    - next_energy_security_milestone_or_release_date
+    - peer_review_or_independent_validation_of_energy_security
+    - ecosystem_adoption_metrics_for_energy_security
+  retrieval_intent:
+    required_concepts:
+    - Energy Security
+    - energy-security
+    - supply vulnerabilities and resilience
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_energy_security_adoption
+  - verified_metrics_for_energy_security
+  - energy_regulatory_or_competitive_response
+  - supply vulnerabilities and resilience
+  disambiguation_focus:
+  - Energy Security
+  - energy-security
+  - 'Energy Security specific evaluation: Supply vulnerabilities and resilience'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - energy
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: energy-energy-infrastructure-theme
+  theme_id: energy-energy-infrastructure-theme
+  micro_topic_id: energy-infrastructure
+  micro_topic: energy-infrastructure
+  domain: energy
+  domain_id: energy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Energy Infrastructure (energy-infrastructure) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_energy_infrastructure_developments
+    - verified_energy_infrastructure_activity
+    excludes:
+    - tangential_energy_chatter_without_energy_infrastructure_relevance
+    boundaries:
+    - focus_strictly_on_energy-infrastructure_domain_significance
+  questions:
+  - what_changed_in_energy_infrastructure
+  - how_does_new_energy_infrastructure_differ_from_prior_state
+  - what_verifiable_evidence_supports_energy_infrastructure
+  - what_are_the_operational_or_market_implications_for_energy_infrastructure
+  - what_technical_limitations_or_uncertainties_remain_in_energy_infrastructure
+  - what_is_the_status_of_pipelines_for_energy_infrastructure
+  evidence_requirements: &id061
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id061
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_energy_infrastructure_exceeding_baseline
+    - independent_confirmation_of_energy_infrastructure_milestone_from_primary_source
+    - measurable_impact_on_energy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_energy_infrastructure
+    - minor_routine_maintenance_or_repackaging_without_new_energy_infrastructure_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id062
+      preferred_sources: &id065
+      - energy
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_energy_infrastructure_events
+      - verifiable_changes_in_energy_infrastructure
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id063
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_energy_infrastructure
+      - what_tools_methods_or_data_were_used_for_energy_infrastructure
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id062
+    video: *id063
+  entity_extraction:
+    required:
+    - energy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - energy_infrastructure_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id064
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id064
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Energy Infrastructure (energy-infrastructure)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Energy Infrastructure lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Energy Infrastructure.
+  action_rules:
+    monitor:
+    - track_emerging_energy_infrastructure_benchmarks
+    - follow_official_energy_announcements
+    investigate:
+    - audit_claims_against_primary_energy_infrastructure_documentation
+    - verify_reproducibility_of_reported_energy_infrastructure_data
+  watch_rules:
+    monitor:
+    - next_energy_infrastructure_milestone_or_release_date
+    - peer_review_or_independent_validation_of_energy_infrastructure
+    - ecosystem_adoption_metrics_for_energy_infrastructure
+  retrieval_intent:
+    required_concepts:
+    - Energy Infrastructure
+    - energy-infrastructure
+    - pipelines
+    - lng
+    - refineries
+    preferred_source_types: *id065
+    evidence_types: *id061
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_energy_infrastructure_adoption
+  - verified_metrics_for_energy_infrastructure
+  - energy_regulatory_or_competitive_response
+  - pipelines
+  - lng
+  disambiguation_focus:
+  - Energy Infrastructure
+  - energy-infrastructure
+  - 'Energy Infrastructure specific evaluation: Pipelines, LNG, refineries, power
+    assets'
+  - distinct from other energy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - energy
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

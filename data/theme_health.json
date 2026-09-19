@@ -1,0 +1,2134 @@
+{
+  "total_records": 236,
+  "valid_themes": 236,
+  "invalid_themes": 0,
+  "missing_themes": 0,
+  "coverage_percentage": 100.0,
+  "health_status": "HEALTHY",
+  "details": [
+    {
+      "micro_topic_id": "foundation-models",
+      "theme_id": "ai-models-tools",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "llms",
+      "theme_id": "artificial-intelligence-llms-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "multimodal-ai",
+      "theme_id": "artificial-intelligence-multimodal-ai-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "reasoning-models",
+      "theme_id": "artificial-intelligence-reasoning-models-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-agents",
+      "theme_id": "ai-agents-intelligence",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "agentic-workflows",
+      "theme_id": "artificial-intelligence-agentic-workflows-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "coding-models",
+      "theme_id": "artificial-intelligence-coding-models-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "rag",
+      "theme_id": "artificial-intelligence-rag-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "embeddings",
+      "theme_id": "artificial-intelligence-embeddings-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "training",
+      "theme_id": "artificial-intelligence-training-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "inference",
+      "theme_id": "artificial-intelligence-inference-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "fine-tuning",
+      "theme_id": "artificial-intelligence-fine-tuning-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-infrastructure",
+      "theme_id": "artificial-intelligence-ai-infrastructure-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-tooling",
+      "theme_id": "artificial-intelligence-ai-tooling-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "open-source-ai",
+      "theme_id": "artificial-intelligence-open-source-ai-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "enterprise-ai",
+      "theme_id": "artificial-intelligence-enterprise-ai-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-applications",
+      "theme_id": "artificial-intelligence-ai-applications-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-research",
+      "theme_id": "artificial-intelligence-ai-research-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-safety-alignment",
+      "theme_id": "artificial-intelligence-ai-safety-alignment-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-evaluation",
+      "theme_id": "artificial-intelligence-ai-evaluation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-regulation",
+      "theme_id": "artificial-intelligence-ai-regulation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-startups",
+      "theme_id": "artificial-intelligence-ai-startups-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-application-launches",
+      "theme_id": "artificial-intelligence-ai-application-launches-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "programming-languages",
+      "theme_id": "software-engineering-programming-languages-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "frameworks",
+      "theme_id": "software-engineering-frameworks-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ide-and-developer-tools",
+      "theme_id": "software-engineering-ide-and-developer-tools-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "apis",
+      "theme_id": "software-engineering-apis-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "sdks",
+      "theme_id": "software-engineering-sdks-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "backend",
+      "theme_id": "software-engineering-backend-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "frontend",
+      "theme_id": "software-engineering-frontend-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "databases",
+      "theme_id": "software-engineering-databases-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "architecture",
+      "theme_id": "software-engineering-architecture-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "devops",
+      "theme_id": "software-engineering-devops-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ci-cd",
+      "theme_id": "software-engineering-ci-cd-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "testing",
+      "theme_id": "software-engineering-testing-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "observability",
+      "theme_id": "software-engineering-observability-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "cloud-infrastructure",
+      "theme_id": "software-engineering-cloud-infrastructure-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "open-source-releases",
+      "theme_id": "software-engineering-open-source-releases-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "repositories",
+      "theme_id": "github-open-source-repositories-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "model-tooling",
+      "theme_id": "github-open-source-model-tooling-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "agent-frameworks",
+      "theme_id": "github-open-source-agent-frameworks-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "mcp",
+      "theme_id": "github-open-source-mcp-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "developer-tools",
+      "theme_id": "github-open-source-developer-tools-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "inference-serving",
+      "theme_id": "github-open-source-inference-serving-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "libraries",
+      "theme_id": "github-open-source-libraries-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "adoption",
+      "theme_id": "github-open-source-adoption-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "high-impact-projects",
+      "theme_id": "github-open-source-high-impact-projects-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "releases",
+      "theme_id": "github-open-source-releases-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "maintainers",
+      "theme_id": "github-open-source-maintainers-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "hardware",
+      "theme_id": "quantum-computing-hardware-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "processors",
+      "theme_id": "quantum-computing-processors-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "algorithms",
+      "theme_id": "quantum-computing-algorithms-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "error-correction",
+      "theme_id": "quantum-computing-error-correction-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "networking",
+      "theme_id": "quantum-computing-networking-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "cryptography",
+      "theme_id": "quantum-computing-cryptography-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "research",
+      "theme_id": "quantum-computing-research-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "government-programs",
+      "theme_id": "quantum-computing-government-programs-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "applications",
+      "theme_id": "quantum-computing-applications-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "launches",
+      "theme_id": "space-launches-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "rockets",
+      "theme_id": "space-rockets-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "spacecraft",
+      "theme_id": "space-spacecraft-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "satellites",
+      "theme_id": "space-satellites-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "missions",
+      "theme_id": "space-missions-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "earth-observation",
+      "theme_id": "space-earth-observation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "lunar-programs",
+      "theme_id": "space-lunar-programs-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "mars-deep-space",
+      "theme_id": "space-mars-deep-space-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "exploration",
+      "theme_id": "space-exploration-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "commercial-space",
+      "theme_id": "space-commercial-space-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "space-infrastructure",
+      "theme_id": "space-space-infrastructure-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "space-policy",
+      "theme_id": "space-space-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "space-policy-strategy",
+      "theme_id": "space-space-policy-strategy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "procurement",
+      "theme_id": "defence-procurement-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "military-technology",
+      "theme_id": "defence-military-technology-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "drones",
+      "theme_id": "defence-drones-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "missiles",
+      "theme_id": "defence-missiles-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "air-defence",
+      "theme_id": "defence-air-defence-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "naval-systems",
+      "theme_id": "defence-naval-systems-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "electronic-warfare",
+      "theme_id": "defence-electronic-warfare-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "cyber-warfare",
+      "theme_id": "defence-cyber-warfare-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "military-ai",
+      "theme_id": "defence-military-ai-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "defence-policy",
+      "theme_id": "defence-defence-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "strategic-capabilities",
+      "theme_id": "defence-strategic-capabilities-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "defence-procurement",
+      "theme_id": "defence-defence-procurement-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "cves",
+      "theme_id": "cybersecurity-cves-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "vulnerabilities",
+      "theme_id": "cybersecurity-vulnerabilities-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "exploits",
+      "theme_id": "cybersecurity-exploits-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "breaches",
+      "theme_id": "cybersecurity-breaches-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ransomware",
+      "theme_id": "cybersecurity-ransomware-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "malware",
+      "theme_id": "cybersecurity-malware-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "threat-actors",
+      "theme_id": "cybersecurity-threat-actors-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "campaigns",
+      "theme_id": "cybersecurity-campaigns-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "identity",
+      "theme_id": "cybersecurity-identity-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "cloud-security",
+      "theme_id": "cybersecurity-cloud-security-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "application-security",
+      "theme_id": "cybersecurity-application-security-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-security",
+      "theme_id": "cybersecurity-ai-security-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "security-tools",
+      "theme_id": "cybersecurity-security-tools-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "national-cybersecurity-policy",
+      "theme_id": "cybersecurity-national-cybersecurity-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "chip-design",
+      "theme_id": "semiconductors-chip-design-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "fabs",
+      "theme_id": "semiconductors-fabs-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "foundries",
+      "theme_id": "semiconductors-foundries-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "gpus",
+      "theme_id": "semiconductors-gpus-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "cpus",
+      "theme_id": "semiconductors-cpus-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "accelerators",
+      "theme_id": "semiconductors-accelerators-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "memory",
+      "theme_id": "semiconductors-memory-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "hbm",
+      "theme_id": "semiconductors-hbm-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "manufacturing-equipment",
+      "theme_id": "semiconductors-manufacturing-equipment-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "packaging",
+      "theme_id": "semiconductors-packaging-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "process-nodes",
+      "theme_id": "semiconductors-process-nodes-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "export-controls",
+      "theme_id": "semiconductors-export-controls-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "supply-chains",
+      "theme_id": "semiconductors-supply-chains-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "capacity",
+      "theme_id": "semiconductors-capacity-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "funding",
+      "theme_id": "startups-vc-funding-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "seed-series-rounds",
+      "theme_id": "startups-vc-seed-series-rounds-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "vc-activity",
+      "theme_id": "startups-vc-vc-activity-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "acquisitions",
+      "theme_id": "startups-vc-acquisitions-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ipos",
+      "theme_id": "startups-vc-ipos-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "accelerators",
+      "theme_id": "startups-vc-accelerators-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "valuation",
+      "theme_id": "startups-vc-valuation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "exits",
+      "theme_id": "startups-vc-exits-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "launches",
+      "theme_id": "startups-vc-launches-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "failures",
+      "theme_id": "startups-vc-failures-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "regulation",
+      "theme_id": "government-policy-regulation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "legislation",
+      "theme_id": "government-policy-legislation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ministries",
+      "theme_id": "government-policy-ministries-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "digital-policy",
+      "theme_id": "government-policy-digital-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-policy",
+      "theme_id": "government-policy-ai-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "semiconductor-policy",
+      "theme_id": "government-policy-semiconductor-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "industrial-policy",
+      "theme_id": "government-policy-industrial-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "subsidies",
+      "theme_id": "government-policy-subsidies-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "grants",
+      "theme_id": "government-policy-grants-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "tenders",
+      "theme_id": "government-policy-tenders-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "implementation",
+      "theme_id": "government-policy-implementation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "policy-outcomes",
+      "theme_id": "government-policy-policy-outcomes-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "state-provincial-policy",
+      "theme_id": "regional-government-state-provincial-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "incentives",
+      "theme_id": "regional-government-incentives-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "industrial-parks",
+      "theme_id": "regional-government-industrial-parks-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "infrastructure",
+      "theme_id": "regional-government-infrastructure-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "local-regulation",
+      "theme_id": "regional-government-local-regulation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "regional-investment",
+      "theme_id": "regional-government-regional-investment-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "regional-technology-policy",
+      "theme_id": "regional-government-regional-technology-policy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "bilateral-relations",
+      "theme_id": "geopolitics-bilateral-relations-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "alliances",
+      "theme_id": "geopolitics-alliances-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "sanctions",
+      "theme_id": "geopolitics-sanctions-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "wars-conflicts",
+      "theme_id": "geopolitics-wars-conflicts-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "diplomacy",
+      "theme_id": "geopolitics-diplomacy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "trade",
+      "theme_id": "geopolitics-trade-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "technology-restrictions",
+      "theme_id": "geopolitics-technology-restrictions-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "strategic-supply-chains",
+      "theme_id": "geopolitics-strategic-supply-chains-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "strategic-competition",
+      "theme_id": "geopolitics-security",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "regional-blocs",
+      "theme_id": "geopolitics-regional-blocs-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "oil",
+      "theme_id": "energy-oil-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "gas",
+      "theme_id": "energy-gas-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "electricity",
+      "theme_id": "energy-electricity-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "renewables",
+      "theme_id": "energy-renewables-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "nuclear",
+      "theme_id": "energy-nuclear-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "batteries",
+      "theme_id": "energy-batteries-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "grids",
+      "theme_id": "energy-grids-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "energy-companies",
+      "theme_id": "energy-energy-companies-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "energy-markets",
+      "theme_id": "energy-energy-markets-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "production",
+      "theme_id": "energy-production-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "energy-transition",
+      "theme_id": "energy-energy-transition-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "energy-security",
+      "theme_id": "energy-energy-security-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "energy-infrastructure",
+      "theme_id": "energy-energy-infrastructure-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ports",
+      "theme_id": "shipping-logistics-ports-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "shipping-lines",
+      "theme_id": "shipping-logistics-shipping-lines-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "freight",
+      "theme_id": "shipping-logistics-freight-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "logistics-infrastructure",
+      "theme_id": "shipping-logistics-logistics-infrastructure-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "chokepoints",
+      "theme_id": "shipping-logistics-chokepoints-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "maritime-trade",
+      "theme_id": "shipping-logistics-maritime-trade-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "container-rates",
+      "theme_id": "shipping-logistics-container-rates-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "disruptions",
+      "theme_id": "shipping-logistics-disruptions-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "resilience",
+      "theme_id": "shipping-logistics-resilience-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "factories",
+      "theme_id": "manufacturing-factories-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "industrial-corridors",
+      "theme_id": "manufacturing-industrial-corridors-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "incentives",
+      "theme_id": "manufacturing-incentives-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "reshoring",
+      "theme_id": "manufacturing-reshoring-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "localization",
+      "theme_id": "manufacturing-localization-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "capacity",
+      "theme_id": "manufacturing-capacity-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "exports",
+      "theme_id": "manufacturing-exports-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "industrial-strategy",
+      "theme_id": "manufacturing-industrial-strategy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "executives",
+      "theme_id": "leaders-people-executives-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "founders",
+      "theme_id": "leaders-people-founders-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "researchers",
+      "theme_id": "leaders-people-researchers-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "government-leaders",
+      "theme_id": "leaders-people-government-leaders-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "appointments",
+      "theme_id": "leaders-people-appointments-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "departures",
+      "theme_id": "leaders-people-departures-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "statements",
+      "theme_id": "leaders-people-statements-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "strategic-decisions",
+      "theme_id": "leaders-people-strategic-decisions-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "product-launches",
+      "theme_id": "technology-companies-product-launches-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "strategy",
+      "theme_id": "technology-companies-strategy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "acquisitions",
+      "theme_id": "technology-companies-acquisitions-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "partnerships",
+      "theme_id": "technology-companies-partnerships-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "earnings",
+      "theme_id": "technology-companies-earnings-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "infrastructure",
+      "theme_id": "technology-companies-infrastructure-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "platform-changes",
+      "theme_id": "technology-companies-platform-changes-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "corporate-ai-technology-strategy",
+      "theme_id": "technology-companies-corporate-ai-technology-strategy-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "google-i-o",
+      "theme_id": "conferences-google-i-o-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "gtc",
+      "theme_id": "conferences-gtc-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "wwdc",
+      "theme_id": "conferences-wwdc-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "neurips",
+      "theme_id": "conferences-neurips-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "icml",
+      "theme_id": "conferences-icml-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "cvpr",
+      "theme_id": "conferences-cvpr-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "major-industry-events",
+      "theme_id": "conferences-major-industry-events-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "keynotes",
+      "theme_id": "conferences-keynotes-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "ai-research",
+      "theme_id": "research-ai-research-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "computer-science",
+      "theme_id": "research-computer-science-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "medicine",
+      "theme_id": "research-medicine-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "economics",
+      "theme_id": "research-economics-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "physics",
+      "theme_id": "research-physics-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "climate",
+      "theme_id": "research-climate-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "engineering",
+      "theme_id": "research-engineering-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "breakthroughs",
+      "theme_id": "research-breakthroughs-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "preprints",
+      "theme_id": "research-preprints-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "peer-reviewed-papers",
+      "theme_id": "research-peer-reviewed-papers-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "grants",
+      "theme_id": "opportunities-grants-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "tenders",
+      "theme_id": "opportunities-tenders-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "scholarships",
+      "theme_id": "opportunities-scholarships-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "fellowships",
+      "theme_id": "opportunities-fellowships-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "accelerators",
+      "theme_id": "opportunities-accelerators-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "hackathons",
+      "theme_id": "opportunities-hackathons-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "funding-programs",
+      "theme_id": "opportunities-funding-programs-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "government-schemes",
+      "theme_id": "opportunities-government-schemes-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "calls-for-participation",
+      "theme_id": "opportunities-calls-for-participation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "central-banks",
+      "theme_id": "finance-central-banks-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "interest-rates",
+      "theme_id": "finance-interest-rates-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "inflation",
+      "theme_id": "finance-inflation-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "gdp",
+      "theme_id": "finance-gdp-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "employment",
+      "theme_id": "finance-employment-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "equities",
+      "theme_id": "finance-equities-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "bonds",
+      "theme_id": "finance-bonds-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "currencies",
+      "theme_id": "finance-currencies-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "commodities",
+      "theme_id": "finance-commodities-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "banking",
+      "theme_id": "finance-banking-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "credit",
+      "theme_id": "finance-credit-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "asset-managers",
+      "theme_id": "finance-asset-managers-theme",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    },
+    {
+      "micro_topic_id": "macroeconomics",
+      "theme_id": "finance-markets",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "specificity_score": 1.0,
+      "quality_score": 1.0
+    }
+  ]
+}

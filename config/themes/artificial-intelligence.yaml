@@ -1,0 +1,3880 @@
+themes:
+- id: ai-models-tools
+  theme_id: ai-models-tools
+  micro_topic_id: foundation-models
+  micro_topic: foundation-models
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Foundation Models (foundation-models) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_foundation_models_developments
+    - verified_foundation_models_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_foundation_models_relevance
+    boundaries:
+    - focus_strictly_on_foundation-models_domain_significance
+  questions:
+  - what_changed_in_foundation_models
+  - how_does_new_foundation_models_differ_from_prior_state
+  - what_verifiable_evidence_supports_foundation_models
+  - what_are_the_operational_or_market_implications_for_foundation_models
+  - what_technical_limitations_or_uncertainties_remain_in_foundation_models
+  - what_is_the_status_of_new_model_for_foundation_models
+  evidence_requirements: &id001
+  - official_model_release
+  - benchmark
+  - model_card
+  - independent_validation
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_foundation_models_exceeding_baseline
+    - independent_confirmation_of_foundation_models_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_foundation_models
+    - minor_routine_maintenance_or_repackaging_without_new_foundation_models_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - news-tech
+      - research
+      - github
+      - ai-search
+      freshness: 48h
+      focus:
+      - new_foundation_models_events
+      - verifiable_changes_in_foundation_models
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_foundation_models
+      - what_tools_methods_or_data_were_used_for_foundation_models
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - foundation_models_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Foundation Models (foundation-models)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Foundation Models lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Foundation Models.
+  action_rules:
+    monitor:
+    - track_emerging_foundation_models_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_foundation_models_documentation
+    - verify_reproducibility_of_reported_foundation_models_data
+  watch_rules:
+    monitor:
+    - next_foundation_models_milestone_or_release_date
+    - peer_review_or_independent_validation_of_foundation_models
+    - ecosystem_adoption_metrics_for_foundation_models
+  retrieval_intent:
+    required_concepts:
+    - Foundation Models
+    - foundation-models
+    - new model
+    - architecture
+    - capability
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_foundation_models_adoption
+  - verified_metrics_for_foundation_models
+  - artificial_intelligence_regulatory_or_competitive_response
+  - capability change
+  - benchmark
+  disambiguation_focus:
+  - Foundation Models
+  - foundation-models
+  - 'Foundation Models specific evaluation: New model, architecture, capability, benchmark,
+    context, mod'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-llms-theme
+  theme_id: artificial-intelligence-llms-theme
+  micro_topic_id: llms
+  micro_topic: llms
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess LLMs (llms) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_llms_developments
+    - verified_llms_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_llms_relevance
+    boundaries:
+    - focus_strictly_on_llms_domain_significance
+  questions:
+  - what_changed_in_llms
+  - how_does_new_llms_differ_from_prior_state
+  - what_verifiable_evidence_supports_llms
+  - what_are_the_operational_or_market_implications_for_llms
+  - what_technical_limitations_or_uncertainties_remain_in_llms
+  - what_is_the_status_of_model_quality_for_llms
+  evidence_requirements: &id006
+  - model_release
+  - api_docs
+  - benchmarks
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_llms_exceeding_baseline
+    - independent_confirmation_of_llms_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_llms
+    - minor_routine_maintenance_or_repackaging_without_new_llms_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - news-tech
+      - research
+      - github
+      freshness: 48h
+      focus:
+      - new_llms_events
+      - verifiable_changes_in_llms
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_llms
+      - what_tools_methods_or_data_were_used_for_llms
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - llms_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in LLMs (llms) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding LLMs lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for LLMs.
+  action_rules:
+    monitor:
+    - track_emerging_llms_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_llms_documentation
+    - verify_reproducibility_of_reported_llms_data
+  watch_rules:
+    monitor:
+    - next_llms_milestone_or_release_date
+    - peer_review_or_independent_validation_of_llms
+    - ecosystem_adoption_metrics_for_llms
+  retrieval_intent:
+    required_concepts:
+    - LLMs
+    - llms
+    - model quality
+    - reasoning
+    - context
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_llms_adoption
+  - verified_metrics_for_llms
+  - artificial_intelligence_regulatory_or_competitive_response
+  - model comparison
+  - workflow impact
+  disambiguation_focus:
+  - LLMs
+  - llms
+  - 'LLMs specific evaluation: Model quality, reasoning, context, latency, cost, adoption, '
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-multimodal-ai-theme
+  theme_id: artificial-intelligence-multimodal-ai-theme
+  micro_topic_id: multimodal-ai
+  micro_topic: multimodal-ai
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Multimodal AI (multimodal-ai) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_multimodal_ai_developments
+    - verified_multimodal_ai_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_multimodal_ai_relevance
+    boundaries:
+    - focus_strictly_on_multimodal-ai_domain_significance
+  questions:
+  - what_changed_in_multimodal_ai
+  - how_does_new_multimodal_ai_differ_from_prior_state
+  - what_verifiable_evidence_supports_multimodal_ai
+  - what_are_the_operational_or_market_implications_for_multimodal_ai
+  - what_technical_limitations_or_uncertainties_remain_in_multimodal_ai
+  - what_is_the_status_of_image_for_multimodal_ai
+  evidence_requirements: &id011
+  - demo
+  - technical_documentation
+  - benchmark
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_multimodal_ai_exceeding_baseline
+    - independent_confirmation_of_multimodal_ai_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_multimodal_ai
+    - minor_routine_maintenance_or_repackaging_without_new_multimodal_ai_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - news-tech
+      - research
+      - github
+      freshness: 48h
+      focus:
+      - new_multimodal_ai_events
+      - verifiable_changes_in_multimodal_ai
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_multimodal_ai
+      - what_tools_methods_or_data_were_used_for_multimodal_ai
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - multimodal_ai_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Multimodal AI (multimodal-ai)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Multimodal AI lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Multimodal AI.
+  action_rules:
+    monitor:
+    - track_emerging_multimodal_ai_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_multimodal_ai_documentation
+    - verify_reproducibility_of_reported_multimodal_ai_data
+  watch_rules:
+    monitor:
+    - next_multimodal_ai_milestone_or_release_date
+    - peer_review_or_independent_validation_of_multimodal_ai
+    - ecosystem_adoption_metrics_for_multimodal_ai
+  retrieval_intent:
+    required_concepts:
+    - Multimodal AI
+    - multimodal-ai
+    - image
+    - audio
+    - video
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_multimodal_ai_adoption
+  - verified_metrics_for_multimodal_ai
+  - artificial_intelligence_regulatory_or_competitive_response
+  - modality capability
+  - limitations
+  disambiguation_focus:
+  - Multimodal AI
+  - multimodal-ai
+  - 'Multimodal AI specific evaluation: Image/audio/video/text capability, cross-modal
+    reasoning, in'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-reasoning-models-theme
+  theme_id: artificial-intelligence-reasoning-models-theme
+  micro_topic_id: reasoning-models
+  micro_topic: reasoning-models
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Reasoning Models (reasoning-models) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_reasoning_models_developments
+    - verified_reasoning_models_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_reasoning_models_relevance
+    boundaries:
+    - focus_strictly_on_reasoning-models_domain_significance
+  questions:
+  - what_changed_in_reasoning_models
+  - how_does_new_reasoning_models_differ_from_prior_state
+  - what_verifiable_evidence_supports_reasoning_models
+  - what_are_the_operational_or_market_implications_for_reasoning_models
+  - what_technical_limitations_or_uncertainties_remain_in_reasoning_models
+  - what_is_the_status_of_reasoning_mechanism_for_reasoning_models
+  evidence_requirements: &id016
+  - papers
+  - model_cards
+  - benchmarks
+  - deployments
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_reasoning_models_exceeding_baseline
+    - independent_confirmation_of_reasoning_models_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_reasoning_models
+    - minor_routine_maintenance_or_repackaging_without_new_reasoning_models_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - research
+      - news-tech
+      - github
+      freshness: 48h
+      focus:
+      - new_reasoning_models_events
+      - verifiable_changes_in_reasoning_models
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_reasoning_models
+      - what_tools_methods_or_data_were_used_for_reasoning_models
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - reasoning_models_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Reasoning Models (reasoning-models)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Reasoning Models lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Reasoning Models.
+  action_rules:
+    monitor:
+    - track_emerging_reasoning_models_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_reasoning_models_documentation
+    - verify_reproducibility_of_reported_reasoning_models_data
+  watch_rules:
+    monitor:
+    - next_reasoning_models_milestone_or_release_date
+    - peer_review_or_independent_validation_of_reasoning_models
+    - ecosystem_adoption_metrics_for_reasoning_models
+  retrieval_intent:
+    required_concepts:
+    - Reasoning Models
+    - reasoning-models
+    - reasoning mechanism
+    - test-time compute
+    - benchmark movement
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_reasoning_models_adoption
+  - verified_metrics_for_reasoning_models
+  - artificial_intelligence_regulatory_or_competitive_response
+  - reasoning gain vs cost
+  disambiguation_focus:
+  - Reasoning Models
+  - reasoning-models
+  - 'Reasoning Models specific evaluation: Reasoning mechanism, test-time compute,
+    benchmark movement, '
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: ai-agents-intelligence
+  theme_id: ai-agents-intelligence
+  micro_topic_id: ai-agents
+  micro_topic: ai-agents
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Agents (ai-agents) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_agents_developments
+    - verified_ai_agents_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_agents_relevance
+    boundaries:
+    - focus_strictly_on_ai-agents_domain_significance
+  questions:
+  - what_changed_in_ai_agents
+  - how_does_new_ai_agents_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_agents
+  - what_are_the_operational_or_market_implications_for_ai_agents
+  - what_technical_limitations_or_uncertainties_remain_in_ai_agents
+  - what_is_the_status_of_agent_architecture_for_ai_agents
+  evidence_requirements: &id021
+  - technical_implementation
+  - demo
+  - production_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_agents_exceeding_baseline
+    - independent_confirmation_of_ai_agents_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_agents
+    - minor_routine_maintenance_or_repackaging_without_new_ai_agents_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - news-tech
+      - github
+      - research
+      freshness: 48h
+      focus:
+      - new_ai_agents_events
+      - verifiable_changes_in_ai_agents
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_agents
+      - what_tools_methods_or_data_were_used_for_ai_agents
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_agents_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Agents (ai-agents) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Agents lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Agents.
+  action_rules:
+    monitor:
+    - track_emerging_ai_agents_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_agents_documentation
+    - verify_reproducibility_of_reported_ai_agents_data
+  watch_rules:
+    monitor:
+    - next_ai_agents_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_agents
+    - ecosystem_adoption_metrics_for_ai_agents
+  retrieval_intent:
+    required_concepts:
+    - AI Agents
+    - ai-agents
+    - agent architecture
+    - autonomy
+    - tools
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_agents_adoption
+  - verified_metrics_for_ai_agents
+  - artificial_intelligence_regulatory_or_competitive_response
+  - autonomy
+  - workflow
+  disambiguation_focus:
+  - AI Agents
+  - ai-agents
+  - 'AI Agents specific evaluation: Agent architecture, autonomy, tools, planning,
+    memory, relia'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-agentic-workflows-theme
+  theme_id: artificial-intelligence-agentic-workflows-theme
+  micro_topic_id: agentic-workflows
+  micro_topic: agentic-workflows
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Agentic Workflows (agentic-workflows) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_agentic_workflows_developments
+    - verified_agentic_workflows_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_agentic_workflows_relevance
+    boundaries:
+    - focus_strictly_on_agentic-workflows_domain_significance
+  questions:
+  - what_changed_in_agentic_workflows
+  - how_does_new_agentic_workflows_differ_from_prior_state
+  - what_verifiable_evidence_supports_agentic_workflows
+  - what_are_the_operational_or_market_implications_for_agentic_workflows
+  - what_technical_limitations_or_uncertainties_remain_in_agentic_workflows
+  - what_is_the_status_of_multi_step_workflow_orchestration_for_agentic_workflows
+  evidence_requirements: &id026
+  - production
+  - demo
+  - workflow_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_agentic_workflows_exceeding_baseline
+    - independent_confirmation_of_agentic_workflows_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_agentic_workflows
+    - minor_routine_maintenance_or_repackaging_without_new_agentic_workflows_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - github
+      - news-tech
+      - ai-search
+      freshness: 48h
+      focus:
+      - new_agentic_workflows_events
+      - verifiable_changes_in_agentic_workflows
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_agentic_workflows
+      - what_tools_methods_or_data_were_used_for_agentic_workflows
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - agentic_workflows_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Agentic Workflows (agentic-workflows)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Agentic Workflows lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Agentic Workflows.
+  action_rules:
+    monitor:
+    - track_emerging_agentic_workflows_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_agentic_workflows_documentation
+    - verify_reproducibility_of_reported_agentic_workflows_data
+  watch_rules:
+    monitor:
+    - next_agentic_workflows_milestone_or_release_date
+    - peer_review_or_independent_validation_of_agentic_workflows
+    - ecosystem_adoption_metrics_for_agentic_workflows
+  retrieval_intent:
+    required_concepts:
+    - Agentic Workflows
+    - agentic-workflows
+    - multi-step workflow orchestration
+    - human-in-loop
+    - tool chaining
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_agentic_workflows_adoption
+  - verified_metrics_for_agentic_workflows
+  - artificial_intelligence_regulatory_or_competitive_response
+  - workflow improvement
+  - operational risks
+  disambiguation_focus:
+  - Agentic Workflows
+  - agentic-workflows
+  - 'Agentic Workflows specific evaluation: Multi-step workflow orchestration, human-in-loop,
+    tool chain'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-coding-models-theme
+  theme_id: artificial-intelligence-coding-models-theme
+  micro_topic_id: coding-models
+  micro_topic: coding-models
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Coding Models (coding-models) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_coding_models_developments
+    - verified_coding_models_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_coding_models_relevance
+    boundaries:
+    - focus_strictly_on_coding-models_domain_significance
+  questions:
+  - what_changed_in_coding_models
+  - how_does_new_coding_models_differ_from_prior_state
+  - what_verifiable_evidence_supports_coding_models
+  - what_are_the_operational_or_market_implications_for_coding_models
+  - what_technical_limitations_or_uncertainties_remain_in_coding_models
+  - what_is_the_status_of_coding_benchmark_for_coding_models
+  evidence_requirements: &id031
+  - swe_benchmarks
+  - github_projects
+  - model_releases
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_coding_models_exceeding_baseline
+    - independent_confirmation_of_coding_models_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_coding_models
+    - minor_routine_maintenance_or_repackaging_without_new_coding_models_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - github
+      - research
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_coding_models_events
+      - verifiable_changes_in_coding_models
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_coding_models
+      - what_tools_methods_or_data_were_used_for_coding_models
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - coding_models_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Coding Models (coding-models)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Coding Models lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Coding Models.
+  action_rules:
+    monitor:
+    - track_emerging_coding_models_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_coding_models_documentation
+    - verify_reproducibility_of_reported_coding_models_data
+  watch_rules:
+    monitor:
+    - next_coding_models_milestone_or_release_date
+    - peer_review_or_independent_validation_of_coding_models
+    - ecosystem_adoption_metrics_for_coding_models
+  retrieval_intent:
+    required_concepts:
+    - Coding Models
+    - coding-models
+    - coding benchmark
+    - repo-level reasoning
+    - debugging
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_coding_models_adoption
+  - verified_metrics_for_coding_models
+  - artificial_intelligence_regulatory_or_competitive_response
+  - developer productivity
+  - failure modes
+  disambiguation_focus:
+  - Coding Models
+  - coding-models
+  - 'Coding Models specific evaluation: Coding benchmark, repo-level reasoning, debugging,
+    agentic c'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-rag-theme
+  theme_id: artificial-intelligence-rag-theme
+  micro_topic_id: rag
+  micro_topic: rag
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess RAG (rag) specifically through verified evidence, measurable change,
+    and practical implications.
+  scope:
+    includes:
+    - all_rag_developments
+    - verified_rag_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_rag_relevance
+    boundaries:
+    - focus_strictly_on_rag_domain_significance
+  questions:
+  - what_changed_in_rag
+  - how_does_new_rag_differ_from_prior_state
+  - what_verifiable_evidence_supports_rag
+  - what_are_the_operational_or_market_implications_for_rag
+  - what_technical_limitations_or_uncertainties_remain_in_rag
+  - what_is_the_status_of_retrieval_architecture_for_rag
+  evidence_requirements: &id036
+  - architecture
+  - benchmark
+  - production_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_rag_exceeding_baseline
+    - independent_confirmation_of_rag_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_rag
+    - minor_routine_maintenance_or_repackaging_without_new_rag_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - research
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_rag_events
+      - verifiable_changes_in_rag
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_rag
+      - what_tools_methods_or_data_were_used_for_rag
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - rag_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in RAG (rag) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding RAG lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for RAG.
+  action_rules:
+    monitor:
+    - track_emerging_rag_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_rag_documentation
+    - verify_reproducibility_of_reported_rag_data
+  watch_rules:
+    monitor:
+    - next_rag_milestone_or_release_date
+    - peer_review_or_independent_validation_of_rag
+    - ecosystem_adoption_metrics_for_rag
+  retrieval_intent:
+    required_concepts:
+    - RAG
+    - rag
+    - retrieval architecture
+    - queries
+    - chunking
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_rag_adoption
+  - verified_metrics_for_rag
+  - artificial_intelligence_regulatory_or_competitive_response
+  - retrieval quality
+  - implementation implications
+  disambiguation_focus:
+  - RAG
+  - rag
+  - 'RAG specific evaluation: Retrieval architecture, queries, chunking, embeddings,
+    reran'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-embeddings-theme
+  theme_id: artificial-intelligence-embeddings-theme
+  micro_topic_id: embeddings
+  micro_topic: embeddings
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Embeddings (embeddings) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_embeddings_developments
+    - verified_embeddings_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_embeddings_relevance
+    boundaries:
+    - focus_strictly_on_embeddings_domain_significance
+  questions:
+  - what_changed_in_embeddings
+  - how_does_new_embeddings_differ_from_prior_state
+  - what_verifiable_evidence_supports_embeddings
+  - what_are_the_operational_or_market_implications_for_embeddings
+  - what_technical_limitations_or_uncertainties_remain_in_embeddings
+  - what_is_the_status_of_embedding_quality_for_embeddings
+  evidence_requirements: &id041
+  - model_benchmark
+  - documentation
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_embeddings_exceeding_baseline
+    - independent_confirmation_of_embeddings_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_embeddings
+    - minor_routine_maintenance_or_repackaging_without_new_embeddings_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - research
+      - github
+      freshness: 48h
+      focus:
+      - new_embeddings_events
+      - verifiable_changes_in_embeddings
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_embeddings
+      - what_tools_methods_or_data_were_used_for_embeddings
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - embeddings_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Embeddings (embeddings) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Embeddings lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Embeddings.
+  action_rules:
+    monitor:
+    - track_emerging_embeddings_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_embeddings_documentation
+    - verify_reproducibility_of_reported_embeddings_data
+  watch_rules:
+    monitor:
+    - next_embeddings_milestone_or_release_date
+    - peer_review_or_independent_validation_of_embeddings
+    - ecosystem_adoption_metrics_for_embeddings
+  retrieval_intent:
+    required_concepts:
+    - Embeddings
+    - embeddings
+    - embedding quality
+    - dimensions
+    - multilinguality
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_embeddings_adoption
+  - verified_metrics_for_embeddings
+  - artificial_intelligence_regulatory_or_competitive_response
+  - retrieval performance
+  disambiguation_focus:
+  - Embeddings
+  - embeddings
+  - 'Embeddings specific evaluation: Embedding quality, dimensions, multilinguality,
+    retrieval be'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-training-theme
+  theme_id: artificial-intelligence-training-theme
+  micro_topic_id: training
+  micro_topic: training
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Training (training) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_training_developments
+    - verified_training_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_training_relevance
+    boundaries:
+    - focus_strictly_on_training_domain_significance
+  questions:
+  - what_changed_in_training
+  - how_does_new_training_differ_from_prior_state
+  - what_verifiable_evidence_supports_training
+  - what_are_the_operational_or_market_implications_for_training
+  - what_technical_limitations_or_uncertainties_remain_in_training
+  - what_is_the_status_of_training_methods_for_training
+  evidence_requirements: &id046
+  - papers
+  - model_technical_reports
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_training_exceeding_baseline
+    - independent_confirmation_of_training_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_training
+    - minor_routine_maintenance_or_repackaging_without_new_training_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - research
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_training_events
+      - verifiable_changes_in_training
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_training
+      - what_tools_methods_or_data_were_used_for_training
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - training_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Training (training) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Training lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Training.
+  action_rules:
+    monitor:
+    - track_emerging_training_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_training_documentation
+    - verify_reproducibility_of_reported_training_data
+  watch_rules:
+    monitor:
+    - next_training_milestone_or_release_date
+    - peer_review_or_independent_validation_of_training
+    - ecosystem_adoption_metrics_for_training
+  retrieval_intent:
+    required_concepts:
+    - Training
+    - training
+    - training methods
+    - datasets
+    - compute
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_training_adoption
+  - verified_metrics_for_training
+  - artificial_intelligence_regulatory_or_competitive_response
+  - technical change
+  - compute implications
+  disambiguation_focus:
+  - Training
+  - training
+  - 'Training specific evaluation: Training methods, datasets, compute, scaling, efficiency'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-inference-theme
+  theme_id: artificial-intelligence-inference-theme
+  micro_topic_id: inference
+  micro_topic: inference
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Inference (inference) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_inference_developments
+    - verified_inference_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_inference_relevance
+    boundaries:
+    - focus_strictly_on_inference_domain_significance
+  questions:
+  - what_changed_in_inference
+  - how_does_new_inference_differ_from_prior_state
+  - what_verifiable_evidence_supports_inference
+  - what_are_the_operational_or_market_implications_for_inference
+  - what_technical_limitations_or_uncertainties_remain_in_inference
+  - what_is_the_status_of_serving_for_inference
+  evidence_requirements: &id051
+  - benchmarks
+  - implementation
+  - deployment_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_inference_exceeding_baseline
+    - independent_confirmation_of_inference_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_inference
+    - minor_routine_maintenance_or_repackaging_without_new_inference_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - github
+      - research
+      - semiconductor
+      freshness: 48h
+      focus:
+      - new_inference_events
+      - verifiable_changes_in_inference
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_inference
+      - what_tools_methods_or_data_were_used_for_inference
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - inference_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Inference (inference) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Inference lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Inference.
+  action_rules:
+    monitor:
+    - track_emerging_inference_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_inference_documentation
+    - verify_reproducibility_of_reported_inference_data
+  watch_rules:
+    monitor:
+    - next_inference_milestone_or_release_date
+    - peer_review_or_independent_validation_of_inference
+    - ecosystem_adoption_metrics_for_inference
+  retrieval_intent:
+    required_concepts:
+    - Inference
+    - inference
+    - serving
+    - quantization
+    - batching
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_inference_adoption
+  - verified_metrics_for_inference
+  - artificial_intelligence_regulatory_or_competitive_response
+  - cost
+  - latency
+  disambiguation_focus:
+  - Inference
+  - inference
+  - 'Inference specific evaluation: Serving, quantization, batching, latency, throughput,
+    hardwa'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-fine-tuning-theme
+  theme_id: artificial-intelligence-fine-tuning-theme
+  micro_topic_id: fine-tuning
+  micro_topic: fine-tuning
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Fine-tuning (fine-tuning) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_fine_tuning_developments
+    - verified_fine-tuning_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_fine_tuning_relevance
+    boundaries:
+    - focus_strictly_on_fine-tuning_domain_significance
+  questions:
+  - what_changed_in_fine_tuning
+  - how_does_new_fine_tuning_differ_from_prior_state
+  - what_verifiable_evidence_supports_fine_tuning
+  - what_are_the_operational_or_market_implications_for_fine_tuning
+  - what_technical_limitations_or_uncertainties_remain_in_fine_tuning
+  - what_is_the_status_of_lora_for_fine_tuning
+  evidence_requirements: &id056
+  - technical_paper
+  - release
+  - benchmark
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_fine_tuning_exceeding_baseline
+    - independent_confirmation_of_fine_tuning_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_fine_tuning
+    - minor_routine_maintenance_or_repackaging_without_new_fine_tuning_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - research
+      - github
+      freshness: 48h
+      focus:
+      - new_fine_tuning_events
+      - verifiable_changes_in_fine-tuning
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_fine_tuning
+      - what_tools_methods_or_data_were_used_for_fine-tuning
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - fine_tuning_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Fine-tuning (fine-tuning)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Fine-tuning lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Fine-tuning.
+  action_rules:
+    monitor:
+    - track_emerging_fine_tuning_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_fine-tuning_documentation
+    - verify_reproducibility_of_reported_fine_tuning_data
+  watch_rules:
+    monitor:
+    - next_fine-tuning_milestone_or_release_date
+    - peer_review_or_independent_validation_of_fine_tuning
+    - ecosystem_adoption_metrics_for_fine_tuning
+  retrieval_intent:
+    required_concepts:
+    - Fine-tuning
+    - fine-tuning
+    - lora
+    - peft
+    - full fine-tuning
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_fine_tuning_adoption
+  - verified_metrics_for_fine-tuning
+  - artificial_intelligence_regulatory_or_competitive_response
+  - when
+  - why fine-tuning matters
+  disambiguation_focus:
+  - Fine-tuning
+  - fine-tuning
+  - 'Fine-tuning specific evaluation: LoRA/PEFT/full fine-tuning, data efficiency,
+    evaluation'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-infrastructure-theme
+  theme_id: artificial-intelligence-ai-infrastructure-theme
+  micro_topic_id: ai-infrastructure
+  micro_topic: ai-infrastructure
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Infrastructure (ai-infrastructure) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_infrastructure_developments
+    - verified_ai_infrastructure_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_infrastructure_relevance
+    boundaries:
+    - focus_strictly_on_ai-infrastructure_domain_significance
+  questions:
+  - what_changed_in_ai_infrastructure
+  - how_does_new_ai_infrastructure_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_infrastructure
+  - what_are_the_operational_or_market_implications_for_ai_infrastructure
+  - what_technical_limitations_or_uncertainties_remain_in_ai_infrastructure
+  - what_is_the_status_of_gpu_clusters_for_ai_infrastructure
+  evidence_requirements: &id061
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id061
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_infrastructure_exceeding_baseline
+    - independent_confirmation_of_ai_infrastructure_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_infrastructure
+    - minor_routine_maintenance_or_repackaging_without_new_ai_infrastructure_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id062
+      preferred_sources: &id065
+      - news-tech
+      - github
+      - semiconductor
+      freshness: 48h
+      focus:
+      - new_ai_infrastructure_events
+      - verifiable_changes_in_ai_infrastructure
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id063
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_infrastructure
+      - what_tools_methods_or_data_were_used_for_ai_infrastructure
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id062
+    video: *id063
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_infrastructure_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id064
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id064
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Infrastructure (ai-infrastructure)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Infrastructure lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Infrastructure.
+  action_rules:
+    monitor:
+    - track_emerging_ai_infrastructure_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_infrastructure_documentation
+    - verify_reproducibility_of_reported_ai_infrastructure_data
+  watch_rules:
+    monitor:
+    - next_ai_infrastructure_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_infrastructure
+    - ecosystem_adoption_metrics_for_ai_infrastructure
+  retrieval_intent:
+    required_concepts:
+    - AI Infrastructure
+    - ai-infrastructure
+    - gpu clusters
+    - inference infrastructure
+    - networking
+    preferred_source_types: *id065
+    evidence_types: *id061
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_infrastructure_adoption
+  - verified_metrics_for_ai_infrastructure
+  - artificial_intelligence_regulatory_or_competitive_response
+  - infrastructure change
+  disambiguation_focus:
+  - AI Infrastructure
+  - ai-infrastructure
+  - 'AI Infrastructure specific evaluation: GPU clusters, inference infrastructure,
+    networking, storage,'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-tooling-theme
+  theme_id: artificial-intelligence-ai-tooling-theme
+  micro_topic_id: ai-tooling
+  micro_topic: ai-tooling
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Tooling (ai-tooling) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_tooling_developments
+    - verified_ai_tooling_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_tooling_relevance
+    boundaries:
+    - focus_strictly_on_ai-tooling_domain_significance
+  questions:
+  - what_changed_in_ai_tooling
+  - how_does_new_ai_tooling_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_tooling
+  - what_are_the_operational_or_market_implications_for_ai_tooling
+  - what_technical_limitations_or_uncertainties_remain_in_ai_tooling
+  - what_is_the_status_of_developer_frameworks_for_ai_tooling
+  evidence_requirements: &id066
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id066
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_tooling_exceeding_baseline
+    - independent_confirmation_of_ai_tooling_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_tooling
+    - minor_routine_maintenance_or_repackaging_without_new_ai_tooling_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id067
+      preferred_sources: &id070
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_ai_tooling_events
+      - verifiable_changes_in_ai_tooling
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id068
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_tooling
+      - what_tools_methods_or_data_were_used_for_ai_tooling
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id067
+    video: *id068
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_tooling_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id069
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id069
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Tooling (ai-tooling) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Tooling lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Tooling.
+  action_rules:
+    monitor:
+    - track_emerging_ai_tooling_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_tooling_documentation
+    - verify_reproducibility_of_reported_ai_tooling_data
+  watch_rules:
+    monitor:
+    - next_ai_tooling_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_tooling
+    - ecosystem_adoption_metrics_for_ai_tooling
+  retrieval_intent:
+    required_concepts:
+    - AI Tooling
+    - ai-tooling
+    - developer frameworks
+    - evaluation tools
+    - observability
+    preferred_source_types: *id070
+    evidence_types: *id066
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_tooling_adoption
+  - verified_metrics_for_ai_tooling
+  - artificial_intelligence_regulatory_or_competitive_response
+  - developer utility
+  - adoption
+  disambiguation_focus:
+  - AI Tooling
+  - ai-tooling
+  - 'AI Tooling specific evaluation: Developer frameworks, evaluation tools, observability,
+    pipel'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-open-source-ai-theme
+  theme_id: artificial-intelligence-open-source-ai-theme
+  micro_topic_id: open-source-ai
+  micro_topic: open-source-ai
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Open-source AI (open-source-ai) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_open_source_ai_developments
+    - verified_open-source_ai_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_open_source_ai_relevance
+    boundaries:
+    - focus_strictly_on_open-source-ai_domain_significance
+  questions:
+  - what_changed_in_open_source_ai
+  - how_does_new_open_source_ai_differ_from_prior_state
+  - what_verifiable_evidence_supports_open_source_ai
+  - what_are_the_operational_or_market_implications_for_open_source_ai
+  - what_technical_limitations_or_uncertainties_remain_in_open_source_ai
+  - what_is_the_status_of_open_models_for_open_source_ai
+  evidence_requirements: &id071
+  - repository
+  - model_release
+  - license
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id071
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_open_source_ai_exceeding_baseline
+    - independent_confirmation_of_open_source_ai_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_open_source_ai
+    - minor_routine_maintenance_or_repackaging_without_new_open_source_ai_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id072
+      preferred_sources: &id075
+      - github
+      - research
+      freshness: 48h
+      focus:
+      - new_open_source_ai_events
+      - verifiable_changes_in_open-source_ai
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id073
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_open_source_ai
+      - what_tools_methods_or_data_were_used_for_open-source_ai
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id072
+    video: *id073
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - open_source_ai_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id074
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id074
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Open-source AI (open-source-ai)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Open-source AI lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Open-source AI.
+  action_rules:
+    monitor:
+    - track_emerging_open_source_ai_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_open-source_ai_documentation
+    - verify_reproducibility_of_reported_open_source_ai_data
+  watch_rules:
+    monitor:
+    - next_open-source_ai_milestone_or_release_date
+    - peer_review_or_independent_validation_of_open_source_ai
+    - ecosystem_adoption_metrics_for_open_source_ai
+  retrieval_intent:
+    required_concepts:
+    - Open-source AI
+    - open-source-ai
+    - open models
+    - licenses
+    - releases
+    preferred_source_types: *id075
+    evidence_types: *id071
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_open_source_ai_adoption
+  - verified_metrics_for_open-source_ai
+  - artificial_intelligence_regulatory_or_competitive_response
+  - openness
+  - adoption
+  disambiguation_focus:
+  - Open-source AI
+  - open-source-ai
+  - 'Open-source AI specific evaluation: Open models, licenses, releases, community
+    adoption'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-enterprise-ai-theme
+  theme_id: artificial-intelligence-enterprise-ai-theme
+  micro_topic_id: enterprise-ai
+  micro_topic: enterprise-ai
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Enterprise AI (enterprise-ai) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_enterprise_ai_developments
+    - verified_enterprise_ai_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_enterprise_ai_relevance
+    boundaries:
+    - focus_strictly_on_enterprise-ai_domain_significance
+  questions:
+  - what_changed_in_enterprise_ai
+  - how_does_new_enterprise_ai_differ_from_prior_state
+  - what_verifiable_evidence_supports_enterprise_ai
+  - what_are_the_operational_or_market_implications_for_enterprise_ai
+  - what_technical_limitations_or_uncertainties_remain_in_enterprise_ai
+  - what_is_the_status_of_enterprise_deployments_for_enterprise_ai
+  evidence_requirements: &id076
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id076
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_enterprise_ai_exceeding_baseline
+    - independent_confirmation_of_enterprise_ai_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_enterprise_ai
+    - minor_routine_maintenance_or_repackaging_without_new_enterprise_ai_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id077
+      preferred_sources: &id080
+      - company
+      - news-tech
+      - gov
+      freshness: 48h
+      focus:
+      - new_enterprise_ai_events
+      - verifiable_changes_in_enterprise_ai
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id078
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_enterprise_ai
+      - what_tools_methods_or_data_were_used_for_enterprise_ai
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id077
+    video: *id078
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - enterprise_ai_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id079
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id079
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Enterprise AI (enterprise-ai)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Enterprise AI lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Enterprise AI.
+  action_rules:
+    monitor:
+    - track_emerging_enterprise_ai_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_enterprise_ai_documentation
+    - verify_reproducibility_of_reported_enterprise_ai_data
+  watch_rules:
+    monitor:
+    - next_enterprise_ai_milestone_or_release_date
+    - peer_review_or_independent_validation_of_enterprise_ai
+    - ecosystem_adoption_metrics_for_enterprise_ai
+  retrieval_intent:
+    required_concepts:
+    - Enterprise AI
+    - enterprise-ai
+    - enterprise deployments
+    - roi
+    - security
+    preferred_source_types: *id080
+    evidence_types: *id076
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_enterprise_ai_adoption
+  - verified_metrics_for_enterprise_ai
+  - artificial_intelligence_regulatory_or_competitive_response
+  - actual deployment vs marketing
+  disambiguation_focus:
+  - Enterprise AI
+  - enterprise-ai
+  - 'Enterprise AI specific evaluation: Enterprise deployments, ROI, security, governance,
+    procureme'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-applications-theme
+  theme_id: artificial-intelligence-ai-applications-theme
+  micro_topic_id: ai-applications
+  micro_topic: ai-applications
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Applications (ai-applications) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_applications_developments
+    - verified_ai_applications_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_applications_relevance
+    boundaries:
+    - focus_strictly_on_ai-applications_domain_significance
+  questions:
+  - what_changed_in_ai_applications
+  - how_does_new_ai_applications_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_applications
+  - what_are_the_operational_or_market_implications_for_ai_applications
+  - what_technical_limitations_or_uncertainties_remain_in_ai_applications
+  - what_is_the_status_of_concrete_applications_and_measurable_outcomes_for_ai_applications
+  evidence_requirements: &id081
+  - product
+  - demo
+  - customer_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id081
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_applications_exceeding_baseline
+    - independent_confirmation_of_ai_applications_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_applications
+    - minor_routine_maintenance_or_repackaging_without_new_ai_applications_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id082
+      preferred_sources: &id085
+      - news-tech
+      - company
+      - github
+      freshness: 48h
+      focus:
+      - new_ai_applications_events
+      - verifiable_changes_in_ai_applications
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id083
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_applications
+      - what_tools_methods_or_data_were_used_for_ai_applications
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id082
+    video: *id083
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_applications_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id084
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id084
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Applications (ai-applications)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Applications lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Applications.
+  action_rules:
+    monitor:
+    - track_emerging_ai_applications_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_applications_documentation
+    - verify_reproducibility_of_reported_ai_applications_data
+  watch_rules:
+    monitor:
+    - next_ai_applications_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_applications
+    - ecosystem_adoption_metrics_for_ai_applications
+  retrieval_intent:
+    required_concepts:
+    - AI Applications
+    - ai-applications
+    - concrete applications and measurable outcomes
+    preferred_source_types: *id085
+    evidence_types: *id081
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_applications_adoption
+  - verified_metrics_for_ai_applications
+  - artificial_intelligence_regulatory_or_competitive_response
+  - use case
+  - measurable value
+  disambiguation_focus:
+  - AI Applications
+  - ai-applications
+  - 'AI Applications specific evaluation: Concrete applications and measurable outcomes'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-research-theme
+  theme_id: artificial-intelligence-ai-research-theme
+  micro_topic_id: ai-research
+  micro_topic: ai-research
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Research (ai-research) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_research_developments
+    - verified_ai_research_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_research_relevance
+    boundaries:
+    - focus_strictly_on_ai-research_domain_significance
+  questions:
+  - what_changed_in_ai_research
+  - how_does_new_ai_research_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_research
+  - what_are_the_operational_or_market_implications_for_ai_research
+  - what_technical_limitations_or_uncertainties_remain_in_ai_research
+  - what_is_the_status_of_novel_methods_for_ai_research
+  evidence_requirements: &id086
+  - paper
+  - preprint
+  - benchmark
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id086
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_research_exceeding_baseline
+    - independent_confirmation_of_ai_research_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_research
+    - minor_routine_maintenance_or_repackaging_without_new_ai_research_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id087
+      preferred_sources: &id090
+      - research
+      freshness: 48h
+      focus:
+      - new_ai_research_events
+      - verifiable_changes_in_ai_research
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id088
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_research
+      - what_tools_methods_or_data_were_used_for_ai_research
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id087
+    video: *id088
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_research_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id089
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id089
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Research (ai-research)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Research lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Research.
+  action_rules:
+    monitor:
+    - track_emerging_ai_research_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_research_documentation
+    - verify_reproducibility_of_reported_ai_research_data
+  watch_rules:
+    monitor:
+    - next_ai_research_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_research
+    - ecosystem_adoption_metrics_for_ai_research
+  retrieval_intent:
+    required_concepts:
+    - AI Research
+    - ai-research
+    - novel methods
+    - results
+    - reproducibility
+    preferred_source_types: *id090
+    evidence_types: *id086
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_research_adoption
+  - verified_metrics_for_ai_research
+  - artificial_intelligence_regulatory_or_competitive_response
+  - research contribution
+  disambiguation_focus:
+  - AI Research
+  - ai-research
+  - 'AI Research specific evaluation: Novel methods, results, reproducibility, research
+    significan'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-safety-alignment-theme
+  theme_id: artificial-intelligence-ai-safety-alignment-theme
+  micro_topic_id: ai-safety-alignment
+  micro_topic: ai-safety-alignment
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Safety / Alignment (ai-safety-alignment) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_safety_alignment_developments
+    - verified_ai_safety_/_alignment_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_safety_alignment_relevance
+    boundaries:
+    - focus_strictly_on_ai-safety-alignment_domain_significance
+  questions:
+  - what_changed_in_ai_safety_alignment
+  - how_does_new_ai_safety_/_alignment_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_safety_alignment
+  - what_are_the_operational_or_market_implications_for_ai_safety_alignment
+  - what_technical_limitations_or_uncertainties_remain_in_ai_safety_alignment
+  - what_is_the_status_of_safety_technique_for_ai_safety_alignment
+  evidence_requirements: &id091
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id091
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_safety_/_alignment_exceeding_baseline
+    - independent_confirmation_of_ai_safety_alignment_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_safety_alignment
+    - minor_routine_maintenance_or_repackaging_without_new_ai_safety_alignment_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id092
+      preferred_sources: &id095
+      - research
+      - gov-us
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_ai_safety_alignment_events
+      - verifiable_changes_in_ai_safety_/_alignment
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id093
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_safety_alignment
+      - what_tools_methods_or_data_were_used_for_ai_safety_/_alignment
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id092
+    video: *id093
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_safety_alignment_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id094
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id094
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Safety / Alignment (ai-safety-alignment)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Safety / Alignment lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Safety / Alignment.
+  action_rules:
+    monitor:
+    - track_emerging_ai_safety_alignment_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_safety_/_alignment_documentation
+    - verify_reproducibility_of_reported_ai_safety_alignment_data
+  watch_rules:
+    monitor:
+    - next_ai_safety_/_alignment_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_safety_alignment
+    - ecosystem_adoption_metrics_for_ai_safety_alignment
+  retrieval_intent:
+    required_concepts:
+    - AI Safety / Alignment
+    - ai-safety-alignment
+    - safety technique
+    - alignment method
+    - evals
+    preferred_source_types: *id095
+    evidence_types: *id091
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_safety_alignment_adoption
+  - verified_metrics_for_ai_safety_/_alignment
+  - artificial_intelligence_regulatory_or_competitive_response
+  - risk
+  - mitigation
+  disambiguation_focus:
+  - AI Safety / Alignment
+  - ai-safety-alignment
+  - 'AI Safety / Alignment specific evaluation: Safety technique, alignment method,
+    evals, incidents, govern'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - gov-us
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-evaluation-theme
+  theme_id: artificial-intelligence-ai-evaluation-theme
+  micro_topic_id: ai-evaluation
+  micro_topic: ai-evaluation
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Evaluation (ai-evaluation) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_evaluation_developments
+    - verified_ai_evaluation_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_evaluation_relevance
+    boundaries:
+    - focus_strictly_on_ai-evaluation_domain_significance
+  questions:
+  - what_changed_in_ai_evaluation
+  - how_does_new_ai_evaluation_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_evaluation
+  - what_are_the_operational_or_market_implications_for_ai_evaluation
+  - what_technical_limitations_or_uncertainties_remain_in_ai_evaluation
+  - what_is_the_status_of_benchmarks_for_ai_evaluation
+  evidence_requirements: &id096
+  - benchmark
+  - methodology
+  - independent_testing
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id096
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_evaluation_exceeding_baseline
+    - independent_confirmation_of_ai_evaluation_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_evaluation
+    - minor_routine_maintenance_or_repackaging_without_new_ai_evaluation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id097
+      preferred_sources: &id100
+      - research
+      - github
+      freshness: 48h
+      focus:
+      - new_ai_evaluation_events
+      - verifiable_changes_in_ai_evaluation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id098
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_evaluation
+      - what_tools_methods_or_data_were_used_for_ai_evaluation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id097
+    video: *id098
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_evaluation_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id099
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id099
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Evaluation (ai-evaluation)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Evaluation lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Evaluation.
+  action_rules:
+    monitor:
+    - track_emerging_ai_evaluation_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_evaluation_documentation
+    - verify_reproducibility_of_reported_ai_evaluation_data
+  watch_rules:
+    monitor:
+    - next_ai_evaluation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_evaluation
+    - ecosystem_adoption_metrics_for_ai_evaluation
+  retrieval_intent:
+    required_concepts:
+    - AI Evaluation
+    - ai-evaluation
+    - benchmarks
+    - eval methodology
+    - contamination
+    preferred_source_types: *id100
+    evidence_types: *id096
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_evaluation_adoption
+  - verified_metrics_for_ai_evaluation
+  - artificial_intelligence_regulatory_or_competitive_response
+  - evaluation validity
+  disambiguation_focus:
+  - AI Evaluation
+  - ai-evaluation
+  - 'AI Evaluation specific evaluation: Benchmarks, eval methodology, contamination,
+    reliability, re'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-regulation-theme
+  theme_id: artificial-intelligence-ai-regulation-theme
+  micro_topic_id: ai-regulation
+  micro_topic: ai-regulation
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Regulation (ai-regulation) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_regulation_developments
+    - verified_ai_regulation_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_regulation_relevance
+    boundaries:
+    - focus_strictly_on_ai-regulation_domain_significance
+  questions:
+  - what_changed_in_ai_regulation
+  - how_does_new_ai_regulation_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_regulation
+  - what_are_the_operational_or_market_implications_for_ai_regulation
+  - what_technical_limitations_or_uncertainties_remain_in_ai_regulation
+  - what_is_the_status_of_laws_for_ai_regulation
+  evidence_requirements: &id101
+  - official_government
+  - regulatory_text
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id101
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_regulation_exceeding_baseline
+    - independent_confirmation_of_ai_regulation_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_regulation
+    - minor_routine_maintenance_or_repackaging_without_new_ai_regulation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id102
+      preferred_sources: &id105
+      - gov-us
+      - gov-eu
+      - gov-india
+      - news-global
+      freshness: 48h
+      focus:
+      - new_ai_regulation_events
+      - verifiable_changes_in_ai_regulation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id103
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_regulation
+      - what_tools_methods_or_data_were_used_for_ai_regulation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id102
+    video: *id103
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_regulation_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id104
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id104
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Regulation (ai-regulation)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Regulation lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Regulation.
+  action_rules:
+    monitor:
+    - track_emerging_ai_regulation_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_regulation_documentation
+    - verify_reproducibility_of_reported_ai_regulation_data
+  watch_rules:
+    monitor:
+    - next_ai_regulation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_regulation
+    - ecosystem_adoption_metrics_for_ai_regulation
+  retrieval_intent:
+    required_concepts:
+    - AI Regulation
+    - ai-regulation
+    - laws
+    - regulations
+    - standards
+    preferred_source_types: *id105
+    evidence_types: *id101
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_regulation_adoption
+  - verified_metrics_for_ai_regulation
+  - artificial_intelligence_regulatory_or_competitive_response
+  - obligation
+  - deadline
+  disambiguation_focus:
+  - AI Regulation
+  - ai-regulation
+  - 'AI Regulation specific evaluation: Laws, regulations, standards, compliance requirements'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov-us
+    - gov-eu
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-startups-theme
+  theme_id: artificial-intelligence-ai-startups-theme
+  micro_topic_id: ai-startups
+  micro_topic: ai-startups
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Startups (ai-startups) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_startups_developments
+    - verified_ai_startups_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_startups_relevance
+    boundaries:
+    - focus_strictly_on_ai-startups_domain_significance
+  questions:
+  - what_changed_in_ai_startups
+  - how_does_new_ai_startups_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_startups
+  - what_are_the_operational_or_market_implications_for_ai_startups
+  - what_technical_limitations_or_uncertainties_remain_in_ai_startups
+  - what_is_the_status_of_funding_for_ai_startups
+  evidence_requirements: &id106
+  - funding_announcement
+  - company
+  - product_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id106
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_startups_exceeding_baseline
+    - independent_confirmation_of_ai_startups_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_startups
+    - minor_routine_maintenance_or_repackaging_without_new_ai_startups_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id107
+      preferred_sources: &id110
+      - startup
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_ai_startups_events
+      - verifiable_changes_in_ai_startups
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id108
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_startups
+      - what_tools_methods_or_data_were_used_for_ai_startups
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id107
+    video: *id108
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_startups_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id109
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id109
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Startups (ai-startups)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Startups lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Startups.
+  action_rules:
+    monitor:
+    - track_emerging_ai_startups_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_startups_documentation
+    - verify_reproducibility_of_reported_ai_startups_data
+  watch_rules:
+    monitor:
+    - next_ai_startups_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_startups
+    - ecosystem_adoption_metrics_for_ai_startups
+  retrieval_intent:
+    required_concepts:
+    - AI Startups
+    - ai-startups
+    - funding
+    - products
+    - differentiation
+    preferred_source_types: *id110
+    evidence_types: *id106
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_startups_adoption
+  - verified_metrics_for_ai_startups
+  - artificial_intelligence_regulatory_or_competitive_response
+  - startup significance
+  disambiguation_focus:
+  - AI Startups
+  - ai-startups
+  - 'AI Startups specific evaluation: Funding, products, differentiation, customers,
+    model/infrast'
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - startup
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: artificial-intelligence-ai-application-launches-theme
+  theme_id: artificial-intelligence-ai-application-launches-theme
+  micro_topic_id: ai-application-launches
+  micro_topic: ai-application-launches
+  domain: artificial-intelligence
+  domain_id: artificial-intelligence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Applications (ai-application-launches) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_application_launches_developments
+    - verified_ai_applications_activity
+    excludes:
+    - tangential_artificial-intelligence_chatter_without_ai_application_launches_relevance
+    boundaries:
+    - focus_strictly_on_ai-application-launches_domain_significance
+  questions:
+  - what_changed_in_ai_application_launches
+  - how_does_new_ai_applications_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_application_launches
+  - what_are_the_operational_or_market_implications_for_ai_application_launches
+  - what_technical_limitations_or_uncertainties_remain_in_ai_application_launches
+  - what_is_the_status_of_application_launches_for_ai_application_launches
+  evidence_requirements: &id111
+  - product_docs
+  - customer_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id111
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_applications_exceeding_baseline
+    - independent_confirmation_of_ai_application_launches_milestone_from_primary_source
+    - measurable_impact_on_artificial_intelligence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_application_launches
+    - minor_routine_maintenance_or_repackaging_without_new_ai_application_launches_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id112
+      preferred_sources: &id115
+      - news-tech
+      - company
+      - github
+      freshness: 48h
+      focus:
+      - new_ai_application_launches_events
+      - verifiable_changes_in_ai_applications
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id113
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_application_launches
+      - what_tools_methods_or_data_were_used_for_ai_applications
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id112
+    video: *id113
+  entity_extraction:
+    required:
+    - artificial_intelligence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_application_launches_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id114
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id114
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Applications (ai-application-launches)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Applications lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Applications.
+  action_rules:
+    monitor:
+    - track_emerging_ai_application_launches_benchmarks
+    - follow_official_artificial_intelligence_announcements
+    investigate:
+    - audit_claims_against_primary_ai_applications_documentation
+    - verify_reproducibility_of_reported_ai_application_launches_data
+  watch_rules:
+    monitor:
+    - next_ai_applications_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_application_launches
+    - ecosystem_adoption_metrics_for_ai_application_launches
+  retrieval_intent:
+    required_concepts:
+    - AI Applications
+    - ai-application-launches
+    - application launches
+    - workflow integration
+    - measurable user impact
+    preferred_source_types: *id115
+    evidence_types: *id111
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_application_launches_adoption
+  - verified_metrics_for_ai_applications
+  - artificial_intelligence_regulatory_or_competitive_response
+  - adoption
+  - business impact
+  disambiguation_focus:
+  - AI Applications
+  - ai-application-launches
+  - 'AI Applications specific evaluation: Application launches, workflow integration,
+    measurable user '
+  - distinct from other artificial-intelligence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

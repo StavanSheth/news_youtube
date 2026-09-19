@@ -1,0 +1,1328 @@
+themes:
+- id: technology-companies-product-launches-theme
+  theme_id: technology-companies-product-launches-theme
+  micro_topic_id: product-launches
+  micro_topic: product-launches
+  domain: technology-companies
+  domain_id: technology-companies
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Product Launches (product-launches) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_product_launches_developments
+    - verified_product_launches_activity
+    excludes:
+    - tangential_technology-companies_chatter_without_product_launches_relevance
+    boundaries:
+    - focus_strictly_on_product-launches_domain_significance
+  questions:
+  - what_changed_in_product_launches
+  - how_does_new_product_launches_differ_from_prior_state
+  - what_verifiable_evidence_supports_product_launches
+  - what_are_the_operational_or_market_implications_for_product_launches
+  - what_technical_limitations_or_uncertainties_remain_in_product_launches
+  - what_is_the_status_of_product_for_product_launches
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_product_launches_exceeding_baseline
+    - independent_confirmation_of_product_launches_milestone_from_primary_source
+    - measurable_impact_on_technology_companies_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_product_launches
+    - minor_routine_maintenance_or_repackaging_without_new_product_launches_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - company
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_product_launches_events
+      - verifiable_changes_in_product_launches
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_product_launches
+      - what_tools_methods_or_data_were_used_for_product_launches
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - technology_companies
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - product_launches_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Product Launches (product-launches)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Product Launches lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Product Launches.
+  action_rules:
+    monitor:
+    - track_emerging_product_launches_benchmarks
+    - follow_official_technology_companies_announcements
+    investigate:
+    - audit_claims_against_primary_product_launches_documentation
+    - verify_reproducibility_of_reported_product_launches_data
+  watch_rules:
+    monitor:
+    - next_product_launches_milestone_or_release_date
+    - peer_review_or_independent_validation_of_product_launches
+    - ecosystem_adoption_metrics_for_product_launches
+  retrieval_intent:
+    required_concepts:
+    - Product Launches
+    - product-launches
+    - product
+    - capability
+    - availability
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_product_launches_adoption
+  - verified_metrics_for_product_launches
+  - technology_companies_regulatory_or_competitive_response
+  - product
+  - capability
+  disambiguation_focus:
+  - Product Launches
+  - product-launches
+  - 'Product Launches specific evaluation: Product, capability, availability, differentiation'
+  - distinct from other technology-companies topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: technology-companies-strategy-theme
+  theme_id: technology-companies-strategy-theme
+  micro_topic_id: strategy
+  micro_topic: strategy
+  domain: technology-companies
+  domain_id: technology-companies
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Strategy (strategy) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_strategy_developments
+    - verified_strategy_activity
+    excludes:
+    - tangential_technology-companies_chatter_without_strategy_relevance
+    boundaries:
+    - focus_strictly_on_strategy_domain_significance
+  questions:
+  - what_changed_in_strategy
+  - how_does_new_strategy_differ_from_prior_state
+  - what_verifiable_evidence_supports_strategy
+  - what_are_the_operational_or_market_implications_for_strategy
+  - what_technical_limitations_or_uncertainties_remain_in_strategy
+  - what_is_the_status_of_corporate_direction_and_strategic_shifts_for_strategy
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_strategy_exceeding_baseline
+    - independent_confirmation_of_strategy_milestone_from_primary_source
+    - measurable_impact_on_technology_companies_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_strategy
+    - minor_routine_maintenance_or_repackaging_without_new_strategy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - company
+      - finance
+      freshness: 48h
+      focus:
+      - new_strategy_events
+      - verifiable_changes_in_strategy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_strategy
+      - what_tools_methods_or_data_were_used_for_strategy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - technology_companies
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - strategy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Strategy (strategy) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Strategy lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Strategy.
+  action_rules:
+    monitor:
+    - track_emerging_strategy_benchmarks
+    - follow_official_technology_companies_announcements
+    investigate:
+    - audit_claims_against_primary_strategy_documentation
+    - verify_reproducibility_of_reported_strategy_data
+  watch_rules:
+    monitor:
+    - next_strategy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_strategy
+    - ecosystem_adoption_metrics_for_strategy
+  retrieval_intent:
+    required_concepts:
+    - Strategy
+    - strategy
+    - corporate direction and strategic shifts
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_strategy_adoption
+  - verified_metrics_for_strategy
+  - technology_companies_regulatory_or_competitive_response
+  - corporate direction and strategic shifts
+  disambiguation_focus:
+  - Strategy
+  - strategy
+  - 'Strategy specific evaluation: Corporate direction and strategic shifts'
+  - distinct from other technology-companies topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: technology-companies-acquisitions-theme
+  theme_id: technology-companies-acquisitions-theme
+  micro_topic_id: acquisitions
+  micro_topic: acquisitions
+  domain: technology-companies
+  domain_id: technology-companies
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Acquisitions (acquisitions) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_acquisitions_developments
+    - verified_acquisitions_activity
+    excludes:
+    - tangential_technology-companies_chatter_without_acquisitions_relevance
+    boundaries:
+    - focus_strictly_on_acquisitions_domain_significance
+  questions:
+  - what_changed_in_acquisitions
+  - how_does_new_acquisitions_differ_from_prior_state
+  - what_verifiable_evidence_supports_acquisitions
+  - what_are_the_operational_or_market_implications_for_acquisitions
+  - what_technical_limitations_or_uncertainties_remain_in_acquisitions
+  - what_is_the_status_of_target_for_acquisitions
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_acquisitions_exceeding_baseline
+    - independent_confirmation_of_acquisitions_milestone_from_primary_source
+    - measurable_impact_on_technology_companies_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_acquisitions
+    - minor_routine_maintenance_or_repackaging_without_new_acquisitions_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - company
+      - finance
+      freshness: 48h
+      focus:
+      - new_acquisitions_events
+      - verifiable_changes_in_acquisitions
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_acquisitions
+      - what_tools_methods_or_data_were_used_for_acquisitions
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - technology_companies
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - acquisitions_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Acquisitions (acquisitions)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Acquisitions lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Acquisitions.
+  action_rules:
+    monitor:
+    - track_emerging_acquisitions_benchmarks
+    - follow_official_technology_companies_announcements
+    investigate:
+    - audit_claims_against_primary_acquisitions_documentation
+    - verify_reproducibility_of_reported_acquisitions_data
+  watch_rules:
+    monitor:
+    - next_acquisitions_milestone_or_release_date
+    - peer_review_or_independent_validation_of_acquisitions
+    - ecosystem_adoption_metrics_for_acquisitions
+  retrieval_intent:
+    required_concepts:
+    - Acquisitions
+    - acquisitions
+    - target
+    - price if available
+    - rationale
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_acquisitions_adoption
+  - verified_metrics_for_acquisitions
+  - technology_companies_regulatory_or_competitive_response
+  - target
+  - price if available
+  disambiguation_focus:
+  - Acquisitions
+  - acquisitions
+  - 'Acquisitions specific evaluation: Target, price if available, rationale'
+  - distinct from other technology-companies topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: technology-companies-partnerships-theme
+  theme_id: technology-companies-partnerships-theme
+  micro_topic_id: partnerships
+  micro_topic: partnerships
+  domain: technology-companies
+  domain_id: technology-companies
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Partnerships (partnerships) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_partnerships_developments
+    - verified_partnerships_activity
+    excludes:
+    - tangential_technology-companies_chatter_without_partnerships_relevance
+    boundaries:
+    - focus_strictly_on_partnerships_domain_significance
+  questions:
+  - what_changed_in_partnerships
+  - how_does_new_partnerships_differ_from_prior_state
+  - what_verifiable_evidence_supports_partnerships
+  - what_are_the_operational_or_market_implications_for_partnerships
+  - what_technical_limitations_or_uncertainties_remain_in_partnerships
+  - what_is_the_status_of_parties_for_partnerships
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_partnerships_exceeding_baseline
+    - independent_confirmation_of_partnerships_milestone_from_primary_source
+    - measurable_impact_on_technology_companies_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_partnerships
+    - minor_routine_maintenance_or_repackaging_without_new_partnerships_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - company
+      freshness: 48h
+      focus:
+      - new_partnerships_events
+      - verifiable_changes_in_partnerships
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_partnerships
+      - what_tools_methods_or_data_were_used_for_partnerships
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - technology_companies
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - partnerships_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Partnerships (partnerships)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Partnerships lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Partnerships.
+  action_rules:
+    monitor:
+    - track_emerging_partnerships_benchmarks
+    - follow_official_technology_companies_announcements
+    investigate:
+    - audit_claims_against_primary_partnerships_documentation
+    - verify_reproducibility_of_reported_partnerships_data
+  watch_rules:
+    monitor:
+    - next_partnerships_milestone_or_release_date
+    - peer_review_or_independent_validation_of_partnerships
+    - ecosystem_adoption_metrics_for_partnerships
+  retrieval_intent:
+    required_concepts:
+    - Partnerships
+    - partnerships
+    - parties
+    - scope
+    - commercial
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_partnerships_adoption
+  - verified_metrics_for_partnerships
+  - technology_companies_regulatory_or_competitive_response
+  - parties
+  - scope
+  disambiguation_focus:
+  - Partnerships
+  - partnerships
+  - 'Partnerships specific evaluation: Parties, scope, commercial/technical implications'
+  - distinct from other technology-companies topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: technology-companies-earnings-theme
+  theme_id: technology-companies-earnings-theme
+  micro_topic_id: earnings
+  micro_topic: earnings
+  domain: technology-companies
+  domain_id: technology-companies
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Earnings (earnings) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_earnings_developments
+    - verified_earnings_activity
+    excludes:
+    - tangential_technology-companies_chatter_without_earnings_relevance
+    boundaries:
+    - focus_strictly_on_earnings_domain_significance
+  questions:
+  - what_changed_in_earnings
+  - how_does_new_earnings_differ_from_prior_state
+  - what_verifiable_evidence_supports_earnings
+  - what_are_the_operational_or_market_implications_for_earnings
+  - what_technical_limitations_or_uncertainties_remain_in_earnings
+  - what_is_the_status_of_revenue_for_earnings
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_earnings_exceeding_baseline
+    - independent_confirmation_of_earnings_milestone_from_primary_source
+    - measurable_impact_on_technology_companies_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_earnings
+    - minor_routine_maintenance_or_repackaging_without_new_earnings_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - finance
+      - company
+      freshness: 48h
+      focus:
+      - new_earnings_events
+      - verifiable_changes_in_earnings
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_earnings
+      - what_tools_methods_or_data_were_used_for_earnings
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - technology_companies
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - earnings_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Earnings (earnings) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Earnings lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Earnings.
+  action_rules:
+    monitor:
+    - track_emerging_earnings_benchmarks
+    - follow_official_technology_companies_announcements
+    investigate:
+    - audit_claims_against_primary_earnings_documentation
+    - verify_reproducibility_of_reported_earnings_data
+  watch_rules:
+    monitor:
+    - next_earnings_milestone_or_release_date
+    - peer_review_or_independent_validation_of_earnings
+    - ecosystem_adoption_metrics_for_earnings
+  retrieval_intent:
+    required_concepts:
+    - Earnings
+    - earnings
+    - revenue
+    - growth
+    - margins
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_earnings_adoption
+  - verified_metrics_for_earnings
+  - technology_companies_regulatory_or_competitive_response
+  - revenue
+  - growth
+  disambiguation_focus:
+  - Earnings
+  - earnings
+  - 'Earnings specific evaluation: Revenue, growth, margins, guidance'
+  - distinct from other technology-companies topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - finance
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: technology-companies-infrastructure-theme
+  theme_id: technology-companies-infrastructure-theme
+  micro_topic_id: infrastructure
+  micro_topic: infrastructure
+  domain: technology-companies
+  domain_id: technology-companies
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Infrastructure (infrastructure) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_infrastructure_developments
+    - verified_infrastructure_activity
+    excludes:
+    - tangential_technology-companies_chatter_without_infrastructure_relevance
+    boundaries:
+    - focus_strictly_on_infrastructure_domain_significance
+  questions:
+  - what_changed_in_infrastructure
+  - how_does_new_infrastructure_differ_from_prior_state
+  - what_verifiable_evidence_supports_infrastructure
+  - what_are_the_operational_or_market_implications_for_infrastructure
+  - what_technical_limitations_or_uncertainties_remain_in_infrastructure
+  - what_is_the_status_of_data_centers_for_infrastructure
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_infrastructure_exceeding_baseline
+    - independent_confirmation_of_infrastructure_milestone_from_primary_source
+    - measurable_impact_on_technology_companies_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_infrastructure
+    - minor_routine_maintenance_or_repackaging_without_new_infrastructure_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - company
+      - ai
+      - semiconductor
+      freshness: 48h
+      focus:
+      - new_infrastructure_events
+      - verifiable_changes_in_infrastructure
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_infrastructure
+      - what_tools_methods_or_data_were_used_for_infrastructure
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - technology_companies
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - infrastructure_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Infrastructure (infrastructure)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Infrastructure lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Infrastructure.
+  action_rules:
+    monitor:
+    - track_emerging_infrastructure_benchmarks
+    - follow_official_technology_companies_announcements
+    investigate:
+    - audit_claims_against_primary_infrastructure_documentation
+    - verify_reproducibility_of_reported_infrastructure_data
+  watch_rules:
+    monitor:
+    - next_infrastructure_milestone_or_release_date
+    - peer_review_or_independent_validation_of_infrastructure
+    - ecosystem_adoption_metrics_for_infrastructure
+  retrieval_intent:
+    required_concepts:
+    - Infrastructure
+    - infrastructure
+    - data centers
+    - compute
+    - cloud infrastructure
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_infrastructure_adoption
+  - verified_metrics_for_infrastructure
+  - technology_companies_regulatory_or_competitive_response
+  - data centers
+  - compute
+  disambiguation_focus:
+  - Infrastructure
+  - infrastructure
+  - 'Infrastructure specific evaluation: Data centers, compute, cloud infrastructure'
+  - distinct from other technology-companies topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - ai
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: technology-companies-platform-changes-theme
+  theme_id: technology-companies-platform-changes-theme
+  micro_topic_id: platform-changes
+  micro_topic: platform-changes
+  domain: technology-companies
+  domain_id: technology-companies
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Platform Changes (platform-changes) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_platform_changes_developments
+    - verified_platform_changes_activity
+    excludes:
+    - tangential_technology-companies_chatter_without_platform_changes_relevance
+    boundaries:
+    - focus_strictly_on_platform-changes_domain_significance
+  questions:
+  - what_changed_in_platform_changes
+  - how_does_new_platform_changes_differ_from_prior_state
+  - what_verifiable_evidence_supports_platform_changes
+  - what_are_the_operational_or_market_implications_for_platform_changes
+  - what_technical_limitations_or_uncertainties_remain_in_platform_changes
+  - what_is_the_status_of_apis_for_platform_changes
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_platform_changes_exceeding_baseline
+    - independent_confirmation_of_platform_changes_milestone_from_primary_source
+    - measurable_impact_on_technology_companies_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_platform_changes
+    - minor_routine_maintenance_or_repackaging_without_new_platform_changes_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - company
+      - github
+      freshness: 48h
+      focus:
+      - new_platform_changes_events
+      - verifiable_changes_in_platform_changes
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_platform_changes
+      - what_tools_methods_or_data_were_used_for_platform_changes
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - technology_companies
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - platform_changes_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Platform Changes (platform-changes)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Platform Changes lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Platform Changes.
+  action_rules:
+    monitor:
+    - track_emerging_platform_changes_benchmarks
+    - follow_official_technology_companies_announcements
+    investigate:
+    - audit_claims_against_primary_platform_changes_documentation
+    - verify_reproducibility_of_reported_platform_changes_data
+  watch_rules:
+    monitor:
+    - next_platform_changes_milestone_or_release_date
+    - peer_review_or_independent_validation_of_platform_changes
+    - ecosystem_adoption_metrics_for_platform_changes
+  retrieval_intent:
+    required_concepts:
+    - Platform Changes
+    - platform-changes
+    - apis
+    - pricing
+    - policies
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_platform_changes_adoption
+  - verified_metrics_for_platform_changes
+  - technology_companies_regulatory_or_competitive_response
+  - apis
+  - pricing
+  disambiguation_focus:
+  - Platform Changes
+  - platform-changes
+  - 'Platform Changes specific evaluation: APIs, pricing, policies, ecosystem changes'
+  - distinct from other technology-companies topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: technology-companies-corporate-ai-technology-strategy-theme
+  theme_id: technology-companies-corporate-ai-technology-strategy-theme
+  micro_topic_id: corporate-ai-technology-strategy
+  micro_topic: corporate-ai-technology-strategy
+  domain: technology-companies
+  domain_id: technology-companies
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Corporate AI / Technology Strategy (corporate-ai-technology-strategy)
+    specifically through verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_corporate_ai_technology_strategy_developments
+    - verified_corporate_ai_/_technology_strategy_activity
+    excludes:
+    - tangential_technology-companies_chatter_without_corporate_ai_technology_strategy_relevance
+    boundaries:
+    - focus_strictly_on_corporate-ai-technology-strategy_domain_significance
+  questions:
+  - what_changed_in_corporate_ai_technology_strategy
+  - how_does_new_corporate_ai_/_technology_strategy_differ_from_prior_state
+  - what_verifiable_evidence_supports_corporate_ai_technology_strategy
+  - what_are_the_operational_or_market_implications_for_corporate_ai_technology_strategy
+  - what_technical_limitations_or_uncertainties_remain_in_corporate_ai_technology_strategy
+  - what_is_the_status_of_ai_investment_for_corporate_ai_technology_strategy
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_corporate_ai_/_technology_strategy_exceeding_baseline
+    - independent_confirmation_of_corporate_ai_technology_strategy_milestone_from_primary_source
+    - measurable_impact_on_technology_companies_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_corporate_ai_technology_strategy
+    - minor_routine_maintenance_or_repackaging_without_new_corporate_ai_technology_strategy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - company
+      - ai
+      - finance
+      freshness: 48h
+      focus:
+      - new_corporate_ai_technology_strategy_events
+      - verifiable_changes_in_corporate_ai_/_technology_strategy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_corporate_ai_technology_strategy
+      - what_tools_methods_or_data_were_used_for_corporate_ai_/_technology_strategy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - technology_companies
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - corporate_ai_technology_strategy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Corporate AI / Technology
+      Strategy (corporate-ai-technology-strategy) was identified during this reporting
+      window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Corporate AI / Technology Strategy
+      lacked primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Corporate AI / Technology Strategy.
+  action_rules:
+    monitor:
+    - track_emerging_corporate_ai_technology_strategy_benchmarks
+    - follow_official_technology_companies_announcements
+    investigate:
+    - audit_claims_against_primary_corporate_ai_/_technology_strategy_documentation
+    - verify_reproducibility_of_reported_corporate_ai_technology_strategy_data
+  watch_rules:
+    monitor:
+    - next_corporate_ai_/_technology_strategy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_corporate_ai_technology_strategy
+    - ecosystem_adoption_metrics_for_corporate_ai_technology_strategy
+  retrieval_intent:
+    required_concepts:
+    - Corporate AI / Technology Strategy
+    - corporate-ai-technology-strategy
+    - ai investment
+    - products
+    - organizational changes
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_corporate_ai_technology_strategy_adoption
+  - verified_metrics_for_corporate_ai_/_technology_strategy
+  - technology_companies_regulatory_or_competitive_response
+  - ai investment
+  - products
+  disambiguation_focus:
+  - Corporate AI / Technology Strategy
+  - corporate-ai-technology-strategy
+  - 'Corporate AI / Technology Strategy specific evaluation: AI investment, products,
+    organizational changes'
+  - distinct from other technology-companies topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - ai
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

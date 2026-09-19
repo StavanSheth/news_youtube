@@ -1,0 +1,1650 @@
+themes:
+- id: research-ai-research-theme
+  theme_id: research-ai-research-theme
+  micro_topic_id: ai-research
+  micro_topic: ai-research
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Research (ai-research) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_research_developments
+    - verified_ai_research_activity
+    excludes:
+    - tangential_research_chatter_without_ai_research_relevance
+    boundaries:
+    - focus_strictly_on_ai-research_domain_significance
+  questions:
+  - what_changed_in_ai_research
+  - how_does_new_ai_research_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_research
+  - what_are_the_operational_or_market_implications_for_ai_research
+  - what_technical_limitations_or_uncertainties_remain_in_ai_research
+  - what_is_the_status_of_novel_method_for_ai_research
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_research_exceeding_baseline
+    - independent_confirmation_of_ai_research_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_research
+    - minor_routine_maintenance_or_repackaging_without_new_ai_research_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - research
+      - github
+      freshness: 48h
+      focus:
+      - new_ai_research_events
+      - verifiable_changes_in_ai_research
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_research
+      - what_tools_methods_or_data_were_used_for_ai_research
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_research_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Research (ai-research)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Research lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Research.
+  action_rules:
+    monitor:
+    - track_emerging_ai_research_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_ai_research_documentation
+    - verify_reproducibility_of_reported_ai_research_data
+  watch_rules:
+    monitor:
+    - next_ai_research_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_research
+    - ecosystem_adoption_metrics_for_ai_research
+  retrieval_intent:
+    required_concepts:
+    - AI Research
+    - ai-research
+    - novel method
+    - result
+    - reproducibility
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_research_adoption
+  - verified_metrics_for_ai_research
+  - research_regulatory_or_competitive_response
+  - novel method
+  - result
+  disambiguation_focus:
+  - AI Research
+  - ai-research
+  - 'AI Research specific evaluation: Novel method/result/reproducibility'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-computer-science-theme
+  theme_id: research-computer-science-theme
+  micro_topic_id: computer-science
+  micro_topic: computer-science
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Computer Science (computer-science) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_computer_science_developments
+    - verified_computer_science_activity
+    excludes:
+    - tangential_research_chatter_without_computer_science_relevance
+    boundaries:
+    - focus_strictly_on_computer-science_domain_significance
+  questions:
+  - what_changed_in_computer_science
+  - how_does_new_computer_science_differ_from_prior_state
+  - what_verifiable_evidence_supports_computer_science
+  - what_are_the_operational_or_market_implications_for_computer_science
+  - what_technical_limitations_or_uncertainties_remain_in_computer_science
+  - what_is_the_status_of_algorithms_for_computer_science
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_computer_science_exceeding_baseline
+    - independent_confirmation_of_computer_science_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_computer_science
+    - minor_routine_maintenance_or_repackaging_without_new_computer_science_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - research
+      freshness: 48h
+      focus:
+      - new_computer_science_events
+      - verifiable_changes_in_computer_science
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_computer_science
+      - what_tools_methods_or_data_were_used_for_computer_science
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - computer_science_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Computer Science (computer-science)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Computer Science lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Computer Science.
+  action_rules:
+    monitor:
+    - track_emerging_computer_science_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_computer_science_documentation
+    - verify_reproducibility_of_reported_computer_science_data
+  watch_rules:
+    monitor:
+    - next_computer_science_milestone_or_release_date
+    - peer_review_or_independent_validation_of_computer_science
+    - ecosystem_adoption_metrics_for_computer_science
+  retrieval_intent:
+    required_concepts:
+    - Computer Science
+    - computer-science
+    - algorithms
+    - systems
+    - software research
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_computer_science_adoption
+  - verified_metrics_for_computer_science
+  - research_regulatory_or_competitive_response
+  - algorithms
+  - systems
+  disambiguation_focus:
+  - Computer Science
+  - computer-science
+  - 'Computer Science specific evaluation: Algorithms/systems/software research'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-medicine-theme
+  theme_id: research-medicine-theme
+  micro_topic_id: medicine
+  micro_topic: medicine
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Medicine (medicine) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_medicine_developments
+    - verified_medicine_activity
+    excludes:
+    - tangential_research_chatter_without_medicine_relevance
+    boundaries:
+    - focus_strictly_on_medicine_domain_significance
+  questions:
+  - what_changed_in_medicine
+  - how_does_new_medicine_differ_from_prior_state
+  - what_verifiable_evidence_supports_medicine
+  - what_are_the_operational_or_market_implications_for_medicine
+  - what_technical_limitations_or_uncertainties_remain_in_medicine
+  - what_is_the_status_of_clinical_for_medicine
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_medicine_exceeding_baseline
+    - independent_confirmation_of_medicine_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_medicine
+    - minor_routine_maintenance_or_repackaging_without_new_medicine_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - research
+      - official medical sources
+      freshness: 48h
+      focus:
+      - new_medicine_events
+      - verifiable_changes_in_medicine
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_medicine
+      - what_tools_methods_or_data_were_used_for_medicine
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - medicine_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Medicine (medicine) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Medicine lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Medicine.
+  action_rules:
+    monitor:
+    - track_emerging_medicine_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_medicine_documentation
+    - verify_reproducibility_of_reported_medicine_data
+  watch_rules:
+    monitor:
+    - next_medicine_milestone_or_release_date
+    - peer_review_or_independent_validation_of_medicine
+    - ecosystem_adoption_metrics_for_medicine
+  retrieval_intent:
+    required_concepts:
+    - Medicine
+    - medicine
+    - clinical
+    - scientific result
+    - methodology
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_medicine_adoption
+  - verified_metrics_for_medicine
+  - research_regulatory_or_competitive_response
+  - clinical
+  - scientific result
+  disambiguation_focus:
+  - Medicine
+  - medicine
+  - 'Medicine specific evaluation: Clinical/scientific result, methodology'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - official medical sources
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-economics-theme
+  theme_id: research-economics-theme
+  micro_topic_id: economics
+  micro_topic: economics
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Economics (economics) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_economics_developments
+    - verified_economics_activity
+    excludes:
+    - tangential_research_chatter_without_economics_relevance
+    boundaries:
+    - focus_strictly_on_economics_domain_significance
+  questions:
+  - what_changed_in_economics
+  - how_does_new_economics_differ_from_prior_state
+  - what_verifiable_evidence_supports_economics
+  - what_are_the_operational_or_market_implications_for_economics
+  - what_technical_limitations_or_uncertainties_remain_in_economics
+  - what_is_the_status_of_models_for_economics
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_economics_exceeding_baseline
+    - independent_confirmation_of_economics_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_economics
+    - minor_routine_maintenance_or_repackaging_without_new_economics_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - research
+      - finance
+      freshness: 48h
+      focus:
+      - new_economics_events
+      - verifiable_changes_in_economics
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_economics
+      - what_tools_methods_or_data_were_used_for_economics
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - economics_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Economics (economics) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Economics lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Economics.
+  action_rules:
+    monitor:
+    - track_emerging_economics_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_economics_documentation
+    - verify_reproducibility_of_reported_economics_data
+  watch_rules:
+    monitor:
+    - next_economics_milestone_or_release_date
+    - peer_review_or_independent_validation_of_economics
+    - ecosystem_adoption_metrics_for_economics
+  retrieval_intent:
+    required_concepts:
+    - Economics
+    - economics
+    - models
+    - data
+    - policy implications
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_economics_adoption
+  - verified_metrics_for_economics
+  - research_regulatory_or_competitive_response
+  - models
+  - data
+  disambiguation_focus:
+  - Economics
+  - economics
+  - 'Economics specific evaluation: Models/data/policy implications'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-physics-theme
+  theme_id: research-physics-theme
+  micro_topic_id: physics
+  micro_topic: physics
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Physics (physics) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_physics_developments
+    - verified_physics_activity
+    excludes:
+    - tangential_research_chatter_without_physics_relevance
+    boundaries:
+    - focus_strictly_on_physics_domain_significance
+  questions:
+  - what_changed_in_physics
+  - how_does_new_physics_differ_from_prior_state
+  - what_verifiable_evidence_supports_physics
+  - what_are_the_operational_or_market_implications_for_physics
+  - what_technical_limitations_or_uncertainties_remain_in_physics
+  - what_is_the_status_of_experimental_for_physics
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_physics_exceeding_baseline
+    - independent_confirmation_of_physics_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_physics
+    - minor_routine_maintenance_or_repackaging_without_new_physics_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - research
+      freshness: 48h
+      focus:
+      - new_physics_events
+      - verifiable_changes_in_physics
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_physics
+      - what_tools_methods_or_data_were_used_for_physics
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - physics_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Physics (physics) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Physics lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Physics.
+  action_rules:
+    monitor:
+    - track_emerging_physics_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_physics_documentation
+    - verify_reproducibility_of_reported_physics_data
+  watch_rules:
+    monitor:
+    - next_physics_milestone_or_release_date
+    - peer_review_or_independent_validation_of_physics
+    - ecosystem_adoption_metrics_for_physics
+  retrieval_intent:
+    required_concepts:
+    - Physics
+    - physics
+    - experimental
+    - theoretical breakthrough
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_physics_adoption
+  - verified_metrics_for_physics
+  - research_regulatory_or_competitive_response
+  - experimental
+  - theoretical breakthrough
+  disambiguation_focus:
+  - Physics
+  - physics
+  - 'Physics specific evaluation: Experimental/theoretical breakthrough'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-climate-theme
+  theme_id: research-climate-theme
+  micro_topic_id: climate
+  micro_topic: climate
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Climate (climate) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_climate_developments
+    - verified_climate_activity
+    excludes:
+    - tangential_research_chatter_without_climate_relevance
+    boundaries:
+    - focus_strictly_on_climate_domain_significance
+  questions:
+  - what_changed_in_climate
+  - how_does_new_climate_differ_from_prior_state
+  - what_verifiable_evidence_supports_climate
+  - what_are_the_operational_or_market_implications_for_climate
+  - what_technical_limitations_or_uncertainties_remain_in_climate
+  - what_is_the_status_of_climate_science_for_climate
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_climate_exceeding_baseline
+    - independent_confirmation_of_climate_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_climate
+    - minor_routine_maintenance_or_repackaging_without_new_climate_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - research
+      - environment
+      freshness: 48h
+      focus:
+      - new_climate_events
+      - verifiable_changes_in_climate
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_climate
+      - what_tools_methods_or_data_were_used_for_climate
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - climate_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Climate (climate) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Climate lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Climate.
+  action_rules:
+    monitor:
+    - track_emerging_climate_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_climate_documentation
+    - verify_reproducibility_of_reported_climate_data
+  watch_rules:
+    monitor:
+    - next_climate_milestone_or_release_date
+    - peer_review_or_independent_validation_of_climate
+    - ecosystem_adoption_metrics_for_climate
+  retrieval_intent:
+    required_concepts:
+    - Climate
+    - climate
+    - climate science
+    - model
+    - observation
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_climate_adoption
+  - verified_metrics_for_climate
+  - research_regulatory_or_competitive_response
+  - climate science
+  - model
+  disambiguation_focus:
+  - Climate
+  - climate
+  - 'Climate specific evaluation: Climate science/model/observation'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - environment
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-engineering-theme
+  theme_id: research-engineering-theme
+  micro_topic_id: engineering
+  micro_topic: engineering
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Engineering (engineering) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_engineering_developments
+    - verified_engineering_activity
+    excludes:
+    - tangential_research_chatter_without_engineering_relevance
+    boundaries:
+    - focus_strictly_on_engineering_domain_significance
+  questions:
+  - what_changed_in_engineering
+  - how_does_new_engineering_differ_from_prior_state
+  - what_verifiable_evidence_supports_engineering
+  - what_are_the_operational_or_market_implications_for_engineering
+  - what_technical_limitations_or_uncertainties_remain_in_engineering
+  - what_is_the_status_of_engineering_method_for_engineering
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_engineering_exceeding_baseline
+    - independent_confirmation_of_engineering_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_engineering
+    - minor_routine_maintenance_or_repackaging_without_new_engineering_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - research
+      - github
+      freshness: 48h
+      focus:
+      - new_engineering_events
+      - verifiable_changes_in_engineering
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_engineering
+      - what_tools_methods_or_data_were_used_for_engineering
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - engineering_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Engineering (engineering)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Engineering lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Engineering.
+  action_rules:
+    monitor:
+    - track_emerging_engineering_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_engineering_documentation
+    - verify_reproducibility_of_reported_engineering_data
+  watch_rules:
+    monitor:
+    - next_engineering_milestone_or_release_date
+    - peer_review_or_independent_validation_of_engineering
+    - ecosystem_adoption_metrics_for_engineering
+  retrieval_intent:
+    required_concepts:
+    - Engineering
+    - engineering
+    - engineering method
+    - system improvement
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_engineering_adoption
+  - verified_metrics_for_engineering
+  - research_regulatory_or_competitive_response
+  - engineering method
+  - system improvement
+  disambiguation_focus:
+  - Engineering
+  - engineering
+  - 'Engineering specific evaluation: Engineering method/system improvement'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-breakthroughs-theme
+  theme_id: research-breakthroughs-theme
+  micro_topic_id: breakthroughs
+  micro_topic: breakthroughs
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Breakthroughs (breakthroughs) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_breakthroughs_developments
+    - verified_breakthroughs_activity
+    excludes:
+    - tangential_research_chatter_without_breakthroughs_relevance
+    boundaries:
+    - focus_strictly_on_breakthroughs_domain_significance
+  questions:
+  - what_changed_in_breakthroughs
+  - how_does_new_breakthroughs_differ_from_prior_state
+  - what_verifiable_evidence_supports_breakthroughs
+  - what_are_the_operational_or_market_implications_for_breakthroughs
+  - what_technical_limitations_or_uncertainties_remain_in_breakthroughs
+  - what_is_the_status_of_evidence_that_result_materially_changes_capability_for_breakthroughs
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_breakthroughs_exceeding_baseline
+    - independent_confirmation_of_breakthroughs_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_breakthroughs
+    - minor_routine_maintenance_or_repackaging_without_new_breakthroughs_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - research
+      - news-global
+      freshness: 48h
+      focus:
+      - new_breakthroughs_events
+      - verifiable_changes_in_breakthroughs
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_breakthroughs
+      - what_tools_methods_or_data_were_used_for_breakthroughs
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - breakthroughs_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Breakthroughs (breakthroughs)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Breakthroughs lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Breakthroughs.
+  action_rules:
+    monitor:
+    - track_emerging_breakthroughs_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_breakthroughs_documentation
+    - verify_reproducibility_of_reported_breakthroughs_data
+  watch_rules:
+    monitor:
+    - next_breakthroughs_milestone_or_release_date
+    - peer_review_or_independent_validation_of_breakthroughs
+    - ecosystem_adoption_metrics_for_breakthroughs
+  retrieval_intent:
+    required_concepts:
+    - Breakthroughs
+    - breakthroughs
+    - evidence that result materially changes capability
+    - knowledge
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_breakthroughs_adoption
+  - verified_metrics_for_breakthroughs
+  - research_regulatory_or_competitive_response
+  - evidence that result materially changes capability
+  - knowledge
+  disambiguation_focus:
+  - Breakthroughs
+  - breakthroughs
+  - 'Breakthroughs specific evaluation: Evidence that result materially changes capability/knowledge'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-preprints-theme
+  theme_id: research-preprints-theme
+  micro_topic_id: preprints
+  micro_topic: preprints
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Preprints (preprints) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_preprints_developments
+    - verified_preprints_activity
+    excludes:
+    - tangential_research_chatter_without_preprints_relevance
+    boundaries:
+    - focus_strictly_on_preprints_domain_significance
+  questions:
+  - what_changed_in_preprints
+  - how_does_new_preprints_differ_from_prior_state
+  - what_verifiable_evidence_supports_preprints
+  - what_are_the_operational_or_market_implications_for_preprints
+  - what_technical_limitations_or_uncertainties_remain_in_preprints
+  - what_is_the_status_of_novelty_for_preprints
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_preprints_exceeding_baseline
+    - independent_confirmation_of_preprints_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_preprints
+    - minor_routine_maintenance_or_repackaging_without_new_preprints_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - research
+      freshness: 48h
+      focus:
+      - new_preprints_events
+      - verifiable_changes_in_preprints
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_preprints
+      - what_tools_methods_or_data_were_used_for_preprints
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - preprints_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Preprints (preprints) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Preprints lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Preprints.
+  action_rules:
+    monitor:
+    - track_emerging_preprints_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_preprints_documentation
+    - verify_reproducibility_of_reported_preprints_data
+  watch_rules:
+    monitor:
+    - next_preprints_milestone_or_release_date
+    - peer_review_or_independent_validation_of_preprints
+    - ecosystem_adoption_metrics_for_preprints
+  retrieval_intent:
+    required_concepts:
+    - Preprints
+    - preprints
+    - novelty
+    - uncertainty
+    - lack of peer review
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_preprints_adoption
+  - verified_metrics_for_preprints
+  - research_regulatory_or_competitive_response
+  - novelty
+  - uncertainty
+  disambiguation_focus:
+  - Preprints
+  - preprints
+  - 'Preprints specific evaluation: Novelty + uncertainty + lack of peer review'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: research-peer-reviewed-papers-theme
+  theme_id: research-peer-reviewed-papers-theme
+  micro_topic_id: peer-reviewed-papers
+  micro_topic: peer-reviewed-papers
+  domain: research
+  domain_id: research
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Peer-reviewed Papers (peer-reviewed-papers) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_peer_reviewed_papers_developments
+    - verified_peer-reviewed_papers_activity
+    excludes:
+    - tangential_research_chatter_without_peer_reviewed_papers_relevance
+    boundaries:
+    - focus_strictly_on_peer-reviewed-papers_domain_significance
+  questions:
+  - what_changed_in_peer_reviewed_papers
+  - how_does_new_peer_reviewed_papers_differ_from_prior_state
+  - what_verifiable_evidence_supports_peer_reviewed_papers
+  - what_are_the_operational_or_market_implications_for_peer_reviewed_papers
+  - what_technical_limitations_or_uncertainties_remain_in_peer_reviewed_papers
+  - what_is_the_status_of_published_evidence_for_peer_reviewed_papers
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_peer_reviewed_papers_exceeding_baseline
+    - independent_confirmation_of_peer_reviewed_papers_milestone_from_primary_source
+    - measurable_impact_on_research_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_peer_reviewed_papers
+    - minor_routine_maintenance_or_repackaging_without_new_peer_reviewed_papers_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - research
+      freshness: 48h
+      focus:
+      - new_peer_reviewed_papers_events
+      - verifiable_changes_in_peer-reviewed_papers
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_peer_reviewed_papers
+      - what_tools_methods_or_data_were_used_for_peer-reviewed_papers
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - research
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - peer_reviewed_papers_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Peer-reviewed Papers (peer-reviewed-papers)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Peer-reviewed Papers lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Peer-reviewed Papers.
+  action_rules:
+    monitor:
+    - track_emerging_peer_reviewed_papers_benchmarks
+    - follow_official_research_announcements
+    investigate:
+    - audit_claims_against_primary_peer-reviewed_papers_documentation
+    - verify_reproducibility_of_reported_peer_reviewed_papers_data
+  watch_rules:
+    monitor:
+    - next_peer-reviewed_papers_milestone_or_release_date
+    - peer_review_or_independent_validation_of_peer_reviewed_papers
+    - ecosystem_adoption_metrics_for_peer_reviewed_papers
+  retrieval_intent:
+    required_concepts:
+    - Peer-reviewed Papers
+    - peer-reviewed-papers
+    - published evidence
+    - methodology
+    - significance
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_peer_reviewed_papers_adoption
+  - verified_metrics_for_peer-reviewed_papers
+  - research_regulatory_or_competitive_response
+  - published evidence
+  - methodology
+  disambiguation_focus:
+  - Peer-reviewed Papers
+  - peer-reviewed-papers
+  - 'Peer-reviewed Papers specific evaluation: Published evidence, methodology, significance'
+  - distinct from other research topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

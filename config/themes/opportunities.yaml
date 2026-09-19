@@ -1,0 +1,1504 @@
+themes:
+- id: opportunities-grants-theme
+  theme_id: opportunities-grants-theme
+  micro_topic_id: grants
+  micro_topic: grants
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Grants (grants) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_grants_developments
+    - verified_grants_activity
+    excludes:
+    - tangential_opportunities_chatter_without_grants_relevance
+    boundaries:
+    - focus_strictly_on_grants_domain_significance
+  questions:
+  - what_changed_in_grants
+  - how_does_new_grants_differ_from_prior_state
+  - what_verifiable_evidence_supports_grants
+  - what_are_the_operational_or_market_implications_for_grants
+  - what_technical_limitations_or_uncertainties_remain_in_grants
+  - what_is_the_status_of_issuer_for_grants
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_grants_exceeding_baseline
+    - independent_confirmation_of_grants_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_grants
+    - minor_routine_maintenance_or_repackaging_without_new_grants_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - issuer
+      - eligibility
+      - deadline
+      - url
+      freshness: 48h
+      focus:
+      - new_grants_events
+      - verifiable_changes_in_grants
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_grants
+      - what_tools_methods_or_data_were_used_for_grants
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - grants_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Grants (grants) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Grants lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Grants.
+  action_rules:
+    monitor:
+    - track_emerging_grants_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_grants_documentation
+    - verify_reproducibility_of_reported_grants_data
+  watch_rules:
+    monitor:
+    - next_grants_milestone_or_release_date
+    - peer_review_or_independent_validation_of_grants
+    - ecosystem_adoption_metrics_for_grants
+  retrieval_intent:
+    required_concepts:
+    - Grants
+    - grants
+    - issuer
+    - eligibility
+    - amount
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_grants_adoption
+  - verified_metrics_for_grants
+  - opportunities_regulatory_or_competitive_response
+  - issuer
+  - eligibility
+  disambiguation_focus:
+  - Grants
+  - grants
+  - 'Grants specific evaluation: Issuer, eligibility, amount, deadline'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - issuer
+    - eligibility
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: opportunities-tenders-theme
+  theme_id: opportunities-tenders-theme
+  micro_topic_id: tenders
+  micro_topic: tenders
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Tenders (tenders) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_tenders_developments
+    - verified_tenders_activity
+    excludes:
+    - tangential_opportunities_chatter_without_tenders_relevance
+    boundaries:
+    - focus_strictly_on_tenders_domain_significance
+  questions:
+  - what_changed_in_tenders
+  - how_does_new_tenders_differ_from_prior_state
+  - what_verifiable_evidence_supports_tenders
+  - what_are_the_operational_or_market_implications_for_tenders
+  - what_technical_limitations_or_uncertainties_remain_in_tenders
+  - what_is_the_status_of_buyer_for_tenders
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_tenders_exceeding_baseline
+    - independent_confirmation_of_tenders_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_tenders
+    - minor_routine_maintenance_or_repackaging_without_new_tenders_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - buyer
+      - scope
+      - deadline
+      - url
+      freshness: 48h
+      focus:
+      - new_tenders_events
+      - verifiable_changes_in_tenders
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_tenders
+      - what_tools_methods_or_data_were_used_for_tenders
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - tenders_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Tenders (tenders) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Tenders lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Tenders.
+  action_rules:
+    monitor:
+    - track_emerging_tenders_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_tenders_documentation
+    - verify_reproducibility_of_reported_tenders_data
+  watch_rules:
+    monitor:
+    - next_tenders_milestone_or_release_date
+    - peer_review_or_independent_validation_of_tenders
+    - ecosystem_adoption_metrics_for_tenders
+  retrieval_intent:
+    required_concepts:
+    - Tenders
+    - tenders
+    - buyer
+    - scope
+    - value
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_tenders_adoption
+  - verified_metrics_for_tenders
+  - opportunities_regulatory_or_competitive_response
+  - buyer
+  - scope
+  disambiguation_focus:
+  - Tenders
+  - tenders
+  - 'Tenders specific evaluation: Buyer, scope, value, deadline'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - buyer
+    - scope
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: opportunities-scholarships-theme
+  theme_id: opportunities-scholarships-theme
+  micro_topic_id: scholarships
+  micro_topic: scholarships
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Scholarships (scholarships) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_scholarships_developments
+    - verified_scholarships_activity
+    excludes:
+    - tangential_opportunities_chatter_without_scholarships_relevance
+    boundaries:
+    - focus_strictly_on_scholarships_domain_significance
+  questions:
+  - what_changed_in_scholarships
+  - how_does_new_scholarships_differ_from_prior_state
+  - what_verifiable_evidence_supports_scholarships
+  - what_are_the_operational_or_market_implications_for_scholarships
+  - what_technical_limitations_or_uncertainties_remain_in_scholarships
+  - what_is_the_status_of_eligibility_for_scholarships
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_scholarships_exceeding_baseline
+    - independent_confirmation_of_scholarships_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_scholarships
+    - minor_routine_maintenance_or_repackaging_without_new_scholarships_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - issuer
+      - eligibility
+      - deadline
+      freshness: 48h
+      focus:
+      - new_scholarships_events
+      - verifiable_changes_in_scholarships
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_scholarships
+      - what_tools_methods_or_data_were_used_for_scholarships
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - scholarships_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Scholarships (scholarships)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Scholarships lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Scholarships.
+  action_rules:
+    monitor:
+    - track_emerging_scholarships_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_scholarships_documentation
+    - verify_reproducibility_of_reported_scholarships_data
+  watch_rules:
+    monitor:
+    - next_scholarships_milestone_or_release_date
+    - peer_review_or_independent_validation_of_scholarships
+    - ecosystem_adoption_metrics_for_scholarships
+  retrieval_intent:
+    required_concepts:
+    - Scholarships
+    - scholarships
+    - eligibility
+    - institution
+    - deadline
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_scholarships_adoption
+  - verified_metrics_for_scholarships
+  - opportunities_regulatory_or_competitive_response
+  - eligibility
+  - institution
+  disambiguation_focus:
+  - Scholarships
+  - scholarships
+  - 'Scholarships specific evaluation: Eligibility, institution, deadline'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - issuer
+    - eligibility
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: opportunities-fellowships-theme
+  theme_id: opportunities-fellowships-theme
+  micro_topic_id: fellowships
+  micro_topic: fellowships
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Fellowships (fellowships) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_fellowships_developments
+    - verified_fellowships_activity
+    excludes:
+    - tangential_opportunities_chatter_without_fellowships_relevance
+    boundaries:
+    - focus_strictly_on_fellowships_domain_significance
+  questions:
+  - what_changed_in_fellowships
+  - how_does_new_fellowships_differ_from_prior_state
+  - what_verifiable_evidence_supports_fellowships
+  - what_are_the_operational_or_market_implications_for_fellowships
+  - what_technical_limitations_or_uncertainties_remain_in_fellowships
+  - what_is_the_status_of_eligibility_for_fellowships
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_fellowships_exceeding_baseline
+    - independent_confirmation_of_fellowships_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_fellowships
+    - minor_routine_maintenance_or_repackaging_without_new_fellowships_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - issuer
+      - eligibility
+      - deadline
+      freshness: 48h
+      focus:
+      - new_fellowships_events
+      - verifiable_changes_in_fellowships
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_fellowships
+      - what_tools_methods_or_data_were_used_for_fellowships
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - fellowships_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Fellowships (fellowships)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Fellowships lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Fellowships.
+  action_rules:
+    monitor:
+    - track_emerging_fellowships_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_fellowships_documentation
+    - verify_reproducibility_of_reported_fellowships_data
+  watch_rules:
+    monitor:
+    - next_fellowships_milestone_or_release_date
+    - peer_review_or_independent_validation_of_fellowships
+    - ecosystem_adoption_metrics_for_fellowships
+  retrieval_intent:
+    required_concepts:
+    - Fellowships
+    - fellowships
+    - eligibility
+    - duration
+    - funding
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_fellowships_adoption
+  - verified_metrics_for_fellowships
+  - opportunities_regulatory_or_competitive_response
+  - eligibility
+  - duration
+  disambiguation_focus:
+  - Fellowships
+  - fellowships
+  - 'Fellowships specific evaluation: Eligibility, duration, funding'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - issuer
+    - eligibility
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: opportunities-accelerators-theme
+  theme_id: opportunities-accelerators-theme
+  micro_topic_id: accelerators
+  micro_topic: accelerators
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Accelerators (accelerators) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_accelerators_developments
+    - verified_accelerators_activity
+    excludes:
+    - tangential_opportunities_chatter_without_accelerators_relevance
+    boundaries:
+    - focus_strictly_on_accelerators_domain_significance
+  questions:
+  - what_changed_in_accelerators
+  - how_does_new_accelerators_differ_from_prior_state
+  - what_verifiable_evidence_supports_accelerators
+  - what_are_the_operational_or_market_implications_for_accelerators
+  - what_technical_limitations_or_uncertainties_remain_in_accelerators
+  - what_is_the_status_of_cohort_for_accelerators
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_accelerators_exceeding_baseline
+    - independent_confirmation_of_accelerators_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_accelerators
+    - minor_routine_maintenance_or_repackaging_without_new_accelerators_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - program
+      - eligibility
+      - deadline
+      freshness: 48h
+      focus:
+      - new_accelerators_events
+      - verifiable_changes_in_accelerators
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_accelerators
+      - what_tools_methods_or_data_were_used_for_accelerators
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - accelerators_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Accelerators (accelerators)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Accelerators lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Accelerators.
+  action_rules:
+    monitor:
+    - track_emerging_accelerators_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_accelerators_documentation
+    - verify_reproducibility_of_reported_accelerators_data
+  watch_rules:
+    monitor:
+    - next_accelerators_milestone_or_release_date
+    - peer_review_or_independent_validation_of_accelerators
+    - ecosystem_adoption_metrics_for_accelerators
+  retrieval_intent:
+    required_concepts:
+    - Accelerators
+    - accelerators
+    - cohort
+    - eligibility
+    - funding
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_accelerators_adoption
+  - verified_metrics_for_accelerators
+  - opportunities_regulatory_or_competitive_response
+  - cohort
+  - eligibility
+  disambiguation_focus:
+  - Accelerators
+  - accelerators
+  - 'Accelerators specific evaluation: Cohort, eligibility, funding, deadline'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - program
+    - eligibility
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: opportunities-hackathons-theme
+  theme_id: opportunities-hackathons-theme
+  micro_topic_id: hackathons
+  micro_topic: hackathons
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Hackathons (hackathons) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_hackathons_developments
+    - verified_hackathons_activity
+    excludes:
+    - tangential_opportunities_chatter_without_hackathons_relevance
+    boundaries:
+    - focus_strictly_on_hackathons_domain_significance
+  questions:
+  - what_changed_in_hackathons
+  - how_does_new_hackathons_differ_from_prior_state
+  - what_verifiable_evidence_supports_hackathons
+  - what_are_the_operational_or_market_implications_for_hackathons
+  - what_technical_limitations_or_uncertainties_remain_in_hackathons
+  - what_is_the_status_of_organizer_for_hackathons
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_hackathons_exceeding_baseline
+    - independent_confirmation_of_hackathons_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_hackathons
+    - minor_routine_maintenance_or_repackaging_without_new_hackathons_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - organizer
+      - deadline
+      - date
+      freshness: 48h
+      focus:
+      - new_hackathons_events
+      - verifiable_changes_in_hackathons
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_hackathons
+      - what_tools_methods_or_data_were_used_for_hackathons
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - hackathons_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Hackathons (hackathons) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Hackathons lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Hackathons.
+  action_rules:
+    monitor:
+    - track_emerging_hackathons_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_hackathons_documentation
+    - verify_reproducibility_of_reported_hackathons_data
+  watch_rules:
+    monitor:
+    - next_hackathons_milestone_or_release_date
+    - peer_review_or_independent_validation_of_hackathons
+    - ecosystem_adoption_metrics_for_hackathons
+  retrieval_intent:
+    required_concepts:
+    - Hackathons
+    - hackathons
+    - organizer
+    - challenge
+    - eligibility
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_hackathons_adoption
+  - verified_metrics_for_hackathons
+  - opportunities_regulatory_or_competitive_response
+  - organizer
+  - challenge
+  disambiguation_focus:
+  - Hackathons
+  - hackathons
+  - 'Hackathons specific evaluation: Organizer, challenge, eligibility, date'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - organizer
+    - deadline
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: opportunities-funding-programs-theme
+  theme_id: opportunities-funding-programs-theme
+  micro_topic_id: funding-programs
+  micro_topic: funding-programs
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Funding Programs (funding-programs) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_funding_programs_developments
+    - verified_funding_programs_activity
+    excludes:
+    - tangential_opportunities_chatter_without_funding_programs_relevance
+    boundaries:
+    - focus_strictly_on_funding-programs_domain_significance
+  questions:
+  - what_changed_in_funding_programs
+  - how_does_new_funding_programs_differ_from_prior_state
+  - what_verifiable_evidence_supports_funding_programs
+  - what_are_the_operational_or_market_implications_for_funding_programs
+  - what_technical_limitations_or_uncertainties_remain_in_funding_programs
+  - what_is_the_status_of_government_for_funding_programs
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_funding_programs_exceeding_baseline
+    - independent_confirmation_of_funding_programs_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_funding_programs
+    - minor_routine_maintenance_or_repackaging_without_new_funding_programs_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - issuer
+      - eligibility
+      - deadline
+      freshness: 48h
+      focus:
+      - new_funding_programs_events
+      - verifiable_changes_in_funding_programs
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_funding_programs
+      - what_tools_methods_or_data_were_used_for_funding_programs
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - funding_programs_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Funding Programs (funding-programs)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Funding Programs lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Funding Programs.
+  action_rules:
+    monitor:
+    - track_emerging_funding_programs_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_funding_programs_documentation
+    - verify_reproducibility_of_reported_funding_programs_data
+  watch_rules:
+    monitor:
+    - next_funding_programs_milestone_or_release_date
+    - peer_review_or_independent_validation_of_funding_programs
+    - ecosystem_adoption_metrics_for_funding_programs
+  retrieval_intent:
+    required_concepts:
+    - Funding Programs
+    - funding-programs
+    - government
+    - private funding scheme
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_funding_programs_adoption
+  - verified_metrics_for_funding_programs
+  - opportunities_regulatory_or_competitive_response
+  - government
+  - private funding scheme
+  disambiguation_focus:
+  - Funding Programs
+  - funding-programs
+  - 'Funding Programs specific evaluation: Government/private funding scheme'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - issuer
+    - eligibility
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: opportunities-government-schemes-theme
+  theme_id: opportunities-government-schemes-theme
+  micro_topic_id: government-schemes
+  micro_topic: government-schemes
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Government Schemes (government-schemes) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_government_schemes_developments
+    - verified_government_schemes_activity
+    excludes:
+    - tangential_opportunities_chatter_without_government_schemes_relevance
+    boundaries:
+    - focus_strictly_on_government-schemes_domain_significance
+  questions:
+  - what_changed_in_government_schemes
+  - how_does_new_government_schemes_differ_from_prior_state
+  - what_verifiable_evidence_supports_government_schemes
+  - what_are_the_operational_or_market_implications_for_government_schemes
+  - what_technical_limitations_or_uncertainties_remain_in_government_schemes
+  - what_is_the_status_of_scheme_for_government_schemes
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_government_schemes_exceeding_baseline
+    - independent_confirmation_of_government_schemes_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_government_schemes
+    - minor_routine_maintenance_or_repackaging_without_new_government_schemes_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - scheme
+      - eligibility
+      freshness: 48h
+      focus:
+      - new_government_schemes_events
+      - verifiable_changes_in_government_schemes
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_government_schemes
+      - what_tools_methods_or_data_were_used_for_government_schemes
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - government_schemes_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Government Schemes (government-schemes)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Government Schemes lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Government Schemes.
+  action_rules:
+    monitor:
+    - track_emerging_government_schemes_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_government_schemes_documentation
+    - verify_reproducibility_of_reported_government_schemes_data
+  watch_rules:
+    monitor:
+    - next_government_schemes_milestone_or_release_date
+    - peer_review_or_independent_validation_of_government_schemes
+    - ecosystem_adoption_metrics_for_government_schemes
+  retrieval_intent:
+    required_concepts:
+    - Government Schemes
+    - government-schemes
+    - scheme
+    - beneficiary
+    - eligibility
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_government_schemes_adoption
+  - verified_metrics_for_government_schemes
+  - opportunities_regulatory_or_competitive_response
+  - scheme
+  - beneficiary
+  disambiguation_focus:
+  - Government Schemes
+  - government-schemes
+  - 'Government Schemes specific evaluation: Scheme, beneficiary, eligibility'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - scheme
+    - eligibility
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: opportunities-calls-for-participation-theme
+  theme_id: opportunities-calls-for-participation-theme
+  micro_topic_id: calls-for-participation
+  micro_topic: calls-for-participation
+  domain: opportunities
+  domain_id: opportunities
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Calls for Participation (calls-for-participation) specifically
+    through verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_calls_for_participation_developments
+    - verified_calls_for_participation_activity
+    excludes:
+    - tangential_opportunities_chatter_without_calls_for_participation_relevance
+    boundaries:
+    - focus_strictly_on_calls-for-participation_domain_significance
+  questions:
+  - what_changed_in_calls_for_participation
+  - how_does_new_calls_for_participation_differ_from_prior_state
+  - what_verifiable_evidence_supports_calls_for_participation
+  - what_are_the_operational_or_market_implications_for_calls_for_participation
+  - what_technical_limitations_or_uncertainties_remain_in_calls_for_participation
+  - what_is_the_status_of_conference_for_calls_for_participation
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_calls_for_participation_exceeding_baseline
+    - independent_confirmation_of_calls_for_participation_milestone_from_primary_source
+    - measurable_impact_on_opportunities_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_calls_for_participation
+    - minor_routine_maintenance_or_repackaging_without_new_calls_for_participation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - organizer
+      - deadline
+      - eligibility
+      freshness: 48h
+      focus:
+      - new_calls_for_participation_events
+      - verifiable_changes_in_calls_for_participation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_calls_for_participation
+      - what_tools_methods_or_data_were_used_for_calls_for_participation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - opportunities
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - calls_for_participation_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: opportunity
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: opportunity
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Calls for Participation (calls-for-participation)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Calls for Participation lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Calls for Participation.
+  action_rules:
+    monitor:
+    - track_emerging_calls_for_participation_benchmarks
+    - follow_official_opportunities_announcements
+    investigate:
+    - audit_claims_against_primary_calls_for_participation_documentation
+    - verify_reproducibility_of_reported_calls_for_participation_data
+  watch_rules:
+    monitor:
+    - next_calls_for_participation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_calls_for_participation
+    - ecosystem_adoption_metrics_for_calls_for_participation
+  retrieval_intent:
+    required_concepts:
+    - Calls for Participation
+    - calls-for-participation
+    - conference
+    - research
+    - program call
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_calls_for_participation_adoption
+  - verified_metrics_for_calls_for_participation
+  - opportunities_regulatory_or_competitive_response
+  - conference
+  - research
+  disambiguation_focus:
+  - Calls for Participation
+  - calls-for-participation
+  - 'Calls for Participation specific evaluation: Conference/research/program call'
+  - distinct from other opportunities topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - organizer
+    - deadline
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

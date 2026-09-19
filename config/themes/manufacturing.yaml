@@ -1,0 +1,1316 @@
+themes:
+- id: manufacturing-factories-theme
+  theme_id: manufacturing-factories-theme
+  micro_topic_id: factories
+  micro_topic: factories
+  domain: manufacturing
+  domain_id: manufacturing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Factories (factories) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_factories_developments
+    - verified_factories_activity
+    excludes:
+    - tangential_manufacturing_chatter_without_factories_relevance
+    boundaries:
+    - focus_strictly_on_factories_domain_significance
+  questions:
+  - what_changed_in_factories
+  - how_does_new_factories_differ_from_prior_state
+  - what_verifiable_evidence_supports_factories
+  - what_are_the_operational_or_market_implications_for_factories
+  - what_technical_limitations_or_uncertainties_remain_in_factories
+  - what_is_the_status_of_new_facilities_for_factories
+  evidence_requirements: &id001
+  - manufacturing
+  - gov
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_factories_exceeding_baseline
+    - independent_confirmation_of_factories_milestone_from_primary_source
+    - measurable_impact_on_manufacturing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_factories
+    - minor_routine_maintenance_or_repackaging_without_new_factories_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - manufacturing
+      - gov
+      freshness: 48h
+      focus:
+      - new_factories_events
+      - verifiable_changes_in_factories
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_factories
+      - what_tools_methods_or_data_were_used_for_factories
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - manufacturing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - factories_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Factories (factories) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Factories lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Factories.
+  action_rules:
+    monitor:
+    - track_emerging_factories_benchmarks
+    - follow_official_manufacturing_announcements
+    investigate:
+    - audit_claims_against_primary_factories_documentation
+    - verify_reproducibility_of_reported_factories_data
+  watch_rules:
+    monitor:
+    - next_factories_milestone_or_release_date
+    - peer_review_or_independent_validation_of_factories
+    - ecosystem_adoption_metrics_for_factories
+  retrieval_intent:
+    required_concepts:
+    - Factories
+    - factories
+    - new facilities
+    - investment
+    - capacity
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_factories_adoption
+  - verified_metrics_for_factories
+  - manufacturing_regulatory_or_competitive_response
+  - new facilities
+  - investment
+  disambiguation_focus:
+  - Factories
+  - factories
+  - 'Factories specific evaluation: New facilities, investment, capacity'
+  - distinct from other manufacturing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - manufacturing
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: manufacturing-industrial-corridors-theme
+  theme_id: manufacturing-industrial-corridors-theme
+  micro_topic_id: industrial-corridors
+  micro_topic: industrial-corridors
+  domain: manufacturing
+  domain_id: manufacturing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Industrial Corridors (industrial-corridors) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_industrial_corridors_developments
+    - verified_industrial_corridors_activity
+    excludes:
+    - tangential_manufacturing_chatter_without_industrial_corridors_relevance
+    boundaries:
+    - focus_strictly_on_industrial-corridors_domain_significance
+  questions:
+  - what_changed_in_industrial_corridors
+  - how_does_new_industrial_corridors_differ_from_prior_state
+  - what_verifiable_evidence_supports_industrial_corridors
+  - what_are_the_operational_or_market_implications_for_industrial_corridors
+  - what_technical_limitations_or_uncertainties_remain_in_industrial_corridors
+  - what_is_the_status_of_infrastructure_for_industrial_corridors
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_industrial_corridors_exceeding_baseline
+    - independent_confirmation_of_industrial_corridors_milestone_from_primary_source
+    - measurable_impact_on_manufacturing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_industrial_corridors
+    - minor_routine_maintenance_or_repackaging_without_new_industrial_corridors_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - regional
+      - gov
+      freshness: 48h
+      focus:
+      - new_industrial_corridors_events
+      - verifiable_changes_in_industrial_corridors
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_industrial_corridors
+      - what_tools_methods_or_data_were_used_for_industrial_corridors
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - manufacturing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - industrial_corridors_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Industrial Corridors (industrial-corridors)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Industrial Corridors lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Industrial Corridors.
+  action_rules:
+    monitor:
+    - track_emerging_industrial_corridors_benchmarks
+    - follow_official_manufacturing_announcements
+    investigate:
+    - audit_claims_against_primary_industrial_corridors_documentation
+    - verify_reproducibility_of_reported_industrial_corridors_data
+  watch_rules:
+    monitor:
+    - next_industrial_corridors_milestone_or_release_date
+    - peer_review_or_independent_validation_of_industrial_corridors
+    - ecosystem_adoption_metrics_for_industrial_corridors
+  retrieval_intent:
+    required_concepts:
+    - Industrial Corridors
+    - industrial-corridors
+    - infrastructure
+    - industrial ecosystem development
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_industrial_corridors_adoption
+  - verified_metrics_for_industrial_corridors
+  - manufacturing_regulatory_or_competitive_response
+  - infrastructure
+  - industrial ecosystem development
+  disambiguation_focus:
+  - Industrial Corridors
+  - industrial-corridors
+  - 'Industrial Corridors specific evaluation: Infrastructure/industrial ecosystem
+    development'
+  - distinct from other manufacturing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - regional
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: manufacturing-incentives-theme
+  theme_id: manufacturing-incentives-theme
+  micro_topic_id: incentives
+  micro_topic: incentives
+  domain: manufacturing
+  domain_id: manufacturing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Incentives (incentives) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_incentives_developments
+    - verified_incentives_activity
+    excludes:
+    - tangential_manufacturing_chatter_without_incentives_relevance
+    boundaries:
+    - focus_strictly_on_incentives_domain_significance
+  questions:
+  - what_changed_in_incentives
+  - how_does_new_incentives_differ_from_prior_state
+  - what_verifiable_evidence_supports_incentives
+  - what_are_the_operational_or_market_implications_for_incentives
+  - what_technical_limitations_or_uncertainties_remain_in_incentives
+  - what_is_the_status_of_subsidies_for_incentives
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_incentives_exceeding_baseline
+    - independent_confirmation_of_incentives_milestone_from_primary_source
+    - measurable_impact_on_manufacturing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_incentives
+    - minor_routine_maintenance_or_repackaging_without_new_incentives_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - gov
+      - opportunity
+      freshness: 48h
+      focus:
+      - new_incentives_events
+      - verifiable_changes_in_incentives
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_incentives
+      - what_tools_methods_or_data_were_used_for_incentives
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - manufacturing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - incentives_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Incentives (incentives) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Incentives lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Incentives.
+  action_rules:
+    monitor:
+    - track_emerging_incentives_benchmarks
+    - follow_official_manufacturing_announcements
+    investigate:
+    - audit_claims_against_primary_incentives_documentation
+    - verify_reproducibility_of_reported_incentives_data
+  watch_rules:
+    monitor:
+    - next_incentives_milestone_or_release_date
+    - peer_review_or_independent_validation_of_incentives
+    - ecosystem_adoption_metrics_for_incentives
+  retrieval_intent:
+    required_concepts:
+    - Incentives
+    - incentives
+    - subsidies
+    - tax incentives
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_incentives_adoption
+  - verified_metrics_for_incentives
+  - manufacturing_regulatory_or_competitive_response
+  - subsidies
+  - tax incentives
+  disambiguation_focus:
+  - Incentives
+  - incentives
+  - 'Incentives specific evaluation: Subsidies/tax incentives'
+  - distinct from other manufacturing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - opportunity
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: manufacturing-reshoring-theme
+  theme_id: manufacturing-reshoring-theme
+  micro_topic_id: reshoring
+  micro_topic: reshoring
+  domain: manufacturing
+  domain_id: manufacturing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Reshoring (reshoring) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_reshoring_developments
+    - verified_reshoring_activity
+    excludes:
+    - tangential_manufacturing_chatter_without_reshoring_relevance
+    boundaries:
+    - focus_strictly_on_reshoring_domain_significance
+  questions:
+  - what_changed_in_reshoring
+  - how_does_new_reshoring_differ_from_prior_state
+  - what_verifiable_evidence_supports_reshoring
+  - what_are_the_operational_or_market_implications_for_reshoring
+  - what_technical_limitations_or_uncertainties_remain_in_reshoring
+  - what_is_the_status_of_manufacturing_relocation_for_reshoring
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_reshoring_exceeding_baseline
+    - independent_confirmation_of_reshoring_milestone_from_primary_source
+    - measurable_impact_on_manufacturing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_reshoring
+    - minor_routine_maintenance_or_repackaging_without_new_reshoring_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - trade
+      - gov
+      freshness: 48h
+      focus:
+      - new_reshoring_events
+      - verifiable_changes_in_reshoring
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_reshoring
+      - what_tools_methods_or_data_were_used_for_reshoring
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - manufacturing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - reshoring_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Reshoring (reshoring) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Reshoring lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Reshoring.
+  action_rules:
+    monitor:
+    - track_emerging_reshoring_benchmarks
+    - follow_official_manufacturing_announcements
+    investigate:
+    - audit_claims_against_primary_reshoring_documentation
+    - verify_reproducibility_of_reported_reshoring_data
+  watch_rules:
+    monitor:
+    - next_reshoring_milestone_or_release_date
+    - peer_review_or_independent_validation_of_reshoring
+    - ecosystem_adoption_metrics_for_reshoring
+  retrieval_intent:
+    required_concepts:
+    - Reshoring
+    - reshoring
+    - manufacturing relocation
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_reshoring_adoption
+  - verified_metrics_for_reshoring
+  - manufacturing_regulatory_or_competitive_response
+  - manufacturing relocation
+  disambiguation_focus:
+  - Reshoring
+  - reshoring
+  - 'Reshoring specific evaluation: Manufacturing relocation'
+  - distinct from other manufacturing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - trade
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: manufacturing-localization-theme
+  theme_id: manufacturing-localization-theme
+  micro_topic_id: localization
+  micro_topic: localization
+  domain: manufacturing
+  domain_id: manufacturing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Localization (localization) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_localization_developments
+    - verified_localization_activity
+    excludes:
+    - tangential_manufacturing_chatter_without_localization_relevance
+    boundaries:
+    - focus_strictly_on_localization_domain_significance
+  questions:
+  - what_changed_in_localization
+  - how_does_new_localization_differ_from_prior_state
+  - what_verifiable_evidence_supports_localization
+  - what_are_the_operational_or_market_implications_for_localization
+  - what_technical_limitations_or_uncertainties_remain_in_localization
+  - what_is_the_status_of_local_content_for_localization
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_localization_exceeding_baseline
+    - independent_confirmation_of_localization_milestone_from_primary_source
+    - measurable_impact_on_manufacturing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_localization
+    - minor_routine_maintenance_or_repackaging_without_new_localization_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - gov
+      - company
+      freshness: 48h
+      focus:
+      - new_localization_events
+      - verifiable_changes_in_localization
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_localization
+      - what_tools_methods_or_data_were_used_for_localization
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - manufacturing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - localization_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Localization (localization)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Localization lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Localization.
+  action_rules:
+    monitor:
+    - track_emerging_localization_benchmarks
+    - follow_official_manufacturing_announcements
+    investigate:
+    - audit_claims_against_primary_localization_documentation
+    - verify_reproducibility_of_reported_localization_data
+  watch_rules:
+    monitor:
+    - next_localization_milestone_or_release_date
+    - peer_review_or_independent_validation_of_localization
+    - ecosystem_adoption_metrics_for_localization
+  retrieval_intent:
+    required_concepts:
+    - Localization
+    - localization
+    - local content
+    - capacity
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_localization_adoption
+  - verified_metrics_for_localization
+  - manufacturing_regulatory_or_competitive_response
+  - local content
+  - capacity
+  disambiguation_focus:
+  - Localization
+  - localization
+  - 'Localization specific evaluation: Local content/capacity'
+  - distinct from other manufacturing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: manufacturing-capacity-theme
+  theme_id: manufacturing-capacity-theme
+  micro_topic_id: capacity
+  micro_topic: capacity
+  domain: manufacturing
+  domain_id: manufacturing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Capacity (capacity) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_capacity_developments
+    - verified_capacity_activity
+    excludes:
+    - tangential_manufacturing_chatter_without_capacity_relevance
+    boundaries:
+    - focus_strictly_on_capacity_domain_significance
+  questions:
+  - what_changed_in_capacity
+  - how_does_new_capacity_differ_from_prior_state
+  - what_verifiable_evidence_supports_capacity
+  - what_are_the_operational_or_market_implications_for_capacity
+  - what_technical_limitations_or_uncertainties_remain_in_capacity
+  - what_is_the_status_of_production_capacity_for_capacity
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_capacity_exceeding_baseline
+    - independent_confirmation_of_capacity_milestone_from_primary_source
+    - measurable_impact_on_manufacturing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_capacity
+    - minor_routine_maintenance_or_repackaging_without_new_capacity_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - company
+      - market
+      freshness: 48h
+      focus:
+      - new_capacity_events
+      - verifiable_changes_in_capacity
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_capacity
+      - what_tools_methods_or_data_were_used_for_capacity
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - manufacturing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - capacity_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Capacity (capacity) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Capacity lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Capacity.
+  action_rules:
+    monitor:
+    - track_emerging_capacity_benchmarks
+    - follow_official_manufacturing_announcements
+    investigate:
+    - audit_claims_against_primary_capacity_documentation
+    - verify_reproducibility_of_reported_capacity_data
+  watch_rules:
+    monitor:
+    - next_capacity_milestone_or_release_date
+    - peer_review_or_independent_validation_of_capacity
+    - ecosystem_adoption_metrics_for_capacity
+  retrieval_intent:
+    required_concepts:
+    - Capacity
+    - capacity
+    - production capacity
+    - utilization
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_capacity_adoption
+  - verified_metrics_for_capacity
+  - manufacturing_regulatory_or_competitive_response
+  - production capacity
+  - utilization
+  disambiguation_focus:
+  - Capacity
+  - capacity
+  - 'Capacity specific evaluation: Production capacity/utilization'
+  - distinct from other manufacturing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - market
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: manufacturing-exports-theme
+  theme_id: manufacturing-exports-theme
+  micro_topic_id: exports
+  micro_topic: exports
+  domain: manufacturing
+  domain_id: manufacturing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Exports (exports) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_exports_developments
+    - verified_exports_activity
+    excludes:
+    - tangential_manufacturing_chatter_without_exports_relevance
+    boundaries:
+    - focus_strictly_on_exports_domain_significance
+  questions:
+  - what_changed_in_exports
+  - how_does_new_exports_differ_from_prior_state
+  - what_verifiable_evidence_supports_exports
+  - what_are_the_operational_or_market_implications_for_exports
+  - what_technical_limitations_or_uncertainties_remain_in_exports
+  - what_is_the_status_of_industrial_export_changes_for_exports
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_exports_exceeding_baseline
+    - independent_confirmation_of_exports_milestone_from_primary_source
+    - measurable_impact_on_manufacturing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_exports
+    - minor_routine_maintenance_or_repackaging_without_new_exports_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - trade
+      freshness: 48h
+      focus:
+      - new_exports_events
+      - verifiable_changes_in_exports
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_exports
+      - what_tools_methods_or_data_were_used_for_exports
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - manufacturing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - exports_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Exports (exports) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Exports lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Exports.
+  action_rules:
+    monitor:
+    - track_emerging_exports_benchmarks
+    - follow_official_manufacturing_announcements
+    investigate:
+    - audit_claims_against_primary_exports_documentation
+    - verify_reproducibility_of_reported_exports_data
+  watch_rules:
+    monitor:
+    - next_exports_milestone_or_release_date
+    - peer_review_or_independent_validation_of_exports
+    - ecosystem_adoption_metrics_for_exports
+  retrieval_intent:
+    required_concepts:
+    - Exports
+    - exports
+    - industrial export changes
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_exports_adoption
+  - verified_metrics_for_exports
+  - manufacturing_regulatory_or_competitive_response
+  - industrial export changes
+  disambiguation_focus:
+  - Exports
+  - exports
+  - 'Exports specific evaluation: Industrial export changes'
+  - distinct from other manufacturing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - trade
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: manufacturing-industrial-strategy-theme
+  theme_id: manufacturing-industrial-strategy-theme
+  micro_topic_id: industrial-strategy
+  micro_topic: industrial-strategy
+  domain: manufacturing
+  domain_id: manufacturing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Industrial Strategy (industrial-strategy) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_industrial_strategy_developments
+    - verified_industrial_strategy_activity
+    excludes:
+    - tangential_manufacturing_chatter_without_industrial_strategy_relevance
+    boundaries:
+    - focus_strictly_on_industrial-strategy_domain_significance
+  questions:
+  - what_changed_in_industrial_strategy
+  - how_does_new_industrial_strategy_differ_from_prior_state
+  - what_verifiable_evidence_supports_industrial_strategy
+  - what_are_the_operational_or_market_implications_for_industrial_strategy
+  - what_technical_limitations_or_uncertainties_remain_in_industrial_strategy
+  - what_is_the_status_of_national_manufacturing_strategy_for_industrial_strategy
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_industrial_strategy_exceeding_baseline
+    - independent_confirmation_of_industrial_strategy_milestone_from_primary_source
+    - measurable_impact_on_manufacturing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_industrial_strategy
+    - minor_routine_maintenance_or_repackaging_without_new_industrial_strategy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - gov
+      - trade
+      freshness: 48h
+      focus:
+      - new_industrial_strategy_events
+      - verifiable_changes_in_industrial_strategy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_industrial_strategy
+      - what_tools_methods_or_data_were_used_for_industrial_strategy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - manufacturing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - industrial_strategy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Industrial Strategy (industrial-strategy)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Industrial Strategy lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Industrial Strategy.
+  action_rules:
+    monitor:
+    - track_emerging_industrial_strategy_benchmarks
+    - follow_official_manufacturing_announcements
+    investigate:
+    - audit_claims_against_primary_industrial_strategy_documentation
+    - verify_reproducibility_of_reported_industrial_strategy_data
+  watch_rules:
+    monitor:
+    - next_industrial_strategy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_industrial_strategy
+    - ecosystem_adoption_metrics_for_industrial_strategy
+  retrieval_intent:
+    required_concepts:
+    - Industrial Strategy
+    - industrial-strategy
+    - national manufacturing strategy
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_industrial_strategy_adoption
+  - verified_metrics_for_industrial_strategy
+  - manufacturing_regulatory_or_competitive_response
+  - national manufacturing strategy
+  disambiguation_focus:
+  - Industrial Strategy
+  - industrial-strategy
+  - 'Industrial Strategy specific evaluation: National manufacturing strategy'
+  - distinct from other manufacturing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - trade
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

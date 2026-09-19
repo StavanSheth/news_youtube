@@ -230,6 +230,15 @@ class ApplicationOrchestrator:
                 context_packet = rag_res["context_packet"]
 
                 micro_id = str(cls_info.get("micro_topic_id") or cls_info.get("micro_topic", ""))
+                packet_micro = str(context_packet.get("micro_topic_id") or context_packet.get("micro_topic", ""))
+                theme_micro = str(theme.get("micro_topic_id") or theme.get("micro_topic", ""))
+
+                # Enforce Section 18 1-by-1 micro-topic isolation guarantee
+                if packet_micro and packet_micro != micro_id:
+                    raise AssertionError(f"Execution isolation violation: ContextPacket micro_topic_id ({packet_micro}) != job ({micro_id})")
+                if theme_micro and theme_micro != micro_id and theme_micro not in ("any", "*"):
+                    LOGGER.debug("Theme fallback in use: theme %s for job %s", theme_micro, micro_id)
+
                 can_run, reason, skip_rec = self.budget_manager.authorize(
                     micro_id,
                     priority="P0" if int(job.get("priority", 5)) >= 8 else "P1",

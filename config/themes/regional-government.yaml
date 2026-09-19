@@ -1,0 +1,1152 @@
+themes:
+- id: regional-government-state-provincial-policy-theme
+  theme_id: regional-government-state-provincial-policy-theme
+  micro_topic_id: state-provincial-policy
+  micro_topic: state-provincial-policy
+  domain: regional-government
+  domain_id: regional-government
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess State/Provincial Policy (state-provincial-policy) specifically
+    through verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_state_provincial_policy_developments
+    - verified_state/provincial_policy_activity
+    excludes:
+    - tangential_regional-government_chatter_without_state_provincial_policy_relevance
+    boundaries:
+    - focus_strictly_on_state-provincial-policy_domain_significance
+  questions:
+  - what_changed_in_state_provincial_policy
+  - how_does_new_state/provincial_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_state_provincial_policy
+  - what_are_the_operational_or_market_implications_for_state_provincial_policy
+  - what_technical_limitations_or_uncertainties_remain_in_state_provincial_policy
+  - what_is_the_status_of_local_regulation_for_state_provincial_policy
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_state/provincial_policy_exceeding_baseline
+    - independent_confirmation_of_state_provincial_policy_milestone_from_primary_source
+    - measurable_impact_on_regional_government_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_state_provincial_policy
+    - minor_routine_maintenance_or_repackaging_without_new_state_provincial_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - regional
+      - gov
+      freshness: 48h
+      focus:
+      - new_state_provincial_policy_events
+      - verifiable_changes_in_state/provincial_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_state_provincial_policy
+      - what_tools_methods_or_data_were_used_for_state/provincial_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - regional_government
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - state_provincial_policy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in State/Provincial Policy (state-provincial-policy)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding State/Provincial Policy lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for State/Provincial Policy.
+  action_rules:
+    monitor:
+    - track_emerging_state_provincial_policy_benchmarks
+    - follow_official_regional_government_announcements
+    investigate:
+    - audit_claims_against_primary_state/provincial_policy_documentation
+    - verify_reproducibility_of_reported_state_provincial_policy_data
+  watch_rules:
+    monitor:
+    - next_state/provincial_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_state_provincial_policy
+    - ecosystem_adoption_metrics_for_state_provincial_policy
+  retrieval_intent:
+    required_concepts:
+    - State/Provincial Policy
+    - state-provincial-policy
+    - local regulation
+    - program
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_state_provincial_policy_adoption
+  - verified_metrics_for_state/provincial_policy
+  - regional_government_regulatory_or_competitive_response
+  - local regulation
+  - program
+  disambiguation_focus:
+  - State/Provincial Policy
+  - state-provincial-policy
+  - 'State/Provincial Policy specific evaluation: Local regulation/program'
+  - distinct from other regional-government topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - regional
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: regional-government-incentives-theme
+  theme_id: regional-government-incentives-theme
+  micro_topic_id: incentives
+  micro_topic: incentives
+  domain: regional-government
+  domain_id: regional-government
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Incentives (incentives) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_incentives_developments
+    - verified_incentives_activity
+    excludes:
+    - tangential_regional-government_chatter_without_incentives_relevance
+    boundaries:
+    - focus_strictly_on_incentives_domain_significance
+  questions:
+  - what_changed_in_incentives
+  - how_does_new_incentives_differ_from_prior_state
+  - what_verifiable_evidence_supports_incentives
+  - what_are_the_operational_or_market_implications_for_incentives
+  - what_technical_limitations_or_uncertainties_remain_in_incentives
+  - what_is_the_status_of_tax_for_incentives
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_incentives_exceeding_baseline
+    - independent_confirmation_of_incentives_milestone_from_primary_source
+    - measurable_impact_on_regional_government_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_incentives
+    - minor_routine_maintenance_or_repackaging_without_new_incentives_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - regional
+      - opportunity
+      freshness: 48h
+      focus:
+      - new_incentives_events
+      - verifiable_changes_in_incentives
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_incentives
+      - what_tools_methods_or_data_were_used_for_incentives
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - regional_government
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - incentives_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Incentives (incentives) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Incentives lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Incentives.
+  action_rules:
+    monitor:
+    - track_emerging_incentives_benchmarks
+    - follow_official_regional_government_announcements
+    investigate:
+    - audit_claims_against_primary_incentives_documentation
+    - verify_reproducibility_of_reported_incentives_data
+  watch_rules:
+    monitor:
+    - next_incentives_milestone_or_release_date
+    - peer_review_or_independent_validation_of_incentives
+    - ecosystem_adoption_metrics_for_incentives
+  retrieval_intent:
+    required_concepts:
+    - Incentives
+    - incentives
+    - tax
+    - investment incentives
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_incentives_adoption
+  - verified_metrics_for_incentives
+  - regional_government_regulatory_or_competitive_response
+  - tax
+  - investment incentives
+  disambiguation_focus:
+  - Incentives
+  - incentives
+  - 'Incentives specific evaluation: Tax/investment incentives'
+  - distinct from other regional-government topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - regional
+    - opportunity
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: regional-government-industrial-parks-theme
+  theme_id: regional-government-industrial-parks-theme
+  micro_topic_id: industrial-parks
+  micro_topic: industrial-parks
+  domain: regional-government
+  domain_id: regional-government
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Industrial Parks (industrial-parks) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_industrial_parks_developments
+    - verified_industrial_parks_activity
+    excludes:
+    - tangential_regional-government_chatter_without_industrial_parks_relevance
+    boundaries:
+    - focus_strictly_on_industrial-parks_domain_significance
+  questions:
+  - what_changed_in_industrial_parks
+  - how_does_new_industrial_parks_differ_from_prior_state
+  - what_verifiable_evidence_supports_industrial_parks
+  - what_are_the_operational_or_market_implications_for_industrial_parks
+  - what_technical_limitations_or_uncertainties_remain_in_industrial_parks
+  - what_is_the_status_of_development_for_industrial_parks
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_industrial_parks_exceeding_baseline
+    - independent_confirmation_of_industrial_parks_milestone_from_primary_source
+    - measurable_impact_on_regional_government_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_industrial_parks
+    - minor_routine_maintenance_or_repackaging_without_new_industrial_parks_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - regional
+      - manufacturing
+      freshness: 48h
+      focus:
+      - new_industrial_parks_events
+      - verifiable_changes_in_industrial_parks
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_industrial_parks
+      - what_tools_methods_or_data_were_used_for_industrial_parks
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - regional_government
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - industrial_parks_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Industrial Parks (industrial-parks)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Industrial Parks lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Industrial Parks.
+  action_rules:
+    monitor:
+    - track_emerging_industrial_parks_benchmarks
+    - follow_official_regional_government_announcements
+    investigate:
+    - audit_claims_against_primary_industrial_parks_documentation
+    - verify_reproducibility_of_reported_industrial_parks_data
+  watch_rules:
+    monitor:
+    - next_industrial_parks_milestone_or_release_date
+    - peer_review_or_independent_validation_of_industrial_parks
+    - ecosystem_adoption_metrics_for_industrial_parks
+  retrieval_intent:
+    required_concepts:
+    - Industrial Parks
+    - industrial-parks
+    - development
+    - tenants
+    - capacity
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_industrial_parks_adoption
+  - verified_metrics_for_industrial_parks
+  - regional_government_regulatory_or_competitive_response
+  - development
+  - tenants
+  disambiguation_focus:
+  - Industrial Parks
+  - industrial-parks
+  - 'Industrial Parks specific evaluation: Development, tenants, capacity'
+  - distinct from other regional-government topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - regional
+    - manufacturing
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: regional-government-infrastructure-theme
+  theme_id: regional-government-infrastructure-theme
+  micro_topic_id: infrastructure
+  micro_topic: infrastructure
+  domain: regional-government
+  domain_id: regional-government
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Infrastructure (infrastructure) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_infrastructure_developments
+    - verified_infrastructure_activity
+    excludes:
+    - tangential_regional-government_chatter_without_infrastructure_relevance
+    boundaries:
+    - focus_strictly_on_infrastructure_domain_significance
+  questions:
+  - what_changed_in_infrastructure
+  - how_does_new_infrastructure_differ_from_prior_state
+  - what_verifiable_evidence_supports_infrastructure
+  - what_are_the_operational_or_market_implications_for_infrastructure
+  - what_technical_limitations_or_uncertainties_remain_in_infrastructure
+  - what_is_the_status_of_regional_infrastructure_projects_for_infrastructure
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_infrastructure_exceeding_baseline
+    - independent_confirmation_of_infrastructure_milestone_from_primary_source
+    - measurable_impact_on_regional_government_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_infrastructure
+    - minor_routine_maintenance_or_repackaging_without_new_infrastructure_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - regional
+      - procurement
+      freshness: 48h
+      focus:
+      - new_infrastructure_events
+      - verifiable_changes_in_infrastructure
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_infrastructure
+      - what_tools_methods_or_data_were_used_for_infrastructure
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - regional_government
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - infrastructure_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Infrastructure (infrastructure)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Infrastructure lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Infrastructure.
+  action_rules:
+    monitor:
+    - track_emerging_infrastructure_benchmarks
+    - follow_official_regional_government_announcements
+    investigate:
+    - audit_claims_against_primary_infrastructure_documentation
+    - verify_reproducibility_of_reported_infrastructure_data
+  watch_rules:
+    monitor:
+    - next_infrastructure_milestone_or_release_date
+    - peer_review_or_independent_validation_of_infrastructure
+    - ecosystem_adoption_metrics_for_infrastructure
+  retrieval_intent:
+    required_concepts:
+    - Infrastructure
+    - infrastructure
+    - regional infrastructure projects
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_infrastructure_adoption
+  - verified_metrics_for_infrastructure
+  - regional_government_regulatory_or_competitive_response
+  - regional infrastructure projects
+  disambiguation_focus:
+  - Infrastructure
+  - infrastructure
+  - 'Infrastructure specific evaluation: Regional infrastructure projects'
+  - distinct from other regional-government topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - regional
+    - procurement
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: regional-government-local-regulation-theme
+  theme_id: regional-government-local-regulation-theme
+  micro_topic_id: local-regulation
+  micro_topic: local-regulation
+  domain: regional-government
+  domain_id: regional-government
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Local Regulation (local-regulation) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_local_regulation_developments
+    - verified_local_regulation_activity
+    excludes:
+    - tangential_regional-government_chatter_without_local_regulation_relevance
+    boundaries:
+    - focus_strictly_on_local-regulation_domain_significance
+  questions:
+  - what_changed_in_local_regulation
+  - how_does_new_local_regulation_differ_from_prior_state
+  - what_verifiable_evidence_supports_local_regulation
+  - what_are_the_operational_or_market_implications_for_local_regulation
+  - what_technical_limitations_or_uncertainties_remain_in_local_regulation
+  - what_is_the_status_of_local_compliance_changes_for_local_regulation
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_local_regulation_exceeding_baseline
+    - independent_confirmation_of_local_regulation_milestone_from_primary_source
+    - measurable_impact_on_regional_government_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_local_regulation
+    - minor_routine_maintenance_or_repackaging_without_new_local_regulation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - regional
+      freshness: 48h
+      focus:
+      - new_local_regulation_events
+      - verifiable_changes_in_local_regulation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_local_regulation
+      - what_tools_methods_or_data_were_used_for_local_regulation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - regional_government
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - local_regulation_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Local Regulation (local-regulation)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Local Regulation lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Local Regulation.
+  action_rules:
+    monitor:
+    - track_emerging_local_regulation_benchmarks
+    - follow_official_regional_government_announcements
+    investigate:
+    - audit_claims_against_primary_local_regulation_documentation
+    - verify_reproducibility_of_reported_local_regulation_data
+  watch_rules:
+    monitor:
+    - next_local_regulation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_local_regulation
+    - ecosystem_adoption_metrics_for_local_regulation
+  retrieval_intent:
+    required_concepts:
+    - Local Regulation
+    - local-regulation
+    - local compliance changes
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_local_regulation_adoption
+  - verified_metrics_for_local_regulation
+  - regional_government_regulatory_or_competitive_response
+  - local compliance changes
+  disambiguation_focus:
+  - Local Regulation
+  - local-regulation
+  - 'Local Regulation specific evaluation: Local compliance changes'
+  - distinct from other regional-government topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - regional
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: regional-government-regional-investment-theme
+  theme_id: regional-government-regional-investment-theme
+  micro_topic_id: regional-investment
+  micro_topic: regional-investment
+  domain: regional-government
+  domain_id: regional-government
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Regional Investment (regional-investment) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_regional_investment_developments
+    - verified_regional_investment_activity
+    excludes:
+    - tangential_regional-government_chatter_without_regional_investment_relevance
+    boundaries:
+    - focus_strictly_on_regional-investment_domain_significance
+  questions:
+  - what_changed_in_regional_investment
+  - how_does_new_regional_investment_differ_from_prior_state
+  - what_verifiable_evidence_supports_regional_investment
+  - what_are_the_operational_or_market_implications_for_regional_investment
+  - what_technical_limitations_or_uncertainties_remain_in_regional_investment
+  - what_is_the_status_of_investment_commitments_for_regional_investment
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_regional_investment_exceeding_baseline
+    - independent_confirmation_of_regional_investment_milestone_from_primary_source
+    - measurable_impact_on_regional_government_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_regional_investment
+    - minor_routine_maintenance_or_repackaging_without_new_regional_investment_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - regional
+      - finance
+      freshness: 48h
+      focus:
+      - new_regional_investment_events
+      - verifiable_changes_in_regional_investment
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_regional_investment
+      - what_tools_methods_or_data_were_used_for_regional_investment
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - regional_government
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - regional_investment_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Regional Investment (regional-investment)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Regional Investment lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Regional Investment.
+  action_rules:
+    monitor:
+    - track_emerging_regional_investment_benchmarks
+    - follow_official_regional_government_announcements
+    investigate:
+    - audit_claims_against_primary_regional_investment_documentation
+    - verify_reproducibility_of_reported_regional_investment_data
+  watch_rules:
+    monitor:
+    - next_regional_investment_milestone_or_release_date
+    - peer_review_or_independent_validation_of_regional_investment
+    - ecosystem_adoption_metrics_for_regional_investment
+  retrieval_intent:
+    required_concepts:
+    - Regional Investment
+    - regional-investment
+    - investment commitments
+    - projects
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_regional_investment_adoption
+  - verified_metrics_for_regional_investment
+  - regional_government_regulatory_or_competitive_response
+  - investment commitments
+  - projects
+  disambiguation_focus:
+  - Regional Investment
+  - regional-investment
+  - 'Regional Investment specific evaluation: Investment commitments/projects'
+  - distinct from other regional-government topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - regional
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: regional-government-regional-technology-policy-theme
+  theme_id: regional-government-regional-technology-policy-theme
+  micro_topic_id: regional-technology-policy
+  micro_topic: regional-technology-policy
+  domain: regional-government
+  domain_id: regional-government
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Regional Technology Policy (regional-technology-policy) specifically
+    through verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_regional_technology_policy_developments
+    - verified_regional_technology_policy_activity
+    excludes:
+    - tangential_regional-government_chatter_without_regional_technology_policy_relevance
+    boundaries:
+    - focus_strictly_on_regional-technology-policy_domain_significance
+  questions:
+  - what_changed_in_regional_technology_policy
+  - how_does_new_regional_technology_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_regional_technology_policy
+  - what_are_the_operational_or_market_implications_for_regional_technology_policy
+  - what_technical_limitations_or_uncertainties_remain_in_regional_technology_policy
+  - what_is_the_status_of_tech_for_regional_technology_policy
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_regional_technology_policy_exceeding_baseline
+    - independent_confirmation_of_regional_technology_policy_milestone_from_primary_source
+    - measurable_impact_on_regional_government_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_regional_technology_policy
+    - minor_routine_maintenance_or_repackaging_without_new_regional_technology_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - regional
+      - ai
+      freshness: 48h
+      focus:
+      - new_regional_technology_policy_events
+      - verifiable_changes_in_regional_technology_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_regional_technology_policy
+      - what_tools_methods_or_data_were_used_for_regional_technology_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - regional_government
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - regional_technology_policy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Regional Technology Policy
+      (regional-technology-policy) was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Regional Technology Policy
+      lacked primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Regional Technology Policy.
+  action_rules:
+    monitor:
+    - track_emerging_regional_technology_policy_benchmarks
+    - follow_official_regional_government_announcements
+    investigate:
+    - audit_claims_against_primary_regional_technology_policy_documentation
+    - verify_reproducibility_of_reported_regional_technology_policy_data
+  watch_rules:
+    monitor:
+    - next_regional_technology_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_regional_technology_policy
+    - ecosystem_adoption_metrics_for_regional_technology_policy
+  retrieval_intent:
+    required_concepts:
+    - Regional Technology Policy
+    - regional-technology-policy
+    - tech
+    - ai
+    - digital policy
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_regional_technology_policy_adoption
+  - verified_metrics_for_regional_technology_policy
+  - regional_government_regulatory_or_competitive_response
+  - tech
+  - ai
+  disambiguation_focus:
+  - Regional Technology Policy
+  - regional-technology-policy
+  - 'Regional Technology Policy specific evaluation: Tech/AI/digital policy'
+  - distinct from other regional-government topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - regional
+    - ai
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

@@ -1,0 +1,2177 @@
+themes:
+- id: finance-central-banks-theme
+  theme_id: finance-central-banks-theme
+  micro_topic_id: central-banks
+  micro_topic: central-banks
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Central Banks (central-banks) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_central_banks_developments
+    - verified_central_banks_activity
+    excludes:
+    - tangential_finance_chatter_without_central_banks_relevance
+    boundaries:
+    - focus_strictly_on_central-banks_domain_significance
+  questions:
+  - what_changed_in_central_banks
+  - how_does_new_central_banks_differ_from_prior_state
+  - what_verifiable_evidence_supports_central_banks
+  - what_are_the_operational_or_market_implications_for_central_banks
+  - what_technical_limitations_or_uncertainties_remain_in_central_banks
+  - what_is_the_status_of_decision_for_central_banks
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_central_banks_exceeding_baseline
+    - independent_confirmation_of_central_banks_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_central_banks
+    - minor_routine_maintenance_or_repackaging_without_new_central_banks_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - finance
+      - gov
+      freshness: 24h
+      focus:
+      - new_central_banks_events
+      - verifiable_changes_in_central_banks
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_central_banks
+      - what_tools_methods_or_data_were_used_for_central_banks
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - central_banks_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Central Banks (central-banks)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Central Banks lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Central Banks.
+  action_rules:
+    monitor:
+    - track_emerging_central_banks_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_central_banks_documentation
+    - verify_reproducibility_of_reported_central_banks_data
+  watch_rules:
+    monitor:
+    - next_central_banks_milestone_or_release_date
+    - peer_review_or_independent_validation_of_central_banks
+    - ecosystem_adoption_metrics_for_central_banks
+  retrieval_intent:
+    required_concepts:
+    - Central Banks
+    - central-banks
+    - decision
+    - guidance
+    - balance sheet
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_central_banks_adoption
+  - verified_metrics_for_central_banks
+  - finance_regulatory_or_competitive_response
+  - decision
+  - guidance
+  disambiguation_focus:
+  - Central Banks
+  - central-banks
+  - 'Central Banks specific evaluation: Decision, guidance, balance sheet, rationale'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - finance
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-interest-rates-theme
+  theme_id: finance-interest-rates-theme
+  micro_topic_id: interest-rates
+  micro_topic: interest-rates
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Interest Rates (interest-rates) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_interest_rates_developments
+    - verified_interest_rates_activity
+    excludes:
+    - tangential_finance_chatter_without_interest_rates_relevance
+    boundaries:
+    - focus_strictly_on_interest-rates_domain_significance
+  questions:
+  - what_changed_in_interest_rates
+  - how_does_new_interest_rates_differ_from_prior_state
+  - what_verifiable_evidence_supports_interest_rates
+  - what_are_the_operational_or_market_implications_for_interest_rates
+  - what_technical_limitations_or_uncertainties_remain_in_interest_rates
+  - what_is_the_status_of_rate_change_for_interest_rates
+  evidence_requirements: &id006
+  - fred
+  - central_banks
+  - market
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_interest_rates_exceeding_baseline
+    - independent_confirmation_of_interest_rates_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_interest_rates
+    - minor_routine_maintenance_or_repackaging_without_new_interest_rates_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - fred
+      - central banks
+      - market
+      freshness: 24h
+      focus:
+      - new_interest_rates_events
+      - verifiable_changes_in_interest_rates
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_interest_rates
+      - what_tools_methods_or_data_were_used_for_interest_rates
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - interest_rates_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Interest Rates (interest-rates)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Interest Rates lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Interest Rates.
+  action_rules:
+    monitor:
+    - track_emerging_interest_rates_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_interest_rates_documentation
+    - verify_reproducibility_of_reported_interest_rates_data
+  watch_rules:
+    monitor:
+    - next_interest_rates_milestone_or_release_date
+    - peer_review_or_independent_validation_of_interest_rates
+    - ecosystem_adoption_metrics_for_interest_rates
+  retrieval_intent:
+    required_concepts:
+    - Interest Rates
+    - interest-rates
+    - rate change
+    - expectations
+    - market response
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_interest_rates_adoption
+  - verified_metrics_for_interest_rates
+  - finance_regulatory_or_competitive_response
+  - rate change
+  - expectations
+  disambiguation_focus:
+  - Interest Rates
+  - interest-rates
+  - 'Interest Rates specific evaluation: Rate change, expectations, market response'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - fred
+    - central banks
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-inflation-theme
+  theme_id: finance-inflation-theme
+  micro_topic_id: inflation
+  micro_topic: inflation
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Inflation (inflation) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_inflation_developments
+    - verified_inflation_activity
+    excludes:
+    - tangential_finance_chatter_without_inflation_relevance
+    boundaries:
+    - focus_strictly_on_inflation_domain_significance
+  questions:
+  - what_changed_in_inflation
+  - how_does_new_inflation_differ_from_prior_state
+  - what_verifiable_evidence_supports_inflation
+  - what_are_the_operational_or_market_implications_for_inflation
+  - what_technical_limitations_or_uncertainties_remain_in_inflation
+  - what_is_the_status_of_cpi_for_inflation
+  evidence_requirements: &id011
+  - fred
+  - official_statistics
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_inflation_exceeding_baseline
+    - independent_confirmation_of_inflation_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_inflation
+    - minor_routine_maintenance_or_repackaging_without_new_inflation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - fred
+      - official statistics
+      freshness: 24h
+      focus:
+      - new_inflation_events
+      - verifiable_changes_in_inflation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_inflation
+      - what_tools_methods_or_data_were_used_for_inflation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - inflation_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Inflation (inflation) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Inflation lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Inflation.
+  action_rules:
+    monitor:
+    - track_emerging_inflation_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_inflation_documentation
+    - verify_reproducibility_of_reported_inflation_data
+  watch_rules:
+    monitor:
+    - next_inflation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_inflation
+    - ecosystem_adoption_metrics_for_inflation
+  retrieval_intent:
+    required_concepts:
+    - Inflation
+    - inflation
+    - cpi
+    - pce
+    - etc.
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_inflation_adoption
+  - verified_metrics_for_inflation
+  - finance_regulatory_or_competitive_response
+  - cpi
+  - pce
+  disambiguation_focus:
+  - Inflation
+  - inflation
+  - 'Inflation specific evaluation: CPI/PCE/etc., drivers, trend'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - fred
+    - official statistics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-gdp-theme
+  theme_id: finance-gdp-theme
+  micro_topic_id: gdp
+  micro_topic: gdp
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess GDP (gdp) specifically through verified evidence, measurable change,
+    and practical implications.
+  scope:
+    includes:
+    - all_gdp_developments
+    - verified_gdp_activity
+    excludes:
+    - tangential_finance_chatter_without_gdp_relevance
+    boundaries:
+    - focus_strictly_on_gdp_domain_significance
+  questions:
+  - what_changed_in_gdp
+  - how_does_new_gdp_differ_from_prior_state
+  - what_verifiable_evidence_supports_gdp
+  - what_are_the_operational_or_market_implications_for_gdp
+  - what_technical_limitations_or_uncertainties_remain_in_gdp
+  - what_is_the_status_of_growth_for_gdp
+  evidence_requirements: &id016
+  - fred
+  - world_bank
+  - official_statistics
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_gdp_exceeding_baseline
+    - independent_confirmation_of_gdp_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_gdp
+    - minor_routine_maintenance_or_repackaging_without_new_gdp_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - fred
+      - world bank
+      - official statistics
+      freshness: 24h
+      focus:
+      - new_gdp_events
+      - verifiable_changes_in_gdp
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_gdp
+      - what_tools_methods_or_data_were_used_for_gdp
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - gdp_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in GDP (gdp) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding GDP lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for GDP.
+  action_rules:
+    monitor:
+    - track_emerging_gdp_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_gdp_documentation
+    - verify_reproducibility_of_reported_gdp_data
+  watch_rules:
+    monitor:
+    - next_gdp_milestone_or_release_date
+    - peer_review_or_independent_validation_of_gdp
+    - ecosystem_adoption_metrics_for_gdp
+  retrieval_intent:
+    required_concepts:
+    - GDP
+    - gdp
+    - growth
+    - revisions
+    - components
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_gdp_adoption
+  - verified_metrics_for_gdp
+  - finance_regulatory_or_competitive_response
+  - growth
+  - revisions
+  disambiguation_focus:
+  - GDP
+  - gdp
+  - 'GDP specific evaluation: Growth, revisions, components'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - fred
+    - world bank
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-employment-theme
+  theme_id: finance-employment-theme
+  micro_topic_id: employment
+  micro_topic: employment
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Employment (employment) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_employment_developments
+    - verified_employment_activity
+    excludes:
+    - tangential_finance_chatter_without_employment_relevance
+    boundaries:
+    - focus_strictly_on_employment_domain_significance
+  questions:
+  - what_changed_in_employment
+  - how_does_new_employment_differ_from_prior_state
+  - what_verifiable_evidence_supports_employment
+  - what_are_the_operational_or_market_implications_for_employment
+  - what_technical_limitations_or_uncertainties_remain_in_employment
+  - what_is_the_status_of_jobs_for_employment
+  evidence_requirements: &id021
+  - fred
+  - official_statistics
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_employment_exceeding_baseline
+    - independent_confirmation_of_employment_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_employment
+    - minor_routine_maintenance_or_repackaging_without_new_employment_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - fred
+      - official statistics
+      freshness: 24h
+      focus:
+      - new_employment_events
+      - verifiable_changes_in_employment
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_employment
+      - what_tools_methods_or_data_were_used_for_employment
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - employment_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Employment (employment) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Employment lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Employment.
+  action_rules:
+    monitor:
+    - track_emerging_employment_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_employment_documentation
+    - verify_reproducibility_of_reported_employment_data
+  watch_rules:
+    monitor:
+    - next_employment_milestone_or_release_date
+    - peer_review_or_independent_validation_of_employment
+    - ecosystem_adoption_metrics_for_employment
+  retrieval_intent:
+    required_concepts:
+    - Employment
+    - employment
+    - jobs
+    - unemployment
+    - wages
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_employment_adoption
+  - verified_metrics_for_employment
+  - finance_regulatory_or_competitive_response
+  - jobs
+  - unemployment
+  disambiguation_focus:
+  - Employment
+  - employment
+  - 'Employment specific evaluation: Jobs, unemployment, wages'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - fred
+    - official statistics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-equities-theme
+  theme_id: finance-equities-theme
+  micro_topic_id: equities
+  micro_topic: equities
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Equities (equities) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_equities_developments
+    - verified_equities_activity
+    excludes:
+    - tangential_finance_chatter_without_equities_relevance
+    boundaries:
+    - focus_strictly_on_equities_domain_significance
+  questions:
+  - what_changed_in_equities
+  - how_does_new_equities_differ_from_prior_state
+  - what_verifiable_evidence_supports_equities
+  - what_are_the_operational_or_market_implications_for_equities
+  - what_technical_limitations_or_uncertainties_remain_in_equities
+  - what_is_the_status_of_market_movement_for_equities
+  evidence_requirements: &id026
+  - finnhub
+  - yahoo
+  - news_global
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_equities_exceeding_baseline
+    - independent_confirmation_of_equities_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_equities
+    - minor_routine_maintenance_or_repackaging_without_new_equities_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - finnhub
+      - yahoo
+      - news-global
+      freshness: 48h
+      focus:
+      - new_equities_events
+      - verifiable_changes_in_equities
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_equities
+      - what_tools_methods_or_data_were_used_for_equities
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - equities_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Equities (equities) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Equities lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Equities.
+  action_rules:
+    monitor:
+    - track_emerging_equities_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_equities_documentation
+    - verify_reproducibility_of_reported_equities_data
+  watch_rules:
+    monitor:
+    - next_equities_milestone_or_release_date
+    - peer_review_or_independent_validation_of_equities
+    - ecosystem_adoption_metrics_for_equities
+  retrieval_intent:
+    required_concepts:
+    - Equities
+    - equities
+    - market movement
+    - earnings
+    - valuation
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_equities_adoption
+  - verified_metrics_for_equities
+  - finance_regulatory_or_competitive_response
+  - market movement
+  - earnings
+  disambiguation_focus:
+  - Equities
+  - equities
+  - 'Equities specific evaluation: Market movement, earnings, valuation, catalysts'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - finnhub
+    - yahoo
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-bonds-theme
+  theme_id: finance-bonds-theme
+  micro_topic_id: bonds
+  micro_topic: bonds
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Bonds (bonds) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_bonds_developments
+    - verified_bonds_activity
+    excludes:
+    - tangential_finance_chatter_without_bonds_relevance
+    boundaries:
+    - focus_strictly_on_bonds_domain_significance
+  questions:
+  - what_changed_in_bonds
+  - how_does_new_bonds_differ_from_prior_state
+  - what_verifiable_evidence_supports_bonds
+  - what_are_the_operational_or_market_implications_for_bonds
+  - what_technical_limitations_or_uncertainties_remain_in_bonds
+  - what_is_the_status_of_yields_for_bonds
+  evidence_requirements: &id031
+  - fred
+  - market
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_bonds_exceeding_baseline
+    - independent_confirmation_of_bonds_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_bonds
+    - minor_routine_maintenance_or_repackaging_without_new_bonds_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - fred
+      - market
+      freshness: 48h
+      focus:
+      - new_bonds_events
+      - verifiable_changes_in_bonds
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_bonds
+      - what_tools_methods_or_data_were_used_for_bonds
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - bonds_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Bonds (bonds) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Bonds lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Bonds.
+  action_rules:
+    monitor:
+    - track_emerging_bonds_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_bonds_documentation
+    - verify_reproducibility_of_reported_bonds_data
+  watch_rules:
+    monitor:
+    - next_bonds_milestone_or_release_date
+    - peer_review_or_independent_validation_of_bonds
+    - ecosystem_adoption_metrics_for_bonds
+  retrieval_intent:
+    required_concepts:
+    - Bonds
+    - bonds
+    - yields
+    - spreads
+    - issuance
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_bonds_adoption
+  - verified_metrics_for_bonds
+  - finance_regulatory_or_competitive_response
+  - yields
+  - spreads
+  disambiguation_focus:
+  - Bonds
+  - bonds
+  - 'Bonds specific evaluation: Yields, spreads, issuance, rate sensitivity'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - fred
+    - market
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-currencies-theme
+  theme_id: finance-currencies-theme
+  micro_topic_id: currencies
+  micro_topic: currencies
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Currencies (currencies) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_currencies_developments
+    - verified_currencies_activity
+    excludes:
+    - tangential_finance_chatter_without_currencies_relevance
+    boundaries:
+    - focus_strictly_on_currencies_domain_significance
+  questions:
+  - what_changed_in_currencies
+  - how_does_new_currencies_differ_from_prior_state
+  - what_verifiable_evidence_supports_currencies
+  - what_are_the_operational_or_market_implications_for_currencies
+  - what_technical_limitations_or_uncertainties_remain_in_currencies
+  - what_is_the_status_of_fx_movement_for_currencies
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_currencies_exceeding_baseline
+    - independent_confirmation_of_currencies_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_currencies
+    - minor_routine_maintenance_or_repackaging_without_new_currencies_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - market
+      - central banks
+      freshness: 48h
+      focus:
+      - new_currencies_events
+      - verifiable_changes_in_currencies
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_currencies
+      - what_tools_methods_or_data_were_used_for_currencies
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - currencies_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Currencies (currencies) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Currencies lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Currencies.
+  action_rules:
+    monitor:
+    - track_emerging_currencies_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_currencies_documentation
+    - verify_reproducibility_of_reported_currencies_data
+  watch_rules:
+    monitor:
+    - next_currencies_milestone_or_release_date
+    - peer_review_or_independent_validation_of_currencies
+    - ecosystem_adoption_metrics_for_currencies
+  retrieval_intent:
+    required_concepts:
+    - Currencies
+    - currencies
+    - fx movement
+    - policy drivers
+    - trade impact
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_currencies_adoption
+  - verified_metrics_for_currencies
+  - finance_regulatory_or_competitive_response
+  - fx movement
+  - policy drivers
+  disambiguation_focus:
+  - Currencies
+  - currencies
+  - 'Currencies specific evaluation: FX movement, policy drivers, trade impact'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - market
+    - central banks
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-commodities-theme
+  theme_id: finance-commodities-theme
+  micro_topic_id: commodities
+  micro_topic: commodities
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Commodities (commodities) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_commodities_developments
+    - verified_commodities_activity
+    excludes:
+    - tangential_finance_chatter_without_commodities_relevance
+    boundaries:
+    - focus_strictly_on_commodities_domain_significance
+  questions:
+  - what_changed_in_commodities
+  - how_does_new_commodities_differ_from_prior_state
+  - what_verifiable_evidence_supports_commodities
+  - what_are_the_operational_or_market_implications_for_commodities
+  - what_technical_limitations_or_uncertainties_remain_in_commodities
+  - what_is_the_status_of_price_for_commodities
+  evidence_requirements: &id041
+  - eia
+  - cftc
+  - market
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_commodities_exceeding_baseline
+    - independent_confirmation_of_commodities_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_commodities
+    - minor_routine_maintenance_or_repackaging_without_new_commodities_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - eia
+      - cftc
+      - market
+      freshness: 48h
+      focus:
+      - new_commodities_events
+      - verifiable_changes_in_commodities
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_commodities
+      - what_tools_methods_or_data_were_used_for_commodities
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - commodities_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Commodities (commodities)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Commodities lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Commodities.
+  action_rules:
+    monitor:
+    - track_emerging_commodities_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_commodities_documentation
+    - verify_reproducibility_of_reported_commodities_data
+  watch_rules:
+    monitor:
+    - next_commodities_milestone_or_release_date
+    - peer_review_or_independent_validation_of_commodities
+    - ecosystem_adoption_metrics_for_commodities
+  retrieval_intent:
+    required_concepts:
+    - Commodities
+    - commodities
+    - price
+    - supply
+    - demand
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_commodities_adoption
+  - verified_metrics_for_commodities
+  - finance_regulatory_or_competitive_response
+  - price
+  - supply
+  disambiguation_focus:
+  - Commodities
+  - commodities
+  - 'Commodities specific evaluation: Price/supply/demand/geopolitical drivers'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - eia
+    - cftc
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-banking-theme
+  theme_id: finance-banking-theme
+  micro_topic_id: banking
+  micro_topic: banking
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Banking (banking) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_banking_developments
+    - verified_banking_activity
+    excludes:
+    - tangential_finance_chatter_without_banking_relevance
+    boundaries:
+    - focus_strictly_on_banking_domain_significance
+  questions:
+  - what_changed_in_banking
+  - how_does_new_banking_differ_from_prior_state
+  - what_verifiable_evidence_supports_banking
+  - what_are_the_operational_or_market_implications_for_banking
+  - what_technical_limitations_or_uncertainties_remain_in_banking
+  - what_is_the_status_of_capital_for_banking
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_banking_exceeding_baseline
+    - independent_confirmation_of_banking_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_banking
+    - minor_routine_maintenance_or_repackaging_without_new_banking_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - finance
+      - gov
+      freshness: 24h
+      focus:
+      - new_banking_events
+      - verifiable_changes_in_banking
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_banking
+      - what_tools_methods_or_data_were_used_for_banking
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - banking_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Banking (banking) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Banking lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Banking.
+  action_rules:
+    monitor:
+    - track_emerging_banking_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_banking_documentation
+    - verify_reproducibility_of_reported_banking_data
+  watch_rules:
+    monitor:
+    - next_banking_milestone_or_release_date
+    - peer_review_or_independent_validation_of_banking
+    - ecosystem_adoption_metrics_for_banking
+  retrieval_intent:
+    required_concepts:
+    - Banking
+    - banking
+    - capital
+    - liquidity
+    - failures
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_banking_adoption
+  - verified_metrics_for_banking
+  - finance_regulatory_or_competitive_response
+  - capital
+  - liquidity
+  disambiguation_focus:
+  - Banking
+  - banking
+  - 'Banking specific evaluation: Capital, liquidity, failures, regulation'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - finance
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-credit-theme
+  theme_id: finance-credit-theme
+  micro_topic_id: credit
+  micro_topic: credit
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Credit (credit) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_credit_developments
+    - verified_credit_activity
+    excludes:
+    - tangential_finance_chatter_without_credit_relevance
+    boundaries:
+    - focus_strictly_on_credit_domain_significance
+  questions:
+  - what_changed_in_credit
+  - how_does_new_credit_differ_from_prior_state
+  - what_verifiable_evidence_supports_credit
+  - what_are_the_operational_or_market_implications_for_credit
+  - what_technical_limitations_or_uncertainties_remain_in_credit
+  - what_is_the_status_of_credit_spreads_for_credit
+  evidence_requirements: &id051
+  - fred
+  - finance
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_credit_exceeding_baseline
+    - independent_confirmation_of_credit_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_credit
+    - minor_routine_maintenance_or_repackaging_without_new_credit_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - fred
+      - finance
+      freshness: 24h
+      focus:
+      - new_credit_events
+      - verifiable_changes_in_credit
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_credit
+      - what_tools_methods_or_data_were_used_for_credit
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - credit_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Credit (credit) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Credit lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Credit.
+  action_rules:
+    monitor:
+    - track_emerging_credit_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_credit_documentation
+    - verify_reproducibility_of_reported_credit_data
+  watch_rules:
+    monitor:
+    - next_credit_milestone_or_release_date
+    - peer_review_or_independent_validation_of_credit
+    - ecosystem_adoption_metrics_for_credit
+  retrieval_intent:
+    required_concepts:
+    - Credit
+    - credit
+    - credit spreads
+    - defaults
+    - lending conditions
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_credit_adoption
+  - verified_metrics_for_credit
+  - finance_regulatory_or_competitive_response
+  - credit spreads
+  - defaults
+  disambiguation_focus:
+  - Credit
+  - credit
+  - 'Credit specific evaluation: Credit spreads, defaults, lending conditions'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - fred
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-asset-managers-theme
+  theme_id: finance-asset-managers-theme
+  micro_topic_id: asset-managers
+  micro_topic: asset-managers
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Asset Managers (asset-managers) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_asset_managers_developments
+    - verified_asset_managers_activity
+    excludes:
+    - tangential_finance_chatter_without_asset_managers_relevance
+    boundaries:
+    - focus_strictly_on_asset-managers_domain_significance
+  questions:
+  - what_changed_in_asset_managers
+  - how_does_new_asset_managers_differ_from_prior_state
+  - what_verifiable_evidence_supports_asset_managers
+  - what_are_the_operational_or_market_implications_for_asset_managers
+  - what_technical_limitations_or_uncertainties_remain_in_asset_managers
+  - what_is_the_status_of_aum_for_asset_managers
+  evidence_requirements: &id056
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_asset_managers_exceeding_baseline
+    - independent_confirmation_of_asset_managers_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_asset_managers
+    - minor_routine_maintenance_or_repackaging_without_new_asset_managers_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - finance
+      - company
+      freshness: 48h
+      focus:
+      - new_asset_managers_events
+      - verifiable_changes_in_asset_managers
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_asset_managers
+      - what_tools_methods_or_data_were_used_for_asset_managers
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - asset_managers_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Asset Managers (asset-managers)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Asset Managers lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Asset Managers.
+  action_rules:
+    monitor:
+    - track_emerging_asset_managers_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_asset_managers_documentation
+    - verify_reproducibility_of_reported_asset_managers_data
+  watch_rules:
+    monitor:
+    - next_asset_managers_milestone_or_release_date
+    - peer_review_or_independent_validation_of_asset_managers
+    - ecosystem_adoption_metrics_for_asset_managers
+  retrieval_intent:
+    required_concepts:
+    - Asset Managers
+    - asset-managers
+    - aum
+    - flows
+    - strategy
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_asset_managers_adoption
+  - verified_metrics_for_asset_managers
+  - finance_regulatory_or_competitive_response
+  - aum
+  - flows
+  disambiguation_focus:
+  - Asset Managers
+  - asset-managers
+  - 'Asset Managers specific evaluation: AUM, flows, strategy, holdings'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - finance
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: finance-markets
+  theme_id: finance-markets
+  micro_topic_id: macroeconomics
+  micro_topic: macroeconomics
+  domain: finance
+  domain_id: finance
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Macroeconomics (macroeconomics) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_macroeconomics_developments
+    - verified_macroeconomics_activity
+    excludes:
+    - tangential_finance_chatter_without_macroeconomics_relevance
+    boundaries:
+    - focus_strictly_on_macroeconomics_domain_significance
+  questions:
+  - what_changed_in_macroeconomics
+  - how_does_new_macroeconomics_differ_from_prior_state
+  - what_verifiable_evidence_supports_macroeconomics
+  - what_are_the_operational_or_market_implications_for_macroeconomics
+  - what_technical_limitations_or_uncertainties_remain_in_macroeconomics
+  - what_is_the_status_of_cross_indicator_macro_regime_changes_for_macroeconomics
+  evidence_requirements: &id061
+  - fred
+  - imf
+  - world_bank
+  - finance
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id061
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_macroeconomics_exceeding_baseline
+    - independent_confirmation_of_macroeconomics_milestone_from_primary_source
+    - measurable_impact_on_finance_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_macroeconomics
+    - minor_routine_maintenance_or_repackaging_without_new_macroeconomics_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id062
+      preferred_sources: &id065
+      - fred
+      - imf
+      - world bank
+      - finance
+      freshness: 24h
+      focus:
+      - new_macroeconomics_events
+      - verifiable_changes_in_macroeconomics
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id063
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_macroeconomics
+      - what_tools_methods_or_data_were_used_for_macroeconomics
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id062
+    video: *id063
+  entity_extraction:
+    required:
+    - finance
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - macroeconomics_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: top_event
+    sections: &id064
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: top_event
+    sections: *id064
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Macroeconomics (macroeconomics)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Macroeconomics lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Macroeconomics.
+  action_rules:
+    monitor:
+    - track_emerging_macroeconomics_benchmarks
+    - follow_official_finance_announcements
+    investigate:
+    - audit_claims_against_primary_macroeconomics_documentation
+    - verify_reproducibility_of_reported_macroeconomics_data
+  watch_rules:
+    monitor:
+    - next_macroeconomics_milestone_or_release_date
+    - peer_review_or_independent_validation_of_macroeconomics
+    - ecosystem_adoption_metrics_for_macroeconomics
+  retrieval_intent:
+    required_concepts:
+    - Macroeconomics
+    - macroeconomics
+    - cross-indicator macro regime changes
+    preferred_source_types: *id065
+    evidence_types: *id061
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_macroeconomics_adoption
+  - verified_metrics_for_macroeconomics
+  - finance_regulatory_or_competitive_response
+  - cross-indicator macro regime changes
+  disambiguation_focus:
+  - Macroeconomics
+  - macroeconomics
+  - 'Macroeconomics specific evaluation: Cross-indicator macro regime changes'
+  - distinct from other finance topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - fred
+    - imf
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

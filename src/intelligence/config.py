@@ -7,7 +7,19 @@ from typing import Any
 import yaml
 import json
 
-from .validation import validate_dimensions, validate_microtopic_matrix, validate_microtopic_profiles, validate_normalization_registry, validate_microtopics, validate_profile_templates, validate_sources, validate_taxonomy, validate_topics, validate_themes, validate_theme_specificity
+from .validation import (
+    validate_dimensions,
+    validate_microtopic_matrix,
+    validate_microtopic_profiles,
+    validate_normalization_registry,
+    validate_microtopics,
+    validate_profile_templates,
+    validate_sources,
+    validate_taxonomy,
+    validate_topics,
+    validate_themes,
+    validate_theme_specificity,
+)
 from .contracts import VersionContract
 from .profiles import build_matrix_themes
 
@@ -39,6 +51,29 @@ def _read_json(path: Path) -> dict[str, Any]:
         return json.load(handle)
 
 
+def _load_themes(config_dir: Path) -> list[dict[str, Any]]:
+    registry_path = config_dir / "themes" / "registry.yaml"
+    if registry_path.exists():
+        registry = _read_yaml(registry_path)
+        includes = registry.get("includes", [])
+        themes_dir = config_dir / "themes"
+        all_themes: list[dict[str, Any]] = []
+        for inc in includes:
+            inc_path = themes_dir / inc
+            if inc_path.exists():
+                file_data = _read_yaml(inc_path)
+                if isinstance(file_data, dict):
+                    all_themes.extend(file_data.get("themes", []))
+                elif isinstance(file_data, list):
+                    all_themes.extend(file_data)
+        if all_themes:
+            return all_themes
+    themes_path = config_dir / "themes.yaml"
+    if themes_path.exists():
+        return _read_yaml(themes_path).get("themes", [])
+    return []
+
+
 def load_config(root: Path) -> AppConfig:
     config_dir = root / "config"
     taxonomy = _read_yaml(config_dir / "taxonomy.yaml")
@@ -59,7 +94,7 @@ def load_config(root: Path) -> AppConfig:
     profile_templates = _read_json(config_dir / "profile_templates.json")
     validate_profile_templates(matrix, profile_templates)
     settings = _read_yaml(config_dir / "settings.yaml")
-    themes = _read_yaml(config_dir / "themes.yaml").get("themes", [])
+    themes = _load_themes(config_dir)
     themes = build_matrix_themes(matrix["records"], profile_templates, themes)
     validate_themes(themes, taxonomy, matrix)
     profile_mode = settings.get("intelligence", {}).get("profile_mode", "production")

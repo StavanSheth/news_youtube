@@ -1,0 +1,28 @@
+# Theme Registry
+# This file defines the canonical list of theme domain files.
+# The loader merges all domain files into the unified themes list.
+# Resolution order: exact micro_topic → topic → domain → global
+
+includes:
+  - fallbacks.yaml
+  - artificial-intelligence.yaml
+  - software-engineering.yaml
+  - github-open-source.yaml
+  - cybersecurity.yaml
+  - semiconductors.yaml
+  - space.yaml
+  - defence.yaml
+  - government-policy.yaml
+  - finance.yaml
+  - geopolitics.yaml
+  - startups-vc.yaml
+  - research.yaml
+  - technology-companies.yaml
+  - quantum-computing.yaml
+  - energy.yaml
+  - shipping-logistics.yaml
+  - manufacturing.yaml
+  - leaders-people.yaml
+  - opportunities.yaml
+  - regional-government.yaml
+  - conferences.yaml

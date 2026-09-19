@@ -1,0 +1,1991 @@
+themes:
+- id: defence-procurement-theme
+  theme_id: defence-procurement-theme
+  micro_topic_id: procurement
+  micro_topic: procurement
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Procurement (procurement) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_procurement_developments
+    - verified_procurement_activity
+    excludes:
+    - tangential_defence_chatter_without_procurement_relevance
+    boundaries:
+    - focus_strictly_on_procurement_domain_significance
+  questions:
+  - what_changed_in_procurement
+  - how_does_new_procurement_differ_from_prior_state
+  - what_verifiable_evidence_supports_procurement
+  - what_are_the_operational_or_market_implications_for_procurement
+  - what_technical_limitations_or_uncertainties_remain_in_procurement
+  - what_is_the_status_of_contract_for_procurement
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_procurement_exceeding_baseline
+    - independent_confirmation_of_procurement_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_procurement
+    - minor_routine_maintenance_or_repackaging_without_new_procurement_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - procurement
+      - gov-us
+      - gov-india
+      freshness: 48h
+      focus:
+      - new_procurement_events
+      - verifiable_changes_in_procurement
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_procurement
+      - what_tools_methods_or_data_were_used_for_procurement
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - procurement_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Procurement (procurement)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Procurement lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Procurement.
+  action_rules:
+    monitor:
+    - track_emerging_procurement_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_procurement_documentation
+    - verify_reproducibility_of_reported_procurement_data
+  watch_rules:
+    monitor:
+    - next_procurement_milestone_or_release_date
+    - peer_review_or_independent_validation_of_procurement
+    - ecosystem_adoption_metrics_for_procurement
+  retrieval_intent:
+    required_concepts:
+    - Procurement
+    - procurement
+    - contract
+    - buyer
+    - supplier
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_procurement_adoption
+  - verified_metrics_for_procurement
+  - defence_regulatory_or_competitive_response
+  - contract
+  - buyer
+  disambiguation_focus:
+  - Procurement
+  - procurement
+  - 'Procurement specific evaluation: Contract, buyer, supplier, value, delivery'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - procurement
+    - gov-us
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-military-technology-theme
+  theme_id: defence-military-technology-theme
+  micro_topic_id: military-technology
+  micro_topic: military-technology
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Military Technology (military-technology) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_military_technology_developments
+    - verified_military_technology_activity
+    excludes:
+    - tangential_defence_chatter_without_military_technology_relevance
+    boundaries:
+    - focus_strictly_on_military-technology_domain_significance
+  questions:
+  - what_changed_in_military_technology
+  - how_does_new_military_technology_differ_from_prior_state
+  - what_verifiable_evidence_supports_military_technology
+  - what_are_the_operational_or_market_implications_for_military_technology
+  - what_technical_limitations_or_uncertainties_remain_in_military_technology
+  - what_is_the_status_of_capability_changes_and_operational_readiness_for_military_technology
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_military_technology_exceeding_baseline
+    - independent_confirmation_of_military_technology_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_military_technology
+    - minor_routine_maintenance_or_repackaging_without_new_military_technology_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - military
+      - news-global
+      freshness: 48h
+      focus:
+      - new_military_technology_events
+      - verifiable_changes_in_military_technology
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_military_technology
+      - what_tools_methods_or_data_were_used_for_military_technology
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - military_technology_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Military Technology (military-technology)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Military Technology lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Military Technology.
+  action_rules:
+    monitor:
+    - track_emerging_military_technology_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_military_technology_documentation
+    - verify_reproducibility_of_reported_military_technology_data
+  watch_rules:
+    monitor:
+    - next_military_technology_milestone_or_release_date
+    - peer_review_or_independent_validation_of_military_technology
+    - ecosystem_adoption_metrics_for_military_technology
+  retrieval_intent:
+    required_concepts:
+    - Military Technology
+    - military-technology
+    - capability changes and operational readiness
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_military_technology_adoption
+  - verified_metrics_for_military_technology
+  - defence_regulatory_or_competitive_response
+  - capability changes and operational readiness
+  disambiguation_focus:
+  - Military Technology
+  - military-technology
+  - 'Military Technology specific evaluation: Capability changes and operational readiness'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - military
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-drones-theme
+  theme_id: defence-drones-theme
+  micro_topic_id: drones
+  micro_topic: drones
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Drones (drones) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_drones_developments
+    - verified_drones_activity
+    excludes:
+    - tangential_defence_chatter_without_drones_relevance
+    boundaries:
+    - focus_strictly_on_drones_domain_significance
+  questions:
+  - what_changed_in_drones
+  - how_does_new_drones_differ_from_prior_state
+  - what_verifiable_evidence_supports_drones
+  - what_are_the_operational_or_market_implications_for_drones
+  - what_technical_limitations_or_uncertainties_remain_in_drones
+  - what_is_the_status_of_platform_for_drones
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_drones_exceeding_baseline
+    - independent_confirmation_of_drones_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_drones
+    - minor_routine_maintenance_or_repackaging_without_new_drones_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - military
+      - research
+      freshness: 48h
+      focus:
+      - new_drones_events
+      - verifiable_changes_in_drones
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_drones
+      - what_tools_methods_or_data_were_used_for_drones
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - drones_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Drones (drones) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Drones lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Drones.
+  action_rules:
+    monitor:
+    - track_emerging_drones_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_drones_documentation
+    - verify_reproducibility_of_reported_drones_data
+  watch_rules:
+    monitor:
+    - next_drones_milestone_or_release_date
+    - peer_review_or_independent_validation_of_drones
+    - ecosystem_adoption_metrics_for_drones
+  retrieval_intent:
+    required_concepts:
+    - Drones
+    - drones
+    - platform
+    - autonomy
+    - deployment
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_drones_adoption
+  - verified_metrics_for_drones
+  - defence_regulatory_or_competitive_response
+  - platform
+  - autonomy
+  disambiguation_focus:
+  - Drones
+  - drones
+  - 'Drones specific evaluation: Platform, autonomy, deployment, effectiveness'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - military
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-missiles-theme
+  theme_id: defence-missiles-theme
+  micro_topic_id: missiles
+  micro_topic: missiles
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Missiles (missiles) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_missiles_developments
+    - verified_missiles_activity
+    excludes:
+    - tangential_defence_chatter_without_missiles_relevance
+    boundaries:
+    - focus_strictly_on_missiles_domain_significance
+  questions:
+  - what_changed_in_missiles
+  - how_does_new_missiles_differ_from_prior_state
+  - what_verifiable_evidence_supports_missiles
+  - what_are_the_operational_or_market_implications_for_missiles
+  - what_technical_limitations_or_uncertainties_remain_in_missiles
+  - what_is_the_status_of_development_for_missiles
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_missiles_exceeding_baseline
+    - independent_confirmation_of_missiles_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_missiles
+    - minor_routine_maintenance_or_repackaging_without_new_missiles_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - military
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_missiles_events
+      - verifiable_changes_in_missiles
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_missiles
+      - what_tools_methods_or_data_were_used_for_missiles
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - missiles_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Missiles (missiles) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Missiles lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Missiles.
+  action_rules:
+    monitor:
+    - track_emerging_missiles_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_missiles_documentation
+    - verify_reproducibility_of_reported_missiles_data
+  watch_rules:
+    monitor:
+    - next_missiles_milestone_or_release_date
+    - peer_review_or_independent_validation_of_missiles
+    - ecosystem_adoption_metrics_for_missiles
+  retrieval_intent:
+    required_concepts:
+    - Missiles
+    - missiles
+    - development
+    - range
+    - deployment
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_missiles_adoption
+  - verified_metrics_for_missiles
+  - defence_regulatory_or_competitive_response
+  - development
+  - range
+  disambiguation_focus:
+  - Missiles
+  - missiles
+  - 'Missiles specific evaluation: Development, range, deployment, interception'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - military
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-air-defence-theme
+  theme_id: defence-air-defence-theme
+  micro_topic_id: air-defence
+  micro_topic: air-defence
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Air Defence (air-defence) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_air_defence_developments
+    - verified_air_defence_activity
+    excludes:
+    - tangential_defence_chatter_without_air_defence_relevance
+    boundaries:
+    - focus_strictly_on_air-defence_domain_significance
+  questions:
+  - what_changed_in_air_defence
+  - how_does_new_air_defence_differ_from_prior_state
+  - what_verifiable_evidence_supports_air_defence
+  - what_are_the_operational_or_market_implications_for_air_defence
+  - what_technical_limitations_or_uncertainties_remain_in_air_defence
+  - what_is_the_status_of_systems_for_air_defence
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_air_defence_exceeding_baseline
+    - independent_confirmation_of_air_defence_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_air_defence
+    - minor_routine_maintenance_or_repackaging_without_new_air_defence_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - military
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_air_defence_events
+      - verifiable_changes_in_air_defence
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_air_defence
+      - what_tools_methods_or_data_were_used_for_air_defence
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - air_defence_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Air Defence (air-defence)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Air Defence lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Air Defence.
+  action_rules:
+    monitor:
+    - track_emerging_air_defence_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_air_defence_documentation
+    - verify_reproducibility_of_reported_air_defence_data
+  watch_rules:
+    monitor:
+    - next_air_defence_milestone_or_release_date
+    - peer_review_or_independent_validation_of_air_defence
+    - ecosystem_adoption_metrics_for_air_defence
+  retrieval_intent:
+    required_concepts:
+    - Air Defence
+    - air-defence
+    - systems
+    - interception
+    - deployment
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_air_defence_adoption
+  - verified_metrics_for_air_defence
+  - defence_regulatory_or_competitive_response
+  - systems
+  - interception
+  disambiguation_focus:
+  - Air Defence
+  - air-defence
+  - 'Air Defence specific evaluation: Systems, interception, deployment'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - military
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-naval-systems-theme
+  theme_id: defence-naval-systems-theme
+  micro_topic_id: naval-systems
+  micro_topic: naval-systems
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Naval Systems (naval-systems) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_naval_systems_developments
+    - verified_naval_systems_activity
+    excludes:
+    - tangential_defence_chatter_without_naval_systems_relevance
+    boundaries:
+    - focus_strictly_on_naval-systems_domain_significance
+  questions:
+  - what_changed_in_naval_systems
+  - how_does_new_naval_systems_differ_from_prior_state
+  - what_verifiable_evidence_supports_naval_systems
+  - what_are_the_operational_or_market_implications_for_naval_systems
+  - what_technical_limitations_or_uncertainties_remain_in_naval_systems
+  - what_is_the_status_of_ships_for_naval_systems
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_naval_systems_exceeding_baseline
+    - independent_confirmation_of_naval_systems_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_naval_systems
+    - minor_routine_maintenance_or_repackaging_without_new_naval_systems_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - military
+      - shipping
+      freshness: 48h
+      focus:
+      - new_naval_systems_events
+      - verifiable_changes_in_naval_systems
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_naval_systems
+      - what_tools_methods_or_data_were_used_for_naval_systems
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - naval_systems_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Naval Systems (naval-systems)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Naval Systems lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Naval Systems.
+  action_rules:
+    monitor:
+    - track_emerging_naval_systems_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_naval_systems_documentation
+    - verify_reproducibility_of_reported_naval_systems_data
+  watch_rules:
+    monitor:
+    - next_naval_systems_milestone_or_release_date
+    - peer_review_or_independent_validation_of_naval_systems
+    - ecosystem_adoption_metrics_for_naval_systems
+  retrieval_intent:
+    required_concepts:
+    - Naval Systems
+    - naval-systems
+    - ships
+    - submarines
+    - sensors
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_naval_systems_adoption
+  - verified_metrics_for_naval_systems
+  - defence_regulatory_or_competitive_response
+  - ships
+  - submarines
+  disambiguation_focus:
+  - Naval Systems
+  - naval-systems
+  - 'Naval Systems specific evaluation: Ships, submarines, sensors, weapons'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - military
+    - shipping
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-electronic-warfare-theme
+  theme_id: defence-electronic-warfare-theme
+  micro_topic_id: electronic-warfare
+  micro_topic: electronic-warfare
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Electronic Warfare (electronic-warfare) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_electronic_warfare_developments
+    - verified_electronic_warfare_activity
+    excludes:
+    - tangential_defence_chatter_without_electronic_warfare_relevance
+    boundaries:
+    - focus_strictly_on_electronic-warfare_domain_significance
+  questions:
+  - what_changed_in_electronic_warfare
+  - how_does_new_electronic_warfare_differ_from_prior_state
+  - what_verifiable_evidence_supports_electronic_warfare
+  - what_are_the_operational_or_market_implications_for_electronic_warfare
+  - what_technical_limitations_or_uncertainties_remain_in_electronic_warfare
+  - what_is_the_status_of_jamming_for_electronic_warfare
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_electronic_warfare_exceeding_baseline
+    - independent_confirmation_of_electronic_warfare_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_electronic_warfare
+    - minor_routine_maintenance_or_repackaging_without_new_electronic_warfare_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - military
+      - research
+      freshness: 48h
+      focus:
+      - new_electronic_warfare_events
+      - verifiable_changes_in_electronic_warfare
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_electronic_warfare
+      - what_tools_methods_or_data_were_used_for_electronic_warfare
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - electronic_warfare_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Electronic Warfare (electronic-warfare)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Electronic Warfare lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Electronic Warfare.
+  action_rules:
+    monitor:
+    - track_emerging_electronic_warfare_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_electronic_warfare_documentation
+    - verify_reproducibility_of_reported_electronic_warfare_data
+  watch_rules:
+    monitor:
+    - next_electronic_warfare_milestone_or_release_date
+    - peer_review_or_independent_validation_of_electronic_warfare
+    - ecosystem_adoption_metrics_for_electronic_warfare
+  retrieval_intent:
+    required_concepts:
+    - Electronic Warfare
+    - electronic-warfare
+    - jamming
+    - spoofing
+    - detection
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_electronic_warfare_adoption
+  - verified_metrics_for_electronic_warfare
+  - defence_regulatory_or_competitive_response
+  - jamming
+  - spoofing
+  disambiguation_focus:
+  - Electronic Warfare
+  - electronic-warfare
+  - 'Electronic Warfare specific evaluation: Jamming, spoofing, detection, countermeasures'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - military
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-cyber-warfare-theme
+  theme_id: defence-cyber-warfare-theme
+  micro_topic_id: cyber-warfare
+  micro_topic: cyber-warfare
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Cyber Warfare (cyber-warfare) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_cyber_warfare_developments
+    - verified_cyber_warfare_activity
+    excludes:
+    - tangential_defence_chatter_without_cyber_warfare_relevance
+    boundaries:
+    - focus_strictly_on_cyber-warfare_domain_significance
+  questions:
+  - what_changed_in_cyber_warfare
+  - how_does_new_cyber_warfare_differ_from_prior_state
+  - what_verifiable_evidence_supports_cyber_warfare
+  - what_are_the_operational_or_market_implications_for_cyber_warfare
+  - what_technical_limitations_or_uncertainties_remain_in_cyber_warfare
+  - what_is_the_status_of_state_operations_for_cyber_warfare
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_cyber_warfare_exceeding_baseline
+    - independent_confirmation_of_cyber_warfare_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_cyber_warfare
+    - minor_routine_maintenance_or_repackaging_without_new_cyber_warfare_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - cyber
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_cyber_warfare_events
+      - verifiable_changes_in_cyber_warfare
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_cyber_warfare
+      - what_tools_methods_or_data_were_used_for_cyber_warfare
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - cyber_warfare_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Cyber Warfare (cyber-warfare)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Cyber Warfare lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Cyber Warfare.
+  action_rules:
+    monitor:
+    - track_emerging_cyber_warfare_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_cyber_warfare_documentation
+    - verify_reproducibility_of_reported_cyber_warfare_data
+  watch_rules:
+    monitor:
+    - next_cyber_warfare_milestone_or_release_date
+    - peer_review_or_independent_validation_of_cyber_warfare
+    - ecosystem_adoption_metrics_for_cyber_warfare
+  retrieval_intent:
+    required_concepts:
+    - Cyber Warfare
+    - cyber-warfare
+    - state operations
+    - offensive
+    - defensive capabilities
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_cyber_warfare_adoption
+  - verified_metrics_for_cyber_warfare
+  - defence_regulatory_or_competitive_response
+  - state operations
+  - offensive
+  disambiguation_focus:
+  - Cyber Warfare
+  - cyber-warfare
+  - 'Cyber Warfare specific evaluation: State operations, offensive/defensive capabilities'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-military-ai-theme
+  theme_id: defence-military-ai-theme
+  micro_topic_id: military-ai
+  micro_topic: military-ai
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Military AI (military-ai) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_military_ai_developments
+    - verified_military_ai_activity
+    excludes:
+    - tangential_defence_chatter_without_military_ai_relevance
+    boundaries:
+    - focus_strictly_on_military-ai_domain_significance
+  questions:
+  - what_changed_in_military_ai
+  - how_does_new_military_ai_differ_from_prior_state
+  - what_verifiable_evidence_supports_military_ai
+  - what_are_the_operational_or_market_implications_for_military_ai
+  - what_technical_limitations_or_uncertainties_remain_in_military_ai
+  - what_is_the_status_of_ai_enabled_targeting_for_military_ai
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_military_ai_exceeding_baseline
+    - independent_confirmation_of_military_ai_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_military_ai
+    - minor_routine_maintenance_or_repackaging_without_new_military_ai_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - military
+      - ai
+      - research
+      freshness: 48h
+      focus:
+      - new_military_ai_events
+      - verifiable_changes_in_military_ai
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_military_ai
+      - what_tools_methods_or_data_were_used_for_military_ai
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - military_ai_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Military AI (military-ai)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Military AI lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Military AI.
+  action_rules:
+    monitor:
+    - track_emerging_military_ai_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_military_ai_documentation
+    - verify_reproducibility_of_reported_military_ai_data
+  watch_rules:
+    monitor:
+    - next_military_ai_milestone_or_release_date
+    - peer_review_or_independent_validation_of_military_ai
+    - ecosystem_adoption_metrics_for_military_ai
+  retrieval_intent:
+    required_concepts:
+    - Military AI
+    - military-ai
+    - ai-enabled targeting
+    - autonomy
+    - logistics
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_military_ai_adoption
+  - verified_metrics_for_military_ai
+  - defence_regulatory_or_competitive_response
+  - ai-enabled targeting
+  - autonomy
+  disambiguation_focus:
+  - Military AI
+  - military-ai
+  - 'Military AI specific evaluation: AI-enabled targeting, autonomy, logistics'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - military
+    - ai
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-defence-policy-theme
+  theme_id: defence-defence-policy-theme
+  micro_topic_id: defence-policy
+  micro_topic: defence-policy
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Defence Policy (defence-policy) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_defence_policy_developments
+    - verified_defence_policy_activity
+    excludes:
+    - tangential_defence_chatter_without_defence_policy_relevance
+    boundaries:
+    - focus_strictly_on_defence-policy_domain_significance
+  questions:
+  - what_changed_in_defence_policy
+  - how_does_new_defence_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_defence_policy
+  - what_are_the_operational_or_market_implications_for_defence_policy
+  - what_technical_limitations_or_uncertainties_remain_in_defence_policy
+  - what_is_the_status_of_strategy_for_defence_policy
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_defence_policy_exceeding_baseline
+    - independent_confirmation_of_defence_policy_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_defence_policy
+    - minor_routine_maintenance_or_repackaging_without_new_defence_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - gov
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_defence_policy_events
+      - verifiable_changes_in_defence_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_defence_policy
+      - what_tools_methods_or_data_were_used_for_defence_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - defence_policy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Defence Policy (defence-policy)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Defence Policy lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Defence Policy.
+  action_rules:
+    monitor:
+    - track_emerging_defence_policy_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_defence_policy_documentation
+    - verify_reproducibility_of_reported_defence_policy_data
+  watch_rules:
+    monitor:
+    - next_defence_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_defence_policy
+    - ecosystem_adoption_metrics_for_defence_policy
+  retrieval_intent:
+    required_concepts:
+    - Defence Policy
+    - defence-policy
+    - strategy
+    - budgets
+    - doctrine
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_defence_policy_adoption
+  - verified_metrics_for_defence_policy
+  - defence_regulatory_or_competitive_response
+  - strategy
+  - budgets
+  disambiguation_focus:
+  - Defence Policy
+  - defence-policy
+  - 'Defence Policy specific evaluation: Strategy, budgets, doctrine'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-strategic-capabilities-theme
+  theme_id: defence-strategic-capabilities-theme
+  micro_topic_id: strategic-capabilities
+  micro_topic: strategic-capabilities
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Strategic Capabilities (strategic-capabilities) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_strategic_capabilities_developments
+    - verified_strategic_capabilities_activity
+    excludes:
+    - tangential_defence_chatter_without_strategic_capabilities_relevance
+    boundaries:
+    - focus_strictly_on_strategic-capabilities_domain_significance
+  questions:
+  - what_changed_in_strategic_capabilities
+  - how_does_new_strategic_capabilities_differ_from_prior_state
+  - what_verifiable_evidence_supports_strategic_capabilities
+  - what_are_the_operational_or_market_implications_for_strategic_capabilities
+  - what_technical_limitations_or_uncertainties_remain_in_strategic_capabilities
+  - what_is_the_status_of_nuclear_for_strategic_capabilities
+  evidence_requirements: &id051
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_strategic_capabilities_exceeding_baseline
+    - independent_confirmation_of_strategic_capabilities_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_strategic_capabilities
+    - minor_routine_maintenance_or_repackaging_without_new_strategic_capabilities_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - geopolitics
+      - military
+      freshness: 48h
+      focus:
+      - new_strategic_capabilities_events
+      - verifiable_changes_in_strategic_capabilities
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_strategic_capabilities
+      - what_tools_methods_or_data_were_used_for_strategic_capabilities
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - strategic_capabilities_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Strategic Capabilities (strategic-capabilities)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Strategic Capabilities lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Strategic Capabilities.
+  action_rules:
+    monitor:
+    - track_emerging_strategic_capabilities_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_strategic_capabilities_documentation
+    - verify_reproducibility_of_reported_strategic_capabilities_data
+  watch_rules:
+    monitor:
+    - next_strategic_capabilities_milestone_or_release_date
+    - peer_review_or_independent_validation_of_strategic_capabilities
+    - ecosystem_adoption_metrics_for_strategic_capabilities
+  retrieval_intent:
+    required_concepts:
+    - Strategic Capabilities
+    - strategic-capabilities
+    - nuclear
+    - missile defence
+    - strategic assets
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_strategic_capabilities_adoption
+  - verified_metrics_for_strategic_capabilities
+  - defence_regulatory_or_competitive_response
+  - nuclear
+  - missile defence
+  disambiguation_focus:
+  - Strategic Capabilities
+  - strategic-capabilities
+  - 'Strategic Capabilities specific evaluation: Nuclear, missile defence, strategic
+    assets'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - geopolitics
+    - military
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: defence-defence-procurement-theme
+  theme_id: defence-defence-procurement-theme
+  micro_topic_id: defence-procurement
+  micro_topic: defence-procurement
+  domain: defence
+  domain_id: defence
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Defence Procurement (defence-procurement) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_defence_procurement_developments
+    - verified_defence_procurement_activity
+    excludes:
+    - tangential_defence_chatter_without_defence_procurement_relevance
+    boundaries:
+    - focus_strictly_on_defence-procurement_domain_significance
+  questions:
+  - what_changed_in_defence_procurement
+  - how_does_new_defence_procurement_differ_from_prior_state
+  - what_verifiable_evidence_supports_defence_procurement
+  - what_are_the_operational_or_market_implications_for_defence_procurement
+  - what_technical_limitations_or_uncertainties_remain_in_defence_procurement
+  - what_is_the_status_of_major_procurement_decisions_and_industrial_impact_for_defence_procurement
+  evidence_requirements: &id056
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_defence_procurement_exceeding_baseline
+    - independent_confirmation_of_defence_procurement_milestone_from_primary_source
+    - measurable_impact_on_defence_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_defence_procurement
+    - minor_routine_maintenance_or_repackaging_without_new_defence_procurement_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - procurement
+      - military
+      freshness: 48h
+      focus:
+      - new_defence_procurement_events
+      - verifiable_changes_in_defence_procurement
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_defence_procurement
+      - what_tools_methods_or_data_were_used_for_defence_procurement
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - defence
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - defence_procurement_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Defence Procurement (defence-procurement)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Defence Procurement lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Defence Procurement.
+  action_rules:
+    monitor:
+    - track_emerging_defence_procurement_benchmarks
+    - follow_official_defence_announcements
+    investigate:
+    - audit_claims_against_primary_defence_procurement_documentation
+    - verify_reproducibility_of_reported_defence_procurement_data
+  watch_rules:
+    monitor:
+    - next_defence_procurement_milestone_or_release_date
+    - peer_review_or_independent_validation_of_defence_procurement
+    - ecosystem_adoption_metrics_for_defence_procurement
+  retrieval_intent:
+    required_concepts:
+    - Defence Procurement
+    - defence-procurement
+    - major procurement decisions and industrial impact
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_defence_procurement_adoption
+  - verified_metrics_for_defence_procurement
+  - defence_regulatory_or_competitive_response
+  - major procurement decisions and industrial impact
+  disambiguation_focus:
+  - Defence Procurement
+  - defence-procurement
+  - 'Defence Procurement specific evaluation: Major procurement decisions and industrial
+    impact'
+  - distinct from other defence topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - procurement
+    - military
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

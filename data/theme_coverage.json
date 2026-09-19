@@ -1,0 +1,107 @@
+{
+  "summary": {
+    "total_micro_topics": 236,
+    "bespoke_themes": 236,
+    "coverage_pct": 100.0,
+    "complete": true
+  },
+  "domain_breakdown": {
+    "artificial-intelligence": {
+      "total": 23,
+      "covered": 23
+    },
+    "software-engineering": {
+      "total": 15,
+      "covered": 15
+    },
+    "github-open-source": {
+      "total": 11,
+      "covered": 11
+    },
+    "quantum-computing": {
+      "total": 9,
+      "covered": 9
+    },
+    "space": {
+      "total": 13,
+      "covered": 13
+    },
+    "defence": {
+      "total": 12,
+      "covered": 12
+    },
+    "cybersecurity": {
+      "total": 14,
+      "covered": 14
+    },
+    "semiconductors": {
+      "total": 14,
+      "covered": 14
+    },
+    "startups-vc": {
+      "total": 10,
+      "covered": 10
+    },
+    "government-policy": {
+      "total": 12,
+      "covered": 12
+    },
+    "regional-government": {
+      "total": 7,
+      "covered": 7
+    },
+    "geopolitics": {
+      "total": 10,
+      "covered": 10
+    },
+    "energy": {
+      "total": 13,
+      "covered": 13
+    },
+    "shipping-logistics": {
+      "total": 9,
+      "covered": 9
+    },
+    "manufacturing": {
+      "total": 8,
+      "covered": 8
+    },
+    "leaders-people": {
+      "total": 8,
+      "covered": 8
+    },
+    "technology-companies": {
+      "total": 8,
+      "covered": 8
+    },
+    "conferences": {
+      "total": 8,
+      "covered": 8
+    },
+    "research": {
+      "total": 10,
+      "covered": 10
+    },
+    "opportunities": {
+      "total": 9,
+      "covered": 9
+    },
+    "finance": {
+      "total": 13,
+      "covered": 13
+    }
+  },
+  "validation_details": {
+    "total_records": 236,
+    "covered_count": 236,
+    "uncovered_count": 0,
+    "orphan_count": 0,
+    "duplicate_ids": [],
+    "coverage_percentage": 100.0,
+    "uncovered_micro_topics": [],
+    "orphan_micro_topics": [],
+    "failures": [],
+    "low_specificity": [],
+    "is_complete": true
+  }
+}

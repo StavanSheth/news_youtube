@@ -62,6 +62,7 @@ def check_chunk_eligibility(
     now: datetime | None = None,
     publication_cutoff: datetime | None = None,
     disabled_sources: set[str] | None = None,
+    quarantined_sources: set[str] | None = None,
 ) -> tuple[bool, str]:
     """Perform pre-ranking hard eligibility verification on a candidate chunk."""
     now = now or datetime.now(UTC)
@@ -80,8 +81,20 @@ def check_chunk_eligibility(
     if url and not url.startswith(("http://", "https://")):
         return False, "INVALID_URL_SCHEME"
 
+    # Strict Quarantine check per Section 12
+    if (
+        metadata.get("quarantined")
+        or str(metadata.get("status", "")).upper() in ("QUARANTINED", "QUARANTINE")
+        or str(metadata.get("source_acceptance_status", "")).upper() in ("QUARANTINED", "QUARANTINE")
+        or str(metadata.get("acceptance_status", "")).upper() in ("QUARANTINED", "QUARANTINE")
+    ):
+        return False, "QUARANTINED_SOURCE"
+
+    if quarantined_sources and str(source_id).lower() in {s.lower() for s in quarantined_sources}:
+        return False, "QUARANTINED_SOURCE"
+
     # Source enabled check
-    if disabled_sources and str(source_id).lower() in disabled_sources:
+    if disabled_sources and str(source_id).lower() in {s.lower() for s in disabled_sources}:
         return False, "DISABLED_SOURCE"
 
     # Trust tier check (1..4)
@@ -145,11 +158,12 @@ def check_chunk_eligibility(
 
 def filter_eligible_candidates(
     candidates: list[dict[str, Any]],
-    request: RetrievalRequest,
+    request: RetrievalRequest | None = None,
     *,
     now: datetime | None = None,
     publication_cutoff: datetime | None = None,
     disabled_sources: set[str] | None = None,
+    quarantined_sources: set[str] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Filter candidates, returning eligible items and full rejection diagnostics."""
     eligible = []
@@ -163,6 +177,7 @@ def filter_eligible_candidates(
             now=now,
             publication_cutoff=publication_cutoff,
             disabled_sources=disabled_sources,
+            quarantined_sources=quarantined_sources,
         )
         if is_eligible:
             eligible.append(chunk)

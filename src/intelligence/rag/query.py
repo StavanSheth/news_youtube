@@ -84,8 +84,14 @@ def build_retrieval_request(
     topic = str(classification.get("topic", theme.get("topic", "")))
 
     # Retrieval intent resolution
-    theme_intent = theme.get("retrieval_intent", {}) or {}
-    profile_intent = classification.get("profile", {}).get("retrieval_intent", {}) if isinstance(classification.get("profile"), dict) else {}
+    raw_theme_intent = theme.get("retrieval_intent", {}) or {}
+    theme_intent = {"primary_query": raw_theme_intent} if isinstance(raw_theme_intent, str) else dict(raw_theme_intent)
+    raw_profile_intent = (
+        classification.get("profile", {}).get("retrieval_intent", {})
+        if isinstance(classification.get("profile"), dict)
+        else {}
+    ) or {}
+    profile_intent = {"primary_query": raw_profile_intent} if isinstance(raw_profile_intent, str) else dict(raw_profile_intent)
     intent = {**theme_intent, **profile_intent}
 
     required_concepts = tuple(

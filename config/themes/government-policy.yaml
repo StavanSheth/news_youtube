@@ -1,0 +1,1974 @@
+themes:
+- id: government-policy-regulation-theme
+  theme_id: government-policy-regulation-theme
+  micro_topic_id: regulation
+  micro_topic: regulation
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Regulation (regulation) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_regulation_developments
+    - verified_regulation_activity
+    excludes:
+    - tangential_government-policy_chatter_without_regulation_relevance
+    boundaries:
+    - focus_strictly_on_regulation_domain_significance
+  questions:
+  - what_changed_in_regulation
+  - how_does_new_regulation_differ_from_prior_state
+  - what_verifiable_evidence_supports_regulation
+  - what_are_the_operational_or_market_implications_for_regulation
+  - what_technical_limitations_or_uncertainties_remain_in_regulation
+  - what_is_the_status_of_new_binding_requirements_for_regulation
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_regulation_exceeding_baseline
+    - independent_confirmation_of_regulation_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_regulation
+    - minor_routine_maintenance_or_repackaging_without_new_regulation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - gov
+      - news-global
+      freshness: 48h
+      focus:
+      - new_regulation_events
+      - verifiable_changes_in_regulation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_regulation
+      - what_tools_methods_or_data_were_used_for_regulation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - regulation_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Regulation (regulation) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Regulation lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Regulation.
+  action_rules:
+    monitor:
+    - track_emerging_regulation_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_regulation_documentation
+    - verify_reproducibility_of_reported_regulation_data
+  watch_rules:
+    monitor:
+    - next_regulation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_regulation
+    - ecosystem_adoption_metrics_for_regulation
+  retrieval_intent:
+    required_concepts:
+    - Regulation
+    - regulation
+    - new binding requirements
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_regulation_adoption
+  - verified_metrics_for_regulation
+  - government_policy_regulatory_or_competitive_response
+  - new binding requirements
+  disambiguation_focus:
+  - Regulation
+  - regulation
+  - 'Regulation specific evaluation: New binding requirements'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-legislation-theme
+  theme_id: government-policy-legislation-theme
+  micro_topic_id: legislation
+  micro_topic: legislation
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Legislation (legislation) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_legislation_developments
+    - verified_legislation_activity
+    excludes:
+    - tangential_government-policy_chatter_without_legislation_relevance
+    boundaries:
+    - focus_strictly_on_legislation_domain_significance
+  questions:
+  - what_changed_in_legislation
+  - how_does_new_legislation_differ_from_prior_state
+  - what_verifiable_evidence_supports_legislation
+  - what_are_the_operational_or_market_implications_for_legislation
+  - what_technical_limitations_or_uncertainties_remain_in_legislation
+  - what_is_the_status_of_bills_for_legislation
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_legislation_exceeding_baseline
+    - independent_confirmation_of_legislation_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_legislation
+    - minor_routine_maintenance_or_repackaging_without_new_legislation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - gov
+      freshness: 48h
+      focus:
+      - new_legislation_events
+      - verifiable_changes_in_legislation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_legislation
+      - what_tools_methods_or_data_were_used_for_legislation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - legislation_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Legislation (legislation)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Legislation lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Legislation.
+  action_rules:
+    monitor:
+    - track_emerging_legislation_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_legislation_documentation
+    - verify_reproducibility_of_reported_legislation_data
+  watch_rules:
+    monitor:
+    - next_legislation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_legislation
+    - ecosystem_adoption_metrics_for_legislation
+  retrieval_intent:
+    required_concepts:
+    - Legislation
+    - legislation
+    - bills
+    - passage
+    - effective date
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_legislation_adoption
+  - verified_metrics_for_legislation
+  - government_policy_regulatory_or_competitive_response
+  - bills
+  - passage
+  disambiguation_focus:
+  - Legislation
+  - legislation
+  - 'Legislation specific evaluation: Bills, passage, effective date'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-ministries-theme
+  theme_id: government-policy-ministries-theme
+  micro_topic_id: ministries
+  micro_topic: ministries
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Ministries (ministries) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ministries_developments
+    - verified_ministries_activity
+    excludes:
+    - tangential_government-policy_chatter_without_ministries_relevance
+    boundaries:
+    - focus_strictly_on_ministries_domain_significance
+  questions:
+  - what_changed_in_ministries
+  - how_does_new_ministries_differ_from_prior_state
+  - what_verifiable_evidence_supports_ministries
+  - what_are_the_operational_or_market_implications_for_ministries
+  - what_technical_limitations_or_uncertainties_remain_in_ministries
+  - what_is_the_status_of_announcements_for_ministries
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ministries_exceeding_baseline
+    - independent_confirmation_of_ministries_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ministries
+    - minor_routine_maintenance_or_repackaging_without_new_ministries_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - gov
+      freshness: 48h
+      focus:
+      - new_ministries_events
+      - verifiable_changes_in_ministries
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ministries
+      - what_tools_methods_or_data_were_used_for_ministries
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ministries_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Ministries (ministries) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Ministries lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Ministries.
+  action_rules:
+    monitor:
+    - track_emerging_ministries_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_ministries_documentation
+    - verify_reproducibility_of_reported_ministries_data
+  watch_rules:
+    monitor:
+    - next_ministries_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ministries
+    - ecosystem_adoption_metrics_for_ministries
+  retrieval_intent:
+    required_concepts:
+    - Ministries
+    - ministries
+    - announcements
+    - programs
+    - leadership
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ministries_adoption
+  - verified_metrics_for_ministries
+  - government_policy_regulatory_or_competitive_response
+  - announcements
+  - programs
+  disambiguation_focus:
+  - Ministries
+  - ministries
+  - 'Ministries specific evaluation: Announcements, programs, leadership'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-digital-policy-theme
+  theme_id: government-policy-digital-policy-theme
+  micro_topic_id: digital-policy
+  micro_topic: digital-policy
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Digital Policy (digital-policy) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_digital_policy_developments
+    - verified_digital_policy_activity
+    excludes:
+    - tangential_government-policy_chatter_without_digital_policy_relevance
+    boundaries:
+    - focus_strictly_on_digital-policy_domain_significance
+  questions:
+  - what_changed_in_digital_policy
+  - how_does_new_digital_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_digital_policy
+  - what_are_the_operational_or_market_implications_for_digital_policy
+  - what_technical_limitations_or_uncertainties_remain_in_digital_policy
+  - what_is_the_status_of_digital_infrastructure_for_digital_policy
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_digital_policy_exceeding_baseline
+    - independent_confirmation_of_digital_policy_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_digital_policy
+    - minor_routine_maintenance_or_repackaging_without_new_digital_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - gov
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_digital_policy_events
+      - verifiable_changes_in_digital_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_digital_policy
+      - what_tools_methods_or_data_were_used_for_digital_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - digital_policy_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Digital Policy (digital-policy)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Digital Policy lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Digital Policy.
+  action_rules:
+    monitor:
+    - track_emerging_digital_policy_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_digital_policy_documentation
+    - verify_reproducibility_of_reported_digital_policy_data
+  watch_rules:
+    monitor:
+    - next_digital_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_digital_policy
+    - ecosystem_adoption_metrics_for_digital_policy
+  retrieval_intent:
+    required_concepts:
+    - Digital Policy
+    - digital-policy
+    - digital infrastructure
+    - governance policy
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_digital_policy_adoption
+  - verified_metrics_for_digital_policy
+  - government_policy_regulatory_or_competitive_response
+  - digital infrastructure
+  - governance policy
+  disambiguation_focus:
+  - Digital Policy
+  - digital-policy
+  - 'Digital Policy specific evaluation: Digital infrastructure/governance policy'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-ai-policy-theme
+  theme_id: government-policy-ai-policy-theme
+  micro_topic_id: ai-policy
+  micro_topic: ai-policy
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Policy (ai-policy) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_policy_developments
+    - verified_ai_policy_activity
+    excludes:
+    - tangential_government-policy_chatter_without_ai_policy_relevance
+    boundaries:
+    - focus_strictly_on_ai-policy_domain_significance
+  questions:
+  - what_changed_in_ai_policy
+  - how_does_new_ai_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_policy
+  - what_are_the_operational_or_market_implications_for_ai_policy
+  - what_technical_limitations_or_uncertainties_remain_in_ai_policy
+  - what_is_the_status_of_ai_strategy_for_ai_policy
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_policy_exceeding_baseline
+    - independent_confirmation_of_ai_policy_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_policy
+    - minor_routine_maintenance_or_repackaging_without_new_ai_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - gov
+      - ai
+      freshness: 48h
+      focus:
+      - new_ai_policy_events
+      - verifiable_changes_in_ai_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_policy
+      - what_tools_methods_or_data_were_used_for_ai_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_policy_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Policy (ai-policy) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Policy lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Policy.
+  action_rules:
+    monitor:
+    - track_emerging_ai_policy_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_ai_policy_documentation
+    - verify_reproducibility_of_reported_ai_policy_data
+  watch_rules:
+    monitor:
+    - next_ai_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_policy
+    - ecosystem_adoption_metrics_for_ai_policy
+  retrieval_intent:
+    required_concepts:
+    - AI Policy
+    - ai-policy
+    - ai strategy
+    - regulation
+    - investment
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ai_policy_adoption
+  - verified_metrics_for_ai_policy
+  - government_policy_regulatory_or_competitive_response
+  - ai strategy
+  - regulation
+  disambiguation_focus:
+  - AI Policy
+  - ai-policy
+  - 'AI Policy specific evaluation: AI strategy/regulation/investment'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - ai
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-semiconductor-policy-theme
+  theme_id: government-policy-semiconductor-policy-theme
+  micro_topic_id: semiconductor-policy
+  micro_topic: semiconductor-policy
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Semiconductor Policy (semiconductor-policy) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_semiconductor_policy_developments
+    - verified_semiconductor_policy_activity
+    excludes:
+    - tangential_government-policy_chatter_without_semiconductor_policy_relevance
+    boundaries:
+    - focus_strictly_on_semiconductor-policy_domain_significance
+  questions:
+  - what_changed_in_semiconductor_policy
+  - how_does_new_semiconductor_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_semiconductor_policy
+  - what_are_the_operational_or_market_implications_for_semiconductor_policy
+  - what_technical_limitations_or_uncertainties_remain_in_semiconductor_policy
+  - what_is_the_status_of_incentives_for_semiconductor_policy
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_semiconductor_policy_exceeding_baseline
+    - independent_confirmation_of_semiconductor_policy_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_semiconductor_policy
+    - minor_routine_maintenance_or_repackaging_without_new_semiconductor_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - gov
+      - semiconductor
+      freshness: 48h
+      focus:
+      - new_semiconductor_policy_events
+      - verifiable_changes_in_semiconductor_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_semiconductor_policy
+      - what_tools_methods_or_data_were_used_for_semiconductor_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - semiconductor_policy_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Semiconductor Policy (semiconductor-policy)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Semiconductor Policy lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Semiconductor Policy.
+  action_rules:
+    monitor:
+    - track_emerging_semiconductor_policy_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_semiconductor_policy_documentation
+    - verify_reproducibility_of_reported_semiconductor_policy_data
+  watch_rules:
+    monitor:
+    - next_semiconductor_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_semiconductor_policy
+    - ecosystem_adoption_metrics_for_semiconductor_policy
+  retrieval_intent:
+    required_concepts:
+    - Semiconductor Policy
+    - semiconductor-policy
+    - incentives
+    - export controls
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_semiconductor_policy_adoption
+  - verified_metrics_for_semiconductor_policy
+  - government_policy_regulatory_or_competitive_response
+  - incentives
+  - export controls
+  disambiguation_focus:
+  - Semiconductor Policy
+  - semiconductor-policy
+  - 'Semiconductor Policy specific evaluation: Incentives/export controls'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - semiconductor
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-industrial-policy-theme
+  theme_id: government-policy-industrial-policy-theme
+  micro_topic_id: industrial-policy
+  micro_topic: industrial-policy
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Industrial Policy (industrial-policy) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_industrial_policy_developments
+    - verified_industrial_policy_activity
+    excludes:
+    - tangential_government-policy_chatter_without_industrial_policy_relevance
+    boundaries:
+    - focus_strictly_on_industrial-policy_domain_significance
+  questions:
+  - what_changed_in_industrial_policy
+  - how_does_new_industrial_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_industrial_policy
+  - what_are_the_operational_or_market_implications_for_industrial_policy
+  - what_technical_limitations_or_uncertainties_remain_in_industrial_policy
+  - what_is_the_status_of_industry_incentives_for_industrial_policy
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_industrial_policy_exceeding_baseline
+    - independent_confirmation_of_industrial_policy_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_industrial_policy
+    - minor_routine_maintenance_or_repackaging_without_new_industrial_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - gov
+      - manufacturing
+      freshness: 48h
+      focus:
+      - new_industrial_policy_events
+      - verifiable_changes_in_industrial_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_industrial_policy
+      - what_tools_methods_or_data_were_used_for_industrial_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - industrial_policy_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Industrial Policy (industrial-policy)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Industrial Policy lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Industrial Policy.
+  action_rules:
+    monitor:
+    - track_emerging_industrial_policy_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_industrial_policy_documentation
+    - verify_reproducibility_of_reported_industrial_policy_data
+  watch_rules:
+    monitor:
+    - next_industrial_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_industrial_policy
+    - ecosystem_adoption_metrics_for_industrial_policy
+  retrieval_intent:
+    required_concepts:
+    - Industrial Policy
+    - industrial-policy
+    - industry incentives
+    - localization
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_industrial_policy_adoption
+  - verified_metrics_for_industrial_policy
+  - government_policy_regulatory_or_competitive_response
+  - industry incentives
+  - localization
+  disambiguation_focus:
+  - Industrial Policy
+  - industrial-policy
+  - 'Industrial Policy specific evaluation: Industry incentives/localization'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - manufacturing
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-subsidies-theme
+  theme_id: government-policy-subsidies-theme
+  micro_topic_id: subsidies
+  micro_topic: subsidies
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Subsidies (subsidies) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_subsidies_developments
+    - verified_subsidies_activity
+    excludes:
+    - tangential_government-policy_chatter_without_subsidies_relevance
+    boundaries:
+    - focus_strictly_on_subsidies_domain_significance
+  questions:
+  - what_changed_in_subsidies
+  - how_does_new_subsidies_differ_from_prior_state
+  - what_verifiable_evidence_supports_subsidies
+  - what_are_the_operational_or_market_implications_for_subsidies
+  - what_technical_limitations_or_uncertainties_remain_in_subsidies
+  - what_is_the_status_of_amount_for_subsidies
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_subsidies_exceeding_baseline
+    - independent_confirmation_of_subsidies_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_subsidies
+    - minor_routine_maintenance_or_repackaging_without_new_subsidies_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - gov
+      - opportunity
+      freshness: 48h
+      focus:
+      - new_subsidies_events
+      - verifiable_changes_in_subsidies
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_subsidies
+      - what_tools_methods_or_data_were_used_for_subsidies
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - subsidies_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Subsidies (subsidies) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Subsidies lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Subsidies.
+  action_rules:
+    monitor:
+    - track_emerging_subsidies_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_subsidies_documentation
+    - verify_reproducibility_of_reported_subsidies_data
+  watch_rules:
+    monitor:
+    - next_subsidies_milestone_or_release_date
+    - peer_review_or_independent_validation_of_subsidies
+    - ecosystem_adoption_metrics_for_subsidies
+  retrieval_intent:
+    required_concepts:
+    - Subsidies
+    - subsidies
+    - amount
+    - eligibility
+    - recipients
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_subsidies_adoption
+  - verified_metrics_for_subsidies
+  - government_policy_regulatory_or_competitive_response
+  - amount
+  - eligibility
+  disambiguation_focus:
+  - Subsidies
+  - subsidies
+  - 'Subsidies specific evaluation: Amount, eligibility, recipients, deadline'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - opportunity
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-grants-theme
+  theme_id: government-policy-grants-theme
+  micro_topic_id: grants
+  micro_topic: grants
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Grants (grants) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_grants_developments
+    - verified_grants_activity
+    excludes:
+    - tangential_government-policy_chatter_without_grants_relevance
+    boundaries:
+    - focus_strictly_on_grants_domain_significance
+  questions:
+  - what_changed_in_grants
+  - how_does_new_grants_differ_from_prior_state
+  - what_verifiable_evidence_supports_grants
+  - what_are_the_operational_or_market_implications_for_grants
+  - what_technical_limitations_or_uncertainties_remain_in_grants
+  - what_is_the_status_of_grant_program_for_grants
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_grants_exceeding_baseline
+    - independent_confirmation_of_grants_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_grants
+    - minor_routine_maintenance_or_repackaging_without_new_grants_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - opportunity
+      freshness: 48h
+      focus:
+      - new_grants_events
+      - verifiable_changes_in_grants
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_grants
+      - what_tools_methods_or_data_were_used_for_grants
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - grants_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Grants (grants) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Grants lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Grants.
+  action_rules:
+    monitor:
+    - track_emerging_grants_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_grants_documentation
+    - verify_reproducibility_of_reported_grants_data
+  watch_rules:
+    monitor:
+    - next_grants_milestone_or_release_date
+    - peer_review_or_independent_validation_of_grants
+    - ecosystem_adoption_metrics_for_grants
+  retrieval_intent:
+    required_concepts:
+    - Grants
+    - grants
+    - grant program
+    - eligibility
+    - deadline
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_grants_adoption
+  - verified_metrics_for_grants
+  - government_policy_regulatory_or_competitive_response
+  - grant program
+  - eligibility
+  disambiguation_focus:
+  - Grants
+  - grants
+  - 'Grants specific evaluation: Grant program, eligibility, deadline'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - opportunity
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-tenders-theme
+  theme_id: government-policy-tenders-theme
+  micro_topic_id: tenders
+  micro_topic: tenders
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Tenders (tenders) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_tenders_developments
+    - verified_tenders_activity
+    excludes:
+    - tangential_government-policy_chatter_without_tenders_relevance
+    boundaries:
+    - focus_strictly_on_tenders_domain_significance
+  questions:
+  - what_changed_in_tenders
+  - how_does_new_tenders_differ_from_prior_state
+  - what_verifiable_evidence_supports_tenders
+  - what_are_the_operational_or_market_implications_for_tenders
+  - what_technical_limitations_or_uncertainties_remain_in_tenders
+  - what_is_the_status_of_buyer_for_tenders
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_tenders_exceeding_baseline
+    - independent_confirmation_of_tenders_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_tenders
+    - minor_routine_maintenance_or_repackaging_without_new_tenders_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - procurement
+      freshness: 48h
+      focus:
+      - new_tenders_events
+      - verifiable_changes_in_tenders
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_tenders
+      - what_tools_methods_or_data_were_used_for_tenders
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - tenders_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Tenders (tenders) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Tenders lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Tenders.
+  action_rules:
+    monitor:
+    - track_emerging_tenders_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_tenders_documentation
+    - verify_reproducibility_of_reported_tenders_data
+  watch_rules:
+    monitor:
+    - next_tenders_milestone_or_release_date
+    - peer_review_or_independent_validation_of_tenders
+    - ecosystem_adoption_metrics_for_tenders
+  retrieval_intent:
+    required_concepts:
+    - Tenders
+    - tenders
+    - buyer
+    - scope
+    - deadline
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_tenders_adoption
+  - verified_metrics_for_tenders
+  - government_policy_regulatory_or_competitive_response
+  - buyer
+  - scope
+  disambiguation_focus:
+  - Tenders
+  - tenders
+  - 'Tenders specific evaluation: Buyer, scope, deadline, value'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - procurement
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-implementation-theme
+  theme_id: government-policy-implementation-theme
+  micro_topic_id: implementation
+  micro_topic: implementation
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Implementation (implementation) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_implementation_developments
+    - verified_implementation_activity
+    excludes:
+    - tangential_government-policy_chatter_without_implementation_relevance
+    boundaries:
+    - focus_strictly_on_implementation_domain_significance
+  questions:
+  - what_changed_in_implementation
+  - how_does_new_implementation_differ_from_prior_state
+  - what_verifiable_evidence_supports_implementation
+  - what_are_the_operational_or_market_implications_for_implementation
+  - what_technical_limitations_or_uncertainties_remain_in_implementation
+  - what_is_the_status_of_whether_announced_policy_is_actually_implemented_for_implementation
+  evidence_requirements: &id051
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_implementation_exceeding_baseline
+    - independent_confirmation_of_implementation_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_implementation
+    - minor_routine_maintenance_or_repackaging_without_new_implementation_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - gov
+      - news-global
+      freshness: 48h
+      focus:
+      - new_implementation_events
+      - verifiable_changes_in_implementation
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_implementation
+      - what_tools_methods_or_data_were_used_for_implementation
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - implementation_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Implementation (implementation)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Implementation lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Implementation.
+  action_rules:
+    monitor:
+    - track_emerging_implementation_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_implementation_documentation
+    - verify_reproducibility_of_reported_implementation_data
+  watch_rules:
+    monitor:
+    - next_implementation_milestone_or_release_date
+    - peer_review_or_independent_validation_of_implementation
+    - ecosystem_adoption_metrics_for_implementation
+  retrieval_intent:
+    required_concepts:
+    - Implementation
+    - implementation
+    - whether announced policy is actually implemented
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_implementation_adoption
+  - verified_metrics_for_implementation
+  - government_policy_regulatory_or_competitive_response
+  - whether announced policy is actually implemented
+  disambiguation_focus:
+  - Implementation
+  - implementation
+  - 'Implementation specific evaluation: Whether announced policy is actually implemented'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: government-policy-policy-outcomes-theme
+  theme_id: government-policy-policy-outcomes-theme
+  micro_topic_id: policy-outcomes
+  micro_topic: policy-outcomes
+  domain: government-policy
+  domain_id: government-policy
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Policy Outcomes (policy-outcomes) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_policy_outcomes_developments
+    - verified_policy_outcomes_activity
+    excludes:
+    - tangential_government-policy_chatter_without_policy_outcomes_relevance
+    boundaries:
+    - focus_strictly_on_policy-outcomes_domain_significance
+  questions:
+  - what_changed_in_policy_outcomes
+  - how_does_new_policy_outcomes_differ_from_prior_state
+  - what_verifiable_evidence_supports_policy_outcomes
+  - what_are_the_operational_or_market_implications_for_policy_outcomes
+  - what_technical_limitations_or_uncertainties_remain_in_policy_outcomes
+  - what_is_the_status_of_measurable_effect_of_existing_policy_for_policy_outcomes
+  evidence_requirements: &id056
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_policy_outcomes_exceeding_baseline
+    - independent_confirmation_of_policy_outcomes_milestone_from_primary_source
+    - measurable_impact_on_government_policy_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_policy_outcomes
+    - minor_routine_maintenance_or_repackaging_without_new_policy_outcomes_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - gov
+      - finance
+      - trade
+      freshness: 48h
+      focus:
+      - new_policy_outcomes_events
+      - verifiable_changes_in_policy_outcomes
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_policy_outcomes
+      - what_tools_methods_or_data_were_used_for_policy_outcomes
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - government_policy
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - policy_outcomes_milestone
+    - capability_enhancement
+    - regulatory_or_compliance_action
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Policy Outcomes (policy-outcomes)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Policy Outcomes lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Policy Outcomes.
+  action_rules:
+    monitor:
+    - track_emerging_policy_outcomes_benchmarks
+    - follow_official_government_policy_announcements
+    investigate:
+    - audit_claims_against_primary_policy_outcomes_documentation
+    - verify_reproducibility_of_reported_policy_outcomes_data
+  watch_rules:
+    monitor:
+    - next_policy_outcomes_milestone_or_release_date
+    - peer_review_or_independent_validation_of_policy_outcomes
+    - ecosystem_adoption_metrics_for_policy_outcomes
+  retrieval_intent:
+    required_concepts:
+    - Policy Outcomes
+    - policy-outcomes
+    - measurable effect of existing policy
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_policy_outcomes_adoption
+  - verified_metrics_for_policy_outcomes
+  - government_policy_regulatory_or_competitive_response
+  - measurable effect of existing policy
+  disambiguation_focus:
+  - Policy Outcomes
+  - policy-outcomes
+  - 'Policy Outcomes specific evaluation: Measurable effect of existing policy'
+  - distinct from other government-policy topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - finance
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

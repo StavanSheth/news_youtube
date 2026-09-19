@@ -1,0 +1,1495 @@
+themes:
+- id: shipping-logistics-ports-theme
+  theme_id: shipping-logistics-ports-theme
+  micro_topic_id: ports
+  micro_topic: ports
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Ports (ports) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_ports_developments
+    - verified_ports_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_ports_relevance
+    boundaries:
+    - focus_strictly_on_ports_domain_significance
+  questions:
+  - what_changed_in_ports
+  - how_does_new_ports_differ_from_prior_state
+  - what_verifiable_evidence_supports_ports
+  - what_are_the_operational_or_market_implications_for_ports
+  - what_technical_limitations_or_uncertainties_remain_in_ports
+  - what_is_the_status_of_congestion_for_ports
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ports_exceeding_baseline
+    - independent_confirmation_of_ports_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ports
+    - minor_routine_maintenance_or_repackaging_without_new_ports_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - shipping
+      - aisstream
+      freshness: 48h
+      focus:
+      - new_ports_events
+      - verifiable_changes_in_ports
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ports
+      - what_tools_methods_or_data_were_used_for_ports
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ports_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Ports (ports) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Ports lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Ports.
+  action_rules:
+    monitor:
+    - track_emerging_ports_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_ports_documentation
+    - verify_reproducibility_of_reported_ports_data
+  watch_rules:
+    monitor:
+    - next_ports_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ports
+    - ecosystem_adoption_metrics_for_ports
+  retrieval_intent:
+    required_concepts:
+    - Ports
+    - ports
+    - congestion
+    - capacity
+    - disruptions
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ports_adoption
+  - verified_metrics_for_ports
+  - shipping_logistics_regulatory_or_competitive_response
+  - congestion
+  - capacity
+  disambiguation_focus:
+  - Ports
+  - ports
+  - 'Ports specific evaluation: Congestion, capacity, disruptions'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - shipping
+    - aisstream
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: shipping-logistics-shipping-lines-theme
+  theme_id: shipping-logistics-shipping-lines-theme
+  micro_topic_id: shipping-lines
+  micro_topic: shipping-lines
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Shipping Lines (shipping-lines) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_shipping_lines_developments
+    - verified_shipping_lines_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_shipping_lines_relevance
+    boundaries:
+    - focus_strictly_on_shipping-lines_domain_significance
+  questions:
+  - what_changed_in_shipping_lines
+  - how_does_new_shipping_lines_differ_from_prior_state
+  - what_verifiable_evidence_supports_shipping_lines
+  - what_are_the_operational_or_market_implications_for_shipping_lines
+  - what_technical_limitations_or_uncertainties_remain_in_shipping_lines
+  - what_is_the_status_of_fleet_for_shipping_lines
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_shipping_lines_exceeding_baseline
+    - independent_confirmation_of_shipping_lines_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_shipping_lines
+    - minor_routine_maintenance_or_repackaging_without_new_shipping_lines_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - shipping
+      - company
+      freshness: 48h
+      focus:
+      - new_shipping_lines_events
+      - verifiable_changes_in_shipping_lines
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_shipping_lines
+      - what_tools_methods_or_data_were_used_for_shipping_lines
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - shipping_lines_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Shipping Lines (shipping-lines)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Shipping Lines lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Shipping Lines.
+  action_rules:
+    monitor:
+    - track_emerging_shipping_lines_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_shipping_lines_documentation
+    - verify_reproducibility_of_reported_shipping_lines_data
+  watch_rules:
+    monitor:
+    - next_shipping_lines_milestone_or_release_date
+    - peer_review_or_independent_validation_of_shipping_lines
+    - ecosystem_adoption_metrics_for_shipping_lines
+  retrieval_intent:
+    required_concepts:
+    - Shipping Lines
+    - shipping-lines
+    - fleet
+    - routes
+    - earnings
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_shipping_lines_adoption
+  - verified_metrics_for_shipping_lines
+  - shipping_logistics_regulatory_or_competitive_response
+  - fleet
+  - routes
+  disambiguation_focus:
+  - Shipping Lines
+  - shipping-lines
+  - 'Shipping Lines specific evaluation: Fleet, routes, earnings, capacity'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - shipping
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: shipping-logistics-freight-theme
+  theme_id: shipping-logistics-freight-theme
+  micro_topic_id: freight
+  micro_topic: freight
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Freight (freight) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_freight_developments
+    - verified_freight_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_freight_relevance
+    boundaries:
+    - focus_strictly_on_freight_domain_significance
+  questions:
+  - what_changed_in_freight
+  - how_does_new_freight_differ_from_prior_state
+  - what_verifiable_evidence_supports_freight
+  - what_are_the_operational_or_market_implications_for_freight
+  - what_technical_limitations_or_uncertainties_remain_in_freight
+  - what_is_the_status_of_rates_for_freight
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_freight_exceeding_baseline
+    - independent_confirmation_of_freight_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_freight
+    - minor_routine_maintenance_or_repackaging_without_new_freight_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - shipping
+      - market
+      freshness: 48h
+      focus:
+      - new_freight_events
+      - verifiable_changes_in_freight
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_freight
+      - what_tools_methods_or_data_were_used_for_freight
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - freight_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Freight (freight) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Freight lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Freight.
+  action_rules:
+    monitor:
+    - track_emerging_freight_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_freight_documentation
+    - verify_reproducibility_of_reported_freight_data
+  watch_rules:
+    monitor:
+    - next_freight_milestone_or_release_date
+    - peer_review_or_independent_validation_of_freight
+    - ecosystem_adoption_metrics_for_freight
+  retrieval_intent:
+    required_concepts:
+    - Freight
+    - freight
+    - rates
+    - demand
+    - capacity
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_freight_adoption
+  - verified_metrics_for_freight
+  - shipping_logistics_regulatory_or_competitive_response
+  - rates
+  - demand
+  disambiguation_focus:
+  - Freight
+  - freight
+  - 'Freight specific evaluation: Rates, demand, capacity'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - shipping
+    - market
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: shipping-logistics-logistics-infrastructure-theme
+  theme_id: shipping-logistics-logistics-infrastructure-theme
+  micro_topic_id: logistics-infrastructure
+  micro_topic: logistics-infrastructure
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Logistics Infrastructure (logistics-infrastructure) specifically
+    through verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_logistics_infrastructure_developments
+    - verified_logistics_infrastructure_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_logistics_infrastructure_relevance
+    boundaries:
+    - focus_strictly_on_logistics-infrastructure_domain_significance
+  questions:
+  - what_changed_in_logistics_infrastructure
+  - how_does_new_logistics_infrastructure_differ_from_prior_state
+  - what_verifiable_evidence_supports_logistics_infrastructure
+  - what_are_the_operational_or_market_implications_for_logistics_infrastructure
+  - what_technical_limitations_or_uncertainties_remain_in_logistics_infrastructure
+  - what_is_the_status_of_warehouses_for_logistics_infrastructure
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_logistics_infrastructure_exceeding_baseline
+    - independent_confirmation_of_logistics_infrastructure_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_logistics_infrastructure
+    - minor_routine_maintenance_or_repackaging_without_new_logistics_infrastructure_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - shipping
+      - procurement
+      freshness: 48h
+      focus:
+      - new_logistics_infrastructure_events
+      - verifiable_changes_in_logistics_infrastructure
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_logistics_infrastructure
+      - what_tools_methods_or_data_were_used_for_logistics_infrastructure
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - logistics_infrastructure_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Logistics Infrastructure
+      (logistics-infrastructure) was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Logistics Infrastructure lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Logistics Infrastructure.
+  action_rules:
+    monitor:
+    - track_emerging_logistics_infrastructure_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_logistics_infrastructure_documentation
+    - verify_reproducibility_of_reported_logistics_infrastructure_data
+  watch_rules:
+    monitor:
+    - next_logistics_infrastructure_milestone_or_release_date
+    - peer_review_or_independent_validation_of_logistics_infrastructure
+    - ecosystem_adoption_metrics_for_logistics_infrastructure
+  retrieval_intent:
+    required_concepts:
+    - Logistics Infrastructure
+    - logistics-infrastructure
+    - warehouses
+    - corridors
+    - terminals
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_logistics_infrastructure_adoption
+  - verified_metrics_for_logistics_infrastructure
+  - shipping_logistics_regulatory_or_competitive_response
+  - warehouses
+  - corridors
+  disambiguation_focus:
+  - Logistics Infrastructure
+  - logistics-infrastructure
+  - 'Logistics Infrastructure specific evaluation: Warehouses, corridors, terminals'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - shipping
+    - procurement
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: shipping-logistics-chokepoints-theme
+  theme_id: shipping-logistics-chokepoints-theme
+  micro_topic_id: chokepoints
+  micro_topic: chokepoints
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Chokepoints (chokepoints) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_chokepoints_developments
+    - verified_chokepoints_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_chokepoints_relevance
+    boundaries:
+    - focus_strictly_on_chokepoints_domain_significance
+  questions:
+  - what_changed_in_chokepoints
+  - how_does_new_chokepoints_differ_from_prior_state
+  - what_verifiable_evidence_supports_chokepoints
+  - what_are_the_operational_or_market_implications_for_chokepoints
+  - what_technical_limitations_or_uncertainties_remain_in_chokepoints
+  - what_is_the_status_of_suez_for_chokepoints
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_chokepoints_exceeding_baseline
+    - independent_confirmation_of_chokepoints_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_chokepoints
+    - minor_routine_maintenance_or_repackaging_without_new_chokepoints_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - shipping
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_chokepoints_events
+      - verifiable_changes_in_chokepoints
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_chokepoints
+      - what_tools_methods_or_data_were_used_for_chokepoints
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - chokepoints_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Chokepoints (chokepoints)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Chokepoints lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Chokepoints.
+  action_rules:
+    monitor:
+    - track_emerging_chokepoints_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_chokepoints_documentation
+    - verify_reproducibility_of_reported_chokepoints_data
+  watch_rules:
+    monitor:
+    - next_chokepoints_milestone_or_release_date
+    - peer_review_or_independent_validation_of_chokepoints
+    - ecosystem_adoption_metrics_for_chokepoints
+  retrieval_intent:
+    required_concepts:
+    - Chokepoints
+    - chokepoints
+    - suez
+    - panama
+    - hormuz
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_chokepoints_adoption
+  - verified_metrics_for_chokepoints
+  - shipping_logistics_regulatory_or_competitive_response
+  - suez
+  - panama
+  disambiguation_focus:
+  - Chokepoints
+  - chokepoints
+  - 'Chokepoints specific evaluation: Suez, Panama, Hormuz, Malacca etc.'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - shipping
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: shipping-logistics-maritime-trade-theme
+  theme_id: shipping-logistics-maritime-trade-theme
+  micro_topic_id: maritime-trade
+  micro_topic: maritime-trade
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Maritime Trade (maritime-trade) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_maritime_trade_developments
+    - verified_maritime_trade_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_maritime_trade_relevance
+    boundaries:
+    - focus_strictly_on_maritime-trade_domain_significance
+  questions:
+  - what_changed_in_maritime_trade
+  - how_does_new_maritime_trade_differ_from_prior_state
+  - what_verifiable_evidence_supports_maritime_trade
+  - what_are_the_operational_or_market_implications_for_maritime_trade
+  - what_technical_limitations_or_uncertainties_remain_in_maritime_trade
+  - what_is_the_status_of_volumes_for_maritime_trade
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_maritime_trade_exceeding_baseline
+    - independent_confirmation_of_maritime_trade_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_maritime_trade
+    - minor_routine_maintenance_or_repackaging_without_new_maritime_trade_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - shipping
+      - trade
+      freshness: 48h
+      focus:
+      - new_maritime_trade_events
+      - verifiable_changes_in_maritime_trade
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_maritime_trade
+      - what_tools_methods_or_data_were_used_for_maritime_trade
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - maritime_trade_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Maritime Trade (maritime-trade)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Maritime Trade lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Maritime Trade.
+  action_rules:
+    monitor:
+    - track_emerging_maritime_trade_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_maritime_trade_documentation
+    - verify_reproducibility_of_reported_maritime_trade_data
+  watch_rules:
+    monitor:
+    - next_maritime_trade_milestone_or_release_date
+    - peer_review_or_independent_validation_of_maritime_trade
+    - ecosystem_adoption_metrics_for_maritime_trade
+  retrieval_intent:
+    required_concepts:
+    - Maritime Trade
+    - maritime-trade
+    - volumes
+    - routes
+    - disruption
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_maritime_trade_adoption
+  - verified_metrics_for_maritime_trade
+  - shipping_logistics_regulatory_or_competitive_response
+  - volumes
+  - routes
+  disambiguation_focus:
+  - Maritime Trade
+  - maritime-trade
+  - 'Maritime Trade specific evaluation: Volumes, routes, disruption'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - shipping
+    - trade
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: shipping-logistics-container-rates-theme
+  theme_id: shipping-logistics-container-rates-theme
+  micro_topic_id: container-rates
+  micro_topic: container-rates
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Container Rates (container-rates) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_container_rates_developments
+    - verified_container_rates_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_container_rates_relevance
+    boundaries:
+    - focus_strictly_on_container-rates_domain_significance
+  questions:
+  - what_changed_in_container_rates
+  - how_does_new_container_rates_differ_from_prior_state
+  - what_verifiable_evidence_supports_container_rates
+  - what_are_the_operational_or_market_implications_for_container_rates
+  - what_technical_limitations_or_uncertainties_remain_in_container_rates
+  - what_is_the_status_of_spot_for_container_rates
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_container_rates_exceeding_baseline
+    - independent_confirmation_of_container_rates_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_container_rates
+    - minor_routine_maintenance_or_repackaging_without_new_container_rates_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - shipping
+      - market
+      freshness: 48h
+      focus:
+      - new_container_rates_events
+      - verifiable_changes_in_container_rates
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_container_rates
+      - what_tools_methods_or_data_were_used_for_container_rates
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - container_rates_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Container Rates (container-rates)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Container Rates lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Container Rates.
+  action_rules:
+    monitor:
+    - track_emerging_container_rates_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_container_rates_documentation
+    - verify_reproducibility_of_reported_container_rates_data
+  watch_rules:
+    monitor:
+    - next_container_rates_milestone_or_release_date
+    - peer_review_or_independent_validation_of_container_rates
+    - ecosystem_adoption_metrics_for_container_rates
+  retrieval_intent:
+    required_concepts:
+    - Container Rates
+    - container-rates
+    - spot
+    - contract rate movement
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_container_rates_adoption
+  - verified_metrics_for_container_rates
+  - shipping_logistics_regulatory_or_competitive_response
+  - spot
+  - contract rate movement
+  disambiguation_focus:
+  - Container Rates
+  - container-rates
+  - 'Container Rates specific evaluation: Spot/contract rate movement'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - shipping
+    - market
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: shipping-logistics-disruptions-theme
+  theme_id: shipping-logistics-disruptions-theme
+  micro_topic_id: disruptions
+  micro_topic: disruptions
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Disruptions (disruptions) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_disruptions_developments
+    - verified_disruptions_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_disruptions_relevance
+    boundaries:
+    - focus_strictly_on_disruptions_domain_significance
+  questions:
+  - what_changed_in_disruptions
+  - how_does_new_disruptions_differ_from_prior_state
+  - what_verifiable_evidence_supports_disruptions
+  - what_are_the_operational_or_market_implications_for_disruptions
+  - what_technical_limitations_or_uncertainties_remain_in_disruptions
+  - what_is_the_status_of_port_for_disruptions
+  evidence_requirements: &id036
+  - aisstream
+  - news_global
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_disruptions_exceeding_baseline
+    - independent_confirmation_of_disruptions_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_disruptions
+    - minor_routine_maintenance_or_repackaging_without_new_disruptions_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - aisstream
+      - news-global
+      freshness: 48h
+      focus:
+      - new_disruptions_events
+      - verifiable_changes_in_disruptions
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_disruptions
+      - what_tools_methods_or_data_were_used_for_disruptions
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - disruptions_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Disruptions (disruptions)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Disruptions lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Disruptions.
+  action_rules:
+    monitor:
+    - track_emerging_disruptions_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_disruptions_documentation
+    - verify_reproducibility_of_reported_disruptions_data
+  watch_rules:
+    monitor:
+    - next_disruptions_milestone_or_release_date
+    - peer_review_or_independent_validation_of_disruptions
+    - ecosystem_adoption_metrics_for_disruptions
+  retrieval_intent:
+    required_concepts:
+    - Disruptions
+    - disruptions
+    - port
+    - route
+    - supply disruption
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_disruptions_adoption
+  - verified_metrics_for_disruptions
+  - shipping_logistics_regulatory_or_competitive_response
+  - port
+  - route
+  disambiguation_focus:
+  - Disruptions
+  - disruptions
+  - 'Disruptions specific evaluation: Port/route/supply disruption'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - aisstream
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: shipping-logistics-resilience-theme
+  theme_id: shipping-logistics-resilience-theme
+  micro_topic_id: resilience
+  micro_topic: resilience
+  domain: shipping-logistics
+  domain_id: shipping-logistics
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Resilience (resilience) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_resilience_developments
+    - verified_resilience_activity
+    excludes:
+    - tangential_shipping-logistics_chatter_without_resilience_relevance
+    boundaries:
+    - focus_strictly_on_resilience_domain_significance
+  questions:
+  - what_changed_in_resilience
+  - how_does_new_resilience_differ_from_prior_state
+  - what_verifiable_evidence_supports_resilience
+  - what_are_the_operational_or_market_implications_for_resilience
+  - what_technical_limitations_or_uncertainties_remain_in_resilience
+  - what_is_the_status_of_diversification_for_resilience
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_resilience_exceeding_baseline
+    - independent_confirmation_of_resilience_milestone_from_primary_source
+    - measurable_impact_on_shipping_logistics_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_resilience
+    - minor_routine_maintenance_or_repackaging_without_new_resilience_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - shipping
+      - trade
+      freshness: 48h
+      focus:
+      - new_resilience_events
+      - verifiable_changes_in_resilience
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_resilience
+      - what_tools_methods_or_data_were_used_for_resilience
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - shipping_logistics
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - resilience_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Resilience (resilience) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Resilience lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Resilience.
+  action_rules:
+    monitor:
+    - track_emerging_resilience_benchmarks
+    - follow_official_shipping_logistics_announcements
+    investigate:
+    - audit_claims_against_primary_resilience_documentation
+    - verify_reproducibility_of_reported_resilience_data
+  watch_rules:
+    monitor:
+    - next_resilience_milestone_or_release_date
+    - peer_review_or_independent_validation_of_resilience
+    - ecosystem_adoption_metrics_for_resilience
+  retrieval_intent:
+    required_concepts:
+    - Resilience
+    - resilience
+    - diversification
+    - rerouting
+    - inventory
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_resilience_adoption
+  - verified_metrics_for_resilience
+  - shipping_logistics_regulatory_or_competitive_response
+  - diversification
+  - rerouting
+  disambiguation_focus:
+  - Resilience
+  - resilience
+  - 'Resilience specific evaluation: Diversification, rerouting, inventory'
+  - distinct from other shipping-logistics topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - shipping
+    - trade
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

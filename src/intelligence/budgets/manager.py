@@ -8,6 +8,53 @@ from typing import Any
 
 
 @dataclass
+class ProviderBudgetConfig:
+    """Configurable provider-aware quota limits (e.g. Gemini RPM, TPM, RPD)."""
+
+    provider: str = "gemini"
+    tier: str = "FREE"
+    rpm: int | None = None
+    input_tpm: int | None = None
+    output_tpm: int | None = None
+    rpd: int | None = None
+    safety_margin_percent: int = 20
+    max_run_calls: int | None = None
+    max_run_input_tokens: int | None = None
+    max_run_output_tokens: int | None = None
+
+    @classmethod
+    def from_mapping(cls, data: dict[str, Any] | None) -> ProviderBudgetConfig:
+        if not data:
+            return cls()
+        return cls(
+            provider=str(data.get("provider", "gemini")),
+            tier=str(data.get("tier", "FREE")),
+            rpm=data.get("rpm"),
+            input_tpm=data.get("input_tpm"),
+            output_tpm=data.get("output_tpm"),
+            rpd=data.get("rpd"),
+            safety_margin_percent=int(data.get("safety_margin_percent", 20)),
+            max_run_calls=data.get("max_run_calls"),
+            max_run_input_tokens=data.get("max_run_input_tokens"),
+            max_run_output_tokens=data.get("max_run_output_tokens"),
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "provider": self.provider,
+            "tier": self.tier,
+            "rpm": self.rpm,
+            "input_tpm": self.input_tpm,
+            "output_tpm": self.output_tpm,
+            "rpd": self.rpd,
+            "safety_margin_percent": self.safety_margin_percent,
+            "max_run_calls": self.max_run_calls,
+            "max_run_input_tokens": self.max_run_input_tokens,
+            "max_run_output_tokens": self.max_run_output_tokens,
+        }
+
+
+@dataclass
 class BudgetLimits:
     source_items: int = 100
     rag_items: int = 10
@@ -71,8 +118,14 @@ class BudgetManager:
         self,
         global_limits: dict[str, Any] | None = None,
         micro_topic_limits: dict[str, dict[str, Any]] | None = None,
+        provider_budget: ProviderBudgetConfig | dict[str, Any] | None = None,
     ) -> None:
         self.config = dict(global_limits or {})
+        pb = provider_budget if provider_budget is not None else self.config.get("provider_budget")
+        if isinstance(pb, ProviderBudgetConfig):
+            self.provider_budget = pb
+        else:
+            self.provider_budget = ProviderBudgetConfig.from_mapping(pb)
         self.global_limits = self._parse_limits(global_limits or {})
         self.micro_topic_limits = {
             k: self._parse_limits(v) for k, v in (micro_topic_limits or {}).items()
@@ -82,6 +135,9 @@ class BudgetManager:
         self.skips: list[BudgetSkipRecord] = []
         self._reservations: dict[str, int] = {}
         self._dimension_reservations: dict[str, int] = {}
+        self._call_timestamps: list[float] = []
+        self._token_timestamps: list[tuple[float, int]] = []
+        self._daily_calls: int = 0
 
     @staticmethod
     def _parse_limits(config: dict[str, Any]) -> BudgetLimits:
@@ -105,22 +161,74 @@ class BudgetManager:
             self.micro_topic_usage[micro_topic_id] = BudgetUsage()
         return self.micro_topic_usage[micro_topic_id]
 
+    def check_provider_limits(
+        self,
+        estimated_calls: int = 1,
+        estimated_tokens: int = 0,
+        now: float | None = None,
+    ) -> tuple[bool, str]:
+        """Verify Level 1 provider quotas (Gemini RPM, TPM, RPD) with safety margin."""
+        import time
+
+        now_ts = now if now is not None else time.time()
+        self._call_timestamps = [ts for ts in self._call_timestamps if now_ts - ts < 60.0]
+        self._token_timestamps = [item for item in self._token_timestamps if now_ts - item[0] < 60.0]
+
+        factor = max(0.1, 1.0 - (self.provider_budget.safety_margin_percent / 100.0))
+
+        if self.provider_budget.rpm is not None:
+            effective_rpm = max(1, int(self.provider_budget.rpm * factor))
+            active_reserved = self._dimension_reservations.get("ai_calls", 0)
+            if len(self._call_timestamps) + active_reserved + estimated_calls > effective_rpm:
+                return False, "PROVIDER_RPM_EXHAUSTED"
+
+        if self.provider_budget.input_tpm is not None:
+            effective_tpm = max(1, int(self.provider_budget.input_tpm * factor))
+            current_tokens = sum(t for _, t in self._token_timestamps)
+            active_token_reserved = self._dimension_reservations.get("input_tokens", 0)
+            if current_tokens + active_token_reserved + estimated_tokens > effective_tpm:
+                return False, "PROVIDER_TPM_EXHAUSTED"
+
+        if self.provider_budget.rpd is not None:
+            if self._daily_calls + estimated_calls > self.provider_budget.rpd:
+                return False, "PROVIDER_RPD_EXHAUSTED"
+
+        if self.provider_budget.max_run_calls is not None:
+            active_reserved = self._dimension_reservations.get("ai_calls", 0)
+            if self.global_usage.ai_calls + active_reserved + estimated_calls > self.provider_budget.max_run_calls:
+                return False, "PROVIDER_RUN_CALLS_EXHAUSTED"
+
+        if self.provider_budget.max_run_input_tokens is not None:
+            active_token_reserved = self._dimension_reservations.get("input_tokens", 0)
+            if self.global_usage.input_tokens + active_token_reserved + estimated_tokens > self.provider_budget.max_run_input_tokens:
+                return False, "PROVIDER_RUN_TOKENS_EXHAUSTED"
+
+        return True, "PROCEED"
+
     def can_execute(
         self,
         micro_topic_id: str,
         priority: str = "P1",
         estimated_calls: int = 1,
         estimated_chars: int = 0,
+        estimated_tokens: int = 0,
     ) -> tuple[bool, str]:
-        """Check if execution can proceed under priority protection rules."""
+        """Check if execution can proceed under 5-level hierarchy and priority protection."""
+        # Level 1: Provider budget
+        provider_ok, provider_reason = self.check_provider_limits(
+            estimated_calls=estimated_calls,
+            estimated_tokens=estimated_tokens,
+        )
+        if not provider_ok:
+            return False, provider_reason
+
         priority = priority.upper()
         p0_reserve = int(self.config.get("p0_reserved_calls", self.config.get("p0_reserve", 0)))
         reserved_calls = self._dimension_reservations.get("ai_calls", 0)
 
-        # Check global AI calls
+        # Level 2: Edition/run budget (AI calls)
         remaining_calls = self.global_limits.ai_calls - (self.global_usage.ai_calls + reserved_calls)
         if remaining_calls < estimated_calls:
-            # P0 is protected if at least 1 call remains
             if priority == "P0" and remaining_calls >= 1:
                 return True, "PROCEED"
             return False, "GLOBAL_AI_CALL_BUDGET_EXHAUSTED"
@@ -130,25 +238,38 @@ class BudgetManager:
             if remaining_calls - estimated_calls < p0_reserve:
                 return False, "RESERVED_FOR_P0"
 
-        # Check global context chars
+        # Context chars check
         reserved_chars = self._dimension_reservations.get("context_chars", 0)
         if self.global_usage.context_chars + reserved_chars + estimated_chars > self.global_limits.context_chars:
             if priority != "P0":
                 return False, "GLOBAL_CONTEXT_CHAR_BUDGET_EXHAUSTED"
 
-        # Check micro-topic limits if configured
+        # Token ceiling check
+        if estimated_tokens > 0:
+            reserved_tokens = self._dimension_reservations.get("input_tokens", 0)
+            if self.global_usage.input_tokens + reserved_tokens + estimated_tokens > self.global_limits.input_tokens:
+                if priority != "P0":
+                    return False, "GLOBAL_INPUT_TOKEN_BUDGET_EXHAUSTED"
+
+        # Level 3: Micro-topic limits
+        res_topic_calls = self._reservations.get(f"{micro_topic_id}:ai_calls", 0)
+        res_topic_chars = self._reservations.get(f"{micro_topic_id}:context_chars", 0)
+        res_topic_tokens = self._reservations.get(f"{micro_topic_id}:input_tokens", 0)
+
         if micro_topic_id in self.micro_topic_limits:
             limits = self.micro_topic_limits[micro_topic_id]
             usage = self._get_or_create_usage(micro_topic_id)
-            if usage.ai_calls + estimated_calls > limits.ai_calls:
+            if usage.ai_calls + res_topic_calls + estimated_calls > limits.ai_calls:
                 return False, "MICRO_TOPIC_AI_CALL_LIMIT_EXCEEDED"
-            if estimated_chars and usage.context_chars + estimated_chars > limits.context_chars:
+            if estimated_chars and usage.context_chars + res_topic_chars + estimated_chars > limits.context_chars:
                 return False, "MICRO_TOPIC_CONTEXT_CHAR_LIMIT_EXCEEDED"
+            if estimated_tokens and usage.input_tokens + res_topic_tokens + estimated_tokens > limits.input_tokens:
+                return False, "MICRO_TOPIC_INPUT_TOKEN_LIMIT_EXCEEDED"
 
         max_per_topic = self.config.get("max_ai_calls_per_micro_topic")
         if max_per_topic is not None:
             usage = self._get_or_create_usage(micro_topic_id)
-            if usage.ai_calls + estimated_calls > int(max_per_topic):
+            if usage.ai_calls + res_topic_calls + estimated_calls > int(max_per_topic):
                 return False, "MICRO_TOPIC_AI_CALL_LIMIT_EXCEEDED"
 
         return True, "PROCEED"
@@ -159,6 +280,7 @@ class BudgetManager:
         priority: str = "P1",
         estimated_calls: int = 1,
         estimated_chars: int = 0,
+        estimated_tokens: int = 0,
         run_id: str = "",
     ) -> tuple[bool, str, BudgetSkipRecord | None]:
         """Authorize work BEFORE execution. If not allowed, automatically persist skip record."""
@@ -167,6 +289,7 @@ class BudgetManager:
             priority=priority,
             estimated_calls=estimated_calls,
             estimated_chars=estimated_chars,
+            estimated_tokens=estimated_tokens,
         )
         if not can_run:
             now_iso = datetime.now(UTC).isoformat()
@@ -180,6 +303,7 @@ class BudgetManager:
                     "timestamp": now_iso,
                     "requested_calls": estimated_calls,
                     "requested_chars": estimated_chars,
+                    "requested_tokens": estimated_tokens,
                     "global_calls_used": self.global_usage.ai_calls,
                     "global_calls_limit": self.global_limits.ai_calls,
                     "budget_trace": {
@@ -198,6 +322,8 @@ class BudgetManager:
         self.reserve(micro_topic_id, "ai_calls", estimated_calls)
         if estimated_chars > 0:
             self.reserve(micro_topic_id, "context_chars", estimated_chars)
+        if estimated_tokens > 0:
+            self.reserve(micro_topic_id, "input_tokens", estimated_tokens)
 
         return True, "AUTHORIZED", None
 
@@ -258,6 +384,26 @@ class BudgetManager:
             current = getattr(usage, dimension)
             setattr(usage, dimension, current + amount)
 
+        # Track provider window consumption
+        import time
+        now_ts = time.time()
+        if dimension == "ai_calls":
+            for _ in range(amount):
+                self._call_timestamps.append(now_ts)
+            self._daily_calls += amount
+        elif dimension == "input_tokens":
+            self._token_timestamps.append((now_ts, amount))
+
+    def record_provider_call(self, tokens: int = 0, calls: int = 1) -> None:
+        """Directly record a provider call against sliding windows."""
+        import time
+        now_ts = time.time()
+        for _ in range(calls):
+            self._call_timestamps.append(now_ts)
+        self._daily_calls += calls
+        if tokens > 0:
+            self._token_timestamps.append((now_ts, tokens))
+
     def skip(
         self,
         micro_topic_id: str,
@@ -279,6 +425,13 @@ class BudgetManager:
     def snapshot(self) -> dict[str, Any]:
         """Return full budget audit snapshot."""
         return {
+            "provider_budget": self.provider_budget.to_dict(),
+            "provider_usage": {
+                "active_rpm": len(self._call_timestamps),
+                "active_tpm": sum(t for _, t in self._token_timestamps),
+                "daily_calls": self._daily_calls,
+            },
+            "active_reservations": dict(self._dimension_reservations),
             "global_usage": self.global_usage.to_dict(),
             "global_limits": {
                 k: getattr(self.global_limits, k)

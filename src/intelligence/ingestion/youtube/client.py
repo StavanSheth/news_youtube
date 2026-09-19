@@ -28,11 +28,14 @@ class YouTubeClient:
         self.http_client = http_client or SafeHttpClient(default_timeout=15)
 
     def _get(self, endpoint: str, params: dict[str, Any], units: int = 1) -> dict[str, Any]:
-        """Execute YouTube API GET request with quota protection."""
+        """Execute YouTube API GET request with quota protection, reservation, and circuit breaker."""
         if not self.api_key:
             raise ValueError("YouTube API key is missing")
 
-        if not self.quota_tracker.can_spend(units):
+        if self.quota_tracker.circuit_breaker_tripped:
+            raise RuntimeError("YouTube API circuit breaker tripped due to repeated failures")
+
+        if not self.quota_tracker.reserve(units):
             self.quota_tracker.record_failure(is_quota_exceeded=True)
             raise RuntimeError("YouTube API quota limit exceeded for this run")
 
@@ -41,24 +44,26 @@ class YouTubeClient:
 
         try:
             response = self.http_client.get(url, params=query_params)
-            
+
             if response.status_code == 403:
-                # Detect quota vs permissions
                 error_data = response.json() if response.content else {}
                 reasons = [e.get("reason", "") for e in error_data.get("error", {}).get("errors", [])]
                 is_quota = "quotaExceeded" in reasons or "dailyLimitExceeded" in reasons
+                self.quota_tracker.release(units)
                 self.quota_tracker.record_failure(is_quota_exceeded=is_quota)
                 response.raise_for_status()
 
             if response.status_code == 429:
-                self.quota_tracker.record_failure(is_rate_limit=True)
+                self.quota_tracker.release(units)
+                self.quota_tracker.record_failure(is_rate_limit=True, is_429=True)
                 response.raise_for_status()
 
             response.raise_for_status()
-            self.quota_tracker.record_success(units=units)
+            self.quota_tracker.consume(units=units)
             return response.json()
 
         except Exception as exc:
+            self.quota_tracker.release(units)
             self.quota_tracker.record_failure()
             raise exc
 

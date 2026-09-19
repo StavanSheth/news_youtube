@@ -1,0 +1,2328 @@
+themes:
+- id: cybersecurity-cves-theme
+  theme_id: cybersecurity-cves-theme
+  micro_topic_id: cves
+  micro_topic: cves
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess CVEs (cves) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_cves_developments
+    - verified_cves_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_cves_relevance
+    boundaries:
+    - focus_strictly_on_cves_domain_significance
+  questions:
+  - what_changed_in_cves
+  - how_does_new_cves_differ_from_prior_state
+  - what_verifiable_evidence_supports_cves
+  - what_are_the_operational_or_market_implications_for_cves
+  - what_technical_limitations_or_uncertainties_remain_in_cves
+  - what_is_the_status_of_cve_severity_for_cves
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_cves_exceeding_baseline
+    - independent_confirmation_of_cves_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_cves
+    - minor_routine_maintenance_or_repackaging_without_new_cves_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - cyber
+      - nvd
+      - cve feeds where available
+      freshness: 24h
+      focus:
+      - new_cves_events
+      - verifiable_changes_in_cves
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_cves
+      - what_tools_methods_or_data_were_used_for_cves
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - cves_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in CVEs (cves) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding CVEs lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for CVEs.
+  action_rules:
+    monitor:
+    - track_emerging_cves_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_cves_documentation
+    - verify_reproducibility_of_reported_cves_data
+  watch_rules:
+    monitor:
+    - next_cves_milestone_or_release_date
+    - peer_review_or_independent_validation_of_cves
+    - ecosystem_adoption_metrics_for_cves
+  retrieval_intent:
+    required_concepts:
+    - CVEs
+    - cves
+    - cve severity
+    - affected products
+    - exploitability
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_cves_adoption
+  - verified_metrics_for_cves
+  - cybersecurity_regulatory_or_competitive_response
+  - cve severity
+  - affected products
+  disambiguation_focus:
+  - CVEs
+  - cves
+  - 'CVEs specific evaluation: CVE severity, affected products, exploitability'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - nvd
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-vulnerabilities-theme
+  theme_id: cybersecurity-vulnerabilities-theme
+  micro_topic_id: vulnerabilities
+  micro_topic: vulnerabilities
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Vulnerabilities (vulnerabilities) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_vulnerabilities_developments
+    - verified_vulnerabilities_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_vulnerabilities_relevance
+    boundaries:
+    - focus_strictly_on_vulnerabilities_domain_significance
+  questions:
+  - what_changed_in_vulnerabilities
+  - how_does_new_vulnerabilities_differ_from_prior_state
+  - what_verifiable_evidence_supports_vulnerabilities
+  - what_are_the_operational_or_market_implications_for_vulnerabilities
+  - what_technical_limitations_or_uncertainties_remain_in_vulnerabilities
+  - what_is_the_status_of_technical_weakness_for_vulnerabilities
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_vulnerabilities_exceeding_baseline
+    - independent_confirmation_of_vulnerabilities_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_vulnerabilities
+    - minor_routine_maintenance_or_repackaging_without_new_vulnerabilities_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - cyber
+      - github
+      freshness: 24h
+      focus:
+      - new_vulnerabilities_events
+      - verifiable_changes_in_vulnerabilities
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_vulnerabilities
+      - what_tools_methods_or_data_were_used_for_vulnerabilities
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - vulnerabilities_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Vulnerabilities (vulnerabilities)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Vulnerabilities lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Vulnerabilities.
+  action_rules:
+    monitor:
+    - track_emerging_vulnerabilities_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_vulnerabilities_documentation
+    - verify_reproducibility_of_reported_vulnerabilities_data
+  watch_rules:
+    monitor:
+    - next_vulnerabilities_milestone_or_release_date
+    - peer_review_or_independent_validation_of_vulnerabilities
+    - ecosystem_adoption_metrics_for_vulnerabilities
+  retrieval_intent:
+    required_concepts:
+    - Vulnerabilities
+    - vulnerabilities
+    - technical weakness
+    - affected systems
+    - remediation
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_vulnerabilities_adoption
+  - verified_metrics_for_vulnerabilities
+  - cybersecurity_regulatory_or_competitive_response
+  - technical weakness
+  - affected systems
+  disambiguation_focus:
+  - Vulnerabilities
+  - vulnerabilities
+  - 'Vulnerabilities specific evaluation: Technical weakness, affected systems, remediation'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-exploits-theme
+  theme_id: cybersecurity-exploits-theme
+  micro_topic_id: exploits
+  micro_topic: exploits
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Exploits (exploits) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_exploits_developments
+    - verified_exploits_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_exploits_relevance
+    boundaries:
+    - focus_strictly_on_exploits_domain_significance
+  questions:
+  - what_changed_in_exploits
+  - how_does_new_exploits_differ_from_prior_state
+  - what_verifiable_evidence_supports_exploits
+  - what_are_the_operational_or_market_implications_for_exploits
+  - what_technical_limitations_or_uncertainties_remain_in_exploits
+  - what_is_the_status_of_exploit_availability_for_exploits
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_exploits_exceeding_baseline
+    - independent_confirmation_of_exploits_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_exploits
+    - minor_routine_maintenance_or_repackaging_without_new_exploits_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - cyber
+      - gdelt
+      freshness: 24h
+      focus:
+      - new_exploits_events
+      - verifiable_changes_in_exploits
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_exploits
+      - what_tools_methods_or_data_were_used_for_exploits
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - exploits_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Exploits (exploits) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Exploits lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Exploits.
+  action_rules:
+    monitor:
+    - track_emerging_exploits_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_exploits_documentation
+    - verify_reproducibility_of_reported_exploits_data
+  watch_rules:
+    monitor:
+    - next_exploits_milestone_or_release_date
+    - peer_review_or_independent_validation_of_exploits
+    - ecosystem_adoption_metrics_for_exploits
+  retrieval_intent:
+    required_concepts:
+    - Exploits
+    - exploits
+    - exploit availability
+    - weaponization
+    - exploitation evidence
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_exploits_adoption
+  - verified_metrics_for_exploits
+  - cybersecurity_regulatory_or_competitive_response
+  - exploit availability
+  - weaponization
+  disambiguation_focus:
+  - Exploits
+  - exploits
+  - 'Exploits specific evaluation: Exploit availability, weaponization, exploitation
+    evidence'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - gdelt
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-breaches-theme
+  theme_id: cybersecurity-breaches-theme
+  micro_topic_id: breaches
+  micro_topic: breaches
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Breaches (breaches) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_breaches_developments
+    - verified_breaches_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_breaches_relevance
+    boundaries:
+    - focus_strictly_on_breaches_domain_significance
+  questions:
+  - what_changed_in_breaches
+  - how_does_new_breaches_differ_from_prior_state
+  - what_verifiable_evidence_supports_breaches
+  - what_are_the_operational_or_market_implications_for_breaches
+  - what_technical_limitations_or_uncertainties_remain_in_breaches
+  - what_is_the_status_of_victim_for_breaches
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_breaches_exceeding_baseline
+    - independent_confirmation_of_breaches_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_breaches
+    - minor_routine_maintenance_or_repackaging_without_new_breaches_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - cyber
+      - news-global
+      freshness: 48h
+      focus:
+      - new_breaches_events
+      - verifiable_changes_in_breaches
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_breaches
+      - what_tools_methods_or_data_were_used_for_breaches
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - breaches_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Breaches (breaches) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Breaches lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Breaches.
+  action_rules:
+    monitor:
+    - track_emerging_breaches_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_breaches_documentation
+    - verify_reproducibility_of_reported_breaches_data
+  watch_rules:
+    monitor:
+    - next_breaches_milestone_or_release_date
+    - peer_review_or_independent_validation_of_breaches
+    - ecosystem_adoption_metrics_for_breaches
+  retrieval_intent:
+    required_concepts:
+    - Breaches
+    - breaches
+    - victim
+    - data exposure
+    - attack vector
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_breaches_adoption
+  - verified_metrics_for_breaches
+  - cybersecurity_regulatory_or_competitive_response
+  - victim
+  - data exposure
+  disambiguation_focus:
+  - Breaches
+  - breaches
+  - 'Breaches specific evaluation: Victim, data exposure, attack vector'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-ransomware-theme
+  theme_id: cybersecurity-ransomware-theme
+  micro_topic_id: ransomware
+  micro_topic: ransomware
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Ransomware (ransomware) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ransomware_developments
+    - verified_ransomware_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_ransomware_relevance
+    boundaries:
+    - focus_strictly_on_ransomware_domain_significance
+  questions:
+  - what_changed_in_ransomware
+  - how_does_new_ransomware_differ_from_prior_state
+  - what_verifiable_evidence_supports_ransomware
+  - what_are_the_operational_or_market_implications_for_ransomware
+  - what_technical_limitations_or_uncertainties_remain_in_ransomware
+  - what_is_the_status_of_campaign_for_ransomware
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ransomware_exceeding_baseline
+    - independent_confirmation_of_ransomware_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ransomware
+    - minor_routine_maintenance_or_repackaging_without_new_ransomware_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - cyber
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_ransomware_events
+      - verifiable_changes_in_ransomware
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ransomware
+      - what_tools_methods_or_data_were_used_for_ransomware
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ransomware_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Ransomware (ransomware) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Ransomware lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Ransomware.
+  action_rules:
+    monitor:
+    - track_emerging_ransomware_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_ransomware_documentation
+    - verify_reproducibility_of_reported_ransomware_data
+  watch_rules:
+    monitor:
+    - next_ransomware_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ransomware
+    - ecosystem_adoption_metrics_for_ransomware
+  retrieval_intent:
+    required_concepts:
+    - Ransomware
+    - ransomware
+    - campaign
+    - victim
+    - malware
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ransomware_adoption
+  - verified_metrics_for_ransomware
+  - cybersecurity_regulatory_or_competitive_response
+  - campaign
+  - victim
+  disambiguation_focus:
+  - Ransomware
+  - ransomware
+  - 'Ransomware specific evaluation: Campaign, victim, malware, attribution'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-malware-theme
+  theme_id: cybersecurity-malware-theme
+  micro_topic_id: malware
+  micro_topic: malware
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Malware (malware) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_malware_developments
+    - verified_malware_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_malware_relevance
+    boundaries:
+    - focus_strictly_on_malware_domain_significance
+  questions:
+  - what_changed_in_malware
+  - how_does_new_malware_differ_from_prior_state
+  - what_verifiable_evidence_supports_malware
+  - what_are_the_operational_or_market_implications_for_malware
+  - what_technical_limitations_or_uncertainties_remain_in_malware
+  - what_is_the_status_of_malware_family_for_malware
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_malware_exceeding_baseline
+    - independent_confirmation_of_malware_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_malware
+    - minor_routine_maintenance_or_repackaging_without_new_malware_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - cyber
+      - research
+      freshness: 48h
+      focus:
+      - new_malware_events
+      - verifiable_changes_in_malware
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_malware
+      - what_tools_methods_or_data_were_used_for_malware
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - malware_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Malware (malware) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Malware lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Malware.
+  action_rules:
+    monitor:
+    - track_emerging_malware_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_malware_documentation
+    - verify_reproducibility_of_reported_malware_data
+  watch_rules:
+    monitor:
+    - next_malware_milestone_or_release_date
+    - peer_review_or_independent_validation_of_malware
+    - ecosystem_adoption_metrics_for_malware
+  retrieval_intent:
+    required_concepts:
+    - Malware
+    - malware
+    - malware family
+    - behavior
+    - distribution
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_malware_adoption
+  - verified_metrics_for_malware
+  - cybersecurity_regulatory_or_competitive_response
+  - malware family
+  - behavior
+  disambiguation_focus:
+  - Malware
+  - malware
+  - 'Malware specific evaluation: Malware family, behavior, distribution'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-threat-actors-theme
+  theme_id: cybersecurity-threat-actors-theme
+  micro_topic_id: threat-actors
+  micro_topic: threat-actors
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Threat Actors (threat-actors) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_threat_actors_developments
+    - verified_threat_actors_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_threat_actors_relevance
+    boundaries:
+    - focus_strictly_on_threat-actors_domain_significance
+  questions:
+  - what_changed_in_threat_actors
+  - how_does_new_threat_actors_differ_from_prior_state
+  - what_verifiable_evidence_supports_threat_actors
+  - what_are_the_operational_or_market_implications_for_threat_actors
+  - what_technical_limitations_or_uncertainties_remain_in_threat_actors
+  - what_is_the_status_of_actor_identity_for_threat_actors
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_threat_actors_exceeding_baseline
+    - independent_confirmation_of_threat_actors_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_threat_actors
+    - minor_routine_maintenance_or_repackaging_without_new_threat_actors_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - cyber
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_threat_actors_events
+      - verifiable_changes_in_threat_actors
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_threat_actors
+      - what_tools_methods_or_data_were_used_for_threat_actors
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - threat_actors_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Threat Actors (threat-actors)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Threat Actors lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Threat Actors.
+  action_rules:
+    monitor:
+    - track_emerging_threat_actors_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_threat_actors_documentation
+    - verify_reproducibility_of_reported_threat_actors_data
+  watch_rules:
+    monitor:
+    - next_threat_actors_milestone_or_release_date
+    - peer_review_or_independent_validation_of_threat_actors
+    - ecosystem_adoption_metrics_for_threat_actors
+  retrieval_intent:
+    required_concepts:
+    - Threat Actors
+    - threat-actors
+    - actor identity
+    - ttps
+    - attribution confidence
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_threat_actors_adoption
+  - verified_metrics_for_threat_actors
+  - cybersecurity_regulatory_or_competitive_response
+  - actor identity
+  - ttps
+  disambiguation_focus:
+  - Threat Actors
+  - threat-actors
+  - 'Threat Actors specific evaluation: Actor identity, TTPs, attribution confidence'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-campaigns-theme
+  theme_id: cybersecurity-campaigns-theme
+  micro_topic_id: campaigns
+  micro_topic: campaigns
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Campaigns (campaigns) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_campaigns_developments
+    - verified_campaigns_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_campaigns_relevance
+    boundaries:
+    - focus_strictly_on_campaigns_domain_significance
+  questions:
+  - what_changed_in_campaigns
+  - how_does_new_campaigns_differ_from_prior_state
+  - what_verifiable_evidence_supports_campaigns
+  - what_are_the_operational_or_market_implications_for_campaigns
+  - what_technical_limitations_or_uncertainties_remain_in_campaigns
+  - what_is_the_status_of_campaign_timeline_for_campaigns
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_campaigns_exceeding_baseline
+    - independent_confirmation_of_campaigns_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_campaigns
+    - minor_routine_maintenance_or_repackaging_without_new_campaigns_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - cyber
+      - gdelt
+      freshness: 48h
+      focus:
+      - new_campaigns_events
+      - verifiable_changes_in_campaigns
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_campaigns
+      - what_tools_methods_or_data_were_used_for_campaigns
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - campaigns_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Campaigns (campaigns) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Campaigns lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Campaigns.
+  action_rules:
+    monitor:
+    - track_emerging_campaigns_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_campaigns_documentation
+    - verify_reproducibility_of_reported_campaigns_data
+  watch_rules:
+    monitor:
+    - next_campaigns_milestone_or_release_date
+    - peer_review_or_independent_validation_of_campaigns
+    - ecosystem_adoption_metrics_for_campaigns
+  retrieval_intent:
+    required_concepts:
+    - Campaigns
+    - campaigns
+    - campaign timeline
+    - targets
+    - infrastructure
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_campaigns_adoption
+  - verified_metrics_for_campaigns
+  - cybersecurity_regulatory_or_competitive_response
+  - campaign timeline
+  - targets
+  disambiguation_focus:
+  - Campaigns
+  - campaigns
+  - 'Campaigns specific evaluation: Campaign timeline, targets, infrastructure'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - gdelt
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-identity-theme
+  theme_id: cybersecurity-identity-theme
+  micro_topic_id: identity
+  micro_topic: identity
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Identity (identity) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_identity_developments
+    - verified_identity_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_identity_relevance
+    boundaries:
+    - focus_strictly_on_identity_domain_significance
+  questions:
+  - what_changed_in_identity
+  - how_does_new_identity_differ_from_prior_state
+  - what_verifiable_evidence_supports_identity
+  - what_are_the_operational_or_market_implications_for_identity
+  - what_technical_limitations_or_uncertainties_remain_in_identity
+  - what_is_the_status_of_iam_for_identity
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_identity_exceeding_baseline
+    - independent_confirmation_of_identity_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_identity
+    - minor_routine_maintenance_or_repackaging_without_new_identity_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - cyber
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_identity_events
+      - verifiable_changes_in_identity
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_identity
+      - what_tools_methods_or_data_were_used_for_identity
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - identity_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Identity (identity) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Identity lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Identity.
+  action_rules:
+    monitor:
+    - track_emerging_identity_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_identity_documentation
+    - verify_reproducibility_of_reported_identity_data
+  watch_rules:
+    monitor:
+    - next_identity_milestone_or_release_date
+    - peer_review_or_independent_validation_of_identity
+    - ecosystem_adoption_metrics_for_identity
+  retrieval_intent:
+    required_concepts:
+    - Identity
+    - identity
+    - iam
+    - authentication
+    - identity attacks
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_identity_adoption
+  - verified_metrics_for_identity
+  - cybersecurity_regulatory_or_competitive_response
+  - iam
+  - authentication
+  disambiguation_focus:
+  - Identity
+  - identity
+  - 'Identity specific evaluation: IAM, authentication, identity attacks'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-cloud-security-theme
+  theme_id: cybersecurity-cloud-security-theme
+  micro_topic_id: cloud-security
+  micro_topic: cloud-security
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Cloud Security (cloud-security) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_cloud_security_developments
+    - verified_cloud_security_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_cloud_security_relevance
+    boundaries:
+    - focus_strictly_on_cloud-security_domain_significance
+  questions:
+  - what_changed_in_cloud_security
+  - how_does_new_cloud_security_differ_from_prior_state
+  - what_verifiable_evidence_supports_cloud_security
+  - what_are_the_operational_or_market_implications_for_cloud_security
+  - what_technical_limitations_or_uncertainties_remain_in_cloud_security
+  - what_is_the_status_of_cloud_vulnerabilities_for_cloud_security
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_cloud_security_exceeding_baseline
+    - independent_confirmation_of_cloud_security_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_cloud_security
+    - minor_routine_maintenance_or_repackaging_without_new_cloud_security_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - cyber
+      - github
+      freshness: 24h
+      focus:
+      - new_cloud_security_events
+      - verifiable_changes_in_cloud_security
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_cloud_security
+      - what_tools_methods_or_data_were_used_for_cloud_security
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - cloud_security_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Cloud Security (cloud-security)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Cloud Security lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Cloud Security.
+  action_rules:
+    monitor:
+    - track_emerging_cloud_security_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_cloud_security_documentation
+    - verify_reproducibility_of_reported_cloud_security_data
+  watch_rules:
+    monitor:
+    - next_cloud_security_milestone_or_release_date
+    - peer_review_or_independent_validation_of_cloud_security
+    - ecosystem_adoption_metrics_for_cloud_security
+  retrieval_intent:
+    required_concepts:
+    - Cloud Security
+    - cloud-security
+    - cloud vulnerabilities
+    - misconfiguration
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_cloud_security_adoption
+  - verified_metrics_for_cloud_security
+  - cybersecurity_regulatory_or_competitive_response
+  - cloud vulnerabilities
+  - misconfiguration
+  disambiguation_focus:
+  - Cloud Security
+  - cloud-security
+  - 'Cloud Security specific evaluation: Cloud vulnerabilities/misconfiguration'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-application-security-theme
+  theme_id: cybersecurity-application-security-theme
+  micro_topic_id: application-security
+  micro_topic: application-security
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Application Security (application-security) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_application_security_developments
+    - verified_application_security_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_application_security_relevance
+    boundaries:
+    - focus_strictly_on_application-security_domain_significance
+  questions:
+  - what_changed_in_application_security
+  - how_does_new_application_security_differ_from_prior_state
+  - what_verifiable_evidence_supports_application_security
+  - what_are_the_operational_or_market_implications_for_application_security
+  - what_technical_limitations_or_uncertainties_remain_in_application_security
+  - what_is_the_status_of_web_for_application_security
+  evidence_requirements: &id051
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_application_security_exceeding_baseline
+    - independent_confirmation_of_application_security_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_application_security
+    - minor_routine_maintenance_or_repackaging_without_new_application_security_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - cyber
+      - github
+      freshness: 24h
+      focus:
+      - new_application_security_events
+      - verifiable_changes_in_application_security
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_application_security
+      - what_tools_methods_or_data_were_used_for_application_security
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - application_security_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Application Security (application-security)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Application Security lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Application Security.
+  action_rules:
+    monitor:
+    - track_emerging_application_security_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_application_security_documentation
+    - verify_reproducibility_of_reported_application_security_data
+  watch_rules:
+    monitor:
+    - next_application_security_milestone_or_release_date
+    - peer_review_or_independent_validation_of_application_security
+    - ecosystem_adoption_metrics_for_application_security
+  retrieval_intent:
+    required_concepts:
+    - Application Security
+    - application-security
+    - web
+    - api
+    - software vulnerabilities
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_application_security_adoption
+  - verified_metrics_for_application_security
+  - cybersecurity_regulatory_or_competitive_response
+  - web
+  - api
+  disambiguation_focus:
+  - Application Security
+  - application-security
+  - 'Application Security specific evaluation: Web/API/software vulnerabilities'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-ai-security-theme
+  theme_id: cybersecurity-ai-security-theme
+  micro_topic_id: ai-security
+  micro_topic: ai-security
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess AI Security (ai-security) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ai_security_developments
+    - verified_ai_security_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_ai_security_relevance
+    boundaries:
+    - focus_strictly_on_ai-security_domain_significance
+  questions:
+  - what_changed_in_ai_security
+  - how_does_new_ai_security_differ_from_prior_state
+  - what_verifiable_evidence_supports_ai_security
+  - what_are_the_operational_or_market_implications_for_ai_security
+  - what_technical_limitations_or_uncertainties_remain_in_ai_security
+  - what_is_the_status_of_prompt_injection_for_ai_security
+  evidence_requirements: &id056
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ai_security_exceeding_baseline
+    - independent_confirmation_of_ai_security_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ai_security
+    - minor_routine_maintenance_or_repackaging_without_new_ai_security_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - cyber
+      - ai
+      - research
+      freshness: 24h
+      focus:
+      - new_ai_security_events
+      - verifiable_changes_in_ai_security
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ai_security
+      - what_tools_methods_or_data_were_used_for_ai_security
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ai_security_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in AI Security (ai-security)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding AI Security lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for AI Security.
+  action_rules:
+    monitor:
+    - track_emerging_ai_security_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_ai_security_documentation
+    - verify_reproducibility_of_reported_ai_security_data
+  watch_rules:
+    monitor:
+    - next_ai_security_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ai_security
+    - ecosystem_adoption_metrics_for_ai_security
+  retrieval_intent:
+    required_concepts:
+    - AI Security
+    - ai-security
+    - prompt injection
+    - model attacks
+    - ai supply chain
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 24h
+  watch_items:
+  - production_ai_security_adoption
+  - verified_metrics_for_ai_security
+  - cybersecurity_regulatory_or_competitive_response
+  - prompt injection
+  - model attacks
+  disambiguation_focus:
+  - AI Security
+  - ai-security
+  - 'AI Security specific evaluation: Prompt injection, model attacks, AI supply chain'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - ai
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-security-tools-theme
+  theme_id: cybersecurity-security-tools-theme
+  micro_topic_id: security-tools
+  micro_topic: security-tools
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Security Tools (security-tools) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_security_tools_developments
+    - verified_security_tools_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_security_tools_relevance
+    boundaries:
+    - focus_strictly_on_security-tools_domain_significance
+  questions:
+  - what_changed_in_security_tools
+  - how_does_new_security_tools_differ_from_prior_state
+  - what_verifiable_evidence_supports_security_tools
+  - what_are_the_operational_or_market_implications_for_security_tools
+  - what_technical_limitations_or_uncertainties_remain_in_security_tools
+  - what_is_the_status_of_new_scanners_for_security_tools
+  evidence_requirements: &id061
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id061
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_security_tools_exceeding_baseline
+    - independent_confirmation_of_security_tools_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_security_tools
+    - minor_routine_maintenance_or_repackaging_without_new_security_tools_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id062
+      preferred_sources: &id065
+      - cyber
+      - github
+      freshness: 48h
+      focus:
+      - new_security_tools_events
+      - verifiable_changes_in_security_tools
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id063
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_security_tools
+      - what_tools_methods_or_data_were_used_for_security_tools
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id062
+    video: *id063
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - security_tools_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id064
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id064
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Security Tools (security-tools)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Security Tools lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Security Tools.
+  action_rules:
+    monitor:
+    - track_emerging_security_tools_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_security_tools_documentation
+    - verify_reproducibility_of_reported_security_tools_data
+  watch_rules:
+    monitor:
+    - next_security_tools_milestone_or_release_date
+    - peer_review_or_independent_validation_of_security_tools
+    - ecosystem_adoption_metrics_for_security_tools
+  retrieval_intent:
+    required_concepts:
+    - Security Tools
+    - security-tools
+    - new scanners
+    - edr
+    - siem
+    preferred_source_types: *id065
+    evidence_types: *id061
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_security_tools_adoption
+  - verified_metrics_for_security_tools
+  - cybersecurity_regulatory_or_competitive_response
+  - new scanners
+  - edr
+  disambiguation_focus:
+  - Security Tools
+  - security-tools
+  - 'Security Tools specific evaluation: New scanners, EDR, SIEM, security tooling'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - cyber
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: cybersecurity-national-cybersecurity-policy-theme
+  theme_id: cybersecurity-national-cybersecurity-policy-theme
+  micro_topic_id: national-cybersecurity-policy
+  micro_topic: national-cybersecurity-policy
+  domain: cybersecurity
+  domain_id: cybersecurity
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess National Cybersecurity Policy (national-cybersecurity-policy)
+    specifically through verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_national_cybersecurity_policy_developments
+    - verified_national_cybersecurity_policy_activity
+    excludes:
+    - tangential_cybersecurity_chatter_without_national_cybersecurity_policy_relevance
+    boundaries:
+    - focus_strictly_on_national-cybersecurity-policy_domain_significance
+  questions:
+  - what_changed_in_national_cybersecurity_policy
+  - how_does_new_national_cybersecurity_policy_differ_from_prior_state
+  - what_verifiable_evidence_supports_national_cybersecurity_policy
+  - what_are_the_operational_or_market_implications_for_national_cybersecurity_policy
+  - what_technical_limitations_or_uncertainties_remain_in_national_cybersecurity_policy
+  - what_is_the_status_of_laws_for_national_cybersecurity_policy
+  evidence_requirements: &id066
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id066
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_national_cybersecurity_policy_exceeding_baseline
+    - independent_confirmation_of_national_cybersecurity_policy_milestone_from_primary_source
+    - measurable_impact_on_cybersecurity_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_national_cybersecurity_policy
+    - minor_routine_maintenance_or_repackaging_without_new_national_cybersecurity_policy_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id067
+      preferred_sources: &id070
+      - gov
+      - cyber
+      freshness: 48h
+      focus:
+      - new_national_cybersecurity_policy_events
+      - verifiable_changes_in_national_cybersecurity_policy
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id068
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_national_cybersecurity_policy
+      - what_tools_methods_or_data_were_used_for_national_cybersecurity_policy
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id067
+    video: *id068
+  entity_extraction:
+    required:
+    - cybersecurity
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - national_cybersecurity_policy_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id069
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id069
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in National Cybersecurity Policy
+      (national-cybersecurity-policy) was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding National Cybersecurity Policy
+      lacked primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for National Cybersecurity Policy.
+  action_rules:
+    monitor:
+    - track_emerging_national_cybersecurity_policy_benchmarks
+    - follow_official_cybersecurity_announcements
+    investigate:
+    - audit_claims_against_primary_national_cybersecurity_policy_documentation
+    - verify_reproducibility_of_reported_national_cybersecurity_policy_data
+  watch_rules:
+    monitor:
+    - next_national_cybersecurity_policy_milestone_or_release_date
+    - peer_review_or_independent_validation_of_national_cybersecurity_policy
+    - ecosystem_adoption_metrics_for_national_cybersecurity_policy
+  retrieval_intent:
+    required_concepts:
+    - National Cybersecurity Policy
+    - national-cybersecurity-policy
+    - laws
+    - national strategy
+    - incident response
+    preferred_source_types: *id070
+    evidence_types: *id066
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_national_cybersecurity_policy_adoption
+  - verified_metrics_for_national_cybersecurity_policy
+  - cybersecurity_regulatory_or_competitive_response
+  - laws
+  - national strategy
+  disambiguation_focus:
+  - National Cybersecurity Policy
+  - national-cybersecurity-policy
+  - 'National Cybersecurity Policy specific evaluation: Laws, national strategy, incident
+    response'
+  - distinct from other cybersecurity topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - cyber
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

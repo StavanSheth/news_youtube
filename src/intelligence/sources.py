@@ -258,7 +258,19 @@ class SourceAcceptanceResult:
         return self.status in (SourceAcceptanceStatus.DISABLE.value, SourceAcceptanceStatus.DISABLED.value)
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        data = asdict(self)
+        data["checks"] = {
+            "configured": self.configured,
+            "authenticated": self.authenticated,
+            "reachable": self.reachable,
+            "fresh": self.freshness_valid,
+            "schema_valid": self.schema_valid,
+            "extractable": self.content_extractable,
+            "role_valid": self.role_valid,
+            "mapping_valid": self.mapping_valid,
+            "evidence_useful": self.evidence_valid,
+        }
+        return data
 
 
 class ProductionSourceRegistry:

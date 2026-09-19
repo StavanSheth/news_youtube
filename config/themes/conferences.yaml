@@ -1,0 +1,1324 @@
+themes:
+- id: conferences-google-i-o-theme
+  theme_id: conferences-google-i-o-theme
+  micro_topic_id: google-i-o
+  micro_topic: google-i-o
+  domain: conferences
+  domain_id: conferences
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Google I/O (google-i-o) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_google_i_o_developments
+    - verified_google_i/o_activity
+    excludes:
+    - tangential_conferences_chatter_without_google_i_o_relevance
+    boundaries:
+    - focus_strictly_on_google-i-o_domain_significance
+  questions:
+  - what_changed_in_google_i_o
+  - how_does_new_google_i/o_differ_from_prior_state
+  - what_verifiable_evidence_supports_google_i_o
+  - what_are_the_operational_or_market_implications_for_google_i_o
+  - what_technical_limitations_or_uncertainties_remain_in_google_i_o
+  - what_is_the_status_of_product_for_google_i_o
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_google_i/o_exceeding_baseline
+    - independent_confirmation_of_google_i_o_milestone_from_primary_source
+    - measurable_impact_on_conferences_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_google_i_o
+    - minor_routine_maintenance_or_repackaging_without_new_google_i_o_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - conferences
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_google_i_o_events
+      - verifiable_changes_in_google_i/o
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_google_i_o
+      - what_tools_methods_or_data_were_used_for_google_i/o
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - conferences
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - google_i_o_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Google I/O (google-i-o) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Google I/O lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Google I/O.
+  action_rules:
+    monitor:
+    - track_emerging_google_i_o_benchmarks
+    - follow_official_conferences_announcements
+    investigate:
+    - audit_claims_against_primary_google_i/o_documentation
+    - verify_reproducibility_of_reported_google_i_o_data
+  watch_rules:
+    monitor:
+    - next_google_i/o_milestone_or_release_date
+    - peer_review_or_independent_validation_of_google_i_o
+    - ecosystem_adoption_metrics_for_google_i_o
+  retrieval_intent:
+    required_concepts:
+    - Google I/O
+    - google-i-o
+    - product
+    - model
+    - platform announcements
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_google_i_o_adoption
+  - verified_metrics_for_google_i/o
+  - conferences_regulatory_or_competitive_response
+  - product
+  - model
+  disambiguation_focus:
+  - Google I/O
+  - google-i-o
+  - 'Google I/O specific evaluation: Product/model/platform announcements'
+  - distinct from other conferences topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - conferences
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: conferences-gtc-theme
+  theme_id: conferences-gtc-theme
+  micro_topic_id: gtc
+  micro_topic: gtc
+  domain: conferences
+  domain_id: conferences
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess GTC (gtc) specifically through verified evidence, measurable change,
+    and practical implications.
+  scope:
+    includes:
+    - all_gtc_developments
+    - verified_gtc_activity
+    excludes:
+    - tangential_conferences_chatter_without_gtc_relevance
+    boundaries:
+    - focus_strictly_on_gtc_domain_significance
+  questions:
+  - what_changed_in_gtc
+  - how_does_new_gtc_differ_from_prior_state
+  - what_verifiable_evidence_supports_gtc
+  - what_are_the_operational_or_market_implications_for_gtc
+  - what_technical_limitations_or_uncertainties_remain_in_gtc
+  - what_is_the_status_of_gpu_for_gtc
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_gtc_exceeding_baseline
+    - independent_confirmation_of_gtc_milestone_from_primary_source
+    - measurable_impact_on_conferences_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_gtc
+    - minor_routine_maintenance_or_repackaging_without_new_gtc_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - conferences
+      - semiconductor
+      freshness: 48h
+      focus:
+      - new_gtc_events
+      - verifiable_changes_in_gtc
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_gtc
+      - what_tools_methods_or_data_were_used_for_gtc
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - conferences
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - gtc_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in GTC (gtc) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding GTC lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for GTC.
+  action_rules:
+    monitor:
+    - track_emerging_gtc_benchmarks
+    - follow_official_conferences_announcements
+    investigate:
+    - audit_claims_against_primary_gtc_documentation
+    - verify_reproducibility_of_reported_gtc_data
+  watch_rules:
+    monitor:
+    - next_gtc_milestone_or_release_date
+    - peer_review_or_independent_validation_of_gtc
+    - ecosystem_adoption_metrics_for_gtc
+  retrieval_intent:
+    required_concepts:
+    - GTC
+    - gtc
+    - gpu
+    - ai infrastructure announcements
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_gtc_adoption
+  - verified_metrics_for_gtc
+  - conferences_regulatory_or_competitive_response
+  - gpu
+  - ai infrastructure announcements
+  disambiguation_focus:
+  - GTC
+  - gtc
+  - 'GTC specific evaluation: GPU/AI infrastructure announcements'
+  - distinct from other conferences topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - conferences
+    - semiconductor
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: conferences-wwdc-theme
+  theme_id: conferences-wwdc-theme
+  micro_topic_id: wwdc
+  micro_topic: wwdc
+  domain: conferences
+  domain_id: conferences
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess WWDC (wwdc) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_wwdc_developments
+    - verified_wwdc_activity
+    excludes:
+    - tangential_conferences_chatter_without_wwdc_relevance
+    boundaries:
+    - focus_strictly_on_wwdc_domain_significance
+  questions:
+  - what_changed_in_wwdc
+  - how_does_new_wwdc_differ_from_prior_state
+  - what_verifiable_evidence_supports_wwdc
+  - what_are_the_operational_or_market_implications_for_wwdc
+  - what_technical_limitations_or_uncertainties_remain_in_wwdc
+  - what_is_the_status_of_apple_platform_for_wwdc
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_wwdc_exceeding_baseline
+    - independent_confirmation_of_wwdc_milestone_from_primary_source
+    - measurable_impact_on_conferences_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_wwdc
+    - minor_routine_maintenance_or_repackaging_without_new_wwdc_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - conferences
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_wwdc_events
+      - verifiable_changes_in_wwdc
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_wwdc
+      - what_tools_methods_or_data_were_used_for_wwdc
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - conferences
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - wwdc_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in WWDC (wwdc) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding WWDC lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for WWDC.
+  action_rules:
+    monitor:
+    - track_emerging_wwdc_benchmarks
+    - follow_official_conferences_announcements
+    investigate:
+    - audit_claims_against_primary_wwdc_documentation
+    - verify_reproducibility_of_reported_wwdc_data
+  watch_rules:
+    monitor:
+    - next_wwdc_milestone_or_release_date
+    - peer_review_or_independent_validation_of_wwdc
+    - ecosystem_adoption_metrics_for_wwdc
+  retrieval_intent:
+    required_concepts:
+    - WWDC
+    - wwdc
+    - apple platform
+    - developer announcements
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_wwdc_adoption
+  - verified_metrics_for_wwdc
+  - conferences_regulatory_or_competitive_response
+  - apple platform
+  - developer announcements
+  disambiguation_focus:
+  - WWDC
+  - wwdc
+  - 'WWDC specific evaluation: Apple platform/developer announcements'
+  - distinct from other conferences topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - conferences
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: conferences-neurips-theme
+  theme_id: conferences-neurips-theme
+  micro_topic_id: neurips
+  micro_topic: neurips
+  domain: conferences
+  domain_id: conferences
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess NeurIPS (neurips) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_neurips_developments
+    - verified_neurips_activity
+    excludes:
+    - tangential_conferences_chatter_without_neurips_relevance
+    boundaries:
+    - focus_strictly_on_neurips_domain_significance
+  questions:
+  - what_changed_in_neurips
+  - how_does_new_neurips_differ_from_prior_state
+  - what_verifiable_evidence_supports_neurips
+  - what_are_the_operational_or_market_implications_for_neurips
+  - what_technical_limitations_or_uncertainties_remain_in_neurips
+  - what_is_the_status_of_important_research_for_neurips
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_neurips_exceeding_baseline
+    - independent_confirmation_of_neurips_milestone_from_primary_source
+    - measurable_impact_on_conferences_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_neurips
+    - minor_routine_maintenance_or_repackaging_without_new_neurips_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - conferences
+      - research
+      freshness: 48h
+      focus:
+      - new_neurips_events
+      - verifiable_changes_in_neurips
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_neurips
+      - what_tools_methods_or_data_were_used_for_neurips
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - conferences
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - neurips_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in NeurIPS (neurips) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding NeurIPS lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for NeurIPS.
+  action_rules:
+    monitor:
+    - track_emerging_neurips_benchmarks
+    - follow_official_conferences_announcements
+    investigate:
+    - audit_claims_against_primary_neurips_documentation
+    - verify_reproducibility_of_reported_neurips_data
+  watch_rules:
+    monitor:
+    - next_neurips_milestone_or_release_date
+    - peer_review_or_independent_validation_of_neurips
+    - ecosystem_adoption_metrics_for_neurips
+  retrieval_intent:
+    required_concepts:
+    - NeurIPS
+    - neurips
+    - important research
+    - results
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_neurips_adoption
+  - verified_metrics_for_neurips
+  - conferences_regulatory_or_competitive_response
+  - important research
+  - results
+  disambiguation_focus:
+  - NeurIPS
+  - neurips
+  - 'NeurIPS specific evaluation: Important research/results'
+  - distinct from other conferences topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - conferences
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: conferences-icml-theme
+  theme_id: conferences-icml-theme
+  micro_topic_id: icml
+  micro_topic: icml
+  domain: conferences
+  domain_id: conferences
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess ICML (icml) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_icml_developments
+    - verified_icml_activity
+    excludes:
+    - tangential_conferences_chatter_without_icml_relevance
+    boundaries:
+    - focus_strictly_on_icml_domain_significance
+  questions:
+  - what_changed_in_icml
+  - how_does_new_icml_differ_from_prior_state
+  - what_verifiable_evidence_supports_icml
+  - what_are_the_operational_or_market_implications_for_icml
+  - what_technical_limitations_or_uncertainties_remain_in_icml
+  - what_is_the_status_of_ml_research_for_icml
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_icml_exceeding_baseline
+    - independent_confirmation_of_icml_milestone_from_primary_source
+    - measurable_impact_on_conferences_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_icml
+    - minor_routine_maintenance_or_repackaging_without_new_icml_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - conferences
+      - research
+      freshness: 48h
+      focus:
+      - new_icml_events
+      - verifiable_changes_in_icml
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_icml
+      - what_tools_methods_or_data_were_used_for_icml
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - conferences
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - icml_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in ICML (icml) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding ICML lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for ICML.
+  action_rules:
+    monitor:
+    - track_emerging_icml_benchmarks
+    - follow_official_conferences_announcements
+    investigate:
+    - audit_claims_against_primary_icml_documentation
+    - verify_reproducibility_of_reported_icml_data
+  watch_rules:
+    monitor:
+    - next_icml_milestone_or_release_date
+    - peer_review_or_independent_validation_of_icml
+    - ecosystem_adoption_metrics_for_icml
+  retrieval_intent:
+    required_concepts:
+    - ICML
+    - icml
+    - ml research
+    - results
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_icml_adoption
+  - verified_metrics_for_icml
+  - conferences_regulatory_or_competitive_response
+  - ml research
+  - results
+  disambiguation_focus:
+  - ICML
+  - icml
+  - 'ICML specific evaluation: ML research/results'
+  - distinct from other conferences topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - conferences
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: conferences-cvpr-theme
+  theme_id: conferences-cvpr-theme
+  micro_topic_id: cvpr
+  micro_topic: cvpr
+  domain: conferences
+  domain_id: conferences
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess CVPR (cvpr) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_cvpr_developments
+    - verified_cvpr_activity
+    excludes:
+    - tangential_conferences_chatter_without_cvpr_relevance
+    boundaries:
+    - focus_strictly_on_cvpr_domain_significance
+  questions:
+  - what_changed_in_cvpr
+  - how_does_new_cvpr_differ_from_prior_state
+  - what_verifiable_evidence_supports_cvpr
+  - what_are_the_operational_or_market_implications_for_cvpr
+  - what_technical_limitations_or_uncertainties_remain_in_cvpr
+  - what_is_the_status_of_vision_for_cvpr
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_cvpr_exceeding_baseline
+    - independent_confirmation_of_cvpr_milestone_from_primary_source
+    - measurable_impact_on_conferences_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_cvpr
+    - minor_routine_maintenance_or_repackaging_without_new_cvpr_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - conferences
+      - research
+      freshness: 48h
+      focus:
+      - new_cvpr_events
+      - verifiable_changes_in_cvpr
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_cvpr
+      - what_tools_methods_or_data_were_used_for_cvpr
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - conferences
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - cvpr_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in CVPR (cvpr) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding CVPR lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for CVPR.
+  action_rules:
+    monitor:
+    - track_emerging_cvpr_benchmarks
+    - follow_official_conferences_announcements
+    investigate:
+    - audit_claims_against_primary_cvpr_documentation
+    - verify_reproducibility_of_reported_cvpr_data
+  watch_rules:
+    monitor:
+    - next_cvpr_milestone_or_release_date
+    - peer_review_or_independent_validation_of_cvpr
+    - ecosystem_adoption_metrics_for_cvpr
+  retrieval_intent:
+    required_concepts:
+    - CVPR
+    - cvpr
+    - vision
+    - multimodal research
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_cvpr_adoption
+  - verified_metrics_for_cvpr
+  - conferences_regulatory_or_competitive_response
+  - vision
+  - multimodal research
+  disambiguation_focus:
+  - CVPR
+  - cvpr
+  - 'CVPR specific evaluation: Vision/multimodal research'
+  - distinct from other conferences topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - conferences
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: conferences-major-industry-events-theme
+  theme_id: conferences-major-industry-events-theme
+  micro_topic_id: major-industry-events
+  micro_topic: major-industry-events
+  domain: conferences
+  domain_id: conferences
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Major Industry Events (major-industry-events) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_major_industry_events_developments
+    - verified_major_industry_events_activity
+    excludes:
+    - tangential_conferences_chatter_without_major_industry_events_relevance
+    boundaries:
+    - focus_strictly_on_major-industry-events_domain_significance
+  questions:
+  - what_changed_in_major_industry_events
+  - how_does_new_major_industry_events_differ_from_prior_state
+  - what_verifiable_evidence_supports_major_industry_events
+  - what_are_the_operational_or_market_implications_for_major_industry_events
+  - what_technical_limitations_or_uncertainties_remain_in_major_industry_events
+  - what_is_the_status_of_major_launches_for_major_industry_events
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_major_industry_events_exceeding_baseline
+    - independent_confirmation_of_major_industry_events_milestone_from_primary_source
+    - measurable_impact_on_conferences_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_major_industry_events
+    - minor_routine_maintenance_or_repackaging_without_new_major_industry_events_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - conferences
+      - news-global
+      freshness: 48h
+      focus:
+      - new_major_industry_events_events
+      - verifiable_changes_in_major_industry_events
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_major_industry_events
+      - what_tools_methods_or_data_were_used_for_major_industry_events
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - conferences
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - major_industry_events_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Major Industry Events (major-industry-events)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Major Industry Events lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Major Industry Events.
+  action_rules:
+    monitor:
+    - track_emerging_major_industry_events_benchmarks
+    - follow_official_conferences_announcements
+    investigate:
+    - audit_claims_against_primary_major_industry_events_documentation
+    - verify_reproducibility_of_reported_major_industry_events_data
+  watch_rules:
+    monitor:
+    - next_major_industry_events_milestone_or_release_date
+    - peer_review_or_independent_validation_of_major_industry_events
+    - ecosystem_adoption_metrics_for_major_industry_events
+  retrieval_intent:
+    required_concepts:
+    - Major Industry Events
+    - major-industry-events
+    - major launches
+    - strategy announcements
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_major_industry_events_adoption
+  - verified_metrics_for_major_industry_events
+  - conferences_regulatory_or_competitive_response
+  - major launches
+  - strategy announcements
+  disambiguation_focus:
+  - Major Industry Events
+  - major-industry-events
+  - 'Major Industry Events specific evaluation: Major launches/strategy announcements'
+  - distinct from other conferences topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - conferences
+    - news-global
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: conferences-keynotes-theme
+  theme_id: conferences-keynotes-theme
+  micro_topic_id: keynotes
+  micro_topic: keynotes
+  domain: conferences
+  domain_id: conferences
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Keynotes (keynotes) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_keynotes_developments
+    - verified_keynotes_activity
+    excludes:
+    - tangential_conferences_chatter_without_keynotes_relevance
+    boundaries:
+    - focus_strictly_on_keynotes_domain_significance
+  questions:
+  - what_changed_in_keynotes
+  - how_does_new_keynotes_differ_from_prior_state
+  - what_verifiable_evidence_supports_keynotes
+  - what_are_the_operational_or_market_implications_for_keynotes
+  - what_technical_limitations_or_uncertainties_remain_in_keynotes
+  - what_is_the_status_of_actual_claims_for_keynotes
+  evidence_requirements: &id036
+  - youtube_configured_channels
+  - conferences
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_keynotes_exceeding_baseline
+    - independent_confirmation_of_keynotes_milestone_from_primary_source
+    - measurable_impact_on_conferences_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_keynotes
+    - minor_routine_maintenance_or_repackaging_without_new_keynotes_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - youtube configured channels
+      - conferences
+      freshness: 48h
+      focus:
+      - new_keynotes_events
+      - verifiable_changes_in_keynotes
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_keynotes
+      - what_tools_methods_or_data_were_used_for_keynotes
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - conferences
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - keynotes_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: executive_brief
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: executive_brief
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Keynotes (keynotes) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Keynotes lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Keynotes.
+  action_rules:
+    monitor:
+    - track_emerging_keynotes_benchmarks
+    - follow_official_conferences_announcements
+    investigate:
+    - audit_claims_against_primary_keynotes_documentation
+    - verify_reproducibility_of_reported_keynotes_data
+  watch_rules:
+    monitor:
+    - next_keynotes_milestone_or_release_date
+    - peer_review_or_independent_validation_of_keynotes
+    - ecosystem_adoption_metrics_for_keynotes
+  retrieval_intent:
+    required_concepts:
+    - Keynotes
+    - keynotes
+    - actual claims
+    - demos
+    - not headline interpretation
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_keynotes_adoption
+  - verified_metrics_for_keynotes
+  - conferences_regulatory_or_competitive_response
+  - actual claims
+  - demos
+  disambiguation_focus:
+  - Keynotes
+  - keynotes
+  - 'Keynotes specific evaluation: Actual claims/demos, not headline interpretation'
+  - distinct from other conferences topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - youtube configured channels
+    - conferences
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

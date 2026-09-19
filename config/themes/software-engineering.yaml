@@ -1,0 +1,2507 @@
+themes:
+- id: software-engineering-programming-languages-theme
+  theme_id: software-engineering-programming-languages-theme
+  micro_topic_id: programming-languages
+  micro_topic: programming-languages
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Programming Languages (programming-languages) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_programming_languages_developments
+    - verified_programming_languages_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_programming_languages_relevance
+    boundaries:
+    - focus_strictly_on_programming-languages_domain_significance
+  questions:
+  - what_changed_in_programming_languages
+  - how_does_new_programming_languages_differ_from_prior_state
+  - what_verifiable_evidence_supports_programming_languages
+  - what_are_the_operational_or_market_implications_for_programming_languages
+  - what_technical_limitations_or_uncertainties_remain_in_programming_languages
+  - what_is_the_status_of_releases_for_programming_languages
+  evidence_requirements: &id001
+  - official_release
+  - benchmark
+  - github
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_programming_languages_exceeding_baseline
+    - independent_confirmation_of_programming_languages_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_programming_languages
+    - minor_routine_maintenance_or_repackaging_without_new_programming_languages_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - github
+      - research
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_programming_languages_events
+      - verifiable_changes_in_programming_languages
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_programming_languages
+      - what_tools_methods_or_data_were_used_for_programming_languages
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - programming_languages_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Programming Languages (programming-languages)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Programming Languages lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Programming Languages.
+  action_rules:
+    monitor:
+    - track_emerging_programming_languages_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_programming_languages_documentation
+    - verify_reproducibility_of_reported_programming_languages_data
+  watch_rules:
+    monitor:
+    - next_programming_languages_milestone_or_release_date
+    - peer_review_or_independent_validation_of_programming_languages
+    - ecosystem_adoption_metrics_for_programming_languages
+  retrieval_intent:
+    required_concepts:
+    - Programming Languages
+    - programming-languages
+    - releases
+    - language features
+    - performance
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_programming_languages_adoption
+  - verified_metrics_for_programming_languages
+  - software_engineering_regulatory_or_competitive_response
+  - practical developer impact
+  disambiguation_focus:
+  - Programming Languages
+  - programming-languages
+  - 'Programming Languages specific evaluation: Releases, language features, performance,
+    safety, ecosystem'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-frameworks-theme
+  theme_id: software-engineering-frameworks-theme
+  micro_topic_id: frameworks
+  micro_topic: frameworks
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Frameworks (frameworks) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_frameworks_developments
+    - verified_frameworks_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_frameworks_relevance
+    boundaries:
+    - focus_strictly_on_frameworks_domain_significance
+  questions:
+  - what_changed_in_frameworks
+  - how_does_new_frameworks_differ_from_prior_state
+  - what_verifiable_evidence_supports_frameworks
+  - what_are_the_operational_or_market_implications_for_frameworks
+  - what_technical_limitations_or_uncertainties_remain_in_frameworks
+  - what_is_the_status_of_api_changes_for_frameworks
+  evidence_requirements: &id006
+  - release
+  - docs
+  - repositories
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_frameworks_exceeding_baseline
+    - independent_confirmation_of_frameworks_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_frameworks
+    - minor_routine_maintenance_or_repackaging_without_new_frameworks_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_frameworks_events
+      - verifiable_changes_in_frameworks
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_frameworks
+      - what_tools_methods_or_data_were_used_for_frameworks
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - frameworks_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Frameworks (frameworks) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Frameworks lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Frameworks.
+  action_rules:
+    monitor:
+    - track_emerging_frameworks_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_frameworks_documentation
+    - verify_reproducibility_of_reported_frameworks_data
+  watch_rules:
+    monitor:
+    - next_frameworks_milestone_or_release_date
+    - peer_review_or_independent_validation_of_frameworks
+    - ecosystem_adoption_metrics_for_frameworks
+  retrieval_intent:
+    required_concepts:
+    - Frameworks
+    - frameworks
+    - api changes
+    - architecture
+    - performance
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_frameworks_adoption
+  - verified_metrics_for_frameworks
+  - software_engineering_regulatory_or_competitive_response
+  - upgrade
+  - adoption implications
+  disambiguation_focus:
+  - Frameworks
+  - frameworks
+  - 'Frameworks specific evaluation: API changes, architecture, performance, adoption,
+    breaking c'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-ide-and-developer-tools-theme
+  theme_id: software-engineering-ide-and-developer-tools-theme
+  micro_topic_id: ide-and-developer-tools
+  micro_topic: ide-and-developer-tools
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess IDE & Developer Tools (ide-and-developer-tools) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_ide_and_developer_tools_developments
+    - verified_ide_&_developer_tools_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_ide_and_developer_tools_relevance
+    boundaries:
+    - focus_strictly_on_ide-and-developer-tools_domain_significance
+  questions:
+  - what_changed_in_ide_and_developer_tools
+  - how_does_new_ide_&_developer_tools_differ_from_prior_state
+  - what_verifiable_evidence_supports_ide_and_developer_tools
+  - what_are_the_operational_or_market_implications_for_ide_and_developer_tools
+  - what_technical_limitations_or_uncertainties_remain_in_ide_and_developer_tools
+  - what_is_the_status_of_ai_features_for_ide_and_developer_tools
+  evidence_requirements: &id011
+  - product_release
+  - demo
+  - user_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ide_&_developer_tools_exceeding_baseline
+    - independent_confirmation_of_ide_and_developer_tools_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ide_and_developer_tools
+    - minor_routine_maintenance_or_repackaging_without_new_ide_and_developer_tools_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_ide_and_developer_tools_events
+      - verifiable_changes_in_ide_&_developer_tools
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ide_and_developer_tools
+      - what_tools_methods_or_data_were_used_for_ide_&_developer_tools
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ide_and_developer_tools_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in IDE & Developer Tools (ide-and-developer-tools)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding IDE & Developer Tools lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for IDE & Developer Tools.
+  action_rules:
+    monitor:
+    - track_emerging_ide_and_developer_tools_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_ide_&_developer_tools_documentation
+    - verify_reproducibility_of_reported_ide_and_developer_tools_data
+  watch_rules:
+    monitor:
+    - next_ide_&_developer_tools_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ide_and_developer_tools
+    - ecosystem_adoption_metrics_for_ide_and_developer_tools
+  retrieval_intent:
+    required_concepts:
+    - IDE & Developer Tools
+    - ide-and-developer-tools
+    - ai features
+    - debugging
+    - productivity
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ide_and_developer_tools_adoption
+  - verified_metrics_for_ide_&_developer_tools
+  - software_engineering_regulatory_or_competitive_response
+  - productivity impact
+  disambiguation_focus:
+  - IDE & Developer Tools
+  - ide-and-developer-tools
+  - 'IDE & Developer Tools specific evaluation: AI features, debugging, productivity,
+    integrations'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-apis-theme
+  theme_id: software-engineering-apis-theme
+  micro_topic_id: apis
+  micro_topic: apis
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess APIs (apis) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_apis_developments
+    - verified_apis_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_apis_relevance
+    boundaries:
+    - focus_strictly_on_apis_domain_significance
+  questions:
+  - what_changed_in_apis
+  - how_does_new_apis_differ_from_prior_state
+  - what_verifiable_evidence_supports_apis
+  - what_are_the_operational_or_market_implications_for_apis
+  - what_technical_limitations_or_uncertainties_remain_in_apis
+  - what_is_the_status_of_new_apis_for_apis
+  evidence_requirements: &id016
+  - official_api_docs
+  - release
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_apis_exceeding_baseline
+    - independent_confirmation_of_apis_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_apis
+    - minor_routine_maintenance_or_repackaging_without_new_apis_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - company
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_apis_events
+      - verifiable_changes_in_apis
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_apis
+      - what_tools_methods_or_data_were_used_for_apis
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - apis_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in APIs (apis) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding APIs lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for APIs.
+  action_rules:
+    monitor:
+    - track_emerging_apis_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_apis_documentation
+    - verify_reproducibility_of_reported_apis_data
+  watch_rules:
+    monitor:
+    - next_apis_milestone_or_release_date
+    - peer_review_or_independent_validation_of_apis
+    - ecosystem_adoption_metrics_for_apis
+  retrieval_intent:
+    required_concepts:
+    - APIs
+    - apis
+    - new apis
+    - versioning
+    - limits
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_apis_adoption
+  - verified_metrics_for_apis
+  - software_engineering_regulatory_or_competitive_response
+  - integration impact
+  disambiguation_focus:
+  - APIs
+  - apis
+  - 'APIs specific evaluation: New APIs, versioning, limits, pricing, reliability'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - company
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-sdks-theme
+  theme_id: software-engineering-sdks-theme
+  micro_topic_id: sdks
+  micro_topic: sdks
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess SDKs (sdks) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_sdks_developments
+    - verified_sdks_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_sdks_relevance
+    boundaries:
+    - focus_strictly_on_sdks_domain_significance
+  questions:
+  - what_changed_in_sdks
+  - how_does_new_sdks_differ_from_prior_state
+  - what_verifiable_evidence_supports_sdks
+  - what_are_the_operational_or_market_implications_for_sdks
+  - what_technical_limitations_or_uncertainties_remain_in_sdks
+  - what_is_the_status_of_new_sdks_for_sdks
+  evidence_requirements: &id021
+  - repository
+  - release
+  - docs
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_sdks_exceeding_baseline
+    - independent_confirmation_of_sdks_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_sdks
+    - minor_routine_maintenance_or_repackaging_without_new_sdks_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - github
+      - company
+      freshness: 48h
+      focus:
+      - new_sdks_events
+      - verifiable_changes_in_sdks
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_sdks
+      - what_tools_methods_or_data_were_used_for_sdks
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - sdks_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in SDKs (sdks) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding SDKs lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for SDKs.
+  action_rules:
+    monitor:
+    - track_emerging_sdks_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_sdks_documentation
+    - verify_reproducibility_of_reported_sdks_data
+  watch_rules:
+    monitor:
+    - next_sdks_milestone_or_release_date
+    - peer_review_or_independent_validation_of_sdks
+    - ecosystem_adoption_metrics_for_sdks
+  retrieval_intent:
+    required_concepts:
+    - SDKs
+    - sdks
+    - new sdks
+    - language coverage
+    - breaking changes
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_sdks_adoption
+  - verified_metrics_for_sdks
+  - software_engineering_regulatory_or_competitive_response
+  - developer migration
+  disambiguation_focus:
+  - SDKs
+  - sdks
+  - 'SDKs specific evaluation: New SDKs, language coverage, breaking changes'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-backend-theme
+  theme_id: software-engineering-backend-theme
+  micro_topic_id: backend
+  micro_topic: backend
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Backend (backend) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_backend_developments
+    - verified_backend_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_backend_relevance
+    boundaries:
+    - focus_strictly_on_backend_domain_significance
+  questions:
+  - what_changed_in_backend
+  - how_does_new_backend_differ_from_prior_state
+  - what_verifiable_evidence_supports_backend
+  - what_are_the_operational_or_market_implications_for_backend
+  - what_technical_limitations_or_uncertainties_remain_in_backend
+  - what_is_the_status_of_architecture_for_backend
+  evidence_requirements: &id026
+  - technical_implementation
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_backend_exceeding_baseline
+    - independent_confirmation_of_backend_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_backend
+    - minor_routine_maintenance_or_repackaging_without_new_backend_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - github
+      - news-tech
+      - research
+      freshness: 48h
+      focus:
+      - new_backend_events
+      - verifiable_changes_in_backend
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_backend
+      - what_tools_methods_or_data_were_used_for_backend
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - backend_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Backend (backend) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Backend lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Backend.
+  action_rules:
+    monitor:
+    - track_emerging_backend_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_backend_documentation
+    - verify_reproducibility_of_reported_backend_data
+  watch_rules:
+    monitor:
+    - next_backend_milestone_or_release_date
+    - peer_review_or_independent_validation_of_backend
+    - ecosystem_adoption_metrics_for_backend
+  retrieval_intent:
+    required_concepts:
+    - Backend
+    - backend
+    - architecture
+    - databases
+    - scaling
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_backend_adoption
+  - verified_metrics_for_backend
+  - software_engineering_regulatory_or_competitive_response
+  - architecture impact
+  disambiguation_focus:
+  - Backend
+  - backend
+  - 'Backend specific evaluation: Architecture, databases, scaling, performance, patterns'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-frontend-theme
+  theme_id: software-engineering-frontend-theme
+  micro_topic_id: frontend
+  micro_topic: frontend
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Frontend (frontend) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_frontend_developments
+    - verified_frontend_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_frontend_relevance
+    boundaries:
+    - focus_strictly_on_frontend_domain_significance
+  questions:
+  - what_changed_in_frontend
+  - how_does_new_frontend_differ_from_prior_state
+  - what_verifiable_evidence_supports_frontend
+  - what_are_the_operational_or_market_implications_for_frontend
+  - what_technical_limitations_or_uncertainties_remain_in_frontend
+  - what_is_the_status_of_framework_for_frontend
+  evidence_requirements: &id031
+  - release
+  - benchmark
+  - implementation
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_frontend_exceeding_baseline
+    - independent_confirmation_of_frontend_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_frontend
+    - minor_routine_maintenance_or_repackaging_without_new_frontend_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_frontend_events
+      - verifiable_changes_in_frontend
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_frontend
+      - what_tools_methods_or_data_were_used_for_frontend
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - frontend_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Frontend (frontend) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Frontend lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Frontend.
+  action_rules:
+    monitor:
+    - track_emerging_frontend_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_frontend_documentation
+    - verify_reproducibility_of_reported_frontend_data
+  watch_rules:
+    monitor:
+    - next_frontend_milestone_or_release_date
+    - peer_review_or_independent_validation_of_frontend
+    - ecosystem_adoption_metrics_for_frontend
+  retrieval_intent:
+    required_concepts:
+    - Frontend
+    - frontend
+    - framework
+    - rendering changes
+    - performance
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_frontend_adoption
+  - verified_metrics_for_frontend
+  - software_engineering_regulatory_or_competitive_response
+  - ux
+  - developer impact
+  disambiguation_focus:
+  - Frontend
+  - frontend
+  - 'Frontend specific evaluation: Framework/rendering changes, performance, accessibility'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-databases-theme
+  theme_id: software-engineering-databases-theme
+  micro_topic_id: databases
+  micro_topic: databases
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Databases (databases) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_databases_developments
+    - verified_databases_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_databases_relevance
+    boundaries:
+    - focus_strictly_on_databases_domain_significance
+  questions:
+  - what_changed_in_databases
+  - how_does_new_databases_differ_from_prior_state
+  - what_verifiable_evidence_supports_databases
+  - what_are_the_operational_or_market_implications_for_databases
+  - what_technical_limitations_or_uncertainties_remain_in_databases
+  - what_is_the_status_of_new_engines_for_databases
+  evidence_requirements: &id036
+  - docs
+  - benchmarks
+  - github
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_databases_exceeding_baseline
+    - independent_confirmation_of_databases_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_databases
+    - minor_routine_maintenance_or_repackaging_without_new_databases_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - github
+      - research
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_databases_events
+      - verifiable_changes_in_databases
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_databases
+      - what_tools_methods_or_data_were_used_for_databases
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - databases_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Databases (databases) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Databases lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Databases.
+  action_rules:
+    monitor:
+    - track_emerging_databases_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_databases_documentation
+    - verify_reproducibility_of_reported_databases_data
+  watch_rules:
+    monitor:
+    - next_databases_milestone_or_release_date
+    - peer_review_or_independent_validation_of_databases
+    - ecosystem_adoption_metrics_for_databases
+  retrieval_intent:
+    required_concepts:
+    - Databases
+    - databases
+    - new engines
+    - features
+    - indexing
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_databases_adoption
+  - verified_metrics_for_databases
+  - software_engineering_regulatory_or_competitive_response
+  - technical tradeoff
+  disambiguation_focus:
+  - Databases
+  - databases
+  - 'Databases specific evaluation: New engines/features, indexing, vector DB, transactions,
+    per'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-architecture-theme
+  theme_id: software-engineering-architecture-theme
+  micro_topic_id: architecture
+  micro_topic: architecture
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Architecture (architecture) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_architecture_developments
+    - verified_architecture_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_architecture_relevance
+    boundaries:
+    - focus_strictly_on_architecture_domain_significance
+  questions:
+  - what_changed_in_architecture
+  - how_does_new_architecture_differ_from_prior_state
+  - what_verifiable_evidence_supports_architecture
+  - what_are_the_operational_or_market_implications_for_architecture
+  - what_technical_limitations_or_uncertainties_remain_in_architecture
+  - what_is_the_status_of_distributed_systems_for_architecture
+  evidence_requirements: &id041
+  - engineering_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_architecture_exceeding_baseline
+    - independent_confirmation_of_architecture_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_architecture
+    - minor_routine_maintenance_or_repackaging_without_new_architecture_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - research
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_architecture_events
+      - verifiable_changes_in_architecture
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_architecture
+      - what_tools_methods_or_data_were_used_for_architecture
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - architecture_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Architecture (architecture)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Architecture lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Architecture.
+  action_rules:
+    monitor:
+    - track_emerging_architecture_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_architecture_documentation
+    - verify_reproducibility_of_reported_architecture_data
+  watch_rules:
+    monitor:
+    - next_architecture_milestone_or_release_date
+    - peer_review_or_independent_validation_of_architecture
+    - ecosystem_adoption_metrics_for_architecture
+  retrieval_intent:
+    required_concepts:
+    - Architecture
+    - architecture
+    - distributed systems
+    - modularity
+    - event-driven
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_architecture_adoption
+  - verified_metrics_for_architecture
+  - software_engineering_regulatory_or_competitive_response
+  - architectural implication
+  disambiguation_focus:
+  - Architecture
+  - architecture
+  - 'Architecture specific evaluation: Distributed systems, modularity, event-driven/serverless
+    pat'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-devops-theme
+  theme_id: software-engineering-devops-theme
+  micro_topic_id: devops
+  micro_topic: devops
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess DevOps (devops) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_devops_developments
+    - verified_devops_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_devops_relevance
+    boundaries:
+    - focus_strictly_on_devops_domain_significance
+  questions:
+  - what_changed_in_devops
+  - how_does_new_devops_differ_from_prior_state
+  - what_verifiable_evidence_supports_devops
+  - what_are_the_operational_or_market_implications_for_devops
+  - what_technical_limitations_or_uncertainties_remain_in_devops
+  - what_is_the_status_of_deployment_for_devops
+  evidence_requirements: &id046
+  - release
+  - implementation
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_devops_exceeding_baseline
+    - independent_confirmation_of_devops_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_devops
+    - minor_routine_maintenance_or_repackaging_without_new_devops_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_devops_events
+      - verifiable_changes_in_devops
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_devops
+      - what_tools_methods_or_data_were_used_for_devops
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - devops_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in DevOps (devops) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding DevOps lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for DevOps.
+  action_rules:
+    monitor:
+    - track_emerging_devops_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_devops_documentation
+    - verify_reproducibility_of_reported_devops_data
+  watch_rules:
+    monitor:
+    - next_devops_milestone_or_release_date
+    - peer_review_or_independent_validation_of_devops
+    - ecosystem_adoption_metrics_for_devops
+  retrieval_intent:
+    required_concepts:
+    - DevOps
+    - devops
+    - deployment
+    - automation
+    - infrastructure tooling
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_devops_adoption
+  - verified_metrics_for_devops
+  - software_engineering_regulatory_or_competitive_response
+  - operational impact
+  disambiguation_focus:
+  - DevOps
+  - devops
+  - 'DevOps specific evaluation: Deployment, automation, infrastructure tooling'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-ci-cd-theme
+  theme_id: software-engineering-ci-cd-theme
+  micro_topic_id: ci-cd
+  micro_topic: ci-cd
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess CI/CD (ci-cd) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_ci_cd_developments
+    - verified_ci/cd_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_ci_cd_relevance
+    boundaries:
+    - focus_strictly_on_ci-cd_domain_significance
+  questions:
+  - what_changed_in_ci_cd
+  - how_does_new_ci/cd_differ_from_prior_state
+  - what_verifiable_evidence_supports_ci_cd
+  - what_are_the_operational_or_market_implications_for_ci_cd
+  - what_technical_limitations_or_uncertainties_remain_in_ci_cd
+  - what_is_the_status_of_pipeline_changes_for_ci_cd
+  evidence_requirements: &id051
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_ci/cd_exceeding_baseline
+    - independent_confirmation_of_ci_cd_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_ci_cd
+    - minor_routine_maintenance_or_repackaging_without_new_ci_cd_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_ci_cd_events
+      - verifiable_changes_in_ci/cd
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_ci_cd
+      - what_tools_methods_or_data_were_used_for_ci/cd
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - ci_cd_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in CI/CD (ci-cd) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding CI/CD lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for CI/CD.
+  action_rules:
+    monitor:
+    - track_emerging_ci_cd_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_ci/cd_documentation
+    - verify_reproducibility_of_reported_ci_cd_data
+  watch_rules:
+    monitor:
+    - next_ci/cd_milestone_or_release_date
+    - peer_review_or_independent_validation_of_ci_cd
+    - ecosystem_adoption_metrics_for_ci_cd
+  retrieval_intent:
+    required_concepts:
+    - CI/CD
+    - ci-cd
+    - pipeline changes
+    - testing integration
+    - security
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_ci_cd_adoption
+  - verified_metrics_for_ci/cd
+  - software_engineering_regulatory_or_competitive_response
+  - release reliability
+  disambiguation_focus:
+  - CI/CD
+  - ci-cd
+  - 'CI/CD specific evaluation: Pipeline changes, testing integration, security, deployment'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-testing-theme
+  theme_id: software-engineering-testing-theme
+  micro_topic_id: testing
+  micro_topic: testing
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Testing (testing) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_testing_developments
+    - verified_testing_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_testing_relevance
+    boundaries:
+    - focus_strictly_on_testing_domain_significance
+  questions:
+  - what_changed_in_testing
+  - how_does_new_testing_differ_from_prior_state
+  - what_verifiable_evidence_supports_testing
+  - what_are_the_operational_or_market_implications_for_testing
+  - what_technical_limitations_or_uncertainties_remain_in_testing
+  - what_is_the_status_of_test_frameworks_for_testing
+  evidence_requirements: &id056
+  - technical_implementation
+  - benchmarks
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_testing_exceeding_baseline
+    - independent_confirmation_of_testing_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_testing
+    - minor_routine_maintenance_or_repackaging_without_new_testing_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - github
+      - research
+      freshness: 48h
+      focus:
+      - new_testing_events
+      - verifiable_changes_in_testing
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_testing
+      - what_tools_methods_or_data_were_used_for_testing
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - testing_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Testing (testing) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Testing lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Testing.
+  action_rules:
+    monitor:
+    - track_emerging_testing_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_testing_documentation
+    - verify_reproducibility_of_reported_testing_data
+  watch_rules:
+    monitor:
+    - next_testing_milestone_or_release_date
+    - peer_review_or_independent_validation_of_testing
+    - ecosystem_adoption_metrics_for_testing
+  retrieval_intent:
+    required_concepts:
+    - Testing
+    - testing
+    - test frameworks
+    - property testing
+    - ai testing
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_testing_adoption
+  - verified_metrics_for_testing
+  - software_engineering_regulatory_or_competitive_response
+  - quality impact
+  disambiguation_focus:
+  - Testing
+  - testing
+  - 'Testing specific evaluation: Test frameworks, property testing, AI testing, coverage'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-observability-theme
+  theme_id: software-engineering-observability-theme
+  micro_topic_id: observability
+  micro_topic: observability
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Observability (observability) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_observability_developments
+    - verified_observability_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_observability_relevance
+    boundaries:
+    - focus_strictly_on_observability_domain_significance
+  questions:
+  - what_changed_in_observability
+  - how_does_new_observability_differ_from_prior_state
+  - what_verifiable_evidence_supports_observability
+  - what_are_the_operational_or_market_implications_for_observability
+  - what_technical_limitations_or_uncertainties_remain_in_observability
+  - what_is_the_status_of_logging_for_observability
+  evidence_requirements: &id061
+  - product
+  - release
+  - technical_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id061
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_observability_exceeding_baseline
+    - independent_confirmation_of_observability_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_observability
+    - minor_routine_maintenance_or_repackaging_without_new_observability_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id062
+      preferred_sources: &id065
+      - github
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_observability_events
+      - verifiable_changes_in_observability
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id063
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_observability
+      - what_tools_methods_or_data_were_used_for_observability
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id062
+    video: *id063
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - observability_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id064
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id064
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Observability (observability)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Observability lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Observability.
+  action_rules:
+    monitor:
+    - track_emerging_observability_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_observability_documentation
+    - verify_reproducibility_of_reported_observability_data
+  watch_rules:
+    monitor:
+    - next_observability_milestone_or_release_date
+    - peer_review_or_independent_validation_of_observability
+    - ecosystem_adoption_metrics_for_observability
+  retrieval_intent:
+    required_concepts:
+    - Observability
+    - observability
+    - logging
+    - tracing
+    - metrics
+    preferred_source_types: *id065
+    evidence_types: *id061
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_observability_adoption
+  - verified_metrics_for_observability
+  - software_engineering_regulatory_or_competitive_response
+  - monitoring capability
+  disambiguation_focus:
+  - Observability
+  - observability
+  - 'Observability specific evaluation: Logging, tracing, metrics, LLM observability'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-cloud-infrastructure-theme
+  theme_id: software-engineering-cloud-infrastructure-theme
+  micro_topic_id: cloud-infrastructure
+  micro_topic: cloud-infrastructure
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Cloud / Infrastructure (cloud-infrastructure) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_cloud_infrastructure_developments
+    - verified_cloud_/_infrastructure_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_cloud_infrastructure_relevance
+    boundaries:
+    - focus_strictly_on_cloud-infrastructure_domain_significance
+  questions:
+  - what_changed_in_cloud_infrastructure
+  - how_does_new_cloud_/_infrastructure_differ_from_prior_state
+  - what_verifiable_evidence_supports_cloud_infrastructure
+  - what_are_the_operational_or_market_implications_for_cloud_infrastructure
+  - what_technical_limitations_or_uncertainties_remain_in_cloud_infrastructure
+  - what_is_the_status_of_cloud_products_for_cloud_infrastructure
+  evidence_requirements: &id066
+  - provider_announcement
+  - docs
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id066
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_cloud_/_infrastructure_exceeding_baseline
+    - independent_confirmation_of_cloud_infrastructure_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_cloud_infrastructure
+    - minor_routine_maintenance_or_repackaging_without_new_cloud_infrastructure_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id067
+      preferred_sources: &id070
+      - news-tech
+      - company
+      - github
+      freshness: 48h
+      focus:
+      - new_cloud_infrastructure_events
+      - verifiable_changes_in_cloud_/_infrastructure
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id068
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_cloud_infrastructure
+      - what_tools_methods_or_data_were_used_for_cloud_/_infrastructure
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id067
+    video: *id068
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - cloud_infrastructure_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id069
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id069
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Cloud / Infrastructure (cloud-infrastructure)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Cloud / Infrastructure lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Cloud / Infrastructure.
+  action_rules:
+    monitor:
+    - track_emerging_cloud_infrastructure_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_cloud_/_infrastructure_documentation
+    - verify_reproducibility_of_reported_cloud_infrastructure_data
+  watch_rules:
+    monitor:
+    - next_cloud_/_infrastructure_milestone_or_release_date
+    - peer_review_or_independent_validation_of_cloud_infrastructure
+    - ecosystem_adoption_metrics_for_cloud_infrastructure
+  retrieval_intent:
+    required_concepts:
+    - Cloud / Infrastructure
+    - cloud-infrastructure
+    - cloud products
+    - compute
+    - networking
+    preferred_source_types: *id070
+    evidence_types: *id066
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_cloud_infrastructure_adoption
+  - verified_metrics_for_cloud_/_infrastructure
+  - software_engineering_regulatory_or_competitive_response
+  - cost
+  - performance
+  disambiguation_focus:
+  - Cloud / Infrastructure
+  - cloud-infrastructure
+  - 'Cloud / Infrastructure specific evaluation: Cloud products, compute, networking,
+    storage, serverless'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - news-tech
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: software-engineering-open-source-releases-theme
+  theme_id: software-engineering-open-source-releases-theme
+  micro_topic_id: open-source-releases
+  micro_topic: open-source-releases
+  domain: software-engineering
+  domain_id: software-engineering
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Open-source Releases (open-source-releases) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_open_source_releases_developments
+    - verified_open-source_releases_activity
+    excludes:
+    - tangential_software-engineering_chatter_without_open_source_releases_relevance
+    boundaries:
+    - focus_strictly_on_open-source-releases_domain_significance
+  questions:
+  - what_changed_in_open_source_releases
+  - how_does_new_open_source_releases_differ_from_prior_state
+  - what_verifiable_evidence_supports_open_source_releases
+  - what_are_the_operational_or_market_implications_for_open_source_releases
+  - what_technical_limitations_or_uncertainties_remain_in_open_source_releases
+  - what_is_the_status_of_major_releases_for_open_source_releases
+  evidence_requirements: &id071
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id071
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_open_source_releases_exceeding_baseline
+    - independent_confirmation_of_open_source_releases_milestone_from_primary_source
+    - measurable_impact_on_software_engineering_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_open_source_releases
+    - minor_routine_maintenance_or_repackaging_without_new_open_source_releases_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id072
+      preferred_sources: &id075
+      - github
+      freshness: 48h
+      focus:
+      - new_open_source_releases_events
+      - verifiable_changes_in_open-source_releases
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id073
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_open_source_releases
+      - what_tools_methods_or_data_were_used_for_open-source_releases
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id072
+    video: *id073
+  entity_extraction:
+    required:
+    - software_engineering
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - open_source_releases_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id074
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id074
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Open-source Releases (open-source-releases)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Open-source Releases lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Open-source Releases.
+  action_rules:
+    monitor:
+    - track_emerging_open_source_releases_benchmarks
+    - follow_official_software_engineering_announcements
+    investigate:
+    - audit_claims_against_primary_open-source_releases_documentation
+    - verify_reproducibility_of_reported_open_source_releases_data
+  watch_rules:
+    monitor:
+    - next_open-source_releases_milestone_or_release_date
+    - peer_review_or_independent_validation_of_open_source_releases
+    - ecosystem_adoption_metrics_for_open_source_releases
+  retrieval_intent:
+    required_concepts:
+    - Open-source Releases
+    - open-source-releases
+    - major releases
+    - breaking changes
+    - adoption
+    preferred_source_types: *id075
+    evidence_types: *id071
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_open_source_releases_adoption
+  - verified_metrics_for_open-source_releases
+  - software_engineering_regulatory_or_competitive_response
+  - release significance
+  disambiguation_focus:
+  - Open-source Releases
+  - open-source-releases
+  - 'Open-source Releases specific evaluation: Major releases, breaking changes, adoption'
+  - distinct from other software-engineering topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

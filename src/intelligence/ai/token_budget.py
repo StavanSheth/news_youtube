@@ -1,16 +1,17 @@
-"""Token budgeting, preflight estimation, reservation, and accounting."""
+"""Token budgeting, preflight estimation, reservation, and accounting backed by authoritative BudgetManager."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from typing import Any
 
-from .usage import estimate_tokens
+from ..budgets.manager import BudgetManager
+from .usage import count_tokens_native, estimate_tokens
 
 
 @dataclass
 class TokenBudgetManager:
-    """Manages preflight token reservations and post-call consumption against budget."""
+    """Compatibility adapter backed by the authoritative BudgetManager hierarchy."""
 
     max_edition_tokens: int = 50_000
     max_microtopic_tokens: int = 4_000
@@ -18,13 +19,26 @@ class TokenBudgetManager:
     consumed_tokens: int = 0
     _topic_usage: dict[str, int] = field(default_factory=dict)
     _reservations: dict[str, int] = field(default_factory=dict)
+    _budget_manager: BudgetManager | None = None
+
+    def __post_init__(self) -> None:
+        if self.p0_reserve_tokens >= self.max_edition_tokens:
+            self.p0_reserve_tokens = int(self.max_edition_tokens * 0.2)
+        if self._budget_manager is None:
+            self._budget_manager = BudgetManager(
+                global_limits={
+                    "max_input_tokens": self.max_edition_tokens,
+                    "max_total_tokens": self.max_edition_tokens,
+                    "p0_reserve": self.p0_reserve_tokens,
+                }
+            )
 
     def estimate_tokens(self, text: str) -> int:
         return estimate_tokens(text)
 
     def count_tokens(self, text: str) -> int:
         """Heuristic or SDK token counting."""
-        return estimate_tokens(text)
+        return count_tokens_native(text)
 
     def authorize(self, topic_id: str, estimated_tokens: int, priority: int = 5) -> tuple[bool, str]:
         """Authorize token budget for a topic before AI generation."""
@@ -35,13 +49,15 @@ class TokenBudgetManager:
 
         # Check total remaining budget
         remaining = self.max_edition_tokens - self.consumed_tokens - sum(self._reservations.values())
-        if priority < 8 and remaining <= self.p0_reserve_tokens:
+        if priority < 8 and (remaining - estimated_tokens) < self.p0_reserve_tokens:
             return False, "P0_RESERVE_RESTRICTED"
 
         if remaining < estimated_tokens:
             return False, "GLOBAL_BUDGET_EXCEEDED"
 
         self._reservations[topic_id] = estimated_tokens
+        if self._budget_manager:
+            self._budget_manager.reserve(topic_id, "input_tokens", estimated_tokens)
         return True, "AUTHORIZED"
 
     def consume(self, topic_id: str, actual_tokens: int) -> None:
@@ -49,9 +65,13 @@ class TokenBudgetManager:
         self._reservations.pop(topic_id, None)
         self.consumed_tokens += actual_tokens
         self._topic_usage[topic_id] = self._topic_usage.get(topic_id, 0) + actual_tokens
+        if self._budget_manager:
+            self._budget_manager.consume(topic_id, "input_tokens", actual_tokens)
 
     def release_reservation(self, topic_id: str) -> None:
-        self._reservations.pop(topic_id, None)
+        amount = self._reservations.pop(topic_id, 0)
+        if self._budget_manager and amount > 0:
+            self._budget_manager.release(topic_id, "input_tokens", amount)
 
     def snapshot(self) -> dict[str, Any]:
         return {

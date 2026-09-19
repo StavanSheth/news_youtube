@@ -100,3 +100,99 @@ def coverage(
             "evidence_count": len(evidence),
         })
     return rows
+
+
+def build_source_microtopic_matrix(
+    records: list[dict[str, Any]],
+    sources: list[Any],
+    source_health: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Calculate deterministic source coverage matrix for microtopics per Section 11.
+
+    Required states:
+    - COVERED
+    - PARTIAL
+    - SOURCE_FAILURE
+    - NO_SOURCE
+    - INSUFFICIENT_EVIDENCE
+    """
+    health = source_health or {}
+    results = []
+    status_counts: dict[str, int] = {
+        "COVERED": 0,
+        "PARTIAL": 0,
+        "SOURCE_FAILURE": 0,
+        "NO_SOURCE": 0,
+        "INSUFFICIENT_EVIDENCE": 0,
+    }
+
+    for record in records:
+        mt_id = record.get("id") or record.get("micro_topic")
+        domain = record.get("domain")
+        topic = record.get("topic")
+
+        configured = []
+        for s in sources:
+            s_dict = s.to_dict() if hasattr(s, "to_dict") else dict(s)
+            s_domains = s_dict.get("domains", [])
+            s_topics = s_dict.get("topics", [])
+            s_mts = s_dict.get("micro_topics", [])
+
+            if mt_id and mt_id in s_mts:
+                configured.append(s_dict)
+            elif topic and topic in s_topics and domain and domain in s_domains:
+                configured.append(s_dict)
+            elif domain and domain in s_domains and not s_mts and not s_topics:
+                configured.append(s_dict)
+
+        source_count = len(configured)
+        ready_sources = []
+        fresh_sources = []
+        failed_sources = []
+
+        for s_dict in configured:
+            sid = s_dict.get("id") or s_dict.get("source_id")
+            s_h = health.get(sid, {})
+            status = s_h.get("status") or ("READY" if s_dict.get("enabled") else "CONFIGURED")
+            if status in ("READY", "PASS", "HEALTHY"):
+                ready_sources.append(s_dict)
+                if s_h.get("fresh", True):
+                    fresh_sources.append(s_dict)
+            elif status in ("FAILED", "SOURCE_FAILURE", "ERROR"):
+                failed_sources.append(s_dict)
+
+        ready_source_count = len(ready_sources)
+        fresh_source_count = len(fresh_sources)
+        evidence_capable = ready_source_count > 0 or fresh_source_count > 0
+
+        if source_count == 0:
+            coverage_status = "NO_SOURCE"
+        elif failed_sources and ready_source_count == 0:
+            coverage_status = "SOURCE_FAILURE"
+        elif fresh_source_count >= 2:
+            coverage_status = "COVERED"
+        elif fresh_source_count == 1:
+            coverage_status = "PARTIAL"
+        elif ready_source_count > 0 and fresh_source_count == 0:
+            coverage_status = "INSUFFICIENT_EVIDENCE"
+        else:
+            coverage_status = "PARTIAL" if source_count > 0 else "NO_SOURCE"
+
+        status_counts[coverage_status] = status_counts.get(coverage_status, 0) + 1
+
+        results.append({
+            "micro_topic_id": mt_id,
+            "domain": domain,
+            "topic": topic,
+            "source_count": source_count,
+            "ready_source_count": ready_source_count,
+            "fresh_source_count": fresh_source_count,
+            "evidence_capable": evidence_capable,
+            "coverage_status": coverage_status,
+        })
+
+    return {
+        "total_microtopics": len(records),
+        "status_counts": status_counts,
+        "matrix": results,
+    }

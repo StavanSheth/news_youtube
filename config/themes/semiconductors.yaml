@@ -1,0 +1,2324 @@
+themes:
+- id: semiconductors-chip-design-theme
+  theme_id: semiconductors-chip-design-theme
+  micro_topic_id: chip-design
+  micro_topic: chip-design
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Chip Design (chip-design) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_chip_design_developments
+    - verified_chip_design_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_chip_design_relevance
+    boundaries:
+    - focus_strictly_on_chip-design_domain_significance
+  questions:
+  - what_changed_in_chip_design
+  - how_does_new_chip_design_differ_from_prior_state
+  - what_verifiable_evidence_supports_chip_design
+  - what_are_the_operational_or_market_implications_for_chip_design
+  - what_technical_limitations_or_uncertainties_remain_in_chip_design
+  - what_is_the_status_of_architecture_for_chip_design
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_chip_design_exceeding_baseline
+    - independent_confirmation_of_chip_design_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_chip_design
+    - minor_routine_maintenance_or_repackaging_without_new_chip_design_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - semiconductor
+      - research
+      freshness: 48h
+      focus:
+      - new_chip_design_events
+      - verifiable_changes_in_chip_design
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_chip_design
+      - what_tools_methods_or_data_were_used_for_chip_design
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - chip_design_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Chip Design (chip-design)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Chip Design lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Chip Design.
+  action_rules:
+    monitor:
+    - track_emerging_chip_design_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_chip_design_documentation
+    - verify_reproducibility_of_reported_chip_design_data
+  watch_rules:
+    monitor:
+    - next_chip_design_milestone_or_release_date
+    - peer_review_or_independent_validation_of_chip_design
+    - ecosystem_adoption_metrics_for_chip_design
+  retrieval_intent:
+    required_concepts:
+    - Chip Design
+    - chip-design
+    - architecture
+    - process
+    - ip
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_chip_design_adoption
+  - verified_metrics_for_chip_design
+  - semiconductors_regulatory_or_competitive_response
+  - architecture
+  - process
+  disambiguation_focus:
+  - Chip Design
+  - chip-design
+  - 'Chip Design specific evaluation: Architecture, process, IP, performance'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-fabs-theme
+  theme_id: semiconductors-fabs-theme
+  micro_topic_id: fabs
+  micro_topic: fabs
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Fabs (fabs) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_fabs_developments
+    - verified_fabs_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_fabs_relevance
+    boundaries:
+    - focus_strictly_on_fabs_domain_significance
+  questions:
+  - what_changed_in_fabs
+  - how_does_new_fabs_differ_from_prior_state
+  - what_verifiable_evidence_supports_fabs
+  - what_are_the_operational_or_market_implications_for_fabs
+  - what_technical_limitations_or_uncertainties_remain_in_fabs
+  - what_is_the_status_of_new_fabs_for_fabs
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_fabs_exceeding_baseline
+    - independent_confirmation_of_fabs_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_fabs
+    - minor_routine_maintenance_or_repackaging_without_new_fabs_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - semiconductor
+      - gov
+      freshness: 48h
+      focus:
+      - new_fabs_events
+      - verifiable_changes_in_fabs
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_fabs
+      - what_tools_methods_or_data_were_used_for_fabs
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - fabs_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Fabs (fabs) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Fabs lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Fabs.
+  action_rules:
+    monitor:
+    - track_emerging_fabs_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_fabs_documentation
+    - verify_reproducibility_of_reported_fabs_data
+  watch_rules:
+    monitor:
+    - next_fabs_milestone_or_release_date
+    - peer_review_or_independent_validation_of_fabs
+    - ecosystem_adoption_metrics_for_fabs
+  retrieval_intent:
+    required_concepts:
+    - Fabs
+    - fabs
+    - new fabs
+    - capacity
+    - geography
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_fabs_adoption
+  - verified_metrics_for_fabs
+  - semiconductors_regulatory_or_competitive_response
+  - new fabs
+  - capacity
+  disambiguation_focus:
+  - Fabs
+  - fabs
+  - 'Fabs specific evaluation: New fabs, capacity, geography, investment'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-foundries-theme
+  theme_id: semiconductors-foundries-theme
+  micro_topic_id: foundries
+  micro_topic: foundries
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Foundries (foundries) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_foundries_developments
+    - verified_foundries_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_foundries_relevance
+    boundaries:
+    - focus_strictly_on_foundries_domain_significance
+  questions:
+  - what_changed_in_foundries
+  - how_does_new_foundries_differ_from_prior_state
+  - what_verifiable_evidence_supports_foundries
+  - what_are_the_operational_or_market_implications_for_foundries
+  - what_technical_limitations_or_uncertainties_remain_in_foundries
+  - what_is_the_status_of_manufacturing_contracts_for_foundries
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_foundries_exceeding_baseline
+    - independent_confirmation_of_foundries_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_foundries
+    - minor_routine_maintenance_or_repackaging_without_new_foundries_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - semiconductor
+      - company
+      freshness: 48h
+      focus:
+      - new_foundries_events
+      - verifiable_changes_in_foundries
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_foundries
+      - what_tools_methods_or_data_were_used_for_foundries
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - foundries_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Foundries (foundries) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Foundries lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Foundries.
+  action_rules:
+    monitor:
+    - track_emerging_foundries_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_foundries_documentation
+    - verify_reproducibility_of_reported_foundries_data
+  watch_rules:
+    monitor:
+    - next_foundries_milestone_or_release_date
+    - peer_review_or_independent_validation_of_foundries
+    - ecosystem_adoption_metrics_for_foundries
+  retrieval_intent:
+    required_concepts:
+    - Foundries
+    - foundries
+    - manufacturing contracts
+    - nodes
+    - capacity
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_foundries_adoption
+  - verified_metrics_for_foundries
+  - semiconductors_regulatory_or_competitive_response
+  - manufacturing contracts
+  - nodes
+  disambiguation_focus:
+  - Foundries
+  - foundries
+  - 'Foundries specific evaluation: Manufacturing contracts, nodes, capacity'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-gpus-theme
+  theme_id: semiconductors-gpus-theme
+  micro_topic_id: gpus
+  micro_topic: gpus
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess GPUs (gpus) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_gpus_developments
+    - verified_gpus_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_gpus_relevance
+    boundaries:
+    - focus_strictly_on_gpus_domain_significance
+  questions:
+  - what_changed_in_gpus
+  - how_does_new_gpus_differ_from_prior_state
+  - what_verifiable_evidence_supports_gpus
+  - what_are_the_operational_or_market_implications_for_gpus
+  - what_technical_limitations_or_uncertainties_remain_in_gpus
+  - what_is_the_status_of_architecture_for_gpus
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_gpus_exceeding_baseline
+    - independent_confirmation_of_gpus_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_gpus
+    - minor_routine_maintenance_or_repackaging_without_new_gpus_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - semiconductor
+      - ai
+      freshness: 48h
+      focus:
+      - new_gpus_events
+      - verifiable_changes_in_gpus
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_gpus
+      - what_tools_methods_or_data_were_used_for_gpus
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - gpus_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in GPUs (gpus) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding GPUs lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for GPUs.
+  action_rules:
+    monitor:
+    - track_emerging_gpus_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_gpus_documentation
+    - verify_reproducibility_of_reported_gpus_data
+  watch_rules:
+    monitor:
+    - next_gpus_milestone_or_release_date
+    - peer_review_or_independent_validation_of_gpus
+    - ecosystem_adoption_metrics_for_gpus
+  retrieval_intent:
+    required_concepts:
+    - GPUs
+    - gpus
+    - architecture
+    - performance
+    - availability
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_gpus_adoption
+  - verified_metrics_for_gpus
+  - semiconductors_regulatory_or_competitive_response
+  - architecture
+  - performance
+  disambiguation_focus:
+  - GPUs
+  - gpus
+  - 'GPUs specific evaluation: Architecture, performance, availability'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - ai
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-cpus-theme
+  theme_id: semiconductors-cpus-theme
+  micro_topic_id: cpus
+  micro_topic: cpus
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess CPUs (cpus) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_cpus_developments
+    - verified_cpus_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_cpus_relevance
+    boundaries:
+    - focus_strictly_on_cpus_domain_significance
+  questions:
+  - what_changed_in_cpus
+  - how_does_new_cpus_differ_from_prior_state
+  - what_verifiable_evidence_supports_cpus
+  - what_are_the_operational_or_market_implications_for_cpus
+  - what_technical_limitations_or_uncertainties_remain_in_cpus
+  - what_is_the_status_of_architecture_for_cpus
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_cpus_exceeding_baseline
+    - independent_confirmation_of_cpus_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_cpus
+    - minor_routine_maintenance_or_repackaging_without_new_cpus_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - semiconductor
+      - github
+      freshness: 48h
+      focus:
+      - new_cpus_events
+      - verifiable_changes_in_cpus
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_cpus
+      - what_tools_methods_or_data_were_used_for_cpus
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - cpus_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in CPUs (cpus) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding CPUs lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for CPUs.
+  action_rules:
+    monitor:
+    - track_emerging_cpus_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_cpus_documentation
+    - verify_reproducibility_of_reported_cpus_data
+  watch_rules:
+    monitor:
+    - next_cpus_milestone_or_release_date
+    - peer_review_or_independent_validation_of_cpus
+    - ecosystem_adoption_metrics_for_cpus
+  retrieval_intent:
+    required_concepts:
+    - CPUs
+    - cpus
+    - architecture
+    - performance
+    - roadmap
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_cpus_adoption
+  - verified_metrics_for_cpus
+  - semiconductors_regulatory_or_competitive_response
+  - architecture
+  - performance
+  disambiguation_focus:
+  - CPUs
+  - cpus
+  - 'CPUs specific evaluation: Architecture, performance, roadmap'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - github
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-accelerators-theme
+  theme_id: semiconductors-accelerators-theme
+  micro_topic_id: accelerators
+  micro_topic: accelerators
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Accelerators (accelerators) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_accelerators_developments
+    - verified_accelerators_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_accelerators_relevance
+    boundaries:
+    - focus_strictly_on_accelerators_domain_significance
+  questions:
+  - what_changed_in_accelerators
+  - how_does_new_accelerators_differ_from_prior_state
+  - what_verifiable_evidence_supports_accelerators
+  - what_are_the_operational_or_market_implications_for_accelerators
+  - what_technical_limitations_or_uncertainties_remain_in_accelerators
+  - what_is_the_status_of_ai_for_accelerators
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_accelerators_exceeding_baseline
+    - independent_confirmation_of_accelerators_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_accelerators
+    - minor_routine_maintenance_or_repackaging_without_new_accelerators_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - semiconductor
+      - ai
+      freshness: 48h
+      focus:
+      - new_accelerators_events
+      - verifiable_changes_in_accelerators
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_accelerators
+      - what_tools_methods_or_data_were_used_for_accelerators
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - accelerators_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Accelerators (accelerators)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Accelerators lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Accelerators.
+  action_rules:
+    monitor:
+    - track_emerging_accelerators_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_accelerators_documentation
+    - verify_reproducibility_of_reported_accelerators_data
+  watch_rules:
+    monitor:
+    - next_accelerators_milestone_or_release_date
+    - peer_review_or_independent_validation_of_accelerators
+    - ecosystem_adoption_metrics_for_accelerators
+  retrieval_intent:
+    required_concepts:
+    - Accelerators
+    - accelerators
+    - ai
+    - hpc accelerator capabilities
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_accelerators_adoption
+  - verified_metrics_for_accelerators
+  - semiconductors_regulatory_or_competitive_response
+  - ai
+  - hpc accelerator capabilities
+  disambiguation_focus:
+  - Accelerators
+  - accelerators
+  - 'Accelerators specific evaluation: AI/HPC accelerator capabilities'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - ai
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-memory-theme
+  theme_id: semiconductors-memory-theme
+  micro_topic_id: memory
+  micro_topic: memory
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Memory (memory) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_memory_developments
+    - verified_memory_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_memory_relevance
+    boundaries:
+    - focus_strictly_on_memory_domain_significance
+  questions:
+  - what_changed_in_memory
+  - how_does_new_memory_differ_from_prior_state
+  - what_verifiable_evidence_supports_memory
+  - what_are_the_operational_or_market_implications_for_memory
+  - what_technical_limitations_or_uncertainties_remain_in_memory
+  - what_is_the_status_of_dram_for_memory
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_memory_exceeding_baseline
+    - independent_confirmation_of_memory_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_memory
+    - minor_routine_maintenance_or_repackaging_without_new_memory_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - semiconductor
+      - market
+      freshness: 48h
+      focus:
+      - new_memory_events
+      - verifiable_changes_in_memory
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_memory
+      - what_tools_methods_or_data_were_used_for_memory
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - memory_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Memory (memory) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Memory lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Memory.
+  action_rules:
+    monitor:
+    - track_emerging_memory_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_memory_documentation
+    - verify_reproducibility_of_reported_memory_data
+  watch_rules:
+    monitor:
+    - next_memory_milestone_or_release_date
+    - peer_review_or_independent_validation_of_memory
+    - ecosystem_adoption_metrics_for_memory
+  retrieval_intent:
+    required_concepts:
+    - Memory
+    - memory
+    - dram
+    - nand
+    - hbm changes
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_memory_adoption
+  - verified_metrics_for_memory
+  - semiconductors_regulatory_or_competitive_response
+  - dram
+  - nand
+  disambiguation_focus:
+  - Memory
+  - memory
+  - 'Memory specific evaluation: DRAM/NAND/HBM changes'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - market
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-hbm-theme
+  theme_id: semiconductors-hbm-theme
+  micro_topic_id: hbm
+  micro_topic: hbm
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess HBM (hbm) specifically through verified evidence, measurable change,
+    and practical implications.
+  scope:
+    includes:
+    - all_hbm_developments
+    - verified_hbm_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_hbm_relevance
+    boundaries:
+    - focus_strictly_on_hbm_domain_significance
+  questions:
+  - what_changed_in_hbm
+  - how_does_new_hbm_differ_from_prior_state
+  - what_verifiable_evidence_supports_hbm
+  - what_are_the_operational_or_market_implications_for_hbm
+  - what_technical_limitations_or_uncertainties_remain_in_hbm
+  - what_is_the_status_of_hbm_generations_for_hbm
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_hbm_exceeding_baseline
+    - independent_confirmation_of_hbm_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_hbm
+    - minor_routine_maintenance_or_repackaging_without_new_hbm_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - semiconductor
+      - company
+      freshness: 48h
+      focus:
+      - new_hbm_events
+      - verifiable_changes_in_hbm
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_hbm
+      - what_tools_methods_or_data_were_used_for_hbm
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - hbm_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in HBM (hbm) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding HBM lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for HBM.
+  action_rules:
+    monitor:
+    - track_emerging_hbm_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_hbm_documentation
+    - verify_reproducibility_of_reported_hbm_data
+  watch_rules:
+    monitor:
+    - next_hbm_milestone_or_release_date
+    - peer_review_or_independent_validation_of_hbm
+    - ecosystem_adoption_metrics_for_hbm
+  retrieval_intent:
+    required_concepts:
+    - HBM
+    - hbm
+    - hbm generations
+    - capacity
+    - suppliers
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_hbm_adoption
+  - verified_metrics_for_hbm
+  - semiconductors_regulatory_or_competitive_response
+  - hbm generations
+  - capacity
+  disambiguation_focus:
+  - HBM
+  - hbm
+  - 'HBM specific evaluation: HBM generations, capacity, suppliers'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-manufacturing-equipment-theme
+  theme_id: semiconductors-manufacturing-equipment-theme
+  micro_topic_id: manufacturing-equipment
+  micro_topic: manufacturing-equipment
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Manufacturing Equipment (manufacturing-equipment) specifically
+    through verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_manufacturing_equipment_developments
+    - verified_manufacturing_equipment_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_manufacturing_equipment_relevance
+    boundaries:
+    - focus_strictly_on_manufacturing-equipment_domain_significance
+  questions:
+  - what_changed_in_manufacturing_equipment
+  - how_does_new_manufacturing_equipment_differ_from_prior_state
+  - what_verifiable_evidence_supports_manufacturing_equipment
+  - what_are_the_operational_or_market_implications_for_manufacturing_equipment
+  - what_technical_limitations_or_uncertainties_remain_in_manufacturing_equipment
+  - what_is_the_status_of_lithography_for_manufacturing_equipment
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_manufacturing_equipment_exceeding_baseline
+    - independent_confirmation_of_manufacturing_equipment_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_manufacturing_equipment
+    - minor_routine_maintenance_or_repackaging_without_new_manufacturing_equipment_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - semiconductor
+      - research
+      freshness: 48h
+      focus:
+      - new_manufacturing_equipment_events
+      - verifiable_changes_in_manufacturing_equipment
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_manufacturing_equipment
+      - what_tools_methods_or_data_were_used_for_manufacturing_equipment
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - manufacturing_equipment_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Manufacturing Equipment (manufacturing-equipment)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Manufacturing Equipment lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Manufacturing Equipment.
+  action_rules:
+    monitor:
+    - track_emerging_manufacturing_equipment_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_manufacturing_equipment_documentation
+    - verify_reproducibility_of_reported_manufacturing_equipment_data
+  watch_rules:
+    monitor:
+    - next_manufacturing_equipment_milestone_or_release_date
+    - peer_review_or_independent_validation_of_manufacturing_equipment
+    - ecosystem_adoption_metrics_for_manufacturing_equipment
+  retrieval_intent:
+    required_concepts:
+    - Manufacturing Equipment
+    - manufacturing-equipment
+    - lithography
+    - deposition
+    - inspection
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_manufacturing_equipment_adoption
+  - verified_metrics_for_manufacturing_equipment
+  - semiconductors_regulatory_or_competitive_response
+  - lithography
+  - deposition
+  disambiguation_focus:
+  - Manufacturing Equipment
+  - manufacturing-equipment
+  - 'Manufacturing Equipment specific evaluation: Lithography, deposition, inspection'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-packaging-theme
+  theme_id: semiconductors-packaging-theme
+  micro_topic_id: packaging
+  micro_topic: packaging
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Packaging (packaging) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_packaging_developments
+    - verified_packaging_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_packaging_relevance
+    boundaries:
+    - focus_strictly_on_packaging_domain_significance
+  questions:
+  - what_changed_in_packaging
+  - how_does_new_packaging_differ_from_prior_state
+  - what_verifiable_evidence_supports_packaging
+  - what_are_the_operational_or_market_implications_for_packaging
+  - what_technical_limitations_or_uncertainties_remain_in_packaging
+  - what_is_the_status_of_advanced_packaging_for_packaging
+  evidence_requirements: &id046
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id046
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_packaging_exceeding_baseline
+    - independent_confirmation_of_packaging_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_packaging
+    - minor_routine_maintenance_or_repackaging_without_new_packaging_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id047
+      preferred_sources: &id050
+      - semiconductor
+      - research
+      freshness: 48h
+      focus:
+      - new_packaging_events
+      - verifiable_changes_in_packaging
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id048
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_packaging
+      - what_tools_methods_or_data_were_used_for_packaging
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id047
+    video: *id048
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - packaging_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id049
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id049
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Packaging (packaging) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Packaging lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Packaging.
+  action_rules:
+    monitor:
+    - track_emerging_packaging_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_packaging_documentation
+    - verify_reproducibility_of_reported_packaging_data
+  watch_rules:
+    monitor:
+    - next_packaging_milestone_or_release_date
+    - peer_review_or_independent_validation_of_packaging
+    - ecosystem_adoption_metrics_for_packaging
+  retrieval_intent:
+    required_concepts:
+    - Packaging
+    - packaging
+    - advanced packaging
+    - chiplets
+    - cowos etc.
+    preferred_source_types: *id050
+    evidence_types: *id046
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_packaging_adoption
+  - verified_metrics_for_packaging
+  - semiconductors_regulatory_or_competitive_response
+  - advanced packaging
+  - chiplets
+  disambiguation_focus:
+  - Packaging
+  - packaging
+  - 'Packaging specific evaluation: Advanced packaging, chiplets, CoWoS etc.'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-process-nodes-theme
+  theme_id: semiconductors-process-nodes-theme
+  micro_topic_id: process-nodes
+  micro_topic: process-nodes
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Process Nodes (process-nodes) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_process_nodes_developments
+    - verified_process_nodes_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_process_nodes_relevance
+    boundaries:
+    - focus_strictly_on_process-nodes_domain_significance
+  questions:
+  - what_changed_in_process_nodes
+  - how_does_new_process_nodes_differ_from_prior_state
+  - what_verifiable_evidence_supports_process_nodes
+  - what_are_the_operational_or_market_implications_for_process_nodes
+  - what_technical_limitations_or_uncertainties_remain_in_process_nodes
+  - what_is_the_status_of_node_transitions_for_process_nodes
+  evidence_requirements: &id051
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id051
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_process_nodes_exceeding_baseline
+    - independent_confirmation_of_process_nodes_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_process_nodes
+    - minor_routine_maintenance_or_repackaging_without_new_process_nodes_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id052
+      preferred_sources: &id055
+      - semiconductor
+      - research
+      freshness: 48h
+      focus:
+      - new_process_nodes_events
+      - verifiable_changes_in_process_nodes
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id053
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_process_nodes
+      - what_tools_methods_or_data_were_used_for_process_nodes
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id052
+    video: *id053
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - process_nodes_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id054
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id054
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Process Nodes (process-nodes)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Process Nodes lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Process Nodes.
+  action_rules:
+    monitor:
+    - track_emerging_process_nodes_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_process_nodes_documentation
+    - verify_reproducibility_of_reported_process_nodes_data
+  watch_rules:
+    monitor:
+    - next_process_nodes_milestone_or_release_date
+    - peer_review_or_independent_validation_of_process_nodes
+    - ecosystem_adoption_metrics_for_process_nodes
+  retrieval_intent:
+    required_concepts:
+    - Process Nodes
+    - process-nodes
+    - node transitions
+    - yield
+    - performance
+    preferred_source_types: *id055
+    evidence_types: *id051
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_process_nodes_adoption
+  - verified_metrics_for_process_nodes
+  - semiconductors_regulatory_or_competitive_response
+  - node transitions
+  - yield
+  disambiguation_focus:
+  - Process Nodes
+  - process-nodes
+  - 'Process Nodes specific evaluation: Node transitions, yield, performance'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-export-controls-theme
+  theme_id: semiconductors-export-controls-theme
+  micro_topic_id: export-controls
+  micro_topic: export-controls
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Export Controls (export-controls) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_export_controls_developments
+    - verified_export_controls_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_export_controls_relevance
+    boundaries:
+    - focus_strictly_on_export-controls_domain_significance
+  questions:
+  - what_changed_in_export_controls
+  - how_does_new_export_controls_differ_from_prior_state
+  - what_verifiable_evidence_supports_export_controls
+  - what_are_the_operational_or_market_implications_for_export_controls
+  - what_technical_limitations_or_uncertainties_remain_in_export_controls
+  - what_is_the_status_of_restrictions_for_export_controls
+  evidence_requirements: &id056
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id056
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_export_controls_exceeding_baseline
+    - independent_confirmation_of_export_controls_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_export_controls
+    - minor_routine_maintenance_or_repackaging_without_new_export_controls_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id057
+      preferred_sources: &id060
+      - gov
+      - geopolitics
+      freshness: 48h
+      focus:
+      - new_export_controls_events
+      - verifiable_changes_in_export_controls
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id058
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_export_controls
+      - what_tools_methods_or_data_were_used_for_export_controls
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id057
+    video: *id058
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - export_controls_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id059
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id059
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Export Controls (export-controls)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Export Controls lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Export Controls.
+  action_rules:
+    monitor:
+    - track_emerging_export_controls_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_export_controls_documentation
+    - verify_reproducibility_of_reported_export_controls_data
+  watch_rules:
+    monitor:
+    - next_export_controls_milestone_or_release_date
+    - peer_review_or_independent_validation_of_export_controls
+    - ecosystem_adoption_metrics_for_export_controls
+  retrieval_intent:
+    required_concepts:
+    - Export Controls
+    - export-controls
+    - restrictions
+    - licenses
+    - affected companies
+    preferred_source_types: *id060
+    evidence_types: *id056
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_export_controls_adoption
+  - verified_metrics_for_export_controls
+  - semiconductors_regulatory_or_competitive_response
+  - restrictions
+  - licenses
+  disambiguation_focus:
+  - Export Controls
+  - export-controls
+  - 'Export Controls specific evaluation: Restrictions, licenses, affected companies'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov
+    - geopolitics
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-supply-chains-theme
+  theme_id: semiconductors-supply-chains-theme
+  micro_topic_id: supply-chains
+  micro_topic: supply-chains
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Supply Chains (supply-chains) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_supply_chains_developments
+    - verified_supply_chains_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_supply_chains_relevance
+    boundaries:
+    - focus_strictly_on_supply-chains_domain_significance
+  questions:
+  - what_changed_in_supply_chains
+  - how_does_new_supply_chains_differ_from_prior_state
+  - what_verifiable_evidence_supports_supply_chains
+  - what_are_the_operational_or_market_implications_for_supply_chains
+  - what_technical_limitations_or_uncertainties_remain_in_supply_chains
+  - what_is_the_status_of_dependencies_for_supply_chains
+  evidence_requirements: &id061
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id061
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_supply_chains_exceeding_baseline
+    - independent_confirmation_of_supply_chains_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_supply_chains
+    - minor_routine_maintenance_or_repackaging_without_new_supply_chains_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id062
+      preferred_sources: &id065
+      - semiconductor
+      - trade
+      freshness: 48h
+      focus:
+      - new_supply_chains_events
+      - verifiable_changes_in_supply_chains
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id063
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_supply_chains
+      - what_tools_methods_or_data_were_used_for_supply_chains
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id062
+    video: *id063
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - supply_chains_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id064
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id064
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Supply Chains (supply-chains)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Supply Chains lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Supply Chains.
+  action_rules:
+    monitor:
+    - track_emerging_supply_chains_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_supply_chains_documentation
+    - verify_reproducibility_of_reported_supply_chains_data
+  watch_rules:
+    monitor:
+    - next_supply_chains_milestone_or_release_date
+    - peer_review_or_independent_validation_of_supply_chains
+    - ecosystem_adoption_metrics_for_supply_chains
+  retrieval_intent:
+    required_concepts:
+    - Supply Chains
+    - supply-chains
+    - dependencies
+    - disruptions
+    - localization
+    preferred_source_types: *id065
+    evidence_types: *id061
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_supply_chains_adoption
+  - verified_metrics_for_supply_chains
+  - semiconductors_regulatory_or_competitive_response
+  - dependencies
+  - disruptions
+  disambiguation_focus:
+  - Supply Chains
+  - supply-chains
+  - 'Supply Chains specific evaluation: Dependencies, disruptions, localization'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - trade
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: semiconductors-capacity-theme
+  theme_id: semiconductors-capacity-theme
+  micro_topic_id: capacity
+  micro_topic: capacity
+  domain: semiconductors
+  domain_id: semiconductors
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Capacity (capacity) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_capacity_developments
+    - verified_capacity_activity
+    excludes:
+    - tangential_semiconductors_chatter_without_capacity_relevance
+    boundaries:
+    - focus_strictly_on_capacity_domain_significance
+  questions:
+  - what_changed_in_capacity
+  - how_does_new_capacity_differ_from_prior_state
+  - what_verifiable_evidence_supports_capacity
+  - what_are_the_operational_or_market_implications_for_capacity
+  - what_technical_limitations_or_uncertainties_remain_in_capacity
+  - what_is_the_status_of_production_capacity_for_capacity
+  evidence_requirements: &id066
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id066
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_capacity_exceeding_baseline
+    - independent_confirmation_of_capacity_milestone_from_primary_source
+    - measurable_impact_on_semiconductors_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_capacity
+    - minor_routine_maintenance_or_repackaging_without_new_capacity_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id067
+      preferred_sources: &id070
+      - semiconductor
+      - market
+      freshness: 48h
+      focus:
+      - new_capacity_events
+      - verifiable_changes_in_capacity
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id068
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_capacity
+      - what_tools_methods_or_data_were_used_for_capacity
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id067
+    video: *id068
+  entity_extraction:
+    required:
+    - semiconductors
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - capacity_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id069
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id069
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Capacity (capacity) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Capacity lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Capacity.
+  action_rules:
+    monitor:
+    - track_emerging_capacity_benchmarks
+    - follow_official_semiconductors_announcements
+    investigate:
+    - audit_claims_against_primary_capacity_documentation
+    - verify_reproducibility_of_reported_capacity_data
+  watch_rules:
+    monitor:
+    - next_capacity_milestone_or_release_date
+    - peer_review_or_independent_validation_of_capacity
+    - ecosystem_adoption_metrics_for_capacity
+  retrieval_intent:
+    required_concepts:
+    - Capacity
+    - capacity
+    - production capacity
+    - utilization
+    - expansion
+    preferred_source_types: *id070
+    evidence_types: *id066
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_capacity_adoption
+  - verified_metrics_for_capacity
+  - semiconductors_regulatory_or_competitive_response
+  - production capacity
+  - utilization
+  disambiguation_focus:
+  - Capacity
+  - capacity
+  - 'Capacity specific evaluation: Production capacity, utilization, expansion'
+  - distinct from other semiconductors topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - semiconductor
+    - market
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag

@@ -1,0 +1,1492 @@
+themes:
+- id: quantum-computing-hardware-theme
+  theme_id: quantum-computing-hardware-theme
+  micro_topic_id: hardware
+  micro_topic: hardware
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Hardware (hardware) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_hardware_developments
+    - verified_hardware_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_hardware_relevance
+    boundaries:
+    - focus_strictly_on_hardware_domain_significance
+  questions:
+  - what_changed_in_hardware
+  - how_does_new_hardware_differ_from_prior_state
+  - what_verifiable_evidence_supports_hardware
+  - what_are_the_operational_or_market_implications_for_hardware
+  - what_technical_limitations_or_uncertainties_remain_in_hardware
+  - what_is_the_status_of_qubit_architecture_for_hardware
+  evidence_requirements: &id001
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id001
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_hardware_exceeding_baseline
+    - independent_confirmation_of_hardware_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_hardware
+    - minor_routine_maintenance_or_repackaging_without_new_hardware_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id002
+      preferred_sources: &id005
+      - research
+      - news-tech
+      - ai-search
+      freshness: 48h
+      focus:
+      - new_hardware_events
+      - verifiable_changes_in_hardware
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id003
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_hardware
+      - what_tools_methods_or_data_were_used_for_hardware
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id002
+    video: *id003
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - hardware_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id004
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id004
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Hardware (hardware) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Hardware lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Hardware.
+  action_rules:
+    monitor:
+    - track_emerging_hardware_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_hardware_documentation
+    - verify_reproducibility_of_reported_hardware_data
+  watch_rules:
+    monitor:
+    - next_hardware_milestone_or_release_date
+    - peer_review_or_independent_validation_of_hardware
+    - ecosystem_adoption_metrics_for_hardware
+  retrieval_intent:
+    required_concepts:
+    - Hardware
+    - hardware
+    - qubit architecture
+    - fidelity
+    - scaling
+    preferred_source_types: *id005
+    evidence_types: *id001
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_hardware_adoption
+  - verified_metrics_for_hardware
+  - quantum_computing_regulatory_or_competitive_response
+  - qubit architecture
+  - fidelity
+  disambiguation_focus:
+  - Hardware
+  - hardware
+  - 'Hardware specific evaluation: Qubit architecture, fidelity, scaling, roadmap'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: quantum-computing-processors-theme
+  theme_id: quantum-computing-processors-theme
+  micro_topic_id: processors
+  micro_topic: processors
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Processors (processors) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_processors_developments
+    - verified_processors_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_processors_relevance
+    boundaries:
+    - focus_strictly_on_processors_domain_significance
+  questions:
+  - what_changed_in_processors
+  - how_does_new_processors_differ_from_prior_state
+  - what_verifiable_evidence_supports_processors
+  - what_are_the_operational_or_market_implications_for_processors
+  - what_technical_limitations_or_uncertainties_remain_in_processors
+  - what_is_the_status_of_processor_generations_for_processors
+  evidence_requirements: &id006
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id006
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_processors_exceeding_baseline
+    - independent_confirmation_of_processors_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_processors
+    - minor_routine_maintenance_or_repackaging_without_new_processors_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id007
+      preferred_sources: &id010
+      - research
+      - company
+      freshness: 48h
+      focus:
+      - new_processors_events
+      - verifiable_changes_in_processors
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id008
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_processors
+      - what_tools_methods_or_data_were_used_for_processors
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id007
+    video: *id008
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - processors_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id009
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id009
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Processors (processors) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Processors lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Processors.
+  action_rules:
+    monitor:
+    - track_emerging_processors_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_processors_documentation
+    - verify_reproducibility_of_reported_processors_data
+  watch_rules:
+    monitor:
+    - next_processors_milestone_or_release_date
+    - peer_review_or_independent_validation_of_processors
+    - ecosystem_adoption_metrics_for_processors
+  retrieval_intent:
+    required_concepts:
+    - Processors
+    - processors
+    - processor generations
+    - qubits
+    - error rates
+    preferred_source_types: *id010
+    evidence_types: *id006
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_processors_adoption
+  - verified_metrics_for_processors
+  - quantum_computing_regulatory_or_competitive_response
+  - processor generations
+  - qubits
+  disambiguation_focus:
+  - Processors
+  - processors
+  - 'Processors specific evaluation: Processor generations, qubits, error rates, benchmarks'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: quantum-computing-algorithms-theme
+  theme_id: quantum-computing-algorithms-theme
+  micro_topic_id: algorithms
+  micro_topic: algorithms
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Algorithms (algorithms) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_algorithms_developments
+    - verified_algorithms_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_algorithms_relevance
+    boundaries:
+    - focus_strictly_on_algorithms_domain_significance
+  questions:
+  - what_changed_in_algorithms
+  - how_does_new_algorithms_differ_from_prior_state
+  - what_verifiable_evidence_supports_algorithms
+  - what_are_the_operational_or_market_implications_for_algorithms
+  - what_technical_limitations_or_uncertainties_remain_in_algorithms
+  - what_is_the_status_of_new_algorithms_for_algorithms
+  evidence_requirements: &id011
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id011
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_algorithms_exceeding_baseline
+    - independent_confirmation_of_algorithms_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_algorithms
+    - minor_routine_maintenance_or_repackaging_without_new_algorithms_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id012
+      preferred_sources: &id015
+      - research
+      freshness: 48h
+      focus:
+      - new_algorithms_events
+      - verifiable_changes_in_algorithms
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id013
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_algorithms
+      - what_tools_methods_or_data_were_used_for_algorithms
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id012
+    video: *id013
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - algorithms_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id014
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id014
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Algorithms (algorithms) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Algorithms lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Algorithms.
+  action_rules:
+    monitor:
+    - track_emerging_algorithms_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_algorithms_documentation
+    - verify_reproducibility_of_reported_algorithms_data
+  watch_rules:
+    monitor:
+    - next_algorithms_milestone_or_release_date
+    - peer_review_or_independent_validation_of_algorithms
+    - ecosystem_adoption_metrics_for_algorithms
+  retrieval_intent:
+    required_concepts:
+    - Algorithms
+    - algorithms
+    - new algorithms
+    - complexity
+    - demonstrated advantage
+    preferred_source_types: *id015
+    evidence_types: *id011
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_algorithms_adoption
+  - verified_metrics_for_algorithms
+  - quantum_computing_regulatory_or_competitive_response
+  - new algorithms
+  - complexity
+  disambiguation_focus:
+  - Algorithms
+  - algorithms
+  - 'Algorithms specific evaluation: New algorithms, complexity, demonstrated advantage'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: quantum-computing-error-correction-theme
+  theme_id: quantum-computing-error-correction-theme
+  micro_topic_id: error-correction
+  micro_topic: error-correction
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Error Correction (error-correction) specifically through verified
+    evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_error_correction_developments
+    - verified_error_correction_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_error_correction_relevance
+    boundaries:
+    - focus_strictly_on_error-correction_domain_significance
+  questions:
+  - what_changed_in_error_correction
+  - how_does_new_error_correction_differ_from_prior_state
+  - what_verifiable_evidence_supports_error_correction
+  - what_are_the_operational_or_market_implications_for_error_correction
+  - what_technical_limitations_or_uncertainties_remain_in_error_correction
+  - what_is_the_status_of_logical_qubits_for_error_correction
+  evidence_requirements: &id016
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id016
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_error_correction_exceeding_baseline
+    - independent_confirmation_of_error_correction_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_error_correction
+    - minor_routine_maintenance_or_repackaging_without_new_error_correction_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id017
+      preferred_sources: &id020
+      - research
+      freshness: 48h
+      focus:
+      - new_error_correction_events
+      - verifiable_changes_in_error_correction
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id018
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_error_correction
+      - what_tools_methods_or_data_were_used_for_error_correction
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id017
+    video: *id018
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - error_correction_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id019
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id019
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Error Correction (error-correction)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Error Correction lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Error Correction.
+  action_rules:
+    monitor:
+    - track_emerging_error_correction_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_error_correction_documentation
+    - verify_reproducibility_of_reported_error_correction_data
+  watch_rules:
+    monitor:
+    - next_error_correction_milestone_or_release_date
+    - peer_review_or_independent_validation_of_error_correction
+    - ecosystem_adoption_metrics_for_error_correction
+  retrieval_intent:
+    required_concepts:
+    - Error Correction
+    - error-correction
+    - logical qubits
+    - error suppression
+    - thresholds
+    preferred_source_types: *id020
+    evidence_types: *id016
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_error_correction_adoption
+  - verified_metrics_for_error_correction
+  - quantum_computing_regulatory_or_competitive_response
+  - logical qubits
+  - error suppression
+  disambiguation_focus:
+  - Error Correction
+  - error-correction
+  - 'Error Correction specific evaluation: Logical qubits, error suppression, thresholds'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: quantum-computing-networking-theme
+  theme_id: quantum-computing-networking-theme
+  micro_topic_id: networking
+  micro_topic: networking
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Networking (networking) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_networking_developments
+    - verified_networking_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_networking_relevance
+    boundaries:
+    - focus_strictly_on_networking_domain_significance
+  questions:
+  - what_changed_in_networking
+  - how_does_new_networking_differ_from_prior_state
+  - what_verifiable_evidence_supports_networking
+  - what_are_the_operational_or_market_implications_for_networking
+  - what_technical_limitations_or_uncertainties_remain_in_networking
+  - what_is_the_status_of_quantum_networking_for_networking
+  evidence_requirements: &id021
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id021
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_networking_exceeding_baseline
+    - independent_confirmation_of_networking_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_networking
+    - minor_routine_maintenance_or_repackaging_without_new_networking_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id022
+      preferred_sources: &id025
+      - research
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_networking_events
+      - verifiable_changes_in_networking
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id023
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_networking
+      - what_tools_methods_or_data_were_used_for_networking
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id022
+    video: *id023
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - networking_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id024
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id024
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Networking (networking) was
+      identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Networking lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Networking.
+  action_rules:
+    monitor:
+    - track_emerging_networking_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_networking_documentation
+    - verify_reproducibility_of_reported_networking_data
+  watch_rules:
+    monitor:
+    - next_networking_milestone_or_release_date
+    - peer_review_or_independent_validation_of_networking
+    - ecosystem_adoption_metrics_for_networking
+  retrieval_intent:
+    required_concepts:
+    - Networking
+    - networking
+    - quantum networking
+    - communication
+    - repeaters
+    preferred_source_types: *id025
+    evidence_types: *id021
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_networking_adoption
+  - verified_metrics_for_networking
+  - quantum_computing_regulatory_or_competitive_response
+  - quantum networking
+  - communication
+  disambiguation_focus:
+  - Networking
+  - networking
+  - 'Networking specific evaluation: Quantum networking, communication, repeaters'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - news-tech
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: quantum-computing-cryptography-theme
+  theme_id: quantum-computing-cryptography-theme
+  micro_topic_id: cryptography
+  micro_topic: cryptography
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Cryptography (cryptography) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_cryptography_developments
+    - verified_cryptography_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_cryptography_relevance
+    boundaries:
+    - focus_strictly_on_cryptography_domain_significance
+  questions:
+  - what_changed_in_cryptography
+  - how_does_new_cryptography_differ_from_prior_state
+  - what_verifiable_evidence_supports_cryptography
+  - what_are_the_operational_or_market_implications_for_cryptography
+  - what_technical_limitations_or_uncertainties_remain_in_cryptography
+  - what_is_the_status_of_quantum_threats_for_cryptography
+  evidence_requirements: &id026
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id026
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_cryptography_exceeding_baseline
+    - independent_confirmation_of_cryptography_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_cryptography
+    - minor_routine_maintenance_or_repackaging_without_new_cryptography_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id027
+      preferred_sources: &id030
+      - research
+      - gov
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_cryptography_events
+      - verifiable_changes_in_cryptography
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id028
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_cryptography
+      - what_tools_methods_or_data_were_used_for_cryptography
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id027
+    video: *id028
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - cryptography_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id029
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id029
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Cryptography (cryptography)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Cryptography lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Cryptography.
+  action_rules:
+    monitor:
+    - track_emerging_cryptography_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_cryptography_documentation
+    - verify_reproducibility_of_reported_cryptography_data
+  watch_rules:
+    monitor:
+    - next_cryptography_milestone_or_release_date
+    - peer_review_or_independent_validation_of_cryptography
+    - ecosystem_adoption_metrics_for_cryptography
+  retrieval_intent:
+    required_concepts:
+    - Cryptography
+    - cryptography
+    - quantum threats
+    - post-quantum cryptography
+    - migration
+    preferred_source_types: *id030
+    evidence_types: *id026
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_cryptography_adoption
+  - verified_metrics_for_cryptography
+  - quantum_computing_regulatory_or_competitive_response
+  - quantum threats
+  - post-quantum cryptography
+  disambiguation_focus:
+  - Cryptography
+  - cryptography
+  - 'Cryptography specific evaluation: Quantum threats, post-quantum cryptography,
+    migration'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - gov
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: quantum-computing-research-theme
+  theme_id: quantum-computing-research-theme
+  micro_topic_id: research
+  micro_topic: research
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Research (research) specifically through verified evidence, measurable
+    change, and practical implications.
+  scope:
+    includes:
+    - all_research_developments
+    - verified_research_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_research_relevance
+    boundaries:
+    - focus_strictly_on_research_domain_significance
+  questions:
+  - what_changed_in_research
+  - how_does_new_research_differ_from_prior_state
+  - what_verifiable_evidence_supports_research
+  - what_are_the_operational_or_market_implications_for_research
+  - what_technical_limitations_or_uncertainties_remain_in_research
+  - what_is_the_status_of_new_experimental_for_research
+  evidence_requirements: &id031
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id031
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_research_exceeding_baseline
+    - independent_confirmation_of_research_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_research
+    - minor_routine_maintenance_or_repackaging_without_new_research_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id032
+      preferred_sources: &id035
+      - research
+      freshness: 48h
+      focus:
+      - new_research_events
+      - verifiable_changes_in_research
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id033
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_research
+      - what_tools_methods_or_data_were_used_for_research
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id032
+    video: *id033
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - research_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id034
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id034
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Research (research) was identified
+      during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Research lacked primary corroboration
+      or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Research.
+  action_rules:
+    monitor:
+    - track_emerging_research_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_research_documentation
+    - verify_reproducibility_of_reported_research_data
+  watch_rules:
+    monitor:
+    - next_research_milestone_or_release_date
+    - peer_review_or_independent_validation_of_research
+    - ecosystem_adoption_metrics_for_research
+  retrieval_intent:
+    required_concepts:
+    - Research
+    - research
+    - new experimental
+    - theoretical results
+    preferred_source_types: *id035
+    evidence_types: *id031
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_research_adoption
+  - verified_metrics_for_research
+  - quantum_computing_regulatory_or_competitive_response
+  - new experimental
+  - theoretical results
+  disambiguation_focus:
+  - Research
+  - research
+  - 'Research specific evaluation: New experimental/theoretical results'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: quantum-computing-government-programs-theme
+  theme_id: quantum-computing-government-programs-theme
+  micro_topic_id: government-programs
+  micro_topic: government-programs
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Government Programs (government-programs) specifically through
+    verified evidence, measurable change, and practical implications.
+  scope:
+    includes:
+    - all_government_programs_developments
+    - verified_government_programs_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_government_programs_relevance
+    boundaries:
+    - focus_strictly_on_government-programs_domain_significance
+  questions:
+  - what_changed_in_government_programs
+  - how_does_new_government_programs_differ_from_prior_state
+  - what_verifiable_evidence_supports_government_programs
+  - what_are_the_operational_or_market_implications_for_government_programs
+  - what_technical_limitations_or_uncertainties_remain_in_government_programs
+  - what_is_the_status_of_national_quantum_programs_for_government_programs
+  evidence_requirements: &id036
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id036
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_government_programs_exceeding_baseline
+    - independent_confirmation_of_government_programs_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_government_programs
+    - minor_routine_maintenance_or_repackaging_without_new_government_programs_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id037
+      preferred_sources: &id040
+      - gov-us
+      - gov-eu
+      - gov-india
+      - gov-east-asia
+      freshness: 48h
+      focus:
+      - new_government_programs_events
+      - verifiable_changes_in_government_programs
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id038
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_government_programs
+      - what_tools_methods_or_data_were_used_for_government_programs
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id037
+    video: *id038
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - government_programs_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id039
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id039
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Government Programs (government-programs)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Government Programs lacked
+      primary corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Government Programs.
+  action_rules:
+    monitor:
+    - track_emerging_government_programs_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_government_programs_documentation
+    - verify_reproducibility_of_reported_government_programs_data
+  watch_rules:
+    monitor:
+    - next_government_programs_milestone_or_release_date
+    - peer_review_or_independent_validation_of_government_programs
+    - ecosystem_adoption_metrics_for_government_programs
+  retrieval_intent:
+    required_concepts:
+    - Government Programs
+    - government-programs
+    - national quantum programs
+    - funding
+    preferred_source_types: *id040
+    evidence_types: *id036
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_government_programs_adoption
+  - verified_metrics_for_government_programs
+  - quantum_computing_regulatory_or_competitive_response
+  - national quantum programs
+  - funding
+  disambiguation_focus:
+  - Government Programs
+  - government-programs
+  - 'Government Programs specific evaluation: National quantum programs/funding'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - gov-us
+    - gov-eu
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
+- id: quantum-computing-applications-theme
+  theme_id: quantum-computing-applications-theme
+  micro_topic_id: applications
+  micro_topic: applications
+  domain: quantum-computing
+  domain_id: quantum-computing
+  topic: any
+  topic_id: any
+  version: 1.0.0
+  priority: 8
+  review_status: AI_VALIDATED
+  objective: Assess Applications (applications) specifically through verified evidence,
+    measurable change, and practical implications.
+  scope:
+    includes:
+    - all_applications_developments
+    - verified_applications_activity
+    excludes:
+    - tangential_quantum-computing_chatter_without_applications_relevance
+    boundaries:
+    - focus_strictly_on_applications_domain_significance
+  questions:
+  - what_changed_in_applications
+  - how_does_new_applications_differ_from_prior_state
+  - what_verifiable_evidence_supports_applications
+  - what_are_the_operational_or_market_implications_for_applications
+  - what_technical_limitations_or_uncertainties_remain_in_applications
+  - what_is_the_status_of_concrete_commercial_for_applications
+  evidence_requirements: &id041
+  - primary_or_independently_corroborated_evidence
+  - primary_source_verification
+  - official_disclosure_or_documentation
+  evidence:
+    required: *id041
+    preferred:
+    - primary_source
+    - official_announcement
+  significance_rules:
+    significant_if:
+    - verified_material_change_in_applications_exceeding_baseline
+    - independent_confirmation_of_applications_milestone_from_primary_source
+    - measurable_impact_on_quantum_computing_ecosystem_or_operations
+    insignificant_if:
+    - unsubstantiated_claims_or_rumors_regarding_applications
+    - minor_routine_maintenance_or_repackaging_without_new_applications_capability
+    - third_party_speculation_lacking_primary_source_attribution
+  stream_rules:
+    news: &id042
+      preferred_sources: &id045
+      - research
+      - company
+      - news-tech
+      freshness: 48h
+      focus:
+      - new_applications_events
+      - verifiable_changes_in_applications
+      - official_statements_vs_reported_claims
+      - strategic_or_operational_impact
+    video: &id043
+      relevant_video_types:
+      - technical_demonstrations
+      - keynote_addresses
+      - code_walkthroughs
+      - expert_analysis
+      questions:
+      - what_was_directly_demonstrated_or_argued_regarding_applications
+      - what_tools_methods_or_data_were_used_for_applications
+      - what_practical_limitations_or_assumptions_were_acknowledged
+      focus:
+      - demonstrated_workflows
+      - technical_mechanisms
+      - reproducibility
+      - empirical_claims
+  content_streams:
+    news: *id042
+    video: *id043
+  entity_extraction:
+    required:
+    - quantum_computing
+    - primary_organization
+    - technology_or_asset
+    optional:
+    - collaborators
+    - affected_counterparties
+    - standards_body
+    - geographic_region
+  event_extraction:
+    event_types:
+    - applications_milestone
+    - capability_enhancement
+    - operational_deployment
+  analysis_dimensions:
+  - capability_delta
+  - evidence_rigor
+  - architectural_or_structural_shift
+  - industry_adoption
+  - risk_and_failure_modes
+  output:
+    report_type: technical_deep_dive
+    sections: &id044
+    - summary
+    - evidence
+    - implications
+    - actions
+    - sources
+  output_requirements:
+    report_type: technical_deep_dive
+    sections: *id044
+  no_update_policy:
+    NO_MAJOR_UPDATE: No verified material development in Applications (applications)
+      was identified during this reporting window.
+    INSUFFICIENT_EVIDENCE: Retrieved reports regarding Applications lacked primary
+      corroboration or verifiable operational metrics.
+    NO_RELEVANT_CONTENT: No relevant content met the freshness and source quality
+      thresholds for Applications.
+  action_rules:
+    monitor:
+    - track_emerging_applications_benchmarks
+    - follow_official_quantum_computing_announcements
+    investigate:
+    - audit_claims_against_primary_applications_documentation
+    - verify_reproducibility_of_reported_applications_data
+  watch_rules:
+    monitor:
+    - next_applications_milestone_or_release_date
+    - peer_review_or_independent_validation_of_applications
+    - ecosystem_adoption_metrics_for_applications
+  retrieval_intent:
+    required_concepts:
+    - Applications
+    - applications
+    - concrete commercial
+    - scientific use cases
+    preferred_source_types: *id045
+    evidence_types: *id041
+    exclusion_concepts:
+    - unrelated_marketing_spam
+    - crypto_clickbait
+    freshness: 48h
+  watch_items:
+  - production_applications_adoption
+  - verified_metrics_for_applications
+  - quantum_computing_regulatory_or_competitive_response
+  - concrete commercial
+  - scientific use cases
+  disambiguation_focus:
+  - Applications
+  - applications
+  - 'Applications specific evaluation: Concrete commercial/scientific use cases'
+  - distinct from other quantum-computing topics
+  trend_rules:
+    minimum_distinct_dates: 3
+    minimum_distinct_sources: 2
+    minimum_evidence_items: 3
+    minimum_significance: 0.7
+    continuity_window_days: 14
+  source_preferences:
+    primary:
+    - research
+    - company
+    secondary:
+    - specialist_coverage
+    - industry_reporting
+  uncertainty_rules:
+    unverified_claim_handling: flag_as_unconfirmed
+    inference_requirement: require_explicit_evidence_tag
