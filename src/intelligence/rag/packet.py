@@ -36,6 +36,7 @@ class ContextPacket:
     diversity: dict[str, Any] = field(default_factory=dict)
     provenance: dict[str, Any] = field(default_factory=dict)
     budget: dict[str, Any] = field(default_factory=dict)
+    temporal_policy: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         ev = self.evidence or self.retrieved_evidence or ()
@@ -163,5 +164,6 @@ class ContextPacket:
             "event_context": self.event_context,
             "entity_context": self.entity_context,
             "source_context": self.source_context,
+            "temporal_policy": self.temporal_policy,
             "warnings": list(self.warnings),
         }

@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from ..ai import DryRunProvider, GeminiProvider
+from ..budgets.manager import BudgetManager
 from ..contracts import (
     source_timestamps_from_mapping,
 )
@@ -62,6 +63,10 @@ class ApplicationOrchestrator:
             self.config.settings, self.paths, self.repository, self.config.versions
         )
         self.state = RepositoryState(self.paths, self.config.settings.get("state", {}))
+        self.budget_manager = BudgetManager(
+            self.config.settings.get("budgets", {}).get("limits", self.config.settings.get("budgets", {})),
+            self.config.settings.get("budgets", {}).get("micro_topics", {}),
+        )
         micro_catalog = catalog(
             self.config.taxonomy,
             self.config.topics,
@@ -210,12 +215,31 @@ class ApplicationOrchestrator:
 
                 context_packet = rag_res["context_packet"]
 
+                micro_id = str(cls_info.get("micro_topic_id") or cls_info.get("micro_topic", ""))
+                can_run, reason, skip_rec = self.budget_manager.authorize(
+                    micro_id,
+                    priority="P0" if int(job.get("priority", 5)) >= 8 else "P1",
+                    estimated_calls=1,
+                    estimated_chars=len(str(context_packet)),
+                    run_id=run_context.run_id,
+                )
+                if not can_run:
+                    LOGGER.warning("Budget skipped AI for micro-topic %s: %s", micro_id, reason)
+                    if skip_rec:
+                        self.repository.save_budget_snapshot(
+                            f"skip_{run_context.run_id}_{micro_id}",
+                            skip_rec.to_dict(),
+                        )
+                    continue
+
                 # AI Analysis
                 analysis_output = ai_provider.analyze_micro_topic(
                     norm_item,
                     cls_info,
                     list(context_packet["retrieved_evidence"]),
                 )
+                self.budget_manager.consume(micro_id, "ai_calls", 1)
+                self.budget_manager.consume(micro_id, "context_chars", len(str(context_packet)))
 
                 # Stage 11: VALIDATING (5-stage)
                 val_res = validate_analysis(

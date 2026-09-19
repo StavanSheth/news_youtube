@@ -8,7 +8,7 @@ from .diversity import apply_diversity_filtering
 from .eligibility import check_chunk_eligibility, filter_eligible_candidates
 from .fusion import reciprocal_rank_fusion
 from .index import EvidenceIndex
-from .manager import ProductionRAGManager, RAGManager
+from .manager import ProductionRAGManager, RAGManager, RetrievalResult
 from .packet import ContextPacket
 from .provenance import extract_provenance_chain, validate_evidence_provenance
 from .query import RetrievalRequest, build_retrieval_request
@@ -29,6 +29,7 @@ __all__ = [
     "RepositoryEvidenceCorpus",
     "Reranker",
     "RetrievalRequest",
+    "RetrievalResult",
     "apply_diversity_filtering",
     "build_retrieval_request",
     "check_chunk_eligibility",
